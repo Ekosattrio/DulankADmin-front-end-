@@ -1,0 +1,892 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dashboard Kalender</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.ckeditor.com/ckeditor5/46.0.0/ckeditor5.css" crossorigin>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    body {
+      font-size: 14px;
+    }
+
+    .sidebar {
+      height: 100vh;
+      background-color: #f8f9fa;
+      padding: 20px 10px;
+      border-right: 1px solid #dee2e6;
+    }
+
+    .sidebar .nav-link {
+      color: #333;
+      margin: 10px 0;
+    }
+
+    .sidebar .nav-link.active {
+      font-weight: bold;
+      background: #e9ecef;
+      border-radius: 5px;
+    }
+
+    .main-content {
+      padding: 20px;
+    }
+
+    .navbar-brand span {
+      font-weight: 500;
+      font-size: 1.1rem;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <div id="navbar-placeholder"></div>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div id="sidebar-placeholder" class="col-md-2"></div>
+
+      <!-- Main Content -->
+      <div class="col-md-10 main-content px-3 py-3">
+        <h4 class="mb-4 text-center text-md-start">Dashboard Kalender BB</h4>
+
+        <!-- Ukuran Kalender -->
+        <div class="card mb-4">
+          <div
+            class="card-header d-flex flex-column flex-sm-row justify-content-between align-items-start align-items-sm-center gap-2">
+            <strong class="text-center text-sm-start">Tabel Ukuran Kalender BB</strong>
+            <a href="#" class="btn btn-sm btn-outline-primary" data-bs-toggle="modal"
+              data-bs-target="#modalTambahUkuran">
+              <i class="bi bi-plus-lg me-1"></i> Tambah Ukuran
+            </a>
+          </div>
+
+          <!-- Table Desktop Ukuran Kalender -->
+          <div class="card-body d-none d-md-block table-responsive">
+            <table class="table table-bordered table-sm text-center align-middle" id="tabelUkuran">
+              <thead class="table-light">
+                <tr>
+                  <th>No</th>
+                  <th>Ukuran</th>
+                  <th>Panjang</th>
+                  <th>Lebar</th>
+                  <th>Status</th>
+                  <th>Created</th>
+                  <th>User Created</th>
+                  <th>Update</th>
+                  <th>User Updated</th>
+                  <th>Aksi</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>Kecil 31x48</td>
+                  <td>31</td>
+                  <td>48</td>
+                  <td><span class="badge bg-success">Aktif</span></td>
+                  <td>25/05/2024</td>
+                  <td>Admin</td>
+                  <td>26/05/2024</td>
+                  <td>26/05/2024</td>
+                  <td>
+                    <a href="#" class="btn btn-sm btn-outline-secondary me-1" onclick="openEditModal(this)"><i
+                        class="bi bi-pencil"></i></a>
+                    <a href="#" class="btn btn-sm btn-outline-danger" onclick="hapusBaris(this)"><i
+                        class="bi bi-trash"></i></a>
+                  </td>
+
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Table Mobile -->
+          <div class="card-body d-md-none">
+            <div class="card mb-3 border">
+              <div class="card-body p-3">
+                <h6 class="card-title mb-2">Ukuran: <strong>Kecil 31x48</strong></h6>
+                <p class="mb-1"><strong>Panjang:</strong> 31 | <strong>Lebar:</strong> 48</p>
+                <p class="mb-1"><strong>Status:</strong> <span class="badge bg-success">Aktif</span></p>
+                <p class="mb-1 text-muted small">Created: 25/05/2024 by Admin</p>
+                <p class="mb-3 text-muted small">Updated: 26/05/2024</p>
+                <div class="d-flex gap-2">
+                  <a href="#" class="btn btn-sm btn-outline-secondary me-1" onclick="openEditModal(this)"><i
+                      class="bi bi-pencil"></i></a>
+                  <a href="#" class="btn btn-sm btn-outline-danger" onclick="hapusBaris(this)"><i
+                      class="bi bi-trash"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Modal Tambah Ukuran kalender -->
+        <div class="modal fade" id="modalTambahUkuran" tabindex="-1" aria-labelledby="modalTambahUkuranLabel"
+          aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Tambah Ukuran Kalender</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+              </div>
+              <div class="modal-body">
+                <div class="mb-2">
+                  <label class="form-label">Ukuran (contoh: Kecil 31x48)</label>
+                  <input type="text" class="form-control" id="inputUkuran">
+                </div>
+                <div class="mb-2">
+                  <label class="form-label">Panjang</label>
+                  <input type="number" class="form-control" id="inputPanjang">
+                </div>
+                <div class="mb-2">
+                  <label class="form-label">Lebar</label>
+                  <input type="number" class="form-control" id="inputLebar">
+                </div>
+                <div class="mb-2">
+                  <label class="form-label">Status</label>
+                  <select class="form-select" id="inputStatus">
+                    <option selected>Aktif</option>
+                    <option>Nonaktif</option>
+                  </select>
+                </div>
+                <div class="mb-2">
+                  <label class="form-label">User</label>
+                  <input type="text" class="form-control" value="Admin" id="inputUser">
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                <button type="button" class="btn btn-primary" onclick="tambahUkuran()">Simpan</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- modal update ukuran kalender -->
+        <div class="modal fade" id="modalEditUkuran" tabindex="-1" aria-labelledby="modalEditUkuranLabel"
+          aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Edit Ukuran Kalender</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+              </div>
+              <div class="modal-body">
+                <div class="mb-2">
+                  <label class="form-label">Ukuran</label>
+                  <input type="text" class="form-control" id="editUkuran">
+                </div>
+                <div class="mb-2">
+                  <label class="form-label">Panjang</label>
+                  <input type="number" class="form-control" id="editPanjang">
+                </div>
+                <div class="mb-2">
+                  <label class="form-label">Lebar</label>
+                  <input type="number" class="form-control" id="editLebar">
+                </div>
+                <div class="mb-2">
+                  <label class="form-label">Status</label>
+                  <select class="form-select" id="editStatus">
+                    <option>Aktif</option>
+                    <option>Nonaktif</option>
+                  </select>
+                </div>
+                <div class="mb-2">
+                  <label class="form-label">User</label>
+                  <input type="text" class="form-control" id="editUser" value="Admin">
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                <button type="button" class="btn btn-primary" onclick="updateUkuran()">Update</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- end ukuran kalender -->
+        <!-- /////// -->
+
+        <!-- Card Isi Kalender -->
+        <div class="card mb-4">
+          <div
+            class="card-header d-flex flex-column flex-sm-row justify-content-between align-items-start align-items-sm-center gap-2">
+            <strong class="text-center text-sm-start">Tabel Isi Kalender BB</strong>
+            <a href="#" class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#modalTambahIsi">
+              <i class="bi bi-plus-lg me-1"></i> Tambah Isi Kalender
+            </a>
+          </div>
+
+          <!-- Table Desktop isi kalender -->
+          <div class="card-body d-none d-md-block table-responsive">
+            <table class="table table-bordered table-sm text-center align-middle" id="tabelIsi">
+              <thead class="table-light">
+                <tr>
+                  <th>No</th>
+                  <th>Nama</th>
+                  <th>Isi</th>
+                  <th>Status</th>
+                  <th>Created date</th>
+                  <th>User create</th>
+                  <th>Update</th>
+                  <th>User Update</th>
+                  <th>Aksi</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>6 lembar</td>
+                  <td>6</td>
+                  <td><span class="badge bg-success">Aktif</span></td>
+                  <td>20/06/2024</td>
+                  <td>Admin1</td>
+                  <td>22/06/2024</td>
+                  <td>Admin1</td>
+                  <td>
+                    <a href="#" class="btn btn-sm btn-outline-secondary me-1" onclick="openEditIsiModal(this)"><i
+                        class="bi bi-pencil"></i></a>
+                    <a href="#" class="btn btn-sm btn-outline-danger" onclick="hapusIsi(this)"><i
+                        class="bi bi-trash"></i></a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Table Mobile isi kalender -->
+          <div class="card-body d-md-none">
+            <div class="card mb-3 border">
+              <div class="card-body p-3">
+                <h6 class="card-title mb-2">Judul: <strong>Promo Tahun Baru</strong></h6>
+                <p class="mb-1"><strong>Bulan:</strong> Januari | <strong>Tahun:</strong> 2025</p>
+                <p class="mb-1"><strong>Status:</strong> <span class="badge bg-success">Aktif</span></p>
+                <p class="mb-1 text-muted small">Created: 20/06/2024 by Admin</p>
+                <p class="mb-3 text-muted small">Updated: 22/06/2024</p>
+                <div class="d-flex gap-2">
+                  <td>
+                    <a href="#" class="btn btn-sm btn-outline-secondary me-1" onclick="openEditIsiModal(this)">
+                      <i class="bi bi-pencil"></i>
+                    </a>
+                    <a href="#" class="btn btn-sm btn-outline-danger" onclick="hapusIsi(this)">
+                      <i class="bi bi-trash"></i>
+                    </a>
+                  </td>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Modal Tambah Isi Kalender -->
+        <div class="modal fade" id="modalTambahIsi" tabindex="-1" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Tambah Isi Kalender</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+              </div>
+              <div class="modal-body">
+                <div class="mb-2">
+                  <label class="form-label">Nama</label>
+                  <input type="text" class="form-control" id="inputNamaIsi">
+                </div>
+                <div class="mb-2">
+                  <label class="form-label">Jumlah Isi</label>
+                  <input type="number" class="form-control" id="inputJumlahIsi">
+                </div>
+                <div class="mb-2">
+                  <label class="form-label">Status</label>
+                  <select class="form-select" id="inputStatusIsi">
+                    <option selected>Aktif</option>
+                    <option>Nonaktif</option>
+                  </select>
+                </div>
+                <div class="mb-2">
+                  <label class="form-label">Created date</label>
+                  <input type="date" class="form-control" id="inputCreatedDateIsi" value="">
+                </div>
+                <div class="mb-2">
+                  <label class="form-label">User create</label>
+                  <input type="text" class="form-control" id="inputUserCreateIsi" value="Admin">
+                </div>
+                <div class="mb-2">
+                  <label class="form-label">Update date</label>
+                  <input type="date" class="form-control" id="inputUpdateDateIsi" value="">
+                </div>
+                <div class="mb-2">
+                  <label class="form-label">User update</label>
+                  <input type="text" class="form-control" id="inputUserUpdateIsi" value="Admin">
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                <button type="button" class="btn btn-primary" onclick="tambahIsiKalender()">Simpan</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- modal edit isi -->
+        <div class="modal fade" id="modalEditIsi" tabindex="-1" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Edit Isi Kalender</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+              </div>
+              <div class="modal-body">
+                <div class="mb-2">
+                  <label class="form-label">Nama</label>
+                  <input type="text" class="form-control" id="editNamaIsi">
+                </div>
+                <div class="mb-2">
+                  <label class="form-label">Jumlah Isi</label>
+                  <input type="number" class="form-control" id="editJumlahIsi">
+                </div>
+                <div class="mb-2">
+                  <label class="form-label">Status</label>
+                  <select class="form-select" id="editStatusIsi">
+                    <option>Aktif</option>
+                    <option>Nonaktif</option>
+                  </select>
+                </div>
+                <div class="mb-2">
+                  <label class="form-label">Created date</label>
+                  <input type="date" class="form-control" id="editCreatedDateIsi">
+                </div>
+                <div class="mb-2">
+                  <label class="form-label">User create</label>
+                  <input type="text" class="form-control" id="editUserCreateIsi">
+                </div>
+                <div class="mb-2">
+                  <label class="form-label">Update date</label>
+                  <input type="date" class="form-control" id="editUpdateDateIsi">
+                </div>
+                <div class="mb-2">
+                  <label class="form-label">User update</label>
+                  <input type="text" class="form-control" id="editUserUpdateIsi">
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                <button type="button" class="btn btn-primary" onclick="updateIsiKalender()">Update</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- Informasi Produk -->
+        <div class="card mb-4">
+          <div class="card-body">
+            <div class="row mb-2 align-items-center">
+              <div class="col-md-3 fw-semibold">Nama Produk</div>
+              <div class="col-md-9">
+                Cetak Kalender Dinding 2025
+                <a href="#" class="ms-2 text-primary text-decoration-none">Edit</a>
+              </div>
+            </div>
+
+            <div class="row mb-2 align-items-center">
+              <div class="col-md-3 fw-semibold">Keterangan</div>
+              <div class="col-md-9">Daftar Harga Kalender Dinding 2025</div>
+            </div>
+
+            <div class="row mb-2 align-items-center">
+              <div class="col-md-3 fw-semibold">Short Artikel</div>
+              <div class="col-md-9">
+                <a href="#" class="text-primary text-decoration-none">Edit Artikel</a>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-3 fw-semibold">Deskripsi</div>
+              <div class="col-md-9 text-muted">
+                Id Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras nunc mauris, mattis eget libero ut...
+              </div>
+            </div>
+          </div>
+        </div>
+<!-- table kalender BB sorting -->
+        
+
+<!-- CARD sorting -->
+<div class="card mb-4">
+  <div class="card-header d-flex justify-content-between align-items-center">
+    <strong>Pengaturan Sorting</strong>
+    <a href="#" class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#modalTambahSorting">
+      <i class="bi bi-plus-lg me-1"></i> Tambah Sorting
+    </a>
+  </div>
+
+  <!-- TABEL DESKTOP -->
+  <div class="card-body table-responsive d-none d-md-block">
+    <table class="table table-bordered table-sm text-center align-middle" id="tabelSorting">
+      <thead class="table-light">
+        <tr>
+          <th>No</th>
+          <th>Nama Sorting Tag</th>
+          <th>QTY</th>
+          <th>Ukuran</th>
+          <th>Bahan Kertas</th>
+          <th>Isi</th>
+          <th>Laminasi</th>
+          <th>Link/Route</th>
+          <th>Status</th>
+          <th>User</th>
+          <th>Aksi</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Kalender Murah</td>
+          <td>500</td>
+          <td>A4 (210x297)</td>
+          <td>Art Paper 150gr</td>
+          <td>150</td>
+          <td>Tanpa Laminasi</td>
+          <td>route1/link-1</td>
+          <td><span class="badge bg-success">Default</span></td>
+          <td>admin</td>
+          <td>
+            <a href="#" class="btn btn-sm btn-outline-secondary me-1" onclick="openEditSortingModal(this)">
+              <i class="bi bi-pencil"></i>
+            </a>
+            <a href="#" class="btn btn-sm btn-outline-danger" onclick="hapusBaris(this)">
+              <i class="bi bi-trash"></i>
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Card RESPONSIVE MOBILE -->
+  <div class="card-body d-md-none">
+    <div class="card mb-3 border">
+      <div class="card-body p-3">
+        <h6 class="card-title mb-2">Nama: <strong>Kalender Murah</strong></h6>
+        <p class="mb-1"><strong>Qty:</strong> 500</p>
+        <p class="mb-1"><strong>Ukuran:</strong> A4 (210x297)</p>
+        <p class="mb-1"><strong>Bahan:</strong> Art Paper 150gr</p>
+        <p class="mb-1"><strong>Isi:</strong> 150</p>
+        <p class="mb-1"><strong>Laminasi:</strong> Tanpa Laminasi</p>
+        <p class="mb-1"><strong>Link:</strong> route1/link-1</p>
+        <p class="mb-1"><strong>Status:</strong> <span class="badge bg-success">Default</span></p>
+        <p class="mb-1"><strong>User:</strong> admin</p>
+        <div class="d-flex gap-2 mt-2">
+          <a href="#" class="btn btn-sm btn-outline-secondary me-1" onclick="openEditSortingModal(this)">
+            <i class="bi bi-pencil"></i>
+          </a>
+          <a href="#" class="btn btn-sm btn-outline-danger" onclick="hapusBaris(this)">
+            <i class="bi bi-trash"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- end tabel -->
+        <!-- Modal Tambah Sorting -->
+        <div class="modal fade" id="modalTambahSorting" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Tambah Sorting</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <div class="mb-2">
+          <label class="form-label">Nama Sorting Tag</label>
+          <input type="text" class="form-control" id="inputNamaSorting">
+        </div>
+        <div class="mb-2">
+          <label class="form-label">Qty</label>
+          <input type="number" class="form-control" id="inputQtySorting">
+        </div>
+        <div class="mb-2">
+          <label class="form-label">Ukuran</label>
+          <select class="form-select" id="inputUkuranSorting">
+            <option>A4 (210x297)</option>
+            <option>Medium (500mm X 350mm)</option>
+          </select>
+        </div>
+        <div class="mb-2">
+          <label class="form-label">Bahan</label>
+          <select class="form-select" id="inputBahanSorting">
+            <option>Art Paper 150gr</option>
+            <option>HVS 100gr</option>
+          </select>
+        </div>
+        <div class="mb-2">
+          <label class="form-label">Isi</label>
+          <input type="number" class="form-control" id="inputIsiSorting">
+        </div>
+        <div class="mb-2">
+          <label class="form-label">Laminasi</label>
+          <select class="form-select" id="inputLaminasiSorting">
+            <option>Laminasi</option>
+            <option>Tanpa Laminasi</option>
+          </select>
+        </div>
+        <div class="mb-2">
+          <label class="form-label">Link/Route</label>
+          <input type="text" class="form-control" id="inputLinkSorting">
+        </div>
+        <div class="mb-2">
+          <label class="form-label">Status</label>
+          <select class="form-select" id="inputStatusSorting">
+            <option>Default</option>
+            <option>Non Default</option>
+          </select>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+        <button type="button" class="btn btn-primary" onclick="tambahSorting()">Tambah</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+        <!-- Modal Edit Sorting -->
+                <div class="modal fade" id="modalEditSorting" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Edit Sorting</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <div class="mb-2">
+          <label class="form-label">Nama Sorting Tag</label>
+          <input type="text" class="form-control" id="editNamaSorting">
+        </div>
+        <div class="mb-2">
+          <label class="form-label">Qty</label>
+          <input type="number" class="form-control" id="editQtySorting">
+        </div>
+        <div class="mb-2">
+          <label class="form-label">Ukuran</label>
+          <select class="form-select" id="editUkuranSorting">
+            <option>A4 (210x297)</option>
+            <option>Medium (500mm X 350mm)</option>
+          </select>
+        </div>
+        <div class="mb-2">
+          <label class="form-label">Bahan</label>
+          <select class="form-select" id="editBahanSorting">
+            <option>Art Paper 150gr</option>
+            <option>HVS 100gr</option>
+          </select>
+        </div>
+        <div class="mb-2">
+          <label class="form-label">Isi</label>
+          <input type="number" class="form-control" id="editIsiSorting">
+        </div>
+        <div class="mb-2">
+          <label class="form-label">Laminasi</label>
+          <select class="form-select" id="editLaminasiSorting">
+            <option>Laminasi</option>
+            <option>Tanpa Laminasi</option>
+          </select>
+        </div>
+        <div class="mb-2">
+          <label class="form-label">Link/Route</label>
+          <input type="text" class="form-control" id="editLinkSorting">
+        </div>
+        <div class="mb-2">
+          <label class="form-label">Status</label>
+          <select class="form-select" id="editStatusSorting">
+            <option>Default</option>
+            <option>Non Default</option>
+          </select>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+        <button type="button" class="btn btn-primary" onclick="updateSorting()">Update</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+        <!-- Spesifikasi Kalender -->
+        <div class="card mb-4">
+          <div class="card-header">
+            <strong>Pengaturan Spesifikasi Kalender Dinding BB</strong>
+          </div>
+          <div class="card-body">
+
+            <div class="row mb-3">
+              <div class="col-md-3 fw-semibold">Minimal Qty</div>
+              <div class="col-md-2">
+                <input type="number" class="form-control" value="200">
+              </div>
+            </div>
+
+            <div class="row mb-3">
+              <div class="col-md-3 fw-semibold">Pilihan Mesin</div>
+              <div class="col-md-9">
+                <div class="row g-2">
+                  <div class="col-3 form-check">
+                    <input type="checkbox" class="form-check-input" id="mesin1">
+                    <label class="form-check-label" for="mesin1">GTO 52 4 Warna</label>
+                  </div>
+                  <div class="col-3 form-check">
+                    <input type="checkbox" class="form-check-input" id="mesin2" checked>
+                    <label class="form-check-label" for="mesin2">SM 52 4 Warna</label>
+                  </div>
+                  <div class="col-3 form-check">
+                    <input type="checkbox" class="form-check-input" id="mesin3" checked>
+                    <label class="form-check-label" for="mesin2">SM 72 4 Warna</label>
+                  </div>
+                  <div class="col-3 form-check">
+                    <input type="checkbox" class="form-check-input" id="mesin4">
+                    <label class="form-check-label" for="mesin2">SM 104 4 Warna</label>
+                  </div>
+                  <div class="col-3 form-check">
+                    <input type="checkbox" class="form-check-input" id="mesin5">
+                    <label class="form-check-label" for="mesin2">Oliver 55 BB</label>
+                  </div>
+                  <div class="col-3 form-check">
+                    <input type="checkbox" class="form-check-input" id="mesin6">
+                    <label class="form-check-label" for="mesin2">Oliver 58 BB</label>
+                  </div>
+                  <div class="col-3 form-check">
+                    <input type="checkbox" class="form-check-input" id="mesin7">
+                    <label class="form-check-label" for="mesin2">Oliver 66 BB</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row mb-3">
+              <div class="col-md-3 fw-semibold">Jumlah Isi</div>
+              <div class="col-md-9">
+                <div class="row g-2">
+                  <div class="col-3 form-check">
+                    <input type="checkbox" class="form-check-input" id="isi1">
+                    <label class="form-check-label" for="isi1">1 Lembar</label>
+                  </div>
+                  <div class="col-3 form-check">
+                    <input type="checkbox" class="form-check-input" id="isi2" checked>
+                    <label class="form-check-label" for="isi2">2 Lembar</label>
+                  </div>
+                  <div class="col-3 form-check">
+                    <input type="checkbox" class="form-check-input" id="isi3" checked>
+                    <label class="form-check-label" for="isi3">3 Lembar</label>
+                  </div>
+                  <div class="col-3 form-check">
+                    <input type="checkbox" class="form-check-input" id="isi4" checked>
+                    <label class="form-check-label" for="isi4">4 Lembar</label>
+                  </div>
+                  <div class="col-3 form-check">
+                    <input type="checkbox" class="form-check-input" id="isi5" checked>
+                    <label class="form-check-label" for="isi5">6 Lembar</label>
+                  </div>
+                  <div class="col-3 form-check">
+                    <input type="checkbox" class="form-check-input" id="isi6" checked>
+                    <label class="form-check-label" for="isi6">7 Lembar</label>
+                  </div>
+                  <div class="col-3 form-check">
+                    <input type="checkbox" class="form-check-input" id="isi7" checked>
+                    <label class="form-check-label" for="isi7">12 Lembar</label>
+                  </div>
+                  <div class="col-3 form-check">
+                    <input type="checkbox" class="form-check-input" id="isi7" checked>
+                    <label class="form-check-label" for="isi7">13 Lembar</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row mb-3">
+              <div class="col-md-3 fw-semibold">Ukuran Kalender</div>
+              <div class="col-md-9">
+                <div class="row g-2">
+                  <div class="col-3 form-check">
+                    <input type="checkbox" class="form-check-input" id="ukuranKecil1" checked>
+                    <label class="form-check-label" for="ukuranKecil">Kecil (31x43)</label>
+                  </div>
+                  <div class="col-3 form-check">
+                    <input type="checkbox" class="form-check-input" id="ukurankecil2">
+                    <label class="form-check-label" for="ukurankecil2">kecil(31x48)</label>
+                  </div>
+                  <div class="col-3 form-check">
+                    <input type="checkbox" class="form-check-input" id="ukuranMedium1">
+                    <label class="form-check-label" for="ukuranMedium">Medium 1 (31x48)</label>
+                  </div>
+                  <div class="col-3 form-check">
+                    <input type="checkbox" class="form-check-input" id="ukuranMedium1">
+                    <label class="form-check-label" for="ukuranMedium2">Medium 1 (31x48)</label>
+                  </div>
+                  <div class="col-3 form-check">
+                    <input type="checkbox" class="form-check-input" id="ukuranMedium2">
+                    <label class="form-check-label" for="ukuranMedium2">Medium 2 (35x50)</label>
+                  </div>
+                  <div class="col-3 form-check">
+                    <input type="checkbox" class="form-check-input" id="ukuranMedium2">
+                    <label class="form-check-label" for="ukuranMedium2">Medium 2 (35x50)</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row mb-3">
+              <div class="col-md-3 fw-semibold">Custom Ukuran</div>
+              <div class="col-md-9">
+                <div class="row g-2 mb-2">
+                  <div class="col-auto form-check">
+                    <input type="radio" name="customUkuran" class="form-check-input" id="customYes" checked>
+                    <label class="form-check-label" for="customYes">Iya</label>
+                  </div>
+                  <div class="col-auto form-check">
+                    <input type="radio" name="customUkuran" class="form-check-input" id="customNo">
+                    <label class="form-check-label" for="customNo">Tidak</label>
+                  </div>
+                </div>
+                <div class="row g-2">
+                  <div class="col">
+                    <input type="text" class="form-control" placeholder="Minimal Panjang">
+                  </div>
+                  <div class="col">
+                    <input type="text" class="form-control" placeholder="Minimal Lebar">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row mb-3">
+              <div class="col-md-3 fw-semibold">Gantungan</div>
+              <div class="col-md-9">
+                <div class="row g-2">
+                  <div class="col-auto form-check">
+                    <input type="checkbox" class="form-check-input" id="gantunganSpiral" checked>
+                    <label class="form-check-label" for="gantunganSpiral">Spiral</label>
+                  </div>
+                  <div class="col-auto form-check">
+                    <input type="checkbox" class="form-check-input" id="gantunganJepit">
+                    <label class="form-check-label" for="gantunganJepit">Jepit Keling</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row mb-3">
+              <div class="col-md-3 fw-semibold">Group Kertas</div>
+              <div class="col-md-9">
+                <div class="row g-2">
+                  <div class="col-auto form-check">
+                    <input type="checkbox" class="form-check-input" id="kertasArt" checked>
+                    <label class="form-check-label" for="kertasArt">Art Paper</label>
+                  </div>
+                  <div class="col-auto form-check">
+                    <input type="checkbox" class="form-check-input" id="kertasHVS">
+                    <label class="form-check-label" for="kertasHVS">HVS</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="text-end">
+              <button class="btn btn-primary">Update</button>
+            </div>
+          </div>
+        </div>
+
+
+
+        <!-- Gambar Brosur -->
+        <div class="card mb-4">
+          <div class="card-header d-flex justify-content-between align-items-center">
+            <strong>Pengaturan Gambar Brosur</strong>
+            <button class="btn btn-sm btn-outline-primary" onclick="openTambahGambarModal()">+ Tambah Gambar</button>
+          </div>
+          <div class="card-body">
+            <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 g-3" id="gridGambarBrosur">
+              <div class="col">
+                <div class="brosur-item position-relative border rounded overflow-hidden">
+                  <img src="assets/img/placeholder.png" class="img-brosur" alt="">
+                  <input type="checkbox" class="form-check-input position-absolute top-0 end-0 m-1" checked>
+                </div>
+              </div>
+
+            </div>
+            <div class="mt-3 d-flex gap-2">
+              <button class="btn btn-danger">Hapus</button>
+              <button class="btn btn-secondary">Gambar Utama</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Modal Tambah Gambar -->
+        <div class="modal fade" id="modalTambahGambar" tabindex="-1" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Tambah Gambar Brosur</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+              </div>
+              <div class="modal-body">
+                <label class="form-label">Pilih File Gambar</label>
+                <input type="file" class="form-control" id="inputFileGambar" accept="image/*">
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                <button type="button" class="btn btn-primary" onclick="tambahGambar()">Tambah</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- end tambah gambar -->
+        <!-- artikel -->
+        <div class="card mb-4">
+          <div class="card-header">
+            <strong>Artikel Brosur</strong>
+          </div>
+          <div class="card-body">
+
+            <div class="editor-container editor-container_document-editor" id="editor-container">
+              <div class="editor-container__menu-bar" id="editor-menu-bar"></div>
+              <div class="editor-container__toolbar" id="editor-toolbar"></div>
+              <div class="editor-container__editor-wrapper">
+                <div class="editor-container__editor">
+                  <div id="editor"></div>
+                </div>
+              </div>
+            </div>
+            <button class="btn btn-outline-primary mt-3">Update</button>
+          </div>
+        </div>
+        
+
+      </div>
+
+
+
+
+      <!-- End Main Content -->
+
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.ckeditor.com/ckeditor5/46.0.0/ckeditor5.umd.js" crossorigin></script>
+  <script src="assets/js/kalender.js"></script>
+  <script src="assets/js/addkalender.js"></script>
+  <script src="assets/js/isi-kalender.js"></script>
+  <script src="assets/js/component.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+	<meta name="description" content="POS - Bootstrap Admin Template">
+	<meta name="keywords"
+		content="admin, estimates, bootstrap, business, corporate, creative, invoice, html5, responsive, Projects">
+	<meta name="author" content="Dreamguys - Bootstrap Admin Template">
+	<meta name="robots" content="noindex, nofollow">
+	<title>Dreams Pos Admin Template</title>
+
+	<!-- Summernote CSS -->
+	<link rel="stylesheet" href="assets/plugins/summernote/summernote-bs4.min.css">
+
+	<!-- Favicon -->
+	<link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+
+	<!-- Datetimepicker CSS -->
+	<link rel="stylesheet" href="assets/css/bootstrap-datetimepicker.min.css">
+
+	<!-- animation CSS -->
+	<link rel="stylesheet" href="assets/css/animate.css">
+	<!-- Feathericon CSS -->
+	<link rel="stylesheet" href="assets/css/feather.css">
+
+	<!-- Select2 CSS -->
+	<link rel="stylesheet" href="assets/plugins/select2/css/select2.min.css">
+
+	<!-- Fontawesome CSS -->
+	<link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css">
+	<link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css">
+
+	<!-- Main CSS -->
+	<link rel="stylesheet" href="assets/css/style.css">
+
+</head>
+
+<body>
+	<div id="global-loader">
+		<div class="whirly-loader"> </div>
+	</div>
+	<!-- Main Wrapper -->
+	<div class="main-wrapper">
+
+		<!-- header -->
+		<div id="header-placeholder"></div>
+		<!-- sidebar -->
+		<div id="sidebar-placeholder"></div>
+
+		<div class="page-wrapper">
+			<div class="content">
+				<!-- tables -->
+				<div class="row">
+					<div class="col-12">
+						<div class="container-fluid bg-white border-bottom px-0">
+							<ul class="nav nav-tabs custom-nav-tabs mt-3 mb-0" id="mainTab" role="tablist">
+								<li class="nav-item" role="presentation">
+									<button class="nav-link active" id="produk-tab" data-bs-toggle="tab"
+										data-bs-target="#produkTabContent" type="button" role="tab"
+										aria-controls="produkTabContent" aria-selected="true">Produk Detail</button>
+								</li>
+								<li class="nav-item" role="presentation">
+									<button class="nav-link " id="brosur-tab" data-bs-toggle="tab"
+										data-bs-target="#brosurTabContent" type="button" role="tab"
+										aria-controls="brosurTabContent" aria-selected="false">Ukuran Brosur</button>
+								</li>
+								<li class="nav-item" role="presentation">
+									<button class="nav-link" id="sorting-tab" data-bs-toggle="tab"
+										data-bs-target="#sortingTabContent" type="button" role="tab"
+										aria-controls="sortingTabContent" aria-selected="false">Sorting</button>
+								</li>
+								<li class="nav-item" role="presentation">
+									<button class="nav-link" id="spesifikasi-tab" data-bs-toggle="tab"
+										data-bs-target="#spesifikasiTabContent" type="button" role="tab"
+										aria-controls="spesifikasiTabContent" aria-selected="false">Spesifikasi
+										Brosur</button>
+								</li>
+								<li class="nav-item" role="presentation">
+									<button class="nav-link" id="gambar-tab" data-bs-toggle="tab"
+										data-bs-target="#gambarTabContent" type="button" role="tab"
+										aria-controls="gambarTabContent" aria-selected="false">Pengaturan
+										Gambar</button>
+								</li>
+								<li class="nav-item" role="presentation">
+									<button class="nav-link" id="artikel-tab" data-bs-toggle="tab"
+										data-bs-target="#artikelTabContent" type="button" role="tab"
+										aria-controls="artikelTabContent" aria-selected="false">Artikel</button>
+								</li>
+							</ul>
+							<div class="tab-content py-4 px-2" id="mainTabContent">
+								<div class="tab-pane fade show active" id="produkTabContent" role="tabpanel"
+									aria-labelledby="produk-tab">
+									<div class="card">
+										<div class="card-header align-items-center d-flex">
+											<h4 class="card-title mb-0 flex-grow-1">Produk Detail</h4>
+										</div>
+										<div class="card-body">
+											<div class="d-flex align-items-center text-muted mb-4">
+												<div class="flex-grow-1">
+													<div class="d-flex align-items-center mb-1">
+														<h5 class="fs-14 mb-0">Center Aligned media</h5>
+														<a href="javascript:void(0);"
+															class="ms-2 text-warning btn-edit-paragraf" title="Edit"
+															data-target="deskProduk"
+															style="padding:2px 6px;font-size:13px;">
+															<i data-feather="edit"></i>
+														</a>
+													</div>
+													<div class="editable-paragraf" data-id="deskProduk">
+														<p class="mb-1">Cras sit amet nibh libero, in gravida nulla.
+															Nulla vel metus scelerisque ante sollicitudin. Cras purus
+															odio, vestibulum in vulputate at, tempus viverra turpis.
+															Fusce condimentum nunc ac nisi vulputate fringilla. Donec
+															lacinia congue felis in faucibus.</p>
+														<p class="mb-0">Donec sed odio dui. Nullam quis risus eget urna
+															mollis ornare vel eu leo. Cum sociis natoque penatibus et
+															magnis dis parturient montes, nascetur ridiculus mus.</p>
+													</div>
+												</div>
+											</div>
+											<div class="d-flex align-items-end text-muted">
+												<div class="flex-grow-1">
+													<div class="d-flex align-items-center mb-1">
+														<h5 class="fs-14 mb-0">Bottom Aligned media</h5>
+														<a href="javascript:void(0);"
+															class="ms-2 text-warning btn-edit-paragraf" title="Edit"
+															data-target="spekKertas"
+															style="padding:2px 6px;font-size:13px;">
+															<i data-feather="edit"></i>
+														</a>
+													</div>
+													<div class="editable-paragraf" data-id="spekKertas">
+														<p class="mb-1">Cras sit amet nibh libero, in gravida nulla.
+															Nulla vel metus scelerisque ante sollicitudin.Cras purus
+															odio, vestibulum in vulputate at, tempus viverra turpis.
+															Fusce condimentum nunc ac nisi vulputate fringilla. Donec
+															lacinia congue felis in faucibus.</p>
+														<p class="mb-0">Donec sed odio dui. Nullam quis risus eget urna
+															mollis ornare vel eu leo. Cum sociis natoque penatibus et
+															magnis dis parturient montes, nascetur ridiculus mus.</p>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="tab-pane fade show " id="brosurTabContent" role="tabpanel"
+									aria-labelledby="brosur-tab">
+									<div class="card">
+										<div class="card-header justify-content-between d-flex align-items-center">
+											<div class="card-title">
+												Ukuran Brosur
+											</div>
+											<button class="btn btn-warning btn-sm" id="btnTambahRow">
+												<i class="fa fa-plus"></i> Tambah
+											</button>
+										</div>
+										<div class="card-body">
+											<div class="table-responsive">
+												<table class="table text-nowrap table-sm" id="tableUkuran">
+													<thead>
+														<tr>
+															<th>No</th>
+															<th>Ukuran Kertas</th>
+															<th>Panjang</th>
+															<th>Lebar</th>
+															<th>status</th>
+															<th>Created date</th>
+															<th>User Create</th>
+															<th>Update</th>
+															<th>User Update</th>
+															<th>Aksi</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>1</td>
+															<td>A3+ (32.5x48)</td>
+															<td>32.5</td>
+															<td>48</td>
+															<td><span class="badge bg-soft-success">Active</span></td>
+															<td>25/05/2024, 23:15:13</td>
+															<td>Admin1</td>
+															<td>25/05/2024, 23:15:13</td>
+															<td>Admin1</td>
+															<td>
+																<div class="hstack gap-2 fs-15">
+																	<a href="javascript:void(0);"
+																		class="btn btn-icon btn-sm btn-light btn-delete"><i
+																			class="feather-trash"></i></a>
+																	<a href="javascript:void(0);"
+																		class="btn btn-icon btn-sm btn-light btn-edit"><i
+																			class="feather-edit"></i></a>
+																</div>
+															</td>
+														</tr>
+														<tr>
+															<td>2</td>
+															<td>A3+ (32.5x48)</td>
+															<td>32.5</td>
+															<td>48</td>
+															<td><span class="badge bg-soft-success">Active</span></td>
+															<td>25/05/2024, 23:15:13</td>
+															<td>Admin1</td>
+															<td>25/05/2024, 23:15:13</td>
+															<td>Admin1</td>
+															<td>
+																<div class="hstack gap-2 fs-15">
+																	<a href="javascript:void(0);"
+																		class="btn btn-icon btn-sm btn-light btn-delete"><i
+																			class="feather-trash"></i></a>
+																	<a href="javascript:void(0);"
+																		class="btn btn-icon btn-sm btn-light btn-edit"><i
+																			class="feather-edit"></i></a>
+																</div>
+															</td>
+														</tr>
+														<tr>
+															<td>3</td>
+															<td>A3+ (32.5x48)</td>
+															<td>32.5</td>
+															<td>48</td>
+															<td><span class="badge bg-soft-success">Active</span></td>
+															<td>25/05/2024, 23:15:13</td>
+															<td>Admin1</td>
+															<td>25/05/2024, 23:15:13</td>
+															<td>Admin1</td>
+															<td>
+																<div class="hstack gap-2 fs-15">
+																	<a href="javascript:void(0);"
+																		class="btn btn-icon btn-sm btn-light btn-delete"><i
+																			class="feather-trash"></i></a>
+																	<a href="javascript:void(0);"
+																		class="btn btn-icon btn-sm btn-light btn-edit"><i
+																			class="feather-edit"></i></a>
+																</div>
+															</td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="tab-pane fade" id="sortingTabContent" role="tabpanel"
+									aria-labelledby="sorting-tab">
+									<div class="card">
+										<div class="card-header justify-content-between d-flex align-items-center">
+											<div class="card-title">
+												Sorting Tag Brosur
+											</div>
+											<button class="btn btn-warning btn-sm" id="btnTambahSorting">
+												<i class="fa fa-plus"></i> Tambah
+											</button>
+										</div>
+										<div class="card-body">
+											<div class="table-responsive">
+												<table class="table  table-sm align-middle" id="tableSorting">
+													<thead>
+														<tr>
+															<th>No</th>
+															<th>Nama Sorting Tag</th>
+															<th>Qty</th>
+															<th>Ukuran</th>
+															<th>Bahan Kertas</th>
+															<th>Sisi Cetak</th>
+															<th>Laminasi</th>
+															<th>Lipat</th>
+															<th>Link/Route</th>
+															<th>Status</th>
+															<th>Aksi</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>1</td>
+															<td>Brosur Murah</td>
+															<td>10</td>
+															<td>A4 (210 x 297)</td>
+															<td>Art Paper 150gr</td>
+															<td>1 Sisi</td>
+															<td>Doff</td>
+															<td>Tanpa Lipat</td>
+															<td>kahalsjajk</td>
+															<td>
+																<div class="dropdown">
+																	<button
+																		class="btn btn-sm btn-light border dropdown-toggle"
+																		type="button" data-bs-toggle="dropdown"
+																		aria-expanded="false">
+																		Default
+																	</button>
+																	<ul class="dropdown-menu">
+																		<li><a class="dropdown-item"
+																				href="#">Default</a></li>
+																		<li><a class="dropdown-item"
+																				href="#">Publish</a></li>
+																	</ul>
+																</div>
+															</td>
+															<td>
+																<div class="hstack gap-2 fs-15">
+																	<a href="javascript:void(0);"
+																		class="btn btn-icon btn-sm btn-light text-info btn-edit-sorting"><i
+																			class="feather-trash"></i></a>
+																	<a href="javascript:void(0);"
+																		class="btn btn-icon btn-sm btn-light text-danger btn-delete-sorting"><i
+																			class="feather-edit"></i></a>
+																</div>
+															</td>
+														</tr>
+														<tr>
+															<td>2</td>
+															<td>Brosur Cetak Cepet</td>
+															<td>10</td>
+															<td>A4 (210 x 297)</td>
+															<td>Art Paper 150gr</td>
+															<td>1 Sisi</td>
+															<td>Doff</td>
+															<td>Tanpa Lipat</td>
+															<td>wuwtiquoyw</td>
+															<td>
+																<div class="dropdown">
+																	<button
+																		class="btn btn-sm btn-light border dropdown-toggle"
+																		type="button" data-bs-toggle="dropdown"
+																		aria-expanded="false">
+																		Publish
+																	</button>
+																	<ul class="dropdown-menu">
+																		<li><a class="dropdown-item"
+																				href="#">Default</a></li>
+																		<li><a class="dropdown-item"
+																				href="#">Publish</a></li>
+																	</ul>
+																</div>
+															</td>
+															<td>
+																<div class="hstack gap-2 fs-15">
+																	<a href="javascript:void(0);"
+																		class="btn btn-icon btn-sm btn-light text-info btn-edit-sorting"><i
+																			class="feather-trash"></i></a>
+																	<a href="javascript:void(0);"
+																		class="btn btn-icon btn-sm btn-light text-danger btn-delete-sorting"><i
+																			class="feather-edit"></i></a>
+																</div>
+															</td>
+														</tr>
+														<tr>
+															<td>3</td>
+															<td>Brosur Murah Papua</td>
+															<td>10</td>
+															<td>A4 (210 x 297)</td>
+															<td>Art Paper 150gr</td>
+															<td>1 Sisi</td>
+															<td>Doff</td>
+															<td>Tanpa Lipat</td>
+															<td>gajhsjauyuas</td>
+															<td>
+																<div class="dropdown">
+																	<button
+																		class="btn btn-sm btn-light border dropdown-toggle"
+																		type="button" data-bs-toggle="dropdown"
+																		aria-expanded="false">
+																		Publish
+																	</button>
+																	<ul class="dropdown-menu">
+																		<li><a class="dropdown-item"
+																				href="#">Default</a></li>
+																		<li><a class="dropdown-item"
+																				href="#">Publish</a></li>
+																	</ul>
+																</div>
+															</td>
+															<td>
+																<div class="hstack gap-2 fs-15">
+																	<a href="javascript:void(0);"
+																		class="btn btn-icon btn-sm btn-light text-info btn-edit-sorting"><i
+																			class="feather-trash"></i></a>
+																	<a href="javascript:void(0);"
+																		class="btn btn-icon btn-sm btn-light text-danger btn-delete-sorting"><i
+																			class="feather-edit"></i></a>
+																</div>
+															</td>
+														</tr>
+														<tr>
+															<td>4</td>
+															<td>Brosur Mewah</td>
+															<td>10</td>
+															<td>A4 (210 x 297)</td>
+															<td>Art Paper 150gr</td>
+															<td>1 Sisi</td>
+															<td>Doff</td>
+															<td>Tanpa Lipat</td>
+															<td>jghaskjdghay</td>
+															<td>
+																<div class="dropdown">
+																	<button
+																		class="btn btn-sm btn-light border dropdown-toggle"
+																		type="button" data-bs-toggle="dropdown"
+																		aria-expanded="false">
+																		Publish
+																	</button>
+																	<ul class="dropdown-menu">
+																		<li><a class="dropdown-item"
+																				href="#">Default</a></li>
+																		<li><a class="dropdown-item"
+																				href="#">Publish</a></li>
+																	</ul>
+																</div>
+															</td>
+															<td>
+																<div class="hstack gap-2 fs-15">
+																	<a href="javascript:void(0);"
+																		class="btn btn-icon btn-sm btn-light text-info btn-edit-sorting"><i
+																			class="feather-trash"></i></a>
+																	<a href="javascript:void(0);"
+																		class="btn btn-icon btn-sm btn-light text-danger btn-delete-sorting"><i
+																			class="feather-edit"></i></a>
+																</div>
+															</td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+										</div>
+									</div>
+
+								</div>
+								<div class="tab-pane fade" id="spesifikasiTabContent" role="tabpanel"
+									aria-labelledby="spesifikasi-tab">
+									<h4 class="mb-2 ms-2">Pengaturan Spesifikasi Brosur</h4>
+									<form id="formSpesifikasi" class="px-2">
+										<div class="row mb-3 align-items-center">
+											<div class="col-md-2 col-12 mb-2 mb-md-0 fw-semibold">Minimal Qty</div>
+											<div class="col-md-2 col-6">
+												<input type="number" class="form-control" value="1" min="1"
+													style="max-width:100px;">
+											</div>
+										</div>
+										<div class="row mb-3 align-items-center">
+											<div class="col-md-2 col-12 mb-2 mb-md-0 fw-semibold">Ukuran Brosur</div>
+											<div class="col-md-10 col-12 d-flex flex-wrap gap-2">
+												<input type="checkbox" class="btn-check" id="ukA3" checked>
+												<label class="btn btn-outline-primary ukuran-btn" for="ukA3">A3</label>
+												<input type="checkbox" class="btn-check" id="ukA4" checked>
+												<label class="btn btn-outline-primary ukuran-btn" for="ukA4">A4</label>
+												<input type="checkbox" class="btn-check" id="ukA5" checked>
+												<label class="btn btn-outline-primary ukuran-btn" for="ukA5">A5</label>
+												<input type="checkbox" class="btn-check" id="ukA6">
+												<label class="btn btn-outline-primary ukuran-btn" for="ukA6">A6</label>
+												<input type="checkbox" class="btn-check" id="ukFolio">
+												<label class="btn btn-outline-primary ukuran-btn"
+													for="ukFolio">Folio</label>
+												<input type="checkbox" class="btn-check" id="ukDFolio">
+												<label class="btn btn-outline-primary ukuran-btn" for="ukDFolio">Double
+													Folio</label>
+											</div>
+										</div>
+										<div class="row mb-3 align-items-center">
+											<div class="col-md-2 col-12 mb-2 mb-md-0 fw-semibold">Custom Ukuran</div>
+											<div class="col-md-10 col-12 d-flex gap-3">
+												<input type="radio" class="btn-check" name="customUkuran" id="customIya"
+													checked>
+												<label class="btn btn-outline-primary rounded-pill px-4"
+													for="customIya">Iya</label>
+												<input type="radio" class="btn-check" name="customUkuran"
+													id="customTidak">
+												<label class="btn btn-outline-primary rounded-pill px-4"
+													for="customTidak">Tidak</label>
+											</div>
+										</div>
+										<div class="row mb-3 align-items-center">
+											<div class="col-md-2 col-12 mb-2 mb-md-0 fw-semibold"></div>
+											<div class="col-md-10 col-12 d-flex flex-wrap gap-2 align-items-center">
+												<span>Satuan</span>
+												<select class="form-select d-inline-block"
+													style="width:auto;min-width:120px;">
+													<option>Milimeter</option>
+													<option>Centimeter</option>
+												</select>
+												<span>Minimal Panjang</span>
+												<input type="number" class="form-control d-inline-block" value="80"
+													style="width:90px;">
+												<span>Minimal Lebar</span>
+												<input type="number" class="form-control d-inline-block" value="80"
+													style="width:90px;">
+											</div>
+										</div>
+										<div class="row mb-3 align-items-center">
+											<div class="col-md-2 col-12 mb-2 mb-md-0 fw-semibold">Group Kertas</div>
+											<div class="col-md-10 col-12 d-flex flex-wrap gap-2">
+												<input type="checkbox" class="btn-check" id="kertasArtPaper" checked>
+												<label class="btn btn-outline-primary" for="kertasArtPaper">Art
+													Paper</label>
+												<input type="checkbox" class="btn-check" id="kertasArtCarton">
+												<label class="btn btn-outline-primary" for="kertasArtCarton">Art
+													Carton</label>
+												<input type="checkbox" class="btn-check" id="kertasHVS" checked>
+												<label class="btn btn-outline-primary" for="kertasHVS">HVS</label>
+												<input type="checkbox" class="btn-check" id="kertasDuplex">
+												<label class="btn btn-outline-primary" for="kertasDuplex">Duplex</label>
+												<input type="checkbox" class="btn-check" id="kertasBookpaper">
+												<label class="btn btn-outline-primary"
+													for="kertasBookpaper">Bookpaper</label>
+											</div>
+										</div>
+										<div class="row mb-3 align-items-center">
+											<div class="col-md-2 col-12 mb-2 mb-md-0 fw-semibold">Mesin</div>
+											<div class="col-md-10 col-12 d-flex flex-wrap gap-2">
+												<input type="checkbox" class="btn-check" id="mesinGTO">
+												<label class="btn btn-outline-primary" for="mesinGTO">GTO 52 4
+													Warna</label>
+												<input type="checkbox" class="btn-check" id="mesinSM52" checked>
+												<label class="btn btn-outline-primary" for="mesinSM52">SM 52 4
+													Warna</label>
+												<input type="checkbox" class="btn-check" id="mesinSM72" checked>
+												<label class="btn btn-outline-primary" for="mesinSM72">SM 72 4
+													Warna</label>
+												<input type="checkbox" class="btn-check" id="mesinSM104">
+												<label class="btn btn-outline-primary" for="mesinSM104">SM 104 4
+													Warna</label>
+											</div>
+										</div>
+										<div class="row mb-3 align-items-center">
+											<div class="col-md-2 col-12 mb-2 mb-md-0 fw-semibold">Sisi Cetak</div>
+											<div class="col-md-10 col-12 d-flex flex-wrap gap-2">
+												<input type="checkbox" class="btn-check" id="sisi1" checked>
+												<label class="btn btn-outline-primary" for="sisi1">1 Sisi Cetak</label>
+												<input type="checkbox" class="btn-check" id="sisi2" checked>
+												<label class="btn btn-outline-primary" for="sisi2">2 Sisi Cetak</label>
+											</div>
+										</div>
+										<div class="row mb-3 align-items-center">
+											<div class="col-md-2 col-12 mb-2 mb-md-0 fw-semibold">Laminasi</div>
+											<div class="col-md-10 col-12 d-flex flex-wrap gap-2">
+												<input type="checkbox" class="btn-check" id="lamDoff" checked>
+												<label class="btn btn-outline-primary" for="lamDoff">Doff</label>
+												<input type="checkbox" class="btn-check" id="lamGlossy" checked>
+												<label class="btn btn-outline-primary" for="lamGlossy">Glossy</label>
+												<input type="checkbox" class="btn-check" id="lamUV" checked>
+												<label class="btn btn-outline-primary" for="lamUV">UV Varnish</label>
+												<input type="checkbox" class="btn-check" id="lamSpotUV" checked>
+												<label class="btn btn-outline-primary" for="lamSpotUV">Spot UV</label>
+											</div>
+										</div>
+										<div class="row mb-4 align-items-center">
+											<div class="col-md-2 col-12 mb-2 mb-md-0 fw-semibold">Lipat</div>
+											<div class="col-md-10 col-12 d-flex flex-wrap gap-2">
+												<input type="checkbox" class="btn-check" id="lipat1" checked>
+												<label class="btn btn-outline-primary" for="lipat1">1 Lipatan</label>
+												<input type="checkbox" class="btn-check" id="lipat2" checked>
+												<label class="btn btn-outline-primary" for="lipat2">2 Lipatan</label>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-md-2"></div>
+											<div class="col-md-10">
+												<button type="submit" class="btn btn-warning px-4">Update</button>
+											</div>
+										</div>
+									</form>
+
+								</div>
+								<div class="tab-pane fade" id="gambarTabContent" role="tabpanel"
+									aria-labelledby="gambar-tab">
+									<div class="card mb-4">
+										<div class="card-header d-flex justify-content-between align-items-center">
+											<strong>Pengaturan Gambar Brosur</strong>
+											<button class="btn btn-warning btn-sm" id="btnTambahGambar">
+												<i class="fa fa-plus"></i> Tambah
+											</button>
+										</div>
+										<div class="card-body">
+											<div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 g-3"
+												id="gridGambarBrosur">
+												<div class="col">
+													<div
+														class="brosur-item position-relative border rounded overflow-hidden">
+														<img src="assets/img/placeholder.png" class="img-brosur" alt="">
+														<input type="checkbox"
+															class="form-check-input position-absolute top-0 end-0 m-1"
+															checked>
+													</div>
+												</div>
+
+											</div>
+											<div class="mt-3 d-flex gap-2">
+												<button class="btn btn-warning btn-sm"
+													id="btnHapusGambar">Hapus</button>
+												<button class="btn btn-warning btn-sm" id="btnGambarUtama">Gambar
+													Utama</button>
+											</div>
+										</div>
+									</div>
+
+								</div>
+								<div class="modal fade" id="modalTambahGambar" tabindex="-1" aria-hidden="true">
+									<div class="modal-dialog">
+										<div class="modal-content">
+											<div class="modal-header">
+												<h5 class="modal-title">Tambah Gambar Brosur</h5>
+												<button type="button" class="btn-close"
+													data-bs-dismiss="modal"></button>
+											</div>
+											<div class="modal-body">
+												<label class="form-label">Pilih File Gambar</label>
+												<input type="file" class="form-control" id="inputFileGambar"
+													accept="image/*">
+											</div>
+											<div class="modal-footer">
+												<button type="button" class="btn btn-secondary"
+													data-bs-dismiss="modal">Batal</button>
+												<button type="button" class="btn btn-warning btn-sm"
+													onclick="tambahGambar()">Tambah</button>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="tab-pane fade" id="artikelTabContent" role="tabpanel"
+									aria-labelledby="artikel-tab">
+									<div class="card">
+										<div class="card-header">
+											<h5 class="card-title">Editor</h5>
+										</div>
+										<div class="card-body">
+											<div id="summernote"></div>
+										</div>
+									</div>
+								</div>
+
+							</div>
+						</div>
+
+
+
+
+
+					</div>
+				</div>
+
+
+			</div>
+		</div>
+		<!-- Modal ukuran -->
+		<!-- Modal Tambah/Edit Ukuran Kertas -->
+		<div class="modal fade" id="modaladdukuran" tabindex="-1" aria-labelledby="modalFormLabel" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered">
+				<form class="modal-content" id="formRow">
+					<div class="modal-header">
+						<h5 class="modal-title" id="modalFormLabel">Tambah Data</h5>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					</div>
+					<div class="modal-body row g-2">
+						<input type="hidden" id="editRowIndex">
+						<div class="col-6">
+							<label class="form-label">Ukuran Kertas</label>
+							<input type="text" class="form-control" id="inputUkuran" required>
+						</div>
+						<div class="col-3">
+							<label class="form-label">Panjang</label>
+							<input type="number" step="any" class="form-control" id="inputPanjang" required>
+						</div>
+						<div class="col-3">
+							<label class="form-label">Lebar</label>
+							<input type="number" step="any" class="form-control" id="inputLebar" required>
+						</div>
+						<div class="col-6">
+							<label class="form-label">Status</label>
+							<select class="form-select" id="inputStatus">
+								<option value="Active">Active</option>
+								<option value="Inactive">Inactive</option>
+							</select>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="submit" class="btn btn-warning">Simpan</button>
+					</div>
+				</form>
+			</div>
+		</div>
+		<!-- Modal Edit Ukuran Kertas -->
+		<div class="modal fade" id="modalEditUkuran" tabindex="-1" aria-labelledby="modalEditLabel" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered">
+				<form class="modal-content" id="formEditRow">
+					<div class="modal-header">
+						<h5 class="modal-title" id="modalEditLabel">Edit Data</h5>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					</div>
+					<div class="modal-body row g-2">
+						<input type="hidden" id="editRowIndex2">
+						<div class="col-6">
+							<label class="form-label">Ukuran Kertas</label>
+							<input type="text" class="form-control" id="editUkuran" required>
+						</div>
+						<div class="col-3">
+							<label class="form-label">Panjang</label>
+							<input type="number" step="any" class="form-control" id="editPanjang" required>
+						</div>
+						<div class="col-3">
+							<label class="form-label">Lebar</label>
+							<input type="number" step="any" class="form-control" id="editLebar" required>
+						</div>
+						<div class="col-6">
+							<label class="form-label">Status</label>
+							<select class="form-select" id="editStatus">
+								<option value="Active">Active</option>
+								<option value="Inactive">Inactive</option>
+							</select>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="submit" class="btn btn-warning">Simpan</button>
+					</div>
+				</form>
+			</div>
+		</div>
+
+		<!-- end modal ukuran -->
+
+		<!-- modal sorting -->
+		<!-- Modal Tambah/Edit Sorting Tag -->
+		<div class="modal fade" id="modalSorting" tabindex="-1" aria-labelledby="modalSortingLabel" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered">
+				<form class="modal-content" id="formSorting">
+					<div class="modal-header">
+						<h5 class="modal-title" id="modalSortingLabel">Tambah Sorting Tag</h5>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					</div>
+					<div class="modal-body row g-2">
+						<input type="hidden" id="editSortingIndex">
+						<div class="col-12">
+							<label class="form-label">Nama Sorting Tag</label>
+							<input type="text" class="form-control" id="inputSortingNama" required>
+						</div>
+						<div class="col-4">
+							<label class="form-label">Qty</label>
+							<input type="number" class="form-control" id="inputSortingQty" required>
+						</div>
+						<div class="col-8">
+							<label class="form-label">Ukuran</label>
+							<input type="text" class="form-control" id="inputSortingUkuran" required>
+						</div>
+						<div class="col-12">
+							<label class="form-label">Bahan Kertas</label>
+							<input type="text" class="form-control" id="inputSortingKertas" required>
+						</div>
+						<div class="col-6">
+							<label class="form-label">Sisi Cetak</label>
+							<input type="text" class="form-control" id="inputSortingSisi" required>
+						</div>
+						<div class="col-6">
+							<label class="form-label">Laminasi</label>
+							<input type="text" class="form-control" id="inputSortingLaminasi" required>
+						</div>
+						<div class="col-6">
+							<label class="form-label">Lipat</label>
+							<input type="text" class="form-control" id="inputSortingLipat" required>
+						</div>
+						<div class="col-6">
+							<label class="form-label">Link/Route</label>
+							<input type="text" class="form-control" id="inputSortingRoute" required>
+						</div>
+						<div class="col-12">
+							<label class="form-label">Status</label>
+							<select class="form-select" id="inputSortingStatus">
+								<option value="Default">Default</option>
+								<option value="Publish">Publish</option>
+							</select>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="submit" class="btn btn-warning">Simpan</button>
+					</div>
+				</form>
+			</div>
+		</div>
+		<!-- end modal sorting -->
+	</div>
+	<!-- /Main Wrapper -->
+	
+	<!-- jQuery -->
+	<script src="assets/js/jquery-3.7.1.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.loadtemplate/1.5.10/jquery.loadTemplate.min.js" integrity="sha512-T1zx+UG2gXu9mr29wvzaKkNUmAOAie40T32ZPIvcRPJgO5br53+Ocqj8gzguUuix7FK+Z3ncRCJMaZcumnPZzg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+	<!-- Feather Icon JS -->
+	<script src="assets/js/feather.min.js"></script>
+
+	<!-- custom JS -->
+	<script src="assets/js/tableukuran.js"></script>
+
+
+	<!-- Slimscroll JS -->
+	<script src="assets/js/jquery.slimscroll.min.js"></script>
+
+	<!-- Bootstrap Core JS -->
+	<script src="assets/js/bootstrap.bundle.min.js"></script>
+
+	<!-- Chart JS -->
+	<script src="assets/plugins/apexchart/apexcharts.min.js"></script>
+	<script src="assets/plugins/apexchart/chart-data.js"></script>
+
+	<!-- Sweetalert 2 -->
+	<script src="assets/plugins/sweetalert/sweetalert2.all.min.js"></script>
+	<script src="assets/plugins/sweetalert/sweetalerts.min.js"></script>
+
+	<!-- Summernote JS -->
+	<script src="assets/plugins/summernote/summernote-bs4.min.js"></script>
+
+	<!-- Custom JS -->
+	<script src="assets/js/theme-script.js"></script>
+	<script src="assets/js/script.js"></script>
+
+
+</body>
+
+</html>

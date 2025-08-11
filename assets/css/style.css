@@ -32687,3 +32687,8 @@ label span {
   object-fit: cover;
 }
 
+ .datetimepicker.form-control {
+        height: 48px; /* Tinggi input */
+        padding: 10px 12px; /* Biar teksnya nggak terlalu mepet */
+        font-size: 14px; /* Optional: biar seragam sama input lain */
+    }

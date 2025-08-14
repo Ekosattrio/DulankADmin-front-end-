@@ -32692,3 +32692,7 @@ label span {
         padding: 10px 12px; /* Biar teksnya nggak terlalu mepet */
         font-size: 14px; /* Optional: biar seragam sama input lain */
     }
+
+    input[type=text]{
+      height: 40px !important;
+    }

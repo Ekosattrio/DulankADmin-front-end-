@@ -12,7 +12,8 @@
 	<title>Online Orders</title>
 
 	<link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
-		
+		<!-- Summernote CSS -->
+	    <link rel="stylesheet" href="assets/plugins/summernote/summernote-bs4.min.css">
 		<!-- Bootstrap CSS -->
         <link rel="stylesheet" href="assets/css/bootstrap.min.css">
 		
@@ -195,17 +196,26 @@
                                                     </button>
                                                 </li>
                                                 <li>
-                                                    <button class="dropdown-item d-flex align-items-center small py-1" type="button">
-                                                        <i data-feather="edit" class="me-2" width="14" height="14"></i> Edit Sale
+                                                   <button class="dropdown-item d-flex align-items-center small py-1" 
+                                                            type="button" 
+                                                            data-bs-toggle="modal" 
+                                                            data-bs-target="#edit-units">
+                                                        <i data-feather="edit" class="me-2" width="14" height="14"></i> Edit Units
                                                     </button>
                                                 </li>
                                                 <li>
-                                                    <button class="dropdown-item d-flex align-items-center small py-1" type="button">
+                                                    <button class="dropdown-item d-flex align-items-center small py-1"
+                                                    data-bs-toggle="modal" 
+                                                    data-bs-target="#showpayment"
+                                                    type="button">
                                                         <i data-feather="dollar-sign" class="me-2" width="14" height="14"></i> Show Payments
                                                     </button>
                                                 </li>
                                                 <li>
-                                                    <button class="dropdown-item d-flex align-items-center small py-1" type="button">
+                                                    <button class="dropdown-item d-flex align-items-center small py-1" 
+                                                    data-bs-toggle="modal" 
+                                                    data-bs-target="#createpayment"
+                                                    type="button">
                                                         <i data-feather="plus-circle" class="me-2" width="14" height="14"></i> Create Payment
                                                     </button>
                                                 </li>
@@ -215,10 +225,11 @@
                                                     </button>
                                                 </li>
                                                 <li>
-                                                    <button class="dropdown-item d-flex align-items-center small py-1 text-danger" type="button">
+                                                    <button class="dropdown-item d-flex align-items-center small py-1 text-danger btn-delete-sale" type="button">
                                                         <i data-feather="trash-2" class="me-2" width="14" height="14"></i> Delete Sale
                                                     </button>
                                                 </li>
+
                                             </ul>
                                         </td>
 
@@ -433,49 +444,463 @@
 
 		<!-- Edit Unit -->
 		<div class="modal fade" id="edit-units">
-			<div class="modal-dialog modal-dialog-centered custom-modal-two">
+			<div class="modal-dialog edit-sales-modal">
 				<div class="modal-content">
-					<div class="page-wrapper-new p-0">
-						<div class="content">
-							<div class="modal-header border-0 custom-modal-header">
-								<div class="page-title">
-									<h4>Edit Attributes</h4>
+					<div class="page-wrapper p-0 m-0">
+						<div class="content p-0">
+							<div class="page-header p-4 mb-0">
+								<div class="add-item new-sale-items d-flex">
+									<div class="page-title">
+										<h4>Edit Sales</h4>
+									</div>
+									<button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+										<span aria-hidden="true">&times;</span>
+									</button>
 								</div>
-								<button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-									<span aria-hidden="true">&times;</span>
-								</button>
 							</div>
-							<div class="modal-body custom-modal-body">
-								<form action="varriant-attributes.html">
-									<div class="mb-3">
-										<label class="form-label">Name</label>
-										<input type="text" class="form-control" value="Piece">
-									</div>
-									<div class="input-blocks">
-										<label class="form-label">Variant</label>
-										<input class="input-tags form-control" type="text" data-role="tagsinput"  name="specialist" value="S,M,XL">
-										<span class="tag-text">Enter value separated by comma</span>
-									</div>
-									<div class="mb-0">
-										<div class="status-toggle modal-status d-flex justify-content-between align-items-center">
-											<span class="status-label">Status</span>
-											<input type="checkbox" id="user3" class="check" checked="">
-											<label for="user3" class="checktoggle"></label>
+							<form action="">
+								<div class="card border-0">
+									<div class="card-body pb-0">
+										<div class="table-responsive no-pagination mb-3">
+											<table class="table  datanew">
+												<thead>
+													<tr>
+														<th>Product</th>
+														<th>Qty</th>
+														<th>Purchase Price($)</th>
+														<th>Discount($)</th>
+														<th>Tax(%)</th>
+														<th>Tax Amount($)</th>
+														<th>Unit Cost($)</th>
+														<th>Total Cost(%)</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td>
+															<div class="d-flex align-items-center">
+																<a href="javascript:void(0);" class="avatar avatar-md me-2">
+																	<img src="assets/img/products/stock-img-02.png" alt="product">
+																</a>
+																<a href="javascript:void(0);">Nike Jordan</a>
+															</div>												
+														</td>
+														<td>
+															<div class="product-quantity bg-gray-transparent border-0">
+																<span class="quantity-btn">+<i data-feather="plus-circle" class="plus-circle"></i></span>
+																<input type="text" class="quntity-input form-control bg-transparent" value="2">
+																<span class="quantity-btn"><i data-feather="minus-circle" class="feather-search"></i></span>
+															</div>
+														</td>
+														<td>2000</td>
+														<td>500</td>
+														<td>
+															0.00
+														</td>
+														<td>0.00</td>
+														<td>0.00</td>
+														<td>1500</td>
+													</tr>
+													<tr>
+														<td>
+															<div class="d-flex align-items-center">
+																<a href="javascript:void(0);" class="avatar avatar-md me-2">
+																	<img src="assets/img/products/stock-img-03.png" alt="product">
+																</a>
+																<a href="javascript:void(0);">Apple Series 5 Watch</a>
+															</div>												
+														</td>
+														<td>
+															<div class="product-quantity bg-gray-transparent border-0">
+																<span class="quantity-btn">+<i data-feather="plus-circle" class="plus-circle"></i></span>
+																<input type="text" class="quntity-input form-control bg-transparent" value="2">
+																<span class="quantity-btn"><i data-feather="minus-circle" class="feather-search"></i></span>
+															</div>
+														</td>
+														<td>3000</td>
+														<td>400</td>
+														<td>
+															0.00
+														</td>
+														<td>0.00</td>
+														<td>0.00</td>
+														<td>1700</td>
+													</tr>
+													<tr>
+														<td>
+															<div class="d-flex align-items-center">
+																<a href="javascript:void(0);" class="avatar avatar-md me-2">
+																	<img src="assets/img/products/stock-img-05.png" alt="product">
+																</a>
+																<a href="javascript:void(0);">Lobar Handy</a>
+															</div>												
+														</td>
+														<td>
+															<div class="product-quantity bg-gray-transparent border-0">
+																<span class="quantity-btn">+<i data-feather="plus-circle" class="plus-circle"></i></span>
+																<input type="text" class="quntity-input form-control bg-transparent" value="2">
+																<span class="quantity-btn"><i data-feather="minus-circle" class="feather-search"></i></span>
+															</div>
+														</td>
+														<td>2500</td>
+														<td>500</td>
+														<td>
+															0.00
+														</td>
+														<td>0.00</td>
+														<td>0.00</td>
+														<td>2000</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+										<div class="row">
+											<div class="col-lg-4 col-sm-6 col-12">
+												<div class="mb-3">
+													<label class="form-label">Customer Name<span class="text-danger ms-1">*</span></label>
+													<div class="row">
+														<div class="col-lg-10 col-sm-10 col-10">
+															<select class="select">
+																<option>Selected</option>
+																<option selected>Carl Evans</option>
+																<option>Minerva Rameriz</option>
+																<option>Robert Lamon</option>
+															</select>
+														</div>
+														<div class="col-lg-2 col-sm-2 col-2 ps-0">
+															<div class="add-icon">
+																<a href="#" class="bg-dark text-white p-2 rounded" data-bs-toggle="modal" data-bs-target="#add_customer"><i data-feather="plus-circle" class="plus"></i></a>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="col-lg-4 col-sm-6 col-12">
+												<div class="mb-3">
+													<label class="form-label">Date<span class="text-danger ms-1">*</span></label>
+													<div class="input-groupicon calender-input">
+														<input type="text" class="datetimepicker form-control" placeholder="19 jan 2023">
+													</div>
+												</div>
+											</div>
+											<div class="col-lg-4 col-sm-6 col-12">
+												<div class="mb-3">
+													<label class="form-label">Supplier<span class="text-danger ms-1">*</span></label>
+													<select class="select">
+														<option>Select</option>
+														<option selected>Apex Computers</option>
+														<option>Beats Headphones</option>
+														<option>Dazzle Shoes</option>
+													</select>
+												</div>
+											</div>
+											<div class="col-lg-12 col-sm-6 col-12">
+												<div class="mb-3">
+													<label class="form-label">Product Name<span class="text-danger ms-1">*</span></label>
+													<div class="input-groupicon select-code">
+														<input type="text" class="form-control" placeholder="Please type product code and select">
+													</div>
+												</div>
+											</div>
+										</div>
+
+										<div class="row">
+											<div class="col-lg-6 ms-auto">
+												<div class="total-order w-100 max-widthauto m-auto mb-4">
+													<ul class="border-1 rounded-1">
+														<li class="border-bottom">
+															<h4 class="border-end">Order Tax</h4>
+															<h5>$ 0.00</h5>
+														</li>
+														<li class="border-bottom">
+															<h4 class="border-end">Discount</h4>
+															<h5>$ 0.00</h5>
+														</li>
+														<li class="border-bottom">
+															<h4 class="border-end">Shipping</h4>
+															<h5>$ 0.00</h5>
+														</li>
+														<li class="border-bottom">
+															<h4 class="border-end">Grand Total</h4>
+															<h5>$5200.00</h5>
+														</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+										
+										<div class="row">
+											<div class="col-lg-3 col-sm-6 col-12">
+												<div class="mb-3">
+													<label class="form-label">Order Tax<span class="text-danger ms-1">*</span></label>
+													<div class="input-groupicon select-code">
+														<input type="text" class="form-control" placeholder="0">
+													</div>
+													
+												</div>
+											</div>
+											<div class="col-lg-3 col-sm-6 col-12">
+												<div class="mb-3">
+													<label class="form-label">Discount<span class="text-danger ms-1">*</span></label>
+													<div class="input-groupicon select-code">
+														<input type="text" class="form-control" placeholder="0">
+													</div>
+												</div>
+											</div>
+											<div class="col-lg-3 col-sm-6 col-12">
+												<div class="mb-3">
+													<label class="form-label">Shipping<span class="text-danger ms-1">*</span></label>
+													<div class="input-groupicon select-code">
+														<input type="text" class="form-control" placeholder="0">
+													</div>
+												</div>
+											</div>
+											<div class="col-lg-3 col-sm-6 col-12">
+												<div class="mb-3 mb-5">
+													<label class="form-label">Status<span class="text-danger ms-1">*</span></label>
+													<select class="select">
+														<option>Select</option>
+														<option>Completed</option>
+														<option>Inprogress</option>
+													</select>
+												</div>
+											</div>
+											<div class="col-lg-12">
+												<div class="mb-3">
+													<label class="form-label">Notes<span class="text-danger ms-1">*</span></label>
+													<textarea class="form-control"></textarea>
+												</div>
+											</div>
 										</div>
 									</div>
-									<div class="modal-footer-btn">
-										<button type="button" class="btn btn-cancel me-2" data-bs-dismiss="modal">Cancel</button>
-										<button type="submit" class="btn btn-submit">Save Changes</button>
-									</div>
-								</form>
-							</div>
+								</div>
+								<div class="modal-footer justify-content-end">
+									<button type="button"  class="btn btn-secondary add-cancel me-3" data-bs-dismiss="modal">Cancel</button>
+									<button type="submit" class="btn btn-primary add-sale">Save Changes</button>
+								</div>
+							</form>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 		<!-- /Edit Unit -->
-		
+         <!-- show payment Modal -->
+		<div class="modal fade" id="showpayment">
+			<div class="modal-dialog modal-dialog-centered stock-adjust-modal">
+				<div class="modal-content">
+					<div class="modal-header">
+						<div class="page-title">
+							<h4>Show Payments</h4>
+						</div>
+						<button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<div class="row">
+							<div class="col-lg-12">
+								<div class="modal-body-table total-orders p-0">
+									<div class="table-responsive">
+										<table class="table datatable">
+											<thead class="thead-light">
+												<tr>
+													<th>Date</th>
+													<th>Reference</th>
+													<th>Amount</th>
+													<th>Paid By</th>
+													<th class="no-sort"></th>
+													
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>19 Jan 2023</td>
+													<td>INV/SL0101</td>
+													<td>$1500</td>
+													<td>Cash</td>
+													<td>
+														<div class="edit-delete-action d-flex align-items-center">
+															<a class="me-3 p-2 border rounded d-flex align-items-center" href="javascript:void(0);">
+																<i data-feather="printer" class="feather-rotate-ccw"></i>
+															</a>
+															<a class="me-3 p-2 border rounded d-flex align-items-center" href="#"  
+                                                            data-bs-toggle="modal" 
+                                                            data-bs-target="#editPaymentsModal">
+																<i data-feather="edit" class="feather-edit"></i>
+															</a>
+															<a class="p-2 border rounded d-flex align-items-center  btn-delete-sale" href="javascript:void(0);">
+																<i data-feather="trash-2" class="feather-trash-2"></i>
+															</a>
+														</div>
+														
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- show payment Modal -->
+        <!-- Create payment Modal -->
+		<div class="modal fade" id="createpayment">
+			<div class="modal-dialog modal-lg modal-dialog-centered">
+				<div class="modal-content">
+					<div class="modal-header">
+						<div class="page-title">
+							<h4>Create Payments</h4>
+						</div>
+						<button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<form action="">
+						<div class="modal-body">
+								<div class="row">
+									<div class="col-lg-6">
+										<div class="mb-3">
+											<label class="form-label"> Date<span class="text-danger ms-1">*</span></label>
+											<div class="input-groupicon calender-input">
+												<input type="text" class="datetimepicker form-control" placeholder="Choose Date" >
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-6 col-sm-12 col-12">
+										<div class="mb-3">
+											<label class="form-label">Reference<span class="text-danger ms-1">*</span></label>
+											<input type="text" class="form-control">
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-lg-4 col-sm-12 col-12">
+										<div class="mb-3">
+											<label class="form-label">Received Amount<span class="text-danger ms-1">*</span></label>
+											<div class="input-groupicon doller-input">
+												<input type="text" class="form-control ps-4">
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-4 col-sm-12 col-12">
+										<div class="mb-3">
+											<label class="form-label">Paying Amount<span class="text-danger ms-1">*</span></label>
+											<div class="input-groupicon doller-input">
+												<input type="text" class="form-control ps-4">
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-4 col-sm-12 col-12">
+										<div class="mb-3">
+											<label class="form-label">Payment type<span class="text-danger ms-1">*</span></label>
+											<select class="select">
+												<option>Select</option>
+												<option>Online</option>
+												<option>Cash</option>
+											</select>
+										</div>
+									</div>
+									<div class="col-lg-12">
+                                    <div class="mb-3">
+                                        <label for="summernote" class="form-label">Description</label>
+                                        <textarea id="summernote" name="description"></textarea>
+                                        <small class="text-muted d-block mt-1">
+                                        Maximum 60 Characters
+                                        </small>
+                                    </div>
+                                    </div>
+								</div>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-secondary me-2" data-bs-dismiss="modal">Cancel</button>
+							<button type="submit" class="btn btn-primary">Submit</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<!-- Create payment Modal -->
+        <!-- Edit payment Modal -->
+        <!-- Modal -->
+<div class="modal fade" id="editPaymentsModal" tabindex="-1" aria-labelledby="editPaymentsLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      
+      <!-- Header -->
+      <div class="modal-header">
+        <h5 class="modal-title" id="editPaymentsLabel">Edit Payments</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      
+      <!-- Body -->
+      <div class="modal-body">
+        <form>
+          <div class="row mb-3">
+            <div class="col-md-6">
+              <label class="form-label">Date <span class="text-danger">*</span></label>
+              <input type="date" class="form-control">
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Reference <span class="text-danger">*</span></label>
+              <input type="text" class="form-control" value="INV/SL0101">
+            </div>
+          </div>
+
+          <div class="row mb-3">
+            <div class="col-md-4">
+              <label class="form-label">Received Amount <span class="text-danger">*</span></label>
+              <div class="input-group">
+                <input type="number" class="form-control" value="1500">
+                <span class="input-group-text">$</span>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <label class="form-label">Paying Amount <span class="text-danger">*</span></label>
+              <div class="input-group">
+                <input type="number" class="form-control" value="1500">
+                <span class="input-group-text">$</span>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <label class="form-label">Payment Type <span class="text-danger">*</span></label>
+              <select class="form-select">
+                <option>Cash</option>
+                <option>Credit Card</option>
+                <option>Bank Transfer</option>
+              </select>
+            </div>
+          </div>
+
+                 <div class="mb-3">
+                    <label for="summernote-edit" class="form-label">Description</label>
+                    <textarea id="summernote-edit" name="description"></textarea>
+                    <small class="text-muted d-block mt-1">Maximum 60 Characters</small>
+                </div>
+
+        </form>
+      </div>
+      
+      <!-- Footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-warning text-white">Save Changes</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- Trigger -->
+<button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editPaymentsModal">
+  Open Modal
+</button>
+
+        <!-- Edit payment Modal -->
+
 	<!-- /modals -->
 	<!-- jQuery -->
         <script src="assets/js/jquery-3.7.1.min.js"></script>
@@ -498,6 +923,10 @@
 		<script src="assets/js/moment.min.js"></script>
 		<script src="assets/js/bootstrap-datetimepicker.min.js"></script>
 
+        <!-- Summernote JS -->
+	    <script src="assets/plugins/summernote/summernote-bs4.min.js"></script>
+	    <script src="assets/plugins/summernote/summernote-bs4.min.js"></script>
+	    <script src="assets/plugins/summernote/summernote-bs4.min.js"></script>
 		<!-- Select2 JS -->
 		<script src="assets/plugins/select2/js/select2.min.js"></script>
 
@@ -511,6 +940,21 @@
 		<!-- Custom JS --><script src="assets/js/theme-script.js"></script>	
 		<script src="assets/js/script.js"></script>
 
+        <!-- js buat id summernote nabrak buatan eko -->
+        <script>
+            $(document).ready(function () {
+        $('#summernote-create').summernote({
+            placeholder: 'Type description...',
+            height: 150
+        });
+
+        $('#summernote-edit').summernote({
+            placeholder: 'Edit description...',
+            height: 150
+        });
+        });
+
+        </script>
 
 </body>
 

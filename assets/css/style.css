@@ -32715,3 +32715,22 @@ label span {
                          100% 50%,100% calc(0% - 2px),100% calc(100% + 2px);
  }
 }
+.avtar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;       /* ukuran kotak */
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.15); /* kotak transparan */
+    border-radius: 10px; /* sudut rounded */
+    font-size: 24px;  /* ukuran icon */
+    color: #fff;      /* warna icon putih */
+}
+@media (max-width: 576px) {
+  .avtar {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+  }
+}
+  

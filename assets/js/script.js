@@ -1,7 +1,4 @@
-/*
-Author       : Dreamguys
-Template Name: POS - Bootstrap Admin Template
-*/
+
 const loadHTML = (url, elementId) => {
     return fetch(url)
     .then(response => {

@@ -32953,3 +32953,54 @@ label span {
   opacity: 1;
 }
 
+/* pagination */
+div.dataTables_wrapper div.dataTables_paginate ul.pagination {
+  justify-content: end !important;
+}
+
+.search-path{
+  position: absolute;
+  right: 10px;
+  margin-top: 0px !important;
+}
+@media (max-width: 768px) {
+  #myTab {
+    flex-wrap: nowrap;       /* jangan dibungkus ke bawah */
+    overflow-x: auto;        /* bisa discroll ke samping */
+    -webkit-overflow-scrolling: touch; /* biar smooth di iOS */
+  }
+  #myTab .nav-item {
+    flex: 0 0 auto; /* biar item ga melar */
+  }
+}
+
+@media (max-width: 768px) {
+  #myTab .nav-link {
+    font-size: 14.5px;   /* kecilin font */
+    padding: 6px 10px; /* biar muat */
+  }
+}
+
+
+
+/* Kalau sudah desktop, jangan full */
+@media (max-width: 768px) {
+  .pemilihrentang-container {
+    width: auto;         /* biar ngikut konten */
+    max-width: 100%;     /* aman biar ga overflow */
+  }
+}
+.bulan-tahun select {
+  border: none;
+}
+.pemilihrentang-panel .select-bulan,
+.pemilihrentang-panel .select-tahun {
+  font-size: 14px;    /* atur ukuran font */
+  font-weight: 600;   /* tebelin */
+  color: #333;        /* warna teks */
+  border: none;       /* biarin ga ada border */
+  background: none;   /* biarin transparan */
+  padding: 0;         /* rapetin */
+  width: auto;        /* biar ngikutin isi value */
+  cursor: pointer;
+}

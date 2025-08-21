@@ -2046,4 +2046,252 @@ $(document).ready(function(){
 
 
 
+// js date range picker
+document.addEventListener("DOMContentLoaded", () => {
+  const input        = document.getElementById("pemilihrentang-input");
+  const panel        = document.getElementById("pemilihrentang-panel");
+  const opsiCepat    = document.querySelector(".opsi-cepat");
+  const kalenderView = document.getElementById("kalender-view");
 
+  let startDate = null, endDate = null;
+  const today = new Date();
+  let kalenderBulanAwal = new Date(today.getFullYear(), today.getMonth(), 1);
+
+  const monthNames = [
+    "Januari","Februari","Maret","April","Mei","Juni",
+    "Juli","Agustus","September","Oktober","November","Desember"
+  ];
+
+  const pad2 = (n) => String(n).padStart(2, "0");
+  const formatDate = (d) => `${pad2(d.getDate())}/${pad2(d.getMonth()+1)}/${d.getFullYear()}`;
+
+  // === Toggle panel ===
+  input.addEventListener("click", (e) => {
+    e.stopPropagation();
+    panel.style.display = panel.style.display === "block" ? "none" : "block";
+    opsiCepat.style.display = "block"; 
+    kalenderView.style.display = "none"; 
+  });
+
+  document.addEventListener("click", (e) => {
+    if (!panel.contains(e.target) && e.target !== input) {
+      panel.style.display = "none";
+    }
+  });
+
+  // === Opsi Cepat ===
+  document.querySelectorAll(".opsi-cepat div").forEach(item => {
+    item.setAttribute("tabindex","0");
+    item.addEventListener("click", () => {
+      const now = new Date();
+      kalenderView.style.display = "none";
+
+      switch (item.dataset.range) {
+        case "kemarin":
+          startDate = new Date(now); startDate.setDate(startDate.getDate() - 1);
+          endDate   = new Date(startDate);
+          break;
+        case "7hari":
+          endDate   = new Date(now);
+          startDate = new Date(now); startDate.setDate(startDate.getDate() - 6);
+          break;
+        case "bulanIni":
+          startDate = new Date(now.getFullYear(), now.getMonth(), 1);
+          endDate   = new Date(now.getFullYear(), now.getMonth() + 1, 0);
+          break;
+        case "bulanLalu":
+          startDate = new Date(now.getFullYear(), now.getMonth() - 1, 1);
+          endDate   = new Date(now.getFullYear(), now.getMonth(), 0);
+          break;
+        case "tahunLalu":
+          startDate = new Date(now.getFullYear() - 1, 0, 1);
+          endDate   = new Date(now.getFullYear() - 1, 11, 31);
+          break;
+        case "kustom":
+          opsiCepat.style.display = "none";
+          kalenderView.style.display = "grid";
+          kalenderBulanAwal = new Date(today.getFullYear(), today.getMonth(), 1);
+          generateKalender();
+          return;
+      }
+
+      input.value = `${formatDate(startDate)} - ${formatDate(endDate)}`;
+      panel.style.display = "none";
+    });
+  });
+
+  // === Kalender generator ===
+  function generateKalender() {
+    kalenderView.innerHTML = "";
+
+    const isMobile = window.innerWidth <= 768;
+    const bulanCount = isMobile ? 1 : 2;
+
+    for (let i = 0; i < bulanCount; i++) {
+      const month = new Date(kalenderBulanAwal.getFullYear(), kalenderBulanAwal.getMonth() + i, 1);
+
+      const bulanDiv = document.createElement("div");
+      bulanDiv.className = "bulan-kalender";
+
+      // === HEADER DENGAN DROPDOWN BULAN & TAHUN ===
+      const header = document.createElement("div");
+      header.className = "bulan-header";
+
+      let bulanSelect = `<select class="select-bulan">`;
+      monthNames.forEach((m, idx) => {
+        bulanSelect += `<option value="${idx}" ${idx === month.getMonth() ? "selected":""}>${m}</option>`;
+      });
+      bulanSelect += `</select>`;
+
+      let tahunSelect = `<select class="select-tahun">`;
+      for (let y = 1970; y <= 2100; y++) {
+        tahunSelect += `<option value="${y}" ${y === month.getFullYear() ? "selected":""}>${y}</option>`;
+      }
+      tahunSelect += `</select>`;
+
+      if (isMobile) {
+        header.innerHTML = `
+          <button class="nav-prev">&lt;</button>
+          <div class="bulan-tahun">${bulanSelect} ${tahunSelect}</div>
+          <button class="nav-next">&gt;</button>
+        `;
+      } else {
+        if (i === 0) {
+          header.innerHTML = `
+            <button class="nav-prev">&lt;</button>
+            <div class="bulan-tahun">${bulanSelect} ${tahunSelect}</div>
+          `;
+        } else {
+          header.innerHTML = `
+            <div class="bulan-tahun">${bulanSelect} ${tahunSelect}</div>
+            <button class="nav-next">&gt;</button>
+          `;
+        }
+      }
+
+      bulanDiv.appendChild(header);
+
+      // === TABLE ===
+      const table = document.createElement("table");
+      let thead = "<thead><tr><th>Mg</th><th>Sn</th><th>Sl</th><th>Rb</th><th>Km</th><th>Jm</th><th>Sb</th></tr></thead>";
+      let tbody = "<tbody><tr>";
+
+      const firstDayIndex = new Date(month.getFullYear(), month.getMonth(), 1).getDay();
+      const lastDate = new Date(month.getFullYear(), month.getMonth() + 1, 0).getDate();
+
+      for (let j = 0; j < firstDayIndex; j++) tbody += "<td></td>";
+
+      for (let d = 1; d <= lastDate; d++) {
+        const cellDate = new Date(month.getFullYear(), month.getMonth(), d);
+        tbody += `<td data-date="${cellDate}">${d}</td>`;
+        if ((firstDayIndex + d) % 7 === 0) tbody += "</tr><tr>";
+      }
+      tbody += "</tr></tbody>";
+      table.innerHTML = thead + tbody;
+      bulanDiv.appendChild(table);
+
+      kalenderView.appendChild(bulanDiv);
+    }
+
+    // tombol aksi
+    const aksiDiv = document.createElement("div");
+    aksiDiv.className = "kalender-aksi";
+    aksiDiv.innerHTML = `
+      <button class="batal">Batal</button>
+      <button class="terapkan">Terapkan</button>
+    `;
+    kalenderView.appendChild(aksiDiv);
+
+    // === binding nav ===
+    const prevBtn = kalenderView.querySelector(".nav-prev");
+    const nextBtn = kalenderView.querySelector(".nav-next");
+    if (prevBtn) prevBtn.onclick = (e) => { 
+      e.stopPropagation();
+      kalenderBulanAwal.setMonth(kalenderBulanAwal.getMonth() - 1); 
+      generateKalender(); 
+    };
+    if (nextBtn) nextBtn.onclick = (e) => { 
+      e.stopPropagation();
+      kalenderBulanAwal.setMonth(kalenderBulanAwal.getMonth() + 1); 
+      generateKalender(); 
+    };
+
+    // === binding select bulan & tahun ===
+    kalenderView.querySelectorAll(".select-bulan").forEach(sel => {
+      sel.addEventListener("change", (e) => {
+        kalenderBulanAwal.setMonth(parseInt(e.target.value));
+        generateKalender();
+      });
+    });
+    kalenderView.querySelectorAll(".select-tahun").forEach(sel => {
+      sel.addEventListener("change", (e) => {
+        kalenderBulanAwal.setFullYear(parseInt(e.target.value));
+        generateKalender();
+      });
+    });
+
+    // binding klik tanggal
+    kalenderView.querySelectorAll("td[data-date]").forEach(td => {
+      td.addEventListener("click", (e) => {
+        e.stopPropagation(); 
+        const clicked = new Date(td.dataset.date);
+        if (!startDate || (startDate && endDate)) {
+          startDate = clicked;
+          endDate = null;
+        } else {
+          endDate = clicked;
+          if (endDate < startDate) [startDate, endDate] = [endDate, startDate];
+        }
+        highlight();
+      });
+    });
+
+    // tombol aksi handler
+    aksiDiv.querySelector(".batal").onclick = (e) => {
+      e.stopPropagation();
+      kalenderView.style.display = "none";
+      opsiCepat.style.display = "block";
+    };
+    aksiDiv.querySelector(".terapkan").onclick = (e) => {
+      e.stopPropagation();
+      if (startDate && endDate) {
+        input.value = `${formatDate(startDate)} - ${formatDate(endDate)}`;
+        panel.style.display = "none";
+      }
+    };
+
+    highlight();
+  }
+
+  function sameDate(a, b) {
+    return a.getFullYear() === b.getFullYear()
+        && a.getMonth()    === b.getMonth()
+        && a.getDate()     === b.getDate();
+  }
+
+  function highlight() {
+    kalenderView.querySelectorAll("td").forEach(td => {
+      td.classList.remove("terpilih", "dalam-rentang");
+      if (!td.dataset.date) return;
+
+      const d = new Date(td.dataset.date);
+
+      if (startDate && sameDate(d, startDate)) td.classList.add("terpilih");
+      if (endDate   && sameDate(d, endDate))   td.classList.add("terpilih");
+
+      if (startDate && endDate && d >= startDate && d <= endDate) {
+        td.classList.add("dalam-rentang");
+      }
+    });
+  }
+});
+
+
+// filter
+const btnFilter = document.getElementById("pilter");
+const filterBox = document.getElementById("filter_container");
+
+btnFilter.addEventListener("click", function(e) {
+  e.preventDefault();
+  filterBox.classList.toggle("show");
+});

@@ -88,50 +88,104 @@
 					<!-- /product list -->
 					<div class="card table-list-card">
 						<div class="card-body pb-0">
-							<div class="table-top table-top-new">
+							<div class="table-top d-flex justify-content-between align-items-center flex-column flex-md-row gap-2">
 								
-								<div class="search-set mb-0">
-									<div class="search-input">
-										<a href="" class="btn btn-searchset"><i data-feather="search" class="feather-search"></i></a>
+								<div class="row d-flex justify-content-between">
+									<div class="col-6 justify-content-start">
+										 <div class="search-set m-0 w-100 w-md-auto">
+													<div class="search-input">
+													<a href="#" class="btn btn-searchset">
+														<i data-feather="search" class="feather-search"></i>
+													</a>
+											</div>
+										</div>
+									</div>
+									<div class="col-2"></div>
+									<div class="col-3 ms-3 justify-content-end">
+										<div class="search-path m-0 d-flex justify-content-md-end w-100 w-md-auto">
+											<a class="btn btn-warning d-flex align-items-center justify-content-center" 
+											id="pilter" style="width:42px; height:42px;">
+											<i data-feather="filter"></i>
+											</a>
+										</div>
 									</div>
 								</div>
-                                <div class="">
-                                    <div class="btn-group">
-											<button type="button" class="btn btn-outline-primary dropdown-toggle"
-									 			data-bs-toggle="dropdown" aria-expanded="false">
-												Department
-											</button>
-											<ul class="dropdown-menu">
-												<li><a class="dropdown-item" href="javascript:void(0);">UI/UX</a></li>
-												<li><a class="dropdown-item" href="javascript:void(0);">Tech Lead</a></li>
-												<li><a class="dropdown-item" href="javascript:void(0);">Database</a></li>
-											</ul>
-								    </div>
-                                    <div class="btn-group">
-											<button type="button" class="btn btn-outline-primary dropdown-toggle"
-									 			data-bs-toggle="dropdown" aria-expanded="false">
-												Status
-											</button>
-											<ul class="dropdown-menu">
-												<li><a class="dropdown-item" href="javascript:void(0);">Active</a></li>
-												<li><a class="dropdown-item" href="javascript:void(0);">Inactive</a></li>
-											</ul>
-								    </div>
-                                    <div class="btn-group">
-											<button type="button" class="btn btn-outline-primary dropdown-toggle"
-									 			data-bs-toggle="dropdown" aria-expanded="false">
-												Sort By
-											</button>
-											<ul class="dropdown-menu">
-												<li><a class="dropdown-item" href="javascript:void(0);">Ascending</a></li>
-												<li><a class="dropdown-item" href="javascript:void(0);">Descending</a></li>
-												<li><a class="dropdown-item" href="javascript:void(0);">Recently</a></li>
-												<li><a class="dropdown-item" href="javascript:void(0);">Last Month</a></li>
-												<li><a class="dropdown-item" href="javascript:void(0);">Last 7 Days</a></li>
-											</ul>
-								    </div>
-                                </div>
-                                
+								
+								
+							</div>
+
+							<div id="filter_container" class="filter-collapse mt-3 w-100">
+							<div class="p-3">
+								<div class="row g-3">
+
+								<!-- Date Range -->
+								<div class="col-12 col-md-6">
+								<div class="pemilihrentang-container w-100">
+										<input 
+										type="text" 
+										id="pemilihrentang-input" 
+										class="pemilihrentang-input" 
+										readonly 
+										placeholder="DD/MM/YYYY - DD/MM/YYYY"
+										>
+										<div id="pemilihrentang-panel" class="pemilihrentang-panel">
+										<div class="pemilihrentang-isi">
+											<div class="opsi-cepat">
+											<div data-range="kemarin">Kemarin</div>
+											<div data-range="7hari">7 Hari Terakhir</div>
+											<div data-range="bulanIni">Bulan Ini</div>
+											<div data-range="bulanLalu">Bulan Lalu</div>
+											<div data-range="tahunLalu">Tahun Lalu</div>
+											<div data-range="kustom">Rentang Kustom</div>
+											</div>
+											<div class="kalender" id="kalender-view" style="display:none;">
+											</div>
+										</div>
+										</div>
+									</div>
+												</div>
+
+												<div class="col-12 col-md-6">
+											<div class="row g-2">
+												<!-- Store -->
+												<div class="col-12 col-md-4">
+												<div class="dropdown w-100">
+													<button type="button" class="btn btn-outline-primary dropdown-toggle w-100"
+													data-bs-toggle="dropdown" aria-expanded="false">
+													Store
+													</button>
+													<ul class="dropdown-menu w-100">
+													<li><a class="dropdown-item" href="#">Ellectro Mart</a></li>
+													<li><a class="dropdown-item" href="#">ekos mart</a></li>
+													</ul>
+												</div>
+												</div>
+
+												<!-- Product -->
+												<div class="col-12 col-md-4">
+												<div class="dropdown w-100">
+													<button type="button" class="btn btn-outline-primary dropdown-toggle w-100"
+													data-bs-toggle="dropdown" aria-expanded="false">
+													Product
+													</button>
+													<ul class="dropdown-menu w-100">
+													<li><a class="dropdown-item" href="#">Laptop</a></li>
+													<li><a class="dropdown-item" href="#">Lemari</a></li>
+													</ul>
+												</div>
+												</div>
+
+												<!-- Report -->
+												<div class="col-12 col-md-4">
+												<button class="btn btn-primary w-100">Report</button>
+												</div>
+											</div>
+											</div>
+
+											</div>
+											</div>
+
+
 							</div>
 							<!-- /Filter -->
 							<div class="card" id="filter_inputs">

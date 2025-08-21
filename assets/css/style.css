@@ -11047,6 +11047,7 @@ table.dataTable thead > tr > th.no-sort.sorting::after {
   }
 }
 
+
 .search-set {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -32733,4 +32734,222 @@ label span {
     font-size: 20px;
   }
 }
-  
+
+/* kalender range */
+/* ================== CONTAINER ================== */
+.pemilihrentang-container {
+  position: relative;
+  width: 260px;
+}
+
+.pemilihrentang-input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* ================== PANEL ================== */
+.pemilihrentang-panel {
+  display: none;
+  position: absolute;
+  top: 45px;
+  left: 0;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  z-index: 1050;
+}
+
+.pemilihrentang-isi {
+  display: flex;
+}
+
+/* ================== OPSI CEPAT ================== */
+.opsi-cepat {
+  width: 160px;
+  border-right: 1px solid #eee;
+  padding: 8px;
+}
+.opsi-cepat div {
+  padding: 8px 10px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.opsi-cepat div:hover,
+.opsi-cepat div:focus {
+  background: #FF9F43;
+  color: #fff;
+  outline: none;
+}
+
+/* ================== KALENDER GRID ================== */
+.kalender {
+  padding: 8px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  font-size: 13px;
+}
+
+/* ================== BULAN HEADER ================== */
+.bulan-kalender {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.bulan-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #FF9F43;
+}
+.bulan-header button {
+  background: transparent;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  color: #888;
+}
+.bulan-header button:hover {
+  color: #FF9F43;
+}
+
+/* ================== TABLE BASE ================== */
+.kalender table {
+  border-collapse: separate;
+  border-spacing: 6px;
+  width: 100%;
+  text-align: center;
+  font-size: 13px;
+}
+
+.kalender th {
+  font-weight: 600;
+  padding: 4px 0;
+  color: #444;
+}
+
+.kalender td {
+  width: 34px;
+  height: 34px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  color: #222;
+}
+
+.kalender td:hover {
+  background: rgba(255,159,67,0.15);
+  box-shadow: inset 0 0 0 1px #FF9F43;
+}
+
+.kalender td:empty {
+  background: transparent !important;
+  cursor: default;
+}
+
+/* ================== STATE ================== */
+.kalender th:first-child,
+.kalender td:nth-child(1) {
+  color: #d33; /* hari minggu merah */
+}
+
+.kalender td.terpilih {
+  background: #FF9F43;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(255, 159, 67, 0.4);
+  position: relative;
+  z-index: 2;
+}
+
+.kalender td.dalam-rentang {
+  background: rgba(255,159,67,0.2);
+  border-radius: 4px;
+  position: relative;
+}
+
+/* ================== AKSI (BATAL / TERAPKAN) ================== */
+.kalender-aksi {
+  grid-column: span 2;
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 8px;
+}
+.kalender-aksi button {
+  padding: 6px 12px;
+  font-size: 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.kalender-aksi .batal {
+  background: #eee;
+  color: #333;
+}
+.kalender-aksi .terapkan {
+  background: #FF9F43;
+  color: #fff;
+}
+
+/* ================== RESPONSIVE ================== */
+@media (max-width: 768px) {
+  .kalender {
+    grid-template-columns: 1fr; /* 1 bulan aja */
+    gap: 8px;
+  }
+  .bulan-header {
+    font-size: 15px;
+  }
+  .kalender-aksi {
+    grid-column: span 1;
+    justify-content: space-between;
+  }
+}
+.table-top {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media (max-width: 768px) {
+  .table-top {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .table-top .search-set,
+  .table-top .pemilihrentang-container,
+  .table-top .btn-group {
+    width: 100%;
+  }
+  .table-top .btn-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+  }
+  .table-top .btn-group .btn-primary {
+    grid-column: span 2; /* button report full width */
+  }
+}
+
+/* Animasi slide */
+.filter-collapse {
+  max-height: 0;
+  opacity: 0;
+  transition: all 0.4s ease;
+}
+.filter-collapse.show {
+  max-height: 1000px;
+  opacity: 1;
+}
+

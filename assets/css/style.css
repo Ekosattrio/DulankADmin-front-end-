@@ -32742,6 +32742,12 @@ label span {
   width: 260px;
 }
 
+@media (max-width: 576px) {
+  .pemilihrentang-container {
+    margin-left: -9px !important;
+  }
+}
+
 .pemilihrentang-input {
   width: 100%;
   padding: 8px;

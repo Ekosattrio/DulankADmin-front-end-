@@ -59,8 +59,8 @@
 				<div class="page-header transfer">
 					<div class="add-item d-flex">
 						<div class="page-title">
-							<h4>Purchase List</h4>
-							<h6>Manage your purchases</h6>
+							<h4>Money Transfer</h4>
+							<h6> Manage Money Transfer List</h6>
 						</div>
 					</div>
 					<ul class="table-top-head">
@@ -107,20 +107,7 @@
 											class="feather-search"></i></a>
 								</div>
 							</div>
-							<div class="">
-                                    
-                                    <div class="btn-group">
-											<button type="button" class="btn btn-outline-primary dropdown-toggle"
-									 			data-bs-toggle="dropdown" aria-expanded="false">
-												Payment Status
-											</button>
-											<ul class="dropdown-menu">
-												<li><a class="dropdown-item" href="javascript:void(0);">Paid</a></li>
-												<li><a class="dropdown-item" href="javascript:void(0);">Unpaid</a></li>
-												<li><a class="dropdown-item" href="javascript:void(0);">Overdue</a></li>
-											</ul>
-								    </div>
-                                </div>
+							
 						</div>
 						<!-- /Filter -->
 						<div class="card" id="filter_inputs">
@@ -191,14 +178,11 @@
 												<span class="checkmarks"></span>
 											</label>
 										</th>
-										<th>Supplier Name</th>
-										<th>Reference</th>
 										<th>Date</th>
-										<th>Status</th>
-										<th>Grand Total</th>
-										<th>Paid</th>
-										<th>Due</th>
-										<th>Created by</th>
+										<th>Reference Number</th>
+										<th>From Acount</th>
+										<th>To Account</th>
+										<th>Amount</th>
 										<th class="no-sort"></th>
 									</tr>
 								</thead>
@@ -210,19 +194,14 @@
 												<span class="checkmarks"></span>
 											</label>
 										</td>
-										<td>Beats Headphones</td>
-										<td>PT002 </td>
 										<td>27 Jan 2023</td>
-										<td><span class="badge bg-soft-success">Received</span></td>
+										<td>#MT856</td>
+										<td>2343547586900 </td>
+										<td>1658179744894</td>
 										<td>$370</td>
-										<td>$370</td>
-										<td>$0.00</td>
-										<td><span class="badge bg-outline-success">Paid</span></td>
 										<td class="action-table-data">
 											<div class="edit-delete-action">
-												<a class="me-2 p-2" href="javascript:void(0);">
-													<i data-feather="eye" class="action-eye"></i>
-												</a>
+												
 												<a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#edit-units">
 													<i data-feather="edit" class="feather-edit"></i>
 												</a>
@@ -232,64 +211,7 @@
 											</div>
 										</td>
 									</tr>
-									<tr>
-										<td>
-											<label class="checkboxs">
-												<input type="checkbox">
-												<span class="checkmarks"></span>
-											</label>
-										</td>
-										<td>Dazzle Shoes</td>
-										<td>PT003 </td>
-										<td>08 Feb 2023</td>
-										<td><span class="badge bg-soft-warning">Ordered</span></td>
-										<td>$400</td>
-										<td>$400</td>
-										<td>$200</td>
-										<td><span class="badge bg-outline-warning">Partial</span></td>
-										<td class="action-table-data">
-											<div class="edit-delete-action">
-												<a class="me-2 p-2" href="javascript:void(0);">
-													<i data-feather="eye" class="action-eye"></i>
-												</a>
-												<a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#edit-units">
-													<i data-feather="edit" class="feather-edit"></i>
-												</a>
-												<a class="confirm-text p-2" href="javascript:void(0);">
-													<i data-feather="trash-2" class="feather-trash-2"></i>
-												</a>
-											</div>
-										</td>
-									</tr>
-									<tr>
-										<td>
-											<label class="checkboxs">
-												<input type="checkbox">
-												<span class="checkmarks"></span>
-											</label>
-										</td>
-										<td>Best Accessories</td>
-										<td>PT004 </td>
-										<td>16 Feb 2023</td>
-										<td><span class="badge bg-soft-danger">Pending</span></td>
-										<td>$560</td>
-										<td>$0.00</td>
-										<td>$560</td>
-										<td><span class="badge bg-outline-danger">Unpaid</span></td>
-										<td class="action-table-data">
-											<div class="edit-delete-action">
-												<a class="me-2 p-2" href="javascript:void(0);">
-													<i data-feather="eye" class="action-eye"></i>
-												</a>
-												<a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#edit-units">
-													<i data-feather="edit" class="feather-edit"></i>
-												</a>
-												<a class="confirm-text p-2" href="javascript:void(0);">
-													<i data-feather="trash-2" class="feather-trash-2"></i>
-												</a>
-											</div>
-										</td>
-									</tr>
+									
 								</tbody>
 							</table>
 						</div>

@@ -33,7 +33,7 @@ $(document).ready(function(){
 
 
 function start(){
-
+	
 	// Variables declarations
 	var $wrapper = $('.main-wrapper');
 	var $slimScrolls = $('.slimscroll');

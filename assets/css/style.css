@@ -5224,6 +5224,8 @@ hr.text-danger {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
   background-size: 1.25rem;
   line-height: 2;
+  padding: 0.6rem 0.75rem;   
+  min-height: 42px;   
 }
 .form-select option {
   background-color: #ffffff;
@@ -24570,7 +24572,13 @@ td p.description-para {
 
 .input-groupicon.calender-input input {
   padding-left: 27px;
+  
 }
+
+.bootstrap-datetimepicker-widget {
+  z-index: 2000 !important; /* lebih tinggi dari modal */
+}
+
 
 span.customer-toggle {
   color: #092C4C;
@@ -33009,4 +33017,41 @@ div.dataTables_wrapper div.dataTables_paginate ul.pagination {
   padding: 0;         /* rapetin */
   width: auto;        /* biar ngikutin isi value */
   cursor: pointer;
+}
+
+
+/* Tambahan blog */
+.blog-img {
+      position: relative; /* penting biar badge absolute mengikuti img */
+    }
+    .blog-img img {
+      width: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .badge-custom {
+      position: absolute;
+      top: 20px;
+      left: 15px;
+      z-index: 2;
+    }
+    .badge-status {
+      position: absolute;
+      top: 20px;
+      right: 15px;
+      z-index: 2;
+    }
+    .author-img {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-right: 6px;
+    }
+
+    .text-nowrap-custom {
+  white-space: nowrap;
+}
+#phoness {
+  padding-left: 45px !important; /* geser teks biar ga ketiban bendera */
 }

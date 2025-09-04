@@ -11,23 +11,17 @@
 	<meta name="robots" content="noindex, nofollow">
 	<title>Dreams Pos Admin Template</title>
 
-	 	<!-- Favicon -->
+	 <!-- Favicon -->
         <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
         
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="assets/css/bootstrap.min.css">
         
-		<!-- Datetimepicker CSS -->
-		<link rel="stylesheet" href="assets/css/bootstrap-datetimepicker.min.css">
-        <!-- Select2 CSS -->
-		<link rel="stylesheet" href="assets/plugins/select2/css/select2.min.css">
-		<!-- animation CSS -->
+        <!-- animation CSS -->
         <link rel="stylesheet" href="assets/css/animate.css">
 
         <!-- Datatable CSS -->
         <link rel="stylesheet" href="assets/css/dataTables.bootstrap5.min.css">
-		<!-- Summernote CSS -->
-		<link rel="stylesheet" href="assets/plugins/summernote/summernote-bs4.min.css">
         
         <!-- Fontawesome CSS -->
         <link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css">
@@ -56,8 +50,8 @@
 				<div class="page-header mt-5">
 						<div class="add-item d-flex">
 							<div class="page-title">
-								<h4>Product List</h4>
-								<h6>Manage your products</h6>
+								<h4>Kalkulator Dashboard</h4>
+								<h6>Manage kalkulator</h6>
 							</div>
 						</div>
 						<ul class="table-top-head">
@@ -77,14 +71,34 @@
 								<a data-bs-toggle="tooltip" data-bs-placement="top" title="Collapse" id="collapse-header"><i data-feather="chevron-up" class="feather-chevron-up"></i></a>
 							</li>
 						</ul>
-						<div class="page-btn">
-							<a href="add-product.html" class="btn btn-added"><i data-feather="plus-circle" class="me-2"></i>Add New Product</a>
-						</div>	
-						<div class="page-btn import">
-							<a href="#" class="btn btn-added color" data-bs-toggle="modal" data-bs-target="#view-notes"><i
-								data-feather="download" class="me-2"></i>Import Product</a>
-						</div>
 					</div>
+                    <!-- Dashboard Statistik Build -->
+                    <div class="container-fluid mt-4">
+                    <div class="card bg-dark text-white" style="max-width:100%;">
+                        <div class="card-body">
+                        <div class="mb-3">
+                            <span class="badge bg-secondary mb-2">Realtime Database</span>
+                        </div>
+                        <div class="row mb-4">
+                            <div class="col">
+                            <div class="fs-6 text-muted">Total Request (7d total)</div>
+                            <div class="fs-2 fw-bold">7920 Requests</div>
+                            <div class="text-success small">+5,056.2%</div>
+                            <canvas id="buildChart" height="120"></canvas>
+                        </div>
+                        <div class="col">
+                            <div class="fs-6 text-muted">User (current)</div>
+                            <div class="fs-2 fw-bold">56</div>
+                            <canvas id="buildChart2" height="120"></canvas>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-between mt-2 text-secondary small">
+                            <span>This week</span>
+                            <span>Last week</span>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
                     <!-- data table -->
                      <div class="card table-list-card">
 						<div class="card-body">
@@ -193,13 +207,11 @@
 													<span class="checkmarks"></span>
 												</label>
 											</th>
-											<th>Product</th>
-											<th>SKU</th>
-											<th>Category</th>
-											<th>Price</th>
-											<th>Unit</th>
-											<th>Qty</th>
-											<th>Created by</th>
+											<th>User</th>
+											<th>Total Request</th>
+											<th>Request per Day</th>
+											<th>Usage</th>
+											<th>Status</th>
 											<th class="no-sort">Action</th>
 										</tr>
 									</thead>
@@ -211,27 +223,14 @@
 													<span class="checkmarks"></span>
 												</label>
 											</td>
+											<td>Eko Satrio </td>
 											<td>
-												<div class="productimgname">
-													<a href="javascript:void(0);" class="product-img stock-img">
-														<img src="assets/img/products/stock-img-01.png" alt="product">
-													</a>
-													<a href="javascript:void(0);">Lenovo 3rd Generation </a>
-												</div>												
+												644							
 											</td>
-											<td>PT001 </td>
-											<td>Laptop</td>
-											<td>$12500.00</td>
-											<td>Pc</td>
-											<td>100</td>
-											<td>
-											<div class="userimgname">
-												<a href="javascript:void(0);" class="product-img">
-													<img src="assets/img/users/user-30.jpg" alt="product">
-												</a>
-												<a href="javascript:void(0);">Arroon</a>
-											</div></td>
-											<td class="action-table-data">
+                                            <td>24</td>
+                                            <td>65%</td>
+                                            <td><div class="badge bg-primary">Active</div></td>
+                                            <td class="action-table-data">
 												<div class="edit-delete-action">
 													<a class="me-2 edit-icon  p-2" href="product-details.html">
 														<i data-feather="eye" class="feather-eye"></i>
@@ -252,27 +251,13 @@
 													<span class="checkmarks"></span>
 												</label>
 											</td>
+											<td>Eko Satrio</td>
 											<td>
-												<div class="productimgname">
-													<a href="javascript:void(0);" class="product-img stock-img">
-														<img src="assets/img/products/stock-img-06.png" alt="product">
-													</a>
-													<a href="javascript:void(0);">Bold V3.2</a>
-												</div>												
+												644							
 											</td>
-											<td>PT002</td>
-											<td>Electronics</td>
-											<td>$1600.00</td>
-											<td>Pc</td>
-											<td>140</td>
-											<td>
-												<div class="userimgname">
-													<a href="javascript:void(0);" class="product-img">
-														<img src="assets/img/users/user-13.jpg" alt="product">
-													</a>
-														<a href="javascript:void(0);">Kenneth</a>
-												</div>
-											</td>
+                                            <td>24</td>
+                                            <td>65%</td>
+                                            <td><div class="badge bg-primary">Active</div></td>
 											<td class="action-table-data">
 												<div class="edit-delete-action">
 													<a class="me-2 edit-icon p-2" href="product-details.html">
@@ -295,27 +280,13 @@
 													<span class="checkmarks"></span>
 												</label>
 											</td>
+											<td>Eko Satrio</td>
 											<td>
-												<div class="productimgname">
-													<a href="javascript:void(0);" class="product-img stock-img">
-														<img src="assets/img/products/stock-img-02.png" alt="product">
-													</a>
-													<a href="javascript:void(0);">Nike Jordan</a>
-												</div>												
+												644							
 											</td>
-											<td>PT003</td>
-											<td>Shoe</td>
-											<td>$6000.00</td>
-											<td>Pc</td>
-											<td>780</td>
-											<td>
-												<div class="userimgname">
-													<a href="javascript:void(0);" class="product-img">
-														<img src="assets/img/users/user-11.jpg" alt="product">
-													</a>
-														<a href="javascript:void(0);">Gooch</a>
-												</div>
-											</td>
+                                            <td>24</td>
+                                            <td>65%</td>
+                                            <td><div class="badge bg-primary">Active</div></td>
 											<td class="action-table-data">
 												<div class="edit-delete-action">
 													<a class="me-2 edit-icon p-2" href="product-details.html">
@@ -338,27 +309,13 @@
 													<span class="checkmarks"></span>
 												</label>
 											</td>
+											<td>Eko Satrio</td>
 											<td>
-												<div class="productimgname">
-													<a href="javascript:void(0);" class="product-img stock-img">
-														<img src="assets/img/products/stock-img-03.png" alt="product">
-													</a>
-													<a href="javascript:void(0);">Apple Series 5 Watch</a>
-												</div>												
+												644							
 											</td>
-											<td>PT004</td>
-											<td>Electronics</td>
-											<td>$25000.00</td>
-											<td>Pc</td>
-											<td>450</td>
-											<td>
-												<div class="userimgname">
-													<a href="javascript:void(0);" class="product-img">
-														<img src="assets/img/users/user-03.jpg" alt="product">
-													</a>
-														<a href="javascript:void(0);">Nathan</a>
-												</div>
-											</td>
+                                            <td>24</td>
+                                            <td>65%</td>
+                                            <td><div class="badge bg-primary">Active</div></td>
 											<td class="action-table-data">
 												<div class="edit-delete-action">
 													<a class="me-2 edit-icon p-2" href="product-details.html">
@@ -381,27 +338,13 @@
 													<span class="checkmarks"></span>
 												</label>
 											</td>
+											<td>Eko Satrio</td>
 											<td>
-												<div class="productimgname">
-													<a href="javascript:void(0);" class="product-img stock-img">
-														<img src="assets/img/products/stock-img-04.png" alt="product">
-													</a>
-													<a href="javascript:void(0);">Amazon Echo Dot</a>
-												</div>												
+												644							
 											</td>
-											<td>PT005</td>
-											<td>Speaker</td>
-											<td>$1600.00</td>
-											<td>Pc</td>
-											<td>477</td>
-											<td>
-												<div class="userimgname">
-													<a href="javascript:void(0);" class="product-img">
-														<img src="assets/img/users/user-02.jpg" alt="product">
-													</a>
-														<a href="javascript:void(0);">Alice</a>
-												</div>
-											</td>
+                                            <td>24</td>
+                                            <td>65%</td>
+                                            <td><div class="badge bg-primary">Active</div></td>
 											<td class="action-table-data">
 												<div class="edit-delete-action">
 													<a class="me-2 edit-icon p-2" href="product-details.html">
@@ -423,27 +366,13 @@
 													<span class="checkmarks"></span>
 												</label>
 											</td>
+											<td>Eko Satrio</td>
 											<td>
-												<div class="productimgname">
-													<a href="javascript:void(0);" class="product-img stock-img">
-														<img src="assets/img/products/stock-img-05.png" alt="product">
-													</a>
-													<a href="javascript:void(0);">Lobar Handy</a>
-												</div>												
+												644							
 											</td>
-											<td>PT006</td>
-											<td>Furnitures</td>
-											<td>$4521.00</td>
-											<td>Kg</td>
-											<td>145</td>
-											<td>
-												<div class="userimgname">
-													<a href="javascript:void(0);" class="product-img">
-														<img src="assets/img/users/user-05.jpg" alt="product">
-													</a>
-														<a href="javascript:void(0);">Robb</a>
-												</div>
-											</td>
+                                            <td>24</td>
+                                            <td>65%</td>
+                                            <td><div class="badge bg-danger">Disabled</div></td>
 											<td class="action-table-data">
 												<div class="edit-delete-action">
 													<a class="me-2 edit-icon p-2" href="product-details.html">
@@ -466,27 +395,13 @@
 													<span class="checkmarks"></span>
 												</label>
 											</td>
+											<td>Eko Satrio</td>
 											<td>
-												<div class="productimgname">
-													<a href="javascript:void(0);" class="product-img stock-img">
-														<img src="assets/img/products/expire-product-01.png" alt="product">
-													</a>
-													<a href="javascript:void(0);">Red Premium Handy</a>
-												</div>												
+												644							
 											</td>
-											<td>PT007</td>
-											<td>Bags</td>
-											<td>$2024.00</td>
-											<td>Kg</td>
-											<td>747</td>
-											<td>
-												<div class="userimgname">
-													<a href="javascript:void(0);" class="product-img">
-														<img src="assets/img/users/user-08.jpg" alt="product">
-													</a>
-														<a href="javascript:void(0);">Steven</a>
-												</div>
-											</td>
+                                            <td>24</td>
+                                            <td>65%</td>
+                                            <td><div class="badge bg-danger">Disabled</div></td>
 											<td class="action-table-data">
 												<div class="edit-delete-action">
 													<a class="me-2 edit-icon p-2" href="product-details.html">
@@ -508,27 +423,13 @@
 													<span class="checkmarks"></span>
 												</label>
 											</td>
+											<td>Eko Satrio</td>
 											<td>
-												<div class="productimgname">
-													<a href="javascript:void(0);" class="product-img stock-img">
-														<img src="assets/img/products/expire-product-02.png" alt="product">
-													</a>
-													<a href="javascript:void(0);">Iphone 14 Pro</a>
-												</div>												
+												644							
 											</td>
-											<td>PT008</td>
-											<td>Phone</td>
-											<td>$1698.00</td>
-											<td>Pc</td>
-											<td>897</td>
-											<td>
-												<div class="userimgname">
-													<a href="javascript:void(0);" class="product-img">
-														<img src="assets/img/users/user-04.jpg" alt="product">
-													</a>
-														<a href="javascript:void(0);">Gravely</a>
-												</div>
-											</td>
+                                            <td>24</td>
+                                            <td>65%</td>
+                                            <td><div class="badge bg-danger">Disabled</div></td>
 											<td class="action-table-data">
 												<div class="edit-delete-action">
 													<a class="me-2 edit-icon p-2" href="product-details.html">
@@ -550,69 +451,13 @@
 													<span class="checkmarks"></span>
 												</label>
 											</td>
+											<td>Eko Satrio</td>
 											<td>
-												<div class="productimgname">
-													<a href="javascript:void(0);" class="product-img stock-img">
-														<img src="assets/img/products/expire-product-03.png" alt="product">
-													</a>
-													<a href="javascript:void(0);">Black Slim 200</a>
-												</div>												
+												644							
 											</td>
-											<td>PT009</td>
-											<td>Chairs</td>
-											<td>$6794.00</td>
-											<td>Pc</td>
-											<td>741</td>
-											<td>
-												<div class="userimgname">
-													<a href="javascript:void(0);" class="product-img">
-														<img src="assets/img/users/user-01.jpg" alt="product">
-													</a>
-														<a href="javascript:void(0);">Kevin</a>
-												</div>
-											</td>
-											<td class="action-table-data">
-												<div class="edit-delete-action">
-													<a class="me-2 edit-icon p-2" href="product-details.html">
-														<i data-feather="eye" class="action-eye"></i>
-													</a>
-													<a class="me-2 p-2" href="edit-product.html">
-														<i data-feather="edit" class="feather-edit"></i>
-													</a>
-													<a class="confirm-text p-2" href="javascript:void(0);">
-														<i data-feather="trash-2" class="feather-trash-2"></i>
-													</a>
-												</div>	
-											</td>
-										</tr>
-										<tr>
-											<td>
-												<label class="checkboxs">
-													<input type="checkbox">
-													<span class="checkmarks"></span>
-												</label>
-											</td>
-											<td>
-												<div class="productimgname">
-													<a href="javascript:void(0);" class="product-img stock-img">
-														<img src="assets/img/products/expire-product-04.png" alt="product">
-													</a>
-													<a href="javascript:void(0);">Woodcraft Sandal</a>
-												</div>												
-											</td>
-											<td>PT010</td>
-											<td>Bags</td>
-											<td>$4547.00</td>
-											<td>Kg</td>
-											<td>148</td>
-											<td>
-												<div class="userimgname">
-													<a href="javascript:void(0);" class="product-img">
-														<img src="assets/img/users/user-10.jpg" alt="product">
-													</a>
-														<a href="javascript:void(0);">Grillo</a>
-												</div>
-											</td>
+                                            <td>24</td>
+                                            <td>65%</td>
+                                            <td><div class="badge bg-danger">Disabled</div></td>
 											<td class="action-table-data">
 												<div class="edit-delete-action">
 													<a class="me-2 edit-icon p-2" href="product-details.html">
@@ -1264,68 +1109,7 @@
 			</div>
 		</div>
 		<!-- /Add Adjustment -->
-
-		<!-- Add Category -->
-		<div class="modal fade" id="add-units-category">
-			<div class="modal-dialog modal-dialog-centered custom-modal-two">
-				<div class="modal-content">
-					<div class="page-wrapper-new p-0">
-						<div class="content">
-							<div class="modal-header border-0 custom-modal-header">
-								<div class="page-title">
-									<h4>Add New Category</h4>
-								</div>
-								<button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-									<span aria-hidden="true">&times;</span>
-								</button>
-							</div>
-							<div class="modal-body custom-modal-body">
-								<div class="mb-3">
-									<label class="form-label">Name</label>
-									<input type="text" class="form-control">
-								</div>
-								<div class="modal-footer-btn">
-									<a href="javascript:void(0);" class="btn btn-cancel me-2" data-bs-dismiss="modal">Cancel</a>
-									<a href="units.html" class="btn btn-submit">Submit</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- /Add Category -->		
-
-		<!-- Add Unit -->
-		<div class="modal fade" id="add-unit">
-			<div class="modal-dialog modal-dialog-centered custom-modal-two">
-				<div class="modal-content">
-					<div class="page-wrapper-new p-0">
-						<div class="content">
-							<div class="modal-header border-0 custom-modal-header">
-								<div class="page-title">
-									<h4>Add Unit</h4>
-								</div>
-								<button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-									<span aria-hidden="true">&times;</span>
-								</button>
-							</div>
-							<div class="modal-body custom-modal-body">
-								<div class="mb-3">
-									<label class="form-label">Unit</label>
-									<input type="text" class="form-control">
-								</div>
-								<div class="modal-footer-btn">
-									<a href="javascript:void(0);" class="btn btn-cancel me-2" data-bs-dismiss="modal">Cancel</a>
-									<a href="units.html" class="btn btn-submit">Submit</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- /Add Unit -->
+			
 
 		<!-- Add Variatent -->
 		<div class="modal fade" id="add-variation">
@@ -1471,112 +1255,6 @@
 			</div>
 		</div>
 		<!-- /Add Variatent -->
-		 <div class="modal fade" id="view-notes">
-		<div class="modal-dialog modal-dialog-centered">
-			<div class="modal-content">
-				<div class="page-wrapper-new p-0">
-					<div class="content">
-						<div class="modal-header border-0 custom-modal-header">
-							<div class="page-title">
-								<h4>Import Purchase</h4>
-							</div>
-							<button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-								<span aria-hidden="true">&times;</span>
-							</button>
-						</div>
-						<div class="modal-body custom-modal-body">
-							<form action="purchase-list.html">
-								<div class="row">
-									<div class="col-lg-12 col-sm-12 col-12">
-										<div class="input-blocks">
-											<label>Product</label>
-											<div class="row">
-												<div class="col-lg-12 col-sm-12 col-12">
-													<select class="select">
-														<option>Choose</option>
-														<option>Apex Computers</option>
-														<option>Apex Computers</option>
-													</select>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="col-lg-6 col-sm-6 col-12">
-										<div class="input-blocks">
-											<label>Category</label>
-											<div class="row">
-												<div class="col-lg-12 col-sm-12 col-12">
-													<select class="select">
-														<option>Choose</option>
-														<option>Apex Computers</option>
-														<option>Apex Computers</option>
-													</select>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="col-lg-6 col-sm-6 col-12">
-										<div class="input-blocks">
-											<label>Sub Category</label>
-											<select class="select">
-												<option>Choose</option>
-												<option>Received</option>
-												<option>Ordered</option>
-												<option>Pending</option>
-											</select>
-										</div>
-									</div>
-									<div class="col-lg-12 col-sm-6 col-12">
-										<div class="row">
-											<div>
-												<!-- <div class="input-blocks download">
-													<a class="btn btn-submit">Download Sample File</a>
-												</div> -->
-												<div class="modal-footer-btn download-file">
-													<a href="javascript:void(0)" class="btn btn-submit">Download Sample File</a>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="col-lg-12">
-										<div class="input-blocks image-upload-down">
-											<label>	Upload CSV File</label>
-											<div class="image-upload download">
-												<input type="file">
-												<div class="image-uploads">
-													<img src="assets/img/download-img.png" alt="img">
-													<h4>Drag and drop a <span>file to upload</span></h4>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-lg-12">
-									<div class="input-blocks">
-											<label>Created By</label>
-											<input type="text" class="form-control">
-										</div>
-								</div>
-								<div class="col-lg-12">
-									<div class="input-blocks summer-description-box">
-										<label>Description</label>
-										<div id="summernote2">
-											<p>These shoes are made with the highest quality materials. </p>
-										</div>
-									</div>
-								</div>
-								<div class="modal-footer-btn">
-									<button type="button" class="btn btn-cancel me-2" data-bs-dismiss="modal">Cancel</button>
-									<button type="submit" class="btn btn-submit">Submit</button>
-								</div>
-							</form>
-							
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
 	 <!-- /modals -->
 	 <script src="assets/js/jquery-3.7.1.min.js"></script>
 
@@ -1595,7 +1273,6 @@
 
 		<!-- Summernote JS -->
 		<script src="assets/plugins/summernote/summernote-bs4.min.js"></script>
-		
 
 		<!-- Select2 JS -->
 		<script src="assets/plugins/select2/js/select2.min.js"></script>
@@ -1615,6 +1292,60 @@
 		
 	    <script src="assets/js/theme-script.js"></script>
 		<script src="assets/js/script.js"></script>
+        <!-- Chart.js CDN -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+// Data sesuai gambar
+function draw(ctx){
+    return new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ['Aug 26', 'Aug 27', 'Aug 28', 'Aug 29', 'Aug 30', 'Aug 31', 'Sep 1'],
+            datasets: [
+                {
+                    label: 'This week',
+                    data: [0, 100, 0, 0, 1000, 0, 0],
+                    borderColor: '#3b82f6',
+                    backgroundColor: 'rgba(59,130,246,0.1)',
+                    tension: 0.4,
+                    fill: false,
+                    pointRadius: 3,
+                    pointBackgroundColor: '#3b82f6'
+                },
+                {
+                    label: 'Last week',
+                    data: [16, 16, 15, 15, 16, 16, 16],
+                    borderColor: '#6b7280',
+                    borderDash: [5,5],
+                    fill: false,
+                    tension: 0,
+                    pointRadius: 0
+                }
+            ]
+        },
+        options: {
+            plugins: {
+                legend: { display: false }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    ticks: { color: '#aaa' },
+                    grid: { color: '#222' }
+                },
+                x: {
+                    ticks: { color: '#aaa' },
+                    grid: { display: false }
+                }
+            }
+        }
+    });
+}
+const ctx = document.getElementById('buildChart').getContext('2d');
+const ctx2 = document.getElementById('buildChart2').getContext('2d');
+draw(ctx)
+draw(ctx2)
+</script>
 	
 
 </body>

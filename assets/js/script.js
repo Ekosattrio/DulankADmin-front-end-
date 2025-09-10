@@ -24,12 +24,13 @@ const loadHTML = (url, elementId) => {
     });
 };
 
-$(document).ready(function(){
-	loadHTML('components/header.html', 'header-placeholder')
-	loadHTML('components/sidebar.html', 'sidebar-placeholder').then(() => {
-		start()
-	})
-})
+$(document).ready(function () {
+  loadHTML("components/header.html", "header-placeholder");
+  loadHTML("components/sidebar.html", "sidebar-placeholder").then(() => {
+    start();
+    initSidebarActive();
+  });
+});
 
 
 function start(){
@@ -2295,3 +2296,32 @@ btnFilter.addEventListener("click", function(e) {
   e.preventDefault();
   filterBox.classList.toggle("show");
 });
+function initSidebarActive() {
+  // Ambil nama file dari URL sekarang
+  let currentPage = window.location.pathname.split("/").pop().split("?")[0].split("#")[0];
+
+  // Cari link <a> yang href-nya sama dengan halaman sekarang
+  let $activeLink = $('#sidebar-menu a[href="' + currentPage + '"]');
+
+  if ($activeLink.length) {
+    // Tambahkan class active ke link target
+    $activeLink.addClass('active');
+
+    // Jika link ada di dalam submenu
+    let $submenu = $activeLink.closest('.submenu');
+    if ($submenu.length) {
+      // Tambahkan class subdrop + active ke parent <a>
+      let $parentLink = $submenu.children('a');
+      $parentLink.addClass('subdrop active');
+
+      // Buka <ul> parentnya
+      $submenu.children('ul').css('display', 'block');
+    }
+
+    // Scroll biar menu aktif terlihat
+    $activeLink[0].scrollIntoView({
+      behavior: 'smooth',
+      block: 'center'
+    });
+  }
+}

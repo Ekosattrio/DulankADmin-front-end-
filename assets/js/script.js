@@ -463,48 +463,47 @@ function start(){
 			$('.sidebar .slimScrollDiv').height(rHeight);
 		});
 	}
+$(document).ready(function () {
+  // Sidebar Toggle
+  $('.sidebar-menu a').on('click', function (e) {
+    let $this = $(this);
 
-	// Sidebar
-	var Sidemenu = function() {
-		this.$menuItem = $('.sidebar-menu a');
-	};
+    if ($this.parent().hasClass('submenu')) {
+      e.preventDefault();
 
-	function init() {
-		var $this = Sidemenu;
-		$('.sidebar-menu a').on('click', function(e) {
-			if($(this).parent().hasClass('submenu')) {
-				e.preventDefault();
-			}
-			if(!$(this).hasClass('subdrop')) {
-				$('ul', $(this).parents('ul:first')).slideUp(250);
-				$('a', $(this).parents('ul:first')).removeClass('subdrop');
-				$(this).next('ul').slideDown(350);
-				$(this).addClass('subdrop');
-			} else if($(this).hasClass('subdrop')) {
-				$(this).removeClass('subdrop');
-				$(this).next('ul').slideUp(350);
-			}
-		});
-		$('.sidebar-menu ul li.submenu a.active').parents('li:last').children('a:first').addClass('active').trigger('click');
-	}
+      if (!$this.hasClass('subdrop')) {
+        // Tutup submenu lain di level yang sama
+        $('ul', $this.parents('ul:first')).slideUp(250);
+        $('a', $this.parents('ul:first')).removeClass('subdrop active');
 
-	
-	// Sidebar Initiate
-	init();
-	$(document).on('mouseover', function(e) {
-        e.stopPropagation();
-        if ($('body').hasClass('mini-sidebar') && $('#toggle_btn').is(':visible')) {
-            var targ = $(e.target).closest('.sidebar, .header-left').length;
-            if (targ) {
-                $('body').addClass('expand-menu');
-                $('.subdrop + ul').slideDown();
-            } else {
-                $('body').removeClass('expand-menu');
-                $('.subdrop + ul').slideUp();
-            }
-            return false;
-        }
-    });
+        // Buka submenu ini
+        $this.next('ul').slideDown(350);
+        $this.addClass('subdrop active');
+      } else {
+        $this.removeClass('subdrop active');
+        $this.next('ul').slideUp(350);
+      }
+    } else {
+      // Link biasa, kasih highlight active
+      $('.sidebar-menu a').removeClass('active subdrop');
+      $this.addClass('active');
+    }
+  });
+
+  // Auto highlight berdasarkan URL
+  var currentUrl = window.location.pathname.split("/").pop();
+  $('.sidebar-menu a').each(function () {
+    var linkUrl = $(this).attr('href');
+    if (linkUrl && linkUrl === currentUrl) {
+      $(this).addClass('active');
+
+      // buka parent submenu kalau ada
+      $(this).parents('ul').show();
+      $(this).parents('.submenu').children('a:first').addClass('subdrop active');
+    }
+  });
+});
+
 
 	// Table Responsive
 

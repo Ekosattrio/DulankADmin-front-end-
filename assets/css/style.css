@@ -33040,3 +33040,18 @@ div.dataTables_wrapper div.dataTables_paginate ul.pagination {
     .text-nowrap-custom {
   white-space: nowrap;
 }
+
+/* Parent submenu aktif */
+.sidebar-menu li.submenu > a.active {
+  background: rgba(254, 159, 67, 0.08);
+  color: #fe9f43;   /* biar kontras sama background tipis */
+  border-radius: 5px;
+  font-weight: 600; /* opsional biar lebih tegas */
+}
+
+/* Anak submenu jangan ada background */
+.sidebar-menu li.submenu ul li a.active {
+  background: transparent !important;
+  color: inherit !important;
+  font-weight: normal;
+}

@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+	<meta name="description" content="POS - Bootstrap Admin Template">
+	<meta name="keywords"
+		content="admin, estimates, bootstrap, business, corporate, creative, invoice, html5, responsive, Projects">
+	<meta name="author" content="Dreamguys - Bootstrap Admin Template">
+	<meta name="robots" content="noindex, nofollow">
+	<title>Dreams Pos Admin Template</title>
+
+	<!-- Summernote CSS -->
+	<link rel="stylesheet" href="assets/plugins/summernote/summernote-bs4.min.css">
+
+	<!-- Favicon -->
+	<link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+
+	<!-- Datetimepicker CSS -->
+	<link rel="stylesheet" href="assets/css/bootstrap-datetimepicker.min.css">
+
+	<!-- animation CSS -->
+	<link rel="stylesheet" href="assets/css/animate.css">
+	<!-- Feathericon CSS -->
+	<link rel="stylesheet" href="assets/css/feather.css">
+
+	<!-- Select2 CSS -->
+	<link rel="stylesheet" href="assets/plugins/select2/css/select2.min.css">
+
+	<!-- Fontawesome CSS -->
+	<link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css">
+	<link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css">
+
+	<!-- Main CSS -->
+	<link rel="stylesheet" href="assets/css/style.css">
+
+</head>
+
+<body>
+	<div id="global-loader">
+		<div class="loader"> </div>
+	</div>
+	<!-- Main Wrapper -->
+	<div class="main-wrapper">
+
+		<!-- header -->
+		<div id="header-placeholder"></div>
+		<!-- sidebar -->
+		<div id="sidebar-placeholder"></div>	
+
+		        <!-- ...existing code... -->
+        <div class="page-wrapper">
+            <!-- Main konten tulis disini -->
+            <div class="content">
+                <!-- Top Stats -->
+                <div class="row mt-5">
+                    <div class="col-xl-3 col-sm-6 col-12 d-flex">
+                        <div class="dash-widget w-100">
+                            <div class="dash-widgetimg">
+                                <span><i class="fas fa-leaf fa-2x text-success"></i></span>
+                            </div>
+                            <div class="dash-widgetcontent">
+                                <h5>13,647</h5>
+                                <h6>Page View</h6>
+                                <span class="text-success small"><i class="fas fa-arrow-up"></i> 2.3% <span class="text-muted">Last Month</span></span>
+                                <a href="#" class="d-block small mt-1">View More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-sm-6 col-12 d-flex">
+                        <div class="dash-widget w-100">
+                            <div class="dash-widgetimg">
+                                <span><i class="fas fa-mouse-pointer fa-2x text-info"></i></span>
+                            </div>
+                            <div class="dash-widgetcontent">
+                                <h5>9,526</h5>
+                                <h6>Clicks</h6>
+                                <span class="text-success small"><i class="fas fa-arrow-up"></i> 8.1% <span class="text-muted">Last Month</span></span>
+                                <a href="#" class="d-block small mt-1">View More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-sm-6 col-12 d-flex">
+                        <div class="dash-widget w-100">
+                            <div class="dash-widgetimg">
+                                <span><i class="fas fa-layer-group fa-2x text-primary"></i></span>
+                            </div>
+                            <div class="dash-widgetcontent">
+                                <h5>976</h5>
+                                <h6>Conversions</h6>
+                                <span class="text-danger small"><i class="fas fa-arrow-down"></i> 0.3% <span class="text-muted">Last Month</span></span>
+                                <a href="#" class="d-block small mt-1">View More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-sm-6 col-12 d-flex">
+                        <div class="dash-widget w-100">
+                            <div class="dash-widgetimg">
+                                <span><i class="fas fa-user-plus fa-2x text-info"></i></span>
+                            </div>
+                            <div class="dash-widgetcontent">
+                                <h5>$123.6k</h5>
+                                <h6>New Users</h6>
+                                <span class="text-danger small"><i class="fas fa-arrow-down"></i> 10.6% <span class="text-muted">Last Month</span></span>
+                                <a href="#" class="d-block small mt-1">View More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Top Stats -->
+        
+                <div class="row mt-3">
+                    <!-- Conversions -->
+                    <div class="col-xl-3 col-md-6 col-12 mb-3">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h6>Conversions</h6>
+                                <div class="d-flex justify-content-center align-items-center my-3">
+                                    <canvas id="conversionDonut" width="120" height="120"></canvas>
+                                </div>
+                                <div class="text-center mb-2">
+                                    <span class="fs-4 fw-bold">65.2%</span>
+                                    <div class="text-muted small">Returning Customer</div>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <div>
+                                        <div class="fw-bold">This Week</div>
+                                        <div>23.5k</div>
+                                    </div>
+                                    <div class="text-end">
+                                        <div class="fw-bold">Last Week</div>
+                                        <div>41.05k</div>
+                                    </div>
+                                </div>
+                                <button class="btn btn-outline-primary btn-sm w-100 mt-3">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Performance Chart -->
+                    <div class="col-xl-9 col-md-6 col-12 mb-3">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <h6 class="mb-0">Performance</h6>
+                                    <div>
+                                        <button class="btn btn-light btn-sm">ALL</button>
+                                        <button class="btn btn-light btn-sm">1M</button>
+                                        <button class="btn btn-light btn-sm">6M</button>
+                                        <button class="btn btn-light btn-sm">1Y</button>
+                                    </div>
+                                </div>
+                                <div class="alert alert-warning py-1 px-2 small mb-2">
+                                    We regret to inform you that our server is currently experiencing technical issues.
+                                </div>
+                                <canvas id="performanceChart" height="80"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="row mt-3">
+                    <!-- Session By Browser -->
+                    <div class="col-xl-3 col-md-6 col-12 mb-3">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h6>Session By Browser</h6>
+                                <div class="mb-2 small">
+                                    <div class="d-flex justify-content-between">
+                                        <span>Chrome</span>
+                                        <span>62.5% <span class="text-muted">5.06k</span></span>
+                                    </div>
+                                    <div class="d-flex justify-content-between">
+                                        <span>Firefox</span>
+                                        <span>12.3% <span class="text-muted">1.5k</span></span>
+                                    </div>
+                                    <div class="d-flex justify-content-between">
+                                        <span>Safari</span>
+                                        <span>9.86% <span class="text-muted">1.03k</span></span>
+                                    </div>
+                                    <div class="d-flex justify-content-between">
+                                        <span>Brave</span>
+                                        <span>3.15% <span class="text-muted">0.3k</span></span>
+                                    </div>
+                                    <div class="d-flex justify-content-between">
+                                        <span>Opera</span>
+                                        <span>3.01% <span class="text-muted">1.58k</span></span>
+                                    </div>
+                                    <div class="d-flex justify-content-between">
+                                        <span>Falkon</span>
+                                        <span>2.8% <span class="text-muted">0.01k</span></span>
+                                    </div>
+                                    <div class="d-flex justify-content-between">
+                                        <span>Web</span>
+                                        <span>1.05% <span class="text-muted">2.51k</span></span>
+                                    </div>
+                                    <div class="d-flex justify-content-between">
+                                        <span>Other</span>
+                                        <span>3.36% <span class="text-muted">3.6k</span></span>
+                                    </div>
+                                </div>
+                                <button class="btn btn-outline-primary btn-sm w-100">View All</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Sessions by Country -->
+                    <div class="col-xl-5 col-md-6 col-12 mb-3">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <h6>Sessions by Country</h6>
+                                    <button class="btn btn-light btn-sm">View Data</button>
+                                </div>
+                                <div class="small">
+                                    <div class="d-flex justify-content-between align-items-center mb-1">
+                                        <span><img src="https://flagcdn.com/us.svg" width="18" class="me-1"> United States</span>
+                                        <span>659k</span>
+                                    </div>
+                                    <div class="d-flex justify-content-between align-items-center mb-1">
+                                        <span><img src="https://flagcdn.com/ru.svg" width="18" class="me-1"> Russia</span>
+                                        <span>485k</span>
+                                    </div>
+                                    <div class="d-flex justify-content-between align-items-center mb-1">
+                                        <span><img src="https://flagcdn.com/cn.svg" width="18" class="me-1"> China</span>
+                                        <span>355k</span>
+                                    </div>
+                                    <div class="d-flex justify-content-between align-items-center mb-1">
+                                        <span><img src="https://flagcdn.com/ca.svg" width="18" class="me-1"> Canada</span>
+                                        <span>204k</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Top Pages -->
+                    <div class="col-xl-4 col-md-12 col-12 mb-3">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <h6>Top Pages</h6>
+                                    <button class="btn btn-light btn-sm">View All</button>
+                                </div>
+                                <div class="table-responsive">
+                                    <table class="table table-sm mb-0">
+                                        <thead>
+                                            <tr>
+                                                <th>Page Path</th>
+                                                <th>Page Views</th>
+                                                <th>Avg Time on Page</th>
+                                                <th>Exit Rate</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>rasket/dashboard.html</td>
+                                                <td>4265</td>
+                                                <td>09m:45s</td>
+                                                <td><span class="badge bg-danger">20.4%</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>rasket/chat.html</td>
+                                                <td>2584</td>
+                                                <td>05m:02s</td>
+                                                <td><span class="badge bg-warning text-dark">12.25%</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>rasket/auth-login.html</td>
+                                                <td>3369</td>
+                                                <td>04m:25s</td>
+                                                <td><span class="badge bg-success">5.2%</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>rasket/email.html</td>
+                                                <td>985</td>
+                                                <td>02m:03s</td>
+                                                <td><span class="badge bg-danger">64.2%</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>rasket/social.html</td>
+                                                <td>653</td>
+                                                <td>15m:56s</td>
+                                                <td><span class="badge bg-success">2.4%</span></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Footer -->
+                <div class="text-center text-muted small mt-4 mb-2">
+                    2025 © Rasket. Crafted by <span class="text-primary"><i class="fas fa-heart text-danger"></i> Techzaa</span>
+                </div>
+            </div>
+        </div>
+        <!-- ...existing code... -->
+        
+        <!-- Tambahkan Chart.js CDN sebelum </body> jika belum ada -->
+	
+	</div>
+	<!-- /Main Wrapper -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+    // Donut Chart for Conversions
+    const donutCtx = document.getElementById('conversionDonut').getContext('2d');
+    new Chart(donutCtx, {
+        type: 'doughnut',
+        data: {
+            datasets: [{
+                data: [65.2, 34.8],
+                backgroundColor: ['#22c55e', '#e5e7eb'],
+                borderWidth: 0
+            }]
+        },
+        options: {
+            cutout: '80%',
+            plugins: { legend: { display: false } },
+            tooltips: { enabled: false }
+        }
+    });
+    
+    // Performance Chart
+    const perfCtx = document.getElementById('performanceChart').getContext('2d');
+    new Chart(perfCtx, {
+        type: 'bar',
+        data: {
+            labels: ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],
+            datasets: [
+                {
+                    label: 'Page Views',
+                    data: [30, 60, 70, 55, 70, 60, 40, 75, 50, 65, 45, 60],
+                    backgroundColor: '#14b8a6'
+                },
+                {
+                    label: 'Clicks',
+                    type: 'line',
+                    data: [10, 20, 15, 25, 30, 20, 10, 35, 20, 30, 25, 40],
+                    borderColor: '#6366f1',
+                    backgroundColor: 'rgba(99,102,241,0.1)',
+                    fill: false,
+                    tension: 0.4,
+                    pointRadius: 3
+                }
+            ]
+        },
+        options: {
+            plugins: { legend: { display: true } },
+            scales: {
+                x: { grid: { display: false } },
+                y: { beginAtZero: true, grid: { color: '#eee' } }
+            }
+        }
+    });
+    </script>
+	
+	<!-- jQuery -->
+	<script src="assets/js/jquery-3.7.1.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.loadtemplate/1.5.10/jquery.loadTemplate.min.js" integrity="sha512-T1zx+UG2gXu9mr29wvzaKkNUmAOAie40T32ZPIvcRPJgO5br53+Ocqj8gzguUuix7FK+Z3ncRCJMaZcumnPZzg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+	<!-- Feather Icon JS -->
+	<script src="assets/js/feather.min.js"></script>
+
+	<!-- custom JS -->
+	<script src="assets/js/tableukuran.js"></script>
+
+
+	<!-- Slimscroll JS -->
+	<script src="assets/js/jquery.slimscroll.min.js"></script>
+
+	<!-- Bootstrap Core JS -->
+	<script src="assets/js/bootstrap.bundle.min.js"></script>
+
+	<!-- Chart JS -->
+	<script src="assets/plugins/apexchart/apexcharts.min.js"></script>
+	<script src="assets/plugins/apexchart/chart-data.js"></script>
+
+	<!-- Sweetalert 2 -->
+	<script src="assets/plugins/sweetalert/sweetalert2.all.min.js"></script>
+	<script src="assets/plugins/sweetalert/sweetalerts.min.js"></script>
+
+	<!-- Summernote JS -->
+	<script src="assets/plugins/summernote/summernote-bs4.min.js"></script>
+
+	<!-- Custom JS -->
+	<script src="assets/js/theme-script.js"></script>
+	<script src="assets/js/script.js"></script>
+
+
+</body>
+
+</html>

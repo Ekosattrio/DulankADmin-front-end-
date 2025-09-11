@@ -2292,7 +2292,7 @@ const btnFilter = document.getElementById("pilter");
 const filterBox = document.getElementById("filter_container");
 
 btnFilter.addEventListener("click", function(e) {
-  e.preventDefault();
+  e.preventDefault()
   filterBox.classList.toggle("show");
 });
 function initSidebarActive() {
@@ -2320,7 +2320,5 @@ function initSidebarActive() {
     // Scroll biar menu aktif terlihat
     $activeLink[0].scrollIntoView({
       behavior: 'smooth',
-      block: 'center'
-    });
-  }
+      block: 'center'});}
 }

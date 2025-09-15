@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <meta name="description" content="POS - Bootstrap Admin Template">
+    <meta name="keywords"
+        content="admin, estimates, bootstrap, business, corporate, creative, management, minimal, modern,  html5, responsive">
+    <meta name="author" content="Dreamguys - Bootstrap Admin Template">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Dreams Pos Admin Template</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+
+    <!-- animation CSS -->
+    <link rel="stylesheet" href="assets/plugins/lightbox/glightbox.min.css">
+
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css">
+    <link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .form-section {
+            background: #fff;
+            padding: 16px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+        }
+
+        .quick-link {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .small-muted {
+            font-size: 0.85rem;
+            color: #6c757d;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="global-loader">
+        <div class="whirly-loader"> </div>
+    </div>
+    <!-- Main Wrapper -->
+    <div class="main-wrapper">
+
+        <!-- header -->
+        <div id="header-placeholder"></div>
+        <!-- sidebar -->
+        <div id="sidebar-placeholder"></div>
+
+        <div class="page-wrapper">
+            <div class="content">
+                <div class="page-header mt-3">
+                    <div class="page-title">
+                        <h4>Footer</h4>
+                    </div>
+                </div>
+                <div class="row g-3">
+                    <!-- Form -->
+                    <div class="col-lg-12">
+                        <div class="form-section mb-3">
+                            <h5>Konten Utama</h5>
+                            <div class="mb-3">
+                                <label class="form-label">Teks singkat (deskripsi)</label>
+                                <textarea id="desc" class="form-control" rows="3"
+                                    placeholder="Deskripsi perusahaan atau tagline"></textarea>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label">Copyright</label>
+                                <input id="copyright" class="form-control" type="text"
+                                    placeholder="© 2025 Nama Perusahaan — Semua hak dilindungi">
+                            </div>
+                        </div>
+
+                        <div class="form-section mb-3">
+                            <h5>Kontak & Alamat</h5>
+                            <div class="mb-2">
+                                <label class="form-label">Alamat</label>
+                                <textarea id="alamat" class="form-control" rows="2"></textarea>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 mb-2">
+                                    <label class="form-label">Telepon</label>
+                                    <input id="telepon" class="form-control" type="text">
+                                </div>
+                                <div class="col-md-6 mb-2">
+                                    <label class="form-label">Email</label>
+                                    <input id="email" class="form-control" type="email">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-section mb-3">
+                            <h5>Social Media</h5>
+                            <p class="small-muted mb-2">Masukan URL lengkap (https://...)</p>
+                            <div class="row g-2">
+                                <div class="col-md-6">
+                                    <label class="form-label">Facebook</label>
+                                    <input id="facebook" class="form-control form-control-sm" type="url">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">Instagram</label>
+                                    <input id="instagram" class="form-control form-control-sm" type="url">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">Twitter / X</label>
+                                    <input id="twitter" class="form-control form-control-sm" type="url">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">LinkedIn</label>
+                                    <input id="linkedin" class="form-control form-control-sm" type="url">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">YouTube</label>
+                                    <input id="youtube" class="form-control form-control-sm" type="url">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-section mb-3">
+                            <h5>Quick Links</h5>
+                            <p class="small-muted">Tambahkan link yang sering tampil di footer. Urutan akan mengikuti
+                                daftar.</p>
+                            <div id="quickLinksContainer" class="mb-2"></div>
+                            <div class="d-flex gap-2">
+                                <input id="qlText" class="form-control form-control-sm"
+                                    placeholder="Judul link (mis. Tentang Kami)">
+                                <input id="qlHref" class="form-control form-control-sm" placeholder="URL (https://...)">
+                                <button id="addQuickLink" class="btn btn-primary btn-sm">Tambah</button>
+                            </div>
+                        </div>
+
+                        <div class="d-flex gap-2 justify-content-end my-2">
+                            <button id="saveBtn" class="btn btn-success">Save</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- /Main Wrapper -->
+
+    <!-- jQuery -->
+    <script src="assets/js/jquery-3.7.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.loadtemplate/1.5.10/jquery.loadTemplate.min.js"
+        integrity="sha512-T1zx+UG2gXu9mr29wvzaKkNUmAOAie40T32ZPIvcRPJgO5br53+Ocqj8gzguUuix7FK+Z3ncRCJMaZcumnPZzg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- Feather Icon JS -->
+    <script src="assets/js/feather.min.js"></script>
+
+    <!-- custom JS -->
+    <script src="assets/js/tableukuran.js"></script>
+    <script>
+        const state = {
+            desc: '',
+            copyright: '© ' + (new Date()).getFullYear() + ' Nama Perusahaan — Semua hak dilindungi',
+            alamat: '',
+            telepon: '',
+            email: '',
+            socials: {},
+            quickLinks: [
+                { text: 'Tentang Kami', href: '#' },
+                { text: 'Kontak', href: '#' },
+                { text: 'Panduan Pelanggan Baru', href: '#' }
+            ]
+        };
+
+        function renderQuickLinkEditor() {
+            const c = document.getElementById('quickLinksContainer');
+            c.innerHTML = '';
+            state.quickLinks.forEach((q, idx) => {
+                const div = document.createElement('div');
+                div.className = 'mb-2 quick-link';
+                div.innerHTML = `
+        <input class="form-control form-control-sm" data-idx="${idx}" data-field="text" value="${escapeHtml(q.text)}">
+        <input class="form-control form-control-sm" data-idx="${idx}" data-field="href" value="${escapeHtml(q.href)}">
+        <button class="btn btn-danger btn-sm" data-action="del" data-idx="${idx}"><i class="fa fa-trash"></i></button>
+      `;
+                c.appendChild(div);
+            });
+
+            c.querySelectorAll('input[data-idx]').forEach(inp => {
+                inp.addEventListener('input', e => {
+                    const idx = +e.target.dataset.idx; const field = e.target.dataset.field;
+                    state.quickLinks[idx][field] = e.target.value;
+                });
+            });
+            c.querySelectorAll('button[data-action="del"]').forEach(btn => {
+                btn.addEventListener('click', e => {
+                    const idx = +btn.dataset.idx;
+                    state.quickLinks.splice(idx, 1);
+                    renderQuickLinkEditor();
+                });
+            });
+        }
+
+        function escapeHtml(s) {
+            return (s + '').replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;');
+        }
+
+        document.getElementById('addQuickLink').addEventListener('click', () => {
+            const t = document.getElementById('qlText'); const h = document.getElementById('qlHref');
+            const text = t.value.trim(); const href = h.value.trim();
+            if (!text || !href) { alert('Isi judul dan URL quick link.'); return; }
+            state.quickLinks.push({ text, href });
+            t.value = ''; h.value = '';
+            renderQuickLinkEditor();
+        });
+
+        // init
+        renderQuickLinkEditor();
+    </script>
+
+
+
+    <!-- Slimscroll JS -->
+    <script src="assets/js/jquery.slimscroll.min.js"></script>
+
+    <!-- Bootstrap Core JS -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Chart JS -->
+    <script src="assets/plugins/apexchart/apexcharts.min.js"></script>
+    <script src="assets/plugins/apexchart/chart-data.js"></script>
+
+    <!-- Sweetalert 2 -->
+    <script src="assets/plugins/sweetalert/sweetalert2.all.min.js"></script>
+    <script src="assets/plugins/sweetalert/sweetalerts.min.js"></script>
+
+    <!-- Summernote JS -->
+    <script src="assets/plugins/summernote/summernote-bs4.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="assets/js/theme-script.js"></script>
+    <script src="assets/js/script.js"></script>
+
+</body>
+
+</html>

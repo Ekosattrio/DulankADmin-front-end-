@@ -33055,3 +33055,58 @@ div.dataTables_wrapper div.dataTables_paginate ul.pagination {
   color: inherit !important;
   font-weight: normal;
 }
+
+
+#live-dropdown{
+  z-index: 100;
+  background-color: white;
+}
+
+.searchinputsz {
+  padding: 0;
+  position: relative;
+}
+.searchinputsz input {
+  width: 375px;
+  height: 36px;
+  border: 1px solid #dbe0e6;
+  background: white;
+  padding: 0 16px;
+  border-radius: 8px;
+}
+@media (max-width: 1199.98px) {
+  .searchinputsz input {
+    width: 170px;
+  }
+}
+.searchinputsz .search-addon span {
+  z-index: 9;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  justify-content: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  border-radius: 5px;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+}
+
+.searchinputsz .search-addon svg {
+  opacity: 0;
+  -webkit-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  color: #FF4D4D;
+}
+.searchinputsz.show .search-addon svg {
+  opacity: 1;
+}

@@ -60,9 +60,9 @@
 			<div class="btn-row d-sm-flex align-items-center">
 				<a href="index.html" class="btn btn-secondary mb-xs-3"><span class="me-1 d-flex align-items-center"><i
 							data-feather="shopping-cart" class="feather-16"></i></span>Dashboard Admin</a>
-				<a href="sales-dashboard.html" class="btn btn-secondary mb-xs-3"><span
+				<a href="https://percetakan-dulank.netlify.app/" class="btn btn-secondary mb-xs-3"><span
 						class="me-1 d-flex align-items-center"><i data-feather="shopping-cart"
-							class="feather-16"></i></span>Dashboard Sales</a>
+							class="feather-16"></i></span>User</a>
 				<a href="javascript:void(0);" class="btn btn-secondary mb-xs-3" data-bs-toggle="modal"
 					data-bs-target="#orders"><span class="me-1 d-flex align-items-center"><i
 							data-feather="shopping-cart" class="feather-16"></i></span>View Orders</a>
@@ -999,22 +999,45 @@
 										class="feather-16"></i></a>
 							</div>
 						</div>
-						<div class="customer-info block-section">
+						
+						<div class="customer-info block-section ">
 							<h6>Customer Information</h6>
-							<div class="input-block d-flex align-items-center">
-								<div class="flex-grow-1">
-									<select class="select">
-										<option>Walk in Customer</option>
-										<option>John</option>
-										<option>Smith</option>
-										<option>Ana</option>
-										<option>Elza</option>
-									</select>
+							<div class="col-12">
+								<form action="#" class="dropdown" id="live-dropdown">
+									<div class="searchinputsz" id="dropdownMenuClickable" data-bs-toggle="dropdown"
+									data-bs-auto-close="false">
+									<input type="text" id="customerSearch" placeholder="Search" autocomplete="off">
+									<div class="search-addon"> <span id="clearSearch"><i data-feather="x-circle" class="feather-14"></i></span> </div>
+									</div>
+									<div class="dropdown-menu search-dropdown" aria-labelledby="dropdownMenuClickable">
+									<div class="search-info">
+										<ul class="customers" id="customerList">
+										<li>
+											<a href="javascript:void(0);">Aron Varu
+											<img src="assets/img/profiles/avator1.jpg" alt="" class="img-fluid">
+											</a>
+											<span>+62 01828</span>
+										</li>
+										<li>
+											<a href="javascript:void(0);">Jonita
+											<img src="assets/img/profiles/avatar-01.jpg" alt="" class="img-fluid">
+											</a>
+											<span>+62 01828</span>
+
+										</li>
+										<li>
+											<a href="javascript:void(0);">Aaron
+											<img src="assets/img/profiles/avatar-10.jpg" alt="" class="img-fluid">
+											</a>
+											<span>+62 01828</span>
+
+										</li>
+										</ul>
+									</div>
+									</div>
+								</form>
 								</div>
-								<a href="#" class="btn btn-primary btn-icon" data-bs-toggle="modal"
-									data-bs-target="#create"><i data-feather="user-plus" class="feather-16"></i></a>
-							</div>
-							<div class="input-block">
+							<div class="input-block mt-3">
 								<select class="select">
 									<option>Search Products</option>
 									<option>IPhone 14 64GB</option>
@@ -1075,107 +1098,7 @@
 								
 							</div>
 						</div>
-						<div class="block-section">
-							<div class="selling-info">
-								<div class="row">
-									<div class="col-12 col-sm-4">
-										<div class="input-block">
-											<label>Order Tax</label>
-											<select class="select">
-												<option>GST 5%</option>
-												<option>GST 10%</option>
-												<option>GST 15%</option>
-												<option>GST 20%</option>
-												<option>GST 25%</option>
-												<option>GST 30%</option>
-											</select>
-										</div>
-									</div>
-									<div class="col-12 col-sm-4">
-										<div class="input-block">
-											<label>Shipping</label>
-											<select class="select">
-												<option>15</option>
-												<option>20</option>
-												<option>25</option>
-												<option>30</option>
-											</select>
-										</div>
-									</div>
-									<div class="col-12 col-sm-4">
-										<div class="input-block">
-											<label>Discount</label>
-											<select class="select">
-												<option>10%</option>
-												<option>10%</option>
-												<option>15%</option>
-												<option>20%</option>
-												<option>25%</option>
-												<option>30%</option>
-											</select>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="order-total">
-								<table class="table table-responsive table-borderless">
-									<tr>
-										<td>Sub Total</td>
-										<td class="text-end">$60,454</td>
-									</tr>
-									<tr>
-										<td>Tax (GST 5%)</td>
-										<td class="text-end">$40.21</td>
-									</tr>
-									<tr>
-										<td>Shipping</td>
-										<td class="text-end">$40.21</td>
-									</tr>
-									<tr>
-										<td>Sub Total</td>
-										<td class="text-end">$60,454</td>
-									</tr>
-									<tr>
-										<td class="danger">Discount (10%)</td>
-										<td class="danger text-end">$15.21</td>
-									</tr>
-									<tr>
-										<td>Total</td>
-										<td class="text-end">$64,024.5</td>
-									</tr>
-								</table>
-							</div>
-						</div>
-
-						<div class="block-section payment-method">
-							<h6>Payment Method</h6>
-							<div class="row d-flex align-items-center justify-content-center methods">
-								<div class="col-md-6 col-lg-4 item">
-									<div class="default-cover">
-										<a href="javascript:void(0);">
-											<img src="assets/img/icons/cash-pay.svg" alt="Payment Method">
-											<span>Cash</span>
-										</a>
-									</div>
-								</div>
-								<div class="col-md-6 col-lg-4 item">
-									<div class="default-cover">
-										<a href="javascript:void(0);">
-											<img src="assets/img/icons/credit-card.svg" alt="Payment Method">
-											<span>Debit Card</span>
-										</a>
-									</div>
-								</div>
-								<div class="col-md-6 col-lg-4 item">
-									<div class="default-cover">
-										<a href="javascript:void(0);">
-											<img src="assets/img/icons/qr-scan.svg" alt="Payment Method">
-											<span>Scan</span>
-										</a>
-									</div>
-								</div>
-							</div>
-						</div>
+						
 						<div class="d-grid btn-block">
 							<a class="btn btn-secondary" href="javascript:void(0);">
 								Grand Total : $64,024.5
@@ -1188,12 +1111,29 @@
 							<a href="javascript:void(0);" class="btn btn-danger btn-icon flex-fill"><span
 									class="me-1 d-flex align-items-center"><i data-feather="trash-2"
 										class="feather-16"></i></span>Void</a>
+						</div>
+						<br>
+						<div class="btn-row d-sm-flex align-items-center justify-content-between">
 							<a href="javascript:void(0);" class="btn btn-success btn-icon flex-fill"
+								data-bs-toggle="modal" data-bs-target="#tax"><span
+									class="me-1 d-flex align-items-center"><i data-feather="credit-card"
+										class="feather-16"></i></span>Tax</a>
+							<a href="javascript:void(0);" class="btn btn-success btn-icon flex-fill"
+								data-bs-toggle="modal" data-bs-target="#shipping"><span
+									class="me-1 d-flex align-items-center"><i data-feather="credit-card"
+										class="feather-16"></i></span>Shipping</a>
+							<a href="javascript:void(0);" class="btn btn-success btn-icon flex-fill"
+								data-bs-toggle="modal" data-bs-target="#discount"><span
+									class="me-1 d-flex align-items-center"><i data-feather="credit-card"
+										class="feather-16"></i></span>Discount</a>
+						</div>
+						<br>
+						<div class="btn-row d-sm-flex align-items-center justify-content-between">
+						<a href="javascript:void(0);" class="btn btn-success btn-icon flex-fill"
 								data-bs-toggle="modal" data-bs-target="#payment-completed"><span
 									class="me-1 d-flex align-items-center"><i data-feather="credit-card"
 										class="feather-16"></i></span>Payment</a>
 						</div>
-
 					</aside>
 				</div>
 			</div>
@@ -1202,6 +1142,93 @@
 
 	<!-- /Main Wrapper -->
 	<!-- modals -->
+	 <div class="modal fade modal-default" id="tax" aria-labelledby="standard-modalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title">Order Tax</h5>
+					   <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+						   <span aria-hidden="true">×</span>
+					   </button>
+				   </div>
+				   <form action="pos-4.html">
+						<div class="modal-body pb-1">
+							<div class="mb-3">
+								<label class="form-label">Order Tax <span class="text-danger">*</span></label>
+								<select class="select">
+									<option>Select</option>
+									<option>No Tax</option>
+									<option>@10</option>
+									<option>@15</option>
+									<option>VAT</option>
+									<option>SLTAX</option>
+								</select>
+							</div>
+						</div>
+						<div class="modal-footer d-flex justify-content-end flex-wrap gap-2">
+							<button type="button" class="btn btn-md btn-secondary" data-bs-dismiss="modal">Cancel</button>
+							<button type="submit" class="btn btn-md btn-primary">Submit</button>
+						</div>
+				   </form>
+				</div>
+			</div>
+	 </div>
+	 <div class="modal fade modal-default" id="shipping" aria-labelledby="standard-modalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title">Shipping Cost</h5>
+					   <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+						   <span aria-hidden="true">×</span>
+					   </button>
+				   </div>
+				   <form action="pos-4.html">
+						<div class="modal-body pb-1">
+							<div class="mb-3">
+								<label class="form-label">Shipping Cost <span class="text-danger">*</span></label>
+								<input type="text" class="form-control">
+							</div>
+						</div>
+						<div class="modal-footer d-flex justify-content-end flex-wrap gap-2">
+							<button type="button" class="btn btn-md btn-secondary" data-bs-dismiss="modal">Cancel</button>
+							<button type="submit" class="btn btn-md btn-primary">Submit</button>
+						</div>
+				   </form>
+				</div>
+			</div>
+	 </div>
+	 <div class="modal fade modal-default" id="discount" aria-labelledby="standard-modalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title">Discount </h5>
+					   <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+						   <span aria-hidden="true">×</span>
+					   </button>
+				   </div>
+				   <form action="pos-4.html">
+						<div class="modal-body pb-1">
+							<div class="mb-3">
+								<label class="form-label">Order Discount Type <span class="text-danger">*</span></label>
+								<select class="select">
+									<option>Select</option>
+									<option>Flat</option>
+									<option>Percentage</option>
+								</select>
+							</div>
+							<div class="mb-3">
+								<label class="form-label">Value <span class="text-danger">*</span></label>
+								<input type="text" class="form-control">
+							</div>
+						</div>
+						<div class="modal-footer d-flex justify-content-end flex-wrap gap-2">
+							<button type="button" class="btn btn-md btn-secondary" data-bs-dismiss="modal">Cancel</button>
+							<button type="submit" class="btn btn-md btn-primary">Submit</button>
+						</div>
+				   </form>
+				</div>
+			</div>
+	 </div>
 	<!-- Payment Completed -->
 	<div class="modal fade modal-default" id="payment-completed" aria-labelledby="payment-completed">
 		<div class="modal-dialog modal-dialog-centered">

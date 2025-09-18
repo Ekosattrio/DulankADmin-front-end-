@@ -33110,3 +33110,35 @@ div.dataTables_wrapper div.dataTables_paginate ul.pagination {
 .searchinputsz.show .search-addon svg {
   opacity: 1;
 }
+
+.search-product-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 18px;
+  font-size: 1rem;
+  border-bottom: 1px solid #f2f2f2;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.search-product-item:hover {
+  background: #f8f9fa;
+}
+.product-name {
+  font-weight: 500;
+  color: #333;
+}
+.product-price {
+  font-weight: 600;
+  color: #f39c12;
+  margin-left: 16px;
+}
+.products {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.products li {
+  padding: 0;
+  margin: 0;
+}

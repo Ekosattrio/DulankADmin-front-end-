@@ -29034,7 +29034,10 @@ th.fixed-width {
 .pos-category .owl-nav button.owl-next:hover i, .pos-category .owl-nav button.owl-prev:hover i {
   color: #ffffff;
 }
-
+.product-wrap .product-list .product-info {
+  display: flex;
+  align-items: stretch; /* bikin img-bg & info sejajar tinggi */
+}
 .pos-products .product-info {
   padding: 15px;
   color: #B8BCC9;
@@ -29058,11 +29061,7 @@ th.fixed-width {
   margin-bottom: 10px;
   position: relative;
 }
-.pos-products .product-info .img-bg img {
-  -webkit-transition: all 0.5s ease;
-  -ms-transition: all 0.5s ease;
-  transition: all 0.5s ease;
-}
+
 .pos-products .product-info .img-bg span {
   -webkit-transition: all 0.5s ease;
   -ms-transition: all 0.5s ease;
@@ -29113,9 +29112,7 @@ th.fixed-width {
 .pos-products .product-info:hover, .pos-products .product-info.active {
   border-color: #FF9F43;
 }
-.pos-products .product-info:hover .img-bg img, .pos-products .product-info.active .img-bg img {
-  transform: scale(1.2);
-}
+
 .pos-products .product-info:hover .img-bg span, .pos-products .product-info.active .img-bg span {
   display: block;
 }
@@ -29130,23 +29127,23 @@ th.fixed-width {
   padding: 10px;
 }
 .product-wrap .product-list .product-info {
-  width: 60%;
+   display: flex;
+  align-items: stretch; 
 }
 .product-wrap .product-list .product-info .img-bg {
-  width: 83px;
-  height: 83px;
-  background-color: #FAFBFE;
-  border-radius: 10px;
-  display: -webkit-box;
-  display: -ms-flexbox;
+ width: 110px;      /* tetap segitu sesuai yang kamu mau */
+  height: auto;      /* biar fleksibel */
+  min-height: 83px;  /* jaga jangan lebih kecil dari ini */
   display: flex;
   align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   justify-content: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  margin-right: 10px;
+}
+
+.product-wrap .product-list .product-info .info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* isi info selalu rata tengah */
 }
 .product-wrap .product-list .info span {
   background-color: #FF9F43;
@@ -29155,7 +29152,7 @@ th.fixed-width {
   color: #ffffff;
   font-size: 14px;
   padding: 0 10px;
-  min-width: 64px;
+  max-width: 125px;
 }
 .product-wrap .product-list .info h6 {
   font-size: 14px;

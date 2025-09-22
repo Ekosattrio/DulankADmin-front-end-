@@ -172,7 +172,7 @@
 								<div class="tab_content active" data-tab="all">
 									<div class="row">
 										<div class="col-sm-2 col-md-6 col-lg-3 col-xl-3" data-bs-toggle="modal"
-											data-bs-target="#edit-product">
+											data-bs-target="#add-product">
 											<div class="product-info default-cover card">
 												<a href="javascript:void(0);" class="img-bg">
 													<img src="assets/img/products/brosur.png" alt="Products">
@@ -188,7 +188,7 @@
 											</div>
 										</div>
 										<div class="col-sm-2 col-md-6 col-lg-3 col-xl-3" data-bs-toggle="modal"
-											data-bs-target="#edit-product">
+											data-bs-target="#add-product">
 											<div class="product-info default-cover card">
 												<a href="javascript:void(0);" class="img-bg">
 													<img src="assets/img/products/brosur.png" alt="Products">
@@ -204,7 +204,7 @@
 											</div>
 										</div>
 										<div class="col-sm-2 col-md-6 col-lg-3 col-xl-3" data-bs-toggle="modal"
-											data-bs-target="#edit-product">
+											data-bs-target="#add-product">
 											<div class="product-info default-cover card">
 												<a href="javascript:void(0);" class="img-bg">
 													<img src="assets/img/products/brosur.png" alt="Products">
@@ -220,7 +220,7 @@
 											</div>
 										</div>
 										<div class="col-sm-2 col-md-6 col-lg-3 col-xl-3" data-bs-toggle="modal"
-											data-bs-target="#edit-product">
+											data-bs-target="#add-product">
 											<div class="product-info default-cover card">
 												<a href="javascript:void(0);" class="img-bg">
 													<img src="assets/img/products/brosur.png" alt="Products">
@@ -236,7 +236,7 @@
 											</div>
 										</div>
 										<div class="col-sm-2 col-md-6 col-lg-3 col-xl-3" data-bs-toggle="modal"
-											data-bs-target="#edit-product">
+											data-bs-target="#add-product">
 											<div class="product-info default-cover card">
 												<a href="javascript:void(0);" class="img-bg">
 													<img src="assets/img/products/brosur.png" alt="Products">
@@ -252,7 +252,7 @@
 											</div>
 										</div>
 										<div class="col-sm-2 col-md-6 col-lg-3 col-xl-3" data-bs-toggle="modal"
-											data-bs-target="#edit-product">
+											data-bs-target="#add-product">
 											<div class="product-info default-cover card">
 												<a href="javascript:void(0);" class="img-bg">
 													<img src="assets/img/products/brosur.png" alt="Products">
@@ -268,7 +268,7 @@
 											</div>
 										</div>
 										<div class="col-sm-2 col-md-6 col-lg-3 col-xl-3" data-bs-toggle="modal"
-											data-bs-target="#edit-product">
+											data-bs-target="#add-product">
 											<div class="product-info default-cover card">
 												<a href="javascript:void(0);" class="img-bg">
 													<img src="assets/img/products/brosur.png" alt="Products">
@@ -284,7 +284,7 @@
 											</div>
 										</div>
 										<div class="col-sm-2 col-md-6 col-lg-3 col-xl-3" data-bs-toggle="modal"
-											data-bs-target="#edit-product">
+											data-bs-target="#add-product">
 											<div class="product-info default-cover card">
 												<a href="javascript:void(0);" class="img-bg">
 													<img src="assets/img/products/brosur.png" alt="Products">
@@ -1005,6 +1005,9 @@
 							<div class="col-12">
 								<form action="#" class="dropdown" id="live-dropdown">
 									<div class="searchinputsz" id="dropdownMenuClickable">
+										<span>
+											Customer Search
+										</span>
 										<input type="text" id="customerSearch" placeholder="Search" autocomplete="off">
 										<div class="search-addon">
 											<span id="clearSearch"><i data-feather="x-circle" class="feather-14"></i></span>
@@ -1062,6 +1065,9 @@
 							<div class="col-12 mt-2">
 							  <form action="#" class="dropdown" id="product-dropdown">
 								<div class="searchinputsz" id="productDropdownMenu">
+									<span>
+											Produk Search
+										</span>
 								  <input type="text" id="productSearch" placeholder="Search Products" autocomplete="off">
 								  <div class="search-addon">
 									<span id="clearProductSearch"><i data-feather="x-circle" class="feather-14"></i></span>
@@ -1121,7 +1127,6 @@
 								<a href="javascript:void(0);"  id="clearAllProducts" class="d-flex align-items-center text-danger"><span class="me-1"><i data-feather="x" class="feather-16"></i></span>Clear all</a>
 							</div>
 							<div class="product-wrap">
-								
 								<div class="product-list align-items-center justify-content-between">
 									<div class="d-flex align-items-center product-info w-100" data-bs-toggle="modal"
 										data-bs-target="#products">
@@ -1190,11 +1195,13 @@
 						<br>
 						<div class="btn-row d-sm-flex align-items-center justify-content-between">
 						<!-- ini ada payment complete buat abis modal harusnya -->
-							<a  class="btn btn-success btn-icon flex-fill"
-						
-								data-bs-toggle="modal" data-bs-target="#payment-cash"><span
-									class="me-1 d-flex align-items-center"><i data-feather="credit-card"
-										class="feather-16"></i></span>Payment</a>
+						<a id="paymentTotalBtn" class="btn btn-success btn-icon flex-fill"
+							data-bs-toggle="modal" data-bs-target="#payment-cash">
+							<span class="me-1 d-flex align-items-center">
+								<i data-feather="credit-card" class="feather-16"></i>
+							</span>
+							Payment Total $2000
+							</a>
 						</div>
 					</aside>
 				</div>
@@ -1431,90 +1438,7 @@
 	</div>
 	<!-- /Print Receipt -->
 
-	<!-- Products -->
-	<div class="modal fade modal-default pos-modal" id="products" aria-labelledby="products">
-		<div class="modal-dialog modal-dialog-centered">
-			<div class="modal-content">
-				<div class="modal-header p-4 d-flex align-items-center justify-content-between">
-					<div class="d-flex align-items-center">
-						<h5 class="me-4">Products</h5>
-						<span class="badge bg-info d-inline-block mb-0">Order ID : #666614</span>
-					</div>
-					<button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-						<span aria-hidden="true">×</span>
-					</button>
-				</div>
-				<div class="modal-body p-4">
-					<form action="pos.html">
-						<div class="product-wrap">
-							<div class="product-list d-flex align-items-center justify-content-between">
-								<div class="d-flex align-items-center flex-fill">
-									<a href="javascript:void(0);" class="img-bg me-2">
-										<img src="assets/img/products/pos-product-16.png" alt="Products">
-									</a>
-									<div class="info d-flex align-items-center justify-content-between flex-fill">
-										<div>
-											<span>PT0005</span>
-											<h6><a href="javascript:void(0);">Red Nike Laser</a></h6>
-										</div>
-										<p>$2000</p>
-									</div>
-								</div>
-
-							</div>
-							<div class="product-list d-flex align-items-center justify-content-between">
-								<div class="d-flex align-items-center flex-fill">
-									<a href="javascript:void(0);" class="img-bg me-2">
-										<img src="assets/img/products/pos-product-17.png" alt="Products">
-									</a>
-									<div class="info d-flex align-items-center justify-content-between flex-fill">
-										<div>
-											<span>PT0235</span>
-											<h6><a href="javascript:void(0);">Iphone 14</a></h6>
-										</div>
-										<p>$3000</p>
-									</div>
-								</div>
-							</div>
-							<div class="product-list d-flex align-items-center justify-content-between">
-								<div class="d-flex align-items-center flex-fill">
-									<a href="javascript:void(0);" class="img-bg me-2">
-										<img src="assets/img/products/pos-product-16.png" alt="Products">
-									</a>
-									<div class="info d-flex align-items-center justify-content-between flex-fill">
-										<div>
-											<span>PT0005</span>
-											<h6><a href="javascript:void(0);">Red Nike Laser</a></h6>
-										</div>
-										<p>$2000</p>
-									</div>
-								</div>
-							</div>
-							<div class="product-list d-flex align-items-center justify-content-between">
-								<div class="d-flex align-items-center flex-fill">
-									<a href="javascript:void(0);" class="img-bg me-2">
-										<img src="assets/img/products/pos-product-17.png" alt="Products">
-									</a>
-									<div class="info d-flex align-items-center justify-content-between flex-fill">
-										<div>
-											<span>PT0005</span>
-											<h6><a href="javascript:void(0);">Red Nike Laser</a></h6>
-										</div>
-										<p>$2000</p>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="modal-footer d-sm-flex justify-content-end">
-							<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-							<button type="submit" class="btn btn-primary">Submit</button>
-						</div>
-					</form>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- /Products -->
+	
 
 	<div class="modal fade" id="create" tabindex="-1" aria-labelledby="create" aria-hidden="true">
 		<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
@@ -1606,182 +1530,386 @@
 	<!-- /Hold -->
 
 	<!-- Edit Product -->
-	<div class="modal modal-lg fade modal-default pos-modal" id="edit-product" aria-labelledby="edit-product">
-		<div class="modal-dialog modal-dialog-centered">
-			<div class="modal-content">
-				<div class="modal-header p-4">
-					<h5>Cetak Full Color</h5>
-					<button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-						<span aria-hidden="true">×</span>
-					</button>
-				</div>
-				<div class="modal-body p-4">
-					<form id="productForm" action="javascript:void(0);">
-						<div class="row">
-							<div class="row mb-3 align-items-center">
-								<div class="col-md-2 col-12 mb-2 mb-md-0 fw-semibold">Minimal Qty</div>
-								<div class="col-md-2 col-6">
-									<input type="number" class="form-control" value="1" min="1"
-										style="max-width:100px;">
-								</div>
-							</div>
-							<div class="col-lg-12 col-sm-12 col-12">
-								<div class="row mb-3 align-items-center">
-									<div class="col-md-2 col-12 mb-2 mb-md-0 fw-semibold">Ukuran Brosur</div>
-									<div class="col-md-10 col-12 d-flex flex-wrap gap-2">
-										<input type="checkbox" class="btn-check" id="ukA3">
-										<label class="btn btn-outline-primary ukuran-btn" for="ukA3">A3</label>
-										<input type="checkbox" class="btn-check" id="ukA4">
-										<label class="btn btn-outline-primary ukuran-btn" for="ukA4">A4</label>
-										<input type="checkbox" class="btn-check" id="ukA5">
-										<label class="btn btn-outline-primary ukuran-btn" for="ukA5">A5</label>
-										<input type="checkbox" class="btn-check" id="ukA6">
-										<label class="btn btn-outline-primary ukuran-btn" for="ukA6">A6</label>
-										<input type="checkbox" class="btn-check" id="ukFolio">
-										<label class="btn btn-outline-primary ukuran-btn" for="ukFolio">Folio</label>
-										<input type="checkbox" class="btn-check" id="ukDFolio">
-										<label class="btn btn-outline-primary ukuran-btn" for="ukDFolio">Double Folio</label>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-12 col-sm-12 col-12">
-								<div class="row mb-3 align-items-center">
-									<div class="col-md-2 col-12 mb-2 mb-md-0 fw-semibold">Custom Ukuran</div>
-									<div class="col-md-10 col-12 d-flex gap-3">
-										<input type="radio" class="btn-check" name="customUkuran" id="customIya"
-											>
-										<label class="btn btn-outline-primary rounded-pill px-4"
-											for="customIya">Iya</label>
-										<input type="radio" class="btn-check" name="customUkuran" id="customTidak">
-										<label class="btn btn-outline-primary rounded-pill px-4"
-											for="customTidak">Tidak</label>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-12 col-sm-12 col-12">
-								<div class="row mb-3 align-items-center">
-									<div class="col-md-2 col-12 mb-2 mb-md-0 fw-semibold"></div>
-									<div class="col-md-10 col-12 d-flex flex-wrap gap-2 align-items-center">
-										<div class="row w-100">
-											<div class="col-3">
-												<span>Satuan</span>
-											</div>
-											<div class="col-4">
-												<select class="form-select d-inline-block">
-													<option>Milimeter</option>
-													<option>Centimeter</option>
-												</select>
-											</div>
-										</div>
-										<div class="row w-100">
-											<div class="col-3">
-												<span>Minimal Lebar</span>
-											</div>
-											<div class="col-4">
-												<input type="number" class="form-control d-inline-block" value="80">
-											</div>
-										</div>
-										<div class="row w-100">
-											<div class="col-3">
-												<span>Minimal Panjang</span>
-											</div>
-											<div class="col-4">
-												<input type=" number" class="form-control d-inline-block" value="80">
-											</div>
-										</div>
+<div class="modal modal-lg fade modal-default pos-modal" id="edit-product" aria-labelledby="edit-product">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header p-4">
+        <h5>Edit Cetak Full Color</h5>
+        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
 
+      <div class="modal-body p-4">
+        <form id="editProductForm" action="javascript:void(0);">
+          <div class="row">
 
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-12 col-sm-12 col-12">
-								<div class="row mb-3 align-items-center">
-									<div class="col-md-2 col-12 mb-2 mb-md-0 fw-semibold">Group Kertas</div>
-									<div class="col-md-10 col-12 d-flex flex-wrap gap-2">
-										<input type="checkbox" class="btn-check" id="kertasArtPaper">
-										<label class="btn btn-outline-primary" for="kertasArtPaper">Art
-											Paper</label>
-										<input type="checkbox" class="btn-check" id="kertasArtCarton">
-										<label class="btn btn-outline-primary" for="kertasArtCarton">Art
-											Carton</label>
-										<input type="checkbox" class="btn-check" id="kertasHVS">
-										<label class="btn btn-outline-primary" for="kertasHVS">HVS</label>
-										<input type="checkbox" class="btn-check" id="kertasDuplex">
-										<label class="btn btn-outline-primary" for="kertasDuplex">Duplex</label>
-										<input type="checkbox" class="btn-check" id="kertasBookpaper">
-										<label class="btn btn-outline-primary" for="kertasBookpaper">Bookpaper</label>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-12 col-sm-12 col-12">
-								<div class="row mb-3 align-items-center">
-									<div class="col-md-2 col-12 mb-2 mb-md-0 fw-semibold">Mesin</div>
-									<div class="col-md-10 col-12 d-flex flex-wrap gap-2">
-										<input type="checkbox" class="btn-check" id="mesinGTO">
-										<label class="btn btn-outline-primary" for="mesinGTO">GTO 52 4
-											Warna</label>
-										<input type="checkbox" class="btn-check" id="mesinSM52" >
-										<label class="btn btn-outline-primary" for="mesinSM52">SM 52 4
-											Warna</label>
-										<input type="checkbox" class="btn-check" id="mesinSM72" >
-										<label class="btn btn-outline-primary" for="mesinSM72">SM 72 4
-											Warna</label>
-										<input type="checkbox" class="btn-check" id="mesinSM104">
-										<label class="btn btn-outline-primary" for="mesinSM104">SM 104 4
-											Warna</label>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-12 col-sm-12 col-12">
-								<div class="row mb-3 align-items-center">
-									<div class="col-md-2 col-12 mb-2 mb-md-0 fw-semibold">Sisi Cetak</div>
-									<div class="col-md-10 col-12 d-flex flex-wrap gap-2">
-										<input type="checkbox" class="btn-check" id="sisi1" >
-										<label class="btn btn-outline-primary" for="sisi1">1 Sisi Cetak</label>
-										<input type="checkbox" class="btn-check" id="sisi2" >
-										<label class="btn btn-outline-primary" for="sisi2">2 Sisi Cetak</label>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-12 col-sm-12 col-12">
-								<div class="row mb-3 align-items-center">
-									<div class="col-md-2 col-12 mb-2 mb-md-0 fw-semibold">Laminasi</div>
-									<div class="col-md-10 col-12 d-flex flex-wrap gap-2">
-										<input type="checkbox" class="btn-check" id="lamDoff" >
-										<label class="btn btn-outline-primary" for="lamDoff">Doff</label>
-										<input type="checkbox" class="btn-check" id="lamGlossy" >
-										<label class="btn btn-outline-primary" for="lamGlossy">Glossy</label>
-										<input type="checkbox" class="btn-check" id="lamUV" >
-										<label class="btn btn-outline-primary" for="lamUV">UV Varnish</label>
-										<input type="checkbox" class="btn-check" id="lamSpotUV" >
-										<label class="btn btn-outline-primary" for="lamSpotUV">Spot UV</label>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-12 col-sm-12 col-12">
-								<div class="row mb-4 align-items-center">
-									<div class="col-md-2 col-12 mb-2 mb-md-0 fw-semibold">Lipat</div>
-									<div class="col-md-10 col-12 d-flex flex-wrap gap-2">
-										<input type="checkbox" class="btn-check" id="lipat1">
-										<label class="btn btn-outline-primary" for="lipat1">1 Lipatan</label>
-										<input type="checkbox" class="btn-check" id="lipat2">
-										<label class="btn btn-outline-primary" for="lipat2">2 Lipatan</label>
-									</div>
-								</div>
-							</div>
+            <!-- Minimal Qty -->
+            <div class="row mb-3 align-items-center">
+              <div class="col-md-2 col-12 fw-semibold">Minimal Qty</div>
+              <div class="col-md-2 col-6">
+                <input type="number" id="edit-qty" class="form-control" value="1" min="1" style="max-width:100px;">
+              </div>
+            </div>
 
-						</div>
+            <!-- Ukuran Brosur -->
+            <div class="col-lg-12">
+              <div class="row mb-3 align-items-center">
+                <div class="col-md-2 fw-semibold">Ukuran Brosur</div>
+                <div class="col-md-10 d-flex flex-wrap gap-2">
+                  <input type="checkbox" class="btn-check" id="edit-ukA3">
+                  <label class="btn btn-outline-primary" for="edit-ukA3">A3(297*420mm)</label>
 
-						<div class="modal-footer d-sm-flex justify-content-end">
-							<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-							<button type="submit" id="submitProduct" class="btn btn-primary">Submit</button>
-						</div>
-				</div>
+                  <input type="checkbox" class="btn-check" id="edit-ukA4">
+                  <label class="btn btn-outline-primary" for="edit-ukA4">A4(210*297mm)</label>
+
+                  <input type="checkbox" class="btn-check" id="edit-ukA5">
+                  <label class="btn btn-outline-primary" for="edit-ukA5">A5(149*210mm)</label>
+                </div>
+              </div>
+            </div>
+
+            <!-- Custom Ukuran -->
+            <div class="col-lg-12">
+              <div class="row mb-3 align-items-center">
+                <div class="col-md-2">
+                  <span>Custom?</span>
+                </div>
+                <div class="col-md-10 d-flex gap-3">
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="editCustomOption" id="edit-customYes" value="yes">
+                    <label class="form-check-label" for="edit-customYes">Iya</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="editCustomOption" id="edit-customNo" value="no" checked>
+                    <label class="form-check-label" for="edit-customNo">Tidak</label>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Bagian custom (default hidden) -->
+              <div id="editCustomFields" class="d-none">
+                <div class="row w-100 mb-2">
+                  <div class="col-3"><span>Satuan</span></div>
+                  <div class="col-4">
+                    <select class="form-select d-inline-block" id="edit-satuan">
+                      <option>Milimeter</option>
+                      <option>Centimeter</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="row w-100 mb-2">
+                  <div class="col-3"><span>Minimal Lebar</span></div>
+                  <div class="col-4">
+                    <input type="number" id="edit-lebar" class="form-control d-inline-block" value="80">
+                  </div>
+                </div>
+
+                <div class="row w-100 mb-2">
+                  <div class="col-3"><span>Minimal Panjang</span></div>
+                  <div class="col-4">
+                    <input type="number" id="edit-panjang" class="form-control d-inline-block" value="80">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Group Kertas -->
+            <div class="col-lg-12">
+              <div class="row mb-3 align-items-center">
+                <div class="col-md-2 fw-semibold">Group Kertas</div>
+                <div class="col-md-10 d-flex flex-wrap gap-2">
+                  <input type="checkbox" class="btn-check" id="edit-kertasArtPaper">
+                  <label class="btn btn-outline-primary" for="edit-kertasArtPaper">Art Paper 150gr</label>
+
+                  <input type="checkbox" class="btn-check" id="edit-kertasArtCarton">
+                  <label class="btn btn-outline-primary" for="edit-kertasArtCarton">Art Carton 120gr</label>
+
+                  <input type="checkbox" class="btn-check" id="edit-kertasHVS">
+                  <label class="btn btn-outline-primary" for="edit-kertasHVS">HVS100gr</label>
+                </div>
+              </div>
+            </div>
+
+            <!-- Mesin -->
+            <div class="col-lg-12">
+              <div class="row mb-3 align-items-center">
+                <div class="col-md-2 fw-semibold">Mesin</div>
+                <div class="col-md-10 d-flex flex-wrap gap-2">
+                  <input type="checkbox" class="btn-check" id="edit-mesinGTO">
+                  <label class="btn btn-outline-primary" for="edit-mesinGTO">GTO 52 4 Warna</label>
+
+                  <input type="checkbox" class="btn-check" id="edit-mesinSM52">
+                  <label class="btn btn-outline-primary" for="edit-mesinSM52">SM 52 4 Warna</label>
+
+                  <input type="checkbox" class="btn-check" id="edit-mesinSM72">
+                  <label class="btn btn-outline-primary" for="edit-mesinSM72">SM 72 4 Warna</label>
+
+                  <input type="checkbox" class="btn-check" id="edit-mesinSM104">
+                  <label class="btn btn-outline-primary" for="edit-mesinSM104">SM 104 4 Warna</label>
+                </div>
+              </div>
+            </div>
+
+            <!-- Sisi Cetak -->
+            <div class="col-lg-12">
+              <div class="row mb-3 align-items-center">
+                <div class="col-md-2 fw-semibold">Sisi Cetak</div>
+                <div class="col-md-10 d-flex flex-wrap gap-2">
+                  <input type="checkbox" class="btn-check" id="edit-sisi1">
+                  <label class="btn btn-outline-primary" for="edit-sisi1">1 Sisi Cetak</label>
+
+                  <input type="checkbox" class="btn-check" id="edit-sisi2">
+                  <label class="btn btn-outline-primary" for="edit-sisi2">2 Sisi Cetak</label>
+                </div>
+              </div>
+            </div>
+
+            <!-- Laminasi -->
+            <div class="col-lg-12">
+              <div class="row mb-3 align-items-center">
+                <div class="col-md-2 fw-semibold">Laminasi</div>
+                <div class="col-md-10 d-flex flex-wrap gap-2">
+                  <input type="checkbox" class="btn-check" id="edit-tanpaLaminasi">
+                  <label class="btn btn-outline-primary" for="edit-tanpaLaminasi">Tanpa Laminasi</label>
+
+                  <input type="checkbox" class="btn-check" id="edit-lamDoff">
+                  <label class="btn btn-outline-primary" for="edit-lamDoff">Doff</label>
+
+                  <input type="checkbox" class="btn-check" id="edit-lamGlossy">
+                  <label class="btn btn-outline-primary" for="edit-lamGlossy">Glossy</label>
+
+                  <input type="checkbox" class="btn-check" id="edit-lamSpotUV">
+                  <label class="btn btn-outline-primary" for="edit-lamSpotUV">Doff Spot UV</label>
+                </div>
+              </div>
+            </div>
+
+            <!-- Lipat -->
+            <div class="col-lg-12">
+              <div class="row mb-4 align-items-center">
+                <div class="col-md-2 fw-semibold">Lipat</div>
+                <div class="col-md-10 d-flex flex-wrap gap-2">
+                  <input type="checkbox" class="btn-check" id="edit-tanpaLipat">
+                  <label class="btn btn-outline-primary" for="edit-tanpaLipat">Tanpa Lipatan</label>
+
+                  <input type="checkbox" class="btn-check" id="edit-lipat1">
+                  <label class="btn btn-outline-primary" for="edit-lipat1">1 Lipatan</label>
+
+                  <input type="checkbox" class="btn-check" id="edit-lipat2">
+                  <label class="btn btn-outline-primary" for="edit-lipat2">2 Lipatan</label>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Modal Footer -->
+          <div class="modal-footer d-sm-flex justify-content-end">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+            <button type="submit" class="btn btn-primary" id="submitEditProduct">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /Edit Product -->
+
+<!-- add Product -->
+
+<div class="modal modal-lg fade modal-default pos-modal" id="add-product" aria-labelledby="add-product">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header p-4">
+        <h5>Tambah Produk - Cetak Full Color</h5>
+        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+
+      <div class="modal-body p-4">
+        <!-- Form Add Product -->
+        <form id="addProductForm" action="javascript:void(0);">
+          <div class="row">
+            
+            <!-- Minimal Qty -->
+            <div class="row mb-3 align-items-center">
+              <div class="col-md-2 col-12 fw-semibold">Minimal Qty</div>
+              <div class="col-md-2 col-6">
+                <input type="number" id="add-qty" class="form-control" value="1" min="1" style="max-width:100px;">
+              </div>
+            </div>
+
+            <!-- Ukuran Brosur -->
+            <div class="col-lg-12">
+              <div class="row mb-3 align-items-center">
+                <div class="col-md-2 fw-semibold">Ukuran Brosur</div>
+                <div class="col-md-10 d-flex flex-wrap gap-2">
+                  <input type="checkbox" class="btn-check" id="add-ukA3">
+                  <label class="btn btn-outline-primary" for="add-ukA3">A3(297*420mm)</label>
+
+                  <input type="checkbox" class="btn-check" id="add-ukA4">
+                  <label class="btn btn-outline-primary" for="add-ukA4">A4(210*297mm)</label>
+
+                  <input type="checkbox" class="btn-check" id="add-ukA5">
+                  <label class="btn btn-outline-primary" for="add-ukA5">A5(149*210mm)</label>
+                </div>
+              </div>
+            </div>
+
+            <!-- Custom Ukuran -->
+            <div class="col-lg-12">
+  <div class="row mb-3 align-items-center">
+    <div class="col-md-2">
+      <span>Custom?</span>
+    </div>
+    <div class="col-md-10 d-flex gap-3">
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="customOption" id="customYes" value="yes">
+        <label class="form-check-label" for="customYes">Iya</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="customOption" id="customNo" value="no" checked>
+        <label class="form-check-label" for="customNo">Tidak</label>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bagian custom (default hidden) -->
+  <div id="customFields" class="d-none">
+    <div class="row w-100 mb-2">
+      <div class="col-3"><span>Satuan</span></div>
+      <div class="col-4">
+        <select class="form-select d-inline-block" id="add-satuan">
+          <option>Milimeter</option>
+          <option>Centimeter</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="row w-100 mb-2">
+      <div class="col-3"><span>Minimal Lebar</span></div>
+      <div class="col-4">
+        <input type="number" id="add-lebar" class="form-control d-inline-block" value="80">
+      </div>
+    </div>
+
+    <div class="row w-100 mb-2">
+      <div class="col-3"><span>Minimal Panjang</span></div>
+      <div class="col-4">
+        <input type="number" id="add-panjang" class="form-control d-inline-block" value="80">
+      </div>
+    </div>
+  </div>
+</div>
+
+            <!-- Group Kertas -->
+            <div class="col-lg-12">
+              <div class="row mb-3 align-items-center">
+                <div class="col-md-2 fw-semibold">Group Kertas</div>
+                <div class="col-md-10 d-flex flex-wrap gap-2">
+                  <input type="checkbox" class="btn-check" id="add-kertasArtPaper">
+                  <label class="btn btn-outline-primary" for="add-kertasArtPaper">Art Paper 150gr</label>
+
+                  <input type="checkbox" class="btn-check" id="add-kertasArtCarton">
+                  <label class="btn btn-outline-primary" for="add-kertasArtCarton">Art Carton 120gr</label>
+
+                  <input type="checkbox" class="btn-check" id="add-kertasHVS">
+                  <label class="btn btn-outline-primary" for="add-kertasHVS">HVS100gr</label>
+                </div>
+              </div>
+            </div>
+
+            <!-- Mesin -->
+            <div class="col-lg-12">
+              <div class="row mb-3 align-items-center">
+                <div class="col-md-2 fw-semibold">Mesin</div>
+                <div class="col-md-10 d-flex flex-wrap gap-2">
+                  <input type="checkbox" class="btn-check" id="add-mesinGTO">
+                  <label class="btn btn-outline-primary" for="add-mesinGTO">GTO 52 4 Warna</label>
+
+                  <input type="checkbox" class="btn-check" id="add-mesinSM52">
+                  <label class="btn btn-outline-primary" for="add-mesinSM52">SM 52 4 Warna</label>
+
+                  <input type="checkbox" class="btn-check" id="add-mesinSM72">
+                  <label class="btn btn-outline-primary" for="add-mesinSM72">SM 72 4 Warna</label>
+
+                  <input type="checkbox" class="btn-check" id="add-mesinSM104">
+                  <label class="btn btn-outline-primary" for="add-mesinSM104">SM 104 4 Warna</label>
+                </div>
+              </div>
+            </div>
+
+            <!-- Sisi Cetak -->
+            <div class="col-lg-12">
+              <div class="row mb-3 align-items-center">
+                <div class="col-md-2 fw-semibold">Sisi Cetak</div>
+                <div class="col-md-10 d-flex flex-wrap gap-2">
+                  <input type="checkbox" class="btn-check" id="add-sisi1">
+                  <label class="btn btn-outline-primary" for="add-sisi1">1 Sisi Cetak</label>
+
+                  <input type="checkbox" class="btn-check" id="add-sisi2">
+                  <label class="btn btn-outline-primary" for="add-sisi2">2 Sisi Cetak</label>
+                </div>
+              </div>
+            </div>
+
+            <!-- Laminasi -->
+            <div class="col-lg-12">
+              <div class="row mb-3 align-items-center">
+                <div class="col-md-2 fw-semibold">Laminasi</div>
+                <div class="col-md-10 d-flex flex-wrap gap-2">
+                  <input type="checkbox" class="btn-check" id="add-tanpaLaminasi">
+                  <label class="btn btn-outline-primary" for="add-tanpaLaminasi">Tanpa Laminasi</label>
+
+                  <input type="checkbox" class="btn-check" id="add-lamDoff">
+                  <label class="btn btn-outline-primary" for="add-lamDoff">Doff</label>
+
+                  <input type="checkbox" class="btn-check" id="add-lamGlossy">
+                  <label class="btn btn-outline-primary" for="add-lamGlossy">Glossy</label>
+
+                  <input type="checkbox" class="btn-check" id="add-lamSpotUV">
+                  <label class="btn btn-outline-primary" for="add-lamSpotUV">Doff Spot UV</label>
+                </div>
+              </div>
+            </div>
+
+            <!-- Lipat -->
+            <div class="col-lg-12">
+              <div class="row mb-4 align-items-center">
+                <div class="col-md-2 fw-semibold">Lipat</div>
+                <div class="col-md-10 d-flex flex-wrap gap-2">
+                  <input type="checkbox" class="btn-check" id="add-tanpaLipat">
+                  <label class="btn btn-outline-primary" for="add-tanpaLipat">Tanpa Lipatan</label>
+
+                  <input type="checkbox" class="btn-check" id="add-lipat1">
+                  <label class="btn btn-outline-primary" for="add-lipat1">1 Lipatan</label>
+
+                  <input type="checkbox" class="btn-check" id="add-lipat2">
+                  <label class="btn btn-outline-primary" for="add-lipat2">2 Lipatan</label>
+                </div>
+              </div>
+            </div>
+
+          </div>
 			</div>
-		</div>
-	</div>
-	<!-- /Edit Product -->
+			
+			<!-- Modal Footer -->
+			<div class="modal-footer d-sm-flex justify-content-end">
+				<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+				<button type="submit" class="btn btn-primary" id="submitAddProduct">Submit</button>
+			</div>
+		</form>
+    </div>
+</div>
+</div>
 
+<!-- /add Product -->	
+
+
+	
 	<!-- Recent Transactions -->
 	<div class="modal fade pos-modal" id="recents" tabindex="-1" aria-hidden="true">
 		<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
@@ -2755,42 +2883,7 @@
 				   </div>
 				   <form action="pos-4.html">
 						<div class="modal-body pb-1">
-							<div class="row">
-								<div class="col-md-4">
-									<div class="mb-3">
-										<label class="form-label">Received Amount <span class="text-danger">*</span></label>
-										<div class="input-icon-start position-relative">
-											<span class="input-icon-addon text-gray-9">
-												<i class="ti ti-currency-dollar"></i>
-											</span>
-											<input type="text" class="form-control" value="1800">
-										</div>
-									</div>
-								</div>
-								<div class="col-md-4">
-									<div class="mb-3">
-										<label class="form-label">Paying Amount <span class="text-danger">*</span></label>
-										<div class="input-icon-start position-relative">
-											<span class="input-icon-addon text-gray-9">
-												<i class="ti ti-currency-dollar"></i>
-											</span>
-											<input type="text" class="form-control" value="1800">
-										</div>
-									</div>
-								</div>
-								<div class="col-md-4">
-									<div class="change-item mb-3">
-										<label class="form-label">Change</label>
-										<div class="input-icon-start position-relative">
-											<span class="input-icon-addon text-gray-9">
-												<i class="ti ti-currency-dollar"></i>
-											</span>
-											<input type="text" class="form-control" value="0.00">
-										</div>
-									</div>
-									
-								</div>
-								<div class="col-md-12">
+							<div class="col-md-12">
 									<div class="mb-3">
 										<label class="form-label">Payment Type <span class="text-danger">*</span></label>
 										<select class="select select-payment">
@@ -2801,18 +2894,50 @@
 											<option value="points">Points</option>
 										</select>
 									</div>
-									
-									<div class="point-wrap payment-content mb-3">
-										<div class=" bg-success-transparent d-flex align-items-center justify-content-between flex-wrap p-2 gap-2 br-5">
-											<h6 class="fs-14 fw-bold text-success">You have 2000 Points to Use</h6>
-											<a href="javascript:void(0);" class="btn btn-dark btn-md">Use for this Purchase</a>
+									<div class="col-md-12">
+									<div class="mb-3">
+										<label class="form-label">Paying Amount <span class="text-danger">*</span></label>
+										<div class="input-icon-start position-relative">
+											<span class="input-icon-addon text-gray-9">
+												<i class="ti ti-currency-dollar"></i>
+											</span>
+											<input type="text" class="form-control" value="1800">
 										</div>
 									</div>
 								</div>
+									
+								</div>
+							<div class="row">
+								
+								<div class="col-md-6">
+  <div class="mb-3">
+    <label class="form-label">Paying Amount <span class="text-danger">*</span></label>
+    <div class="input-icon-start position-relative">
+      <span class="input-icon-addon text-gray-9">
+        <i class="ti ti-currency-dollar"></i>
+      </span>
+      <input type="text" class="form-control no-border bg-light" value="1800" disabled>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-6">
+  <div class="change-item mb-3">
+    <label class="form-label">Change</label>
+    <div class="input-icon-start position-relative">
+      <span class="input-icon-addon text-gray-9">
+        <i class="ti ti-currency-dollar"></i>
+      </span>
+      <input type="text" class="form-control no-border bg-light" value="0.00" disabled>
+    </div>
+  </div>
+</div>
+
+								
 								<div class="col-md-12">
 									<div class="mb-3">
-										<label class="form-label">Payment Receiver</label>
-										<input type="text" class="form-control">
+										<label class="form-label">Total Due</label>
+										<input type="text" class="form-control no-border bg-light" disabled value="$1800.00">
 									</div>
 								</div>
 								<div class="col-md-12">
@@ -2833,7 +2958,13 @@
 										<textarea class="form-control" rows="3" placeholder="Type your message"></textarea>
 									</div>
 								</div>
-							</div>							
+							</div>
+							<div class="point-wrap payment-content mb-3">
+										<div class=" bg-success-transparent d-flex align-items-center justify-content-between flex-wrap p-2 gap-2 br-5">
+											<h6 class="fs-14 fw-bold text-success">You have 2000 Points to Use</h6>
+											<a href="javascript:void(0);" class="btn btn-dark btn-md">Use for this Purchase</a>
+										</div>
+									</div>							
 						</div>
 						<div class="modal-footer d-flex justify-content-end flex-wrap gap-2">
 							<button type="button" class="btn btn-md btn-secondary" data-bs-dismiss="modal">Cancel</button>
@@ -2881,97 +3012,167 @@
 	<!-- Custom JS -->
 	<script src="assets/js/theme-script.js"></script>
 	<script src="assets/js/script.js"></script>
-<!-- add product -->
-	<script>
-		// add pos product
-document.addEventListener("DOMContentLoaded", function () {
-  const form = document.querySelector("#edit-product form");
-  const productWrap = document.querySelector(".product-wrap");
 
-  // helper: ambil semua label dari checkbox yang diceklis
-  function getCheckedLabels(selector) {
-    return [...form.querySelectorAll(selector + ":checked")]
-      .map(el => el.nextElementSibling.textContent.trim())
-      .join(", ");
+<!-- add dan edit disatukan -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const productWrap = document.querySelector(".product-wrap");
+  const paymentBtn = document.getElementById("paymentTotalBtn"); // tombol payment utama
+
+  function getCheckedLabels(form, prefix) {
+    return [...form.querySelectorAll(`input[id^="${prefix}"]:checked`)]
+      .map(el => form.querySelector(`label[for="${el.id}"]`)?.textContent.trim())
+      .filter(Boolean);
   }
 
-  form.addEventListener("submit", function (e) {
-    e.preventDefault(); // biar ga reload halaman
+  // Hitung total semua produk
+  function updatePaymentTotal() {
+    let total = 0;
+    productWrap.querySelectorAll(".product-list .info p").forEach(p => {
+      const price = parseFloat(p.textContent.replace(/[^0-9.]/g, ""));
+      if (!isNaN(price)) total += price;
+    });
+    if (paymentBtn) {
+      paymentBtn.innerHTML = `
+        <span class="me-1 d-flex align-items-center">
+          <i data-feather="credit-card" class="feather-16"></i>
+        </span>
+        Payment Total $${total.toLocaleString()}
+      `;
+      if (window.feather) feather.replace();
+    }
+  }
 
-    // ambil qty
-    const qty = form.querySelector('input[type="number"]').value;
+  // --- ADD PRODUCT ---
+  const addForm = document.getElementById("addProductForm");
+  if (addForm) {
+    addForm.addEventListener("submit", function (e) {
+      e.preventDefault();
 
-    // kumpulin data dari modal
-    const ukuran   = getCheckedLabels('input[id^="uk"]');
-    const kertas   = getCheckedLabels('input[id^="kertas"]');
-    const mesin    = getCheckedLabels('input[id^="mesin"]');
-    const sisi     = getCheckedLabels('input[id^="sisi"]');
-    const laminasi = getCheckedLabels('input[id^="lam"]');
-    const lipat    = getCheckedLabels('input[id^="lipat"]');
+      const qty      = addForm.querySelector('#add-qty').value;
+      const ukuran   = getCheckedLabels(addForm, "add-uk");
+      const kertas   = getCheckedLabels(addForm, "add-kertas");
+      const mesin    = getCheckedLabels(addForm, "add-mesin");
+      const sisi     = getCheckedLabels(addForm, "add-sisi");
+      const laminasi = getCheckedLabels(addForm, "add-lam");
+      const lipat    = getCheckedLabels(addForm, "add-lipat");
 
-    // bikin ringkasan
-    const ringkasan = [
-      ukuran,
-      `Qty: ${qty}`,
-      kertas,
-      mesin,
-      sisi,
-      laminasi,
-      lipat
-    ].filter(Boolean).join(", ");
+      const ringkasan = [
+        ...ukuran,
+        ...kertas,
+        ...mesin,
+        ...sisi,
+        laminasi.length ? laminasi : "Tanpa Laminasi",
+        lipat.length ? lipat : "Tanpa Lipatan"
+      ].filter(Boolean).join(", ");
 
-    // bikin elemen product baru
-    const newProduct = document.createElement("div");
-    newProduct.classList.add("product-list", "align-items-center", "justify-content-between");
-    newProduct.innerHTML = `
-      <div class="d-flex align-items-center product-info w-100" data-bs-toggle="modal" data-bs-target="#products">
-        <a href="javascript:void(0);" class="img-bg">
-          <img src="assets/img/products/brosur.png" alt="Products">
-        </a>
-        <div class="info">
-          <span>PT${String(Math.floor(Math.random() * 10000)).padStart(4,'0')}</span>
-          <h6><a href="javascript:void(0);">Cetak Full Color</a></h6>
-          <div style="font-size: 0.8rem;">${ringkasan}</div>
-          <p>$2000</p>
+      const newProduct = document.createElement("div");
+      newProduct.classList.add("product-list", "align-items-center", "justify-content-between");
+      newProduct.innerHTML = `
+        <div class="d-flex align-items-center product-info w-100" data-bs-toggle="modal" data-bs-target="#products">
+          <a href="javascript:void(0);" class="img-bg">
+            <img src="assets/img/products/brosur.png" alt="Products">
+          </a>
+          <div class="info">
+            <span>PT${String(Math.floor(Math.random() * 10000)).padStart(4,'0')}</span>
+            <h6><a href="javascript:void(0);">Cetak Full Color</a></h6>
+            <div style="font-size: 0.8rem;">${ringkasan}</div>
+            <p>$2000</p>
+          </div>
         </div>
-      </div>
-      <div class="d-flex justify-content-end">
-        <div class="qty-item text-center">
-          <a href="javascript:void(0);" class="dec d-flex justify-content-center align-items-center"
-             data-bs-toggle="tooltip" data-bs-placement="top" title="minus">
-            <i data-feather="minus-circle" class="feather-14"></i>
-          </a>
-          <input type="text" class="form-control text-center" name="qty" value="${qty}">
-          <a href="javascript:void(0);" class="inc d-flex justify-content-center align-items-center"
-             data-bs-toggle="tooltip" data-bs-placement="top" title="plus">
-            <i data-feather="plus-circle" class="feather-14"></i>
-          </a>
+        <div class="d-flex justify-content-end">
+          <div class="qty-item text-center">
+            <a href="javascript:void(0);" class="dec d-flex justify-content-center align-items-center" 
+               data-bs-toggle="tooltip" data-bs-placement="top" title="minus">
+              <i data-feather="minus-circle" class="feather-14"></i>
+            </a>
+            <input type="text" class="form-control text-center" name="qty" value="${qty}">
+            <a href="javascript:void(0);" class="inc d-flex justify-content-center align-items-center" 
+               data-bs-toggle="tooltip" data-bs-placement="top" title="plus">
+              <i data-feather="plus-circle" class="feather-14"></i>
+            </a>
+          </div>
+          <div class="d-flex align-items-center action">
+            <a class="btn-icon edit-icon me-2" href="#" data-bs-toggle="modal" data-bs-target="#edit-product">
+              <i data-feather="edit" class="feather-14"></i>
+            </a>
+            <a class="btn-icon delete-icon confirm-text" href="javascript:void(0);">
+              <i data-feather="trash-2" class="feather-14"></i>
+            </a>
+          </div>
         </div>
-        <div class="d-flex align-items-center action">
-          <a class="btn-icon edit-icon me-2" href="#" data-bs-toggle="modal" data-bs-target="#edit-product">
-            <i data-feather="edit" class="feather-14"></i>
-          </a>
-          <a class="btn-icon delete-icon confirm-text" href="javascript:void(0);">
-            <i data-feather="trash-2" class="feather-14"></i>
-          </a>
-        </div>
-      </div>
-    `;
+      `;
 
-    productWrap.appendChild(newProduct);
+      productWrap.appendChild(newProduct);
+      updatePaymentTotal();
 
-    // tutup modal otomatis
-    const modal = bootstrap.Modal.getInstance(document.getElementById("edit-product"));
-    modal.hide();
+      bootstrap.Modal.getInstance(document.getElementById("add-product")).hide();
+      if (window.feather) feather.replace();
+    });
+  }
 
-    // refresh icon feather
-    if (window.feather) feather.replace();
+  // --- EDIT PRODUCT ---
+  const editForm = document.getElementById("editProductForm");
+  let currentProduct = null;
+
+  productWrap.addEventListener("click", function (e) {
+    const editBtn = e.target.closest(".edit-icon");
+    if (!editBtn) return;
+
+    currentProduct = editBtn.closest(".product-list");
+
+    // isi qty
+    const qtyVal = currentProduct.querySelector('input[name="qty"]').value;
+    editForm.querySelector('#edit-qty').value = qtyVal;
+
+    // reset checkbox
+    editForm.querySelectorAll("input[type=checkbox], input[type=radio]").forEach(el => el.checked = false);
+
+    // isi checkbox berdasarkan ringkasan
+    const ringkasanText = currentProduct.querySelector(".info div").textContent;
+    editForm.querySelectorAll("label").forEach(label => {
+      if (ringkasanText.includes(label.textContent.trim())) {
+        const input = document.getElementById(label.getAttribute("for"));
+        if (input) input.checked = true;
+      }
+    });
   });
+
+  if (editForm) {
+    editForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+      if (!currentProduct) return;
+
+      const qty = editForm.querySelector('#edit-qty').value;
+      const ukuran   = getCheckedLabels(editForm, "edit-uk");
+      const kertas   = getCheckedLabels(editForm, "edit-kertas");
+      const mesin    = getCheckedLabels(editForm, "edit-mesin");
+      const sisi     = getCheckedLabels(editForm, "edit-sisi");
+      const laminasi = getCheckedLabels(editForm, "edit-lam");
+      const lipat    = getCheckedLabels(editForm, "edit-lipat");
+
+      const ringkasan = [
+        ...ukuran,
+        ...kertas,
+        ...mesin,
+        ...sisi,
+        laminasi.length ? laminasi : "Tanpa Laminasi",
+        lipat.length ? lipat : "Tanpa Lipatan"
+      ].filter(Boolean).join(", ");
+
+      currentProduct.querySelector('input[name="qty"]').value = qty;
+      currentProduct.querySelector(".info div").textContent = ringkasan;
+
+      updatePaymentTotal();
+      bootstrap.Modal.getInstance(document.getElementById("edit-product")).hide();
+      currentProduct = null;
+    });
+  }
 });
-// add pos product
+</script>
+<!-- add dan edit disatukan -->
 
-	</script>
-
+	
 <!-- clear product added -->
  <script>
 document.addEventListener("DOMContentLoaded", function () {
@@ -3004,7 +3205,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
-
  </script>
  <!-- searching producr dan customer -->
  <script>
@@ -3136,6 +3336,30 @@ document.addEventListener("DOMContentLoaded", function () {
 });
  </script>
 <!-- clear product added -->
+ <!-- custom ukuran -->
+  <script>
+document.addEventListener("DOMContentLoaded", function () {
+  const customYes = document.getElementById("customYes");
+  const customNo = document.getElementById("customNo");
+  const customFields = document.getElementById("customFields");
+
+  function toggleCustomFields() {
+    if (customYes.checked) {
+      customFields.classList.remove("d-none");
+    } else {
+      customFields.classList.add("d-none");
+    }
+  }
+
+  // Event listener
+  customYes.addEventListener("change", toggleCustomFields);
+  customNo.addEventListener("change", toggleCustomFields);
+
+  // Set default (tidak tampil)
+  toggleCustomFields();
+});
+</script>
+ <!-- custom ukuran -->
 </body>
 
 </html>

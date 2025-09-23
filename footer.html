@@ -50,7 +50,7 @@
 
 <body>
     <div id="global-loader">
-        <div class="whirly-loader"> </div>
+        <div class="loader"> </div>
     </div>
     <!-- Main Wrapper -->
     <div class="main-wrapper">
@@ -73,6 +73,12 @@
                         <div class="form-section mb-3">
                             <h5>Konten Utama</h5>
                             <div class="mb-3">
+                                <label class="form-label">Judul</label>
+                                <input id="judul" class="form-control" type="text"
+                                    placeholder="Judul">
+                            </div>
+
+                            <div class="mb-3">
                                 <label class="form-label">Teks singkat (deskripsi)</label>
                                 <textarea id="desc" class="form-control" rows="3"
                                     placeholder="Deskripsi perusahaan atau tagline"></textarea>
@@ -82,6 +88,31 @@
                                 <label class="form-label">Copyright</label>
                                 <input id="copyright" class="form-control" type="text"
                                     placeholder="© 2025 Nama Perusahaan — Semua hak dilindungi">
+                            </div>
+                        </div>
+
+                        <div class="form-section mb-3">
+                            <h5>Info Kami</h5>
+                            <p class="small-muted">Tambahkan link yang sering tampil di footer. Urutan akan mengikuti
+                                daftar.</p>
+                            <div id="infoKamiContainer" class="mb-2"></div>
+                            <div class="d-flex gap-2">
+                                <input id="qlText" class="form-control form-control-sm"
+                                    placeholder="Judul link (mis. Tentang Kami)">
+                                <input id="qlHref" class="form-control form-control-sm" placeholder="URL (https://...)">
+                                <button id="addInfoKami" class="btn btn-primary btn-sm">Tambah</button>
+                            </div>
+                        </div>
+
+                        <!-- NEW: Panduan Pelanggan Baru -->
+                        <div class="form-section mb-3">
+                            <h5>Panduan Pelanggan Baru</h5>
+                            <p class="small-muted">Tambahkan link panduan atau manual untuk pelanggan baru.</p>
+                            <div id="panduanContainer" class="mb-2"></div>
+                            <div class="d-flex gap-2">
+                                <input id="pdText" class="form-control form-control-sm" placeholder="Judul panduan (mis. Cara Pembelian)">
+                                <input id="pdHref" class="form-control form-control-sm" placeholder="URL (https://...)">
+                                <button id="addPanduan" class="btn btn-primary btn-sm">Tambah</button>
                             </div>
                         </div>
 
@@ -98,7 +129,7 @@
                                 </div>
                                 <div class="col-md-6 mb-2">
                                     <label class="form-label">Email</label>
-                                    <input id="email" class="form-control" type="email">
+                                    <input id="email" class="form-control" type="text">
                                 </div>
                             </div>
                         </div>
@@ -127,19 +158,6 @@
                                     <label class="form-label">YouTube</label>
                                     <input id="youtube" class="form-control form-control-sm" type="url">
                                 </div>
-                            </div>
-                        </div>
-
-                        <div class="form-section mb-3">
-                            <h5>Quick Links</h5>
-                            <p class="small-muted">Tambahkan link yang sering tampil di footer. Urutan akan mengikuti
-                                daftar.</p>
-                            <div id="quickLinksContainer" class="mb-2"></div>
-                            <div class="d-flex gap-2">
-                                <input id="qlText" class="form-control form-control-sm"
-                                    placeholder="Judul link (mis. Tentang Kami)">
-                                <input id="qlHref" class="form-control form-control-sm" placeholder="URL (https://...)">
-                                <button id="addQuickLink" class="btn btn-primary btn-sm">Tambah</button>
                             </div>
                         </div>
 
@@ -173,17 +191,17 @@
             telepon: '',
             email: '',
             socials: {},
-            quickLinks: [
-                { text: 'Tentang Kami', href: '#' },
-                { text: 'Kontak', href: '#' },
-                { text: 'Panduan Pelanggan Baru', href: '#' }
+            infoKami: [
+                { text: 'Kebijakan Privasi', href: '#' },
+                { text: 'Blog', href: '#' },
+                { text: 'Syarat dan Ketentuan', href: '#' }
             ]
         };
 
-        function renderQuickLinkEditor() {
-            const c = document.getElementById('quickLinksContainer');
+        function renderInfoKamiEditor() {
+            const c = document.getElementById('infoKamiContainer');
             c.innerHTML = '';
-            state.quickLinks.forEach((q, idx) => {
+            state.infoKami.forEach((q, idx) => {
                 const div = document.createElement('div');
                 div.className = 'mb-2 quick-link';
                 div.innerHTML = `
@@ -197,14 +215,14 @@
             c.querySelectorAll('input[data-idx]').forEach(inp => {
                 inp.addEventListener('input', e => {
                     const idx = +e.target.dataset.idx; const field = e.target.dataset.field;
-                    state.quickLinks[idx][field] = e.target.value;
+                    state.infoKami[idx][field] = e.target.value;
                 });
             });
             c.querySelectorAll('button[data-action="del"]').forEach(btn => {
                 btn.addEventListener('click', e => {
                     const idx = +btn.dataset.idx;
-                    state.quickLinks.splice(idx, 1);
-                    renderQuickLinkEditor();
+                    state.infoKami.splice(idx, 1);
+                    renderInfoKamiEditor();
                 });
             });
         }
@@ -213,17 +231,65 @@
             return (s + '').replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;');
         }
 
-        document.getElementById('addQuickLink').addEventListener('click', () => {
+        document.getElementById('addInfoKami').addEventListener('click', () => {
             const t = document.getElementById('qlText'); const h = document.getElementById('qlHref');
             const text = t.value.trim(); const href = h.value.trim();
             if (!text || !href) { alert('Isi judul dan URL quick link.'); return; }
-            state.quickLinks.push({ text, href });
+            state.infoKami.push({ text, href });
             t.value = ''; h.value = '';
-            renderQuickLinkEditor();
+            renderInfoKamiEditor();
         });
 
         // init
-        renderQuickLinkEditor();
+        renderInfoKamiEditor();
+        
+
+        // state sudah didefinisikan sebelumnya
+        state.newCustomerGuide = state.newCustomerGuide || [
+            { text: 'Cara Pembelian', href: '#' }
+        ];
+
+        function renderPanduanEditor() {
+            const c = document.getElementById('panduanContainer');
+            c.innerHTML = '';
+            state.newCustomerGuide.forEach((q, idx) => {
+                const div = document.createElement('div');
+                div.className = 'mb-2 quick-link';
+                div.innerHTML = `
+                    <input class="form-control form-control-sm" data-idx="${idx}" data-field="text" value="${escapeHtml(q.text)}">
+                    <input class="form-control form-control-sm" data-idx="${idx}" data-field="href" value="${escapeHtml(q.href)}">
+                    <button class="btn btn-danger btn-sm" data-action="del" data-idx="${idx}"><i class="fa fa-trash"></i></button>
+                `;
+                c.appendChild(div);
+            });
+
+            c.querySelectorAll('input[data-idx]').forEach(inp => {
+                inp.addEventListener('input', e => {
+                    const idx = +e.target.dataset.idx; const field = e.target.dataset.field;
+                    state.newCustomerGuide[idx][field] = e.target.value;
+                });
+            });
+            c.querySelectorAll('button[data-action="del"]').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const idx = +btn.dataset.idx;
+                    state.newCustomerGuide.splice(idx, 1);
+                    renderPanduanEditor();
+                });
+            });
+        }
+
+        document.getElementById('addPanduan').addEventListener('click', () => {
+            const t = document.getElementById('pdText'); const h = document.getElementById('pdHref');
+            const text = t.value.trim(); const href = h.value.trim();
+            if (!text || !href) { alert('Isi judul dan URL panduan.'); return; }
+            state.newCustomerGuide.push({ text, href });
+            t.value = ''; h.value = '';
+            renderPanduanEditor();
+        });
+
+        // existing init calls
++       renderPanduanEditor();
+
     </script>
 
 

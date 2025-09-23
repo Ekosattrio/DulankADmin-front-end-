@@ -40,7 +40,6 @@
 	<!-- Main CSS -->
 	<link rel="stylesheet" href="assets/css/style.css">
 
-
 </head>
 
 <body>
@@ -97,7 +96,7 @@
 							</div>
 							<div class="dash-widgetcontent">
 								<h6>Total Transactions</h6>
-								<h5>$<span class="counters" data-count="307144.00">$307,144.00</span></h5>
+								<h5><span class="counters" data-count="307144">307000</span></h5>
 							</div>
 						</div>
 					</div>
@@ -108,7 +107,7 @@
 							</div>
 							<div class="dash-widgetcontent">
 								<h6>Total Subscribers</h6>
-								<h5><span class="counters" data-count="4385">4,385</span></h5>
+								<h5><span class="counters" data-count="4385">4385</span></h5>
 							</div>
 						</div>
 					</div>
@@ -119,7 +118,7 @@
 							</div>
 							<div class="dash-widgetcontent">
 								<h6>Active Subscribers</h6>
-								<h5><span class="counters" data-count="3000">3,000</span></h5>
+								<h5><span class="counters" data-count="3000">3000</span></h5>
 							</div>
 						</div>
 					</div>
@@ -130,7 +129,7 @@
 							</div>
 							<div class="dash-widgetcontent">
 								<h6>Expired Subscribers</h6>
-								<h5><span class="counters" data-count="1385">1,385</span></h5>
+								<h5><span class="counters" data-count="1385">1385</span></h5>
 							</div>
 						</div>
 					</div>
@@ -138,129 +137,69 @@
 				<!-- /product list -->
 				<div class="card table-list-card">
 					<div class="card-body">
-						<div class="table-top">
-							<div class="search-set">
+						<!-- Filter -->
+						<div class="table-top d-flex align-items-center justify-content-between">
+							<!-- Search Input -->
+							<div class="search-set d-block d-md-flex">
 								<div class="search-input">
 									<a href="" class="btn btn-searchset"><i data-feather="search"
 											class="feather-search"></i></a>
 								</div>
-							</div>
-							<div class="search-path">
-								<div class="d-flex align-items-center">
-									<a class="btn btn-filter" id="pilter">
-										<i data-feather="filter" class="filter-icon"></i>
-										<span><img src="assets/img/icons/closes.svg" alt="img"></span>
-									</a>
-								</div>
-							</div>
-						</div>
-						<!-- /Filter -->
-						<div id="filter_container" class="filter-collapse mt-3 w-100">
-							<div class="p-3">
-								<div class="row g-3 d-flex justify-content-between">
-
-									<!-- Date Range -->
-									<div class="col-12 col-md-4 ms-2">
-										<div class="pemilihrentang-container ">
-											<input type="text" id="pemilihrentang-input" class="pemilihrentang-input"
-												readonly placeholder="DD/MM/YYYY - DD/MM/YYYY">
-											<div id="pemilihrentang-panel" class="pemilihrentang-panel">
-												<div class="pemilihrentang-isi">
-													<div class="opsi-cepat">
-														<div data-range="kemarin">Kemarin</div>
-														<div data-range="7hari">7 Hari Terakhir</div>
-														<div data-range="bulanIni">Bulan Ini</div>
-														<div data-range="bulanLalu">Bulan Lalu</div>
-														<div data-range="tahunLalu">Tahun Lalu</div>
-														<div data-range="kustom">Rentang Kustom</div>
-													</div>
-													<div class="kalender" id="kalender-view" style="display:none;">
-													</div>
+								<!-- Date Range -->
+								<div class="my-2">
+									<div class="pemilihrentang-container ">
+										<input type="text" id="pemilihrentang-input" class="pemilihrentang-input form-control"
+											readonly placeholder="Date" style="height: fit-content !important;width: 100% !important;">
+										<div id="pemilihrentang-panel" class="pemilihrentang-panel">
+											<div class="pemilihrentang-isi">
+												<div class="opsi-cepat">
+													<div data-range="kemarin">Kemarin</div>
+													<div data-range="7hari">7 Hari Terakhir</div>
+													<div data-range="bulanIni">Bulan Ini</div>
+													<div data-range="bulanLalu">Bulan Lalu</div>
+													<div data-range="tahunLalu">Tahun Lalu</div>
+													<div data-range="kustom">Rentang Kustom</div>
+												</div>
+												<div class="kalender" id="kalender-view" style="display:none;">
 												</div>
 											</div>
 										</div>
 									</div>
-
-									<div class="col-12 col-md-6 me-2">
-										<div class="row g-2">
-											<!-- Store -->
-											<div class="col-12 col-md-4">
-												<div class="dropdown w-100">
-													<button type="button"
-														class="btn btn-outline-primary dropdown-toggle w-100"
-														data-bs-toggle="dropdown" aria-expanded="false">
-														Store
-													</button>
-													<ul class="dropdown-menu w-100">
-														<li><a class="dropdown-item" href="#">Ellectro Mart</a></li>
-														<li><a class="dropdown-item" href="#">ekos mart</a></li>
-													</ul>
-												</div>
-											</div>
-
-											<!-- Product -->
-											<div class="col-12 col-md-4">
-												<div class="dropdown w-100">
-													<button type="button"
-														class="btn btn-outline-primary dropdown-toggle w-100"
-														data-bs-toggle="dropdown" aria-expanded="false">
-														Product
-													</button>
-													<ul class="dropdown-menu w-100">
-														<li><a class="dropdown-item" href="#">Laptop</a></li>
-														<li><a class="dropdown-item" href="#">Lemari</a></li>
-													</ul>
-												</div>
-											</div>
-
-											<!-- Report -->
-											<div class="col-12 col-md-4">
-												<button class="btn btn-primary w-100">Report</button>
-											</div>
-										</div>
-									</div>
-
 								</div>
 							</div>
-
-
-						</div>
-						<!-- /Filter -->
-						<div class="card" id="filter_inputs">
-							<div class="card-body pb-0">
-								<div class="row">
-									<div class="col-lg-3 col-sm-6 col-12">
-										<div class="input-blocks">
-											<i data-feather="user" class="info-img"></i>
-											<select class="select">
-												<option>Choose Customer Name</option>
-												<option>Benjamin</option>
-												<option>Ellen</option>
-												<option>Freda</option>
-												<option>Kaitlin</option>
-											</select>
-										</div>
-									</div>
-									<div class="col-lg-3 col-sm-6 col-12">
-										<div class="input-blocks">
-											<i data-feather="globe" class="info-img"></i>
-											<select class="select">
-												<option>Choose Country</option>
-												<option>India</option>
-												<option>USA</option>
-											</select>
-										</div>
-									</div>
-									<div class="col-lg-3 col-sm-6 col-12 ms-auto">
-										<div class="input-blocks">
-											<a class="btn btn-filters ms-auto"> <i data-feather="search"
-													class="feather-search"></i> Search </a>
-										</div>
-									</div>
+							<div class="filters d-flex justify-content-end">
+								<div class="dropdown w-100 me-2">
+									<button class="btn btn-outline-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+										Plan
+									</button>
+									<ul class="dropdown-menu">
+										<li><a class="dropdown-item" href="#">Basic</a></li>
+										<li><a class="dropdown-item" href="#">Advanced</a></li>
+										<li><a class="dropdown-item" href="#">Enterprise</a></li>
+									</ul>
+								</div>
+								<div class="dropdown w-100 me-2">
+									<button class="btn btn-outline-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+										Payment
+									</button>
+									<ul class="dropdown-menu">
+										<li><a class="dropdown-item" href="#">Credit Card</a></li>
+										<li><a class="dropdown-item" href="#">Paypal</a></li>
+										<li><a class="dropdown-item" href="#">PDebit Card</a></li>
+									</ul>
+								</div>
+								<div class="dropdown w-100">
+									<button class="btn btn-outline-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+										Status
+									</button>
+									<ul class="dropdown-menu">
+										<li><a class="dropdown-item" href="#">Paid</a></li>
+										<li><a class="dropdown-item" href="#">Unpaid</a></li>
+									</ul>
 								</div>
 							</div>
-						</div>
-						<!-- /Filter -->
+						</div>					
+						<!-- /Filter -->			
 						<div class="table-responsive">
 							<table class="table  datanew">
 								<!-- ...existing code... -->
@@ -292,17 +231,12 @@
 											</label>
 										</td>
 										<td>
-											<div class="userimgname cust-imgname">
-												<a href="javascript:void(0);" class="product-img">
-													<img src="assets/img/users/user-23.jpg" alt="product">
-												</a>
-												<a href="javascript:void(0);">BrightWave Innovations</a>
-											</div>
+											<a href="javascript:void(0);">BrightWave Innovations</a>
 										</td>
 										<td>Advanced (Monthly)</td>
 										<td>30 Days</td>
 										<td>Credit Card</td>
-										<td>$200</td>
+										<td>200.000</td>
 										<td>12 Sep 2024</td>
 										<td>11 Oct 2024</td>
 										<td><span class="badge bg-success">Paid</span></td>
@@ -324,17 +258,12 @@
 											</label>
 										</td>
 										<td>
-											<div class="userimgname cust-imgname">
-												<a href="javascript:void(0);" class="product-img">
-													<img src="assets/img/users/user-24.jpg" alt="product">
-												</a>
-												<a href="javascript:void(0);">Stellar Dynamics</a>
-											</div>
+											<a href="javascript:void(0);">Stellar Dynamics</a>
 										</td>
 										<td>Basic (Yearly)</td>
 										<td>365 Days</td>
 										<td>Paypal</td>
-										<td>$600</td>
+										<td>600.000</td>
 										<td>24 Oct 2024</td>
 										<td>23 Oct 2025</td>
 										<td><span class="badge bg-success">Paid</span></td>
@@ -356,17 +285,12 @@
 											</label>
 										</td>
 										<td>
-											<div class="userimgname cust-imgname">
-												<a href="javascript:void(0);" class="product-img">
-													<img src="assets/img/users/user-25.jpg" alt="product">
-												</a>
-												<a href="javascript:void(0);">Quantum Nexus</a>
-											</div>
+											<a href="javascript:void(0);">Quantum Nexus</a>
 										</td>
 										<td>Advanced (Monthly)</td>
 										<td>30 Days</td>
 										<td>Debit Card</td>
-										<td>$200</td>
+										<td>200.000</td>
 										<td>18 Feb 2024</td>
 										<td>17 Mar 2024</td>
 										<td><span class="badge bg-success">Paid</span></td>
@@ -388,17 +312,12 @@
 											</label>
 										</td>
 										<td>
-											<div class="userimgname cust-imgname">
-												<a href="javascript:void(0);" class="product-img">
-													<img src="assets/img/users/user-26.jpg" alt="product">
-												</a>
-												<a href="javascript:void(0);">EcoVision Enterprises</a>
-											</div>
+											<a href="javascript:void(0);">EcoVision Enterprises</a>
 										</td>
 										<td>Advanced (Monthly)</td>
 										<td>30 Days</td>
 										<td>Paypal</td>
-										<td>$200</td>
+										<td>200.000</td>
 										<td>17 Oct 2024</td>
 										<td>16 Nov 2024</td>
 										<td><span class="badge bg-success">Paid</span></td>
@@ -420,17 +339,12 @@
 											</label>
 										</td>
 										<td>
-											<div class="userimgname cust-imgname">
-												<a href="javascript:void(0);" class="product-img">
-													<img src="assets/img/users/user-27.jpg" alt="product">
-												</a>
-												<a href="javascript:void(0);">Aurora Technologies</a>
-											</div>
+											<a href="javascript:void(0);">Aurora Technologies</a>
 										</td>
 										<td>Enterprise (Monthly)</td>
 										<td>30 Days</td>
 										<td>Credit Card</td>
-										<td>$400</td>
+										<td>400.000</td>
 										<td>20 Jul 2024</td>
 										<td>19 Aug 2024</td>
 										<td><span class="badge bg-success">Paid</span></td>
@@ -452,17 +366,12 @@
 											</label>
 										</td>
 										<td>
-											<div class="userimgname cust-imgname">
-												<a href="javascript:void(0);" class="product-img">
-													<img src="assets/img/users/user-28.jpg" alt="product">
-												</a>
-												<a href="javascript:void(0);">BlueSky Ventures</a>
-											</div>
+											<a href="javascript:void(0);">BlueSky Ventures</a>
 										</td>
 										<td>Advanced (Monthly)</td>
 										<td>30 Days</td>
 										<td>Paypal</td>
-										<td>$200</td>
+										<td>200.000</td>
 										<td>10 Apr 2024</td>
 										<td>19 Aug 2024</td>
 										<td><span class="badge bg-success">Paid</span></td>
@@ -484,17 +393,12 @@
 											</label>
 										</td>
 										<td>
-											<div class="userimgname cust-imgname">
-												<a href="javascript:void(0);" class="product-img">
-													<img src="assets/img/users/user-29.jpg" alt="product">
-												</a>
-												<a href="javascript:void(0);">TerraFusion Energy</a>
-											</div>
+											<a href="javascript:void(0);">TerraFusion Energy</a>
 										</td>
 										<td>Enterprise (Yearly)</td>
 										<td>365 Days</td>
 										<td>Credit Card</td>
-										<td>$4800</td>
+										<td>480.000</td>
 										<td>29 Aug 2024</td>
 										<td>28 Aug 2025</td>
 										<td><span class="badge bg-success">Paid</span></td>
@@ -516,17 +420,12 @@
 											</label>
 										</td>
 										<td>
-											<div class="userimgname cust-imgname">
-												<a href="javascript:void(0);" class="product-img">
-													<img src="assets/img/users/user-30.jpg" alt="product">
-												</a>
-												<a href="javascript:void(0);">UrbanPulse Design</a>
-											</div>
+											<a href="javascript:void(0);">UrbanPulse Design</a>
 										</td>
 										<td>Basic (Monthly)</td>
 										<td>30 Days</td>
 										<td>Credit Card</td>
-										<td>$50</td>
+										<td>50.000</td>
 										<td>22 Feb 2024</td>
 										<td>21 Mar 2024</td>
 										<td><span class="badge bg-danger">Unpaid</span></td>
@@ -548,17 +447,12 @@
 											</label>
 										</td>
 										<td>
-											<div class="userimgname cust-imgname">
-												<a href="javascript:void(0);" class="product-img">
-													<img src="assets/img/users/user-31.jpg" alt="product">
-												</a>
-												<a href="javascript:void(0);">Nimbus Networks</a>
-											</div>
+											<a href="javascript:void(0);">Nimbus Networks</a>
 										</td>
 										<td>Basic (Yearly)</td>
 										<td>365 Days</td>
 										<td>Paypal</td>
-										<td>$600</td>
+										<td>600.000</td>
 										<td>03 Nov 2024</td>
 										<td>02 Nov 2025</td>
 										<td><span class="badge bg-success">Paid</span></td>
@@ -573,6 +467,15 @@
 										</td>
 									</tr>
 								</tbody>
+								<tfoot>
+                                    <tr>
+                                        <td colspan="1"></td>
+                                        <td class="text-star fw-bold">Total</td>
+                                        <!-- gunakan class sum-target dan data-col-index agar reusable -->
+                                        <td colspan="3"></td>
+                                        <td id="amount-total" class="fw-bold sum-target" data-col-index="5">0</td>
+                                    </tr>
+                                </tfoot>
 								<!-- ...existing code... -->
 							</table>
 						</div>
@@ -584,208 +487,7 @@
 
 	</div>
 	<!-- /Main Wrapper -->
-	<!-- modals -->
-	<div class="modal fade" id="add-units">
-		<div class="modal-dialog modal-dialog-centered custom-modal-two">
-			<div class="modal-content">
-				<div class="page-wrapper-new p-0">
-					<div class="content">
-						<div class="modal-header border-0 custom-modal-header">
-							<div class="page-title">
-								<h4>Add Subscriptions</h4>
-							</div>
-							<button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-								<span aria-hidden="true">&times;</span>
-							</button>
-						</div>
-						<div class="modal-body custom-modal-body">
-							<form action="customers.html">
-								<div class="modal-title-head people-cust-avatar">
-									<h6>Avatar</h6>
-								</div>
-								<div class="new-employee-field">
-									<div class="profile-pic-upload">
-										<div class="profile-pic">
-											<span><i data-feather="plus-circle" class="plus-down-add"></i> Add
-												Image</span>
-										</div>
-										<div class="mb-3">
-											<div class="image-upload mb-0">
-												<input type="file">
-												<div class="image-uploads">
-													<h4>Change Image</h4>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-lg-4 pe-0">
-										<div class="mb-3">
-											<label class="form-label">Customer Name</label>
-											<input type="text" class="form-control">
-										</div>
-									</div>
-									<div class="col-lg-4 pe-0">
-										<div class="mb-3">
-											<label class="form-label">Email</label>
-											<input type="email" class="form-control">
-										</div>
-									</div>
-									<div class="col-lg-4 pe-0">
-										<div class="input-blocks">
-											<label class="mb-2">Phone</label>
-											<input class="form-control form-control-lg group_formcontrol" id="phone"
-												name="phone" type="text">
-										</div>
-									</div>
-									<div class="col-lg-12 pe-0">
-										<div class="mb-3">
-											<label class="form-label">Address</label>
-											<input type="text" class="form-control">
-										</div>
-									</div>
-									<div class="col-lg-6 pe-0">
-										<div class="mb-3">
-											<label class="form-label">City</label>
-											<input type="text" class="form-control">
-										</div>
-									</div>
-									<div class="col-lg-6 pe-0">
-										<div class="mb-3">
-											<label class="form-label">Country</label>
-											<select class="select">
-												<option>Choose</option>
-												<option>United Kingdom</option>
-												<option>United State</option>
-											</select>
-										</div>
-									</div>
-									<div class="col-lg-12">
-										<div class="mb-3 input-blocks">
-											<label class="form-label">Descriptions</label>
-											<textarea class="form-control mb-1"></textarea>
-											<p>Maximum 60 Characters</p>
-										</div>
-									</div>
-								</div>
-
-								<div class="modal-footer-btn">
-									<button type="button" class="btn btn-cancel me-2"
-										data-bs-dismiss="modal">Cancel</button>
-									<button type="submit" class="btn btn-submit">Submit</button>
-								</div>
-							</form>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- /Add Customer -->
-
-	<!-- Edit Customer -->
-	<div class="modal fade" id="edit-units">
-		<div class="modal-dialog modal-dialog-centered custom-modal-two">
-			<div class="modal-content">
-				<div class="page-wrapper-new p-0">
-					<div class="content">
-						<div class="modal-header border-0 custom-modal-header">
-							<div class="page-title">
-								<h4>Edit Customer</h4>
-							</div>
-							<button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-								<span aria-hidden="true">&times;</span>
-							</button>
-						</div>
-						<div class="modal-body custom-modal-body">
-							<form action="customers.html">
-								<div class="modal-title-head people-cust-avatar">
-									<h6>Avatar</h6>
-								</div>
-								<div class="new-employee-field">
-									<div class="profile-pic-upload">
-										<div class="profile-pic people-profile-pic">
-											<img src="assets/img/profiles/profile.png" alt="Img">
-											<a href="#"><i data-feather="x-square" class="x-square-add"></i></a>
-										</div>
-										<div class="mb-3">
-											<div class="image-upload mb-0">
-												<input type="file">
-												<div class="image-uploads">
-													<h4>Change Image</h4>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-lg-4 pe-0">
-										<div class="mb-3">
-											<label class="form-label">Customer Name</label>
-											<input type="text" class="form-control" value="Thomas">
-										</div>
-									</div>
-									<div class="col-lg-4 pe-0">
-										<div class="mb-3">
-											<label class="form-label">Email</label>
-											<input type="email" class="form-control" value="thomas@example.com">
-										</div>
-									</div>
-									<div class="col-lg-4 pe-0">
-										<div class="input-blocks">
-											<label class="mb-2">Phone</label>
-											<input class="form-control form-control-lg group_formcontrol" id="phone2"
-												name="phone2" type="text">
-										</div>
-									</div>
-									<div class="col-lg-12 pe-0">
-										<div class="mb-3">
-											<label class="form-label">Address</label>
-											<input type="text" class="form-control" value="Budapester Strasse 2027259 ">
-										</div>
-									</div>
-									<div class="col-lg-6 pe-0">
-										<div class="mb-3">
-											<label class="form-label">City</label>
-											<select class="select">
-												<option>Varrel</option>
-												<option>Varrel</option>
-											</select>
-										</div>
-									</div>
-									<div class="col-lg-6 pe-0">
-										<div class="mb-3">
-											<label class="form-label">Country</label>
-											<select class="select">
-												<option>Germany</option>
-												<option>United State</option>
-											</select>
-										</div>
-									</div>
-									<div class="col-lg-12">
-										<div class="mb-0 input-blocks">
-											<label class="form-label">Descriptions</label>
-											<textarea class="form-control mb-1"></textarea>
-											<p>Maximum 60 Characters</p>
-										</div>
-									</div>
-								</div>
-
-
-								<div class="modal-footer-btn">
-									<button type="button" class="btn btn-cancel me-2"
-										data-bs-dismiss="modal">Cancel</button>
-									<button type="submit" class="btn btn-submit">Save Changes</button>
-								</div>
-							</form>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- /modals -->
+	
 	<!-- jQuery -->
 	<script src="assets/js/jquery-3.7.1.min.js"></script>
 

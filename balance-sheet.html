@@ -10,39 +10,34 @@
 	<meta name="author" content="Dreamguys - Bootstrap Admin Template">
 	<meta name="robots" content="noindex, nofollow">
 	<title>Dreams Pos Admin Template</title>
-<style>
-    #kepalaKakiAbuAbu th {
-    background-color: #f2f2f2; /* abu-abu soft */
-    font-weight: 500;
-  }
-</style>
+
 	<!-- Favicon -->
-        <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
-		
-		<!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+	<link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
 
-		<!-- Datetimepicker CSS -->
-		<link rel="stylesheet" href="assets/css/bootstrap-datetimepicker.min.css">
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
 
-		<!-- Daterangepikcer CSS -->
-		<link rel="stylesheet" href="assets/plugins/daterangepicker/daterangepicker.css">
-		
-		<!-- animation CSS -->
-        <link rel="stylesheet" href="assets/css/animate.css">
+	<!-- Datetimepicker CSS -->
+	<link rel="stylesheet" href="assets/css/bootstrap-datetimepicker.min.css">
 
-		<!-- Select2 CSS -->
-		<link rel="stylesheet" href="assets/plugins/select2/css/select2.min.css">
+	<!-- Daterangepikcer CSS -->
+	<link rel="stylesheet" href="assets/plugins/daterangepicker/daterangepicker.css">
 
-		<!-- Datatable CSS -->
-		<link rel="stylesheet" href="assets/css/dataTables.bootstrap5.min.css">
-		
-        <!-- Fontawesome CSS -->
-		<link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css">
-		<link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css">
-		
-		<!-- Main CSS -->
-        <link rel="stylesheet" href="assets/css/style.css">
+	<!-- animation CSS -->
+	<link rel="stylesheet" href="assets/css/animate.css">
+
+	<!-- Select2 CSS -->
+	<link rel="stylesheet" href="assets/plugins/select2/css/select2.min.css">
+
+	<!-- Datatable CSS -->
+	<link rel="stylesheet" href="assets/css/dataTables.bootstrap5.min.css">
+
+	<!-- Fontawesome CSS -->
+	<link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css">
+	<link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css">
+
+	<!-- Main CSS -->
+	<link rel="stylesheet" href="assets/css/style.css">
 
 </head>
 
@@ -59,150 +54,215 @@
 		<div id="sidebar-placeholder"></div>
 
 		<div class="page-wrapper mt-3">
-            <!-- Main content tulis disini -->
+			<!-- Main content tulis disini -->
 			<div class="content">
-					<div class="page-header justify-content-between">
-						<div class="page-title">
-							<h4>Income Report</h4>
-							<h6>Manage your Income</h6>
-						</div>
-						<ul class="table-top-head">
-							<li>
-								<a data-bs-toggle="tooltip" data-bs-placement="top" title="Pdf"><img src="assets/img/icons/pdf.svg" alt="img"></a>
-							</li>
-							<li>
-								<a data-bs-toggle="tooltip" data-bs-placement="top" title="Excel"><img src="assets/img/icons/excel.svg" alt="img"></a>
-							</li>
-							<li>
-								<a data-bs-toggle="tooltip" data-bs-placement="top" title="Print"><i data-feather="printer" class="feather-rotate-ccw"></i></a>
-							</li>
-							<li>
-								<a data-bs-toggle="tooltip" data-bs-placement="top" title="Refresh"><i data-feather="rotate-ccw" class="feather-rotate-ccw"></i></a>
-							</li>
-							<li>
-								<a data-bs-toggle="tooltip" data-bs-placement="top" title="Collapse" id="collapse-header"><i data-feather="chevron-up" class="feather-chevron-up"></i></a>
-							</li>
-						</ul>
+				<div class="page-header justify-content-between">
+					<div class="page-title">
+						<h4>Income Report</h4>
+						<h6>Manage your Income</h6>
 					</div>
-					
+					<ul class="table-top-head">
+						<li>
+							<a data-bs-toggle="tooltip" data-bs-placement="top" title="Pdf"><img
+									src="assets/img/icons/pdf.svg" alt="img"></a>
+						</li>
+						<li>
+							<a data-bs-toggle="tooltip" data-bs-placement="top" title="Excel"><img
+									src="assets/img/icons/excel.svg" alt="img"></a>
+						</li>
+						<li>
+							<a data-bs-toggle="tooltip" data-bs-placement="top" title="Print"><i data-feather="printer"
+									class="feather-rotate-ccw"></i></a>
+						</li>
+						<li>
+							<a data-bs-toggle="tooltip" data-bs-placement="top" title="Refresh"><i
+									data-feather="rotate-ccw" class="feather-rotate-ccw"></i></a>
+						</li>
+						<li>
+							<a data-bs-toggle="tooltip" data-bs-placement="top" title="Collapse" id="collapse-header"><i
+									data-feather="chevron-up" class="feather-chevron-up"></i></a>
+						</li>
+					</ul>
+				</div>
 
-					<!-- /product list -->
-					<div class="card table-list-card">
-						<div class="card-body">
-							 <div class="table-top">
-											<div class="search-set">
-												<div class="search-input">
-														<a href="" class="btn btn-searchset"><i data-feather="search" class="feather-search"></i></a>
+
+				<!-- /product list -->
+				<div class="card table-list-card">
+					<div class="card-body">
+						<!-- Filter -->
+						<div class="table-top d-flex align-items-center justify-content-between">
+							<!-- Search Input -->
+							<div class="search-set d-block d-md-flex">
+								<div class="search-input">
+									<a href="" class="btn btn-searchset"><i data-feather="search"
+											class="feather-search"></i></a>
+								</div>
+								<!-- Date Range -->
+								<div class="my-2">
+									<div class="pemilihrentang-container ">
+										<input type="text" id="pemilihrentang-input"
+											class="pemilihrentang-input form-control" readonly placeholder="Date"
+											style="height: fit-content !important;width: 100% !important;">
+										<div id="pemilihrentang-panel" class="pemilihrentang-panel">
+											<div class="pemilihrentang-isi">
+												<div class="opsi-cepat">
+													<div data-range="kemarin">Kemarin</div>
+													<div data-range="7hari">7 Hari Terakhir</div>
+													<div data-range="bulanIni">Bulan Ini</div>
+													<div data-range="bulanLalu">Bulan Lalu</div>
+													<div data-range="tahunLalu">Tahun Lalu</div>
+													<div data-range="kustom">Rentang Kustom</div>
 												</div>
-													</div>
-														
+												<div class="kalender" id="kalender-view" style="display:none;">
+												</div>
+											</div>
 										</div>
-										<!-- /Filter -->
-										
-										<!-- /Filter -->
-							<div class="table-responsive">
-								<table class="table  datanew">
-									<thead>
-										<tr>
-											<th>Name</th>
-											<th>Bank Account</th>
-											<th>Credit</th>
-											<th>Debit</th>
-											<th>Ballance</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<td>AVA mason</td>
-											<td>SWIZ - 3456565767787</td>
-											<td>$614848</td>
-											<td>$480</td>
-											<td >$614389</td>
-										</tr>
-                                        <tr>
-											<td>AVA mason</td>
-											<td>SWIZ - 3456565767787</td>
-											<td>$614848</td>
-											<td>$480</td>
-											<td >$614389</td>
-										</tr>
-                                        <tr>
-											<td>AVA mason</td>
-											<td>SWIZ - 3456565767787</td>
-											<td>$614848</td>
-											<td>$480</td>
-											<td >$614389</td>
-										</tr>
-                                        <tr>
-											<td>AVA mason</td>
-											<td>SWIZ - 3456565767787</td>
-											<td>$614848</td>
-											<td>$480</td>
-											<td >$614389</td>
-										</tr>
-                                        <tr>
-											<td>AVA mason</td>
-											<td>SWIZ - 3456565767787</td>
-											<td>$614848</td>
-											<td>$480</td>
-											<td >$614389</td>
-										</tr>
-										<tfoot id="kepalaKakiAbuAbu">
-                                            <tr>
-                                                <th>Total</th>
-                                                <th></th>
-                                                <th class="fw-bold">$614389</th>
-                                                <th class="fw-bold">$614389</th>
-                                                <th class="fw-bold">$614389</th>
-                                            </tr>
-                                            </tfoot>
-									</tbody>
-								</table>
+									</div>
+								</div>
 							</div>
 						</div>
+						<!-- /Filter -->
+						<div class="table-responsive">
+							<table class="table  datanew">
+								<thead>
+									<tr>
+										<th class="no-sort">
+											<label class="checkboxs">
+												<input type="checkbox" id="select-all">
+												<span class="checkmarks"></span>
+											</label>
+										</th>
+										<th>Name</th>
+										<th>Bank Account</th>
+										<th>Credit</th>
+										<th>Debit</th>
+										<th>Ballance</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>
+											<label class="checkboxs">
+												<input type="checkbox">
+												<span class="checkmarks"></span>
+											</label>
+										</td>
+										<td>AVA mason</td>
+										<td>SWIZ - 3456565767787</td>
+										<td>614848</td>
+										<td>48000</td>
+										<td>614389</td>
+									</tr>
+									<tr>
+										<td>
+											<label class="checkboxs">
+												<input type="checkbox">
+												<span class="checkmarks"></span>
+											</label>
+										</td>
+										<td>AVA mason</td>
+										<td>SWIZ - 3456565767787</td>
+										<td>614848</td>
+										<td>48000</td>
+										<td>614389</td>
+									</tr>
+									<tr>
+										<td>
+											<label class="checkboxs">
+												<input type="checkbox">
+												<span class="checkmarks"></span>
+											</label>
+										</td>
+										<td>AVA mason</td>
+										<td>SWIZ - 3456565767787</td>
+										<td>614848</td>
+										<td>48000</td>
+										<td>614389</td>
+									</tr>
+									<tr>
+										<td>
+											<label class="checkboxs">
+												<input type="checkbox">
+												<span class="checkmarks"></span>
+											</label>
+										</td>
+										<td>AVA mason</td>
+										<td>SWIZ - 3456565767787</td>
+										<td>614848</td>
+										<td>48000</td>
+										<td>614389</td>
+									</tr>
+									<tr>
+										<td>
+											<label class="checkboxs">
+												<input type="checkbox">
+												<span class="checkmarks"></span>
+											</label>
+										</td>
+										<td>AVA mason</td>
+										<td>SWIZ - 3456565767787</td>
+										<td>614848</td>
+										<td>48000</td>
+										<td>614389</td>
+									</tr>
+
+								</tbody>
+								<tfoot>
+									<tr>
+										<td colspan="1"></td>
+										<td class="text-start fw-bold">Total</td>
+										<!-- gunakan class sum-target dan data-col-index agar reusable -->
+										<td colspan="1"></td>
+										<td id="amount-total" class="fw-bold sum-target" data-col-index="3">0</td>
+										<td id="amount-total" class="fw-bold sum-target" data-col-index="4">0</td>
+										<td id="amount-total" class="fw-bold sum-target" data-col-index="5">0</td>
+									</tr>
+								</tfoot>
+							</table>
+						</div>
 					</div>
-					<!-- /product list -->
 				</div>
+				<!-- /product list -->
+			</div>
 		</div>
-	
+
 	</div>
 	<!-- /Main Wrapper -->
-	<!-- modals -->
-	
-	<!-- /modals -->
+
 	<!-- jQuery -->
-        <script src="assets/js/jquery-3.7.1.min.js"></script>
+	<script src="assets/js/jquery-3.7.1.min.js"></script>
 
-        <!-- Feather Icon JS -->
-		<script src="assets/js/feather.min.js"></script>
+	<!-- Feather Icon JS -->
+	<script src="assets/js/feather.min.js"></script>
 
-		<!-- Slimscroll JS -->
-		<script src="assets/js/jquery.slimscroll.min.js"></script>
+	<!-- Slimscroll JS -->
+	<script src="assets/js/jquery.slimscroll.min.js"></script>
 
-		<!-- Datatable JS -->
-		<script src="assets/js/jquery.dataTables.min.js"></script>
-		<script src="assets/js/dataTables.bootstrap5.min.js"></script>
-		
-		<!-- Bootstrap Core JS -->
-        <script src="assets/js/bootstrap.bundle.min.js"></script>
+	<!-- Datatable JS -->
+	<script src="assets/js/jquery.dataTables.min.js"></script>
+	<script src="assets/js/dataTables.bootstrap5.min.js"></script>
 
-		<!-- Datetimepicker JS -->
-		<script src="assets/js/moment.min.js"></script>
-		<script src="assets/js/bootstrap-datetimepicker.min.js"></script>
+	<!-- Bootstrap Core JS -->
+	<script src="assets/js/bootstrap.bundle.min.js"></script>
 
-		<!-- Daterangepikcer JS -->
-		<script src="assets/js/moment.min.js"></script>
-		<script src="assets/plugins/daterangepicker/daterangepicker.js"></script>
+	<!-- Datetimepicker JS -->
+	<script src="assets/js/moment.min.js"></script>
+	<script src="assets/js/bootstrap-datetimepicker.min.js"></script>
 
-		<!-- Select2 JS -->
-		<script src="assets/plugins/select2/js/select2.min.js"></script>
+	<!-- Daterangepikcer JS -->
+	<script src="assets/js/moment.min.js"></script>
+	<script src="assets/plugins/daterangepicker/daterangepicker.js"></script>
 
-		<!-- Sweetalert 2 -->
-		<script src="assets/plugins/sweetalert/sweetalert2.all.min.js"></script>
-		<script src="assets/plugins/sweetalert/sweetalerts.min.js"></script>
+	<!-- Select2 JS -->
+	<script src="assets/plugins/select2/js/select2.min.js"></script>
 
-		<!-- Custom JS --><script src="assets/js/theme-script.js"></script>	
-		<script src="assets/js/script.js"></script>
+	<!-- Sweetalert 2 -->
+	<script src="assets/plugins/sweetalert/sweetalert2.all.min.js"></script>
+	<script src="assets/plugins/sweetalert/sweetalerts.min.js"></script>
+
+	<!-- Custom JS -->
+	<script src="assets/js/theme-script.js"></script>
+	<script src="assets/js/script.js"></script>
 
 
 </body>

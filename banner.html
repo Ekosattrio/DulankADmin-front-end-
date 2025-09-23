@@ -1,116 +1,178 @@
-
 <!DOCTYPE html>
-	<html lang="en">
-		<head>
-			<meta charset="utf-8">
-			<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
-			<meta name="description" content="POS - Bootstrap Admin Template">
-			<meta name="keywords" content="admin, estimates, bootstrap, business, corporate, creative, management, minimal, modern,  html5, responsive">
-			<meta name="author" content="Dreamguys - Bootstrap Admin Template">
-			<meta name="robots" content="noindex, nofollow">
-			<title>Dreams Pos Admin Template</title>
-			
-			<!-- Favicon -->
-			<link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
-			
-			<!-- Bootstrap CSS -->
-			<link rel="stylesheet" href="assets/css/bootstrap.min.css">
-			
-			<!-- animation CSS -->
-        	<link rel="stylesheet" href="assets/plugins/lightbox/glightbox.min.css">
-        
-			<!-- Fontawesome CSS -->
-			<link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css">
-			<link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css">
-			
-			<!-- Main CSS -->
-			<link rel="stylesheet" href="assets/css/style.css">
-        
-    </head>
-    <body>
-        <div id="global-loader" >
-            <div class="whirly-loader"> </div>
-        </div>
-        <!-- Main Wrapper -->
-        <div class="main-wrapper">
+<html lang="en">
 
-			<!-- header -->
-            <div id="header-placeholder"></div>
-            <!-- sidebar -->
-            <div id="sidebar-placeholder"></div>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+	<meta name="description" content="POS - Bootstrap Admin Template">
+	<meta name="keywords"
+		content="admin, estimates, bootstrap, business, corporate, creative, management, minimal, modern,  html5, responsive">
+	<meta name="author" content="Dreamguys - Bootstrap Admin Template">
+	<meta name="robots" content="noindex, nofollow">
+	<title>Dreams Pos Admin Template</title>
 
-			<div class="page-wrapper">
-				<div class="content">
-					<div class="page-header mt-3">
-						<div class="page-title">
-							<h4>Banner</h4>
+	<!-- Favicon -->
+	<link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+
+	<!-- animation CSS -->
+	<link rel="stylesheet" href="assets/plugins/lightbox/glightbox.min.css">
+
+	<!-- Fontawesome CSS -->
+	<link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css">
+	<link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css">
+
+	<!-- Main CSS -->
+	<link rel="stylesheet" href="assets/css/style.css">
+	<style>
+		.banner-item {
+			position: relative;
+			padding: 6px;
+		}
+
+		.banner-actions {
+			position: absolute;
+			top: 6px;
+			right: 6px;
+			display: flex;
+			gap: 6px;
+		}
+
+		.banner-thumb {
+			height: 120px;
+			object-fit: cover;
+			width: 100%;
+			border-radius: 6px;
+		}
+
+		.badge-schedule {
+			position: absolute;
+			left: 6px;
+			top: 6px;
+			background: #fff7;
+			padding: 4px 8px;
+			border-radius: 4px;
+			font-size: 12px;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="global-loader">
+		<div class="whirly-loader"> </div>
+	</div>
+	<!-- Main Wrapper -->
+	<div class="main-wrapper">
+
+		<!-- header -->
+		<div id="header-placeholder"></div>
+		<!-- sidebar -->
+		<div id="sidebar-placeholder"></div>
+
+		<div class="page-wrapper">
+			<div class="content">
+				<div class="page-header mt-3">
+					<div class="page-title">
+						<h4>Banner</h4>
+					</div>
+				</div>
+				<div class="row mb-4">
+					<div class="col-md-6">
+						<div class="card">
+							<div class="card-header d-flex justify-content-between align-items-center">
+								<h5 class="card-title mb-0">Main Banner</h5>
+								<button id="addMainBtn" class="btn btn-sm btn-primary">Add Main Banner</button>
+							</div>
+							<div class="card-body">
+								<div id="mainBannerList" class="row g-3"></div>
+							</div>
 						</div>
 					</div>
-					<div class="row">
-					
-						<!-- Lightbox -->
-						<div class="col-md-12">	
-							<div class="card">
-								<div class="card-header">
-									<h5 class="card-title">Main Banner</h5>
-								</div>
-								<div class="card-body">
-									<div class="row">
-										<div class="col-md-4 mb-2 mb-md-0">
-											<a href="assets/img/img-01.jpg" class="image-popup">
-												<img src="assets/img/img-01.jpg" class="img-fluid" alt="image">
-											</a>
-										</div>
-										<div class="col-md-4 mb-2 mb-md-0">
-											<a href="assets/img/img-02.jpg" class="image-popup">
-												<img src="assets/img/img-02.jpg" class="img-fluid" alt="image">
-											</a>
-										</div>
-									</div>
-								</div>
+
+					<div class="col-md-6">
+						<div class="card">
+							<div class="card-header d-flex justify-content-between align-items-center">
+								<h5 class="card-title mb-0">Product Banner</h5>
+								<button id="addProductBtn" class="btn btn-sm btn-primary">Add Product Banner</button>
+							</div>
+							<div class="card-body">
+								<div id="productBannerList" class="row g-3"></div>
 							</div>
 						</div>
-						<!-- /Lightbox -->
-						
-						<!-- Lightbox -->
-						<div class="col-md-12">	
-							<div class="card">
-								<div class="card-header">
-									<h5 class="card-title">Product Banner</h5>
-								</div>
-								<div class="card-body">
-									<div class="row">
-										<div class="col-md-4 mb-2 mb-md-0">
-											<a href="assets/img/img-03.jpg" class="image-popup-desc" data-title="Title 01" data-description="Lorem ipsum dolor sit amet, consectetuer adipiscing elit">
-												<img src="assets/img/img-03.jpg" class="img-fluid" alt="work-thumbnail">
-											</a>
-										</div>
-										<div class="col-md-4 mb-2 mb-md-0">
-											<a href="assets/img/img-04.jpg" class="image-popup-desc" data-title="Title 02" data-description="Lorem ipsum dolor sit amet, consectetuer adipiscing elit">
-												<img src="assets/img/img-04.jpg" class="img-fluid" alt="work-thumbnail">
-											</a>
-										</div>
-										<div class="col-md-4 mb-2 mb-md-0">
-											<a href="assets/img/img-05.jpg" class="image-popup-desc" data-title="Title 03" data-description="Lorem ipsum dolor sit amet, consectetuer adipiscing elit">
-												<img src="assets/img/img-05.jpg" class="img-fluid" alt="work-thumbnail">
-											</a>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<!-- /Lightbox -->
-						
 					</div>
 				</div>
 			</div>
-				
+
+			<!-- Add / Edit Modal -->
+			<div class="modal fade" id="bannerModal" tabindex="-1" aria-hidden="true">
+				<div class="modal-dialog modal-lg modal-dialog-centered">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title" id="bannerModalTitle">Add Banner</h5>
+							<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+						</div>
+						<div class="modal-body">
+							<form id="bannerForm">
+								<input type="hidden" id="bannerType" value="main">
+								<input type="hidden" id="bannerId" value="">
+								<div class="row g-2">
+									<div class="col-md-8">
+										<label class="form-label">Image URL (or leave blank to upload)</label>
+										<input id="bannerImageUrl" class="form-control"
+											placeholder="https://example.com/image.jpg">
+									</div>
+									<div class="col-md-4">
+										<label class="form-label">Upload Image</label>
+										<input id="bannerImageFile" type="file" accept="image/*" class="form-control">
+									</div>
+
+									<div class="col-md-6">
+										<label class="form-label">Title</label>
+										<input id="bannerTitle" class="form-control" placeholder="Optional title">
+									</div>
+									<div class="col-md-6">
+										<label class="form-label">Description</label>
+										<input id="bannerDesc" class="form-control" placeholder="Optional description">
+									</div>
+
+									<div class="col-md-6">
+										<label class="form-label">Start (when banner becomes visible)</label>
+										<input id="bannerStart" type="datetime-local" class="form-control">
+									</div>
+									<div class="col-md-6">
+										<label class="form-label">End (when banner stops being visible)</label>
+										<input id="bannerEnd" type="datetime-local" class="form-control">
+									</div>
+
+									<div class="col-12">
+										<label class="form-label">Preview</label>
+										<div id="bannerPreview" class="p-2 border rounded text-center">
+											<span class="text-muted">No image selected</span>
+										</div>
+									</div>
+								</div>
+							</form>
+						</div>
+						<div class="modal-footer">
+							<button id="deleteBannerBtn" class="btn btn-danger me-auto d-none">Delete</button>
+							<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+							<button id="saveBannerBtn" type="button" class="btn btn-primary">Save</button>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
-		<!-- /Main Wrapper -->
-	
-		<!-- jQuery -->
+
+	</div>
+	<!-- /Main Wrapper -->
+
+	<!-- jQuery -->
 	<script src="assets/js/jquery-3.7.1.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.loadtemplate/1.5.10/jquery.loadTemplate.min.js" integrity="sha512-T1zx+UG2gXu9mr29wvzaKkNUmAOAie40T32ZPIvcRPJgO5br53+Ocqj8gzguUuix7FK+Z3ncRCJMaZcumnPZzg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.loadtemplate/1.5.10/jquery.loadTemplate.min.js"
+		integrity="sha512-T1zx+UG2gXu9mr29wvzaKkNUmAOAie40T32ZPIvcRPJgO5br53+Ocqj8gzguUuix7FK+Z3ncRCJMaZcumnPZzg=="
+		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 	<!-- Feather Icon JS -->
 	<script src="assets/js/feather.min.js"></script>
@@ -125,20 +187,260 @@
 	<!-- Bootstrap Core JS -->
 	<script src="assets/js/bootstrap.bundle.min.js"></script>
 
-	<!-- Chart JS -->
-	<script src="assets/plugins/apexchart/apexcharts.min.js"></script>
-	<script src="assets/plugins/apexchart/chart-data.js"></script>
-
-	<!-- Sweetalert 2 -->
-	<script src="assets/plugins/sweetalert/sweetalert2.all.min.js"></script>
-	<script src="assets/plugins/sweetalert/sweetalerts.min.js"></script>
-
 	<!-- Summernote JS -->
 	<script src="assets/plugins/summernote/summernote-bs4.min.js"></script>
 
 	<!-- Custom JS -->
 	<script src="assets/js/theme-script.js"></script>
 	<script src="assets/js/script.js"></script>
-	
-    </body>
+
+	<script>
+		(function ($) {
+			const keys = { main: 'banners_main', product: 'banners_product' };
+
+			// read stored or initial data
+			
+			function loadBanners(type) {
+				try {
+					const raw = localStorage.getItem(keys[type]) || '[]';
+					return JSON.parse(raw);
+				} catch (e) { return []; }
+			}
+			function loadBanners(type) {
+				try {
+					const raw = localStorage.getItem(keys[type]);
+					// jika belum ada data di localStorage, isi dengan sample default
+					if (!raw) {
+						const samples = {
+							main: [
+								{ id: 'm1', src: 'https://percetakan-dulank.netlify.app/images/brosur.jpg', title: 'Promo Utama 1', desc: 'Diskon besar-besaran', start: new Date().toISOString(), end: new Date().toISOString(), created: new Date().toISOString() },
+								{ id: 'm2', src: 'https://percetakan-dulank.netlify.app/images/yasin.jpg', title: 'Promo Utama 2', desc: 'Penawaran terbatas', start: new Date().toISOString(), end: new Date().toISOString(), created: new Date().toISOString() }
+							],
+							product: [
+								{ id: 'p1', src: 'https://percetakan-dulank.netlify.app/images/yasin.jpg', title: 'Produk Pilihan', desc: 'Produk terbaik', start: new Date().toISOString(), end: new Date().toISOString(), created: new Date().toISOString() },
+								{ id: 'p2', src: 'https://percetakan-dulank.netlify.app/images/kaos.jpg', title: 'Diskon Produk', desc: 'Hemat hari ini', start: new Date().toISOString(), end: new Date().toISOString(), created: new Date().toISOString() }
+							]
+						};
+						localStorage.setItem(keys[type], JSON.stringify(samples[type] || []));
+						return samples[type] || [];
+					}
+					return JSON.parse(raw);
+				} catch (e) {
+					return [];
+				}
+			}
+
+			function saveBanners(type, arr) {
+				localStorage.setItem(keys[type], JSON.stringify(arr));
+			}
+
+			// format datetime-local value from ISO or empty
+			function toInputISO(dt) {
+				if (!dt) return '';
+				const d = new Date(dt);
+				if (isNaN(d)) return '';
+				const off = d.getTimezoneOffset();
+				const local = new Date(d.getTime() - off * 60000);
+				return local.toISOString().slice(0, 16);
+			}
+
+			function isVisibleNow(b) {
+				const now = new Date();
+				if (b.start) {
+					const s = new Date(b.start);
+					if (now < s) return false;
+				}
+				if (b.end) {
+					const e = new Date(b.end);
+					if (now > e) return false;
+				}
+				return true;
+			}
+
+			// render a single banner card
+			function renderList(type) {
+				const list = loadBanners(type);
+				const $container = (type === 'main') ? $('#mainBannerList') : $('#productBannerList');
+				$container.empty();
+				if (!list.length) {
+					$container.append('<div class="col-12 text-muted">No banners yet.</div>');
+					return;
+				}
+				list.forEach((b, idx) => {
+					const visible = isVisibleNow(b);
+					const thumb = b.src || '';
+					const title = b.title || '';
+					const desc = b.desc || '';
+					const startText = b.start ? new Date(b.start).toLocaleString() : '—';
+					const endText = b.end ? new Date(b.end).toLocaleString() : '—';
+					const col = $(`
+                        <div class="col-6 col-md-6">
+                            <div class="banner-item">
+                                ${visible ? '<span class="badge bg-success badge-schedule">Active</span>' : '<span class="badge bg-secondary badge-schedule">Inactive</span>'}
+                                <div class="banner-actions">
+                                    <button class="btn btn-sm btn-light edit-banner" data-type="${type}" data-id="${b.id}" title="Edit"><i class="fa fa-edit"></i></button>
+                                    <button class="btn btn-sm btn-danger del-banner" data-type="${type}" data-id="${b.id}" title="Delete"><i class="fa fa-trash"></i></button>
+                                </div>
+                                <a href="${thumb}" target="_blank" class="d-block mb-2">
+                                    <img src="${thumb}" alt="${title}" class="banner-thumb">
+                                </a>
+                                <div>
+                                    <strong>${escapeHtml(title)}</strong>
+                                    <p class="small mb-0 text-truncate">${escapeHtml(desc)}</p>
+                                    <small class="text-muted">Start: ${startText}</small><br>
+                                    <small class="text-muted">End: ${endText}</small>
+                                </div>
+                            </div>
+                        </div>
+                    `);
+					$container.append(col);
+				});
+			}
+
+			// safe html escape
+			function escapeHtml(s) {
+				if (!s) return '';
+				return String(s).replace(/[&<>"']/g, function (m) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[m]; });
+			}
+
+			// open modal for add/edit
+			function openModal(type, banner) {
+				$('#bannerModalTitle').text(banner ? 'Edit Banner' : 'Add Banner');
+				$('#bannerType').val(type);
+				$('#bannerId').val(banner ? banner.id : '');
+				$('#bannerImageUrl').val(banner ? (banner.src || '') : '');
+				$('#bannerTitle').val(banner ? (banner.title || '') : '');
+				$('#bannerDesc').val(banner ? (banner.desc || '') : '');
+				$('#bannerStart').val(banner ? toInputISO(banner.start) : '');
+				$('#bannerEnd').val(banner ? toInputISO(banner.end) : '');
+				$('#bannerImageFile').val('');
+				$('#deleteBannerBtn').toggleClass('d-none', !banner);
+				updatePreview(banner ? banner.src : '');
+				var modal = new bootstrap.Modal(document.getElementById('bannerModal'));
+				modal.show();
+			}
+
+			// preview image
+			function updatePreview(src) {
+				const $p = $('#bannerPreview');
+				$p.empty();
+				if (!src) {
+					$p.html('<span class="text-muted">No image selected</span>');
+					return;
+				}
+				const img = $('<img>').attr('src', src).css({ maxWidth: '100%', maxHeight: '180px', borderRadius: '6px' });
+				$p.append(img);
+			}
+
+			// generate id
+			function genId() { return 'b' + Date.now() + Math.floor(Math.random() * 999); }
+
+			// handle file -> dataURL
+			function fileToDataUrl(file) {
+				return new Promise((res, rej) => {
+					const fr = new FileReader();
+					fr.onload = () => res(fr.result);
+					fr.onerror = () => rej('read error');
+					fr.readAsDataURL(file);
+				});
+			}
+
+			// wire events
+			$(function () {
+				// initial render
+				renderList('main');
+				renderList('product');
+
+				// periodic refresh so active badges update
+				setInterval(() => { renderList('main'); renderList('product'); }, 30000);
+
+				$('#addMainBtn').on('click', () => openModal('main', null));
+				$('#addProductBtn').on('click', () => openModal('product', null));
+
+				// preview on url change
+				$('#bannerImageUrl').on('input', function () { updatePreview(this.value); });
+
+				// preview on file select
+				$('#bannerImageFile').on('change', async function () {
+					const f = this.files && this.files[0];
+					if (!f) return;
+					try {
+						const data = await fileToDataUrl(f);
+						updatePreview(data);
+					} catch (e) { alert('Cannot read file'); }
+				});
+
+				// save banner
+				$('#saveBannerBtn').on('click', async function () {
+					const type = $('#bannerType').val();
+					let id = $('#bannerId').val();
+					const url = $('#bannerImageUrl').val().trim();
+					const title = $('#bannerTitle').val().trim();
+					const desc = $('#bannerDesc').val().trim();
+					const start = $('#bannerStart').val() ? new Date($('#bannerStart').val()).toISOString() : '';
+					const end = $('#bannerEnd').val() ? new Date($('#bannerEnd').val()).toISOString() : '';
+					let src = url || '';
+
+					const file = $('#bannerImageFile')[0].files[0];
+					if (file) {
+						try { src = await fileToDataUrl(file); } catch (e) { alert('File read error'); return; }
+					}
+					if (!src) {
+						alert('Please provide an image URL or upload a file.');
+						return;
+					}
+
+					const arr = loadBanners(type);
+					if (id) {
+						// edit
+						const idx = arr.findIndex(x => x.id === id);
+						if (idx === -1) { alert('Banner not found'); return; }
+						arr[idx] = Object.assign({}, arr[idx], { src, title, desc, start, end });
+					} else {
+						// new
+						id = genId();
+						arr.push({ id, src, title, desc, start, end, created: new Date().toISOString() });
+					}
+					saveBanners(type, arr);
+					renderList(type);
+					bootstrap.Modal.getInstance(document.getElementById('bannerModal')).hide();
+				});
+
+				// edit button delegate
+				$(document).on('click', '.edit-banner', function () {
+					const type = $(this).data('type');
+					const id = $(this).data('id');
+					const arr = loadBanners(type);
+					const b = arr.find(x => x.id === id);
+					if (!b) { alert('Not found'); return; }
+					openModal(type, b);
+				});
+
+				// delete button delegate
+				$(document).on('click', '.del-banner', function () {
+					const type = $(this).data('type');
+					const id = $(this).data('id');
+					if (!confirm('Delete this banner?')) return;
+					let arr = loadBanners(type);
+					arr = arr.filter(x => x.id !== id);
+					saveBanners(type, arr);
+					renderList(type);
+				});
+
+				// delete inside modal
+				$('#deleteBannerBtn').on('click', function () {
+					if (!confirm('Delete this banner?')) return;
+					const type = $('#bannerType').val(); const id = $('#bannerId').val();
+					let arr = loadBanners(type);
+					arr = arr.filter(x => x.id !== id);
+					saveBanners(type, arr);
+					renderList(type);
+					bootstrap.Modal.getInstance(document.getElementById('bannerModal')).hide();
+				});
+			});
+		})(jQuery);
+	</script>
+
+</body>
+
 </html>

@@ -11,59 +11,33 @@
 	<meta name="robots" content="noindex, nofollow">
 	<title>Dreams Pos Admin Template</title>
 
-	 <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png" />
+	<!-- Favicon -->
+	<link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png" />
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css" />
 
-    <!-- Datetimepicker CSS -->
-    <link rel="stylesheet" href="assets/css/bootstrap-datetimepicker.min.css" />
+	<!-- Datetimepicker CSS -->
+	<link rel="stylesheet" href="assets/css/bootstrap-datetimepicker.min.css" />
 
-    <!-- animation CSS -->
-    <link rel="stylesheet" href="assets/css/animate.css" />
+	<!-- animation CSS -->
+	<link rel="stylesheet" href="assets/css/animate.css" />
 
-    <!-- Select2 CSS -->
-    <link rel="stylesheet" href="assets/plugins/select2/css/select2.min.css" />
+	<!-- Select2 CSS -->
+	<link rel="stylesheet" href="assets/plugins/select2/css/select2.min.css" />
 
-    <!-- Datatable CSS -->
-    <link rel="stylesheet" href="assets/css/dataTables.bootstrap5.min.css" />
+	<!-- Datatable CSS -->
+	<link rel="stylesheet" href="assets/css/dataTables.bootstrap5.min.css" />
 
-    <!-- Daterangepikcer CSS -->
-    <link rel="stylesheet" href="assets/plugins/daterangepicker/daterangepicker.css"/>
+	<!-- Daterangepikcer CSS -->
+	<link rel="stylesheet" href="assets/plugins/daterangepicker/daterangepicker.css" />
 
-    <!-- Fontawesome CSS -->
-    <link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css"/>
-    <link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css" />
+	<!-- Fontawesome CSS -->
+	<link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css" />
+	<link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css" />
 
-    <!-- Main CSS -->
-    <link rel="stylesheet" href="assets/css/style.css" />
-    <style>
-        #kepalaKakiAbuAbu th {
-    background-color: #f2f2f2; /* abu-abu soft */
-    font-weight: 500;
-  }
-/* Desktop fix - geser kanan (Store, Product, Report) ke kiri */
-@media (min-width: 768px) {
-  #filter_container .d-flex.justify-content-md-end {
-    justify-content: flex-start !important; /* biar rata kiri */
-    gap: 8px; /* kasih jarak antar tombol */
-    margin-right: 5px;
-  }
-}
-
-/* Mobile fix - geser Date Range ke kiri */
-@media (max-width: 767.98px) {
-  #filter_container .pemilihrentang-container {
-    margin-left: 0 !important;   /* tarik rata kiri */
-    width: 100% !important;      /* full biar ga kepotong */
-  }
-  
-}
-
-
-
-    </style>
+	<!-- Main CSS -->
+	<link rel="stylesheet" href="assets/css/style.css" />
 
 </head>
 
@@ -80,288 +54,351 @@
 		<div id="sidebar-placeholder"></div>
 
 		<div class="page-wrapper mt-3">
-            <!-- Main content tulis disini -->
+			<!-- Main content tulis disini -->
 			<div class="content">
-          <div class="page-header justify-content-between">
-            <div class="page-title">
-              <h4>Account Statement</h4>
-              <h6>View Your Statement</h6>
-            </div>
-            <ul class="table-top-head">
-              <li>
-                <a data-bs-toggle="tooltip" data-bs-placement="top" title="Pdf"
-                  ><img src="assets/img/icons/pdf.svg" alt="img"
-                /></a>
-              </li>
-              <li>
-                <a
-                  data-bs-toggle="tooltip"
-                  data-bs-placement="top"
-                  title="Excel"
-                  ><img src="assets/img/icons/excel.svg" alt="img"
-                /></a>
-              </li>
-              <li>
-                <a
-                  data-bs-toggle="tooltip"
-                  data-bs-placement="top"
-                  title="Print"
-                  ><i data-feather="printer" class="feather-rotate-ccw"></i
-                ></a>
-              </li>
-              <li>
-                <a
-                  data-bs-toggle="tooltip"
-                  data-bs-placement="top"
-                  title="Refresh"
-                  ><i data-feather="rotate-ccw" class="feather-rotate-ccw"></i
-                ></a>
-              </li>
-              <li>
-                <a
-                  data-bs-toggle="tooltip"
-                  data-bs-placement="top"
-                  title="Collapse"
-                  id="collapse-header"
-                  ><i data-feather="chevron-up" class="feather-chevron-up"></i
-                ></a>
-              </li>
-            </ul>
-          </div>
+				<div class="page-header justify-content-between">
+					<div class="page-title">
+						<h4>Account Statement</h4>
+						<h6>View Your Statement</h6>
+					</div>
+					<ul class="table-top-head">
+						<li>
+							<a data-bs-toggle="tooltip" data-bs-placement="top" title="Pdf"><img
+									src="assets/img/icons/pdf.svg" alt="img" /></a>
+						</li>
+						<li>
+							<a data-bs-toggle="tooltip" data-bs-placement="top" title="Excel"><img
+									src="assets/img/icons/excel.svg" alt="img" /></a>
+						</li>
+						<li>
+							<a data-bs-toggle="tooltip" data-bs-placement="top" title="Print"><i data-feather="printer"
+									class="feather-rotate-ccw"></i></a>
+						</li>
+						<li>
+							<a data-bs-toggle="tooltip" data-bs-placement="top" title="Refresh"><i
+									data-feather="rotate-ccw" class="feather-rotate-ccw"></i></a>
+						</li>
+						<li>
+							<a data-bs-toggle="tooltip" data-bs-placement="top" title="Collapse" id="collapse-header"><i
+									data-feather="chevron-up" class="feather-chevron-up"></i></a>
+						</li>
+					</ul>
+				</div>
 
-          <!-- /product list -->
-          <div class="row mt-4">
-  <div class="col-12">
-    <div class="card shadow-sm rounded-3">
-      <div class="card-body">
-        
-        <!-- Table Top + Filter -->
-        <div class="d-flex justify-content-between align-items-center mb-3">
-          
-          <!-- Tombol Search (elemen panggilan) -->
-          <!-- Search Responsive -->
-<div class="search-set">
-  <div class="search-input d-flex align-items-center">
-    <input 
-      type="text" 
-      class="form-control form-control-sm me-2" 
-      placeholder="Search..." 
-    >
-    <a href="#" class="btn btn-searchset">
-      <i data-feather="search" class="feather-search"></i>
-    </a>
-  </div>
-</div>
+				<!-- /product list -->
+				<div class="card table-list-card">
+					<div class="card-body">
+						<!-- Filter -->
+						<div class="table-top d-flex align-items-center justify-content-between">
+							<!-- Search Input -->
+							<div class="search-set d-block d-md-flex">
+								<div class="search-input">
+									<a href="" class="btn btn-searchset"><i data-feather="search"
+											class="feather-search"></i></a>
+								</div>
+								<!-- Date Range -->
+								<div class="my-2">
+									<div class="pemilihrentang-container ">
+										<input type="text" id="pemilihrentang-input"
+											class="pemilihrentang-input form-control" readonly placeholder="Date"
+											style="height: fit-content !important;width: 100% !important;">
+										<div id="pemilihrentang-panel" class="pemilihrentang-panel">
+											<div class="pemilihrentang-isi">
+												<div class="opsi-cepat">
+													<div data-range="kemarin">Kemarin</div>
+													<div data-range="7hari">7 Hari Terakhir</div>
+													<div data-range="bulanIni">Bulan Ini</div>
+													<div data-range="bulanLalu">Bulan Lalu</div>
+													<div data-range="tahunLalu">Tahun Lalu</div>
+													<div data-range="kustom">Rentang Kustom</div>
+												</div>
+												<div class="kalender" id="kalender-view" style="display:none;">
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="filters d-flex justify-content-end">
+								<div class="dropdown w-100 me-2">
+									<button class="btn btn-outline-primary dropdown-toggle" type="button"
+										data-bs-toggle="dropdown" aria-expanded="false">
+										Status
+									</button>
+									<ul class="dropdown-menu">
+										<li><a class="dropdown-item" href="#">Paid</a></li>
+										<li><a class="dropdown-item" href="#">Debit</a></li>
+										<li><a class="dropdown-item" href="#">Credit</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<!-- /Filter -->
+						<div class="table-responsive product-list">
+							<table class="table  datanew list">
+								<thead>
+									<tr>
+										<th class="no-sort">
+											<label class="checkboxs">
+												<input type="checkbox" id="select-all">
+												<span class="checkmarks"></span>
+											</label>
+										</th>
+										<th>Reference Number</th>
+										<th>Date</th>
+										<th>Category</th>
+										<th>Description</th>
+										<th>Amount</th>
+										<th>Transaction type</th>
+										<th>Balance</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>
+											<label class="checkboxs">
+												<input type="checkbox">
+												<span class="checkmarks"></span>
+											</label>
+										</td>
+										<td>#AS821</td>
+										<td>24 Dec 2024</td>
+										<td>Sale</td>
+										<td>Sales Of Goods</td>
+										<td>+200000</td>
+										<td><span class="badge bg-outline-success">Paid</span></td>
+										<td>200000</td>
+									</tr>
+									<tr>
+										<td>
+											<label class="checkboxs">
+												<input type="checkbox">
+												<span class="checkmarks"></span>
+											</label>
+										</td>
+										<td>#AS822</td>
+										<td>24 Dec 2024</td>
+										<td>Refund</td>
+										<td>Refund Issue</td>
+										<td>-200000</td>
+										<td><span class="badge bg-outline-danger">Debit</span></td>
+										<td>200000</td>
+									</tr>
+									<tr>
+										<td>
+											<label class="checkboxs">
+												<input type="checkbox">
+												<span class="checkmarks"></span>
+											</label>
+										</td>
+										<td>#AS823</td>
+										<td>24 Dec 2024</td>
+										<td>purchase</td>
+										<td>Inventory Restocking</td>
+										<td>+200000</td>
+										<td><span class="badge bg-outline-success">Credit</span></td>
+										<td>200000</td>
+									</tr>
+									<tr>
+										<td>
+											<label class="checkboxs">
+												<input type="checkbox">
+												<span class="checkmarks"></span>
+											</label>
+										</td>
+										<td>#AS824</td>
+										<td>24 Dec 2024</td>
+										<td>utility Payment</td>
+										<td>Electricity Bill</td>
+										<td>+200000</td>
+										<td><span class="badge bg-outline-success">Paid</span></td>
+										<td>200000</td>
+									</tr>
+									<tr>
+										<td>
+											<label class="checkboxs">
+												<input type="checkbox">
+												<span class="checkmarks"></span>
+											</label>
+										</td>
+										<td>#AS825</td>
+										<td>24 Dec 2024</td>
+										<td>Sale</td>
+										<td>inventory Restocking</td>
+										<td>+200000</td>
+										<td><span class="badge bg-outline-success">Paid</span></td>
+										<td>200000</td>
+									</tr>
+									<tr>
+										<td>
+											<label class="checkboxs">
+												<input type="checkbox">
+												<span class="checkmarks"></span>
+											</label>
+										</td>
+										<td>#AS826</td>
+										<td>24 Dec 2024</td>
+										<td>Sale</td>
+										<td>Sales Of Goods</td>
+										<td>+200000</td>
+										<td><span class="badge bg-outline-success">Paid</span></td>
+										<td>200000</td>
+									</tr>
+									<tr>
+										<td>
+											<label class="checkboxs">
+												<input type="checkbox">
+												<span class="checkmarks"></span>
+											</label>
+										</td>
+										<td>#AS827</td>
+										<td>24 Dec 2024</td>
+										<td>Sale</td>
+										<td>Sales Of Goods</td>
+										<td>+200000</td>
+										<td><span class="badge bg-outline-success">Paid</span></td>
+										<td>200000</td>
+									</tr>
+									<tr>
+										<td>
+											<label class="checkboxs">
+												<input type="checkbox">
+												<span class="checkmarks"></span>
+											</label>
+										</td>
+										<td>#AS828</td>
+										<td>24 Dec 2024</td>
+										<td>Sale</td>
+										<td>Sales Of Goods</td>
+										<td>+200000</td>
+										<td><span class="badge bg-outline-success">Paid</span></td>
+										<td>200000</td>
+									</tr>
+									<tr>
+										<td>
+											<label class="checkboxs">
+												<input type="checkbox">
+												<span class="checkmarks"></span>
+											</label>
+										</td>
+										<td>#AS829</td>
+										<td>24 Dec 2024</td>
+										<td>Sale</td>
+										<td>Sales Of Goods</td>
+										<td>+200000</td>
+										<td><span class="badge bg-outline-success">Paid</span></td>
+										<td>200000</td>
+									</tr>
+									<tr>
+										<td>
+											<label class="checkboxs">
+												<input type="checkbox">
+												<span class="checkmarks"></span>
+											</label>
+										</td>
+										<td>#AS8210</td>
+										<td>24 Dec 2024</td>
+										<td>Sale</td>
+										<td>Sales Of Goods</td>
+										<td>+200000</td>
+										<td><span class="badge bg-outline-success">Paid</span></td>
+										<td>200000</td>
+									</tr>
+									<tr>
+										<td>
+											<label class="checkboxs">
+												<input type="checkbox">
+												<span class="checkmarks"></span>
+											</label>
+										</td>
+										<td>#AS8211</td>
+										<td>24 Dec 2024</td>
+										<td>Sale</td>
+										<td>Sales Of Goods</td>
+										<td>+200000</td>
+										<td><span class="badge bg-outline-success">Paid</span></td>
+										<td>200000</td>
+									</tr>
+									<tr>
+										<td>
+											<label class="checkboxs">
+												<input type="checkbox">
+												<span class="checkmarks"></span>
+											</label>
+										</td>
+										<td>#AS8212</td>
+										<td>24 Dec 2024</td>
+										<td>Sale</td>
+										<td>Sales Of Goods</td>
+										<td>+200000</td>
+										<td><span class="badge bg-outline-success">Paid</span></td>
+										<td>200000</td>
+									</tr>
+								</tbody>
+								<tfoot>
+                                    <tr>
+                                        <td colspan="1"></td>
+                                        <td class="text-start fw-bold">Total</td>
+                                        <!-- gunakan class sum-target dan data-col-index agar reusable -->
+                                        <td colspan="3"></td>
+                                        <td id="amount-total" class="fw-bold sum-target" data-col-index="5">0</td>
+                                        <td colspan="1"></td>
+                                        <td id="amount-total" class="fw-bold sum-target" data-col-index="7">0</td>
+                                    </tr>
+                                </tfoot>
+							</table>
+						</div>
+
+					</div>
+				</div>
 
 
-          <!-- Tombol Filter -->
-          <div class="search-path">
-            <div class="d-flex align-items-center">
-              <a class="btn btn-filter" id="pilter">
-                <i data-feather="filter" class="filter-icon"></i>
-                <span>
-                  <img src="assets/img/icons/closes.svg" alt="img">
-                </span>
-              </a>
-            </div>
-          </div>
-
-        </div>
-        <!-- /Table Top + Filter -->
-
-        <!-- Filter Collapse -->
- <div id="filter_container" class="filter-collapse mt-3 w-100">
-  <div class="container-fluid px-0">
-    <div class="row g-3 align-items-center">
-
-      <!-- Date Range (kiri) -->
-      <div class="col-12 col-md-4">
-        <div class="pemilihrentang-container w-100">
-          <input 
-            type="text" 
-            id="pemilihrentang-input" 
-            class="pemilihrentang-input form-control"
-            readonly 
-            placeholder="DD/MM/YYYY - DD/MM/YYYY"
-          >
-          <div id="pemilihrentang-panel" class="pemilihrentang-panel">
-            <div class="pemilihrentang-isi">
-              <div class="opsi-cepat">
-                <div data-range="kemarin">Kemarin</div>
-                <div data-range="7hari">7 Hari Terakhir</div>
-                <div data-range="bulanIni">Bulan Ini</div>
-                <div data-range="bulanLalu">Bulan Lalu</div>
-                <div data-range="tahunLalu">Tahun Lalu</div>
-                <div data-range="kustom">Rentang Kustom</div>
-              </div>
-              <div class="kalender" id="kalender-view" style="display:none;"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Dropdown + Report (kanan) -->
-      <div class="col-12 col-md-8">
-        <div class="d-flex flex-column flex-md-row justify-content-md-end gap-2">
-          
-          <!-- Store -->
-          <div class="dropdown w-100 w-md-auto">
-            <button type="button" class="btn btn-outline-primary dropdown-toggle w-100 w-md-auto"
-              data-bs-toggle="dropdown" aria-expanded="false">
-              Account
-            </button>
-            <ul class="dropdown-menu w-100">
-              <li><a class="dropdown-item" href="#">Baldur</a></li>
-              <li><a class="dropdown-item" href="#">ekos mart</a></li>
-            </ul>
-          </div>
-
-          <!-- Product -->
-          
-
-          <!-- Report -->
-          <button class="btn btn-primary w-100 w-md-auto">Report</button>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</div>
 
 
-        <!-- /Filter Collapse -->
-
-      </div>
-    </div>
-  </div>
-</div>
 
 
-         <div class="row">
-  <div class="col-lg-12">
-    <div class="card">
-      <div class="card-header">
-        <h4 class="card-title">Statement of Account : HBSC - 3298784309485</h4>
-      </div>
-      <div class="card-body">
-        <div class="table-responsive">
-          <table id="expenseTable" class="table mb-0">
-            <thead id="kepalaKakiAbuAbu">
-              <tr>
-                <th>Reference Number</th>
-                <th>Date</th>
-                <th>Category</th>
-                <th>Description</th>
-                <th>Amount</th>
-                <th>Transaction type</th>
-                <th>Balance</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr><td>#AS821</td><td>24 Dec 2024</td><td>Sale</td><td>Sales Of Goods</td><td>+$200</td><td><span class="badge bg-outline-success">Paid</span></td><td>$200</td></tr>
-              <tr><td>#AS822</td><td>24 Dec 2024</td><td>Refund</td><td>Refund Issue</td><td>-$200</td><td><span class="badge bg-outline-danger">Debit</span></td><td>$200</td></tr>
-              <tr><td>#AS823</td><td>24 Dec 2024</td><td>purchase</td><td>Inventory Restocking</td><td>+$200</td><td><span class="badge bg-outline-success">Credit</span></td><td>$200</td></tr>
-              <tr><td>#AS824</td><td>24 Dec 2024</td><td>utility Payment</td><td>Electricity Bill</td><td>+$200</td><td><span class="badge bg-outline-success">Paid</span></td><td>$200</td></tr>
-              <tr><td>#AS825</td><td>24 Dec 2024</td><td>Sale</td><td>inventory Restocking</td><td>+$200</td><td><span class="badge bg-outline-success">Paid</span></td><td>$200</td></tr>
-              <tr><td>#AS826</td><td>24 Dec 2024</td><td>Sale</td><td>Sales Of Goods</td><td>+$200</td><td><span class="badge bg-outline-success">Paid</span></td><td>$200</td></tr>
-              <tr><td>#AS827</td><td>24 Dec 2024</td><td>Sale</td><td>Sales Of Goods</td><td>+$200</td><td><span class="badge bg-outline-success">Paid</span></td><td>$200</td></tr>
-              <tr><td>#AS828</td><td>24 Dec 2024</td><td>Sale</td><td>Sales Of Goods</td><td>+$200</td><td><span class="badge bg-outline-success">Paid</span></td><td>$200</td></tr>
-              <tr><td>#AS829</td><td>24 Dec 2024</td><td>Sale</td><td>Sales Of Goods</td><td>+$200</td><td><span class="badge bg-outline-success">Paid</span></td><td>$200</td></tr>
-              <tr><td>#AS8210</td><td>24 Dec 2024</td><td>Sale</td><td>Sales Of Goods</td><td>+$200</td><td><span class="badge bg-outline-success">Paid</span></td><td>$200</td></tr>
-              <tr><td>#AS8211</td><td>24 Dec 2024</td><td>Sale</td><td>Sales Of Goods</td><td>+$200</td><td><span class="badge bg-outline-success">Paid</span></td><td>$200</td></tr>
-              <tr><td>#AS8212</td><td>24 Dec 2024</td><td>Sale</td><td>Sales Of Goods</td><td>+$200</td><td><span class="badge bg-outline-success">Paid</span></td><td>$200</td></tr>
-            </tbody>
-            <tfoot id="kepalaKakiAbuAbu">
-              <tr>
-                <th>Total</th>
-                <th ></th>
-                <th ></th>
-                <th ></th>
-                <th ></th>
-                <th ></th>
-                <th >$2400</th>
-              </tr>
-            </tfoot>
-          </table>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    let table = document.querySelector("#expenseTable");
-    let rows = table.querySelectorAll("tbody tr");
-
-    let totals = [0, 0, 0, 0]; // 4 kolom angka
-
-    rows.forEach(row => {
-      let cells = row.querySelectorAll("td");
-      totals[0] += parseInt(cells[1].innerText) || 0;
-      totals[1] += parseInt(cells[2].innerText) || 0;
-      totals[2] += parseInt(cells[3].innerText) || 0;
-      totals[3] += parseInt(cells[4].innerText) || 0;
-    });
-
-    document.getElementById("total1").innerText = totals[0].toLocaleString();
-    document.getElementById("total2").innerText = totals[1].toLocaleString();
-    document.getElementById("total3").innerText = totals[2].toLocaleString();
-    document.getElementById("total4").innerText = totals[3].toLocaleString();
-  });
-</script>
-
-          <!-- /product list -->
-        </div>
+				<!-- /product list -->
+			</div>
 		</div>
-	
+
 	</div>
 	<!-- /Main Wrapper -->
-	<!-- modals -->
-	
-	<!-- /modals -->
-	<script>
-    $('#table-eko').DataTable({
-  columnDefs: [
-    { targets: 'no-sort', orderable: false }
-  ]
-});
 
-  </script>
-    <!-- jQuery -->
-    <script src="assets/js/jquery-3.7.1.min.js"></script>
+	<!-- jQuery -->
+	<script src="assets/js/jquery-3.7.1.min.js"></script>
 
-    <!-- Feather Icon JS -->
-    <script src="assets/js/feather.min.js"></script>
+	<!-- Feather Icon JS -->
+	<script src="assets/js/feather.min.js"></script>
 
-    <!-- Slimscroll JS -->
-    <script src="assets/js/jquery.slimscroll.min.js"></script>
+	<!-- Slimscroll JS -->
+	<script src="assets/js/jquery.slimscroll.min.js"></script>
 
-    <!-- Datatable JS -->
-    <script src="assets/js/jquery.dataTables.min.js"></script>
-    <script src="assets/js/dataTables.bootstrap5.min.js"></script>
+	<!-- Datatable JS -->
+	<script src="assets/js/jquery.dataTables.min.js"></script>
+	<script src="assets/js/dataTables.bootstrap5.min.js"></script>
 
-    <!-- Bootstrap Core JS -->
-    <script src="assets/js/bootstrap.bundle.min.js"></script>
+	<!-- Bootstrap Core JS -->
+	<script src="assets/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Datetimepicker JS -->
-    <script src="assets/js/moment.min.js"></script>
-    <script src="assets/js/bootstrap-datetimepicker.min.js"></script>
+	<!-- Datetimepicker JS -->
+	<script src="assets/js/moment.min.js"></script>
+	<script src="assets/js/bootstrap-datetimepicker.min.js"></script>
 
-    <!-- Daterangepikcer JS -->
-    <script src="assets/js/moment.min.js"></script>
-    <script src="assets/plugins/daterangepicker/daterangepicker.js"></script>
+	<!-- Daterangepikcer JS -->
+	<script src="assets/js/moment.min.js"></script>
+	<script src="assets/plugins/daterangepicker/daterangepicker.js"></script>
 
-    <!-- Select2 JS -->
-    <script src="assets/plugins/select2/js/select2.min.js"></script>
+	<!-- Select2 JS -->
+	<script src="assets/plugins/select2/js/select2.min.js"></script>
 
-    <!-- Sweetalert 2 -->
-    <script src="assets/plugins/sweetalert/sweetalert2.all.min.js"></script>
-    <script src="assets/plugins/sweetalert/sweetalerts.min.js"></script>
+	<!-- Sweetalert 2 -->
+	<script src="assets/plugins/sweetalert/sweetalert2.all.min.js"></script>
+	<script src="assets/plugins/sweetalert/sweetalerts.min.js"></script>
 
-    <!-- Custom JS -->
-    <script src="assets/js/theme-script.js"></script>
-    <script src="assets/js/script.js"></script>
+	<!-- Custom JS -->
+	<script src="assets/js/theme-script.js"></script>
+	<script src="assets/js/script.js"></script>
 
 
 </body>

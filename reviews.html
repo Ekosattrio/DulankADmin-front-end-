@@ -66,7 +66,7 @@
 							</div>
 							<div class="dash-widgetcontent">
 								<h6>Total Review</h6>
-								<h5><span class="counters" data-count="307144.00">307,144.00</span></h5>
+								<h5><span class="counters" data-count="307144">307144</span></h5>
 							</div>
 						</div>
 					</div>
@@ -77,7 +77,7 @@
 							</div>
 							<div class="dash-widgetcontent">
 								<h6>Total Product</h6>
-								<h5><span class="counters" data-count="4385.00">4,385.00</span></h5>
+								<h5><span class="counters" data-count="4385">4385</span></h5>
 							</div>
 						</div>
 					</div>
@@ -88,114 +88,60 @@
 							</div>
 							<div class="dash-widgetcontent">
 								<h6>Total Publish</h6>
-								<h5><span class="counters" data-count="385656.50">385,656.50</span></h5>
+								<h5><span class="counters" data-count="385656">385656</span></h5>
 							</div>
 						</div>
 					</div>
-					<!-- <div class="col-xl-3 col-sm-6 col-12 d-flex">
-						<div class="dash-widget dash3 w-100">
-							<div class="dash-widgetimg">
-								<span><img src="assets/img/icons/dash4.svg" alt="img"></span>
-							</div>
-							<div class="dash-widgetcontent">
-								<h6>Total Cart Delete</h6>
-								<h5><span class="counters" data-count="40000.00">400.00</span></h5>
-							</div>
-						</div>
-					</div> -->
 				</div>
 				<!-- data table -->
 				<div class="card table-list-card">
 					<div class="card-body">
-						<div class="table-top">
-							<div class="search-set">
+						<!-- Filter -->
+						<div class="table-top d-flex align-items-center justify-content-between">
+							<!-- Search Input -->
+							<div class="search-set d-block d-md-flex">
 								<div class="search-input">
 									<a href="" class="btn btn-searchset"><i data-feather="search"
 											class="feather-search"></i></a>
 								</div>
-							</div>
-							<div class="search-path">
-								<div class="d-flex align-items-center">
-									<a class="btn btn-filter" id="pilter">
-										<i data-feather="filter" class="filter-icon"></i>
-										<span><img src="assets/img/icons/closes.svg" alt="img"></span>
-									</a>
-								</div>
-							</div>
-						</div>
-						<!-- /Filter -->
-						<div id="filter_container" class="filter-collapse mt-3 w-100">
-							<div class="p-3">
-								<div class="row g-3 d-flex justify-content-between">
-
-									<!-- Date Range -->
-									<div class="col-12 col-md-4 ms-2">
-										<div class="pemilihrentang-container ">
-											<input type="text" id="pemilihrentang-input" class="pemilihrentang-input"
-												readonly placeholder="DD/MM/YYYY - DD/MM/YYYY">
-											<div id="pemilihrentang-panel" class="pemilihrentang-panel">
-												<div class="pemilihrentang-isi">
-													<div class="opsi-cepat">
-														<div data-range="kemarin">Kemarin</div>
-														<div data-range="7hari">7 Hari Terakhir</div>
-														<div data-range="bulanIni">Bulan Ini</div>
-														<div data-range="bulanLalu">Bulan Lalu</div>
-														<div data-range="tahunLalu">Tahun Lalu</div>
-														<div data-range="kustom">Rentang Kustom</div>
-													</div>
-													<div class="kalender" id="kalender-view" style="display:none;">
-													</div>
+								<!-- Date Range -->
+								<div class="my-2">
+									<div class="pemilihrentang-container ">
+										<input type="text" id="pemilihrentang-input" class="pemilihrentang-input form-control"
+											readonly placeholder="Date" style="height: fit-content !important;width: 100% !important;">
+										<div id="pemilihrentang-panel" class="pemilihrentang-panel">
+											<div class="pemilihrentang-isi">
+												<div class="opsi-cepat">
+													<div data-range="kemarin">Kemarin</div>
+													<div data-range="7hari">7 Hari Terakhir</div>
+													<div data-range="bulanIni">Bulan Ini</div>
+													<div data-range="bulanLalu">Bulan Lalu</div>
+													<div data-range="tahunLalu">Tahun Lalu</div>
+													<div data-range="kustom">Rentang Kustom</div>
+												</div>
+												<div class="kalender" id="kalender-view" style="display:none;">
 												</div>
 											</div>
 										</div>
 									</div>
-
-									<div class="col-12 col-md-6 me-2">
-										<div class="row g-2">
-											<!-- Store -->
-											<div class="col-12 col-md-4">
-												<div class="dropdown w-100">
-													<button type="button"
-														class="btn btn-outline-primary dropdown-toggle w-100"
-														data-bs-toggle="dropdown" aria-expanded="false">
-														User
-													</button>
-													<ul class="dropdown-menu w-100">
-														<li><a class="dropdown-item" href="#">Ellectro Mart</a></li>
-														<li><a class="dropdown-item" href="#">ekos mart</a></li>
-													</ul>
-												</div>
-											</div>
-
-											<!-- Product -->
-											<div class="col-12 col-md-4">
-												<div class="dropdown w-100">
-													<button type="button"
-														class="btn btn-outline-primary dropdown-toggle w-100"
-														data-bs-toggle="dropdown" aria-expanded="false">
-														Product
-													</button>
-													<ul class="dropdown-menu w-100">
-														<li><a class="dropdown-item" href="#">Laptop</a></li>
-														<li><a class="dropdown-item" href="#">Lemari</a></li>
-													</ul>
-												</div>
-											</div>
-
-											<!-- Report -->
-											<div class="col-12 col-md-4">
-												<button class="btn btn-primary w-100">Report</button>
-											</div>
-										</div>
-									</div>
-
 								</div>
 							</div>
-
-
-						</div>
-						<!-- /Filter -->
-						<!-- ...existing code... -->
+							<div class="filters d-flex justify-content-end">
+								<div class="dropdown w-100 me-2">
+									<button class="btn btn-outline-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+										Rating
+									</button>
+									<ul class="dropdown-menu">
+										<li><a class="dropdown-item" href="#">1</a></li>
+										<li><a class="dropdown-item" href="#">2</a></li>
+										<li><a class="dropdown-item" href="#">3</a></li>
+										<li><a class="dropdown-item" href="#">4</a></li>
+										<li><a class="dropdown-item" href="#">5</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>					
+						<!-- /Filter -->	
 						<div class="table-responsive product-list">
 							<table class="table datanew">
 								<thead>
@@ -227,7 +173,7 @@
 										<td>john.doe@email.com</td>
 										<td>P-101</td>
 										<td>Brosur Full Color</td>
-										<td>2025-08-28</td>
+										<td class="str-value">2025-08-28</td>
 										<td>5</td>
 										<td>Suka banget!</td>
 										<td>Kualitas kemejanya bagus, bahannya adem, dan pengiriman cepat.</td>
@@ -243,7 +189,7 @@
 										<td>jane.smith@email.com</td>
 										<td>P-102</td>
 										<td>Label Tag</td>
-										<td>2025-08-27</td>
+										<td class="str-value">2025-08-27</td>
 										<td>3</td>
 										<td>Cukup OK</td>
 										<td>Botolnya lumayan, tapi warnanya sedikit berbeda dari foto.</td>
@@ -259,7 +205,7 @@
 										<td>david.williams@email.com</td>
 										<td>P-103</td>
 										<td>Label Product</td>
-										<td>2025-08-26</td>
+										<td class="str-value">2025-08-26</td>
 										<td>1</td>
 										<td>Kecewa</td>
 										<td>Produk yang datang tidak sesuai dengan deskripsi, ada cacat.</td>
@@ -275,7 +221,7 @@
 										<td>sarah.jones@email.com</td>
 										<td>P-104</td>
 										<td>Brosur Full Color</td>
-										<td>2025-08-25</td>
+										<td class="str-value">2025-08-25</td>
 										<td>5</td>
 										<td>Sangat Puas</td>
 										<td>Bantalnya empuk sekali, tidur jadi lebih nyenyak.</td>
@@ -291,7 +237,7 @@
 										<td>michael.brown@email.com</td>
 										<td>P-105</td>
 										<td>Label Tag</td>
-										<td>2025-08-24</td>
+										<td class="str-value">2025-08-24</td>
 										<td>4</td>
 										<td>Bagus</td>
 										<td>Sepatunya nyaman dipakai, hanya saja ukurannya sedikit kebesaran.</td>

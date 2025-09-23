@@ -88,7 +88,7 @@
                         </li>
                     </ul>
                     <div class="page-btn">
-						<a href="#" class="btn btn-added" data-bs-toggle="modal" data-bs-target="#add-units"><i
+						<a href="#" class="btn btn-added" data-bs-toggle="modal" data-bs-target="#addNewJobProcessModal"><i
 								data-feather="plus-circle" class="me-2"></i>Add New Job Proses</a>
 					</div>
                 </div>
@@ -100,7 +100,7 @@
                             </div>
                             <div class="dash-widgetcontent">
                                 <h6>Total Job Proses</h6>
-                                <h5><span class="counters" data-count="307144">307,144</span></h5>
+                                <h5><span class="counters" data-count="307144">307144</span></h5>
                             </div>
                         </div>
                     </div>
@@ -111,7 +111,7 @@
                             </div>
                             <div class="dash-widgetcontent">
                                 <h6>Total Incentive</h6>
-                                <h5><span class="counters" data-count="4385">4,385</span></h5>
+                                <h5>Rp<span class="counters" data-count="4385">4385</span></h5>
                             </div>
                         </div>
                     </div>
@@ -119,129 +119,58 @@
                 <!-- /product list -->
                 <div class="card table-list-card">
                     <div class="card-body">
-                        <div class="table-top">
-                            <div class="search-set">
-                                <div class="search-input">
-                                    <a href="" class="btn btn-searchset"><i data-feather="search"
-                                            class="feather-search"></i></a>
-                                </div>
-                            </div>
-                            <div class="search-path">
-                                <div class="d-flex align-items-center">
-                                    <a class="btn btn-filter" id="pilter">
-                                        <i data-feather="filter" class="filter-icon"></i>
-                                        <span><img src="assets/img/icons/closes.svg" alt="img"></span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- /Filter -->
-                        <div id="filter_container" class="filter-collapse mt-3 w-100">
-                            <div class="p-3">
-                                <div class="row g-3 d-flex justify-content-between">
-
-                                    <!-- Date Range -->
-                                    <div class="col-12 col-md-4 ms-2">
-                                        <div class="pemilihrentang-container ">
-                                            <input type="text" id="pemilihrentang-input" class="pemilihrentang-input"
-                                                readonly placeholder="DD/MM/YYYY - DD/MM/YYYY">
-                                            <div id="pemilihrentang-panel" class="pemilihrentang-panel">
-                                                <div class="pemilihrentang-isi">
-                                                    <div class="opsi-cepat">
-                                                        <div data-range="kemarin">Kemarin</div>
-                                                        <div data-range="7hari">7 Hari Terakhir</div>
-                                                        <div data-range="bulanIni">Bulan Ini</div>
-                                                        <div data-range="bulanLalu">Bulan Lalu</div>
-                                                        <div data-range="tahunLalu">Tahun Lalu</div>
-                                                        <div data-range="kustom">Rentang Kustom</div>
-                                                    </div>
-                                                    <div class="kalender" id="kalender-view" style="display:none;">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-12 col-md-6 me-2">
-                                        <div class="row g-2">
-                                            <!-- Store -->
-                                            <div class="col-12 col-md-4">
-                                                <div class="dropdown w-100">
-                                                    <button type="button"
-                                                        class="btn btn-outline-primary dropdown-toggle w-100"
-                                                        data-bs-toggle="dropdown" aria-expanded="false">
-                                                        Store
-                                                    </button>
-                                                    <ul class="dropdown-menu w-100">
-                                                        <li><a class="dropdown-item" href="#">Ellectro Mart</a></li>
-                                                        <li><a class="dropdown-item" href="#">ekos mart</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-
-                                            <!-- Product -->
-                                            <div class="col-12 col-md-4">
-                                                <div class="dropdown w-100">
-                                                    <button type="button"
-                                                        class="btn btn-outline-primary dropdown-toggle w-100"
-                                                        data-bs-toggle="dropdown" aria-expanded="false">
-                                                        Product
-                                                    </button>
-                                                    <ul class="dropdown-menu w-100">
-                                                        <li><a class="dropdown-item" href="#">Laptop</a></li>
-                                                        <li><a class="dropdown-item" href="#">Lemari</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-
-                                            <!-- Report -->
-                                            <div class="col-12 col-md-4">
-                                                <button class="btn btn-primary w-100">Report</button>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-
-
-                        </div>
-                        <!-- /Filter -->
-                        <div class="card" id="filter_inputs">
-                            <div class="card-body pb-0">
-                                <div class="row">
-                                    <div class="col-lg-3 col-sm-6 col-12">
-                                        <div class="input-blocks">
-                                            <i data-feather="user" class="info-img"></i>
-                                            <select class="select">
-                                                <option>Choose Customer Name</option>
-                                                <option>Benjamin</option>
-                                                <option>Ellen</option>
-                                                <option>Freda</option>
-                                                <option>Kaitlin</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3 col-sm-6 col-12">
-                                        <div class="input-blocks">
-                                            <i data-feather="globe" class="info-img"></i>
-                                            <select class="select">
-                                                <option>Choose Country</option>
-                                                <option>India</option>
-                                                <option>USA</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3 col-sm-6 col-12 ms-auto">
-                                        <div class="input-blocks">
-                                            <a class="btn btn-filters ms-auto"> <i data-feather="search"
-                                                    class="feather-search"></i> Search </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- /Filter -->
+                        <!-- Filter -->
+						<div class="table-top d-flex align-items-center justify-content-between">
+							<!-- Search Input -->
+							<div class="search-set d-block d-md-flex">
+								<div class="search-input">
+									<a href="" class="btn btn-searchset"><i data-feather="search"
+											class="feather-search"></i></a>
+								</div>
+								<!-- Date Range -->
+								<div class="my-2">
+									<div class="pemilihrentang-container ">
+										<input type="text" id="pemilihrentang-input" class="pemilihrentang-input form-control"
+											readonly placeholder="Date" style="height: fit-content !important;width: 100% !important;">
+										<div id="pemilihrentang-panel" class="pemilihrentang-panel">
+											<div class="pemilihrentang-isi">
+												<div class="opsi-cepat">
+													<div data-range="kemarin">Kemarin</div>
+													<div data-range="7hari">7 Hari Terakhir</div>
+													<div data-range="bulanIni">Bulan Ini</div>
+													<div data-range="bulanLalu">Bulan Lalu</div>
+													<div data-range="tahunLalu">Tahun Lalu</div>
+													<div data-range="kustom">Rentang Kustom</div>
+												</div>
+												<div class="kalender" id="kalender-view" style="display:none;">
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="filters d-flex justify-content-end">
+								<div class="dropdown w-100 me-2">
+									<button class="btn btn-outline-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+										Name of Process
+									</button>
+                                    <ul class="dropdown-menu">
+										<li><a class="dropdown-item" href="#">Printing</a></li>
+										<li><a class="dropdown-item" href="#">Cutting</a></li>
+									</ul>
+								</div>
+								<div class="dropdown w-100">
+									<button class="btn btn-outline-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+										Created By
+									</button>
+									<ul class="dropdown-menu">
+										<li><a class="dropdown-item" href="#">Eko Satrio</a></li>
+										<li><a class="dropdown-item" href="#">Desman Dwi</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>					
+						<!-- /Filter -->
                         <!-- Job Process Table -->
                         <div class="table-responsive mb-5">
                             <table class="table datanew">
@@ -249,7 +178,7 @@
                                     <tr>
                                         <th class="no-sort">
                                             <label class="checkboxs">
-                                                <input type="checkbox" id="select-all-jobprocess">
+                                                <input type="checkbox" id="select-all">
                                                 <span class="checkmarks"></span>
                                             </label>
                                         </th>
@@ -268,8 +197,8 @@
                                         <td>PROC-01</td>
                                         <td>Printing</td>
                                         <td>Rp500</td>
-                                        <td>Eko Satrio</td>
-                                        <td>2025-09-01</td>
+                                        <td>Eko Satrio, Desman Dwi</td>
+                                        <td class="str-value">2025-09-01</td>
                                         <td>Eko Satrio</td>
                                         <td class="action-table-data">
 											<div class="edit-delete-action">
@@ -285,8 +214,8 @@
                                         <td>PROC-02</td>
                                         <td>Cutting</td>
                                         <td>Rp300</td>
-                                        <td>Desman Dwi</td>
-                                        <td>2025-09-02</td>
+                                        <td>Tim Cutting</td>
+                                        <td class="str-value">2025-09-02</td>
                                         <td>Eko Satrio</td>
                                         <td class="action-table-data">
 											<div class="edit-delete-action">
@@ -310,6 +239,91 @@
 
     </div>
     <!-- /Main Wrapper -->
+
+    <!-- Modal for add new paper group -->
+    <div class="modal fade text-standard" id="addNewJobProcessModal" tabindex="-1"
+        aria-labelledby="addNewJobProcessModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header py-2">
+                    <h5 class="modal-title" id="addNewJobProcessModalLabel">Add New Job Proses</h5>
+                    <div class="d-flex align-items-center">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div>
+                        <form>
+
+                            <div class="row mb-3">
+                                <div class="col-5">
+                                    <label for="name" class="form-label">Nama of Process</label>
+                                </div>
+                                <div class="col-7">
+                                    <input type="text" class="form-control" id="name">
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <div class="col-5">
+                                    <label for="incentive" class="form-label">Incentive</label>
+                                </div>
+                                <div class="col-7">
+                                    <input type="text" class="form-control" id="incentive">
+                                </div>
+                            </div>
+
+
+                            <div class="row mb-3">
+                                <div class="col-5">
+                                    <label for="assigne" class="form-label">Assignee</label>
+                                </div>
+                                <div class="col-7">
+                                    <div class="card-body p-0 mb-2">
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="assigneeType"
+                                                id="radioEmployee" value="employee" checked>
+                                            <label class="form-check-label" for="radioEmployee">
+                                                Employees
+                                            </label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="assigneeType"
+                                                id="radioDepartment" value="department">
+                                            <label class="form-check-label" for="radioDepartment">
+                                                Department
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <!-- plain input (default) -->
+                                    <input type="text" class="form-control" id="assigne-input" placeholder="Enter assignee name">
+
+                                    <!-- select for department (hidden by default) -->
+                                    <select id="assigne-select" class="form-select d-none" disabled>
+                                        <option value="">Select department</option>
+                                        <option value="tim-cutting">Tim Cutting</option>
+                                        <option value="tim-printing">Tim Printing</option>
+                                        <!-- tambahkan opsi department lain di sini -->
+                                    </select>
+                                </div>
+                            </div>
+
+                            <small class="d-none text-standard text-danger" id="info-selected-all-1"><i
+                                    class="fa-solid fa-circle-info"></i> please input your specification<br></small>
+                            <div class="row mb-3 justify-content-end">
+                                <div class="col-7">
+                                    <button class="btn btn-primary w-100" id="save-btn-1">Simpan</button>
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- jQuery -->
     <script src="assets/js/jquery-3.7.1.min.js"></script>
 
@@ -344,6 +358,23 @@
     <script src="assets/js/theme-script.js"></script>
     <script src="assets/js/script.js"></script>
 
+    <script>
+        (function($){
+            function toggleAssignee(){
+                if($('#radioDepartment').is(':checked')){
+                    $('#assigne-input').addClass('d-none').prop('disabled', true);
+                    $('#assigne-select').removeClass('d-none').prop('disabled', false);
+                } else {
+                    $('#assigne-select').addClass('d-none').prop('disabled', true);
+                    $('#assigne-input').removeClass('d-none').prop('disabled', false);
+                }
+            }
+            $(function(){
+                toggleAssignee();
+                $(document).on('change', 'input[name="assigneeType"]', toggleAssignee);
+            });
+        })(jQuery);
+    </script>
 
 </body>
 

@@ -66,7 +66,7 @@
 							</div>
 							<div class="dash-widgetcontent">
 								<h6>Total Address</h6>
-								<h5><span class="counters" data-count="307144.00">307,144.00</span></h5>
+								<h5><span class="counters" data-count="307144">307144</span></h5>
 							</div>
 						</div>
 					</div>
@@ -77,7 +77,7 @@
 							</div>
 							<div class="dash-widgetcontent">
 								<h6>Total Province</h6>
-								<h5><span class="counters" data-count="4385.00">4,385.00</span></h5>
+								<h5><span class="counters" data-count="4385">4385</span></h5>
 							</div>
 						</div>
 					</div>
@@ -88,7 +88,7 @@
 							</div>
 							<div class="dash-widgetcontent">
 								<h6>Total City</h6>
-								<h5><span class="counters" data-count="385656.50">385,656.50</span></h5>
+								<h5><span class="counters" data-count="3855">3855</span></h5>
 							</div>
 						</div>
 					</div>
@@ -99,7 +99,7 @@
 							</div>
 							<div class="dash-widgetcontent">
 								<h6>Total Pos Code</h6>
-								<h5><span class="counters" data-count="40000.00">400.00</span></h5>
+								<h5><span class="counters" data-count="4000">4000</span></h5>
 							</div>
 						</div>
 					</div>
@@ -107,95 +107,49 @@
 				<!-- data table -->
 				<div class="card table-list-card">
 					<div class="card-body">
-						<div class="table-top">
-							<div class="search-set">
+						<!-- Filter -->
+						<div class="table-top d-flex align-items-center justify-content-between">
+							<!-- Search Input -->
+							<div class="search-set d-block d-md-flex">
 								<div class="search-input">
 									<a href="" class="btn btn-searchset"><i data-feather="search"
 											class="feather-search"></i></a>
 								</div>
-							</div>
-							<div class="search-path">
-								<div class="d-flex align-items-center">
-									<a class="btn btn-filter" id="pilter">
-										<i data-feather="filter" class="filter-icon"></i>
-										<span><img src="assets/img/icons/closes.svg" alt="img"></span>
-									</a>
-								</div>
-							</div>
-						</div>
-						<!-- /Filter -->
-						<div id="filter_container" class="filter-collapse mt-3 w-100">
-							<div class="p-3">
-								<div class="row g-3 d-flex justify-content-between">
-
-									<!-- Date Range -->
-									<div class="col-12 col-md-4 ms-2">
-										<div class="pemilihrentang-container ">
-											<input type="text" id="pemilihrentang-input" class="pemilihrentang-input"
-												readonly placeholder="DD/MM/YYYY - DD/MM/YYYY">
-											<div id="pemilihrentang-panel" class="pemilihrentang-panel">
-												<div class="pemilihrentang-isi">
-													<div class="opsi-cepat">
-														<div data-range="kemarin">Kemarin</div>
-														<div data-range="7hari">7 Hari Terakhir</div>
-														<div data-range="bulanIni">Bulan Ini</div>
-														<div data-range="bulanLalu">Bulan Lalu</div>
-														<div data-range="tahunLalu">Tahun Lalu</div>
-														<div data-range="kustom">Rentang Kustom</div>
-													</div>
-													<div class="kalender" id="kalender-view" style="display:none;">
-													</div>
+								<!-- Date Range -->
+								<div class="my-2">
+									<div class="pemilihrentang-container ">
+										<input type="text" id="pemilihrentang-input" class="pemilihrentang-input form-control"
+											readonly placeholder="Date" style="height: fit-content !important;width: 100% !important;">
+										<div id="pemilihrentang-panel" class="pemilihrentang-panel">
+											<div class="pemilihrentang-isi">
+												<div class="opsi-cepat">
+													<div data-range="kemarin">Kemarin</div>
+													<div data-range="7hari">7 Hari Terakhir</div>
+													<div data-range="bulanIni">Bulan Ini</div>
+													<div data-range="bulanLalu">Bulan Lalu</div>
+													<div data-range="tahunLalu">Tahun Lalu</div>
+													<div data-range="kustom">Rentang Kustom</div>
+												</div>
+												<div class="kalender" id="kalender-view" style="display:none;">
 												</div>
 											</div>
 										</div>
 									</div>
-
-									<div class="col-12 col-md-6 me-2">
-										<div class="row g-2">
-											<!-- Store -->
-											<div class="col-12 col-md-4">
-												<div class="dropdown w-100">
-													<button type="button"
-														class="btn btn-outline-primary dropdown-toggle w-100"
-														data-bs-toggle="dropdown" aria-expanded="false">
-														User
-													</button>
-													<ul class="dropdown-menu w-100">
-														<li><a class="dropdown-item" href="#">Ellectro Mart</a></li>
-														<li><a class="dropdown-item" href="#">ekos mart</a></li>
-													</ul>
-												</div>
-											</div>
-
-											<!-- Product -->
-											<div class="col-12 col-md-4">
-												<div class="dropdown w-100">
-													<button type="button"
-														class="btn btn-outline-primary dropdown-toggle w-100"
-														data-bs-toggle="dropdown" aria-expanded="false">
-														Product
-													</button>
-													<ul class="dropdown-menu w-100">
-														<li><a class="dropdown-item" href="#">Laptop</a></li>
-														<li><a class="dropdown-item" href="#">Lemari</a></li>
-													</ul>
-												</div>
-											</div>
-
-											<!-- Report -->
-											<div class="col-12 col-md-4">
-												<button class="btn btn-primary w-100">Report</button>
-											</div>
-										</div>
-									</div>
-
 								</div>
 							</div>
-
-
-						</div>
-						<!-- /Filter -->
-						<!-- ...existing code... -->
+							<div class="filters d-flex justify-content-end">
+								<div class="dropdown w-100 me-2">
+									<button class="btn btn-outline-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+										Status
+									</button>
+									<ul class="dropdown-menu">
+										<li><a class="dropdown-item" href="#">Active</a></li>
+										<li><a class="dropdown-item" href="#">Non-Active</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>					
+						<!-- /Filter -->	
 						<div class="table-responsive product-list">
 							<table class="table datanew">
 								<thead>
@@ -207,7 +161,7 @@
 											</label>
 										</th>
 										<th>ID Pengguna</th>
-										<th>Nama Penerima</th>
+										<th>User</th>
 										<th>Nomor Telepon</th>
 										<th>Alamat Lengkap</th>
 										<th>Kota</th>
@@ -227,12 +181,12 @@
 										</td>
 										<td>john.doe@email.com</td>
 										<td>Budi Santoso</td>
-										<td>6281234567890</td>
+										<td class="str-value">6281234567890</td>
 										<td>Jl. Melati No. 45, RT 01/RW 02</td>
 										<td>Jakarta Selatan</td>
 										<td>DKI Jakarta</td>
-										<td>12345</td>
-										<td>2025-08-28</td>
+										<td class="str-value">12345</td>
+										<td class="str-value">2025-08-28</td>
 										<td>Aktif</td>
 									</tr>
 									<tr>
@@ -244,12 +198,12 @@
 										</td>
 										<td>jane.smith@email.com</td>
 										<td>Siti Aminah</td>
-										<td>6287654321098</td>
+										<td class="str-value">6287654321098</td>
 										<td>Komplek Griya Indah Blok C-10</td>
 										<td>Bandung</td>
 										<td>Jawa Barat</td>
-										<td>40123</td>
-										<td>2025-08-27</td>
+										<td class="str-value">40123</td>
+										<td class="str-value">2025-08-27</td>
 										<td>Aktif</td>
 									</tr>
 									<tr>
@@ -261,12 +215,12 @@
 										</td>
 										<td>david.williams@email.com</td>
 										<td>Budi Santoso</td>
-										<td>6281234567891</td>
+										<td class="str-value">6281234567891</td>
 										<td>Jl. Anggrek No. 12, RT 05/RW 03</td>
 										<td>Jakarta Pusat</td>
 										<td>DKI Jakarta</td>
-										<td>10123</td>
-										<td>2025-08-26</td>
+										<td class="str-value">10123</td>
+										<td class="str-value">2025-08-26</td>
 										<td>Dinonaktifkan</td>
 									</tr>
 									<tr>
@@ -278,12 +232,12 @@
 										</td>
 										<td>sarah.jones@email.com</td>
 										<td>Fajar Pratama</td>
-										<td>6281122334455</td>
+										<td class="str-value">6281122334455</td>
 										<td>Perumahan Damai Sentosa No. 8</td>
 										<td>Surabaya</td>
 										<td>Jawa Timur</td>
-										<td>60223</td>
-										<td>2025-08-25</td>
+										<td class="str-value">60223</td>
+										<td class="str-value">2025-08-25</td>
 										<td>Aktif</td>
 									</tr>
 								</tbody>

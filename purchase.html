@@ -54,7 +54,7 @@
 		<div id="sidebar-placeholder"></div>
 
 		<div class="page-wrapper mt-3">
-            <!-- Main content tulis disini -->
+			<!-- Main content tulis disini -->
 			<div class="content">
 				<div class="page-header transfer">
 					<div class="add-item d-flex">
@@ -79,9 +79,10 @@
 						<li>
 							<a data-bs-toggle="tooltip" data-bs-placement="top" title="Refresh"><i
 									data-feather="rotate-ccw" class="feather-rotate-ccw"></i></a>
-						</li>		
+						</li>
 						<li>
-							<a data-bs-toggle="tooltip" data-bs-placement="top" title="Collapse" id="collapse-header"><i data-feather="chevron-up" class="feather-chevron-up"></i></a>
+							<a data-bs-toggle="tooltip" data-bs-placement="top" title="Collapse" id="collapse-header"><i
+									data-feather="chevron-up" class="feather-chevron-up"></i></a>
 						</li>
 					</ul>
 					<div class="d-flex purchase-pg-btn">
@@ -90,97 +91,71 @@
 									data-feather="plus-circle" class="me-2"></i>Add New Purchase</a>
 						</div>
 						<div class="page-btn import">
-							<a href="#" class="btn btn-added color" data-bs-toggle="modal" data-bs-target="#view-notes"><i
-									data-feather="download" class="me-2"></i>Import Purchase</a>
+							<a href="#" class="btn btn-added color" data-bs-toggle="modal"
+								data-bs-target="#view-notes"><i data-feather="download" class="me-2"></i>Import
+								Purchase</a>
 						</div>
 					</div>
-					
+
 				</div>
 
 				<!-- /product list -->
 				<div class="card table-list-card">
 					<div class="card-body">
-						<div class="table-top">
-							<div class="search-set">
+						<!-- Filter -->
+						<div class="table-top d-flex align-items-center justify-content-between">
+							<!-- Search Input -->
+							<div class="search-set d-block d-md-flex">
 								<div class="search-input">
 									<a href="" class="btn btn-searchset"><i data-feather="search"
 											class="feather-search"></i></a>
 								</div>
-							</div>
-							<div class="">
-                                    
-                                    <div class="btn-group">
-											<button type="button" class="btn btn-outline-primary dropdown-toggle"
-									 			data-bs-toggle="dropdown" aria-expanded="false">
-												Payment Status
-											</button>
-											<ul class="dropdown-menu">
-												<li><a class="dropdown-item" href="javascript:void(0);">Paid</a></li>
-												<li><a class="dropdown-item" href="javascript:void(0);">Unpaid</a></li>
-												<li><a class="dropdown-item" href="javascript:void(0);">Overdue</a></li>
-											</ul>
-								    </div>
-                                </div>
-						</div>
-						<!-- /Filter -->
-						<div class="card" id="filter_inputs">
-							<div class="card-body pb-0">
-								<div class="row">
-									<div class="col-lg-2 col-sm-6 col-12">
-										<div class="input-blocks">
-											<i data-feather="user" class="info-img"></i>
-											<select class="select">
-												<option>Choose Supplier Name</option>
-												<option>Apex Computers</option>
-												<option>Beats Headphones</option>
-												<option>Dazzle Shoes</option>
-												<option>Best Accessories</option>
-											</select>
-										</div>
-									</div>
-									<div class="col-lg-2 col-sm-6 col-12">
-										<div class="input-blocks">
-											<i data-feather="stop-circle" class="info-img"></i>
-											<select class="select">
-												<option>Choose Status</option>
-												<option>Received</option>
-												<option>Ordered</option>
-												<option>Pending</option>
-											</select>
-										</div>
-									</div>
-									<div class="col-lg-2 col-sm-6 col-12">
-										<div class="input-blocks">
-											<i data-feather="file" class="info-img"></i>
-											<select class="select">
-												<option>Enter Reference</option>
-												<option>PT001</option>
-												<option>PT002</option>
-												<option>PT003</option>
-											</select>
-										</div>
-									</div>
-									<div class="col-lg-2 col-sm-6 col-12">
-										<div class="input-blocks">
-											<i class="fas fa-money-bill info-img"></i>
-											<select class="select">
-												<option>Choose Payment Status</option>
-												<option>Paid</option>
-												<option>Partial</option>
-												<option>Unpaid</option>
-											</select>
-										</div>
-									</div>
-									<div class="col-lg-4 col-sm-6 col-12 ms-auto">
-										<div class="input-blocks">
-											<a class="btn btn-filters ms-auto"> <i data-feather="search"
-													class="feather-search"></i> Search </a>
+								<!-- Date Range -->
+								<div class="my-2">
+									<div class="pemilihrentang-container ">
+										<input type="text" id="pemilihrentang-input" class="pemilihrentang-input form-control"
+											readonly placeholder="Date" style="height: fit-content !important;width: 100% !important;">
+										<div id="pemilihrentang-panel" class="pemilihrentang-panel">
+											<div class="pemilihrentang-isi">
+												<div class="opsi-cepat">
+													<div data-range="kemarin">Kemarin</div>
+													<div data-range="7hari">7 Hari Terakhir</div>
+													<div data-range="bulanIni">Bulan Ini</div>
+													<div data-range="bulanLalu">Bulan Lalu</div>
+													<div data-range="tahunLalu">Tahun Lalu</div>
+													<div data-range="kustom">Rentang Kustom</div>
+												</div>
+												<div class="kalender" id="kalender-view" style="display:none;">
+												</div>
+											</div>
 										</div>
 									</div>
 								</div>
 							</div>
-						</div>
-						<!-- /Filter -->
+							<div class="filters d-flex justify-content-end">
+								<div class="dropdown w-100 me-2">
+									<button class="btn btn-outline-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+										Status
+									</button>
+									<ul class="dropdown-menu">
+										<li><a class="dropdown-item" href="#">Complete</a></li>
+										<li><a class="dropdown-item" href="#">Pending</a></li>
+										<li><a class="dropdown-item" href="#">Ordered</a></li>
+										<li><a class="dropdown-item" href="#">Received</a></li>
+									</ul>
+								</div>
+								<div class="dropdown w-100 me-2">
+									<button class="btn btn-outline-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+										Payment Status
+									</button>
+									<ul class="dropdown-menu">
+										<li><a class="dropdown-item" href="#">Paid</a></li>
+										<li><a class="dropdown-item" href="#">Unpaid</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>					
+						<!-- /Filter -->		
 						<div class="table-responsive product-list">
 							<table class="table  datanew list">
 								<thead>
@@ -214,9 +189,9 @@
 										<td>PT002 </td>
 										<td>27 Jan 2023</td>
 										<td><span class="badge bg-soft-success">Received</span></td>
-										<td>$370</td>
-										<td>$370</td>
-										<td>$0.00</td>
+										<td>370.000</td>
+										<td>370.000</td>
+										<td>0</td>
 										<td><span class="badge bg-outline-success">Paid</span></td>
 										<td class="action-table-data">
 											<div class="edit-delete-action">
@@ -243,9 +218,9 @@
 										<td>PT003 </td>
 										<td>08 Feb 2023</td>
 										<td><span class="badge bg-soft-warning">Ordered</span></td>
-										<td>$400</td>
-										<td>$400</td>
-										<td>$200</td>
+										<td>400.000</td>
+										<td>400.000</td>
+										<td>200.000</td>
 										<td><span class="badge bg-outline-warning">Partial</span></td>
 										<td class="action-table-data">
 											<div class="edit-delete-action">
@@ -272,9 +247,9 @@
 										<td>PT004 </td>
 										<td>16 Feb 2023</td>
 										<td><span class="badge bg-soft-danger">Pending</span></td>
-										<td>$560</td>
-										<td>$0.00</td>
-										<td>$560</td>
+										<td>560.000</td>
+										<td>0</td>
+										<td>560.000</td>
 										<td><span class="badge bg-outline-danger">Unpaid</span></td>
 										<td class="action-table-data">
 											<div class="edit-delete-action">
@@ -291,6 +266,17 @@
 										</td>
 									</tr>
 								</tbody>
+								<tfoot>
+                                    <tr>
+                                        <td colspan="1"></td>
+                                        <td class="text-start fw-bold">Total</td>
+                                        <!-- gunakan class sum-target dan data-col-index agar reusable -->
+                                        <td colspan="3"></td>
+                                        <td id="amount-total" class="fw-bold sum-target" data-col-index="5">0</td>
+                                        <td id="amount-total" class="fw-bold sum-target" data-col-index="6">0</td>
+                                        <td id="amount-total" class="fw-bold sum-target" data-col-index="7">0</td>
+                                    </tr>
+                                </tfoot>
 							</table>
 						</div>
 
@@ -299,7 +285,7 @@
 				<!-- /product list -->
 			</div>
 		</div>
-	
+
 	</div>
 	<!-- /Main Wrapper -->
 	<!-- modals -->
@@ -334,7 +320,8 @@
 												</div>
 												<div class="col-lg-2 col-sm-2 col-2 ps-0">
 													<div class="add-icon tab">
-														<a href="javascript:void(0);"><i data-feather="plus-circle" class="feather-plus-circles"></i></a>
+														<a href="javascript:void(0);"><i data-feather="plus-circle"
+																class="feather-plus-circles"></i></a>
 													</div>
 												</div>
 											</div>
@@ -449,7 +436,8 @@
 								</div>
 								<div class="col-lg-12">
 									<div class="modal-footer-btn">
-										<button type="button" class="btn btn-cancel me-2" data-bs-dismiss="modal">Cancel</button>
+										<button type="button" class="btn btn-cancel me-2"
+											data-bs-dismiss="modal">Cancel</button>
 										<button type="submit" class="btn btn-submit">Submit</button>
 									</div>
 								</div>
@@ -477,7 +465,7 @@
 							</button>
 						</div>
 						<div class="modal-body custom-modal-body">
-							<form action="purchase-list.html">							
+							<form action="purchase-list.html">
 								<div>
 									<div class="row">
 										<div class="col-lg-3 col-sm-6 col-12">
@@ -493,7 +481,8 @@
 													</div>
 													<div class="col-lg-2 col-sm-2 col-2 ps-0">
 														<div class="add-icon tab">
-															<a href="javascript:void(0);"><i data-feather="plus-circle" class="feather-plus-circles"></i></a>
+															<a href="javascript:void(0);"><i data-feather="plus-circle"
+																	class="feather-plus-circles"></i></a>
 														</div>
 													</div>
 												</div>
@@ -539,52 +528,62 @@
 									</div>
 									<div class="row">
 										<div class="col-lg-12">
-										<div class="modal-body-table">
-											<div class="table-responsive">
-												<table class="table">
-													<thead>
-														<tr>
-															<th>Product Name</th>
-															<th>QTY</th>
-															<th>Purchase Price($) </th>
-															<th>Discount($) </th>
-															<th>Tax %</th>
-															<th>Tax Amount($)</th>
-															<th class="text-end">Unit Cost($)</th>
-															<th class="text-end">Total Cost ($) </th>
-															<th></th>
-														</tr>
-													</thead>
-													<tbody>
-														<tr>
-															<td>
-																<div class="productimgname">
-																	<a href="javascript:void(0);" class="product-img stock-img">
-																		<img src="assets/img/products/stock-img-02.png" alt="product">
-																	</a>
-																	<a href="javascript:void(0);">Nike Jordan</a>
-																</div>
-															</td>
-															<td><div class="product-quantity">
-																<span class="quantity-btn">+<i data-feather="plus-circle" class="plus-circle"></i></span>
-																<input type="text" class="quntity-input" value="10">
-																<span class="quantity-btn"><i data-feather="minus-circle" class="feather-search"></i></span>
-															</div></td>
-															<td>2000</td>
-															<td>500.00</td>
-															<td>0.00</td>
-															<td>0.00</td>
-															<td>0.00</td>
-															<td>1500</td>
-															<td>
-																<a class="delete-set"><img
-																		src="assets/img/icons/delete.svg" alt="svg"></a>
-															</td>
-														</tr>
-													</tbody>
-												</table>
+											<div class="modal-body-table">
+												<div class="table-responsive">
+													<table class="table">
+														<thead>
+															<tr>
+																<th>Product Name</th>
+																<th>QTY</th>
+																<th>Purchase Price($) </th>
+																<th>Discount($) </th>
+																<th>Tax %</th>
+																<th>Tax Amount($)</th>
+																<th class="text-end">Unit Cost($)</th>
+																<th class="text-end">Total Cost ($) </th>
+																<th></th>
+															</tr>
+														</thead>
+														<tbody>
+															<tr>
+																<td>
+																	<div class="productimgname">
+																		<a href="javascript:void(0);"
+																			class="product-img stock-img">
+																			<img src="assets/img/products/stock-img-02.png"
+																				alt="product">
+																		</a>
+																		<a href="javascript:void(0);">Nike Jordan</a>
+																	</div>
+																</td>
+																<td>
+																	<div class="product-quantity">
+																		<span class="quantity-btn">+<i
+																				data-feather="plus-circle"
+																				class="plus-circle"></i></span>
+																		<input type="text" class="quntity-input"
+																			value="10">
+																		<span class="quantity-btn"><i
+																				data-feather="minus-circle"
+																				class="feather-search"></i></span>
+																	</div>
+																</td>
+																<td>2000</td>
+																<td>500.00</td>
+																<td>0.00</td>
+																<td>0.00</td>
+																<td>0.00</td>
+																<td>1500</td>
+																<td>
+																	<a class="delete-set"><img
+																			src="assets/img/icons/delete.svg"
+																			alt="svg"></a>
+																</td>
+															</tr>
+														</tbody>
+													</table>
+												</div>
 											</div>
-										</div>
 										</div>
 									</div>
 									<div class="row">
@@ -652,7 +651,8 @@
 								</div>
 								<div class="col-lg-12">
 									<div class="modal-footer-btn">
-										<button type="button" class="btn btn-cancel me-2" data-bs-dismiss="modal">Cancel</button>
+										<button type="button" class="btn btn-cancel me-2"
+											data-bs-dismiss="modal">Cancel</button>
 										<button type="submit" class="btn btn-submit">Save Changes</button>
 									</div>
 								</div>
@@ -695,7 +695,8 @@
 												</div>
 												<div class="col-lg-2 col-sm-2 col-2 ps-0">
 													<div class="add-icon tab">
-														<a href="javascript:void(0);"><i data-feather="plus-circle" class="feather-plus-circles"></i></a>
+														<a href="javascript:void(0);"><i data-feather="plus-circle"
+																class="feather-plus-circles"></i></a>
 													</div>
 												</div>
 											</div>
@@ -719,14 +720,15 @@
 													<a class="btn btn-submit">Download Sample File</a>
 												</div> -->
 												<div class="modal-footer-btn download-file">
-													<a href="javascript:void(0)" class="btn btn-submit">Download Sample File</a>
+													<a href="javascript:void(0)" class="btn btn-submit">Download Sample
+														File</a>
 												</div>
 											</div>
 										</div>
 									</div>
 									<div class="col-lg-12">
 										<div class="input-blocks image-upload-down">
-											<label>	Upload CSV File</label>
+											<label> Upload CSV File</label>
 											<div class="image-upload download">
 												<input type="file">
 												<div class="image-uploads">
@@ -745,7 +747,7 @@
 									<div class="col-lg-4 col-sm-6 col-12">
 										<div class="input-blocks">
 											<label>Discount</label>
-											<input type="text" value="0" >
+											<input type="text" value="0">
 										</div>
 									</div>
 									<div class="col-lg-4 col-sm-6 col-12">
@@ -760,13 +762,14 @@
 									<div id="summernote3">
 									</div>
 									<p>Maximum 60 Characters</p>
-								</div>	
+								</div>
 								<div class="modal-footer-btn">
-									<button type="button" class="btn btn-cancel me-2" data-bs-dismiss="modal">Cancel</button>
+									<button type="button" class="btn btn-cancel me-2"
+										data-bs-dismiss="modal">Cancel</button>
 									<button type="submit" class="btn btn-submit">Submit</button>
 								</div>
 							</form>
-							
+
 						</div>
 					</div>
 				</div>
@@ -775,7 +778,7 @@
 	</div>
 	<!-- /Import Purchase -->
 	<!-- /modals -->
-	
+
 	<!-- jQuery -->
 	<script src="assets/js/jquery-3.7.1.min.js"></script>
 
@@ -806,10 +809,11 @@
 	<script src="assets/plugins/sweetalert/sweetalert2.all.min.js"></script>
 	<script src="assets/plugins/sweetalert/sweetalerts.min.js"></script>
 
-	<!-- Custom JS --><script src="assets/js/theme-script.js"></script>	
-		<script src="assets/js/script.js"></script>
+	<!-- Custom JS -->
+	<script src="assets/js/theme-script.js"></script>
+	<script src="assets/js/script.js"></script>
 
-	
+
 
 </body>
 

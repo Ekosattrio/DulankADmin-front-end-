@@ -83,83 +83,58 @@
 					<!-- /product list -->
 					<div class="card table-list-card">
 						<div class="card-body">
-							<div class="table-top">
-								<div class="search-set">
-									<div class="search-input">
-										<a href="" class="btn btn-searchset"><i data-feather="search" class="feather-search"></i></a>
-									</div>
+							 <!-- Filter -->
+						<div class="table-top d-flex align-items-center justify-content-between">
+							<!-- Search Input -->
+							<div class="search-set d-block d-md-flex">
+								<div class="search-input">
+									<a href="" class="btn btn-searchset"><i data-feather="search"
+											class="feather-search"></i></a>
 								</div>
-								<div class="">
-                                    <div class="btn-group">
-											<button type="button" class="btn btn-outline-primary dropdown-toggle"
-												data-bs-toggle="dropdown" aria-expanded="false">
-												Category
-											</button>
-											<ul class="dropdown-menu">
-												<li><a class="dropdown-item" href="javascript:void(0);">Action</a></li>
-												<li><a class="dropdown-item" href="javascript:void(0);">Another action</a></li>
-												<li><a class="dropdown-item" href="javascript:void(0);">Something else here</a></li>
-												<li>
-													<hr class="dropdown-divider">
-												</li>
-												<li><a class="dropdown-item" href="javascript:void(0);">Separated link</a></li>
-											</ul>
-								    </div>
-                                    <div class="btn-group">
-											<button type="button" class="btn btn-outline-primary dropdown-toggle"
-												data-bs-toggle="dropdown" aria-expanded="false">
-												Status
-											</button>
-											<ul class="dropdown-menu">
-												<li><a class="dropdown-item" href="javascript:void(0);">Active</a></li>
-												<li><a class="dropdown-item" href="javascript:void(0);">Inactive</a></li>
-											</ul>
-								    </div>
-                                </div>
-							</div>
-							<!-- /Filter -->
-							<div class="card" id="filter_inputs">
-								<div class="card-body pb-0">
-									<div class="row">
-										<div class="col-lg-3 col-sm-6 col-12">
-											<div class="input-blocks">
-												<i data-feather="zap" class="info-img"></i>
-												<select class="select">
-													<option>Choose Category</option>
-													<option>Laptop</option>
-													<option>Electronics</option>
-													<option>Shoe</option>
-												</select>
-											</div>
-										</div>
-										<div class="col-lg-3 col-sm-6 col-12">
-											<div class="input-blocks">
-												<i data-feather="zap" class="info-img"></i>
-												<select class="select">
-													<option>Choose SubCategory</option>
-													<option>Fruits</option>
-												</select>
-											</div>
-										</div>
-										<div class="col-lg-3 col-sm-6 col-12">
-											<div class="input-blocks">
-												<i data-feather="stop-circle" class="info-img"></i>
-												<select class="select">
-													<option>Category Code</option>
-													<option>CT001</option>
-													<option>CT002</option>
-												</select>
-											</div>
-										</div>
-										<div class="col-lg-3 col-sm-6 col-12 ms-auto">
-											<div class="input-blocks">
-												<a class="btn btn-filters ms-auto"> <i data-feather="search" class="feather-search"></i> Search </a>
+								<!-- Date Range -->
+								<div class="my-2">
+									<div class="pemilihrentang-container ">
+										<input type="text" id="pemilihrentang-input" class="pemilihrentang-input form-control"
+											readonly placeholder="Date" style="height: fit-content !important;width: 100% !important;">
+										<div id="pemilihrentang-panel" class="pemilihrentang-panel">
+											<div class="pemilihrentang-isi">
+												<div class="opsi-cepat">
+													<div data-range="kemarin">Kemarin</div>
+													<div data-range="7hari">7 Hari Terakhir</div>
+													<div data-range="bulanIni">Bulan Ini</div>
+													<div data-range="bulanLalu">Bulan Lalu</div>
+													<div data-range="tahunLalu">Tahun Lalu</div>
+													<div data-range="kustom">Rentang Kustom</div>
+												</div>
+												<div class="kalender" id="kalender-view" style="display:none;">
+												</div>
 											</div>
 										</div>
 									</div>
 								</div>
 							</div>
-							<!-- /Filter -->
+							<div class="filters d-flex justify-content-end">
+								<div class="dropdown w-100 me-2">
+									<button class="btn btn-outline-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+										Category
+									</button>
+									<ul class="dropdown-menu">
+										<li><a class="dropdown-item" href="#">Brochure</a></li>
+										<li><a class="dropdown-item" href="#">Flyer</a></li>
+									</ul>
+								</div>
+								<div class="dropdown w-100">
+									<button class="btn btn-outline-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+										Status
+									</button>
+									<ul class="dropdown-menu">
+										<li><a class="dropdown-item" href="#">Active</a></li>
+										<li><a class="dropdown-item" href="#">Deactive</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>					
+						<!-- /Filter -->	
 							<div class="table-responsive">
 								<table class="table  datanew">
 									<thead>
@@ -176,6 +151,7 @@
 											<th>Category Code</th>
 											<th>Description</th>
 											<th>Created By</th>
+											<th>Status</th>
 											<th class="no-sort">Action</th>
 										</tr>
 									</thead>
@@ -197,6 +173,7 @@
 											<td>CT001</td>
 											<td>Computers Description</td>
 											<td>Admin</td>
+											<td><span class="badge bg-outline-success">Active</span></td>
 											<td class="action-table-data">
 												<div class="edit-delete-action">
 													<a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#edit-category">
@@ -226,6 +203,7 @@
 											<td>CT002</td>
 											<td>Fruits Description</td>
 											<td>Admin</td>
+											<td><span class="badge bg-outline-success">Active</span></td>
 											<td class="action-table-data">
 												<div class="edit-delete-action">
 													<a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#edit-category">
@@ -255,6 +233,7 @@
 											<td>CT003</td>
 											<td>Fruits Description</td>
 											<td>Admin</td>
+											<td><span class="badge bg-outline-success">Active</span></td>
 											<td class="action-table-data">
 												<div class="edit-delete-action">
 													<a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#edit-category">
@@ -284,6 +263,7 @@
 											<td>CT004</td>
 											<td>Fruits Description</td>
 											<td>Admin</td>
+											<td><span class="badge bg-outline-success">Active</span></td>
 											<td class="action-table-data">
 												<div class="edit-delete-action">
 													<a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#edit-category">
@@ -313,6 +293,7 @@
 											<td>CT005</td>
 											<td>Accessories Description</td>
 											<td>Admin</td>
+											<td><span class="badge bg-outline-success">Active</span></td>
 											<td class="action-table-data">
 												<div class="edit-delete-action">
 													<a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#edit-category">
@@ -342,6 +323,7 @@
 											<td>CT006</td>
 											<td>Shoes Description</td>
 											<td>Admin</td>
+											<td><span class="badge bg-outline-success">Active</span></td>
 											<td class="action-table-data">
 												<div class="edit-delete-action">
 													<a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#edit-category">
@@ -371,6 +353,7 @@
 											<td>CT007</td>
 											<td>Fruits Description</td>
 											<td>Admin</td>
+											<td><span class="badge bg-outline-success">Active</span></td>
 											<td class="action-table-data">
 												<div class="edit-delete-action">
 													<a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#edit-category">
@@ -400,6 +383,7 @@
 											<td>CT008</td>
 											<td>Fruits Description</td>
 											<td>Admin</td>
+											<td><span class="badge bg-outline-success">Active</span></td>
 											<td class="action-table-data">
 												<div class="edit-delete-action">
 													<a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#edit-category">
@@ -429,6 +413,7 @@
 											<td>CT009</td>
 											<td>Computers Description</td>
 											<td>Admin</td>
+											<td><span class="badge bg-outline-success">Active</span></td>
 											<td class="action-table-data">
 												<div class="edit-delete-action">
 													<a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#edit-category">
@@ -458,6 +443,7 @@
 											<td>CT0010</td>
 											<td>Health Care Description</td>
 											<td>Admin</td>
+											<td><span class="badge bg-outline-success">Active</span></td>
 											<td class="action-table-data">
 												<div class="edit-delete-action">
 													<a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#edit-category">
@@ -487,6 +473,7 @@
 											<td>CT004</td>
 											<td>Fruits Description</td>
 											<td>Admin</td>
+											<td><span class="badge bg-outline-success">Active</span></td>
 											<td class="action-table-data">
 												<div class="edit-delete-action">
 													<a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#edit-category">
@@ -516,6 +503,7 @@
 											<td>CT005</td>
 											<td>Accessories Description</td>
 											<td>Admin</td>
+											<td><span class="badge bg-outline-success">Active</span></td>
 											<td class="action-table-data">
 												<div class="edit-delete-action">
 													<a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#edit-category">
@@ -545,6 +533,7 @@
 											<td>CT006</td>
 											<td>Shoes Description</td>
 											<td>Admin</td>
+											<td><span class="badge bg-outline-success">Active</span></td>
 											<td class="action-table-data">
 												<div class="edit-delete-action">
 													<a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#edit-category">
@@ -574,6 +563,7 @@
 											<td>CT007</td>
 											<td>Fruits Description</td>
 											<td>Admin</td>
+											<td><span class="badge bg-outline-success">Active</span></td>
 											<td class="action-table-data">
 												<div class="edit-delete-action">
 													<a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#edit-category">
@@ -603,6 +593,7 @@
 											<td>CT008</td>
 											<td>Fruits Description</td>
 											<td>Admin</td>
+											<td><span class="badge bg-outline-success">Active</span></td>
 											<td class="action-table-data">
 												<div class="edit-delete-action">
 													<a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#edit-category">
@@ -632,6 +623,7 @@
 											<td>CT009</td>
 											<td>Computers Description</td>
 											<td>Admin</td>
+											<td><span class="badge bg-outline-success">Active</span></td>
 											<td class="action-table-data">
 												<div class="edit-delete-action">
 													<a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#edit-category">
@@ -661,6 +653,7 @@
 											<td>CT0010</td>
 											<td>Health Care Description</td>
 											<td>Admin</td>
+											<td><span class="badge bg-outline-success">Active</span></td>
 											<td class="action-table-data">
 												<div class="edit-delete-action">
 													<a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#edit-category">

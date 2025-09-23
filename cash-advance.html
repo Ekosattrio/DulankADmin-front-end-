@@ -101,101 +101,67 @@
                 <!-- data table -->
                 <div class="card table-list-card">
                     <div class="card-body">
-                        <div class="table-top">
-                            <div class="search-set">
-                                <div class="search-input">
-                                    <a href="" class="btn btn-searchset"><i data-feather="search"
-                                            class="feather-search"></i></a>
-                                </div>
-                            </div>
-                            <div class="search-path">
-                                <div class="d-flex align-items-center">
-                                    <a class="btn btn-filter" id="pilter">
-                                        <i data-feather="filter" class="filter-icon"></i>
-                                        <span><img src="assets/img/icons/closes.svg" alt="img"></span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- /Filter -->
-                        <div id="filter_container" class="filter-collapse mt-3 w-100">
-                            <div class="p-3">
-                                <div class="row g-3 d-flex justify-content-between">
-
-                                    <!-- Date Range -->
-                                    <div class="col-12 col-md-4 ms-2">
-                                        <div class="pemilihrentang-container ">
-                                            <input type="text" id="pemilihrentang-input" class="pemilihrentang-input"
-                                                readonly placeholder="DD/MM/YYYY - DD/MM/YYYY">
-                                            <div id="pemilihrentang-panel" class="pemilihrentang-panel">
-                                                <div class="pemilihrentang-isi">
-                                                    <div class="opsi-cepat">
-                                                        <div data-range="kemarin">Kemarin</div>
-                                                        <div data-range="7hari">7 Hari Terakhir</div>
-                                                        <div data-range="bulanIni">Bulan Ini</div>
-                                                        <div data-range="bulanLalu">Bulan Lalu</div>
-                                                        <div data-range="tahunLalu">Tahun Lalu</div>
-                                                        <div data-range="kustom">Rentang Kustom</div>
-                                                    </div>
-                                                    <div class="kalender" id="kalender-view" style="display:none;">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-12 col-md-6 me-2">
-                                        <div class="row g-2">
-                                            <!-- Store -->
-                                            <div class="col-12 col-md-4">
-                                                <div class="dropdown w-100">
-                                                    <button type="button"
-                                                        class="btn btn-outline-primary dropdown-toggle w-100"
-                                                        data-bs-toggle="dropdown" aria-expanded="false">
-                                                        User
-                                                    </button>
-                                                    <ul class="dropdown-menu w-100">
-                                                        <li><a class="dropdown-item" href="#">Ellectro Mart</a></li>
-                                                        <li><a class="dropdown-item" href="#">ekos mart</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-
-                                            <!-- Product -->
-                                            <div class="col-12 col-md-4">
-                                                <div class="dropdown w-100">
-                                                    <button type="button"
-                                                        class="btn btn-outline-primary dropdown-toggle w-100"
-                                                        data-bs-toggle="dropdown" aria-expanded="false">
-                                                        Product
-                                                    </button>
-                                                    <ul class="dropdown-menu w-100">
-                                                        <li><a class="dropdown-item" href="#">Laptop</a></li>
-                                                        <li><a class="dropdown-item" href="#">Lemari</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-
-                                            <!-- Report -->
-                                            <div class="col-12 col-md-4">
-                                                <button class="btn btn-primary w-100">Report</button>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-
-
-                        </div>
-                        <!-- /Filter -->
-                        <!-- ...existing code... -->
+                        <!-- Filter -->
+						<div class="table-top d-flex align-items-center justify-content-between">
+							<!-- Search Input -->
+							<div class="search-set d-block d-md-flex">
+								<div class="search-input">
+									<a href="" class="btn btn-searchset"><i data-feather="search"
+											class="feather-search"></i></a>
+								</div>
+								<!-- Date Range -->
+								<div class="my-2">
+									<div class="pemilihrentang-container ">
+										<input type="text" id="pemilihrentang-input" class="pemilihrentang-input form-control"
+											readonly placeholder="Date" style="height: fit-content !important;width: 100% !important;">
+										<div id="pemilihrentang-panel" class="pemilihrentang-panel">
+											<div class="pemilihrentang-isi">
+												<div class="opsi-cepat">
+													<div data-range="kemarin">Kemarin</div>
+													<div data-range="7hari">7 Hari Terakhir</div>
+													<div data-range="bulanIni">Bulan Ini</div>
+													<div data-range="bulanLalu">Bulan Lalu</div>
+													<div data-range="tahunLalu">Tahun Lalu</div>
+													<div data-range="kustom">Rentang Kustom</div>
+												</div>
+												<div class="kalender" id="kalender-view" style="display:none;">
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- <div class="filters d-flex justify-content-end">
+								<div class="dropdown w-100 me-2">
+									<button class="btn btn-outline-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+										Status
+									</button>
+									<ul class="dropdown-menu">
+										<li><a class="dropdown-item" href="#">Complete</a></li>
+										<li><a class="dropdown-item" href="#">Pending</a></li>
+										<li><a class="dropdown-item" href="#">Ordered</a></li>
+										<li><a class="dropdown-item" href="#">Received</a></li>
+									</ul>
+								</div>
+								<div class="dropdown w-100 me-2">
+									<button class="btn btn-outline-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+										Payment Status
+									</button>
+									<ul class="dropdown-menu">
+										<li><a class="dropdown-item" href="#">Paid</a></li>
+										<li><a class="dropdown-item" href="#">Unpaid</a></li>
+									</ul>
+								</div>
+							</div> -->
+						</div>					
+						<!-- /Filter -->		
                         <div class="table-responsive product-list">
                             <table class="table datanew">
                                 <thead>
                                     <tr>
                                         <th>User</th>
                                         <th>Last Kasbon</th>
+                                        <th>Kasbon</th>
                                         <th>Total Kasbon</th>
                                         <th>Action</th>
                                     </tr>
@@ -204,7 +170,8 @@
                                     <tr>
                                         <td>Maman Suherman</td>
                                         <td>2025-08-28</td>
-                                        <td>Rp 550,000</td>
+                                        <td>all(5) / remain(2)</td>
+                                        <td>550000</td>
                                         <td class="action-table-data">
                                             <div class="edit-delete-action">
                                                 <a class="me-2 edit-icon p-2" href="#" data-bs-toggle="modal" data-bs-target="#detailModal" role="button">
@@ -223,7 +190,8 @@
                                     <tr>
                                         <td>Warsidi</td>
                                         <td>2025-08-28</td>
-                                        <td>Rp 170,000</td>
+                                        <td>all(7) / remain(2)</td>
+                                        <td>170000</td>
                                         <td class="action-table-data">
                                             <div class="edit-delete-action">
                                                 <a class="me-2 edit-icon p-2" href="#" data-bs-toggle="modal" data-bs-target="#detailModal" role="button">
@@ -242,7 +210,8 @@
                                     <tr>
                                         <td>Indra Subagja</td>
                                         <td>2025-08-27</td>
-                                        <td>Rp 255,000</td>
+                                        <td>all(5) / remain(4)</td>
+                                        <td>255000</td>
                                         <td class="action-table-data">
                                             <div class="edit-delete-action">
                                                 <a class="me-2 edit-icon p-2" href="#" data-bs-toggle="modal" data-bs-target="#detailModal" role="button">
@@ -261,7 +230,8 @@
                                     <tr>
                                         <td>Saepul Ahmad</td>
                                         <td>2025-08-26</td>
-                                        <td>Rp 1,200,000</td>
+                                        <td>all(8) / remain(5)</td>
+                                        <td>1200000</td>
                                         <td class="action-table-data">
                                             <div class="edit-delete-action">
                                                 <a class="me-2 edit-icon p-2" href="#" data-bs-toggle="modal" data-bs-target="#detailModal" role="button">
@@ -280,7 +250,8 @@
                                     <tr>
                                         <td>Wiwin Sartika</td>
                                         <td>2025-08-25</td>
-                                        <td>Rp 300,000</td>
+                                        <td>all(5) / remain(2)</td>
+                                        <td>300000</td>
                                         <td class="action-table-data">
                                             <div class="edit-delete-action">
                                                 <a class="me-2 edit-icon p-2" href="#" data-bs-toggle="modal" data-bs-target="#detailModal" role="button">
@@ -334,7 +305,7 @@
                                     <tr>
                                         <td>Maman Suherman</td>
                                         <td>2025-08-28</td>
-                                        <td>Rp 550,000</td>
+                                        <td>550000</td>
                                         <td></td>
                                         <td class="action-table-data">
                                             <div class="edit-delete-action">
@@ -354,7 +325,7 @@
                                     <tr>
                                         <td>Maman Suherman</td>
                                         <td>2025-08-28</td>
-                                        <td>Rp 170,000</td>
+                                        <td>170000</td>
                                         <td></td>
                                         <td class="action-table-data">
                                             <div class="edit-delete-action">
@@ -374,7 +345,7 @@
                                     <tr>
                                         <td>Maman Suherman</td>
                                         <td>2025-08-27</td>
-                                        <td>Rp 255,000</td>
+                                        <td>255000</td>
                                         <td></td>
                                         <td class="action-table-data">
                                             <div class="edit-delete-action">
@@ -394,7 +365,7 @@
                                     <tr>
                                         <td>Maman Suherman</td>
                                         <td>2025-08-26</td>
-                                        <td>Rp 1,200,000</td>
+                                        <td>1200000</td>
                                         <td></td>
                                         <td class="action-table-data">
                                             <div class="edit-delete-action">
@@ -414,7 +385,7 @@
                                     <tr>
                                         <td>Maman Suherman</td>
                                         <td>2025-08-25</td>
-                                        <td>Rp 300,000</td>
+                                        <td>300000</td>
                                         <td></td>
                                         <td class="action-table-data">
                                             <div class="edit-delete-action">
@@ -432,6 +403,14 @@
                                         </td>
                                     </tr>
                                 </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <td class="text-start fw-bold">Total</td>
+                                        <!-- gunakan class sum-target dan data-col-index agar reusable -->
+                                        <td colspan="1"></td>
+                                        <td id="amount-total" class="fw-bold sum-target" data-col-index="2">0</td>
+                                    </tr>
+                                </tfoot>
                             </table>
                         </div>
                 </div>

@@ -61,8 +61,8 @@
                 <div class="page-header">
                     <div class="add-item d-flex">
                         <div class="page-title">
-                            <h4>Mesin Laminasi List</h4>
-                            <h6>Manage your Mesin Laminasi</h6>
+                            <h4>Product Process List</h4>
+                            <h6>Manage your Product Process</h6>
                         </div>
                     </div>
                     <ul class="table-top-head">
@@ -88,8 +88,8 @@
                         </li>
                     </ul>
                     <div class="page-btn">
-						<a href="#" class="btn btn-added" data-bs-toggle="modal" data-bs-target="#addNewLaminateModal"><i
-								data-feather="plus-circle" class="me-2"></i>Add New Mesin Laminasi</a>
+						<a href="#" class="btn btn-added" data-bs-toggle="modal" data-bs-target="#addProductProcessModal"><i
+								data-feather="plus-circle" class="me-2"></i>Add New Product Process</a>
 					</div>
                 </div>
                 <div class="row mt-5">
@@ -99,30 +99,19 @@
                                 <span><img src="assets/img/icons/dash1.svg" alt="img"></span>
                             </div>
                             <div class="dash-widgetcontent">
-                                <h6>Total Mesin Laminasi</h6>
+                                <h6>Total Product</h6>
                                 <h5><span class="counters" data-count="307144">307144</span></h5>
                             </div>
                         </div>
                     </div>
                     <div class="col-xl-3 col-sm-6 col-12 d-flex">
-                        <div class="dash-widget dash2 w-100">
+                        <div class="dash-widget dash1 w-100">
                             <div class="dash-widgetimg">
-                                <span><img src="assets/img/icons/dash3.svg" alt="img"></span>
+                                <span><img src="assets/img/icons/dash2.svg" alt="img"></span>
                             </div>
                             <div class="dash-widgetcontent">
-                                <h6>Total Active</h6>
-                                <h5><span class="counters" data-count="3000">3000</span></h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-sm-6 col-12 d-flex">
-                        <div class="dash-widget dash3 w-100">
-                            <div class="dash-widgetimg">
-                                <span><img src="assets/img/icons/dash4.svg" alt="img"></span>
-                            </div>
-                            <div class="dash-widgetcontent">
-                                <h6>Total Deactive</h6>
-                                <h5><span class="counters" data-count="1385">1385</span></h5>
+                                <h6>Total Product Process</h6>
+                                <h5>Rp<span class="counters" data-count="4385">4385</span></h5>
                             </div>
                         </div>
                     </div>
@@ -130,7 +119,7 @@
                 <!-- /product list -->
                 <div class="card table-list-card">
                     <div class="card-body">
-                         <!-- Filter -->
+                        <!-- Filter -->
 						<div class="table-top d-flex align-items-center justify-content-between">
 							<!-- Search Input -->
 							<div class="search-set d-block d-md-flex">
@@ -163,16 +152,17 @@
 							<div class="filters d-flex justify-content-end">
 								<div class="dropdown w-100 me-2">
 									<button class="btn btn-outline-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-										Status
+										Name of Process
 									</button>
-									<ul class="dropdown-menu">
-										<li><a class="dropdown-item" href="#">Active</a></li>
-										<li><a class="dropdown-item" href="#">Deactive</a></li>
+                                    <ul class="dropdown-menu">
+										<li><a class="dropdown-item" href="#">Printing</a></li>
+										<li><a class="dropdown-item" href="#">Cutting</a></li>
 									</ul>
 								</div>
 							</div>
 						</div>					
-						<!-- /Filter -->	
+						<!-- /Filter -->
+                        <!-- Product Process Table -->
                         <div class="table-responsive mb-5">
                             <table class="table datanew">
                                 <thead>
@@ -183,90 +173,53 @@
                                                 <span class="checkmarks"></span>
                                             </label>
                                         </th>
-                                        <th>Nama</th>
-                                        <th>Ukuran Min</th>
-                                        <th>Ukuran Max</th>
-                                        <th>Harga (cm)</th>
-                                        <th>Harga Min</th>
-                                        <th>Update</th>
-                                        <th>Status</th>
+                                        <th># Process</th>
+                                        <th>Product</th>
+                                        <th>Name of Process</th>
+                                        <th>Create Date</th>
                                         <th class="no-sort">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
+                                        <td><label class="checkboxs"><input type="checkbox"><span class="checkmarks"></span></label></td>
+                                        <td>PROPC-01</td>
                                         <td>
-                                            <label class="checkboxs">
-                                                <input type="checkbox">
-                                                <span class="checkmarks"></span>
-                                            </label>
-                                        </td>
-                                        <td>Laminasi Doff</td>
-                                        <td>250×150 cm</td>
-                                        <td>600×1000 cm</td>
-                                        <td>Rp20</td>
-                                        <td>Rp200.000</td>
-                                        <td>20/12/12 23:12</td>
-                                        <td>
-                                            <span class="badge bg-info">Active</span>
-                                        </td>
+											<div class="productimgname">
+												<a href="javascript:void(0);" class="product-img stock-img">
+													<img src="assets/img/products/stock-img-01.png" alt="product">
+												</a>
+												<a href="javascript:void(0);">Lenovo 3rd Generation </a>
+											</div>
+										</td>
+                                        <td>Printing</td>
+                                        <td class="str-value">2025-09-01</td>
                                         <td class="action-table-data">
 											<div class="edit-delete-action">
-												<a class="me-2 p-2" href="#"><i data-feather="eye"></i></a>
 												<a class="me-2 p-2" href="#" data-bs-toggle="modal"
-													data-bs-target="#addNewLaminateModal"><i data-feather="edit"></i></a>
+													data-bs-target="#edit-units"><i data-feather="edit"></i></a>
 												<a class="confirm-text p-2" href="javascript:void(0);"><i
 														data-feather="trash-2"></i></a>
 											</div>
 										</td>
                                     </tr>
                                     <tr>
+                                        <td><label class="checkboxs"><input type="checkbox"><span class="checkmarks"></span></label></td>
+                                        <td>PROPC-02</td>
                                         <td>
-                                            <label class="checkboxs">
-                                                <input type="checkbox">
-                                                <span class="checkmarks"></span>
-                                            </label>
-                                        </td>
-                                        <td>Laminasi Glossy</td>
-                                        <td>250×150 cm</td>
-                                        <td>600×1000 cm</td>
-                                        <td>Rp18</td>
-                                        <td>Rp180.000</td>
-                                        <td>20/12/12 23:12</td>
-                                        <td>
-                                            <span class="badge bg-outline-info">Deactive</span>
-                                        </td>
-                                        <td class="action-table-data">
-											<div class="edit-delete-action">
-												<a class="me-2 p-2" href="#"><i data-feather="eye"></i></a>
-												<a class="me-2 p-2" href="#" data-bs-toggle="modal"
-													data-bs-target="#addNewLaminateModal"><i data-feather="edit"></i></a>
-												<a class="confirm-text p-2" href="javascript:void(0);"><i
-														data-feather="trash-2"></i></a>
+											<div class="productimgname">
+												<a href="javascript:void(0);" class="product-img stock-img">
+													<img src="assets/img/products/stock-img-06.png" alt="product">
+												</a>
+												<a href="javascript:void(0);">Bold V3.2</a>
 											</div>
 										</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <label class="checkboxs">
-                                                <input type="checkbox">
-                                                <span class="checkmarks"></span>
-                                            </label>
-                                        </td>
-                                        <td>UV Vernish</td>
-                                        <td>250×150 cm</td>
-                                        <td>600×1000 cm</td>
-                                        <td>Rp10</td>
-                                        <td>Rp100.000</td>
-                                        <td>20/12/12 23:12</td>
-                                        <td>
-                                            <span class="badge bg-info">Active</span>
-                                        </td>
+                                        <td>Cutting</td>
+                                        <td class="str-value">2025-09-02</td>
                                         <td class="action-table-data">
 											<div class="edit-delete-action">
-												<a class="me-2 p-2" href="#"><i data-feather="eye"></i></a>
 												<a class="me-2 p-2" href="#" data-bs-toggle="modal"
-													data-bs-target="#addNewLaminateModal"><i data-feather="edit"></i></a>
+													data-bs-target="#edit-units"><i data-feather="edit"></i></a>
 												<a class="confirm-text p-2" href="javascript:void(0);"><i
 														data-feather="trash-2"></i></a>
 											</div>
@@ -275,6 +228,8 @@
                                 </tbody>
                             </table>
                         </div>
+                        <!-- ...existing code... -->
+
                     </div>
                 </div>
                 <!-- /product list -->
@@ -284,12 +239,13 @@
     </div>
     <!-- /Main Wrapper -->
 
-    <!-- Modal for add new laminate -->
-    <div class="modal fade text-standard" id="addNewLaminateModal" tabindex="-1" aria-labelledby="addNewLaminateModalLabel" aria-hidden="true">
+    <!-- Modal for add new paper group -->
+    <div class="modal fade text-standard" id="addProductProcessModal" tabindex="-1"
+        aria-labelledby="addProductProcessModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header py-2">
-                    <h5 class="modal-title" id="addNewLaminateModalLabel">Add New Laminate Type</h5>
+                    <h5 class="modal-title" id="addProductProcessModalLabel">Add New Product Process</h5>
                     <div class="d-flex align-items-center">
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
@@ -297,66 +253,31 @@
                 <div class="modal-body">
                     <div>
                         <form>
-                            
+
                             <div class="row mb-3">
                                 <div class="col-5">
-                                    <label for="name" class="form-label">Nama</label>
+                                    <label for="product" class="form-label">Product</label>
                                 </div>
                                 <div class="col-7">
-                                    <input type="text" class="form-control" id="name">
+                                    <input type="text" class="form-control" id="product">
                                 </div>
                             </div>
 
                             <div class="row mb-3">
                                 <div class="col-5">
-                                    <label class="form-label">Ukuran Maksimal (cm)</label>
+                                    <label for="job-process" class="form-label">Job Process</label>
                                 </div>
                                 <div class="col-7">
-                                    <div class="row">
-                                        <div class="col-6">
-                                            <div class="input-group input-group-sm">
-                                                <span class="input-group-text">P</span>
-                                                <input type="text" class="form-control number-separator"
-                                                    inputmode="numeric" pattern="[0-9]*">
-                                                <input type="hidden" class="result-input" id="width-add">
-                                            </div>
-                                        </div>
-                                        <div class="col-6">
-                                            <div class="input-group input-group-sm">
-                                                <span class="input-group-text">L</span>
-                                                <input type="text" class="form-control number-separator"
-                                                    inputmode="numeric" pattern="[0-9]*">
-                                                <input type="hidden" class="result-input" id="height-add">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="row mb-3">
-                                <div class="col-5">
-                                    <label for="price-per-cm" class="form-label">Harga per Centimeter</label>
-                                </div>
-                                <div class="col-7">
-                                    <input type="text" class="form-control number-separator price-input" inputmode="numeric" pattern="[0-9]*">
-                                    <input type="hidden" class="result-input" id="price-per-cm">
-                                </div>
-                            </div>
-                            
-                            <div class="row mb-3">
-                                <div class="col-5">
-                                    <label for="price-min" class="form-label">Harga Minimal</label>
-                                </div>
-                                <div class="col-7">
-                                    <input type="text" class="form-control number-separator price-input" inputmode="numeric" pattern="[0-9]*">
-                                    <input type="hidden" class="result-input" id="price-min">
+                                    <input type="text" class="form-control" id="job-process">
                                 </div>
                             </div>
 
-                            <small class="d-none text-standard text-danger" id="info-selected-all"><i class="fa-solid fa-circle-info"></i> please input your specification<br></small>
+
+                            <small class="d-none text-standard text-danger" id="info-selected-all-1"><i
+                                    class="fa-solid fa-circle-info"></i> please input your specification<br></small>
                             <div class="row mb-3 justify-content-end">
                                 <div class="col-7">
-                                    <button class="btn btn-primary w-100" id="save-btn">Simpan</button>
+                                    <button class="btn btn-primary w-100" id="save-btn-1">Simpan</button>
                                 </div>
                             </div>
 
@@ -400,7 +321,6 @@
     <!-- Custom JS -->
     <script src="assets/js/theme-script.js"></script>
     <script src="assets/js/script.js"></script>
-
 
 </body>
 

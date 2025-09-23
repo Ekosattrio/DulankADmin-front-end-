@@ -96,7 +96,7 @@
                             </div>
                             <div class="dash-widgetcontent">
                                 <h6>Total Job Progress</h6>
-                                <h5><span class="counters" data-count="307144">307,144</span></h5>
+                                <h5><span class="counters" data-count="307144">307144</span></h5>
                             </div>
                         </div>
                     </div>
@@ -104,129 +104,49 @@
                 <!-- /product list -->
                 <div class="card table-list-card">
                     <div class="card-body">
-                        <div class="table-top">
-                            <div class="search-set">
-                                <div class="search-input">
-                                    <a href="" class="btn btn-searchset"><i data-feather="search"
-                                            class="feather-search"></i></a>
-                                </div>
-                            </div>
-                            <div class="search-path">
-                                <div class="d-flex align-items-center">
-                                    <a class="btn btn-filter" id="pilter">
-                                        <i data-feather="filter" class="filter-icon"></i>
-                                        <span><img src="assets/img/icons/closes.svg" alt="img"></span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- /Filter -->
-                        <div id="filter_container" class="filter-collapse mt-3 w-100">
-                            <div class="p-3">
-                                <div class="row g-3 d-flex justify-content-between">
-
-                                    <!-- Date Range -->
-                                    <div class="col-12 col-md-4 ms-2">
-                                        <div class="pemilihrentang-container ">
-                                            <input type="text" id="pemilihrentang-input" class="pemilihrentang-input"
-                                                readonly placeholder="DD/MM/YYYY - DD/MM/YYYY">
-                                            <div id="pemilihrentang-panel" class="pemilihrentang-panel">
-                                                <div class="pemilihrentang-isi">
-                                                    <div class="opsi-cepat">
-                                                        <div data-range="kemarin">Kemarin</div>
-                                                        <div data-range="7hari">7 Hari Terakhir</div>
-                                                        <div data-range="bulanIni">Bulan Ini</div>
-                                                        <div data-range="bulanLalu">Bulan Lalu</div>
-                                                        <div data-range="tahunLalu">Tahun Lalu</div>
-                                                        <div data-range="kustom">Rentang Kustom</div>
-                                                    </div>
-                                                    <div class="kalender" id="kalender-view" style="display:none;">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-12 col-md-6 me-2">
-                                        <div class="row g-2">
-                                            <!-- Store -->
-                                            <div class="col-12 col-md-4">
-                                                <div class="dropdown w-100">
-                                                    <button type="button"
-                                                        class="btn btn-outline-primary dropdown-toggle w-100"
-                                                        data-bs-toggle="dropdown" aria-expanded="false">
-                                                        Store
-                                                    </button>
-                                                    <ul class="dropdown-menu w-100">
-                                                        <li><a class="dropdown-item" href="#">Ellectro Mart</a></li>
-                                                        <li><a class="dropdown-item" href="#">ekos mart</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-
-                                            <!-- Product -->
-                                            <div class="col-12 col-md-4">
-                                                <div class="dropdown w-100">
-                                                    <button type="button"
-                                                        class="btn btn-outline-primary dropdown-toggle w-100"
-                                                        data-bs-toggle="dropdown" aria-expanded="false">
-                                                        Product
-                                                    </button>
-                                                    <ul class="dropdown-menu w-100">
-                                                        <li><a class="dropdown-item" href="#">Laptop</a></li>
-                                                        <li><a class="dropdown-item" href="#">Lemari</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-
-                                            <!-- Report -->
-                                            <div class="col-12 col-md-4">
-                                                <button class="btn btn-primary w-100">Report</button>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-
-
-                        </div>
-                        <!-- /Filter -->
-                        <div class="card" id="filter_inputs">
-                            <div class="card-body pb-0">
-                                <div class="row">
-                                    <div class="col-lg-3 col-sm-6 col-12">
-                                        <div class="input-blocks">
-                                            <i data-feather="user" class="info-img"></i>
-                                            <select class="select">
-                                                <option>Choose Customer Name</option>
-                                                <option>Benjamin</option>
-                                                <option>Ellen</option>
-                                                <option>Freda</option>
-                                                <option>Kaitlin</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3 col-sm-6 col-12">
-                                        <div class="input-blocks">
-                                            <i data-feather="globe" class="info-img"></i>
-                                            <select class="select">
-                                                <option>Choose Country</option>
-                                                <option>India</option>
-                                                <option>USA</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3 col-sm-6 col-12 ms-auto">
-                                        <div class="input-blocks">
-                                            <a class="btn btn-filters ms-auto"> <i data-feather="search"
-                                                    class="feather-search"></i> Search </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- /Filter -->
+                        <!-- Filter -->
+						<div class="table-top d-flex align-items-center justify-content-between">
+							<!-- Search Input -->
+							<div class="search-set d-block d-md-flex">
+								<div class="search-input">
+									<a href="" class="btn btn-searchset"><i data-feather="search"
+											class="feather-search"></i></a>
+								</div>
+								<!-- Date Range -->
+								<div class="my-2">
+									<div class="pemilihrentang-container ">
+										<input type="text" id="pemilihrentang-input" class="pemilihrentang-input form-control"
+											readonly placeholder="Date" style="height: fit-content !important;width: 100% !important;">
+										<div id="pemilihrentang-panel" class="pemilihrentang-panel">
+											<div class="pemilihrentang-isi">
+												<div class="opsi-cepat">
+													<div data-range="kemarin">Kemarin</div>
+													<div data-range="7hari">7 Hari Terakhir</div>
+													<div data-range="bulanIni">Bulan Ini</div>
+													<div data-range="bulanLalu">Bulan Lalu</div>
+													<div data-range="tahunLalu">Tahun Lalu</div>
+													<div data-range="kustom">Rentang Kustom</div>
+												</div>
+												<div class="kalender" id="kalender-view" style="display:none;">
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="filters d-flex justify-content-end">
+								<div class="dropdown w-100">
+									<button class="btn btn-outline-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+										Job Proses
+									</button>
+									<ul class="dropdown-menu">
+										<li><a class="dropdown-item" href="#">Printing</a></li>
+										<li><a class="dropdown-item" href="#">Cutting</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>					
+						<!-- /Filter -->	
                         <!-- Job Progress Table -->
                         <div class="table-responsive mb-5">
                             <table class="table datanew">
@@ -234,39 +154,65 @@
                                     <tr>
                                         <th class="no-sort">
                                             <label class="checkboxs">
-                                                <input type="checkbox" id="select-all-jobprogress">
+                                                <input type="checkbox" id="select-all">
                                                 <span class="checkmarks"></span>
                                             </label>
                                         </th>
                                         <th># Progress</th>
-                                        <th># Job</th>
+                                        <th>Product</th>
+                                        <th>Product Description</th>
                                         <th>Job Process</th>
                                         <th>Complete by</th>
-                                        <th>Start Time</th>
-                                        <th>End Time</th>
+                                        <th>Time</th>
                                         <th>Note</th>
+                                        <th class="no-sort">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
                                         <td><label class="checkboxs"><input type="checkbox"><span class="checkmarks"></span></label></td>
                                         <td>PROG-01</td>
-                                        <td>JOB-1001</td>
+                                        <td>Brochure</td>
+                                        <td>Brosur Full Color A4 (210x297 Milimeter), Art paper 150gr, Tanpa Laminasi, Tanpa Lipatan</td>
                                         <td>Printing</td>
                                         <td>Eko Satrio</td>
-                                        <td>2025-09-01 08:00</td>
                                         <td>2025-09-01 12:00</td>
                                         <td>Completed successfully</td>
+                                        <td class="action-table-data">
+											<div class="edit-delete-action">
+												<a class="me-2 p-2 take-btn" href="#"><i data-feather="crosshair"></i></a>
+											</div>
+										</td>
                                     </tr>
                                     <tr>
                                         <td><label class="checkboxs"><input type="checkbox"><span class="checkmarks"></span></label></td>
                                         <td>PROG-02</td>
-                                        <td>JOB-1002</td>
+                                        <td>Brochure</td>
+                                        <td>Brosur Full Color A4 (210x297 Milimeter), Art paper 150gr, Tanpa Laminasi, Tanpa Lipatan</td>
+                                        <td>Printing</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td class="action-table-data">
+											<div class="edit-delete-action">
+												<a class="me-2 p-2 take-btn" href="#"><i data-feather="crosshair"></i></a>
+											</div>
+										</td>
+                                    </tr>
+                                    <tr>
+                                        <td><label class="checkboxs"><input type="checkbox"><span class="checkmarks"></span></label></td>
+                                        <td>PROG-03</td>
+                                        <td>Flyer</td>
+                                        <td>Brosur Full Color A4 (210x297 Milimeter), Art paper 150gr, Tanpa Laminasi, Tanpa Lipatan</td>
                                         <td>Cutting</td>
                                         <td>Eko Satrio</td>
-                                        <td>2025-09-02 09:00</td>
                                         <td>2025-09-02 11:00</td>
                                         <td>Delayed due to maintenance</td>
+                                        <td class="action-table-data">
+											<div class="edit-delete-action">
+												<a class="me-2 p-2 take-btn" href="#"><i data-feather="crosshair"></i></a>
+											</div>
+										</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -315,7 +261,29 @@
     <script src="assets/js/theme-script.js"></script>
     <script src="assets/js/script.js"></script>
 
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const takeBtn = document.querySelectorAll('.take-btn');
+            takeBtn.forEach(btn => {
+                console.log(btn)
+                btn.addEventListener("click", function (e) {
+                    e.preventDefault();
 
+                    Swal.fire({
+                        title: 'Are you sure?',
+                        text: "Mau ambil job ini?",
+                        showCancelButton: true,
+                        confirmButtonColor: '#f39c12', // oranye
+                        cancelButtonColor: '#d33',     // merah
+                        confirmButtonText: 'Yes, take it!',
+                        cancelButtonText: 'Cancel'
+                    })
+                });
+
+            });
+        });
+
+    </script>
 </body>
 
 </html>

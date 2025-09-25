@@ -1280,7 +1280,6 @@ ul .btn-primary:not(:disabled):not(.disabled):active:focus, ul .btn-primary:not(
 .search-input > div > label {
   width: 100% !important;
 }
-
 .input-blocks input[type=text].datetimepicker {
   padding-left: 35px;
 }
@@ -11063,12 +11062,6 @@ table.dataTable thead > tr > th.no-sort.sorting::after {
   position: relative;
   margin-right: 15px;
 }
-@media (max-width: 991.98px) {
-  .search-set .search-input {
-    position: relative;
-    margin-right: 0px;
-  }
-}
 .search-set .search-input input[type=search] {
   height: 38px;
   border: 1px solid var(--Stroke, rgba(145, 158, 171, 0.3));
@@ -11079,9 +11072,6 @@ table.dataTable thead > tr > th.no-sort.sorting::after {
 }
 .search-set .search-input input[type=search]::placeholder {
   color: #000000;
-}
-.search-set .search-input input[type=search] {
-    width: 100% !important;
 }
 /* @media (max-width: 1199.98px) {
   .search-set .search-input input[type=search] {
@@ -32744,11 +32734,20 @@ label span {
 /* ================== CONTAINER ================== */
 .pemilihrentang-container {
   position: relative;
-  display: inline-block;
-  width: 100%;
+  width: 260px;
+}
+
+@media (max-width: 576px) {
+  .pemilihrentang-container {
+    margin-left: -9px !important;
+  }
 }
 
 .pemilihrentang-input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
   cursor: pointer;
 }
 
@@ -32764,13 +32763,7 @@ label span {
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   z-index: 1050;
 }
-@media (max-width: 576px) {
-    .pemilihrentang-panel {
-        left: 0;
-        right: 0;
-        width: auto;
-    }
-}
+
 .pemilihrentang-isi {
   display: flex;
 }
@@ -33148,8 +33141,6 @@ div.dataTables_wrapper div.dataTables_paginate ul.pagination {
   padding: 0;
   margin: 0;
 }
-
-
 /* table setting */
 th{
   border: none;
@@ -33179,4 +33170,35 @@ a.product-img img {
 .view-product {
   width: 36px !important;
   height: 36px !important;
+}
+
+.revenue-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;       /* ukuran lingkaran */
+    height: 50px;      /* ukuran lingkaran */
+    border-radius: 50%; /* bikin bulat */
+    font-size: 20px;
+}
+
+/* Background untuk tiap warna */
+.cyan {
+    background-color: rgba(0, 188, 212, 0.15);
+    color: #00bcd4;
+}
+
+.bg-teal-transparent {
+    background-color: rgba(0, 128, 128, 0.15);
+    color: teal;
+}
+
+.bg-orange-transparent {
+    background-color: rgba(255, 165, 0, 0.2);
+    color: orange;
+}
+
+.bg-indigo-transparent {
+    background-color: rgba(75, 0, 130, 0.15);
+    color: indigo;
 }

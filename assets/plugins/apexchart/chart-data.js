@@ -416,69 +416,68 @@ chart.render();
 // Donut Chart
 
 if($('#donut-chart').length > 0 ){
-var donutChart = {
+  var donutChart = {
     chart: {
-        height: 350,
-        type: 'donut',
-        toolbar: {
-          show: false,
-        }
+      height: 370,
+      type: 'donut',
+      toolbar: { show: false }
     },
-    // colors: ['#4361ee', '#888ea8', '#e3e4eb', '#d3d3d3'],
-    series: [44, 55, 41, 17],
+    series: [44, 55, 41],
+    labels: ['Electronics', 'Sport', 'Lifestyle'], // ⬅️ kasih nama biar nggak "series-1"
+    legend: {
+      position: 'bottom',
+      labels: {
+        colors: '#6c757d', // warna teks legend (opsional)
+        useSeriesColors: false
+      }
+    },
     responsive: [{
-        breakpoint: 480,
-        options: {
-            chart: {
-                width: 200
-            },
-            legend: {
-                position: 'bottom'
-            }
-        }
+      breakpoint: 480,
+      options: {
+        chart: { width: 200 },
+        legend: { position: 'bottom' }
+      }
     }]
-}
+  }
 
-var donut = new ApexCharts(
+  var donut = new ApexCharts(
     document.querySelector("#donut-chart"),
     donutChart
-);
+  );
 
-donut.render();
+  donut.render(); // ⬅️ ini wajib biar chart muncul
 }
+
 
 // Radial Chart
 if($('#radial-chart').length > 0 ){
 var radialChart = {
     chart: {
-        height: 350,
+        height: 150,
         type: 'radialBar',
         toolbar: {
-          show: false,
+          show: true,
         }
     },
     // colors: ['#4361ee', '#888ea8', '#e3e4eb', '#d3d3d3'],
     plotOptions: {
         radialBar: {
+           hollow: {
+                    size: '5px',   // makin kecil, bar makin tebal
+                },
             dataLabels: {
                 name: {
-                    fontSize: '22px',
+                    fontSize: '22px', 
                 },
                 value: {
                     fontSize: '16px',
                 },
-                total: {
-                    show: true,
-                    label: 'Total',
-                    formatter: function (w) {
-                        return 249
-                    }
-                }
+               
             }
         }
     },
-    series: [44, 55, 67, 83],
-    labels: ['Apples', 'Oranges', 'Bananas', 'Berries'],    
+    series: [44, 55],
+    labels: ['Firstime', 'returns'],    
 }
 
 var chart = new ApexCharts(
@@ -488,6 +487,49 @@ var chart = new ApexCharts(
 
 chart.render();
 }	
+
+if ($('#sales_statistik').length > 0) {
+  var options = {
+    series: [{
+      name: 'Sales',
+      data: [130, 210, 300, 290, 150, 50, 210, 280, 105],
+    }, {
+      name: 'Purchase',
+      data: [-150, -90, -50, -180, -50, -70, -100, -90, -105]
+    }],
+    colors: ['#28C76F', '#EA5455'],
+    chart: {
+      type: 'bar',
+      height: 260,
+      stacked: true,
+      toolbar: { show: false },
+        parentHeightOffset: 20 // ⬅️ kasih offset jarak
+      
+    },
+    plotOptions: {
+      bar: {
+        horizontal: false,
+        borderRadius: 4,
+        columnWidth: '30%',
+      },
+    },
+    dataLabels: { enabled: false },
+    yaxis: {
+      min: -200,
+      max: 300,
+      tickAmount: 5,
+    },
+    xaxis: {
+      categories: ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep'],
+    },
+    legend: { show: true },
+    fill: { opacity: 1 }
+  };
+
+  var salesChart = new ApexCharts(document.querySelector("#sales_statistik"), options);
+  salesChart.render();
+}
+
 	
 if($('#sales_charts').length > 0) {
 	var options = {
@@ -609,3 +651,82 @@ if($('#sales_charts').length > 0) {
 
   
 });
+if ($('#heatmap').length > 0) {
+  var options = {
+    chart: {
+      height: 350,
+      type: 'heatmap',
+      toolbar: { show: false }
+    },
+    plotOptions: {
+      heatmap: {
+        shadeIntensity: 0.5,
+        radius: 6,
+        useFillColorAsStroke: false,
+        colorScale: {
+          ranges: [{
+              from: 0,
+              to: 50,
+              color: '#fde0c9',
+              name: 'Low'
+            },
+            {
+              from: 51,
+              to: 100,
+              color: '#f28c38',
+              name: 'High'
+            }
+          ]
+        }
+      }
+    },
+    dataLabels: { enabled: false },
+    xaxis: {
+      categories: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+    },
+    series: [
+      {
+        name: '2 AM',
+        data: [45, 60, 70, 40, 30, 80, 90]
+      },
+      {
+        name: '4 AM',
+        data: [70, 75, 60, 80, 50, 60, 70]
+      },
+      {
+        name: '6 AM',
+        data: [20, 30, 40, 50, 60, 70, 80]
+      },
+      {
+        name: '8 AM',
+        data: [35, 45, 55, 65, 75, 85, 95]
+      },
+      {
+        name: '10 AM',
+        data: [90, 80, 70, 60, 50, 40, 30]
+      },
+      {
+        name: '12 AM',
+        data: [55, 65, 75, 85, 95, 45, 35]
+      },
+      {
+        name: '14 PM',
+        data: [25, 35, 45, 55, 65, 75, 85]
+      },
+      {
+        name: '16 PM',
+        data: [15, 25, 35, 45, 55, 65, 75]
+      },
+      {
+        name: '18 AM',
+        data: [10, 20, 30, 40, 50, 60, 70]
+      }
+    ],
+    grid: {
+      padding: { right: 20 }
+    }
+  };
+
+  var chart = new ApexCharts(document.querySelector("#heatmap"), options);
+  chart.render();
+}

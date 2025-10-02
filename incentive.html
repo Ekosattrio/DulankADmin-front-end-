@@ -88,9 +88,9 @@
                         </li>
                     </ul>
                     <div class="page-btn">
-						<a href="#" class="btn btn-added" data-bs-toggle="modal" data-bs-target="#add-units"><i
-								data-feather="plus-circle" class="me-2"></i>Add New Incentive</a>
-					</div>
+                        <a href="#" class="btn btn-added" data-bs-toggle="modal" data-bs-target="#add-units"><i
+                                data-feather="plus-circle" class="me-2"></i>Add New Incentive</a>
+                    </div>
                 </div>
                 <div class="row mt-5">
                     <div class="col-xl-3 col-sm-6 col-12 d-flex">
@@ -120,49 +120,51 @@
                 <div class="card table-list-card">
                     <div class="card-body">
                         <!-- Filter -->
-						<div class="table-top d-flex align-items-center justify-content-between">
-							<!-- Search Input -->
-							<div class="search-set d-block d-md-flex">
-								<div class="search-input">
-									<a href="" class="btn btn-searchset"><i data-feather="search"
-											class="feather-search"></i></a>
-								</div>
-								<!-- Date Range -->
-								<div class="my-2">
-									<div class="pemilihrentang-container ">
-										<input type="text" id="pemilihrentang-input" class="pemilihrentang-input form-control"
-											readonly placeholder="Date" style="height: fit-content !important;width: 100% !important;">
-										<div id="pemilihrentang-panel" class="pemilihrentang-panel">
-											<div class="pemilihrentang-isi">
-												<div class="opsi-cepat">
-													<div data-range="kemarin">Kemarin</div>
-													<div data-range="7hari">7 Hari Terakhir</div>
-													<div data-range="bulanIni">Bulan Ini</div>
-													<div data-range="bulanLalu">Bulan Lalu</div>
-													<div data-range="tahunLalu">Tahun Lalu</div>
-													<div data-range="kustom">Rentang Kustom</div>
-												</div>
-												<div class="kalender" id="kalender-view" style="display:none;">
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="filters d-flex justify-content-end">
-								<div class="dropdown w-100">
-									<button class="btn btn-outline-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-										Status
-									</button>
-									<ul class="dropdown-menu">
-										<li><a class="dropdown-item" href="#">Paid</a></li>
-										<li><a class="dropdown-item" href="#">Pending</a></li>
-									</ul>
-								</div>
-							</div>
-						</div>					
-						<!-- /Filter -->	
-                        
+                        <div class="table-top d-flex align-items-center justify-content-between">
+                            <!-- Search Input -->
+                            <div class="search-set d-block d-md-flex">
+                                <div class="search-input">
+                                    <a href="" class="btn btn-searchset"><i data-feather="search"
+                                            class="feather-search"></i></a>
+                                </div>
+                                <!-- Date Range -->
+                                <div class="my-2">
+                                    <div class="pemilihrentang-container ">
+                                        <input type="text" id="pemilihrentang-input"
+                                            class="pemilihrentang-input form-control" readonly placeholder="Date"
+                                            style="height: fit-content !important;width: 100% !important;">
+                                        <div id="pemilihrentang-panel" class="pemilihrentang-panel">
+                                            <div class="pemilihrentang-isi">
+                                                <div class="opsi-cepat">
+                                                    <div data-range="kemarin">Kemarin</div>
+                                                    <div data-range="7hari">7 Hari Terakhir</div>
+                                                    <div data-range="bulanIni">Bulan Ini</div>
+                                                    <div data-range="bulanLalu">Bulan Lalu</div>
+                                                    <div data-range="tahunLalu">Tahun Lalu</div>
+                                                    <div data-range="kustom">Rentang Kustom</div>
+                                                </div>
+                                                <div class="kalender" id="kalender-view" style="display:none;">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="filters d-flex justify-content-end">
+                                <div class="dropdown w-100">
+                                    <button class="btn btn-outline-primary dropdown-toggle" type="button"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                        Status
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">Paid</a></li>
+                                        <li><a class="dropdown-item" href="#">Pending</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /Filter -->
+
                         <!-- Incentive Table -->
                         <div class="table-responsive mb-5">
                             <table class="table datanew">
@@ -185,60 +187,188 @@
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td><label class="checkboxs"><input type="checkbox"><span class="checkmarks"></span></label></td>
+                                        <td><label class="checkboxs"><input type="checkbox"><span
+                                                    class="checkmarks"></span></label></td>
                                         <td>INC-01</td>
                                         <td>Desman Dwi</td>
-                                        <td>2025-08</td>
+                                        <td class="str-value">2025-08</td>
                                         <td>10</td>
                                         <td>Rp5.000</td>
                                         <td><span class="badge bg-success">Paid</span></td>
                                         <td class="action-table-data">
-											<div class="edit-delete-action">
-												<a class="me-2 p-2" href="#" data-bs-toggle="modal"
-													data-bs-target="#edit-units"><i data-feather="edit"></i></a>
-												<a class="confirm-text p-2" href="javascript:void(0);"><i
-														data-feather="trash-2"></i></a>
-											</div>
-										</td>
+                                            <div class="edit-delete-action">
+                                                <a class="me-2 p-2" href="#" data-bs-toggle="modal"
+                                                    data-bs-target="#edit-units"><i data-feather="edit"></i></a>
+                                                <a class="confirm-text p-2" href="javascript:void(0);"><i
+                                                        data-feather="trash-2"></i></a>
+                                            </div>
+                                        </td>
                                     </tr>
                                     <tr>
-                                        <td><label class="checkboxs"><input type="checkbox"><span class="checkmarks"></span></label></td>
+                                        <td><label class="checkboxs"><input type="checkbox"><span
+                                                    class="checkmarks"></span></label></td>
                                         <td>INC-02</td>
                                         <td>Eko Satrio</td>
-                                        <td>2025-08</td>
+                                        <td class="str-value">2025-08</td>
                                         <td>8</td>
                                         <td>Rp2.400</td>
                                         <td><span class="badge bg-info">Pending</span></td>
                                         <td class="action-table-data">
-											<div class="edit-delete-action">
-												<a class="me-2 p-2" href="#" data-bs-toggle="modal"
-													data-bs-target="#edit-units"><i data-feather="edit"></i></a>
-												<a class="confirm-text p-2" href="javascript:void(0);"><i
-														data-feather="trash-2"></i></a>
-											</div>
-										</td>
+                                            <div class="edit-delete-action">
+                                                <a class="me-2 p-2" href="#" data-bs-toggle="modal"
+                                                    data-bs-target="#edit-units"><i data-feather="edit"></i></a>
+                                                <a class="confirm-text p-2" href="javascript:void(0);"><i
+                                                        data-feather="trash-2"></i></a>
+                                            </div>
+                                        </td>
                                     </tr>
                                     <tr>
-                                        <td><label class="checkboxs"><input type="checkbox"><span class="checkmarks"></span></label></td>
-                                        <td>Rp2.000</td>
-                                        <td>Eko Satrio</td>
-                                        <td>2025-08</td>
-                                        <td>8</td>
-                                        <td>Rp2.400</td>
-                                        <td><span class="badge bg-danger">Cancel</span></td>
+                                        <td><label class="checkboxs"><input type="checkbox"><span
+                                                    class="checkmarks"></span></label></td>
+                                        <td>INC-03</td>
+                                        <td>Rina Melati</td>
+                                        <td class="str-value">2025-07</td>
+                                        <td>15</td>
+                                        <td>Rp7.500</td>
+                                        <td><span class="badge bg-success">Paid</span></td>
                                         <td class="action-table-data">
-											<div class="edit-delete-action">
-												<a class="me-2 p-2" href="#" data-bs-toggle="modal"
-													data-bs-target="#edit-units"><i data-feather="edit"></i></a>
-												<a class="confirm-text p-2" href="javascript:void(0);"><i
-														data-feather="trash-2"></i></a>
-											</div>
-										</td>
+                                            <div class="edit-delete-action">
+                                                <a class="me-2 p-2" href="#" data-bs-toggle="modal"
+                                                    data-bs-target="#edit-units"><i data-feather="edit"></i></a>
+                                                <a class="confirm-text p-2" href="javascript:void(0);"><i
+                                                        data-feather="trash-2"></i></a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><label class="checkboxs"><input type="checkbox"><span
+                                                    class="checkmarks"></span></label></td>
+                                        <td>INC-04</td>
+                                        <td>Budi Santoso</td>
+                                        <td class="str-value">2025-07</td>
+                                        <td>12</td>
+                                        <td>Rp3.600</td>
+                                        <td><span class="badge bg-success">Paid</span></td>
+                                        <td class="action-table-data">
+                                            <div class="edit-delete-action">
+                                                <a class="me-2 p-2" href="#" data-bs-toggle="modal"
+                                                    data-bs-target="#edit-units"><i data-feather="edit"></i></a>
+                                                <a class="confirm-text p-2" href="javascript:void(0);"><i
+                                                        data-feather="trash-2"></i></a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><label class="checkboxs"><input type="checkbox"><span
+                                                    class="checkmarks"></span></label></td>
+                                        <td>INC-05</td>
+                                        <td>Santi Dewi</td>
+                                        <td class="str-value">2025-08</td>
+                                        <td>5</td>
+                                        <td>Rp1.500</td>
+                                        <td><span class="badge bg-info">Pending</span></td>
+                                        <td class="action-table-data">
+                                            <div class="edit-delete-action">
+                                                <a class="me-2 p-2" href="#" data-bs-toggle="modal"
+                                                    data-bs-target="#edit-units"><i data-feather="edit"></i></a>
+                                                <a class="confirm-text p-2" href="javascript:void(0);"><i
+                                                        data-feather="trash-2"></i></a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><label class="checkboxs"><input type="checkbox"><span
+                                                    class="checkmarks"></span></label></td>
+                                        <td>INC-06</td>
+                                        <td>Joko Susilo</td>
+                                        <td class="str-value">2025-06</td>
+                                        <td>20</td>
+                                        <td>Rp10.000</td>
+                                        <td><span class="badge bg-success">Paid</span></td>
+                                        <td class="action-table-data">
+                                            <div class="edit-delete-action">
+                                                <a class="me-2 p-2" href="#" data-bs-toggle="modal"
+                                                    data-bs-target="#edit-units"><i data-feather="edit"></i></a>
+                                                <a class="confirm-text p-2" href="javascript:void(0);"><i
+                                                        data-feather="trash-2"></i></a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><label class="checkboxs"><input type="checkbox"><span
+                                                    class="checkmarks"></span></label></td>
+                                        <td>INC-07</td>
+                                        <td>Lia Amalia</td>
+                                        <td class="str-value">2025-07</td>
+                                        <td>9</td>
+                                        <td>Rp2.700</td>
+                                        <td><span class="badge bg-info">Pending</span></td>
+                                        <td class="action-table-data">
+                                            <div class="edit-delete-action">
+                                                <a class="me-2 p-2" href="#" data-bs-toggle="modal"
+                                                    data-bs-target="#edit-units"><i data-feather="edit"></i></a>
+                                                <a class="confirm-text p-2" href="javascript:void(0);"><i
+                                                        data-feather="trash-2"></i></a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><label class="checkboxs"><input type="checkbox"><span
+                                                    class="checkmarks"></span></label></td>
+                                        <td>INC-08</td>
+                                        <td>Taufik Hidayat</td>
+                                        <td class="str-value">2025-06</td>
+                                        <td>18</td>
+                                        <td>Rp9.000</td>
+                                        <td><span class="badge bg-success">Paid</span></td>
+                                        <td class="action-table-data">
+                                            <div class="edit-delete-action">
+                                                <a class="me-2 p-2" href="#" data-bs-toggle="modal"
+                                                    data-bs-target="#edit-units"><i data-feather="edit"></i></a>
+                                                <a class="confirm-text p-2" href="javascript:void(0);"><i
+                                                        data-feather="trash-2"></i></a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><label class="checkboxs"><input type="checkbox"><span
+                                                    class="checkmarks"></span></label></td>
+                                        <td>INC-09</td>
+                                        <td>Dewi Sartika</td>
+                                        <td class="str-value">2025-08</td>
+                                        <td>7</td>
+                                        <td>Rp2.100</td>
+                                        <td><span class="badge bg-info">Pending</span></td>
+                                        <td class="action-table-data">
+                                            <div class="edit-delete-action">
+                                                <a class="me-2 p-2" href="#" data-bs-toggle="modal"
+                                                    data-bs-target="#edit-units"><i data-feather="edit"></i></a>
+                                                <a class="confirm-text p-2" href="javascript:void(0);"><i
+                                                        data-feather="trash-2"></i></a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><label class="checkboxs"><input type="checkbox"><span
+                                                    class="checkmarks"></span></label></td>
+                                        <td>INC-10</td>
+                                        <td>Agus Salim</td>
+                                        <td class="str-value">2025-07</td>
+                                        <td>14</td>
+                                        <td>Rp4.200</td>
+                                        <td><span class="badge bg-success">Paid</span></td>
+                                        <td class="action-table-data">
+                                            <div class="edit-delete-action">
+                                                <a class="me-2 p-2" href="#" data-bs-toggle="modal"
+                                                    data-bs-target="#edit-units"><i data-feather="edit"></i></a>
+                                                <a class="confirm-text p-2" href="javascript:void(0);"><i
+                                                        data-feather="trash-2"></i></a>
+                                            </div>
+                                        </td>
                                     </tr>
                                 </tbody>
                             </table>
                         </div>
-                        <!-- ...existing code... -->
 
                     </div>
                 </div>

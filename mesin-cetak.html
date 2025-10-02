@@ -148,8 +148,9 @@
 								<!-- Date Range -->
 								<div class="my-2">
 									<div class="pemilihrentang-container ">
-										<input type="text" id="pemilihrentang-input" class="pemilihrentang-input form-control"
-											readonly placeholder="Date" style="height: fit-content !important;width: 100% !important;">
+										<input type="text" id="pemilihrentang-input"
+											class="pemilihrentang-input form-control" readonly placeholder="Date"
+											style="height: fit-content !important;width: 100% !important;">
 										<div id="pemilihrentang-panel" class="pemilihrentang-panel">
 											<div class="pemilihrentang-isi">
 												<div class="opsi-cepat">
@@ -169,7 +170,8 @@
 							</div>
 							<div class="filters d-flex justify-content-end">
 								<div class="dropdown w-100 me-2">
-									<button class="btn btn-outline-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+									<button class="btn btn-outline-primary dropdown-toggle" type="button"
+										data-bs-toggle="dropdown" aria-expanded="false">
 										Warna Unit
 									</button>
 									<ul class="dropdown-menu">
@@ -179,7 +181,8 @@
 									</ul>
 								</div>
 								<div class="dropdown w-100 me-2">
-									<button class="btn btn-outline-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+									<button class="btn btn-outline-primary dropdown-toggle" type="button"
+										data-bs-toggle="dropdown" aria-expanded="false">
 										Status
 									</button>
 									<ul class="dropdown-menu">
@@ -190,260 +193,507 @@
 									</ul>
 								</div>
 							</div>
-						</div>					
-						<!-- /Filter -->		
-                        <div class="table-responsive mb-5">
-                            <table class="table datanew">
-                                <thead>
-                                    <tr>
-                                        <th class="no-sort">
-                                            <label class="checkboxs">
-                                                <input type="checkbox" id="select-all">
-                                                <span class="checkmarks"></span>
-                                            </label>
-                                        </th>
-                                        <th>Sumber</th>
-                                        <th>Nama</th>
-                                        <th>Harga</th>
-                                        <th>Update</th>
-                                        <th>Status</th>
-                                        <th class="no-sort">Action</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>
+						</div>
+						<!-- /Filter -->
+						<div class="table-responsive mb-5">
+							<table class="table datanew">
+								<thead>
+									<tr>
+										<th class="no-sort">
+											<label class="checkboxs">
+												<input type="checkbox" id="select-all">
+												<span class="checkmarks"></span>
+											</label>
+										</th>
+										<th>Sumber</th>
+										<th>Nama</th>
+										<th>Harga</th>
+										<th>Update</th>
+										<th>Status</th>
+										<th class="no-sort">Action</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>
 											<label class="checkboxs">
 												<input type="checkbox">
 												<span class="checkmarks"></span>
 											</label>
 										</td>
-                                        <td>
-                                            <div class="userimgname cust-imgname">
-                                                <a href="javascript:void(0);" class="product-img">
-                                                    <img src="assets/img/users/user-23.jpg" alt="percetakan">
-                                                </a>
-                                                <div>
-                                                    <a href="javascript:void(0);">Percetakan Grafika</a>
-                                                    <span class="d-block">Jakarta Pusat, Jakarta</span>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td>Heidelberg GTO52<br>4 Warna</td>
-                                        <td>minim: Rp240.000<br>druck: Rp60</td>
-                                        <td>20/12/12 23:12</td>
-                                        <td>
-                                            <span class="badge bg-success">Publish</span><br>
-                                            <span class="badge bg-info">Active</span>
-                                        </td>
-										<td class="action-table-data">
-											<div class="edit-delete-action">
-												<a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#detailModal" role="button"><i data-feather="eye"></i></a>
+										<td>
+											<div class="userimgname cust-imgname">
+												<a href="javascript:void(0);" class="product-img">
+													<img src="assets/img/users/user-23.jpg" alt="percetakan">
+												</a>
+												<div>
+													<a href="javascript:void(0);">Percetakan Cahaya Abadi</a>
+													<span class="d-block">Jakarta Barat, Jakarta</span>
+												</div>
 											</div>
 										</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
+										<td>Heidelberg Speedmaster SM 74<br>4 Warna</td>
+										<td>minim: Rp350.000<br>druck: Rp85</td>
+										<td>15/09/24 10:30</td>
+										<td>
+											<span class="badge bg-success">Publish</span><br>
+											<span class="badge bg-info">Active</span>
+										</td>
+										<td class="action-table-data">
+											<div class="edit-delete-action">
+												<a class="me-2 p-2" href="#" data-bs-toggle="modal"
+													data-bs-target="#detailModal" role="button"><i
+														data-feather="eye"></i></a>
+												<a class="me-2 p-2" href="#" data-bs-toggle="modal"
+													data-bs-target="#edit-units"><i data-feather="edit"></i></a>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td>
 											<label class="checkboxs">
 												<input type="checkbox">
 												<span class="checkmarks"></span>
 											</label>
 										</td>
-                                        <td>
-                                            <div class="userimgname cust-imgname">
-                                                <a href="javascript:void(0);" class="product-img">
-                                                    <img src="assets/img/users/user-23.jpg" alt="percetakan">
-                                                </a>
-                                                <div>
-                                                    <a href="javascript:void(0);">Percetakan Grafika</a>
-                                                    <span class="d-block">Jakarta Pusat, Jakarta</span>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td>Heidelberg GTO52<br>4 Warna</td>
-                                        <td>minim: Rp240.000<br>druck: Rp60</td>
-                                        <td>20/12/12 23:12</td>
-                                        <td>
-                                            <span class="badge bg-success">Publish</span><br>
-                                            <span class="badge bg-info">Active</span>
-                                        </td>
-										<td class="action-table-data">
-											<div class="edit-delete-action">
-												<a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#detailModal" role="button"><i data-feather="eye"></i></a>
+										<td>
+											<div class="userimgname cust-imgname">
+												<a href="javascript:void(0);" class="product-img">
+													<img src="assets/img/users/user-24.jpg" alt="percetakan">
+												</a>
+												<div>
+													<a href="javascript:void(0);">Sinar Digital Printing</a>
+													<span class="d-block">Surabaya, Jawa Timur</span>
+												</div>
 											</div>
 										</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
+										<td>Komori Lithrone L-528<br>5 Warna</td>
+										<td>minim: Rp420.000<br>druck: Rp95</td>
+										<td>22/09/24 15:45</td>
+										<td>
+											<span class="badge bg-success">Publish</span><br>
+											<span class="badge bg-info">Active</span>
+										</td>
+										<td class="action-table-data">
+											<div class="edit-delete-action">
+												<a class="me-2 p-2" href="#" data-bs-toggle="modal"
+													data-bs-target="#detailModal" role="button"><i
+														data-feather="eye"></i></a>
+												<a class="me-2 p-2" href="#" data-bs-toggle="modal"
+													data-bs-target="#edit-units"><i data-feather="edit"></i></a>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td>
 											<label class="checkboxs">
 												<input type="checkbox">
 												<span class="checkmarks"></span>
 											</label>
 										</td>
-                                        <td>
-                                            <div class="userimgname cust-imgname">
-                                                <a href="javascript:void(0);" class="product-img">
-                                                    <img src="assets/img/users/user-23.jpg" alt="percetakan">
-                                                </a>
-                                                <div>
-                                                    <a href="javascript:void(0);">Percetakan Grafika</a>
-                                                    <span class="d-block">Jakarta Pusat, Jakarta</span>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td>Heidelberg GTO52<br>4 Warna</td>
-                                        <td>minim: Rp240.000<br>druck: Rp60</td>
-                                        <td>20/12/12 23:12</td>
-                                        <td>
-                                            <span class="badge bg-success">Publish</span><br>
-                                            <span class="badge bg-info">Active</span>
-                                        </td>
-										<td class="action-table-data">
-											<div class="edit-delete-action">
-												<a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#detailModal" role="button"><i data-feather="eye"></i></a>
+										<td>
+											<div class="userimgname cust-imgname">
+												<a href="javascript:void(0);" class="product-img">
+													<img src="assets/img/users/user-25.jpg" alt="percetakan">
+												</a>
+												<div>
+													<a href="javascript:void(0);">Media Grafis Jaya</a>
+													<span class="d-block">Bandung, Jawa Barat</span>
+												</div>
 											</div>
 										</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
+										<td>Heidelberg GTO 52<br>2 Warna</td>
+										<td>minim: Rp180.000<br>druck: Rp55</td>
+										<td>01/10/24 08:00</td>
+										<td>
+											<span class="badge bg-success">Publish</span><br>
+											<span class="badge bg-warning">Deactive</span>
+										</td>
+										<td class="action-table-data">
+											<div class="edit-delete-action">
+												<a class="me-2 p-2" href="#" data-bs-toggle="modal"
+													data-bs-target="#detailModal" role="button"><i
+														data-feather="eye"></i></a>
+												<a class="me-2 p-2" href="#" data-bs-toggle="modal"
+													data-bs-target="#edit-units"><i data-feather="edit"></i></a>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td>
 											<label class="checkboxs">
 												<input type="checkbox">
 												<span class="checkmarks"></span>
 											</label>
 										</td>
-                                        <td>
-                                            <div class="userimgname cust-imgname">
-                                                <a href="javascript:void(0);" class="product-img">
-                                                    <img src="assets/img/users/user-23.jpg" alt="percetakan">
-                                                </a>
-                                                <div>
-                                                    <a href="javascript:void(0);">Percetakan Grafika</a>
-                                                    <span class="d-block">Jakarta Pusat, Jakarta</span>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td>Heidelberg GTO52<br>4 Warna</td>
-                                        <td>minim: Rp240.000<br>druck: Rp60</td>
-                                        <td>20/12/12 23:12</td>
-                                        <td>
-                                            <span class="badge bg-success">Publish</span><br>
-                                            <span class="badge bg-info">Active</span>
-                                        </td>
-										<td class="action-table-data">
-											<div class="edit-delete-action">
-												<a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#detailModal" role="button"><i data-feather="eye"></i></a>
+										<td>
+											<div class="userimgname cust-imgname">
+												<a href="javascript:void(0);" class="product-img">
+													<img src="assets/img/users/user-26.jpg" alt="percetakan">
+												</a>
+												<div>
+													<a href="javascript:void(0);">Global Print Solution</a>
+													<span class="d-block">Semarang, Jawa Tengah</span>
+												</div>
 											</div>
 										</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
+										<td>Ryobi 522HX<br>2 Warna</td>
+										<td>minim: Rp200.000<br>druck: Rp50</td>
+										<td>28/09/24 19:20</td>
+										<td>
+											<span class="badge bg-success">Publish</span><br>
+											<span class="badge bg-info">Active</span>
+										</td>
+										<td class="action-table-data">
+											<div class="edit-delete-action">
+												<a class="me-2 p-2" href="#" data-bs-toggle="modal"
+													data-bs-target="#detailModal" role="button"><i
+														data-feather="eye"></i></a>
+												<a class="me-2 p-2" href="#" data-bs-toggle="modal"
+													data-bs-target="#edit-units"><i data-feather="edit"></i></a>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td>
 											<label class="checkboxs">
 												<input type="checkbox">
 												<span class="checkmarks"></span>
 											</label>
 										</td>
-                                        <td>
-                                            <div class="userimgname cust-imgname">
-                                                <a href="javascript:void(0);" class="product-img">
-                                                    <img src="assets/img/users/user-23.jpg" alt="percetakan">
-                                                </a>
-                                                <div>
-                                                    <a href="javascript:void(0);">Percetakan Grafika</a>
-                                                    <span class="d-block">Jakarta Pusat, Jakarta</span>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td>Heidelberg GTO52<br>4 Warna</td>
-                                        <td>minim: Rp240.000<br>druck: Rp60</td>
-                                        <td>20/12/12 23:12</td>
-                                        <td>
-                                            <span class="badge bg-success">Publish</span><br>
-                                            <span class="badge bg-info">Active</span>
-                                        </td>
-										<td class="action-table-data">
-											<div class="edit-delete-action">
-												<a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#detailModal" role="button"><i data-feather="eye"></i></a>
+										<td>
+											<div class="userimgname cust-imgname">
+												<a href="javascript:void(0);" class="product-img">
+													<img src="assets/img/users/user-27.jpg" alt="percetakan">
+												</a>
+												<div>
+													<a href="javascript:void(0);">Prima Offset Printing</a>
+													<span class="d-block">Medan, Sumatera Utara</span>
+												</div>
 											</div>
 										</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <!-- ...existing code... -->
+										<td>KBA Rapida 105<br>6 Warna</td>
+										<td>minim: Rp550.000<br>druck: Rp110</td>
+										<td>10/09/24 11:00</td>
+										<td>
+											<span class="badge bg-danger">Private</span><br>
+											<span class="badge bg-info">Active</span>
+										</td>
+										<td class="action-table-data">
+											<div class="edit-delete-action">
+												<a class="me-2 p-2" href="#" data-bs-toggle="modal"
+													data-bs-target="#detailModal" role="button"><i
+														data-feather="eye"></i></a>
+												<a class="me-2 p-2" href="#" data-bs-toggle="modal"
+													data-bs-target="#edit-units"><i data-feather="edit"></i></a>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<label class="checkboxs">
+												<input type="checkbox">
+												<span class="checkmarks"></span>
+											</label>
+										</td>
+										<td>
+											<div class="userimgname cust-imgname">
+												<a href="javascript:void(0);" class="product-img">
+													<img src="assets/img/users/user-28.jpg" alt="percetakan">
+												</a>
+												<div>
+													<a href="javascript:void(0);">Percetakan Express Cepat</a>
+													<span class="d-block">Makassar, Sulawesi Selatan</span>
+												</div>
+											</div>
+										</td>
+										<td>Fuji Shinohara 66-4<br>4 Warna</td>
+										<td>minim: Rp300.000<br>druck: Rp75</td>
+										<td>05/09/24 14:00</td>
+										<td>
+											<span class="badge bg-success">Publish</span><br>
+											<span class="badge bg-info">Active</span>
+										</td>
+										<td class="action-table-data">
+											<div class="edit-delete-action">
+												<a class="me-2 p-2" href="#" data-bs-toggle="modal"
+													data-bs-target="#detailModal" role="button"><i
+														data-feather="eye"></i></a>
+												<a class="me-2 p-2" href="#" data-bs-toggle="modal"
+													data-bs-target="#edit-units"><i data-feather="edit"></i></a>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<label class="checkboxs">
+												<input type="checkbox">
+												<span class="checkmarks"></span>
+											</label>
+										</td>
+										<td>
+											<div class="userimgname cust-imgname">
+												<a href="javascript:void(0);" class="product-img">
+													<img src="assets/img/users/user-29.jpg" alt="percetakan">
+												</a>
+												<div>
+													<a href="javascript:void(0);">Karya Utama Printing</a>
+													<span class="d-block">Yogyakarta, DI Yogyakarta</span>
+												</div>
+											</div>
+										</td>
+										<td>Akiyama Jprint 40<br>4 Warna</td>
+										<td>minim: Rp380.000<br>druck: Rp80</td>
+										<td>18/09/24 21:00</td>
+										<td>
+											<span class="badge bg-success">Publish</span><br>
+											<span class="badge bg-info">Active</span>
+										</td>
+										<td class="action-table-data">
+											<div class="edit-delete-action">
+												<a class="me-2 p-2" href="#" data-bs-toggle="modal"
+													data-bs-target="#detailModal" role="button"><i
+														data-feather="eye"></i></a>
+												<a class="me-2 p-2" href="#" data-bs-toggle="modal"
+													data-bs-target="#edit-units"><i data-feather="edit"></i></a>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<label class="checkboxs">
+												<input type="checkbox">
+												<span class="checkmarks"></span>
+											</label>
+										</td>
+										<td>
+											<div class="userimgname cust-imgname">
+												<a href="javascript:void(0);" class="product-img">
+													<img src="assets/img/users/user-30.jpg" alt="percetakan">
+												</a>
+												<div>
+													<a href="javascript:void(0);">Percetakan Kilat</a>
+													<span class="d-block">Palembang, Sumatera Selatan</span>
+												</div>
+											</div>
+										</td>
+										<td>Hamada C248<br>2 Warna</td>
+										<td>minim: Rp150.000<br>druck: Rp45</td>
+										<td>12/08/24 09:15</td>
+										<td>
+											<span class="badge bg-danger">Private</span><br>
+											<span class="badge bg-warning">Deactive</span>
+										</td>
+										<td class="action-table-data">
+											<div class="edit-delete-action">
+												<a class="me-2 p-2" href="#" data-bs-toggle="modal"
+													data-bs-target="#detailModal" role="button"><i
+														data-feather="eye"></i></a>
+												<a class="me-2 p-2" href="#" data-bs-toggle="modal"
+													data-bs-target="#edit-units"><i data-feather="edit"></i></a>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<label class="checkboxs">
+												<input type="checkbox">
+												<span class="checkmarks"></span>
+											</label>
+										</td>
+										<td>
+											<div class="userimgname cust-imgname">
+												<a href="javascript:void(0);" class="product-img">
+													<img src="assets/img/users/user-31.jpg" alt="percetakan">
+												</a>
+												<div>
+													<a href="javascript:void(0);">Bandung Offset Cemerlang</a>
+													<span class="d-block">Bandung, Jawa Barat</span>
+												</div>
+											</div>
+										</td>
+										<td>Roland 700<br>8 Warna</td>
+										<td>minim: Rp650.000<br>druck: Rp120</td>
+										<td>25/09/24 16:30</td>
+										<td>
+											<span class="badge bg-success">Publish</span><br>
+											<span class="badge bg-info">Active</span>
+										</td>
+										<td class="action-table-data">
+											<div class="edit-delete-action">
+												<a class="me-2 p-2" href="#" data-bs-toggle="modal"
+													data-bs-target="#detailModal" role="button"><i
+														data-feather="eye"></i></a>
+												<a class="me-2 p-2" href="#" data-bs-toggle="modal"
+													data-bs-target="#edit-units"><i data-feather="edit"></i></a>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<label class="checkboxs">
+												<input type="checkbox">
+												<span class="checkmarks"></span>
+											</label>
+										</td>
+										<td>
+											<div class="userimgname cust-imgname">
+												<a href="javascript:void(0);" class="product-img">
+													<img src="assets/img/users/user-31.jpg" alt="percetakan">
+												</a>
+												<div>
+													<a href="javascript:void(0);">Percetakan Utama Selindo</a>
+													<span class="d-block">Jakarta Timur, Jakarta</span>
+												</div>
+											</div>
+										</td>
+										<td>Heidelberg CD 102<br>6 Warna</td>
+										<td>minim: Rp500.000<br>druck: Rp105</td>
+										<td>30/09/24 13:00</td>
+										<td>
+											<span class="badge bg-success">Publish</span><br>
+											<span class="badge bg-info">Active</span>
+										</td>
+										<td class="action-table-data">
+											<div class="edit-delete-action">
+												<a class="me-2 p-2" href="#" data-bs-toggle="modal"
+													data-bs-target="#detailModal" role="button"><i
+														data-feather="eye"></i></a>
+												<a class="me-2 p-2" href="#" data-bs-toggle="modal"
+													data-bs-target="#edit-units"><i data-feather="edit"></i></a>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
 					</div>
 				</div>
 				<!-- /product list -->
 			</div>
 		</div>
 
-		 <!-- modal -->
-        <div class="modal modal fade" id="detailModal" tabindex="-1" aria-labelledby="detailModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content rounded-4 pb-1">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="detailModalLabel">Detail</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body" style="max-height: 80vh;overflow-y: auto;">
-                        <div>
-                            <div class="mb-4">
-                                <span class="text-standard fw-semibold">Sumber : Percetakan Warna Grafika</span><br>
-                                <span class="text-secondary text-standard">Jakarta Pusat, Jakarta</span><br>
-                                <span class="text-secondary text-standard">Update : 20 Januari 2024</span>
-                            </div>
-                            <div class="mb-2 d-flex justify-content-between">
-                                <span class="text-standard">Nama Mesin</span>
-                                <span class="text-standard fw-semibold text-end">Heidelberg GTO52</span>
-                            </div>
-                            <div class="mb-2 d-flex justify-content-between">
-                                <span class="text-standard">Warna Unit</span>
-                                <span class="text-standard fw-semibold text-end">4 Warna</span>
-                            </div>
-                            <div class="mb-2 d-flex justify-content-between">
-                                <span class="text-standard">Area Kertas</span>
-                                <span class="text-standard fw-semibold text-end">520 x 430 Milimeter</span>
-                            </div>
-                            <div class="mb-2 d-flex justify-content-between">
-                                <span class="text-standard">Lebar Jepitan</span>
-                                <span class="text-standard fw-semibold text-end">15 Milimeter</span>
-                            </div>
-                            <div class="mb-2 d-flex justify-content-between">
-                                <span class="text-standard">Maksimal GSM</span>
-                                <span class="text-standard fw-semibold text-end">310 gsm</span>
-                            </div>
-                            <div class="mb-2 d-flex justify-content-between">
-                                <span class="text-standard">Harga Plat</span>
-                                <span class="text-standard fw-semibold text-end">Rp60.000</span>
-                            </div>
-                            <div class="mb-2 d-flex justify-content-between">
-                                <span class="text-standard">Ketahanan Plat</span>
-                                <span class="text-standard fw-semibold text-end">20.000 Lembar</span>
-                            </div>
-                            <div class="mb-2 d-flex justify-content-between">
-                                <span class="text-standard">Insit Setelan</span>
-                                <span class="text-standard fw-semibold text-end">100 Lembar</span>
-                            </div>
-                            <div class="mb-2 d-flex justify-content-between">
-                                <span class="text-standard">Minimum QTY</span>
-                                <span class="text-standard fw-semibold text-end">1.000 Lembar</span>
-                            </div>
-                            <div class="mb-2 d-flex justify-content-between">
-                                <span class="text-standard">Harga Minimum</span>
-                                <span class="text-standard fw-semibold text-end">Rp240.000</span>
-                            </div>
-                            <div class="mb-2 d-flex justify-content-between">
-                                <span class="text-standard">Harga Druck</span>
-                                <span class="text-standard fw-semibold text-end">Rp60</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+		<!-- modal -->
+		<div class="modal modal fade" id="detailModal" tabindex="-1" aria-labelledby="detailModalLabel"
+			aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered">
+				<div class="modal-content rounded-4 pb-1">
+					<div class="modal-header">
+						<h5 class="modal-title" id="detailModalLabel">Detail</h5>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					</div>
+					<div class="modal-body" style="max-height: 80vh;overflow-y: auto;">
+						<div>
+							<div class="mb-4">
+								<span class="text-standard fw-semibold">Sumber : Percetakan Warna Grafika</span><br>
+								<span class="text-secondary text-standard">Jakarta Pusat, Jakarta</span><br>
+								<span class="text-secondary text-standard">Update : 20 Januari 2024</span>
+							</div>
+							<div class="mb-2 d-flex justify-content-between">
+								<span class="text-standard">Nama Mesin</span>
+								<span class="text-standard fw-semibold text-end">Heidelberg GTO52</span>
+							</div>
+							<div class="mb-2 d-flex justify-content-between">
+								<span class="text-standard">Warna Unit</span>
+								<span class="text-standard fw-semibold text-end">4 Warna</span>
+							</div>
+							<div class="mb-2 d-flex justify-content-between">
+								<span class="text-standard">Area Kertas</span>
+								<span class="text-standard fw-semibold text-end">520 x 430 Milimeter</span>
+							</div>
+							<div class="mb-2 d-flex justify-content-between">
+								<span class="text-standard">Lebar Jepitan</span>
+								<span class="text-standard fw-semibold text-end">15 Milimeter</span>
+							</div>
+							<div class="mb-2 d-flex justify-content-between">
+								<span class="text-standard">Maksimal GSM</span>
+								<span class="text-standard fw-semibold text-end">310 gsm</span>
+							</div>
+							<div class="mb-2 d-flex justify-content-between">
+								<span class="text-standard">Harga Plat</span>
+								<span class="text-standard fw-semibold text-end">Rp60.000</span>
+							</div>
+							<div class="mb-2 d-flex justify-content-between">
+								<span class="text-standard">Ketahanan Plat</span>
+								<span class="text-standard fw-semibold text-end">20.000 Lembar</span>
+							</div>
+							<div class="mb-2 d-flex justify-content-between">
+								<span class="text-standard">Insit Setelan</span>
+								<span class="text-standard fw-semibold text-end">100 Lembar</span>
+							</div>
+							<div class="mb-2 d-flex justify-content-between">
+								<span class="text-standard">Minimum QTY</span>
+								<span class="text-standard fw-semibold text-end">1.000 Lembar</span>
+							</div>
+							<div class="mb-2 d-flex justify-content-between">
+								<span class="text-standard">Harga Minimum</span>
+								<span class="text-standard fw-semibold text-end">Rp240.000</span>
+							</div>
+							<div class="mb-2 d-flex justify-content-between">
+								<span class="text-standard">Harga Druck</span>
+								<span class="text-standard fw-semibold text-end">Rp60</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 
 	</div>
 	<!-- /Main Wrapper -->
+	<!-- Modal: Warning / Ban / Freeze Percetakan -->
+	<div class="modal fade" id="edit-units" tabindex="-1" aria-labelledby="editUnitsLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="editUnitsLabel">Manage mesin cetak</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<form id="manage-cetak-form">
+					<div class="modal-body">
+						<p class="mb-3">Pilih tindakan yang akan dilakukan terhadap mesin cetak ini. Anda bisa mengirim
+							peringatan, mem-ban, atau membekukan sementara akun.</p>
+
+						<div class="mb-3">
+							<label for="action-type" class="form-label">Tindakan</label>
+							<select id="action-type" name="action_type" class="select" required>
+								<option value="warning">Peringatan</option>
+								<option value="ban">Ban Permanen</option>
+								<option value="freeze">Bekukan Sementara</option>
+							</select>
+						</div>
+
+						<div class="mb-3" id="freeze-days-group" style="display:none;">
+							<label for="freeze-days" class="form-label">Durasi Bekukan (hari)</label>
+							<input type="text" class="form-control number-separator" name="freeze_days" min="1"
+								placeholder="Masukkan jumlah hari">
+							<input type="hidden" class="result-input" id="freeze-days">
+						</div>
+
+						<div class="mb-3">
+							<label for="notify-users" class="form-label">Notifikasi</label>
+							<select id="notify-users" name="notify_users" class="select">
+								<option value="no">Jangan kirim notifikasi</option>
+								<option value="whatsapp">Kirim notifikasi ke WhatsApp</option>
+								<option value="email">Kirim notifikasi via Email</option>
+							</select>
+						</div>
+
+						<div class="mb-3">
+							<label for="message" class="form-label">Pesan</label>
+							<textarea id="message" name="message" class="form-control" rows="4"
+								placeholder="Tulis pesan/peringatan untuk percetakan..." required></textarea>
+						</div>
+
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+						<button type="submit" class="btn btn-primary">Kirim</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
 	<!-- jQuery -->
 	<script src="assets/js/jquery-3.7.1.min.js"></script>
 
@@ -473,6 +723,9 @@
 	<!-- Sweetalert 2 -->
 	<script src="assets/plugins/sweetalert/sweetalert2.all.min.js"></script>
 	<script src="assets/plugins/sweetalert/sweetalerts.min.js"></script>
+
+	<!-- Separator -->
+	<script src="assets/js/easy-number-separator.js"></script>
 
 	<!-- Custom JS -->
 	<script src="assets/js/theme-script.js"></script>

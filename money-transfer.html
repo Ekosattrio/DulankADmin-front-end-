@@ -151,8 +151,8 @@
 							</div> -->
 						</div>					
 						<!-- /Filter -->		
-						<div class="table-responsive product-list">
-							<table class="table  datanew list">
+						<div class="table-responsive">
+							<table class="table  datanew">
 								<thead>
 									<tr>
 										<th class="no-sort">
@@ -162,14 +162,15 @@
 											</label>
 										</th>
 										<th>Date</th>
-										<th>Reference Number</th>
-										<th>From Acount</th>
+										<th>Reference</th>
+										<th>From Account</th>
 										<th>To Account</th>
 										<th>Amount</th>
-										<th class="no-sort"></th>
+										<th>Description</th>
+										<th class="no-sort">Action</th>
 									</tr>
 								</thead>
-								<tbody>
+								<tbody class="Expense-list-blk">
 									<tr>
 										<td>
 											<label class="checkboxs">
@@ -177,16 +178,16 @@
 												<span class="checkmarks"></span>
 											</label>
 										</td>
-										<td>27 Jan 2023</td>
-										<td>#MT856</td>
-										<td class="str-value">2343547586900 </td>
-										<td class="str-value">1658179744894</td>
-										<td>370000</td>
+										<td>19 Jan 2023</td>
+										<td>TRF0001</td>
+										<td>Bank BCA - 123456789</td>
+										<td>Cash Account</td>
+										<td>1000000</td>
+										<td>Cash withdrawal for petty cash</td>
 										<td class="action-table-data">
 											<div class="edit-delete-action">
-
-												<a class="me-2 p-2" data-bs-toggle="modal"
-													data-bs-target="#edit-moneytf">
+												<a class="me-2 p-2" href="#" data-bs-toggle="modal"
+													data-bs-target="#edit-transfer">
 													<i data-feather="edit" class="feather-edit"></i>
 												</a>
 												<a class="confirm-text p-2" href="javascript:void(0);">
@@ -195,17 +196,232 @@
 											</div>
 										</td>
 									</tr>
-
+									<tr>
+										<td>
+											<label class="checkboxs">
+												<input type="checkbox">
+												<span class="checkmarks"></span>
+											</label>
+										</td>
+										<td>25 Jan 2023</td>
+										<td>TRF0002</td>
+										<td>E-Wallet Dana</td>
+										<td>Bank Mandiri - 987654321</td>
+										<td>500000</td>
+										<td>Top up dana operasional harian</td>
+										<td class="action-table-data">
+											<div class="edit-delete-action">
+												<a class="me-2 p-2" href="#" data-bs-toggle="modal"
+													data-bs-target="#edit-transfer">
+													<i data-feather="edit" class="feather-edit"></i>
+												</a>
+												<a class="confirm-text p-2" href="javascript:void(0);">
+													<i data-feather="trash-2" class="feather-trash-2"></i>
+												</a>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<label class="checkboxs">
+												<input type="checkbox">
+												<span class="checkmarks"></span>
+											</label>
+										</td>
+										<td>01 Feb 2023</td>
+										<td>TRF0003</td>
+										<td>Bank BCA - 123456789</td>
+										<td>Bank BNI - 555444333</td>
+										<td>2500000</td>
+										<td>Transfer untuk pembayaran sewa bulanan</td>
+										<td class="action-table-data">
+											<div class="edit-delete-action">
+												<a class="me-2 p-2" href="#" data-bs-toggle="modal"
+													data-bs-target="#edit-transfer">
+													<i data-feather="edit" class="feather-edit"></i>
+												</a>
+												<a class="confirm-text p-2" href="javascript:void(0);">
+													<i data-feather="trash-2" class="feather-trash-2"></i>
+												</a>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<label class="checkboxs">
+												<input type="checkbox">
+												<span class="checkmarks"></span>
+											</label>
+										</td>
+										<td>10 Feb 2023</td>
+										<td>TRF0004</td>
+										<td>Cash Account</td>
+										<td>Bank Mandiri - 987654321</td>
+										<td>800000</td>
+										<td>Setor tunai ke rekening utama</td>
+										<td class="action-table-data">
+											<div class="edit-delete-action">
+												<a class="me-2 p-2" href="#" data-bs-toggle="modal"
+													data-bs-target="#edit-transfer">
+													<i data-feather="edit" class="feather-edit"></i>
+												</a>
+												<a class="confirm-text p-2" href="javascript:void(0);">
+													<i data-feather="trash-2" class="feather-trash-2"></i>
+												</a>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<label class="checkboxs">
+												<input type="checkbox">
+												<span class="checkmarks"></span>
+											</label>
+										</td>
+										<td>15 Mar 2023</td>
+										<td>TRF0005</td>
+										<td>Bank BNI - 555444333</td>
+										<td>E-Wallet GoPay</td>
+										<td>350000</td>
+										<td>Transfer untuk pembelian alat kantor</td>
+										<td class="action-table-data">
+											<div class="edit-delete-action">
+												<a class="me-2 p-2" href="#" data-bs-toggle="modal"
+													data-bs-target="#edit-transfer">
+													<i data-feather="edit" class="feather-edit"></i>
+												</a>
+												<a class="confirm-text p-2" href="javascript:void(0);">
+													<i data-feather="trash-2" class="feather-trash-2"></i>
+												</a>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<label class="checkboxs">
+												<input type="checkbox">
+												<span class="checkmarks"></span>
+											</label>
+										</td>
+										<td>01 Apr 2023</td>
+										<td>TRF0006</td>
+										<td>Bank Mandiri - 987654321</td>
+										<td>Bank BCA - 123456789</td>
+										<td>5000000</td>
+										<td>Transfer modal kerja ke rekening operasional</td>
+										<td class="action-table-data">
+											<div class="edit-delete-action">
+												<a class="me-2 p-2" href="#" data-bs-toggle="modal"
+													data-bs-target="#edit-transfer">
+													<i data-feather="edit" class="feather-edit"></i>
+												</a>
+												<a class="confirm-text p-2" href="javascript:void(0);">
+													<i data-feather="trash-2" class="feather-trash-2"></i>
+												</a>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<label class="checkboxs">
+												<input type="checkbox">
+												<span class="checkmarks"></span>
+											</label>
+										</td>
+										<td>10 Apr 2023</td>
+										<td>TRF0007</td>
+										<td>E-Wallet GoPay</td>
+										<td>Cash Account</td>
+										<td>200000</td>
+										<td>Penarikan tunai dari GoPay</td>
+										<td class="action-table-data">
+											<div class="edit-delete-action">
+												<a class="me-2 p-2" href="#" data-bs-toggle="modal"
+													data-bs-target="#edit-transfer">
+													<i data-feather="edit" class="feather-edit"></i>
+												</a>
+												<a class="confirm-text p-2" href="javascript:void(0);">
+													<i data-feather="trash-2" class="feather-trash-2"></i>
+												</a>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<label class="checkboxs">
+												<input type="checkbox">
+												<span class="checkmarks"></span>
+											</label>
+										</td>
+										<td>15 May 2023</td>
+										<td>TRF0008</td>
+										<td>Cash Account</td>
+										<td>E-Wallet Dana</td>
+										<td>150000</td>
+										<td>Transfer untuk pembayaran biaya iklan online</td>
+										<td class="action-table-data">
+											<div class="edit-delete-action">
+												<a class="me-2 p-2" href="#" data-bs-toggle="modal"
+													data-bs-target="#edit-transfer">
+													<i data-feather="edit" class="feather-edit"></i>
+												</a>
+												<a class="confirm-text p-2" href="javascript:void(0);">
+													<i data-feather="trash-2" class="feather-trash-2"></i>
+												</a>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<label class="checkboxs">
+												<input type="checkbox">
+												<span class="checkmarks"></span>
+											</label>
+										</td>
+										<td>01 Jun 2023</td>
+										<td>TRF0009</td>
+										<td>Bank BCA - 123456789</td>
+										<td>Bank BNI - 555444333</td>
+										<td>1800000</td>
+										<td>Transfer untuk gaji karyawan (via BNI)</td>
+										<td class="action-table-data">
+											<div class="edit-delete-action">
+												<a class="me-2 p-2" href="#" data-bs-toggle="modal"
+													data-bs-target="#edit-transfer">
+													<i data-feather="edit" class="feather-edit"></i>
+												</a>
+												<a class="confirm-text p-2" href="javascript:void(0);">
+													<i data-feather="trash-2" class="feather-trash-2"></i>
+												</a>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<label class="checkboxs">
+												<input type="checkbox">
+												<span class="checkmarks"></span>
+											</label>
+										</td>
+										<td>10 Jun 2023</td>
+										<td>TRF0010</td>
+										<td>Bank Mandiri - 987654321</td>
+										<td>E-Wallet Dana</td>
+										<td>750000</td>
+										<td>Transfer ke E-Wallet untuk keperluan proyek</td>
+										<td class="action-table-data">
+											<div class="edit-delete-action">
+												<a class="me-2 p-2" href="#" data-bs-toggle="modal"
+													data-bs-target="#edit-transfer">
+													<i data-feather="edit" class="feather-edit"></i>
+												</a>
+												<a class="confirm-text p-2" href="javascript:void(0);">
+													<i data-feather="trash-2" class="feather-trash-2"></i>
+												</a>
+											</div>
+										</td>
+									</tr>
 								</tbody>
-								<tfoot>
-                                    <tr>
-                                        <td colspan="1"></td>
-                                        <td class="text-start fw-bold">Total</td>
-                                        <!-- gunakan class sum-target dan data-col-index agar reusable -->
-                                        <td colspan="3"></td>
-                                        <td id="amount-total" class="fw-bold sum-target" data-col-index="5">0</td>
-                                    </tr>
-                                </tfoot>
 							</table>
 						</div>
 
@@ -263,7 +479,8 @@
 									<div class="col-lg-12">
 										<div class="mb-3">
 											<label class="form-label">Amount<span> *</span></label>
-											<input type="text" class="form-control">
+											<input type="text" class="form-control number-separator" value="370000" inputmode="numeric" pattern="[0-9]*">
+											<input type="hidden" class="result-input" id="amount-edit" value="370000">
 										</div>
 									</div>
 								</div>
@@ -325,7 +542,8 @@
 									<div class="col-lg-12">
 										<div class="mb-3">
 											<label class="form-label">Amount<span> *</span></label>
-											<input type="text" class="form-control">
+											<input type="text" class="form-control number-separator" inputmode="numeric" pattern="[0-9]*">
+											<input type="hidden" class="result-input" id="amount">
 										</div>
 									</div>
 								</div>
@@ -373,6 +591,9 @@
 	<!-- Sweetalert 2 -->
 	<script src="assets/plugins/sweetalert/sweetalert2.all.min.js"></script>
 	<script src="assets/plugins/sweetalert/sweetalerts.min.js"></script>
+
+	<!-- Separator -->
+	<script src="assets/js/easy-number-separator.js"></script>
 
 	<!-- Custom JS -->
 	<script src="assets/js/theme-script.js"></script>

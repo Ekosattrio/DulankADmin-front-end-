@@ -11062,6 +11062,12 @@ table.dataTable thead > tr > th.no-sort.sorting::after {
   position: relative;
   margin-right: 15px;
 }
+@media (max-width: 991.98px) {
+  .search-set .search-input {
+    position: relative;
+    margin-right: 0px;
+  }
+}
 .search-set .search-input input[type=search] {
   height: 38px;
   border: 1px solid var(--Stroke, rgba(145, 158, 171, 0.3));
@@ -11072,6 +11078,9 @@ table.dataTable thead > tr > th.no-sort.sorting::after {
 }
 .search-set .search-input input[type=search]::placeholder {
   color: #000000;
+}
+.search-set .search-input input[type=search] {
+    width: 100% !important;
 }
 /* @media (max-width: 1199.98px) {
   .search-set .search-input input[type=search] {
@@ -32732,24 +32741,7 @@ label span {
 
 /* kalender range */
 /* ================== CONTAINER ================== */
-.pemilihrentang-container {
-  position: relative;
-  width: 260px;
-}
 
-@media (max-width: 576px) {
-  .pemilihrentang-container {
-    margin-left: -9px !important;
-  }
-}
-
-.pemilihrentang-input {
-  width: 100%;
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  cursor: pointer;
-}
 
 /* ================== PANEL ================== */
 .pemilihrentang-panel {
@@ -32766,6 +32758,14 @@ label span {
 
 .pemilihrentang-isi {
   display: flex;
+}
+
+.pemilihrentang-container{ position:relative; display:inline-block; width:100%; }
+.pemilihrentang-input{ cursor:pointer; }
+.pemilihrentang-panel.show{ display:block; }
+/* opsi: agar panel tidak memecah layout pada mobile */
+@media (max-width:576px){
+    .pemilihrentang-panel{ left:0; right:0; width:auto; }
 }
 
 /* ================== OPSI CEPAT ================== */
@@ -33201,4 +33201,13 @@ a.product-img img {
 .bg-indigo-transparent {
     background-color: rgba(75, 0, 130, 0.15);
     color: indigo;
+}
+.product-wrap .product-list .info span {
+  background-color: #FF9F43;
+  border-radius: 3px;
+  font-weight: 600;
+  color: #ffffff;
+  font-size: 14px;
+  padding: 0 10px;
+  display: inline-block;
 }

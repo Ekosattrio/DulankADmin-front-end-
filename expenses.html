@@ -102,8 +102,9 @@
 								<!-- Date Range -->
 								<div class="my-2">
 									<div class="pemilihrentang-container ">
-										<input type="text" id="pemilihrentang-input" class="pemilihrentang-input form-control"
-											readonly placeholder="Date" style="height: fit-content !important;width: 100% !important;">
+										<input type="text" id="pemilihrentang-input"
+											class="pemilihrentang-input form-control" readonly placeholder="Date"
+											style="height: fit-content !important;width: 100% !important;">
 										<div id="pemilihrentang-panel" class="pemilihrentang-panel">
 											<div class="pemilihrentang-isi">
 												<div class="opsi-cepat">
@@ -123,219 +124,385 @@
 							</div>
 							<div class="filters d-flex justify-content-end">
 								<div class="dropdown w-100 me-2">
-									<button class="btn btn-outline-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+									<button class="btn btn-outline-primary dropdown-toggle" type="button"
+										data-bs-toggle="dropdown" aria-expanded="false">
 										Status
 									</button>
 									<ul class="dropdown-menu">
-										<li><a class="dropdown-item" href="#">Approved</a></li>
-										<li><a class="dropdown-item" href="#">Pending</a></li>
+										<li><a class="dropdown-item" href="#">Paid</a></li>
+										<li><a class="dropdown-item" href="#">Unpaid</a></li>
+										<li><a class="dropdown-item" href="#">Cancelled</a></li>
 									</ul>
+								</div>
 							</div>
-						</div>					
-						<!-- /Filter -->		
-						<div class="table-responsive">
-							<table class="table  datanew">
-								<thead>
-									<tr>
-										<th class="no-sort">
-											<label class="checkboxs">
-												<input type="checkbox" id="select-all">
-												<span class="checkmarks"></span>
-											</label>
-										</th>
-										<th>Category name</th>
-										<th>Reference</th>
-										<th>Date</th>
-										<th>Status</th>
-										<th>Amount</th>
-										<th>Description</th>
-										<th class="no-sort">Action</th>
-									</tr>
-								</thead>
-								<tbody class="Expense-list-blk">
-									<tr>
-										<td>
-											<label class="checkboxs">
-												<input type="checkbox">
-												<span class="checkmarks"></span>
-											</label>
-										</td>
-										<td>Employee Benefits</td>
-										<td>PT001</td>
-										<td>19 Jan 2023</td>
-										<td><span class="badge bg-outline-success">Aproved</span></td>
-										<td>550000</td>
-										<td>Employee Vehicle</td>
-										<td class="action-table-data">
-											<div class="edit-delete-action">
-												<a class="me-2 p-2 mb-0" href="javascript:void(0);">
-													<i data-feather="eye" class="action-eye"></i>
-												</a>
-												<a class="me-2 p-2 mb-0" data-bs-toggle="modal"
-													data-bs-target="#edit-units">
-													<i data-feather="edit" class="feather-edit"></i>
-												</a>
-												<a class="me-3 confirm-text p-2 mb-0" href="javascript:void(0);">
-													<i data-feather="trash-2" class="feather-trash-2"></i>
-												</a>
-											</div>
-										</td>
-									</tr>
-									<tr>
-										<td>
-											<label class="checkboxs">
-												<input type="checkbox">
-												<span class="checkmarks"></span>
-											</label>
-										</td>
-										<td>Foods & Snacks</td>
-										<td>PT002</td>
-										<td>27 Jan 2023</td>
-										<td><span class="badge  bg-outline-danger">Pending</span></td>
-										<td>570000</td>
-										<td>Employee Foods</td>
-										<td class="action-table-data">
-											<div class="edit-delete-action">
-												<a class="me-2 p-2 mb-0" href="javascript:void(0);">
-													<i data-feather="eye" class="action-eye"></i>
-												</a>
-												<a class="me-2 p-2 mb-0" data-bs-toggle="modal"
-													data-bs-target="#edit-units">
-													<i data-feather="edit" class="feather-edit"></i>
-												</a>
-												<a class="me-3 confirm-text p-2 mb-0" href="javascript:void(0);">
-													<i data-feather="trash-2" class="feather-trash-2"></i>
-												</a>
-											</div>
-										</td>
-									</tr>
-
-								</tbody>
-								<tfoot>
-                                    <tr>
-                                        <td colspan="1"></td>
-                                        <td class="text-start fw-bold">Total</td>
-                                        <!-- gunakan class sum-target dan data-col-index agar reusable -->
-                                        <td colspan="3"></td>
-                                        <td id="amount-total" class="fw-bold sum-target" data-col-index="5">0</td>
-                                    </tr>
-                                </tfoot>
-							</table>
+							<!-- /Filter -->
+							<div class="table-responsive">
+								<table class="table  datanew">
+									<thead>
+										<tr>
+											<th class="no-sort">
+												<label class="checkboxs">
+													<input type="checkbox" id="select-all">
+													<span class="checkmarks"></span>
+												</label>
+											</th>
+											<th>Category Expense</th>
+											<th>Reference</th>
+											<th>Date</th>
+											<th>Status</th>
+											<th>Amount</th>
+											<th>Paid</th>
+											<th>Due Paid</th>
+											<th>Description</th>
+											<th class="no-sort">Action</th>
+										</tr>
+									</thead>
+									<tbody class="Expense-list-blk">
+										<tr>
+											<td>
+												<label class="checkboxs">
+													<input type="checkbox">
+													<span class="checkmarks"></span>
+												</label>
+											</td>
+											<td>Office Supplies</td>
+											<td>PT001</td>
+											<td>19 Jan 2023</td>
+											<td><span class="badge bg-outline-success">Paid</span></td>
+											<td>550000</td>
+											<td>550000</td>
+											<td>0</td>
+											<td>A4 Paper & Ink Cartridges</td>
+											<td class="action-table-data">
+												<div class="edit-delete-action">
+													<a class="me-2 p-2 mb-0" href="javascript:void(0);">
+														<i data-feather="eye" class="action-eye"></i>
+													</a>
+													<a class="me-2 p-2 mb-0" data-bs-toggle="modal"
+														data-bs-target="#edit-units">
+														<i data-feather="edit" class="feather-edit"></i>
+													</a>
+													<a class="me-3 confirm-text p-2 mb-0" href="javascript:void(0);">
+														<i data-feather="trash-2" class="feather-trash-2"></i>
+													</a>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<label class="checkboxs">
+													<input type="checkbox">
+													<span class="checkmarks"></span>
+												</label>
+											</td>
+											<td>Marketing</td>
+											<td>PT002</td>
+											<td>27 Jan 2023</td>
+											<td><span class="badge  bg-outline-danger">Cancelled</span></td>
+											<td>5700000</td>
+											<td>0</td>
+											<td>5700000</td>
+											<td>Social Media Campaign Fee</td>
+											<td class="action-table-data">
+												<div class="edit-delete-action">
+													<a class="me-2 p-2 mb-0" href="javascript:void(0);">
+														<i data-feather="eye" class="action-eye"></i>
+													</a>
+													<a class="me-2 p-2 mb-0" data-bs-toggle="modal"
+														data-bs-target="#edit-units">
+														<i data-feather="edit" class="feather-edit"></i>
+													</a>
+													<a class="me-3 confirm-text p-2 mb-0" href="javascript:void(0);">
+														<i data-feather="trash-2" class="feather-trash-2"></i>
+													</a>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<label class="checkboxs">
+													<input type="checkbox">
+													<span class="checkmarks"></span>
+												</label>
+											</td>
+											<td>Employee Benefits</td>
+											<td>PT003</td>
+											<td>05 Feb 2023</td>
+											<td><span class="badge  bg-outline-warning">Unpaid</span></td>
+											<td>1200000</td>
+											<td>500000</td>
+											<td>700000</td>
+											<td>Team Lunch</td>
+											<td class="action-table-data">
+												<div class="edit-delete-action">
+													<a class="me-2 p-2 mb-0" href="javascript:void(0);">
+														<i data-feather="eye" class="action-eye"></i>
+													</a>
+													<a class="me-2 p-2 mb-0" data-bs-toggle="modal"
+														data-bs-target="#edit-units">
+														<i data-feather="edit" class="feather-edit"></i>
+													</a>
+													<a class="me-3 confirm-text p-2 mb-0" href="javascript:void(0);">
+														<i data-feather="trash-2" class="feather-trash-2"></i>
+													</a>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<label class="checkboxs">
+													<input type="checkbox">
+													<span class="checkmarks"></span>
+												</label>
+											</td>
+											<td>Rent</td>
+											<td>PT004</td>
+											<td>15 Feb 2023</td>
+											<td><span class="badge bg-outline-success">Paid</span></td>
+											<td>15000000</td>
+											<td>15000000</td>
+											<td>0</td>
+											<td>Office Space Rental (Feb)</td>
+											<td class="action-table-data">
+												<div class="edit-delete-action">
+													<a class="me-2 p-2 mb-0" href="javascript:void(0);">
+														<i data-feather="eye" class="action-eye"></i>
+													</a>
+													<a class="me-2 p-2 mb-0" data-bs-toggle="modal"
+														data-bs-target="#edit-units">
+														<i data-feather="edit" class="feather-edit"></i>
+													</a>
+													<a class="me-3 confirm-text p-2 mb-0" href="javascript:void(0);">
+														<i data-feather="trash-2" class="feather-trash-2"></i>
+													</a>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<label class="checkboxs">
+													<input type="checkbox">
+													<span class="checkmarks"></span>
+												</label>
+											</td>
+											<td>Utilities</td>
+											<td>PT005</td>
+											<td>01 Mar 2023</td>
+											<td><span class="badge bg-outline-success">Paid</span></td>
+											<td>850000</td>
+											<td>850000</td>
+											<td>0</td>
+											<td>Electricity & Water Bill</td>
+											<td class="action-table-data">
+												<div class="edit-delete-action">
+													<a class="me-2 p-2 mb-0" href="javascript:void(0);">
+														<i data-feather="eye" class="action-eye"></i>
+													</a>
+													<a class="me-2 p-2 mb-0" data-bs-toggle="modal"
+														data-bs-target="#edit-units">
+														<i data-feather="edit" class="feather-edit"></i>
+													</a>
+													<a class="me-3 confirm-text p-2 mb-0" href="javascript:void(0);">
+														<i data-feather="trash-2" class="feather-trash-2"></i>
+													</a>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<label class="checkboxs">
+													<input type="checkbox">
+													<span class="checkmarks"></span>
+												</label>
+											</td>
+											<td>Maintenance</td>
+											<td>PT006</td>
+											<td>10 Mar 2023</td>
+											<td><span class="badge  bg-outline-warning">Unpaid</span></td>
+											<td>3500000</td>
+											<td>0</td>
+											<td>3500000</td>
+											<td>Server Repair</td>
+											<td class="action-table-data">
+												<div class="edit-delete-action">
+													<a class="me-2 p-2 mb-0" href="javascript:void(0);">
+														<i data-feather="eye" class="action-eye"></i>
+													</a>
+													<a class="me-2 p-2 mb-0" data-bs-toggle="modal"
+														data-bs-target="#edit-units">
+														<i data-feather="edit" class="feather-edit"></i>
+													</a>
+													<a class="me-3 confirm-text p-2 mb-0" href="javascript:void(0);">
+														<i data-feather="trash-2" class="feather-trash-2"></i>
+													</a>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<label class="checkboxs">
+													<input type="checkbox">
+													<span class="checkmarks"></span>
+												</label>
+											</td>
+											<td>Travel</td>
+											<td>PT007</td>
+											<td>20 Mar 2023</td>
+											<td><span class="badge bg-outline-success">Paid</span></td>
+											<td>2200000</td>
+											<td>2200000</td>
+											<td>0</td>
+											<td>Business Trip to Bandung</td>
+											<td class="action-table-data">
+												<div class="edit-delete-action">
+													<a class="me-2 p-2 mb-0" href="javascript:void(0);">
+														<i data-feather="eye" class="action-eye"></i>
+													</a>
+													<a class="me-2 p-2 mb-0" data-bs-toggle="modal"
+														data-bs-target="#edit-units">
+														<i data-feather="edit" class="feather-edit"></i>
+													</a>
+													<a class="me-3 confirm-text p-2 mb-0" href="javascript:void(0);">
+														<i data-feather="trash-2" class="feather-trash-2"></i>
+													</a>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<label class="checkboxs">
+													<input type="checkbox">
+													<span class="checkmarks"></span>
+												</label>
+											</td>
+											<td>Software Subscription</td>
+											<td>PT008</td>
+											<td>01 Apr 2023</td>
+											<td><span class="badge bg-outline-success">Paid</span></td>
+											<td>750000</td>
+											<td>750000</td>
+											<td>0</td>
+											<td>Design Tool Annual Fee</td>
+											<td class="action-table-data">
+												<div class="edit-delete-action">
+													<a class="me-2 p-2 mb-0" href="javascript:void(0);">
+														<i data-feather="eye" class="action-eye"></i>
+													</a>
+													<a class="me-2 p-2 mb-0" data-bs-toggle="modal"
+														data-bs-target="#edit-units">
+														<i data-feather="edit" class="feather-edit"></i>
+													</a>
+													<a class="me-3 confirm-text p-2 mb-0" href="javascript:void(0);">
+														<i data-feather="trash-2" class="feather-trash-2"></i>
+													</a>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<label class="checkboxs">
+													<input type="checkbox">
+													<span class="checkmarks"></span>
+												</label>
+											</td>
+											<td>Consulting Fees</td>
+											<td>PT009</td>
+											<td>15 Apr 2023</td>
+											<td><span class="badge  bg-outline-warning">Unpaid</span></td>
+											<td>4000000</td>
+											<td>2000000</td>
+											<td>2000000</td>
+											<td>Legal Consultation</td>
+											<td class="action-table-data">
+												<div class="edit-delete-action">
+													<a class="me-2 p-2 mb-0" href="javascript:void(0);">
+														<i data-feather="eye" class="action-eye"></i>
+													</a>
+													<a class="me-2 p-2 mb-0" data-bs-toggle="modal"
+														data-bs-target="#edit-units">
+														<i data-feather="edit" class="feather-edit"></i>
+													</a>
+													<a class="me-3 confirm-text p-2 mb-0" href="javascript:void(0);">
+														<i data-feather="trash-2" class="feather-trash-2"></i>
+													</a>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<label class="checkboxs">
+													<input type="checkbox">
+													<span class="checkmarks"></span>
+												</label>
+											</td>
+											<td>Advertising</td>
+											<td>PT010</td>
+											<td>25 Apr 2023</td>
+											<td><span class="badge bg-outline-success">Paid</span></td>
+											<td>1500000</td>
+											<td>1500000</td>
+											<td>0</td>
+											<td>Local Newspaper Ad</td>
+											<td class="action-table-data">
+												<div class="edit-delete-action">
+													<a class="me-2 p-2 mb-0" href="javascript:void(0);">
+														<i data-feather="eye" class="action-eye"></i>
+													</a>
+													<a class="me-2 p-2 mb-0" data-bs-toggle="modal"
+														data-bs-target="#edit-units">
+														<i data-feather="edit" class="feather-edit"></i>
+													</a>
+													<a class="me-3 confirm-text p-2 mb-0" href="javascript:void(0);">
+														<i data-feather="trash-2" class="feather-trash-2"></i>
+													</a>
+												</div>
+											</td>
+										</tr>
+									</tbody>
+									<tfoot>
+										<tr>
+											<td colspan="1"></td>
+											<td class="text-start fw-bold">Total</td>
+											<td colspan="3"></td>
+											<td id="amount-total" class="fw-bold sum-target" data-col-index="5">0</td>
+											<td id="amount-total" class="fw-bold sum-target" data-col-index="6">0</td>
+											<td id="amount-total" class="fw-bold sum-target" data-col-index="7">0</td>
+										</tr>
+									</tfoot>
+								</table>
+							</div>
 						</div>
 					</div>
-				</div>
-				<!-- /product list -->
-			</div>
-		</div>
-
-	</div>
-	<!-- /Main Wrapper -->
-	<!-- modals -->
-	<!-- Add Expense -->
-	<div class="modal fade" id="add-units">
-		<div class="modal-dialog modal-dialog-centered custom-modal-two">
-			<div class="modal-content">
-				<div class="page-wrapper-new p-0">
-					<div class="content">
-						<div class="modal-header border-0 custom-modal-header">
-							<div class="page-title">
-								<h4>Add Expense</h4>
-							</div>
-							<button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-								<span aria-hidden="true">&times;</span>
-							</button>
-						</div>
-						<div class="modal-body custom-modal-body">
-							<div class="row">
-								<div class="col-lg-6">
-									<div class="mb-3">
-										<label class="form-label">Expense Category</label>
-										<select class="select">
-											<option>Choose</option>
-											<option>Foods & Snacks</option>
-											<option>Employee Benefits</option>
-										</select>
-									</div>
-								</div>
-								<div class="col-lg-6">
-									<div class="input-blocks date-group">
-										<i data-feather="calendar" class="info-img"></i>
-										<div class="input-groupicon">
-											<input type="text" class="datetimepicker" placeholder="Choose Date">
-										</div>
-									</div>
-								</div>
-								<div class="col-lg-6">
-									<div class="mb-3">
-										<label class="form-label">Amount</label>
-										<input type="text" class="form-control" placeholder="$">
-									</div>
-								</div>
-								<div class="col-lg-6">
-									<div class="mb-3">
-										<label class="form-label">Reference</label>
-										<input type="text" class="form-control">
-									</div>
-								</div>
-								<div class="col-lg-12">
-									<div class="mb-3">
-										<label class="form-label">Expense For</label>
-										<input type="text" class="form-control">
-										<span class="unlimited-text">0 for Unlimited</span>
-									</div>
-
-								</div>
-								<!-- Editor -->
-								<div class="col-md-12">
-									<div class="edit-add card">
-										<div class="edit-add">
-											<label class="form-label">Description</label>
-										</div>
-										<div class="card-body-list input-blocks mb-0">
-											<textarea class="form-control"></textarea>
-										</div>
-										<p>Maximum 600 Characters</p>
-									</div>
-								</div>
-								<!-- /Editor -->
-							</div>
-							<div class="modal-footer-btn">
-								<a href="javascript:void(0);" class="btn btn-cancel me-2"
-									data-bs-dismiss="modal">Cancel</a>
-								<a href="expense-list.html" class="btn btn-submit">Submit</a>
-							</div>
-						</div>
-					</div>
+					<!-- /product list -->
 				</div>
 			</div>
-		</div>
-	</div>
-	<!-- /Add Expense -->
 
-	<!-- Edit Expense -->
-	<div class="modal fade" id="edit-units">
-		<div class="modal-dialog modal-dialog-centered custom-modal-two">
-			<div class="modal-content">
-				<div class="page-wrapper-new p-0">
-					<div class="content">
-						<div class="modal-header border-0 custom-modal-header">
-							<div class="page-title">
-								<h4>Edit Expense</h4>
+		</div>
+		<!-- /Main Wrapper -->
+		<!-- modals -->
+		<!-- Add Expense -->
+		<div class="modal fade" id="add-units">
+			<div class="modal-dialog modal-dialog-centered custom-modal-two">
+				<div class="modal-content">
+					<div class="page-wrapper-new p-0">
+						<div class="content">
+							<div class="modal-header border-0 custom-modal-header">
+								<div class="page-title">
+									<h4>Add Expense</h4>
+								</div>
+								<button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
 							</div>
-							<button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-								<span aria-hidden="true">&times;</span>
-							</button>
-						</div>
-						<div class="modal-body custom-modal-body">
-							<form action="expense-list.html">
+							<div class="modal-body custom-modal-body">
 								<div class="row">
 									<div class="col-lg-6">
 										<div class="mb-3">
 											<label class="form-label">Expense Category</label>
 											<select class="select">
-												<option>Employee Benefits</option>
+												<option>Choose</option>
 												<option>Foods & Snacks</option>
-												<option>Entertainment</option>
+												<option>Employee Benefits</option>
 											</select>
 										</div>
 									</div>
@@ -343,30 +510,41 @@
 										<div class="input-blocks date-group">
 											<i data-feather="calendar" class="info-img"></i>
 											<div class="input-groupicon">
-												<input type="text" class="datetimepicker ps-5"
-													placeholder="19 Jan 2023">
+												<input type="text" class="datetimepicker" placeholder="Choose Date">
 											</div>
 										</div>
 									</div>
 									<div class="col-lg-6">
 										<div class="mb-3">
 											<label class="form-label">Amount</label>
-											<input type="text" class="form-control" value="$550.00">
+											<input type="text" class="form-control number-separator" inputmode="numeric" pattern="[0-9]*">
+											<input type="hidden" class="result-input" id="amount">
 										</div>
 									</div>
 									<div class="col-lg-6">
 										<div class="mb-3">
-											<label class="form-label">Reference</label>
-											<input type="text" class="form-control" value="55544">
+											<label class="form-label">Paid</label>
+											<input type="text" class="form-control number-separator" inputmode="numeric" pattern="[0-9]*">
+											<input type="hidden" class="result-input" id="paid">
 										</div>
 									</div>
-									<div class="col-lg-12">
-										<div class="mb-3 input-blocks">
-											<label class="form-label">Expense For</label>
-											<input type="text" class="form-control">
-											<span class="unlimited-text">0 for Unlimited</span>
+									<div class="col-lg-6">
+										<div class="mb-3">
+											<label class="form-label">Due</label>
+											<input type="text" class="form-control number-separator" inputmode="numeric" pattern="[0-9]*">
+											<input type="hidden" class="result-input" id="due">
 										</div>
-
+									</div>
+									<div class="col-lg-6">
+										<div class="mb-3">
+											<div class="input-blocks align-items-center">
+												<label class="form-label">Reference</label>
+												<input type="text" class="form-control">
+												<span class="btn btn-primaryadd">
+													Generate
+												</span>
+											</div>
+										</div>
 									</div>
 									<!-- Editor -->
 									<div class="col-md-12">
@@ -375,7 +553,7 @@
 												<label class="form-label">Description</label>
 											</div>
 											<div class="card-body-list input-blocks mb-0">
-												<textarea class="form-control">Employee Vehicle</textarea>
+												<textarea class="form-control"></textarea>
 											</div>
 											<p>Maximum 600 Characters</p>
 										</div>
@@ -383,49 +561,142 @@
 									<!-- /Editor -->
 								</div>
 								<div class="modal-footer-btn">
-									<button type="button" class="btn btn-cancel me-2"
-										data-bs-dismiss="modal">Cancel</button>
-									<button type="submit" class="btn btn-submit">Save Changes</button>
+									<a href="javascript:void(0);" class="btn btn-cancel me-2"
+										data-bs-dismiss="modal">Cancel</a>
+									<a href="expense-list.html" class="btn btn-submit">Submit</a>
 								</div>
-							</form>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-	<!-- /Edit Expense -->
-	<!-- /modals -->
-	<!-- jQuery -->
-	<script src="assets/js/jquery-3.7.1.min.js"></script>
+		<!-- /Add Expense -->
 
-	<!-- Feather Icon JS -->
-	<script src="assets/js/feather.min.js"></script>
+		<!-- Edit Expense -->
+		<div class="modal fade" id="edit-units">
+			<div class="modal-dialog modal-dialog-centered custom-modal-two">
+				<div class="modal-content">
+					<div class="page-wrapper-new p-0">
+						<div class="content">
+							<div class="modal-header border-0 custom-modal-header">
+								<div class="page-title">
+									<h4>Edit Expense</h4>
+								</div>
+								<button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+							</div>
+							<div class="modal-body custom-modal-body">
+								<form action="expense-list.html">
+									<div class="row">
+										<div class="col-lg-6">
+											<div class="mb-3">
+												<label class="form-label">Expense Category</label>
+												<select class="select">
+													<option>Employee Benefits</option>
+													<option>Foods & Snacks</option>
+													<option>Entertainment</option>
+												</select>
+											</div>
+										</div>
+										<div class="col-lg-6">
+											<div class="input-blocks date-group">
+												<i data-feather="calendar" class="info-img"></i>
+												<div class="input-groupicon">
+													<input type="text" class="datetimepicker ps-5"
+														placeholder="19 Jan 2023">
+												</div>
+											</div>
+										</div>
+										<div class="col-lg-6">
+											<div class="mb-3">
+												<label class="form-label">Amount</label>
+												<input type="text" class="form-control number-separator" inputmode="numeric" pattern="[0-9]*" value="550000">
+												<input type="hidden" class="result-input" id="amount-edit" value="550000">
+											</div>
+										</div>
+										<div class="col-lg-6">
+											<div class="mb-3">
+												<label class="form-label">Paid</label>
+												<input type="text" class="form-control number-separator" inputmode="numeric" pattern="[0-9]*" value="550000">
+												<input type="hidden" class="result-input" id="paid-edit" value="550000">
+											</div>
+										</div>
+										<div class="col-lg-6">
+											<div class="mb-3">
+												<label class="form-label">Due</label>
+												<input type="text" class="form-control number-separator" inputmode="numeric" pattern="[0-9]*" value="550000">
+												<input type="hidden" class="result-input" id="due-edit" value="550000">
+											</div>
+										</div>
+										<div class="col-lg-6">
+											<div class="mb-3">
+												<label class="form-label">Reference</label>
+												<input type="text" class="form-control" value="55544">
+											</div>
+										</div>
+										<!-- Editor -->
+										<div class="col-md-12">
+											<div class="edit-add card">
+												<div class="edit-add">
+													<label class="form-label">Description</label>
+												</div>
+												<div class="card-body-list input-blocks mb-0">
+													<textarea class="form-control">Employee Vehicle</textarea>
+												</div>
+												<p>Maximum 600 Characters</p>
+											</div>
+										</div>
+										<!-- /Editor -->
+									</div>
+									<div class="modal-footer-btn">
+										<button type="button" class="btn btn-cancel me-2"
+											data-bs-dismiss="modal">Cancel</button>
+										<button type="submit" class="btn btn-submit">Save Changes</button>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- /Edit Expense -->
+		<!-- /modals -->
+		<!-- jQuery -->
+		<script src="assets/js/jquery-3.7.1.min.js"></script>
 
-	<!-- Slimscroll JS -->
-	<script src="assets/js/jquery.slimscroll.min.js"></script>
+		<!-- Feather Icon JS -->
+		<script src="assets/js/feather.min.js"></script>
 
-	<!-- Datatable JS -->
-	<script src="assets/js/jquery.dataTables.min.js"></script>
-	<script src="assets/js/dataTables.bootstrap5.min.js"></script>
+		<!-- Slimscroll JS -->
+		<script src="assets/js/jquery.slimscroll.min.js"></script>
 
-	<!-- Datetimepicker JS -->
-	<script src="assets/js/moment.min.js"></script>
-	<script src="assets/js/bootstrap-datetimepicker.min.js"></script>
+		<!-- Datatable JS -->
+		<script src="assets/js/jquery.dataTables.min.js"></script>
+		<script src="assets/js/dataTables.bootstrap5.min.js"></script>
 
-	<!-- Bootstrap Core JS -->
-	<script src="assets/js/bootstrap.bundle.min.js"></script>
+		<!-- Datetimepicker JS -->
+		<script src="assets/js/moment.min.js"></script>
+		<script src="assets/js/bootstrap-datetimepicker.min.js"></script>
 
-	<!-- Select2 JS -->
-	<script src="assets/plugins/select2/js/select2.min.js"></script>
+		<!-- Bootstrap Core JS -->
+		<script src="assets/js/bootstrap.bundle.min.js"></script>
 
-	<!-- Sweetalert 2 -->
-	<script src="assets/plugins/sweetalert/sweetalert2.all.min.js"></script>
-	<script src="assets/plugins/sweetalert/sweetalerts.min.js"></script>
+		<!-- Select2 JS -->
+		<script src="assets/plugins/select2/js/select2.min.js"></script>
 
-	<!-- Custom JS -->
-	<script src="assets/js/theme-script.js"></script>
-	<script src="assets/js/script.js"></script>
+		<!-- Sweetalert 2 -->
+		<script src="assets/plugins/sweetalert/sweetalert2.all.min.js"></script>
+		<script src="assets/plugins/sweetalert/sweetalerts.min.js"></script>
+
+		<!-- Separator -->
+		<script src="assets/js/easy-number-separator.js"></script>
+
+		<!-- Custom JS -->
+		<script src="assets/js/theme-script.js"></script>
+		<script src="assets/js/script.js"></script>
 
 
 </body>

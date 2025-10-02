@@ -138,49 +138,50 @@
                 <div class="card table-list-card">
                     <div class="card-body">
                         <!-- Filter -->
-						<div class="table-top d-flex align-items-center justify-content-between">
-							<!-- Search Input -->
-							<div class="search-set d-block d-md-flex">
-								<div class="search-input">
-									<a href="" class="btn btn-searchset"><i data-feather="search"
-											class="feather-search"></i></a>
-								</div>
-								<!-- Date Range -->
-								<div class="my-2">
-									<div class="pemilihrentang-container ">
-										<input type="text" id="pemilihrentang-input" class="pemilihrentang-input form-control"
-											readonly placeholder="Date" style="height: fit-content !important;width: 100% !important;">
-										<div id="pemilihrentang-panel" class="pemilihrentang-panel">
-											<div class="pemilihrentang-isi">
-												<div class="opsi-cepat">
-													<div data-range="kemarin">Kemarin</div>
-													<div data-range="7hari">7 Hari Terakhir</div>
-													<div data-range="bulanIni">Bulan Ini</div>
-													<div data-range="bulanLalu">Bulan Lalu</div>
-													<div data-range="tahunLalu">Tahun Lalu</div>
-													<div data-range="kustom">Rentang Kustom</div>
-												</div>
-												<div class="kalender" id="kalender-view" style="display:none;">
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="filters d-flex justify-content-end">
-								<div class="dropdown w-100 me-2">
-									<button class="btn btn-outline-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-										Status
-									</button>
-									<ul class="dropdown-menu">
-										<li><a class="dropdown-item" href="#">Active</a></li>
-										<li><a class="dropdown-item" href="#">Deactive</a></li>
-									</ul>
-								</div>
-							</div>
-						</div>					
-						<!-- /Filter -->	
-                        <!-- Tabel 3: Ukuran Kertas -->
+                        <div class="table-top d-flex align-items-center justify-content-between">
+                            <!-- Search Input -->
+                            <div class="search-set d-block d-md-flex">
+                                <div class="search-input">
+                                    <a href="" class="btn btn-searchset"><i data-feather="search"
+                                            class="feather-search"></i></a>
+                                </div>
+                                <!-- Date Range -->
+                                <div class="my-2">
+                                    <div class="pemilihrentang-container ">
+                                        <input type="text" id="pemilihrentang-input"
+                                            class="pemilihrentang-input form-control" readonly placeholder="Date"
+                                            style="height: fit-content !important;width: 100% !important;">
+                                        <div id="pemilihrentang-panel" class="pemilihrentang-panel">
+                                            <div class="pemilihrentang-isi">
+                                                <div class="opsi-cepat">
+                                                    <div data-range="kemarin">Kemarin</div>
+                                                    <div data-range="7hari">7 Hari Terakhir</div>
+                                                    <div data-range="bulanIni">Bulan Ini</div>
+                                                    <div data-range="bulanLalu">Bulan Lalu</div>
+                                                    <div data-range="tahunLalu">Tahun Lalu</div>
+                                                    <div data-range="kustom">Rentang Kustom</div>
+                                                </div>
+                                                <div class="kalender" id="kalender-view" style="display:none;">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="filters d-flex justify-content-end">
+                                <div class="dropdown w-100 me-2">
+                                    <button class="btn btn-outline-primary dropdown-toggle" type="button"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                        Status
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">Active</a></li>
+                                        <li><a class="dropdown-item" href="#">Deactive</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /Filter -->
                         <div class="table-responsive mb-4">
                             <table class="table datanew">
                                 <thead>
@@ -197,6 +198,7 @@
                                         <th>Satuan</th>
                                         <th>Update</th>
                                         <th>Status</th>
+                                        <th class="no-sort">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -209,16 +211,22 @@
                                                     <img src="assets/img/users/user-23.jpg" alt="percetakan">
                                                 </a>
                                                 <div>
-                                                    <a href="javascript:void(0);">Percetakan Grafika</a>
-                                                    <span class="d-block">Jakarta Pusat, Jakarta</span>
+                                                    <a href="javascript:void(0);">Percetakan Cepat</a>
+                                                    <span class="d-block">Surabaya, Jawa Timur</span>
                                                 </div>
                                             </div>
                                         </td>
                                         <td>A4</td>
-                                        <td>30x21</td>
+                                        <td>21x29.7</td>
                                         <td>cm</td>
-                                        <td>8/19/2025 15:35</td>
+                                        <td>9/16/2025 09:00</td>
                                         <td><span class="badge bg-info">Active</span></td>
+                                        <td class="action-table-data">
+                                            <div class="edit-delete-action">
+                                                <a class="me-2 p-2" href="#" data-bs-toggle="modal"
+                                                    data-bs-target="#edit-units"><i data-feather="edit"></i></a>
+                                            </div>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td><label class="checkboxs"><input type="checkbox"><span
@@ -229,16 +237,22 @@
                                                     <img src="assets/img/users/user-23.jpg" alt="percetakan">
                                                 </a>
                                                 <div>
-                                                    <a href="javascript:void(0);">Percetakan Grafika</a>
-                                                    <span class="d-block">Jakarta Pusat, Jakarta</span>
+                                                    <a href="javascript:void(0);">Media Jaya Printing</a>
+                                                    <span class="d-block">Bandung, Jawa Barat</span>
                                                 </div>
                                             </div>
                                         </td>
-                                        <td>Plano</td>
+                                        <td>Plano Besar 1</td>
                                         <td>65x90</td>
                                         <td>cm</td>
-                                        <td>8/20/2025 15:35</td>
+                                        <td>9/16/2025 10:30</td>
                                         <td><span class="badge bg-info">Active</span></td>
+                                        <td class="action-table-data">
+                                            <div class="edit-delete-action">
+                                                <a class="me-2 p-2" href="#" data-bs-toggle="modal"
+                                                    data-bs-target="#edit-units"><i data-feather="edit"></i></a>
+                                            </div>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td><label class="checkboxs"><input type="checkbox"><span
@@ -249,36 +263,22 @@
                                                     <img src="assets/img/users/user-23.jpg" alt="percetakan">
                                                 </a>
                                                 <div>
-                                                    <a href="javascript:void(0);">Percetakan Grafika</a>
+                                                    <a href="javascript:void(0);">Percetakan Utama</a>
                                                     <span class="d-block">Jakarta Pusat, Jakarta</span>
                                                 </div>
                                             </div>
                                         </td>
-                                        <td>Plano</td>
-                                        <td>65x100</td>
-                                        <td>cm</td>
-                                        <td>8/21/2025 15:35</td>
-                                        <td><span class="badge bg-info">Active</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td><label class="checkboxs"><input type="checkbox"><span
-                                                    class="checkmarks"></span></label></td>
-                                        <td>
-                                            <div class="userimgname cust-imgname">
-                                                <a href="javascript:void(0);" class="product-img">
-                                                    <img src="assets/img/users/user-23.jpg" alt="percetakan">
-                                                </a>
-                                                <div>
-                                                    <a href="javascript:void(0);">Percetakan Grafika</a>
-                                                    <span class="d-block">Jakarta Pusat, Jakarta</span>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td>Plano</td>
+                                        <td>Plano Besar 2</td>
                                         <td>79x109</td>
                                         <td>cm</td>
-                                        <td>8/22/2025 15:35</td>
-                                        <td><span class="badge bg-outline-info">Deactive</span></td>
+                                        <td>9/17/2025 14:00</td>
+                                        <td><span class="badge bg-info">Active</span></td>
+                                        <td class="action-table-data">
+                                            <div class="edit-delete-action">
+                                                <a class="me-2 p-2" href="#" data-bs-toggle="modal"
+                                                    data-bs-target="#edit-units"><i data-feather="edit"></i></a>
+                                            </div>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td><label class="checkboxs"><input type="checkbox"><span
@@ -289,16 +289,178 @@
                                                     <img src="assets/img/users/user-23.jpg" alt="percetakan">
                                                 </a>
                                                 <div>
-                                                    <a href="javascript:void(0);">Percetakan Grafika</a>
-                                                    <span class="d-block">Jakarta Pusat, Jakarta</span>
+                                                    <a href="javascript:void(0);">Digital Print Express</a>
+                                                    <span class="d-block">Yogyakarta, DI Yogyakarta</span>
                                                 </div>
                                             </div>
                                         </td>
-                                        <td>Plano</td>
-                                        <td>90x120</td>
+                                        <td>A3+</td>
+                                        <td>32x48</td>
                                         <td>cm</td>
-                                        <td>8/23/2025 15:35</td>
+                                        <td>9/17/2025 16:45</td>
+                                        <td><span class="badge bg-info">Active</span></td>
+                                        <td class="action-table-data">
+                                            <div class="edit-delete-action">
+                                                <a class="me-2 p-2" href="#" data-bs-toggle="modal"
+                                                    data-bs-target="#edit-units"><i data-feather="edit"></i></a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><label class="checkboxs"><input type="checkbox"><span
+                                                    class="checkmarks"></span></label></td>
+                                        <td>
+                                            <div class="userimgname cust-imgname">
+                                                <a href="javascript:void(0);" class="product-img">
+                                                    <img src="assets/img/users/user-23.jpg" alt="percetakan">
+                                                </a>
+                                                <div>
+                                                    <a href="javascript:void(0);">Toko Kertas Murah</a>
+                                                    <span class="d-block">Semarang, Jawa Tengah</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>F4/Folio</td>
+                                        <td>21.5x33</td>
+                                        <td>cm</td>
+                                        <td>9/18/2025 11:10</td>
+                                        <td><span class="badge bg-info">Active</span></td>
+                                        <td class="action-table-data">
+                                            <div class="edit-delete-action">
+                                                <a class="me-2 p-2" href="#" data-bs-toggle="modal"
+                                                    data-bs-target="#edit-units"><i data-feather="edit"></i></a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><label class="checkboxs"><input type="checkbox"><span
+                                                    class="checkmarks"></span></label></td>
+                                        <td>
+                                            <div class="userimgname cust-imgname">
+                                                <a href="javascript:void(0);" class="product-img">
+                                                    <img src="assets/img/users/user-23.jpg" alt="percetakan">
+                                                </a>
+                                                <div>
+                                                    <a href="javascript:void(0);">Grafindo Sentosa</a>
+                                                    <span class="d-block">Medan, Sumatera Utara</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>A3</td>
+                                        <td>29.7x42</td>
+                                        <td>cm</td>
+                                        <td>9/18/2025 15:00</td>
                                         <td><span class="badge bg-outline-info">Deactive</span></td>
+                                        <td class="action-table-data">
+                                            <div class="edit-delete-action">
+                                                <a class="me-2 p-2" href="#" data-bs-toggle="modal"
+                                                    data-bs-target="#edit-units"><i data-feather="edit"></i></a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><label class="checkboxs"><input type="checkbox"><span
+                                                    class="checkmarks"></span></label></td>
+                                        <td>
+                                            <div class="userimgname cust-imgname">
+                                                <a href="javascript:void(0);" class="product-img">
+                                                    <img src="assets/img/users/user-23.jpg" alt="percetakan">
+                                                </a>
+                                                <div>
+                                                    <a href="javascript:void(0);">Pusat Kertas</a>
+                                                    <span class="d-block">Makassar, Sulawesi Selatan</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>Plano Sedang</td>
+                                        <td>70x100</td>
+                                        <td>cm</td>
+                                        <td>9/19/2025 08:30</td>
+                                        <td><span class="badge bg-info">Active</span></td>
+                                        <td class="action-table-data">
+                                            <div class="edit-delete-action">
+                                                <a class="me-2 p-2" href="#" data-bs-toggle="modal"
+                                                    data-bs-target="#edit-units"><i data-feather="edit"></i></a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><label class="checkboxs"><input type="checkbox"><span
+                                                    class="checkmarks"></span></label></td>
+                                        <td>
+                                            <div class="userimgname cust-imgname">
+                                                <a href="javascript:void(0);" class="product-img">
+                                                    <img src="assets/img/users/user-23.jpg" alt="percetakan">
+                                                </a>
+                                                <div>
+                                                    <a href="javascript:void(0);">Mitra Percetakan</a>
+                                                    <span class="d-block">Palembang, Sumatera Selatan</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>B5</td>
+                                        <td>17.6x25</td>
+                                        <td>cm</td>
+                                        <td>9/19/2025 13:20</td>
+                                        <td><span class="badge bg-info">Active</span></td>
+                                        <td class="action-table-data">
+                                            <div class="edit-delete-action">
+                                                <a class="me-2 p-2" href="#" data-bs-toggle="modal"
+                                                    data-bs-target="#edit-units"><i data-feather="edit"></i></a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><label class="checkboxs"><input type="checkbox"><span
+                                                    class="checkmarks"></span></label></td>
+                                        <td>
+                                            <div class="userimgname cust-imgname">
+                                                <a href="javascript:void(0);" class="product-img">
+                                                    <img src="assets/img/users/user-23.jpg" alt="percetakan">
+                                                </a>
+                                                <div>
+                                                    <a href="javascript:void(0);">Percetakan Unggul</a>
+                                                    <span class="d-block">Denpasar, Bali</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>Legal</td>
+                                        <td>21.5x35.6</td>
+                                        <td>cm</td>
+                                        <td>9/20/2025 10:00</td>
+                                        <td><span class="badge bg-info">Active</span></td>
+                                        <td class="action-table-data">
+                                            <div class="edit-delete-action">
+                                                <a class="me-2 p-2" href="#" data-bs-toggle="modal"
+                                                    data-bs-target="#edit-units"><i data-feather="edit"></i></a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><label class="checkboxs"><input type="checkbox"><span
+                                                    class="checkmarks"></span></label></td>
+                                        <td>
+                                            <div class="userimgname cust-imgname">
+                                                <a href="javascript:void(0);" class="product-img">
+                                                    <img src="assets/img/users/user-23.jpg" alt="percetakan">
+                                                </a>
+                                                <div>
+                                                    <a href="javascript:void(0);">Gudang Kertas</a>
+                                                    <span class="d-block">Jakarta Barat, Jakarta</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>A5</td>
+                                        <td>14.8x21</td>
+                                        <td>cm</td>
+                                        <td>9/20/2025 12:50</td>
+                                        <td><span class="badge bg-outline-info">Deactive</span></td>
+                                        <td class="action-table-data">
+                                            <div class="edit-delete-action">
+                                                <a class="me-2 p-2" href="#" data-bs-toggle="modal"
+                                                    data-bs-target="#edit-units"><i data-feather="edit"></i></a>
+                                            </div>
+                                        </td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -311,6 +473,59 @@
 
     </div>
     <!-- /Main Wrapper -->
+    <!-- Modal: Warning / Ban / Freeze Percetakan -->
+    <div class="modal fade" id="edit-units" tabindex="-1" aria-labelledby="editUnitsLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editUnitsLabel">Manage ukuran</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form id="manage-ukuran-form">
+                    <div class="modal-body">
+                        <p class="mb-3">Pilih tindakan yang akan dilakukan terhadap ukuran ini. Anda bisa mengirim
+                            peringatan, mem-ban, atau membekukan sementara akun.</p>
+
+                        <div class="mb-3">
+                            <label for="action-type" class="form-label">Tindakan</label>
+                            <select id="action-type" name="action_type" class="select" required>
+                                <option value="warning">Peringatan</option>
+                                <option value="ban">Ban Permanen</option>
+                                <option value="freeze">Bekukan Sementara</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3" id="freeze-days-group" style="display:none;">
+                            <label for="freeze-days" class="form-label">Durasi Bekukan (hari)</label>
+                            <input type="text" class="form-control number-separator" name="freeze_days" min="1"
+                                placeholder="Masukkan jumlah hari">
+                            <input type="hidden" class="result-input" id="freeze-days">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="notify-users" class="form-label">Notifikasi</label>
+                            <select id="notify-users" name="notify_users" class="select">
+                                <option value="no">Jangan kirim notifikasi</option>
+                                <option value="whatsapp">Kirim notifikasi ke WhatsApp</option>
+                                <option value="email">Kirim notifikasi via Email</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Pesan</label>
+                            <textarea id="message" name="message" class="form-control" rows="4"
+                                placeholder="Tulis pesan/peringatan untuk percetakan..." required></textarea>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                        <button type="submit" class="btn btn-primary">Kirim</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
     <!-- jQuery -->
     <script src="assets/js/jquery-3.7.1.min.js"></script>
 
@@ -340,6 +555,9 @@
     <!-- Sweetalert 2 -->
     <script src="assets/plugins/sweetalert/sweetalert2.all.min.js"></script>
     <script src="assets/plugins/sweetalert/sweetalerts.min.js"></script>
+
+    <!-- Separator -->
+    <script src="assets/js/easy-number-separator.js"></script>
 
     <!-- Custom JS -->
     <script src="assets/js/theme-script.js"></script>

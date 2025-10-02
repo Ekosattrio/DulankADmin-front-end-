@@ -2478,7 +2478,7 @@ $(function () {
 		return new Intl.NumberFormat('id-ID').format(num);
 	}
 
-	
+
 
 	function updateSums() {
 		$('table').each(function () {
@@ -2537,19 +2537,19 @@ $(function () {
 	window.updateTableSums = updateSums;
 
 	// ------------ tambahan: format angka di <td> (thousand dot) kecuali td.str-value ------------
-	(function(){
-		function looksNumeric(s){
-			if(s === undefined || s === null) return false;
+	(function () {
+		function looksNumeric(s) {
+			if (s === undefined || s === null) return false;
 			s = String(s).trim();
 			return /^[\d\.\,\s\-]+$/.test(s);
 		}
-		function formatTdCell($td){
-			if(!$td || $td.hasClass('str-value')) return;
+		function formatTdCell($td) {
+			if (!$td || $td.hasClass('str-value')) return;
 			// skip cells with interactive content
-			if($td.find('input, select, button, a, i, svg').length) return;
+			if ($td.find('input, select, button, a, i, svg').length) return;
 			var raw = $td.data('raw-number');
-			if(raw === undefined) raw = $td.text().trim();
-			if(!looksNumeric(raw)) {
+			if (raw === undefined) raw = $td.text().trim();
+			if (!looksNumeric(raw)) {
 				$td.data('raw-number', raw);
 				return;
 			}
@@ -2559,42 +2559,89 @@ $(function () {
 			$td.text(formatted);
 			$td.data('raw-number', raw);
 		}
-		function formatTdNumbers(root){
+		function formatTdNumbers(root) {
 			root = root || document;
-			$(root).find('td').not('.str-value').each(function(){
+			$(root).find('td').not('.str-value').each(function () {
 				formatTdCell($(this));
 			});
 		}
 
 		// initial format
-		$(function(){ formatTdNumbers(); });
+		$(function () { formatTdNumbers(); });
 
 		// format after DataTable redraw for each table
 		if ($.fn.dataTable) {
-			$('table').each(function(){
+			$('table').each(function () {
 				var $t = $(this);
-				if ($.fn.dataTable.isDataTable($t)){
-					$t.DataTable().on('draw.dt', function(){ formatTdNumbers($t[0]); });
+				if ($.fn.dataTable.isDataTable($t)) {
+					$t.DataTable().on('draw.dt', function () { formatTdNumbers($t[0]); });
 				}
 			});
 		}
 
 		// observe DOM additions (new rows)
-		var mo = new MutationObserver(function(muts){
-			muts.forEach(function(m){
-				if(!m.addedNodes) return;
-				m.addedNodes.forEach(function(n){
-					if(n.nodeType !== 1) return;
-					if(n.matches && n.matches('td, tr, tbody, table')) formatTdNumbers(n);
-					else if(n.querySelector && n.querySelector('td')) formatTdNumbers(n);
+		var mo = new MutationObserver(function (muts) {
+			muts.forEach(function (m) {
+				if (!m.addedNodes) return;
+				m.addedNodes.forEach(function (n) {
+					if (n.nodeType !== 1) return;
+					if (n.matches && n.matches('td, tr, tbody, table')) formatTdNumbers(n);
+					else if (n.querySelector && n.querySelector('td')) formatTdNumbers(n);
 				});
 			});
 		});
-		mo.observe(document.body, { childList:true, subtree:true });
+		mo.observe(document.body, { childList: true, subtree: true });
 
 		// expose helper
 		window.formatTdNumbers = formatTdNumbers;
 	})();
 	// ------------------------------------------------------------------------------------------
-});       
+});
 
+document.querySelectorAll('.number-separator').forEach(input => {
+	input.addEventListener("keypress", function (event) {
+		if (event.key === ".") {
+			let old_val = input.value
+			input.value = old_val + ","
+		}
+	});
+	input.addEventListener('input', function () {
+		const originalValue = input.value;
+
+		// delete zero first
+		let cleanedValue = originalValue.replace(/^[0]*/, "");
+		// delete comma first
+		cleanedValue = cleanedValue.replace(/^[,]*/, "");
+		// Keep only letters and numbers
+		cleanedValue = cleanedValue.replace(/[^0-9\s.,]/g, '');
+		// delete comma for quantity input
+		if (input.classList.contains('quantity-input') || input.classList.contains('price-input')) {
+			cleanedValue = cleanedValue.replace(/,/g, '');
+		}
+
+
+		// Update the input field
+		input.value = cleanedValue;
+	});
+});
+
+const input_number = document.querySelectorAll('.number-separator');
+input_number.forEach(input => {
+	easyNumberSeparator({
+		selector: input,
+		separator: '.',
+		decimalSeparator: ',',
+		resultInput: input.parentElement.querySelector('.result-input'),
+	})
+})
+// Toggle freeze days input based on action type
+$(document).ready(function () {
+	$('#action-type').select2();
+	$('#action-type').on('change', function () {
+		var val = this.value;
+		var freezeGroup = document.getElementById('freeze-days-group');
+		if (val === 'freeze') freezeGroup.style.display = '';
+		else freezeGroup.style.display = 'none';
+		// Perform other actions based on the selection
+	});
+});

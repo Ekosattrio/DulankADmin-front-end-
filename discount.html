@@ -153,6 +153,7 @@
                     <th>Validity</th>
                     <th>Days</th>
                     <th>Products</th>
+                    <th>Used</th>
                     <th>Status</th>
                     <th class="no-sort"></th>
                   </tr>
@@ -171,7 +172,8 @@
                     <td>22 May 2025 - 24 Jun 2025</td>
                     <td>Sat, Sun</td>
                     <td>All Products</td>
-                    <td><span class="badge table-badge bg-success fw-medium fs-10">• Active</span></td>
+                    <td>7</td>
+                    <td><span class="badge table-badge bg-success fw-medium fs-10">Active</span></td>
                     <td class="action-table-data">
                       <div class="edit-delete-action">
                         <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#edit-discount">
@@ -196,7 +198,8 @@
                     <td>16 Apr 2025 - 16 May 2025</td>
                     <td>Mon, Tue, Thu, Fri</td>
                     <td>Specific Products</td>
-                    <td><span class="badge table-badge bg-success fw-medium fs-10">• Active</span></td>
+                    <td>7</td>
+                    <td><span class="badge table-badge bg-success fw-medium fs-10">Active</span></td>
                     <td class="action-table-data">
                       <div class="edit-delete-action">
                         <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#edit-discount">
@@ -221,6 +224,7 @@
                     <td>20 Mar 2025 - 20 Apr 2025</td>
                     <td>Thu, Fri, Sat, Sun</td>
                     <td>All Products</td>
+                    <td>7</td>
                     <td><span class="badge table-badge bg-success fw-medium fs-10">Active</span></td>
                     <td class="action-table-data">
                       <div class="edit-delete-action">
@@ -246,7 +250,8 @@
                     <td>15 Feb 2025 - 15 Apr 2025</td>
                     <td>Mon, Tue, Wed</td>
                     <td>All Products</td>
-                    <td><span class="badge table-badge bg-success fw-medium fs-10">• Active</span></td>
+                    <td>7</td>
+                    <td><span class="badge table-badge bg-success fw-medium fs-10">Active</span></td>
                     <td class="action-table-data">
                       <div class="edit-delete-action">
                         <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#edit-discount">
@@ -271,7 +276,8 @@
                     <td>24 Jan 2025 - 24 Mar 2025</td>
                     <td>Mon, Tue, Thu, Sat</td>
                     <td>Specific Products</td>
-                    <td><span class="badge table-badge bg-success fw-medium fs-10">• Active</span></td>
+                    <td>7</td>
+                    <td><span class="badge table-badge bg-success fw-medium fs-10">Active</span></td>
                     <td class="action-table-data">
                       <div class="edit-delete-action">
                         <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#edit-discount">
@@ -340,7 +346,6 @@
                   <label class="form-label">Valid From <span class="text-danger">*</span></label>
 
                   <div class="input-groupicon calender-input">
-                    <i data-feather="calendar" class="info-img"></i>
                     <input type="text" class="datetimepicker form-control p-2" placeholder="dd/mm/yyyy">
                   </div>
                 </div>
@@ -350,7 +355,6 @@
                   <label class="form-label">Valid Till <span class="text-danger">*</span></label>
 
                   <div class="input-groupicon calender-input">
-                    <i data-feather="calendar" class="info-img"></i>
                     <input type="text" class="datetimepicker form-control p-2" placeholder="dd/mm/yyyy">
                   </div>
                 </div>
@@ -414,6 +418,14 @@
                   </div>
                 </div>
               </div>
+              <div class="mb-0 mt-3">
+                <div
+                  class="status-toggle modal-status d-flex justify-content-start align-items-center">
+                  <span class="status-label me-2">Status</span>
+                  <input type="checkbox" id="user2" class="check" checked="">
+                  <label for="user2" class="checktoggle"></label>
+                </div>
+              </div>
             </div>
           </div>
           <div class="modal-footer">
@@ -473,7 +485,7 @@
 										<label class="form-label">Valid From  <span class="text-danger">*</span></label>
 
 										<div class="input-groupicon calender-input">
-											<i data-feather="calendar" class="info-img"></i>
+
 											<input type="text" class="datetimepicker form-control p-2" placeholder="dd/mm/yyyy">
 										</div>
 									</div>
@@ -483,7 +495,7 @@
 										<label class="form-label">Valid Till  <span class="text-danger">*</span></label>
 
 										<div class="input-groupicon calender-input">
-											<i data-feather="calendar" class="info-img"></i>
+
 											<input type="text" class="datetimepicker form-control p-2" placeholder="dd/mm/yyyy">
 										</div>
 									</div>
@@ -547,6 +559,14 @@
 										</div>
 									</div>
 								</div>
+                <div class="mb-0 mt-3">
+                <div
+                  class="status-toggle modal-status d-flex justify-content-start align-items-center">
+                  <span class="status-label me-2">Status</span>
+                  <input type="checkbox" id="user2" class="check" checked="">
+                  <label for="user2" class="checktoggle"></label>
+                </div>
+              </div>
 							</div>
 						</div>
 						<div class="modal-footer">

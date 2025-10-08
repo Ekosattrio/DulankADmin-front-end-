@@ -106,8 +106,9 @@
 								<!-- Date Range -->
 								<div class="my-2">
 									<div class="pemilihrentang-container ">
-										<input type="text" id="pemilihrentang-input" class="pemilihrentang-input form-control"
-											readonly placeholder="Date" style="height: fit-content !important;width: 100% !important;">
+										<input type="text" id="pemilihrentang-input"
+											class="pemilihrentang-input form-control" readonly placeholder="Date"
+											style="height: fit-content !important;width: 100% !important;">
 										<div id="pemilihrentang-panel" class="pemilihrentang-panel">
 											<div class="pemilihrentang-isi">
 												<div class="opsi-cepat">
@@ -127,7 +128,8 @@
 							</div>
 							<div class="filters d-flex justify-content-end">
 								<div class="dropdown w-100 me-2">
-									<button class="btn btn-outline-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+									<button class="btn btn-outline-primary dropdown-toggle" type="button"
+										data-bs-toggle="dropdown" aria-expanded="false">
 										Status
 									</button>
 									<ul class="dropdown-menu">
@@ -136,8 +138,8 @@
 									</ul>
 								</div>
 							</div>
-						</div>					
-						<!-- /Filter -->		
+						</div>
+						<!-- /Filter -->
 						<div class="table-responsive">
 							<table class="table  datanew">
 								<thead>
@@ -401,8 +403,48 @@
 									</div>
 									<div class="col-lg-12 pe-0">
 										<div class="mb-3">
-											<label class="form-label">Adress</label>
-											<input type="text" class="form-control">
+											<label class="form-label">Address</label>
+											<div class="alamat-container position-relative">
+												<div
+													class="input-group position-relative d-inline-flex align-items-center">
+													<input
+														class="form-control form-control-lg text-standard alamat-input"
+														placeholder="Provinsi, Kota, Kecamatan">
+													<span
+														class="clear-address d-none position-absolute bg-secondary text-white rounded-circle d-flex align-items-center"
+														style="width: 18px;height: 18px;font-size: 8px;right: 10px;cursor: pointer;z-index: 100;">
+														<i class="bi bi-x-lg m-auto"></i>
+													</span>
+													<span class="search-icon position-absolute"
+														style="width: 16px;height: 16px;font-size: 12px;right: 10px;z-index: 99;">
+														<i class="bi bi-search"></i>
+													</span>
+												</div>
+
+												<div class="alamat-dropdown-wrapper"
+													style="display:none; position:absolute; width:100%; background:#fff; box-shadow:0 2px 8px rgba(0,0,0,0.08); border-radius:8px;">
+													<ul class="nav nav-tabs alamat-tabs">
+														<li class="nav-item"><button
+																class="btn text-standard active tab-provinsi"
+																type="button">Provinsi</button></li>
+														<li class="nav-item"><button class="btn text-standard tab-kota"
+																type="button">Kota</button></li>
+														<li class="nav-item"><button
+																class="btn text-standard tab-kecamatan"
+																type="button">Kecamatan</button></li>
+													</ul>
+													<div class="tab-content p-2 alamatTabContent">
+														<ul class="list-unstyled mb-0 provinsi-list"></ul>
+														<ul class="list-unstyled mb-0 kota-list" style="display:none;">
+														</ul>
+														<ul class="list-unstyled mb-0 kecamatan-list"
+															style="display:none;"></ul>
+													</div>
+													<div class="alamat-search-result p-2" style="display:none;">
+														<ul class="list-unstyled mb-0 alamat-search-list"></ul>
+													</div>
+												</div>
+											</div>
 										</div>
 									</div>
 									<div class="mb-0">
@@ -501,7 +543,47 @@
 									<div class="col-lg-12 pe-0">
 										<div class="mb-3">
 											<label class="form-label">Address</label>
-											<input type="text" id="address" class="form-control" value="">
+											<div class="alamat-container position-relative">
+												<div
+													class="input-group position-relative d-inline-flex align-items-center">
+													<input
+														class="form-control form-control-lg text-standard alamat-input"
+														placeholder="Provinsi, Kota, Kecamatan">
+													<span
+														class="clear-address d-none position-absolute bg-secondary text-white rounded-circle d-flex align-items-center"
+														style="width: 18px;height: 18px;font-size: 8px;right: 10px;cursor: pointer;z-index: 100;">
+														<i class="bi bi-x-lg m-auto"></i>
+													</span>
+													<span class="search-icon position-absolute"
+														style="width: 16px;height: 16px;font-size: 12px;right: 10px;z-index: 99;">
+														<i class="bi bi-search"></i>
+													</span>
+												</div>
+
+												<div class="alamat-dropdown-wrapper"
+													style="display:none; position:absolute; width:100%; background:#fff; box-shadow:0 2px 8px rgba(0,0,0,0.08); border-radius:8px;">
+													<ul class="nav nav-tabs alamat-tabs">
+														<li class="nav-item"><button
+																class="btn text-standard active tab-provinsi"
+																type="button">Provinsi</button></li>
+														<li class="nav-item"><button class="btn text-standard tab-kota"
+																type="button">Kota</button></li>
+														<li class="nav-item"><button
+																class="btn text-standard tab-kecamatan"
+																type="button">Kecamatan</button></li>
+													</ul>
+													<div class="tab-content p-2 alamatTabContent">
+														<ul class="list-unstyled mb-0 provinsi-list"></ul>
+														<ul class="list-unstyled mb-0 kota-list" style="display:none;">
+														</ul>
+														<ul class="list-unstyled mb-0 kecamatan-list"
+															style="display:none;"></ul>
+													</div>
+													<div class="alamat-search-result p-2" style="display:none;">
+														<ul class="list-unstyled mb-0 alamat-search-list"></ul>
+													</div>
+												</div>
+											</div>
 										</div>
 									</div>
 									<div class="mb-0">
@@ -559,6 +641,9 @@
 	<!-- Sweetalert 2 -->
 	<script src="assets/plugins/sweetalert/sweetalert2.all.min.js"></script>
 	<script src="assets/plugins/sweetalert/sweetalerts.min.js"></script>
+
+	<!-- Address Input -->
+	<script src="assets/js/address-input.js"></script>
 
 	<!-- Custom JS -->
 	<script src="assets/js/theme-script.js"></script>

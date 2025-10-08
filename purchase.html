@@ -113,8 +113,9 @@
 								<!-- Date Range -->
 								<div class="my-2">
 									<div class="pemilihrentang-container ">
-										<input type="text" id="pemilihrentang-input" class="pemilihrentang-input form-control"
-											readonly placeholder="Date" style="height: fit-content !important;width: 100% !important;">
+										<input type="text" id="pemilihrentang-input"
+											class="pemilihrentang-input form-control" readonly placeholder="Date"
+											style="height: fit-content !important;width: 100% !important;">
 										<div id="pemilihrentang-panel" class="pemilihrentang-panel">
 											<div class="pemilihrentang-isi">
 												<div class="opsi-cepat">
@@ -134,7 +135,8 @@
 							</div>
 							<div class="filters d-flex justify-content-end">
 								<div class="dropdown w-100 me-2">
-									<button class="btn btn-outline-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+									<button class="btn btn-outline-primary dropdown-toggle" type="button"
+										data-bs-toggle="dropdown" aria-expanded="false">
 										Status
 									</button>
 									<ul class="dropdown-menu">
@@ -145,7 +147,8 @@
 									</ul>
 								</div>
 								<div class="dropdown w-100 me-2">
-									<button class="btn btn-outline-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+									<button class="btn btn-outline-primary dropdown-toggle" type="button"
+										data-bs-toggle="dropdown" aria-expanded="false">
 										Payment Status
 									</button>
 									<ul class="dropdown-menu">
@@ -154,8 +157,8 @@
 									</ul>
 								</div>
 							</div>
-						</div>					
-						<!-- /Filter -->		
+						</div>
+						<!-- /Filter -->
 						<div class="table-responsive product-list">
 							<table class="table  datanew list">
 								<thead>
@@ -492,15 +495,15 @@
 									</tr>
 								</tbody>
 								<tfoot>
-                                    <tr>
-                                        <td colspan="1"></td>
-                                        <td class="text-start fw-bold">Total</td>
-                                        <td colspan="4"></td>
-                                        <td id="amount-total" class="fw-bold sum-target" data-col-index="6">0</td>
-                                        <td id="amount-total" class="fw-bold sum-target" data-col-index="7">0</td>
-                                        <td id="amount-total" class="fw-bold sum-target" data-col-index="8">0</td>
-                                    </tr>
-                                </tfoot>
+									<tr>
+										<td colspan="1"></td>
+										<td class="text-start fw-bold">Total</td>
+										<td colspan="4"></td>
+										<td id="amount-total" class="fw-bold sum-target" data-col-index="6">0</td>
+										<td id="amount-total" class="fw-bold sum-target" data-col-index="7">0</td>
+										<td id="amount-total" class="fw-bold sum-target" data-col-index="8">0</td>
+									</tr>
+								</tfoot>
 							</table>
 						</div>
 
@@ -533,21 +536,10 @@
 									<div class="col-lg-3 col-md-6 col-sm-12">
 										<div class="input-blocks add-product">
 											<label>Supplier Name</label>
-											<div class="row">
-												<div class="col-lg-10 col-sm-10 col-10">
-													<select class="select">
-														<option>Select Customer</option>
-														<option>Apex Computers</option>
-														<option>Dazzle Shoes</option>
-														<option>Best Accessories</option>
-													</select>
-												</div>
-												<div class="col-lg-2 col-sm-2 col-2 ps-0">
-													<div class="add-icon tab">
-														<a href="javascript:void(0);"><i data-feather="plus-circle"
-																class="feather-plus-circles"></i></a>
-													</div>
-												</div>
+											<div class="search-container">
+												<input type="text" class="form-control customer-input"
+													placeholder="Search Supplier">
+												<div class="search-results"></div>
 											</div>
 										</div>
 									</div>
@@ -583,21 +575,24 @@
 									<div class="col-lg-3 col-md-6 col-sm-12">
 										<div class="input-blocks">
 											<label>Amount</label>
-											<input type="text" class="form-control number-separator" inputmode="numeric" pattern="[0-9]*">
+											<input type="text" class="form-control number-separator" inputmode="numeric"
+												pattern="[0-9]*">
 											<input type="hidden" class="result-input" id="amount">
 										</div>
 									</div>
 									<div class="col-lg-3 col-md-6 col-sm-12">
 										<div class="input-blocks">
 											<label>Paid</label>
-											<input type="text" class="form-control number-separator" inputmode="numeric" pattern="[0-9]*">
+											<input type="text" class="form-control number-separator" inputmode="numeric"
+												pattern="[0-9]*">
 											<input type="hidden" class="result-input" id="paid">
 										</div>
 									</div>
 									<div class="col-lg-3 col-md-6 col-sm-12">
 										<div class="input-blocks">
 											<label>Due</label>
-											<input type="text" class="form-control number-separator" inputmode="numeric" pattern="[0-9]*">
+											<input type="text" class="form-control number-separator" inputmode="numeric"
+												pattern="[0-9]*">
 											<input type="hidden" class="result-input" id="due">
 										</div>
 									</div>
@@ -620,7 +615,7 @@
 										<div id="summernote"></div>
 									</div>
 								</div>
-								
+
 								<div class="col-lg-12">
 									<div class="modal-footer-btn">
 										<button type="button" class="btn btn-cancel me-2"
@@ -657,21 +652,10 @@
 									<div class="col-lg-3 col-md-6 col-sm-12">
 										<div class="input-blocks add-product">
 											<label>Supplier Name</label>
-											<div class="row">
-												<div class="col-lg-10 col-sm-10 col-10">
-													<select class="select">
-														<option selected>Select Customer</option>
-														<option>Apex Computers</option>
-														<option>Dazzle Shoes</option>
-														<option>Best Accessories</option>
-													</select>
-												</div>
-												<div class="col-lg-2 col-sm-2 col-2 ps-0">
-													<div class="add-icon tab">
-														<a href="javascript:void(0);"><i data-feather="plus-circle"
-																class="feather-plus-circles"></i></a>
-													</div>
-												</div>
+											<div class="search-container">
+												<input type="text" class="form-control customer-input"
+													placeholder="Search Supplier">
+												<div class="search-results"></div>
 											</div>
 										</div>
 									</div>
@@ -681,7 +665,8 @@
 
 											<div class="input-groupicon calender-input">
 												<i data-feather="calendar" class="info-img"></i>
-												<input type="text" class="datetimepicker" placeholder="Choose" value="01-10-2025">
+												<input type="text" class="datetimepicker" placeholder="Choose"
+													value="01-10-2025">
 											</div>
 										</div>
 									</div>
@@ -707,21 +692,24 @@
 									<div class="col-lg-3 col-md-6 col-sm-12">
 										<div class="input-blocks">
 											<label>Amount</label>
-											<input type="text" value="370000" class="form-control number-separator" inputmode="numeric" pattern="[0-9]*">
+											<input type="text" value="370000" class="form-control number-separator"
+												inputmode="numeric" pattern="[0-9]*">
 											<input type="hidden" class="result-input" id="amount-edit" value="370000">
 										</div>
 									</div>
 									<div class="col-lg-3 col-md-6 col-sm-12">
 										<div class="input-blocks">
 											<label>Paid</label>
-											<input type="text" value="370000" class="form-control number-separator" inputmode="numeric" pattern="[0-9]*">
+											<input type="text" value="370000" class="form-control number-separator"
+												inputmode="numeric" pattern="[0-9]*">
 											<input type="hidden" class="result-input" id="paid-edit" value="370000">
 										</div>
 									</div>
 									<div class="col-lg-3 col-md-6 col-sm-12">
 										<div class="input-blocks">
 											<label>Due</label>
-											<input type="text" value="" class="form-control number-separator" inputmode="numeric" pattern="[0-9]*">
+											<input type="text" value="" class="form-control number-separator"
+												inputmode="numeric" pattern="[0-9]*">
 											<input type="hidden" class="result-input" id="due-edit" value="0">
 										</div>
 									</div>
@@ -746,7 +734,7 @@
 										</div>
 									</div>
 								</div>
-								
+
 								<div class="col-lg-12">
 									<div class="modal-footer-btn">
 										<button type="button" class="btn btn-cancel me-2"
@@ -909,6 +897,9 @@
 
 	<!-- Separator -->
 	<script src="assets/js/easy-number-separator.js"></script>
+
+	<!-- Live Search -->
+	<script src="assets/js/liveSearch.js"></script>
 
 	<!-- Custom JS -->
 	<script src="assets/js/theme-script.js"></script>

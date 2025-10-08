@@ -527,21 +527,10 @@
 									<div class="col-lg-3 col-md-6 col-sm-12">
 										<div class="input-blocks add-product">
 											<label>Supplier Name</label>
-											<div class="row">
-												<div class="col-lg-10 col-sm-10 col-10">
-													<select class="select">
-														<option>Select Customer</option>
-														<option>Apex Computers</option>
-														<option>Dazzle Shoes</option>
-														<option>Best Accessories</option>
-													</select>
-												</div>
-												<div class="col-lg-2 col-sm-2 col-2 ps-0">
-													<div class="add-icon tab">
-														<a href="javascript:void(0);"><i data-feather="plus-circle"
-																class="feather-plus-circles"></i></a>
-													</div>
-												</div>
+											<div class="search-container">
+												<input type="text" class="form-control customer-input"
+													placeholder="Search Supplier">
+												<div class="search-results"></div>
 											</div>
 										</div>
 									</div>
@@ -577,21 +566,24 @@
 									<div class="col-lg-3 col-md-6 col-sm-12">
 										<div class="input-blocks">
 											<label>Amount</label>
-											<input type="text" class="form-control number-separator" inputmode="numeric" pattern="[0-9]*">
+											<input type="text" class="form-control number-separator" inputmode="numeric"
+												pattern="[0-9]*">
 											<input type="hidden" class="result-input" id="amount">
 										</div>
 									</div>
 									<div class="col-lg-3 col-md-6 col-sm-12">
 										<div class="input-blocks">
 											<label>Paid</label>
-											<input type="text" class="form-control number-separator" inputmode="numeric" pattern="[0-9]*">
+											<input type="text" class="form-control number-separator" inputmode="numeric"
+												pattern="[0-9]*">
 											<input type="hidden" class="result-input" id="paid">
 										</div>
 									</div>
 									<div class="col-lg-3 col-md-6 col-sm-12">
 										<div class="input-blocks">
 											<label>Due</label>
-											<input type="text" class="form-control number-separator" inputmode="numeric" pattern="[0-9]*">
+											<input type="text" class="form-control number-separator" inputmode="numeric"
+												pattern="[0-9]*">
 											<input type="hidden" class="result-input" id="due">
 										</div>
 									</div>
@@ -651,21 +643,10 @@
 									<div class="col-lg-3 col-md-6 col-sm-12">
 										<div class="input-blocks add-product">
 											<label>Supplier Name</label>
-											<div class="row">
-												<div class="col-lg-10 col-sm-10 col-10">
-													<select class="select">
-														<option selected>Select Customer</option>
-														<option>Apex Computers</option>
-														<option>Dazzle Shoes</option>
-														<option>Best Accessories</option>
-													</select>
-												</div>
-												<div class="col-lg-2 col-sm-2 col-2 ps-0">
-													<div class="add-icon tab">
-														<a href="javascript:void(0);"><i data-feather="plus-circle"
-																class="feather-plus-circles"></i></a>
-													</div>
-												</div>
+											<div class="search-container">
+												<input type="text" class="form-control customer-input"
+													placeholder="Search Supplier">
+												<div class="search-results"></div>
 											</div>
 										</div>
 									</div>
@@ -702,21 +683,24 @@
 									<div class="col-lg-3 col-md-6 col-sm-12">
 										<div class="input-blocks">
 											<label>Amount</label>
-											<input type="text" value="370000" class="form-control number-separator" inputmode="numeric" pattern="[0-9]*">
+											<input type="text" value="370000" class="form-control number-separator"
+												inputmode="numeric" pattern="[0-9]*">
 											<input type="hidden" class="result-input" id="amount-edit" value="370000">
 										</div>
 									</div>
 									<div class="col-lg-3 col-md-6 col-sm-12">
 										<div class="input-blocks">
 											<label>Paid</label>
-											<input type="text" value="370000" class="form-control number-separator" inputmode="numeric" pattern="[0-9]*">
+											<input type="text" value="370000" class="form-control number-separator"
+												inputmode="numeric" pattern="[0-9]*">
 											<input type="hidden" class="result-input" id="paid-edit" value="370000">
 										</div>
 									</div>
 									<div class="col-lg-3 col-md-6 col-sm-12">
 										<div class="input-blocks">
 											<label>Due</label>
-											<input type="text" value="" class="form-control number-separator" inputmode="numeric" pattern="[0-9]*">
+											<input type="text" value="" class="form-control number-separator"
+												inputmode="numeric" pattern="[0-9]*">
 											<input type="hidden" class="result-input" id="due-edit" value="0">
 										</div>
 									</div>
@@ -790,6 +774,9 @@
 
 	<!-- Separator -->
 	<script src="assets/js/easy-number-separator.js"></script>
+
+	<!-- Live Search -->
+	<script src="assets/js/liveSearch.js"></script>
 
 	<!-- Custom JS -->
 	<script src="assets/js/theme-script.js"></script>

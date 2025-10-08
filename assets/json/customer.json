@@ -1,0 +1,84 @@
+{
+    "customer": [
+        {
+            "name": "Desman Dwi",
+            "phone": "+628972873752"
+        },
+        {
+            "name": "Eko Satrio",
+            "phone": "+628973873452"
+        },
+        {
+            "name": "Dafa Al",
+            "phone": "+628483763784"
+        },
+        {
+            "name": "Obud",
+            "phone": "+62897346387"
+        },
+        {
+            "name": "Akbar",
+            "phone": "+628973484784"
+        },
+        {
+            "name": "Rama Nusa",
+            "phone": "+628123456789"
+        },
+        {
+            "name": "Bagas Arya",
+            "phone": "+628987654321"
+        },
+        {
+            "name": "Fahri Rizal",
+            "phone": "+628778899001"
+        },
+        {
+            "name": "Hana Putri",
+            "phone": "+628556677889"
+        },
+        {
+            "name": "Cahyo Pratama",
+            "phone": "+628998877665"
+        },
+        {
+            "name": "Lestari Dewi",
+            "phone": "+628111222333"
+        },
+        {
+            "name": "Galih Santoso",
+            "phone": "+628444555666"
+        },
+        {
+            "name": "Dimas Ardi",
+            "phone": "+628999000111"
+        },
+        {
+            "name": "Rizky Fauzan",
+            "phone": "+628234567890"
+        },
+        {
+            "name": "Maya Anindya",
+            "phone": "+628765432109"
+        },
+        {
+            "name": "Bayu Wicaksono",
+            "phone": "+628543210987"
+        },
+        {
+            "name": "Wulan Pertiwi",
+            "phone": "+628112233445"
+        },
+        {
+            "name": "Tio Rahman",
+            "phone": "+628667788990"
+        },
+        {
+            "name": "Silvi Karina",
+            "phone": "+628900112233"
+        },
+        {
+            "name": "Andi Saputra",
+            "phone": "+628123009988"
+        }
+    ]
+}

@@ -2547,6 +2547,8 @@ $(function () {
 			if (!$td || $td.hasClass('str-value')) return;
 			// skip cells with interactive content
 			if ($td.find('input, select, button, a, i, svg').length) return;
+			// skip cells if includes "-"
+			if ($td[0].innerText.includes("-")) return;
 			var raw = $td.data('raw-number');
 			if (raw === undefined) raw = $td.text().trim();
 			if (!looksNumeric(raw)) {

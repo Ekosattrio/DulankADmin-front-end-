@@ -117,7 +117,7 @@
                                 <span><img src="assets/img/icons/dash3.svg" alt="img"></span>
                             </div>
                             <div class="dash-widgetcontent">
-                                <h6>Total Done</h6>
+                                <h6>Total Complete</h6>
                                 <h5><span class="counters" data-count="3000">3000</span></h5>
                             </div>
                         </div>
@@ -138,59 +138,62 @@
                 <div class="card table-list-card">
                     <div class="card-body">
                         <!-- Filter -->
-						<div class="table-top d-flex align-items-center justify-content-between">
-							<!-- Search Input -->
-							<div class="search-set d-block d-md-flex">
-								<div class="search-input">
-									<a href="" class="btn btn-searchset"><i data-feather="search"
-											class="feather-search"></i></a>
-								</div>
-								<!-- Date Range -->
-								<div class="my-2">
-									<div class="pemilihrentang-container ">
-										<input type="text" id="pemilihrentang-input" class="pemilihrentang-input form-control"
-											readonly placeholder="Date" style="height: fit-content !important;width: 100% !important;">
-										<div id="pemilihrentang-panel" class="pemilihrentang-panel">
-											<div class="pemilihrentang-isi">
-												<div class="opsi-cepat">
-													<div data-range="kemarin">Kemarin</div>
-													<div data-range="7hari">7 Hari Terakhir</div>
-													<div data-range="bulanIni">Bulan Ini</div>
-													<div data-range="bulanLalu">Bulan Lalu</div>
-													<div data-range="tahunLalu">Tahun Lalu</div>
-													<div data-range="kustom">Rentang Kustom</div>
-												</div>
-												<div class="kalender" id="kalender-view" style="display:none;">
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="filters d-flex justify-content-end">
-								<div class="dropdown w-100 me-2">
-									<button class="btn btn-outline-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-										Shipping Methode
-									</button>
-									<ul class="dropdown-menu">
-										<li><a class="dropdown-item" href="#">Pickup</a></li>
-										<li><a class="dropdown-item" href="#">Courier</a></li>
-										<li><a class="dropdown-item" href="#">Express</a></li>
-									</ul>
-								</div>
-								<div class="dropdown w-100">
-									<button class="btn btn-outline-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-										Status
-									</button>
-									<ul class="dropdown-menu">
-										<li><a class="dropdown-item" href="#">Done</a></li>
-										<li><a class="dropdown-item" href="#">Processing</a></li>
-										<li><a class="dropdown-item" href="#">Cancel</a></li>
-									</ul>
-								</div>
-							</div>
-						</div>					
-						<!-- /Filter -->	                     
+                        <div class="table-top d-flex align-items-center justify-content-between">
+                            <!-- Search Input -->
+                            <div class="search-set d-block d-md-flex">
+                                <div class="search-input">
+                                    <a href="" class="btn btn-searchset"><i data-feather="search"
+                                            class="feather-search"></i></a>
+                                </div>
+                                <!-- Date Range -->
+                                <div class="my-2">
+                                    <div class="pemilihrentang-container ">
+                                        <input type="text" id="pemilihrentang-input"
+                                            class="pemilihrentang-input form-control" readonly placeholder="Date"
+                                            style="height: fit-content !important;width: 100% !important;">
+                                        <div id="pemilihrentang-panel" class="pemilihrentang-panel">
+                                            <div class="pemilihrentang-isi">
+                                                <div class="opsi-cepat">
+                                                    <div data-range="kemarin">Kemarin</div>
+                                                    <div data-range="7hari">7 Hari Terakhir</div>
+                                                    <div data-range="bulanIni">Bulan Ini</div>
+                                                    <div data-range="bulanLalu">Bulan Lalu</div>
+                                                    <div data-range="tahunLalu">Tahun Lalu</div>
+                                                    <div data-range="kustom">Rentang Kustom</div>
+                                                </div>
+                                                <div class="kalender" id="kalender-view" style="display:none;">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="filters d-flex justify-content-end">
+                                <div class="dropdown w-100 me-2">
+                                    <button class="btn btn-outline-primary dropdown-toggle" type="button"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                        Shipping Methode
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">Pickup</a></li>
+                                        <li><a class="dropdown-item" href="#">Courier</a></li>
+                                        <li><a class="dropdown-item" href="#">Express</a></li>
+                                    </ul>
+                                </div>
+                                <div class="dropdown w-100">
+                                    <button class="btn btn-outline-primary dropdown-toggle" type="button"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                        Status
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">Waiting</a></li>
+                                        <li><a class="dropdown-item" href="#">Processing</a></li>
+                                        <li><a class="dropdown-item" href="#">Cancel</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /Filter -->
                         <!-- Orders Table -->
                         <div class="table-responsive mb-5">
                             <table class="table datanew">
@@ -202,93 +205,186 @@
                                                 <span class="checkmarks"></span>
                                             </label>
                                         </th>
-                                        <th>No Order</th>
+                                        <th>No</th>
                                         <th>Customers</th>
                                         <th>Order Date</th>
-                                        <th>Orders Status</th>
-                                        <th>Shipping Methode</th>
+                                        <th>Order Status</th>
+                                        <th>Order Status By</th>
+                                        <th>Sales Channel</th>
+                                        <th>Shipping</th>
+                                        <th class="no-sort">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td><label class="checkboxs"><input type="checkbox"><span class="checkmarks"></span></label></td>
-                                        <td>ORD-001</td>
-                                        <td>John Doe</td>
-                                        <td>2025-09-01</td>
-                                        <td><span class="badge bg-info">Processing</span></td>
-                                        <td>Pickup</td>
-                                    </tr>
-                                    <tr>
-                                        <td><label class="checkboxs"><input type="checkbox"><span class="checkmarks"></span></label></td>
-                                        <td>ORD-002</td>
-                                        <td>Jane Smith</td>
-                                        <td>2025-09-02</td>
-                                        <td><span class="badge bg-danger">Cancel</span></td>
+                                        <td><label class="checkboxs"><input type="checkbox"><span
+                                                    class="checkmarks"></span></label></td>
+                                        <td>ORD-2510000001</td>
+                                        <td>PT Makmur Abadi</td>
+                                        <td>10/9/2025</td>
+                                        <td><span class="badge bg-success">Complete</span></td>
+                                        <td>Admin</td>
+                                        <td>Quotation</td>
                                         <td>Courier</td>
+                                        <td class="action-table-data">
+                                            <div class="edit-delete-action">
+                                                <a class="me-2 p-2" href="#" data-bs-toggle="modal"
+                                                    data-bs-target="#edit-units"><i data-feather="edit"></i></a>
+                                            </div>
+                                        </td>
                                     </tr>
                                     <tr>
-                                        <td><label class="checkboxs"><input type="checkbox"><span class="checkmarks"></span></label></td>
-                                        <td>ORD-003</td>
-                                        <td>Michael Brown</td>
-                                        <td>2025-09-03</td>
-                                        <td><span class="badge bg-success">Done</span></td>
+                                        <td><label class="checkboxs"><input type="checkbox"><span
+                                                    class="checkmarks"></span></label></td>
+                                        <td>ORD-2510000002</td>
+                                        <td>Toko Digital Jaya</td>
+                                        <td>10/9/2025</td>
+                                        <td><span class="badge bg-info">Processing</span></td>
+                                        <td>System</td>
+                                        <td>Website</td>
                                         <td>Express</td>
+                                        <td class="action-table-data">
+                                            <div class="edit-delete-action">
+                                                <a class="me-2 p-2" href="#" data-bs-toggle="modal"
+                                                    data-bs-target="#edit-units"><i data-feather="edit"></i></a>
+                                            </div>
+                                        </td>
                                     </tr>
                                     <tr>
-                                        <td><label class="checkboxs"><input type="checkbox"><span class="checkmarks"></span></label></td>
-                                        <td>ORD-004</td>
-                                        <td>Sarah Johnson</td>
-                                        <td>2025-09-04</td>
-                                        <td><span class="badge bg-info">Processing</span></td>
-                                        <td>Pickup</td>
-                                    </tr>
-                                    <tr>
-                                        <td><label class="checkboxs"><input type="checkbox"><span class="checkmarks"></span></label></td>
-                                        <td>ORD-005</td>
-                                        <td>David Lee</td>
-                                        <td>2025-09-05</td>
+                                        <td><label class="checkboxs"><input type="checkbox"><span
+                                                    class="checkmarks"></span></label></td>
+                                        <td>ORD-2510000003</td>
+                                        <td>Bapak Heru Santoso</td>
+                                        <td>10/8/2025</td>
                                         <td><span class="badge bg-danger">Cancel</span></td>
-                                        <td>Courier</td>
-                                    </tr>
-                                    <tr>
-                                        <td><label class="checkboxs"><input type="checkbox"><span class="checkmarks"></span></label></td>
-                                        <td>ORD-006</td>
-                                        <td>Emily Davis</td>
-                                        <td>2025-09-06</td>
-                                        <td><span class="badge bg-success">Done</span></td>
-                                        <td>Express</td>
-                                    </tr>
-                                    <tr>
-                                        <td><label class="checkboxs"><input type="checkbox"><span class="checkmarks"></span></label></td>
-                                        <td>ORD-007</td>
-                                        <td>James Wilson</td>
-                                        <td>2025-09-07</td>
-                                        <td><span class="badge bg-info">Processing</span></td>
-                                        <td>Courier</td>
-                                    </tr>
-                                    <tr>
-                                        <td><label class="checkboxs"><input type="checkbox"><span class="checkmarks"></span></label></td>
-                                        <td>ORD-008</td>
-                                        <td>Olivia Martinez</td>
-                                        <td>2025-09-08</td>
-                                        <td><span class="badge bg-success">Done</span></td>
+                                        <td>Admin</td>
+                                        <td>POS</td>
                                         <td>Pickup</td>
+                                        <td class="action-table-data">
+                                            <div class="edit-delete-action">
+                                                <a class="me-2 p-2" href="#" data-bs-toggle="modal"
+                                                    data-bs-target="#edit-units"><i data-feather="edit"></i></a>
+                                            </div>
+                                        </td>
                                     </tr>
                                     <tr>
-                                        <td><label class="checkboxs"><input type="checkbox"><span class="checkmarks"></span></label></td>
-                                        <td>ORD-009</td>
-                                        <td>William Taylor</td>
-                                        <td>2025-09-09</td>
-                                        <td><span class="badge bg-danger">Cancel</span></td>
-                                        <td>Express</td>
-                                    </tr>
-                                    <tr>
-                                        <td><label class="checkboxs"><input type="checkbox"><span class="checkmarks"></span></label></td>
-                                        <td>ORD-010</td>
-                                        <td>Sophia Anderson</td>
-                                        <td>2025-09-10</td>
-                                        <td><span class="badge bg-info">Processing</span></td>
+                                        <td><label class="checkboxs"><input type="checkbox"><span
+                                                    class="checkmarks"></span></label></td>
+                                        <td>ORD-2510000004</td>
+                                        <td>CV Cahaya Baru</td>
+                                        <td>10/8/2025</td>
+                                        <td><span class="badge bg-warning text-dark">Waiting</span></td>
+                                        <td>System</td>
+                                        <td>Website</td>
                                         <td>Courier</td>
+                                        <td class="action-table-data">
+                                            <div class="edit-delete-action">
+                                                <a class="me-2 p-2" href="#" data-bs-toggle="modal"
+                                                    data-bs-target="#edit-units"><i data-feather="edit"></i></a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><label class="checkboxs"><input type="checkbox"><span
+                                                    class="checkmarks"></span></label></td>
+                                        <td>ORD-2510000005</td>
+                                        <td>PT Global Solusi</td>
+                                        <td>10/7/2025</td>
+                                        <td><span class="badge bg-success">Complete</span></td>
+                                        <td>Admin</td>
+                                        <td>Quotation</td>
+                                        <td>Pickup</td>
+                                        <td class="action-table-data">
+                                            <div class="edit-delete-action">
+                                                <a class="me-2 p-2" href="#" data-bs-toggle="modal"
+                                                    data-bs-target="#edit-units"><i data-feather="edit"></i></a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><label class="checkboxs"><input type="checkbox"><span
+                                                    class="checkmarks"></span></label></td>
+                                        <td>ORD-2510000006</td>
+                                        <td>Ibu Rina Kusuma</td>
+                                        <td>10/7/2025</td>
+                                        <td><span class="badge bg-info">Processing</span></td>
+                                        <td>System</td>
+                                        <td>POS</td>
+                                        <td>Express</td>
+                                        <td class="action-table-data">
+                                            <div class="edit-delete-action">
+                                                <a class="me-2 p-2" href="#" data-bs-toggle="modal"
+                                                    data-bs-target="#edit-units"><i data-feather="edit"></i></a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><label class="checkboxs"><input type="checkbox"><span
+                                                    class="checkmarks"></span></label></td>
+                                        <td>ORD-2510000007</td>
+                                        <td>UD Mandiri Cetak</td>
+                                        <td>10/6/2025</td>
+                                        <td><span class="badge bg-success">Complete</span></td>
+                                        <td>System</td>
+                                        <td>Website</td>
+                                        <td>Courier</td>
+                                        <td class="action-table-data">
+                                            <div class="edit-delete-action">
+                                                <a class="me-2 p-2" href="#" data-bs-toggle="modal"
+                                                    data-bs-target="#edit-units"><i data-feather="edit"></i></a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><label class="checkboxs"><input type="checkbox"><span
+                                                    class="checkmarks"></span></label></td>
+                                        <td>ORD-2510000008</td>
+                                        <td>PT Sinergi Karya</td>
+                                        <td>10/6/2025</td>
+                                        <td><span class="badge bg-danger">Cancel</span></td>
+                                        <td>Admin</td>
+                                        <td>Quotation</td>
+                                        <td>Express</td>
+                                        <td class="action-table-data">
+                                            <div class="edit-delete-action">
+                                                <a class="me-2 p-2" href="#" data-bs-toggle="modal"
+                                                    data-bs-target="#edit-units"><i data-feather="edit"></i></a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><label class="checkboxs"><input type="checkbox"><span
+                                                    class="checkmarks"></span></label></td>
+                                        <td>ORD-2510000009</td>
+                                        <td>Bapak Doni Wiguna</td>
+                                        <td>10/5/2025</td>
+                                        <td><span class="badge bg-warning text-dark">Waiting</span></td>
+                                        <td>System</td>
+                                        <td>POS</td>
+                                        <td>Pickup</td>
+                                        <td class="action-table-data">
+                                            <div class="edit-delete-action">
+                                                <a class="me-2 p-2" href="#" data-bs-toggle="modal"
+                                                    data-bs-target="#edit-units"><i data-feather="edit"></i></a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><label class="checkboxs"><input type="checkbox"><span
+                                                    class="checkmarks"></span></label></td>
+                                        <td>ORD-2510000010</td>
+                                        <td>Toko Buku Harapan</td>
+                                        <td>10/5/2025</td>
+                                        <td><span class="badge bg-info">Processing</span></td>
+                                        <td>Admin</td>
+                                        <td>Website</td>
+                                        <td>Courier</td>
+                                        <td class="action-table-data">
+                                            <div class="edit-delete-action">
+                                                <a class="me-2 p-2" href="#" data-bs-toggle="modal"
+                                                    data-bs-target="#edit-units"><i data-feather="edit"></i></a>
+                                            </div>
+                                        </td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -301,6 +397,97 @@
         </div>
 
     </div>
+
+    <!-- Modal for edit -->
+    <div class="modal fade text-standard" id="edit-units" tabindex="-1" aria-labelledby="edit-unitsLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header py-2">
+                    <h5 class="modal-title" id="edit-unitsLabel">Add New Process Name</h5>
+                    <div class="d-flex align-items-center">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div>
+                        <form>
+                            <div class="row mb-3">
+                                <div class="col-5">
+                                    <label class="form-label">Customer</label>
+                                </div>
+                                <div class="col-7">
+                                    <div class="search-container">
+                                        <input type="text" class="form-control customer-input"
+                                            placeholder="Search Employee">
+                                        <div class="search-results"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <div class="col-5">
+                                    <label class="form-label">Order Status</label>
+                                </div>
+                                <div class="col-7">
+                                    <select class="select">
+                                        <option>Complete</option>
+                                        <option>Processing</option>
+                                        <option>Waiting</option>
+                                        <option>Cancel</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <div class="col-5">
+                                    <label class="form-label">Order Status By</label>
+                                </div>
+                                <div class="col-7">
+                                    <select class="select">
+                                        <option>Admin</option>
+                                        <option>System</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <div class="col-5">
+                                    <label class="form-label">Sales Channel</label>
+                                </div>
+                                <div class="col-7">
+                                    <select class="select">
+                                        <option>POS</option>
+                                        <option>Quotation</option>
+                                        <option>Web</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <div class="col-5">
+                                    <label for="shipping" class="form-label">Shipping</label>
+                                </div>
+                                <div class="col-7">
+                                    <input type="text" class="form-control" id="shipping" value="Courier">
+                                </div>
+                            </div>
+
+                            <small class="d-none text-standard text-danger" id="info-selected-all-1"><i
+                                    class="fa-solid fa-circle-info"></i> please input your specification<br></small>
+                            <div class="row mb-3 justify-content-end">
+                                <div class="col-7">
+                                    <button class="btn btn-primary w-100" id="save-btn-1">Simpan</button>
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- /Main Wrapper -->
     <!-- jQuery -->
     <script src="assets/js/jquery-3.7.1.min.js"></script>
@@ -331,6 +518,9 @@
     <!-- Sweetalert 2 -->
     <script src="assets/plugins/sweetalert/sweetalert2.all.min.js"></script>
     <script src="assets/plugins/sweetalert/sweetalerts.min.js"></script>
+
+    <!-- Live Search -->
+    <script src="assets/js/liveSearch.js"></script>
 
     <!-- Custom JS -->
     <script src="assets/js/theme-script.js"></script>

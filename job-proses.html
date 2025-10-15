@@ -61,8 +61,8 @@
                 <div class="page-header">
                     <div class="add-item d-flex">
                         <div class="page-title">
-                            <h4>Job Proses List</h4>
-                            <h6>Manage your Job Proses</h6>
+                            <h4>Process Name List</h4>
+                            <h6>Manage your Process Name</h6>
                         </div>
                     </div>
                     <ul class="table-top-head">
@@ -88,9 +88,10 @@
                         </li>
                     </ul>
                     <div class="page-btn">
-						<a href="#" class="btn btn-added" data-bs-toggle="modal" data-bs-target="#addNewJobProcessModal"><i
-								data-feather="plus-circle" class="me-2"></i>Add New Job Proses</a>
-					</div>
+                        <a href="#" class="btn btn-added" data-bs-toggle="modal"
+                            data-bs-target="#addNewJobProcessModal"><i data-feather="plus-circle" class="me-2"></i>Add
+                            New Process Name</a>
+                    </div>
                 </div>
                 <div class="row mt-5">
                     <div class="col-xl-3 col-sm-6 col-12 d-flex">
@@ -99,7 +100,7 @@
                                 <span><img src="assets/img/icons/dash1.svg" alt="img"></span>
                             </div>
                             <div class="dash-widgetcontent">
-                                <h6>Total Job Proses</h6>
+                                <h6>Total Process Name</h6>
                                 <h5><span class="counters" data-count="307144">307144</span></h5>
                             </div>
                         </div>
@@ -120,60 +121,65 @@
                 <div class="card table-list-card">
                     <div class="card-body">
                         <!-- Filter -->
-						<div class="table-top d-flex align-items-center justify-content-between">
-							<!-- Search Input -->
-							<div class="search-set d-block d-md-flex">
-								<div class="search-input">
-									<a href="" class="btn btn-searchset"><i data-feather="search"
-											class="feather-search"></i></a>
-								</div>
-								<!-- Date Range -->
-								<div class="my-2">
-									<div class="pemilihrentang-container ">
-										<input type="text" id="pemilihrentang-input" class="pemilihrentang-input form-control"
-											readonly placeholder="Date" style="height: fit-content !important;width: 100% !important;">
-										<div id="pemilihrentang-panel" class="pemilihrentang-panel">
-											<div class="pemilihrentang-isi">
-												<div class="opsi-cepat">
-													<div data-range="kemarin">Kemarin</div>
-													<div data-range="7hari">7 Hari Terakhir</div>
-													<div data-range="bulanIni">Bulan Ini</div>
-													<div data-range="bulanLalu">Bulan Lalu</div>
-													<div data-range="tahunLalu">Tahun Lalu</div>
-													<div data-range="kustom">Rentang Kustom</div>
-												</div>
-												<div class="kalender" id="kalender-view" style="display:none;">
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="filters d-flex justify-content-end">
-								<div class="dropdown w-100 me-2">
-									<button class="btn btn-outline-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-										Name of Process
-									</button>
+                        <div class="table-top d-flex align-items-center justify-content-between">
+                            <!-- Search Input -->
+                            <div class="search-set d-block d-md-flex">
+                                <div class="search-input">
+                                    <a href="" class="btn btn-searchset"><i data-feather="search"
+                                            class="feather-search"></i></a>
+                                </div>
+                                <!-- Date Range -->
+                                <div class="my-2">
+                                    <div class="pemilihrentang-container ">
+                                        <input type="text" id="pemilihrentang-input"
+                                            class="pemilihrentang-input form-control" readonly placeholder="Date"
+                                            style="height: fit-content !important;width: 100% !important;">
+                                        <div id="pemilihrentang-panel" class="pemilihrentang-panel">
+                                            <div class="pemilihrentang-isi">
+                                                <div class="opsi-cepat">
+                                                    <div data-range="kemarin">Kemarin</div>
+                                                    <div data-range="7hari">7 Hari Terakhir</div>
+                                                    <div data-range="bulanIni">Bulan Ini</div>
+                                                    <div data-range="bulanLalu">Bulan Lalu</div>
+                                                    <div data-range="tahunLalu">Tahun Lalu</div>
+                                                    <div data-range="kustom">Rentang Kustom</div>
+                                                </div>
+                                                <div class="kalender" id="kalender-view" style="display:none;">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="filters d-flex justify-content-end">
+                                <div class="dropdown w-100 me-2">
+                                    <button class="btn btn-outline-primary dropdown-toggle" type="button"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                        Process Name
+                                    </button>
                                     <ul class="dropdown-menu">
-										<li><a class="dropdown-item" href="#">Printing</a></li>
-										<li><a class="dropdown-item" href="#">Cutting</a></li>
-									</ul>
-								</div>
-								<div class="dropdown w-100">
-									<button class="btn btn-outline-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-										Created By
-									</button>
-									<ul class="dropdown-menu">
-										<li><a class="dropdown-item" href="#">Eko Satrio</a></li>
-										<li><a class="dropdown-item" href="#">Desman Dwi</a></li>
-									</ul>
-								</div>
-							</div>
-						</div>					
-						<!-- /Filter -->
+                                        <li><a class="dropdown-item" href="#">Printing</a></li>
+                                        <li><a class="dropdown-item" href="#">Cutting</a></li>
+                                    </ul>
+                                </div>
+                                <div class="dropdown w-100">
+                                    <button class="btn btn-outline-primary dropdown-toggle" type="button"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                        Category Process
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">Design</a></li>
+                                        <li><a class="dropdown-item" href="#">Pracetak</a></li>
+                                        <li><a class="dropdown-item" href="#">Cetak</a></li>
+                                        <li><a class="dropdown-item" href="#">Finishing</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /Filter -->
                         <!-- Job Process Table -->
                         <div class="table-responsive mb-5">
-                            <table class="table datanew">
+                            <table>
                                 <thead>
                                     <tr>
                                         <th class="no-sort">
@@ -182,185 +188,412 @@
                                                 <span class="checkmarks"></span>
                                             </label>
                                         </th>
-                                        <th># Process</th>
-                                        <th>Name of Process</th>
-                                        <th>Incentive Amount</th>
+                                        <th>No</th>
+                                        <th>Process Category</th>
+                                        <th>Process Name</th>
+                                        <th>Incentive Amount (Rp)</th>
+                                        <th>Unit Incentive</th>
                                         <th>Assignee</th>
                                         <th>Create Date</th>
-                                        <th>Create By</th>
                                         <th class="no-sort">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td><label class="checkboxs"><input type="checkbox"><span class="checkmarks"></span></label></td>
-                                        <td>PROC-01</td>
-                                        <td>Printing</td>
-                                        <td>Rp500</td>
-                                        <td>Eko Satrio, Desman Dwi</td>
-                                        <td class="str-value">2025-09-01</td>
-                                        <td>Eko Satrio</td>
+                                        <td><label class="checkboxs"><input type="checkbox"><span
+                                                    class="checkmarks"></span></label></td>
+                                        <td>JBP-0001</td>
+                                        <td>Design</td>
+                                        <td>Desain Nota Simple</td>
+                                        <td>5000</td>
+                                        <td>Per Job</td>
+                                        <td>Adul, Nurdin</td>
+                                        <td>Admin, 2025-10-13 10:35:00</td>
                                         <td class="action-table-data">
-											<div class="edit-delete-action">
-												<a class="me-2 p-2" href="#" data-bs-toggle="modal"
-													data-bs-target="#edit-units"><i data-feather="edit"></i></a>
-												<a class="confirm-text p-2" href="javascript:void(0);"><i
-														data-feather="trash-2"></i></a>
-											</div>
-										</td>
+                                            <div class="edit-delete-action">
+                                                <a class="me-2 p-2" href="#" data-bs-toggle="modal"
+                                                    data-bs-target="#edit-units"><i data-feather="edit"></i></a>
+                                                <a class="confirm-text p-2" href="javascript:void(0);"><i
+                                                        data-feather="trash-2"></i></a>
+                                            </div>
+                                        </td>
                                     </tr>
                                     <tr>
-                                        <td><label class="checkboxs"><input type="checkbox"><span class="checkmarks"></span></label></td>
-                                        <td>PROC-02</td>
-                                        <td>Cutting</td>
-                                        <td>Rp300</td>
-                                        <td>Tim Cutting</td>
-                                        <td class="str-value">2025-09-02</td>
-                                        <td>Eko Satrio</td>
+                                        <td><label class="checkboxs"><input type="checkbox"><span
+                                                    class="checkmarks"></span></label></td>
+                                        <td>JBP-0002</td>
+                                        <td>Pracetak</td>
+                                        <td>Penyetelan Mesin Offset</td>
+                                        <td>8500</td>
+                                        <td>Per Job</td>
+                                        <td>Adul, Nurdin, Admin</td>
+                                        <td>Admin, 2025-10-13 10:40:00</td>
                                         <td class="action-table-data">
-											<div class="edit-delete-action">
-												<a class="me-2 p-2" href="#" data-bs-toggle="modal"
-													data-bs-target="#edit-units"><i data-feather="edit"></i></a>
-												<a class="confirm-text p-2" href="javascript:void(0);"><i
-														data-feather="trash-2"></i></a>
-											</div>
-										</td>
+                                            <div class="edit-delete-action">
+                                                <a class="me-2 p-2" href="#" data-bs-toggle="modal"
+                                                    data-bs-target="#edit-units"><i data-feather="edit"></i></a>
+                                                <a class="confirm-text p-2" href="javascript:void(0);"><i
+                                                        data-feather="trash-2"></i></a>
+                                            </div>
+                                        </td>
                                     </tr>
                                     <tr>
-                                        <td><label class="checkboxs"><input type="checkbox"><span class="checkmarks"></span></label></td>
-                                        <td>PROC-03</td>
-                                        <td>Laminating</td>
-                                        <td>Rp200</td>
-                                        <td>Adi Nugroho</td>
-                                        <td class="str-value">2025-09-03</td>
-                                        <td>Desman Dwi</td>
+                                        <td><label class="checkboxs"><input type="checkbox"><span
+                                                    class="checkmarks"></span></label></td>
+                                        <td>JBP-0003</td>
+                                        <td>Cetak</td>
+                                        <td>Cetak Spanduk Flexi</td>
+                                        <td>4000</td>
+                                        <td>Per Meter</td>
+                                        <td>Arif, Galih</td>
+                                        <td>Admin, 2025-10-13 10:45:00</td>
                                         <td class="action-table-data">
-											<div class="edit-delete-action">
-												<a class="me-2 p-2" href="#" data-bs-toggle="modal"
-													data-bs-target="#edit-units"><i data-feather="edit"></i></a>
-												<a class="confirm-text p-2" href="javascript:void(0);"><i
-														data-feather="trash-2"></i></a>
-											</div>
-										</td>
+                                            <div class="edit-delete-action">
+                                                <a class="me-2 p-2" href="#" data-bs-toggle="modal"
+                                                    data-bs-target="#edit-units"><i data-feather="edit"></i></a>
+                                                <a class="confirm-text p-2" href="javascript:void(0);"><i
+                                                        data-feather="trash-2"></i></a>
+                                            </div>
+                                        </td>
                                     </tr>
                                     <tr>
-                                        <td><label class="checkboxs"><input type="checkbox"><span class="checkmarks"></span></label></td>
-                                        <td>PROC-04</td>
-                                        <td>Folding</td>
-                                        <td>Rp150</td>
-                                        <td>Tim Finishing</td>
-                                        <td class="str-value">2025-09-04</td>
-                                        <td>Eko Satrio</td>
+                                        <td><label class="checkboxs"><input type="checkbox"><span
+                                                    class="checkmarks"></span></label></td>
+                                        <td>JBP-0004</td>
+                                        <td>Finishing</td>
+                                        <td>Potong Kertas A3+</td>
+                                        <td>1500</td>
+                                        <td>Per Ream</td>
+                                        <td>Rapli, Nurdin</td>
+                                        <td>Admin, 2025-10-13 10:50:00</td>
                                         <td class="action-table-data">
-											<div class="edit-delete-action">
-												<a class="me-2 p-2" href="#" data-bs-toggle="modal"
-													data-bs-target="#edit-units"><i data-feather="edit"></i></a>
-												<a class="confirm-text p-2" href="javascript:void(0);"><i
-														data-feather="trash-2"></i></a>
-											</div>
-										</td>
+                                            <div class="edit-delete-action">
+                                                <a class="me-2 p-2" href="#" data-bs-toggle="modal"
+                                                    data-bs-target="#edit-units"><i data-feather="edit"></i></a>
+                                                <a class="confirm-text p-2" href="javascript:void(0);"><i
+                                                        data-feather="trash-2"></i></a>
+                                            </div>
+                                        </td>
                                     </tr>
+
                                     <tr>
-                                        <td><label class="checkboxs"><input type="checkbox"><span class="checkmarks"></span></label></td>
-                                        <td>PROC-05</td>
-                                        <td>Jilid Spiral</td>
-                                        <td>Rp750</td>
-                                        <td>Rina Lestari</td>
-                                        <td class="str-value">2025-09-05</td>
-                                        <td>Desman Dwi</td>
+                                        <td><label class="checkboxs"><input type="checkbox"><span
+                                                    class="checkmarks"></span></label></td>
+                                        <td>JBP-0005</td>
+                                        <td>Design</td>
+                                        <td>Desain Kalender Meja</td>
+                                        <td>9000</td>
+                                        <td>Per Job</td>
+                                        <td>Adul, Admin, Arif</td>
+                                        <td>Adul, 2025-10-14 09:00:00</td>
                                         <td class="action-table-data">
-											<div class="edit-delete-action">
-												<a class="me-2 p-2" href="#" data-bs-toggle="modal"
-													data-bs-target="#edit-units"><i data-feather="edit"></i></a>
-												<a class="confirm-text p-2" href="javascript:void(0);"><i
-														data-feather="trash-2"></i></a>
-											</div>
-										</td>
+                                            <div class="edit-delete-action">
+                                                <a class="me-2 p-2" href="#" data-bs-toggle="modal"
+                                                    data-bs-target="#edit-units"><i data-feather="edit"></i></a>
+                                                <a class="confirm-text p-2" href="javascript:void(0);"><i
+                                                        data-feather="trash-2"></i></a>
+                                            </div>
+                                        </td>
                                     </tr>
+
                                     <tr>
-                                        <td><label class="checkboxs"><input type="checkbox"><span class="checkmarks"></span></label></td>
-                                        <td>PROC-06</td>
-                                        <td>Embossing</td>
-                                        <td>Rp1200</td>
-                                        <td>Budi Santoso</td>
-                                        <td class="str-value">2025-09-06</td>
-                                        <td>Eko Satrio</td>
+                                        <td><label class="checkboxs"><input type="checkbox"><span
+                                                    class="checkmarks"></span></label></td>
+                                        <td>JBP-0006</td>
+                                        <td>Pracetak</td>
+                                        <td>Pembuatan Plate CTP</td>
+                                        <td>6000</td>
+                                        <td>Per Pieces</td>
+                                        <td>Nurdin, Galih</td>
+                                        <td>Adul, 2025-10-14 09:05:00</td>
                                         <td class="action-table-data">
-											<div class="edit-delete-action">
-												<a class="me-2 p-2" href="#" data-bs-toggle="modal"
-													data-bs-target="#edit-units"><i data-feather="edit"></i></a>
-												<a class="confirm-text p-2" href="javascript:void(0);"><i
-														data-feather="trash-2"></i></a>
-											</div>
-										</td>
+                                            <div class="edit-delete-action">
+                                                <a class="me-2 p-2" href="#" data-bs-toggle="modal"
+                                                    data-bs-target="#edit-units"><i data-feather="edit"></i></a>
+                                                <a class="confirm-text p-2" href="javascript:void(0);"><i
+                                                        data-feather="trash-2"></i></a>
+                                            </div>
+                                        </td>
                                     </tr>
+
                                     <tr>
-                                        <td><label class="checkboxs"><input type="checkbox"><span class="checkmarks"></span></label></td>
-                                        <td>PROC-07</td>
-                                        <td>Foil Emas</td>
-                                        <td>Rp1500</td>
-                                        <td>Ani Setiawati</td>
-                                        <td class="str-value">2025-09-07</td>
-                                        <td>Desman Dwi</td>
+                                        <td><label class="checkboxs"><input type="checkbox"><span
+                                                    class="checkmarks"></span></label></td>
+                                        <td>JBP-0007</td>
+                                        <td>Cetak</td>
+                                        <td>Cetak Brosur Full Color</td>
+                                        <td>5000</td>
+                                        <td>Per Ream</td>
+                                        <td>Admin, Rapli, Adul</td>
+                                        <td>Adul, 2025-10-14 09:10:00</td>
                                         <td class="action-table-data">
-											<div class="edit-delete-action">
-												<a class="me-2 p-2" href="#" data-bs-toggle="modal"
-													data-bs-target="#edit-units"><i data-feather="edit"></i></a>
-												<a class="confirm-text p-2" href="javascript:void(0);"><i
-														data-feather="trash-2"></i></a>
-											</div>
-										</td>
+                                            <div class="edit-delete-action">
+                                                <a class="me-2 p-2" href="#" data-bs-toggle="modal"
+                                                    data-bs-target="#edit-units"><i data-feather="edit"></i></a>
+                                                <a class="confirm-text p-2" href="javascript:void(0);"><i
+                                                        data-feather="trash-2"></i></a>
+                                            </div>
+                                        </td>
                                     </tr>
+
                                     <tr>
-                                        <td><label class="checkboxs"><input type="checkbox"><span class="checkmarks"></span></label></td>
-                                        <td>PROC-08</td>
-                                        <td>Packing</td>
-                                        <td>Rp100</td>
-                                        <td>Tim Packing</td>
-                                        <td class="str-value">2025-09-08</td>
-                                        <td>Eko Satrio</td>
+                                        <td><label class="checkboxs"><input type="checkbox"><span
+                                                    class="checkmarks"></span></label></td>
+                                        <td>JBP-0008</td>
+                                        <td>Finishing</td>
+                                        <td>Laminasi Doff/Glossy</td>
+                                        <td>8500</td>
+                                        <td>Per Pieces</td>
+                                        <td>Galih, Arif</td>
+                                        <td>Nurdin, 2025-10-14 11:20:00</td>
                                         <td class="action-table-data">
-											<div class="edit-delete-action">
-												<a class="me-2 p-2" href="#" data-bs-toggle="modal"
-													data-bs-target="#edit-units"><i data-feather="edit"></i></a>
-												<a class="confirm-text p-2" href="javascript:void(0);"><i
-														data-feather="trash-2"></i></a>
-											</div>
-										</td>
+                                            <div class="edit-delete-action">
+                                                <a class="me-2 p-2" href="#" data-bs-toggle="modal"
+                                                    data-bs-target="#edit-units"><i data-feather="edit"></i></a>
+                                                <a class="confirm-text p-2" href="javascript:void(0);"><i
+                                                        data-feather="trash-2"></i></a>
+                                            </div>
+                                        </td>
                                     </tr>
+
                                     <tr>
-                                        <td><label class="checkboxs"><input type="checkbox"><span class="checkmarks"></span></label></td>
-                                        <td>PROC-09</td>
-                                        <td>Die Cut</td>
-                                        <td>Rp450</td>
-                                        <td>Desman Dwi</td>
-                                        <td class="str-value">2025-09-09</td>
-                                        <td>Desman Dwi</td>
+                                        <td><label class="checkboxs"><input type="checkbox"><span
+                                                    class="checkmarks"></span></label></td>
+                                        <td>JBP-0009</td>
+                                        <td>Design</td>
+                                        <td>Koreksi File Klien</td>
+                                        <td>4000</td>
+                                        <td>Per Job</td>
+                                        <td>Nurdin, Admin</td>
+                                        <td>Nurdin, 2025-10-14 11:25:00</td>
                                         <td class="action-table-data">
-											<div class="edit-delete-action">
-												<a class="me-2 p-2" href="#" data-bs-toggle="modal"
-													data-bs-target="#edit-units"><i data-feather="edit"></i></a>
-												<a class="confirm-text p-2" href="javascript:void(0);"><i
-														data-feather="trash-2"></i></a>
-											</div>
-										</td>
+                                            <div class="edit-delete-action">
+                                                <a class="me-2 p-2" href="#" data-bs-toggle="modal"
+                                                    data-bs-target="#edit-units"><i data-feather="edit"></i></a>
+                                                <a class="confirm-text p-2" href="javascript:void(0);"><i
+                                                        data-feather="trash-2"></i></a>
+                                            </div>
+                                        </td>
                                     </tr>
+
                                     <tr>
-                                        <td><label class="checkboxs"><input type="checkbox"><span class="checkmarks"></span></label></td>
-                                        <td>PROC-10</td>
-                                        <td>Set Up Mesin</td>
-                                        <td>Rp800</td>
-                                        <td>Eko Satrio</td>
-                                        <td class="str-value">2025-09-10</td>
-                                        <td>Eko Satrio</td>
+                                        <td><label class="checkboxs"><input type="checkbox"><span
+                                                    class="checkmarks"></span></label></td>
+                                        <td>JBP-0010</td>
+                                        <td>Pracetak</td>
+                                        <td>Proofing Digital</td>
+                                        <td>1500</td>
+                                        <td>Per Job</td>
+                                        <td>Adul, Arif</td>
+                                        <td>Nurdin, 2025-10-14 11:30:00</td>
                                         <td class="action-table-data">
-											<div class="edit-delete-action">
-												<a class="me-2 p-2" href="#" data-bs-toggle="modal"
-													data-bs-target="#edit-units"><i data-feather="edit"></i></a>
-												<a class="confirm-text p-2" href="javascript:void(0);"><i
-														data-feather="trash-2"></i></a>
-											</div>
-										</td>
+                                            <div class="edit-delete-action">
+                                                <a class="me-2 p-2" href="#" data-bs-toggle="modal"
+                                                    data-bs-target="#edit-units"><i data-feather="edit"></i></a>
+                                                <a class="confirm-text p-2" href="javascript:void(0);"><i
+                                                        data-feather="trash-2"></i></a>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td><label class="checkboxs"><input type="checkbox"><span
+                                                    class="checkmarks"></span></label></td>
+                                        <td>JBP-0011</td>
+                                        <td>Cetak</td>
+                                        <td>Cetak Digital Banner</td>
+                                        <td>9000</td>
+                                        <td>Per Meter</td>
+                                        <td>Galih, Rapli, Nurdin</td>
+                                        <td>Admin, 2025-10-15 13:00:00</td>
+                                        <td class="action-table-data">
+                                            <div class="edit-delete-action">
+                                                <a class="me-2 p-2" href="#" data-bs-toggle="modal"
+                                                    data-bs-target="#edit-units"><i data-feather="edit"></i></a>
+                                                <a class="confirm-text p-2" href="javascript:void(0);"><i
+                                                        data-feather="trash-2"></i></a>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td><label class="checkboxs"><input type="checkbox"><span
+                                                    class="checkmarks"></span></label></td>
+                                        <td>JBP-0012</td>
+                                        <td>Finishing</td>
+                                        <td>Jilid Spiral Kawat</td>
+                                        <td>6000</td>
+                                        <td>Per Pieces</td>
+                                        <td>Adul, Galih, Admin, Arif</td>
+                                        <td>Admin, 2025-10-15 13:05:00</td>
+                                        <td class="action-table-data">
+                                            <div class="edit-delete-action">
+                                                <a class="me-2 p-2" href="#" data-bs-toggle="modal"
+                                                    data-bs-target="#edit-units"><i data-feather="edit"></i></a>
+                                                <a class="confirm-text p-2" href="javascript:void(0);"><i
+                                                        data-feather="trash-2"></i></a>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td><label class="checkboxs"><input type="checkbox"><span
+                                                    class="checkmarks"></span></label></td>
+                                        <td>JBP-0013</td>
+                                        <td>Design</td>
+                                        <td>Desain Logo Baru</td>
+                                        <td>5000</td>
+                                        <td>Per Job</td>
+                                        <td>Admin, Arif, Rapli, Galih</td>
+                                        <td>Adul, 2025-10-15 13:45:00</td>
+                                        <td class="action-table-data">
+                                            <div class="edit-delete-action">
+                                                <a class="me-2 p-2" href="#" data-bs-toggle="modal"
+                                                    data-bs-target="#edit-units"><i data-feather="edit"></i></a>
+                                                <a class="confirm-text p-2" href="javascript:void(0);"><i
+                                                        data-feather="trash-2"></i></a>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td><label class="checkboxs"><input type="checkbox"><span
+                                                    class="checkmarks"></span></label></td>
+                                        <td>JBP-0014</td>
+                                        <td>Pracetak</td>
+                                        <td>Setting Warna Khusus (Spot)</td>
+                                        <td>8500</td>
+                                        <td>Per Job</td>
+                                        <td>Adul, Nurdin, Arif</td>
+                                        <td>Adul, 2025-10-15 15:50:00</td>
+                                        <td class="action-table-data">
+                                            <div class="edit-delete-action">
+                                                <a class="me-2 p-2" href="#" data-bs-toggle="modal"
+                                                    data-bs-target="#edit-units"><i data-feather="edit"></i></a>
+                                                <a class="confirm-text p-2" href="javascript:void(0);"><i
+                                                        data-feather="trash-2"></i></a>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td><label class="checkboxs"><input type="checkbox"><span
+                                                    class="checkmarks"></span></label></td>
+                                        <td>JBP-0015</td>
+                                        <td>Cetak</td>
+                                        <td>Cetak Box Packaging</td>
+                                        <td>4000</td>
+                                        <td>Per Pieces</td>
+                                        <td>Nurdin, Rapli</td>
+                                        <td>Nurdin, 2025-10-16 08:35:00</td>
+                                        <td class="action-table-data">
+                                            <div class="edit-delete-action">
+                                                <a class="me-2 p-2" href="#" data-bs-toggle="modal"
+                                                    data-bs-target="#edit-units"><i data-feather="edit"></i></a>
+                                                <a class="confirm-text p-2" href="javascript:void(0);"><i
+                                                        data-feather="trash-2"></i></a>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td><label class="checkboxs"><input type="checkbox"><span
+                                                    class="checkmarks"></span></label></td>
+                                        <td>JBP-0016</td>
+                                        <td>Finishing</td>
+                                        <td>Pengepakan (Packing)</td>
+                                        <td>1500</td>
+                                        <td>Per Job</td>
+                                        <td>Admin, Adul, Nurdin, Arif, Galih, Rapli</td>
+                                        <td>Nurdin, 2025-10-16 08:35:00</td>
+                                        <td class="action-table-data">
+                                            <div class="edit-delete-action">
+                                                <a class="me-2 p-2" href="#" data-bs-toggle="modal"
+                                                    data-bs-target="#edit-units"><i data-feather="edit"></i></a>
+                                                <a class="confirm-text p-2" href="javascript:void(0);"><i
+                                                        data-feather="trash-2"></i></a>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td><label class="checkboxs"><input type="checkbox"><span
+                                                    class="checkmarks"></span></label></td>
+                                        <td>JBP-0017</td>
+                                        <td>Design</td>
+                                        <td>Final Approval Desain</td>
+                                        <td>9000</td>
+                                        <td>Per Job</td>
+                                        <td>Adul, Rapli</td>
+                                        <td>Admin, 2025-10-16 16:15:00</td>
+                                        <td class="action-table-data">
+                                            <div class="edit-delete-action">
+                                                <a class="me-2 p-2" href="#" data-bs-toggle="modal"
+                                                    data-bs-target="#edit-units"><i data-feather="edit"></i></a>
+                                                <a class="confirm-text p-2" href="javascript:void(0);"><i
+                                                        data-feather="trash-2"></i></a>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td><label class="checkboxs"><input type="checkbox"><span
+                                                    class="checkmarks"></span></label></td>
+                                        <td>JBP-0018</td>
+                                        <td>Pracetak</td>
+                                        <td>Koreksi Film &amp; Plate</td>
+                                        <td>6000</td>
+                                        <td>Per Pieces</td>
+                                        <td>Nurdin, Admin, Galih</td>
+                                        <td>Admin, 2025-10-16 16:20:00</td>
+                                        <td class="action-table-data">
+                                            <div class="edit-delete-action">
+                                                <a class="me-2 p-2" href="#" data-bs-toggle="modal"
+                                                    data-bs-target="#edit-units"><i data-feather="edit"></i></a>
+                                                <a class="confirm-text p-2" href="javascript:void(0);"><i
+                                                        data-feather="trash-2"></i></a>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td><label class="checkboxs"><input type="checkbox"><span
+                                                    class="checkmarks"></span></label></td>
+                                        <td>JBP-0019</td>
+                                        <td>Cetak</td>
+                                        <td>Cetak Amplop Kop Surat</td>
+                                        <td>5000</td>
+                                        <td>Per Ream</td>
+                                        <td>Arif, Adul</td>
+                                        <td>Adul, 2025-10-17 09:40:00</td>
+                                        <td class="action-table-data">
+                                            <div class="edit-delete-action">
+                                                <a class="me-2 p-2" href="#" data-bs-toggle="modal"
+                                                    data-bs-target="#edit-units"><i data-feather="edit"></i></a>
+                                                <a class="confirm-text p-2" href="javascript:void(0);"><i
+                                                        data-feather="trash-2"></i></a>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td><label class="checkboxs"><input type="checkbox"><span
+                                                    class="checkmarks"></span></label></td>
+                                        <td>JBP-0020</td>
+                                        <td>Finishing</td>
+                                        <td>Lipat Manual/Mesin</td>
+                                        <td>8500</td>
+                                        <td>Per Ream</td>
+                                        <td>Rapli, Arif, Admin</td>
+                                        <td>Adul, 2025-10-17 09:45:00</td>
+                                        <td class="action-table-data">
+                                            <div class="edit-delete-action">
+                                                <a class="me-2 p-2" href="#" data-bs-toggle="modal"
+                                                    data-bs-target="#edit-units"><i data-feather="edit"></i></a>
+                                                <a class="confirm-text p-2" href="javascript:void(0);"><i
+                                                        data-feather="trash-2"></i></a>
+                                            </div>
+                                        </td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -381,7 +614,7 @@
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header py-2">
-                    <h5 class="modal-title" id="addNewJobProcessModalLabel">Add New Job Proses</h5>
+                    <h5 class="modal-title" id="addNewJobProcessModalLabel">Add New Process Name</h5>
                     <div class="d-flex align-items-center">
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
@@ -404,8 +637,8 @@
                                     <label for="incentive" class="form-label">Incentive</label>
                                 </div>
                                 <div class="col-7">
-                                    <input type="text" class="form-control number-separator"
-                                        inputmode="numeric" pattern="[0-9]*">
+                                    <input type="text" class="form-control number-separator" inputmode="numeric"
+                                        pattern="[0-9]*">
                                     <input type="hidden" class="result-input" id="incentive">
                                 </div>
                             </div>
@@ -434,7 +667,8 @@
                                     </div>
 
                                     <!-- plain input (default) -->
-                                    <input type="text" class="form-control" id="assigne-input" placeholder="Enter assignee name">
+                                    <input type="text" class="form-control" id="assigne-input"
+                                        placeholder="Enter assignee name">
 
                                     <!-- select for department (hidden by default) -->
                                     <select id="assigne-select" class="form-select d-none" disabled>
@@ -461,13 +695,13 @@
         </div>
     </div>
 
-    <!-- Modal for add new paper group -->
-    <div class="modal fade text-standard" id="edit-units" tabindex="-1"
-        aria-labelledby="edit-unitsLabel" aria-hidden="true">
+    <!-- Modal for edit -->
+    <div class="modal fade text-standard" id="edit-units" tabindex="-1" aria-labelledby="edit-unitsLabel"
+        aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header py-2">
-                    <h5 class="modal-title" id="edit-unitsLabel">Add New Job Proses</h5>
+                    <h5 class="modal-title" id="edit-unitsLabel">Add New Process Name</h5>
                     <div class="d-flex align-items-center">
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
@@ -475,7 +709,19 @@
                 <div class="modal-body">
                     <div>
                         <form>
-
+                            <div class="row mb-3">
+                                <div class="col-5">
+                                    <label class="form-label">Process Category</label>
+                                </div>
+                                <div class="col-7">
+                                    <select class="select">
+                                        <option>Design</option>
+                                        <option>Pracetak</option>
+                                        <option>Cetak</option>
+                                        <option>Finishing</option>
+                                    </select>
+                                </div>
+                            </div>
                             <div class="row mb-3">
                                 <div class="col-5">
                                     <label for="name" class="form-label">Nama of Process</label>
@@ -490,8 +736,8 @@
                                     <label for="incentive" class="form-label">Incentive</label>
                                 </div>
                                 <div class="col-7">
-                                    <input type="text" class="form-control number-separator"
-                                        inputmode="numeric" pattern="[0-9]*" value="500">
+                                    <input type="text" class="form-control number-separator" inputmode="numeric"
+                                        pattern="[0-9]*" value="500">
                                     <input type="hidden" class="result-input" id="incentive" value="500">
                                 </div>
                             </div>
@@ -520,7 +766,8 @@
                                     </div>
 
                                     <!-- plain input (default) -->
-                                    <input type="text" class="form-control" id="assigne-input" placeholder="Enter assignee name" value="Eko Satrio, Desman Dwi	">
+                                    <input type="text" class="form-control" id="assigne-input"
+                                        placeholder="Enter assignee name" value="Eko Satrio, Desman Dwi	">
 
                                     <!-- select for department (hidden by default) -->
                                     <select id="assigne-select" class="form-select d-none" disabled>
@@ -578,16 +825,16 @@
     <script src="assets/plugins/sweetalert/sweetalerts.min.js"></script>
 
     <!-- Separator -->
-	<script src="assets/js/easy-number-separator.js"></script>
+    <script src="assets/js/easy-number-separator.js"></script>
 
     <!-- Custom JS -->
     <script src="assets/js/theme-script.js"></script>
     <script src="assets/js/script.js"></script>
 
     <script>
-        (function($){
-            function toggleAssignee(){
-                if($('#radioDepartment').is(':checked')){
+        (function ($) {
+            function toggleAssignee() {
+                if ($('#radioDepartment').is(':checked')) {
                     $('#assigne-input').addClass('d-none').prop('disabled', true);
                     $('#assigne-select').removeClass('d-none').prop('disabled', false);
                 } else {
@@ -595,7 +842,7 @@
                     $('#assigne-input').removeClass('d-none').prop('disabled', false);
                 }
             }
-            $(function(){
+            $(function () {
                 toggleAssignee();
                 $(document).on('change', 'input[name="assigneeType"]', toggleAssignee);
             });

@@ -61,8 +61,8 @@
                 <div class="page-header">
                     <div class="add-item d-flex">
                         <div class="page-title">
-                            <h4>My Incentive List</h4>
-                            <h6>Manage My Incentive</h6>
+                            <h4>Category Process List</h4>
+                            <h6>Manage your Category Process</h6>
                         </div>
                     </div>
                     <ul class="table-top-head">
@@ -95,7 +95,7 @@
                                 <span><img src="assets/img/icons/dash1.svg" alt="img"></span>
                             </div>
                             <div class="dash-widgetcontent">
-                                <h6>Total Count Incentive</h6>
+                                <h6>Category Process</h6>
                                 <h5><span class="counters" data-count="307144">307144</span></h5>
                             </div>
                         </div>
@@ -106,8 +106,8 @@
                                 <span><img src="assets/img/icons/dash2.svg" alt="img"></span>
                             </div>
                             <div class="dash-widgetcontent">
-                                <h6>Amount Incentive</h6>
-                                <h5>Rp<span class="counters" data-count="4385">4385</span></h5>
+                                <h6>Total Used</h6>
+                                <h5><span class="counters" data-count="4385">4385</span></h5>
                             </div>
                         </div>
                     </div>
@@ -150,18 +150,19 @@
                                 <div class="dropdown w-100">
                                     <button class="btn btn-outline-primary dropdown-toggle" type="button"
                                         data-bs-toggle="dropdown" aria-expanded="false">
-                                        Name Of Process
+                                        Category Process
                                     </button>
                                     <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="#">Printing</a></li>
-                                        <li><a class="dropdown-item" href="#">Cutting</a></li>
+                                        <li><a class="dropdown-item" href="#">Design</a></li>
+                                        <li><a class="dropdown-item" href="#">Pracetak</a></li>
+                                        <li><a class="dropdown-item" href="#">Cetak</a></li>
+                                        <li><a class="dropdown-item" href="#">Finishing</a></li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
                         <!-- /Filter -->
-
-                        <!-- My Incentive Table -->
+                        <!-- Category Process Table -->
                         <div class="table-responsive mb-5">
                             <table class="table datanew">
                                 <thead>
@@ -172,124 +173,87 @@
                                                 <span class="checkmarks"></span>
                                             </label>
                                         </th>
-                                        <th># Incentive</th>
-                                        <th>Name of Process</th>
-                                        <th>Incentive Priode</th>
-                                        <th>Qty Complete</th>
-                                        <th>Total Amount Incentive</th>
-                                        <th>Priode</th>
+                                        <th>No</th>
+                                        <th>Category Process</th>
+                                        <th>Used</th>
+                                        <th>Created By</th>
+                                        <th>Created Date</th>
+                                        <th class="no-sort">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
                                         <td><label class="checkboxs"><input type="checkbox"><span
                                                     class="checkmarks"></span></label></td>
-                                        <td>INC-001</td>
-                                        <td>Printing</td>
-                                        <td class="str-value">2025-09</td>
-                                        <td>50</td>
-                                        <td>25.000</td>
-                                        <td class="str-value">2025-09</td>
+                                        <td>PCC-001</td>
+                                        <td>Design</td>
+                                        <td>10</td>
+                                        <td>Admin</td>
+                                        <td>2025-10-13 10:35:00</td>
+                                        <td class="action-table-data">
+                                            <div class="edit-delete-action">
+                                                <a class="me-2 p-2" href="#" data-bs-toggle="modal"
+                                                    data-bs-target="#edit-units"><i data-feather="edit"></i></a>
+                                                <a class="confirm-text p-2" href="javascript:void(0);"><i
+                                                        data-feather="trash-2"></i></a>
+                                            </div>
+                                        </td>
                                     </tr>
+
                                     <tr>
                                         <td><label class="checkboxs"><input type="checkbox"><span
                                                     class="checkmarks"></span></label></td>
-                                        <td>INC-002</td>
-                                        <td>Cutting</td>
-                                        <td class="str-value">2025-09</td>
-                                        <td>75</td>
-                                        <td>22.500</td>
-                                        <td class="str-value">2025-09</td>
+                                        <td>PCC-002</td>
+                                        <td>Pracetak</td>
+                                        <td>15</td>
+                                        <td>Admin</td>
+                                        <td>2025-10-13 10:35:00</td>
+                                        <td class="action-table-data">
+                                            <div class="edit-delete-action">
+                                                <a class="me-2 p-2" href="#" data-bs-toggle="modal"
+                                                    data-bs-target="#edit-units"><i data-feather="edit"></i></a>
+                                                <a class="confirm-text p-2" href="javascript:void(0);"><i
+                                                        data-feather="trash-2"></i></a>
+                                            </div>
+                                        </td>
                                     </tr>
+
                                     <tr>
                                         <td><label class="checkboxs"><input type="checkbox"><span
                                                     class="checkmarks"></span></label></td>
-                                        <td>INC-003</td>
-                                        <td>Laminating</td>
-                                        <td class="str-value">2025-09</td>
-                                        <td>100</td>
-                                        <td>20.000</td>
-                                        <td class="str-value">2025-09</td>
+                                        <td>PCC-003</td>
+                                        <td>Cetak</td>
+                                        <td>22</td>
+                                        <td>Admin</td>
+                                        <td>2025-10-13 10:35:00</td>
+                                        <td class="action-table-data">
+                                            <div class="edit-delete-action">
+                                                <a class="me-2 p-2" href="#" data-bs-toggle="modal"
+                                                    data-bs-target="#edit-units"><i data-feather="edit"></i></a>
+                                                <a class="confirm-text p-2" href="javascript:void(0);"><i
+                                                        data-feather="trash-2"></i></a>
+                                            </div>
+                                        </td>
                                     </tr>
+
                                     <tr>
                                         <td><label class="checkboxs"><input type="checkbox"><span
                                                     class="checkmarks"></span></label></td>
-                                        <td>INC-004</td>
-                                        <td>Printing</td>
-                                        <td class="str-value">2025-09</td>
-                                        <td>30</td>
-                                        <td>15.000</td>
-                                        <td class="str-value">2025-09</td>
-                                    </tr>
-                                    <tr>
-                                        <td><label class="checkboxs"><input type="checkbox"><span
-                                                    class="checkmarks"></span></label></td>
-                                        <td>INC-005</td>
-                                        <td>Cutting</td>
-                                        <td class="str-value">2025-09</td>
-                                        <td>120</td>
-                                        <td>36.000</td>
-                                        <td class="str-value">2025-09</td>
-                                    </tr>
-                                    <tr>
-                                        <td><label class="checkboxs"><input type="checkbox"><span
-                                                    class="checkmarks"></span></label></td>
-                                        <td>INC-006</td>
-                                        <td>Folding</td>
-                                        <td class="str-value">2025-09</td>
-                                        <td>200</td>
-                                        <td>30.000</td>
-                                        <td class="str-value">2025-09</td>
-                                    </tr>
-                                    <tr>
-                                        <td><label class="checkboxs"><input type="checkbox"><span
-                                                    class="checkmarks"></span></label></td>
-                                        <td>INC-007</td>
-                                        <td>Printing</td>
-                                        <td class="str-value">2025-09</td>
-                                        <td>45</td>
-                                        <td>22.500</td>
-                                        <td class="str-value">2025-09</td>
-                                    </tr>
-                                    <tr>
-                                        <td><label class="checkboxs"><input type="checkbox"><span
-                                                    class="checkmarks"></span></label></td>
-                                        <td>INC-008</td>
-                                        <td>Cutting</td>
-                                        <td class="str-value">2025-09</td>
-                                        <td>90</td>
-                                        <td>27.000</td>
-                                        <td class="str-value">2025-09</td>
-                                    </tr>
-                                    <tr>
-                                        <td><label class="checkboxs"><input type="checkbox"><span
-                                                    class="checkmarks"></span></label></td>
-                                        <td>INC-009</td>
-                                        <td>Laminating</td>
-                                        <td class="str-value">2025-09</td>
-                                        <td>80</td>
-                                        <td>16.000</td>
-                                        <td class="str-value">2025-09</td>
-                                    </tr>
-                                    <tr>
-                                        <td><label class="checkboxs"><input type="checkbox"><span
-                                                    class="checkmarks"></span></label></td>
-                                        <td>INC-010</td>
-                                        <td>Folding</td>
-                                        <td class="str-value">2025-09</td>
-                                        <td>150</td>
-                                        <td>22.500</td>
-                                        <td class="str-value">2025-09</td>
+                                        <td>PCC-004</td>
+                                        <td>Finishing</td>
+                                        <td>32</td>
+                                        <td>Admin</td>
+                                        <td>2025-10-13 10:35:00</td>
+                                        <td class="action-table-data">
+                                            <div class="edit-delete-action">
+                                                <a class="me-2 p-2" href="#" data-bs-toggle="modal"
+                                                    data-bs-target="#edit-units"><i data-feather="edit"></i></a>
+                                                <a class="confirm-text p-2" href="javascript:void(0);"><i
+                                                        data-feather="trash-2"></i></a>
+                                            </div>
+                                        </td>
                                     </tr>
                                 </tbody>
-                                <tfoot>
-                                    <tr>
-                                        <td colspan="1"></td>
-                                        <td class="text-start fw-bold">Total</td>
-                                        <td colspan="3"></td>
-                                        <td id="amount-total" class="fw-bold sum-target" data-col-index="5"></td>
-                                    </tr>
-                                </tfoot>
                             </table>
                         </div>
 
@@ -301,6 +265,61 @@
 
     </div>
     <!-- /Main Wrapper -->
+
+    <!-- Modal for edit -->
+    <div class="modal fade text-standard" id="edit-units" tabindex="-1" aria-labelledby="edit-unitsLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header py-2">
+                    <h5 class="modal-title" id="edit-unitsLabel">Add New Process Name</h5>
+                    <div class="d-flex align-items-center">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div>
+                        <form>
+                            <div class="row mb-3">
+                                <div class="col-5">
+                                    <label class="form-label">Process Category</label>
+                                </div>
+                                <div class="col-7">
+                                    <select class="select">
+                                        <option>Design</option>
+                                        <option>Pracetak</option>
+                                        <option>Cetak</option>
+                                        <option>Finishing</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <div class="col-5">
+                                    <label for="name" class="form-label">Used</label>
+                                </div>
+                                <div class="col-7">
+                                    <input type="text" class="form-control number-separator" inputmode="numeric"
+                                        pattern="[0-9]*" value="500">
+                                    <input type="hidden" class="result-input" id="used" value="10">
+                                </div>
+                            </div>
+
+                            <small class="d-none text-standard text-danger" id="info-selected-all-1"><i
+                                    class="fa-solid fa-circle-info"></i> please input your specification<br></small>
+                            <div class="row mb-3 justify-content-end">
+                                <div class="col-7">
+                                    <button class="btn btn-primary w-100" id="save-btn-1">Simpan</button>
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- jQuery -->
     <script src="assets/js/jquery-3.7.1.min.js"></script>
 
@@ -330,6 +349,9 @@
     <!-- Sweetalert 2 -->
     <script src="assets/plugins/sweetalert/sweetalert2.all.min.js"></script>
     <script src="assets/plugins/sweetalert/sweetalerts.min.js"></script>
+
+    <!-- Separator -->
+    <script src="assets/js/easy-number-separator.js"></script>
 
     <!-- Custom JS -->
     <script src="assets/js/theme-script.js"></script>

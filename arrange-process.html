@@ -61,8 +61,8 @@
                 <div class="page-header">
                     <div class="add-item d-flex">
                         <div class="page-title">
-                            <h4>Job Order List</h4>
-                            <h6>Manage your Job Order</h6>
+                            <h4>Arrange Process List</h4>
+                            <h6>Manage your Arrange Process</h6>
                         </div>
                     </div>
                     <ul class="table-top-head">
@@ -95,19 +95,30 @@
                                 <span><img src="assets/img/icons/dash1.svg" alt="img"></span>
                             </div>
                             <div class="dash-widgetcontent">
-                                <h6>Total Job Order</h6>
+                                <h6>Arrange Process</h6>
                                 <h5><span class="counters" data-count="307144">307144</span></h5>
                             </div>
                         </div>
                     </div>
                     <div class="col-xl-3 col-sm-6 col-12 d-flex">
-                        <div class="dash-widget dash1 w-100">
+                        <div class="dash-widget dash2 w-100">
                             <div class="dash-widgetimg">
-                                <span><img src="assets/img/icons/dash2.svg" alt="img"></span>
+                                <span><img src="assets/img/icons/dash3.svg" alt="img"></span>
                             </div>
                             <div class="dash-widgetcontent">
-                                <h6>Total Customers</h6>
-                                <h5><span class="counters" data-count="4385">4385</span></h5>
+                                <h6>Total Artwork</h6>
+                                <h5><span class="counters" data-count="3000">3000</span></h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-sm-6 col-12 d-flex">
+                        <div class="dash-widget dash3 w-100">
+                            <div class="dash-widgetimg">
+                                <span><img src="assets/img/icons/dash4.svg" alt="img"></span>
+                            </div>
+                            <div class="dash-widgetcontent">
+                                <h6>Total Design</h6>
+                                <h5><span class="counters" data-count="1385">1385</span></h5>
                             </div>
                         </div>
                     </div>
@@ -147,58 +158,51 @@
                                 </div>
                             </div>
                             <div class="filters d-flex justify-content-end">
-                                <div class="dropdown w-100 me-2">
-                                    <button class="btn btn-outline-primary dropdown-toggle" type="button"
-                                        data-bs-toggle="dropdown" aria-expanded="false">
-                                        Product
-                                    </button>
-                                    <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="#">Brochure</a></li>
-                                        <li><a class="dropdown-item" href="#">Flyer</a></li>
-                                    </ul>
-                                </div>
                                 <div class="dropdown w-100">
                                     <button class="btn btn-outline-primary dropdown-toggle" type="button"
                                         data-bs-toggle="dropdown" aria-expanded="false">
-                                        Priority
+                                        Design
                                     </button>
                                     <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="#">High</a></li>
-                                        <li><a class="dropdown-item" href="#">Urgent</a></li>
-                                        <li><a class="dropdown-item" href="#">Reguler</a></li>
+                                        <li><a class="dropdown-item" href="#">Design</a></li>
+                                        <li><a class="dropdown-item" href="#">Artwork</a></li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
                         <!-- /Filter -->
-                        <!-- Job Order Table -->
+                        <!-- Arrange Process Table -->
                         <div class="table-responsive mb-5">
                             <table class="table datanew">
                                 <thead>
                                     <tr>
+                                        <th class="no-sort">
+                                            <label class="checkboxs">
+                                                <input type="checkbox" id="select-all">
+                                                <span class="checkmarks"></span>
+                                            </label>
+                                        </th>
                                         <th>No</th>
-                                        <th>Due Date</th>
-                                        <th>Customers</th>
+                                        <th>Product Category</th>
                                         <th>Product</th>
-                                        <th>Job Title</th>
-                                        <th>Material</th>
-                                        <th>Qty</th>
-                                        <th>Priority</th>
-                                        <th>All Process (Index)</th>
+                                        <th>Design</th>
+                                        <th>Pracetak</th>
+                                        <th>Cetak</th>
+                                        <th>Finishing</th>
                                         <th class="no-sort">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td>JOB-2510000001</td>
-                                        <td>15/10/2025 - 5 Days Remain</td>
-                                        <td>PT Makmur Abadi</td>
+                                        <td><label class="checkboxs"><input type="checkbox"><span
+                                                    class="checkmarks"></span></label></td>
+                                        <td>JAP-0001</td>
+                                        <td>Offset</td>
                                         <td>Brosur A5</td>
-                                        <td>Brosur Penawaran Bisnis</td>
-                                        <td>Art Paper 150 gsm</td>
-                                        <td>5000</td>
-                                        <td>High</td>
-                                        <td>Artwork → Plat CTP → Cetak SM52 → Potong → Sortir → Packing</td>
+                                        <td>Artwork</td>
+                                        <td>Plat CTP</td>
+                                        <td>Cetak SM52</td>
+                                        <td>Potong → Lipat → Sortir → Packing</td>
                                         <td class="action-table-data">
                                             <div class="edit-delete-action">
                                                 <a class="me-2 p-2" href="#" data-bs-toggle="modal"
@@ -208,16 +212,17 @@
                                             </div>
                                         </td>
                                     </tr>
+
                                     <tr>
-                                        <td>JOB-2510000002</td>
-                                        <td>15/10/2025 - 5 Days Remain</td>
-                                        <td>PT Makmur Abadi</td>
+                                        <td><label class="checkboxs"><input type="checkbox"><span
+                                                    class="checkmarks"></span></label></td>
+                                        <td>JAP-0002</td>
+                                        <td>Large Format</td>
                                         <td>Spanduk Banner</td>
-                                        <td>Spanduk Promo Cuci Gudang</td>
-                                        <td>Flexi China 280 gsm</td>
-                                        <td>5</td>
-                                        <td>Urgent</td>
-                                        <td>Layout → Output Film → Cetak Outdoor → Potong → Selongsong → Packing</td>
+                                        <td>Design</td>
+                                        <td>Output Film</td>
+                                        <td>Cetak Outdoor</td>
+                                        <td>Potong → Selongsong → Packing</td>
                                         <td class="action-table-data">
                                             <div class="edit-delete-action">
                                                 <a class="me-2 p-2" href="#" data-bs-toggle="modal"
@@ -227,16 +232,17 @@
                                             </div>
                                         </td>
                                     </tr>
+
                                     <tr>
-                                        <td>JOB-2510000003</td>
-                                        <td>15/10/2025 - 5 Days Remain</td>
-                                        <td>PT Makmur Abadi</td>
+                                        <td><label class="checkboxs"><input type="checkbox"><span
+                                                    class="checkmarks"></span></label></td>
+                                        <td>JAP-0003</td>
+                                        <td>Digital A3+</td>
                                         <td>Kartu Nama</td>
-                                        <td>Kartu Nama Marketing</td>
-                                        <td>Art Carton 260 gsm</td>
-                                        <td>20 Box</td>
-                                        <td>Reguler</td>
-                                        <td>Design → Cetak Xerox → Potong → Sortir → Packing</td>
+                                        <td>Design</td>
+                                        <td>-</td>
+                                        <td>Cetak Xerox</td>
+                                        <td>Potong → Laminasi → Sortir → Packing</td>
                                         <td class="action-table-data">
                                             <div class="edit-delete-action">
                                                 <a class="me-2 p-2" href="#" data-bs-toggle="modal"
@@ -246,56 +252,17 @@
                                             </div>
                                         </td>
                                     </tr>
+
                                     <tr>
-                                        <td>JOB-2510000004</td>
-                                        <td>14/10/2025 - 4 Days Remain</td>
-                                        <td>CV Cahaya Baru</td>
-                                        <td>Kwitansi NCR</td>
-                                        <td>Kwitansi Penjualan Barang</td>
-                                        <td>Kertas NCR 55 gsm (2 Ply)</td>
-                                        <td>100 Buku</td>
-                                        <td>High</td>
-                                        <td>Layout → Klise → Cetak Multilith → Numerasi → Susun Komplit → Potong →
-                                            Packing</td>
-                                        <td class="action-table-data">
-                                            <div class="edit-delete-action">
-                                                <a class="me-2 p-2" href="#" data-bs-toggle="modal"
-                                                    data-bs-target="#edit-units"><i data-feather="edit"></i></a>
-                                                <a class="confirm-text p-2" href="javascript:void(0);"><i
-                                                        data-feather="trash-2"></i></a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>JOB-2510000005</td>
-                                        <td>14/10/2025 - 4 Days Remain</td>
-                                        <td>CV Cahaya Baru</td>
-                                        <td>Poster Display</td>
-                                        <td>Poster Event Perusahaan</td>
-                                        <td>Art Paper 150 gsm</td>
-                                        <td>50</td>
-                                        <td>Urgent</td>
-                                        <td>Artwork → Output Film → Cetak Indoor → Potong → Laminasi → Susun Komplit
-                                        </td>
-                                        <td class="action-table-data">
-                                            <div class="edit-delete-action">
-                                                <a class="me-2 p-2" href="#" data-bs-toggle="modal"
-                                                    data-bs-target="#edit-units"><i data-feather="edit"></i></a>
-                                                <a class="confirm-text p-2" href="javascript:void(0);"><i
-                                                        data-feather="trash-2"></i></a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>JOB-2510000006</td>
-                                        <td>14/10/2025 - 4 Days Remain</td>
-                                        <td>CV Cahaya Baru</td>
+                                        <td><label class="checkboxs"><input type="checkbox"><span
+                                                    class="checkmarks"></span></label></td>
+                                        <td>JAP-0004</td>
+                                        <td>Sablon</td>
                                         <td>Kaos Distro</td>
-                                        <td>Kaos Komunitas Lari</td>
-                                        <td>Cotton Combed 30s</td>
-                                        <td>80</td>
-                                        <td>Reguler</td>
-                                        <td>Artwork → Klise → Sortir → Lipat → Packing</td>
+                                        <td>Artwork</td>
+                                        <td>Klise</td>
+                                        <td>-</td>
+                                        <td>Sortir → Lipat → Packing</td>
                                         <td class="action-table-data">
                                             <div class="edit-delete-action">
                                                 <a class="me-2 p-2" href="#" data-bs-toggle="modal"
@@ -305,35 +272,17 @@
                                             </div>
                                         </td>
                                     </tr>
+
                                     <tr>
-                                        <td>JOB-2510000007</td>
-                                        <td>15/10/2025 - 5 Days Remain</td>
-                                        <td>UD Mandiri Cetak</td>
-                                        <td>Undangan Pernikahan</td>
-                                        <td>Undangan Tema Rustic</td>
-                                        <td>Jasmine Premium 250 gsm</td>
-                                        <td>350</td>
-                                        <td>High</td>
-                                        <td>Design → Cetak Xerox → Potong → Lem → Packing</td>
-                                        <td class="action-table-data">
-                                            <div class="edit-delete-action">
-                                                <a class="me-2 p-2" href="#" data-bs-toggle="modal"
-                                                    data-bs-target="#edit-units"><i data-feather="edit"></i></a>
-                                                <a class="confirm-text p-2" href="javascript:void(0);"><i
-                                                        data-feather="trash-2"></i></a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>JOB-2510000008</td>
-                                        <td>15/10/2025 - 5 Days Remain</td>
-                                        <td>UD Mandiri Cetak</td>
+                                        <td><label class="checkboxs"><input type="checkbox"><span
+                                                    class="checkmarks"></span></label></td>
+                                        <td>JAP-0005</td>
+                                        <td>Offset</td>
                                         <td>Buku Yasin</td>
-                                        <td>Buku Yasin Pengajian</td>
-                                        <td>HVS 70 gsm + Ivory 230 gsm</td>
-                                        <td>200</td>
-                                        <td>Reguler</td>
-                                        <td>Layout → Plat CTP → Cetak Oliver52 → Susun Komplit → Lem → Potong</td>
+                                        <td>Design</td>
+                                        <td>Plat CTP</td>
+                                        <td>Cetak Oliver52</td>
+                                        <td>Susun Komplit → Lem → Potong → Packing</td>
                                         <td class="action-table-data">
                                             <div class="edit-delete-action">
                                                 <a class="me-2 p-2" href="#" data-bs-toggle="modal"
@@ -343,16 +292,17 @@
                                             </div>
                                         </td>
                                     </tr>
+
                                     <tr>
-                                        <td>JOB-2510000009</td>
-                                        <td>14/10/2025 - 4 Days Remain</td>
-                                        <td>PT Global Solusi</td>
-                                        <td>Stiker Vinyl</td>
-                                        <td>Stiker Logo Produk</td>
-                                        <td>Vinyl Glossy</td>
-                                        <td>1000</td>
-                                        <td>Urgent</td>
-                                        <td>Design → Output Film → Cetak Outdoor → Potong → Laminasi → Packing</td>
+                                        <td><label class="checkboxs"><input type="checkbox"><span
+                                                    class="checkmarks"></span></label></td>
+                                        <td>JAP-0006</td>
+                                        <td>Large Format</td>
+                                        <td>Poster Display</td>
+                                        <td>Artwork</td>
+                                        <td>Output Film</td>
+                                        <td>Cetak Indoor</td>
+                                        <td>Potong → Laminasi → Roll</td>
                                         <td class="action-table-data">
                                             <div class="edit-delete-action">
                                                 <a class="me-2 p-2" href="#" data-bs-toggle="modal"
@@ -362,16 +312,17 @@
                                             </div>
                                         </td>
                                     </tr>
+
                                     <tr>
-                                        <td>JOB-2510000010</td>
-                                        <td>14/10/2025 - 4 Days Remain</td>
-                                        <td>PT Global Solusi</td>
-                                        <td>Majalah A4</td>
-                                        <td>Majalah Edisi Oktober</td>
-                                        <td>HVS 80 gsm + Art Carton 230 gsm</td>
-                                        <td>500</td>
-                                        <td>Reguler</td>
-                                        <td>Artwork → Plat CTP → Cetak SM52 → Potong → Susun Komplit → Lem</td>
+                                        <td><label class="checkboxs"><input type="checkbox"><span
+                                                    class="checkmarks"></span></label></td>
+                                        <td>JAP-0007</td>
+                                        <td>Digital A3+</td>
+                                        <td>Undangan Pernikahan</td>
+                                        <td>Design</td>
+                                        <td>-</td>
+                                        <td>Cetak Xerox</td>
+                                        <td>Potong → Lipat → Lem → Packing</td>
                                         <td class="action-table-data">
                                             <div class="edit-delete-action">
                                                 <a class="me-2 p-2" href="#" data-bs-toggle="modal"
@@ -381,16 +332,37 @@
                                             </div>
                                         </td>
                                     </tr>
+
                                     <tr>
-                                        <td>JOB-251000011</td>
-                                        <td>14/10/2025 - 4 Days Remain</td>
-                                        <td>PT Global Solusi</td>
+                                        <td><label class="checkboxs"><input type="checkbox"><span
+                                                    class="checkmarks"></span></label></td>
+                                        <td>JAP-0008</td>
+                                        <td>Offset</td>
+                                        <td>Kwitansi NCR 3 Ply</td>
+                                        <td>Artwork</td>
+                                        <td>Klise</td>
+                                        <td>Cetak Multilith</td>
+                                        <td>Numerasi → Susun Komplit → Potong → Packing</td>
+                                        <td class="action-table-data">
+                                            <div class="edit-delete-action">
+                                                <a class="me-2 p-2" href="#" data-bs-toggle="modal"
+                                                    data-bs-target="#edit-units"><i data-feather="edit"></i></a>
+                                                <a class="confirm-text p-2" href="javascript:void(0);"><i
+                                                        data-feather="trash-2"></i></a>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td><label class="checkboxs"><input type="checkbox"><span
+                                                    class="checkmarks"></span></label></td>
+                                        <td>JAP-0009</td>
+                                        <td>Sablon</td>
                                         <td>Goodie Bag</td>
-                                        <td>Goodie Bag Seminar</td>
-                                        <td>Blacu 200 gsm</td>
-                                        <td>150</td>
-                                        <td>High</td>
-                                        <td>Artwork → Klise → Sortir → Packing</td>
+                                        <td>Design</td>
+                                        <td>Klise</td>
+                                        <td>-</td>
+                                        <td>Sortir → Lipat → Packing</td>
                                         <td class="action-table-data">
                                             <div class="edit-delete-action">
                                                 <a class="me-2 p-2" href="#" data-bs-toggle="modal"
@@ -400,16 +372,37 @@
                                             </div>
                                         </td>
                                     </tr>
+
                                     <tr>
-                                        <td>JOB-251000012</td>
-                                        <td>14/10/2025 - 4 Days Remain</td>
-                                        <td>PT Indah Pangan</td>
+                                        <td><label class="checkboxs"><input type="checkbox"><span
+                                                    class="checkmarks"></span></label></td>
+                                        <td>JAP-0010</td>
+                                        <td>Large Format</td>
+                                        <td>Stiker Vinyl</td>
+                                        <td>Artwork</td>
+                                        <td>Output Film</td>
+                                        <td>Cetak Outdoor</td>
+                                        <td>Potong → Laminasi</td>
+                                        <td class="action-table-data">
+                                            <div class="edit-delete-action">
+                                                <a class="me-2 p-2" href="#" data-bs-toggle="modal"
+                                                    data-bs-target="#edit-units"><i data-feather="edit"></i></a>
+                                                <a class="confirm-text p-2" href="javascript:void(0);"><i
+                                                        data-feather="trash-2"></i></a>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td><label class="checkboxs"><input type="checkbox"><span
+                                                    class="checkmarks"></span></label></td>
+                                        <td>JAP-0011</td>
+                                        <td>Offset</td>
                                         <td>Kop Surat</td>
-                                        <td>Kop Surat Perusahaan</td>
-                                        <td>HVS 80 gsm</td>
-                                        <td>20 Rim</td>
-                                        <td>Reguler</td>
-                                        <td>Layout → Plat CTP → Cetak Multilith → Potong → Packing</td>
+                                        <td>Design</td>
+                                        <td>Plat CTP</td>
+                                        <td>Cetak Multilith</td>
+                                        <td>Potong → Sortir → Packing</td>
                                         <td class="action-table-data">
                                             <div class="edit-delete-action">
                                                 <a class="me-2 p-2" href="#" data-bs-toggle="modal"
@@ -419,35 +412,17 @@
                                             </div>
                                         </td>
                                     </tr>
+
                                     <tr>
-                                        <td>JOB-251000013</td>
-                                        <td>14/10/2025 - 4 Days Remain</td>
-                                        <td>PT Indah Pangan</td>
-                                        <td>X-Banner</td>
-                                        <td>X-Banner Diskon Besar</td>
-                                        <td>Flexi Korea 280 gsm</td>
-                                        <td>10</td>
-                                        <td>Urgent</td>
-                                        <td>Design → Output Film → Cetak Indoor → Potong → Pasang Kaki → Packing</td>
-                                        <td class="action-table-data">
-                                            <div class="edit-delete-action">
-                                                <a class="me-2 p-2" href="#" data-bs-toggle="modal"
-                                                    data-bs-target="#edit-units"><i data-feather="edit"></i></a>
-                                                <a class="confirm-text p-2" href="javascript:void(0);"><i
-                                                        data-feather="trash-2"></i></a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>JOB-251000014</td>
-                                        <td>15/10/2025 - 5 Days Remain</td>
-                                        <td>Sekolah Mitra</td>
+                                        <td><label class="checkboxs"><input type="checkbox"><span
+                                                    class="checkmarks"></span></label></td>
+                                        <td>JAP-0012</td>
+                                        <td>Digital A3+</td>
                                         <td>Sertifikat A4</td>
-                                        <td>Sertifikat Kelulusan</td>
-                                        <td>Ivory 230 gsm</td>
-                                        <td>400</td>
-                                        <td>Reguler</td>
-                                        <td>Design → Cetak Xerox → Potong → Sortir → Packing</td>
+                                        <td>Design</td>
+                                        <td>-</td>
+                                        <td>Cetak Xerox</td>
+                                        <td>Potong → Sortir → Packing</td>
                                         <td class="action-table-data">
                                             <div class="edit-delete-action">
                                                 <a class="me-2 p-2" href="#" data-bs-toggle="modal"
@@ -457,16 +432,17 @@
                                             </div>
                                         </td>
                                     </tr>
+
                                     <tr>
-                                        <td>JOB-251000015</td>
-                                        <td>15/10/2025 - 5 Days Remain</td>
-                                        <td>Sekolah Mitra</td>
-                                        <td>Amplop</td>
-                                        <td>Amplop Ukuran Kabinet</td>
-                                        <td>HVS 100 gsm</td>
-                                        <td>1000</td>
-                                        <td>High</td>
-                                        <td>Artwork → Klise → Cetak Multilith → Potong → Lem → Packing</td>
+                                        <td><label class="checkboxs"><input type="checkbox"><span
+                                                    class="checkmarks"></span></label></td>
+                                        <td>JAP-0013</td>
+                                        <td>Large Format</td>
+                                        <td>X-Banner</td>
+                                        <td>Artwork</td>
+                                        <td>Output Film</td>
+                                        <td>Cetak Indoor</td>
+                                        <td>Potong → Pasang Stand → Packing</td>
                                         <td class="action-table-data">
                                             <div class="edit-delete-action">
                                                 <a class="me-2 p-2" href="#" data-bs-toggle="modal"
@@ -476,16 +452,17 @@
                                             </div>
                                         </td>
                                     </tr>
+
                                     <tr>
-                                        <td>JOB-251000016</td>
-                                        <td>15/10/2025 - 5 Days Remain</td>
-                                        <td>Sekolah Mitra</td>
+                                        <td><label class="checkboxs"><input type="checkbox"><span
+                                                    class="checkmarks"></span></label></td>
+                                        <td>JAP-0014</td>
+                                        <td>Offset</td>
                                         <td>Kalender Dinding</td>
-                                        <td>Kalender Tahunan 2026</td>
-                                        <td>Art Paper 120 gsm</td>
-                                        <td>2000</td>
-                                        <td>Urgent</td>
-                                        <td>Layout → Plat CTP → Cetak Oliver52 → Potong → Susun Kawat → Packing</td>
+                                        <td>Design</td>
+                                        <td>Plat CTP</td>
+                                        <td>Cetak Oliver52</td>
+                                        <td>Potong → Susun Komplit → Klem Kawat → Packing</td>
                                         <td class="action-table-data">
                                             <div class="edit-delete-action">
                                                 <a class="me-2 p-2" href="#" data-bs-toggle="modal"
@@ -495,16 +472,17 @@
                                             </div>
                                         </td>
                                     </tr>
+
                                     <tr>
-                                        <td>JOB-251000017</td>
-                                        <td>18/10/2025 - 8 Days Remain</td>
-                                        <td>PT Multi Media</td>
-                                        <td>Buku Katalog</td>
-                                        <td>Katalog Produk Baru</td>
-                                        <td>Art Paper 100 gsm + Ivory 260 gsm</td>
-                                        <td>300</td>
-                                        <td>Reguler</td>
-                                        <td>Artwork → Plat CTP → Cetak SM52 → Potong → Susun Komplit → Jahit</td>
+                                        <td><label class="checkboxs"><input type="checkbox"><span
+                                                    class="checkmarks"></span></label></td>
+                                        <td>JAP-0015</td>
+                                        <td>Sablon</td>
+                                        <td>Topi</td>
+                                        <td>Artwork</td>
+                                        <td>Klise</td>
+                                        <td>-</td>
+                                        <td>Sortir → Packing</td>
                                         <td class="action-table-data">
                                             <div class="edit-delete-action">
                                                 <a class="me-2 p-2" href="#" data-bs-toggle="modal"
@@ -514,16 +492,17 @@
                                             </div>
                                         </td>
                                     </tr>
+
                                     <tr>
-                                        <td>JOB-251000018</td>
-                                        <td>18/10/2025 - 8 Days Remain</td>
-                                        <td>PT Multi Media</td>
+                                        <td><label class="checkboxs"><input type="checkbox"><span
+                                                    class="checkmarks"></span></label></td>
+                                        <td>JAP-0016</td>
+                                        <td>Digital A3+</td>
                                         <td>Menu Cafe</td>
-                                        <td>Daftar Menu Laminasi</td>
-                                        <td>Art Carton 230 gsm</td>
-                                        <td>50</td>
-                                        <td>High</td>
-                                        <td>Design → Cetak Xerox → Potong → Laminasi → Binding</td>
+                                        <td>Design</td>
+                                        <td>-</td>
+                                        <td>Cetak Xerox</td>
+                                        <td>Laminasi → Potong → Binding</td>
                                         <td class="action-table-data">
                                             <div class="edit-delete-action">
                                                 <a class="me-2 p-2" href="#" data-bs-toggle="modal"
@@ -533,16 +512,17 @@
                                             </div>
                                         </td>
                                     </tr>
+
                                     <tr>
-                                        <td>JOB-251000019</td>
-                                        <td>14/10/2025 - 4 Days Remain</td>
-                                        <td>Toko Digital Jaya</td>
-                                        <td>Stiker Reflektif</td>
-                                        <td>Stiker Inventaris Aset</td>
-                                        <td>Reflective Vinyl</td>
-                                        <td>500</td>
-                                        <td>Urgent</td>
-                                        <td>Artwork → Output Film → Cetak Outdoor → Potong → Laminasi</td>
+                                        <td><label class="checkboxs"><input type="checkbox"><span
+                                                    class="checkmarks"></span></label></td>
+                                        <td>JAP-0017</td>
+                                        <td>Offset</td>
+                                        <td>Buku Katalog</td>
+                                        <td>Artwork</td>
+                                        <td>Plat CTP</td>
+                                        <td>Cetak SM52</td>
+                                        <td>Potong → Susun Komplit → Jahit Benang → Packing</td>
                                         <td class="action-table-data">
                                             <div class="edit-delete-action">
                                                 <a class="me-2 p-2" href="#" data-bs-toggle="modal"
@@ -552,16 +532,57 @@
                                             </div>
                                         </td>
                                     </tr>
+
                                     <tr>
-                                        <td>JOB-251000020</td>
-                                        <td>14/10/2025 - 4 Days Remain</td>
-                                        <td>Toko Digital Jaya</td>
-                                        <td>Banner Roll Up</td>
-                                        <td>Roll Up Stand Pameran</td>
-                                        <td>Flexi Korea 280 gsm</td>
-                                        <td>3</td>
-                                        <td>Reguler</td>
-                                        <td>Layout → Output Film → Cetak Indoor → Potong → Pasang Stand → Packing</td>
+                                        <td><label class="checkboxs"><input type="checkbox"><span
+                                                    class="checkmarks"></span></label></td>
+                                        <td>JAP-0018</td>
+                                        <td>Large Format</td>
+                                        <td>Wallpaper Custom</td>
+                                        <td>Design</td>
+                                        <td>Output Film</td>
+                                        <td>Cetak Indoor</td>
+                                        <td>Potong → Roll → Packing</td>
+                                        <td class="action-table-data">
+                                            <div class="edit-delete-action">
+                                                <a class="me-2 p-2" href="#" data-bs-toggle="modal"
+                                                    data-bs-target="#edit-units"><i data-feather="edit"></i></a>
+                                                <a class="confirm-text p-2" href="javascript:void(0);"><i
+                                                        data-feather="trash-2"></i></a>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td><label class="checkboxs"><input type="checkbox"><span
+                                                    class="checkmarks"></span></label></td>
+                                        <td>JAP-0019</td>
+                                        <td>Offset</td>
+                                        <td>Amplop Kabinet</td>
+                                        <td>Artwork</td>
+                                        <td>Klise</td>
+                                        <td>Cetak Multilith</td>
+                                        <td>Potong → Lem → Sortir → Packing</td>
+                                        <td class="action-table-data">
+                                            <div class="edit-delete-action">
+                                                <a class="me-2 p-2" href="#" data-bs-toggle="modal"
+                                                    data-bs-target="#edit-units"><i data-feather="edit"></i></a>
+                                                <a class="confirm-text p-2" href="javascript:void(0);"><i
+                                                        data-feather="trash-2"></i></a>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td><label class="checkboxs"><input type="checkbox"><span
+                                                    class="checkmarks"></span></label></td>
+                                        <td>JAP-0020</td>
+                                        <td>Digital A3+</td>
+                                        <td>Stiker Kromo</td>
+                                        <td>Design</td>
+                                        <td>-</td>
+                                        <td>Cetak Xerox</td>
+                                        <td>Potong (Kiss Cut) → Packing</td>
                                         <td class="action-table-data">
                                             <div class="edit-delete-action">
                                                 <a class="me-2 p-2" href="#" data-bs-toggle="modal"
@@ -601,20 +622,21 @@
                         <form>
                             <div class="row mb-3">
                                 <div class="col-5">
-                                    <label class="form-label">Customer</label>
+                                    <label class="form-label">Product Category</label>
                                 </div>
                                 <div class="col-7">
-                                    <div class="search-container">
-                                        <input type="text" class="form-control customer-input"
-                                            placeholder="Search Employee">
-                                        <div class="search-results"></div>
-                                    </div>
+                                    <select class="select">
+                                        <option>Offset</option>
+                                        <option>Large Format</option>
+                                        <option>Digital A3+</option>
+                                        <option>Sablon</option>
+                                    </select>
                                 </div>
                             </div>
 
                             <div class="row mb-3">
                                 <div class="col-5">
-                                    <label class="form-label">Product</label>
+                                    <label for="name" class="form-label">Product</label>
                                 </div>
                                 <div class="col-7">
                                     <input type="text" class="form-control" value="Brosur A5">
@@ -623,62 +645,46 @@
 
                             <div class="row mb-3">
                                 <div class="col-5">
-                                    <label class="form-label">Job Title</label>
-                                </div>
-                                <div class="col-7">
-                                    <input type="text" class="form-control" value="Amplop Ukuran Kabinet">
-                                </div>
-                            </div>
-
-                            <div class="row mb-3">
-                                <div class="col-5">
-                                    <label class="form-label">Material</label>
-                                </div>
-                                <div class="col-7">
-                                    <input type="text" class="form-control" value="Art Paper 150 gsm">
-                                </div>
-                            </div>
-
-                            <div class="row mb-3">
-                                <div class="col-5">
-                                    <label class="form-label">Qty</label>
-                                </div>
-                                <div class="col-7">
-                                    <input type="text" class="form-control number-separator" inputmode="numeric"
-                                        pattern="[0-9]*" value="500">
-                                    <input type="hidden" class="result-input" id="qty" value="5000">
-                                </div>
-                            </div>
-
-                            <div class="row mb-3">
-                                <div class="col-5">
-                                    <label class="form-label">All Process</label>
-                                </div>
-                                <div class="col-7">
-                                    <input type="text" class="form-control"
-                                        value="Artwork, Plat CTP, Cetak SM52, Potong, Sortir, Packing">
-                                </div>
-                            </div>
-
-                            <div class="row mb-3">
-                                <div class="col-5">
-                                    <label class="form-label">Priority</label>
+                                    <label class="form-label">Design</label>
                                 </div>
                                 <div class="col-7">
                                     <select class="select">
-                                        <option>High</option>
-                                        <option>Urgent</option>
-                                        <option>Reguler</option>
+                                        <option>Artwork</option>
+                                        <option>Design</option>
                                     </select>
                                 </div>
                             </div>
 
                             <div class="row mb-3">
                                 <div class="col-5">
-                                    <label for="shipping" class="form-label">Shipping</label>
+                                    <label class="form-label">Pracetak</label>
                                 </div>
                                 <div class="col-7">
-                                    <input type="text" class="form-control" id="shipping" value="Courier">
+                                    <select class="select">
+                                        <option>-</option>
+                                        <option>Plat CTP</option>
+                                        <option>Output Film</option>
+                                        <option>Klise</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <div class="col-5">
+                                    <label for="name" class="form-label">Cetak</label>
+                                </div>
+                                <div class="col-7">
+                                    <input type="text" class="form-control" value="Cetak SM52">
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <div class="col-5">
+                                    <label for="name" class="form-label">Finishing</label>
+                                </div>
+                                <div class="col-7">
+                                    <input type="text" class="form-control" value="Potong, Lipat, Sortir, Packing
+">
                                 </div>
                             </div>
 
@@ -726,12 +732,6 @@
     <!-- Sweetalert 2 -->
     <script src="assets/plugins/sweetalert/sweetalert2.all.min.js"></script>
     <script src="assets/plugins/sweetalert/sweetalerts.min.js"></script>
-
-    <!-- Separator -->
-    <script src="assets/js/easy-number-separator.js"></script>
-
-    <!-- Live Search -->
-    <script src="assets/js/liveSearch.js"></script>
 
     <!-- Custom JS -->
     <script src="assets/js/theme-script.js"></script>

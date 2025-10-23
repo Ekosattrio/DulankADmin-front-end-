@@ -100,51 +100,57 @@
                 <div class="row mb-3">
                     <label class="col-lg-3 col-form-label">No Job</label>
                     <div class="col-lg-9">
-                        <input type="text" class="form-control" value="JOB-2510000001">
+                        <input type="text" class="form-control" disabled value="JOB-2510000001">
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label class="col-lg-3 col-form-label">Job Order Date</label>
+                    <div class="col-lg-9">
+                        <input type="text" class="form-control" disabled value="15/09/2025">
                     </div>
                 </div>
                 <div class="row mb-3">
                     <label class="col-lg-3 col-form-label">Due Date</label>
                     <div class="col-lg-9">
-                        <input type="text" class="form-control" value="15/10/2025 - 5 Days Remain">
+                        <input type="text" class="form-control" disabled value="15/10/2025 - 5 Days Remain">
                     </div>
                 </div>
                 <div class="row mb-3">
                     <label class="col-lg-3 col-form-label">Customers</label>
                     <div class="col-lg-9">
-                        <input type="text" class="form-control" value="PT Makmur Abadi">
+                        <input type="text" class="form-control" disabled value="PT Makmur Abadi">
                     </div>
                 </div>
                 <div class="row mb-3">
                     <label class="col-lg-3 col-form-label">Product</label>
                     <div class="col-lg-9">
-                        <input type="text" class="form-control" value="Brosur A5">
+                        <input type="text" class="form-control" disabled value="Brosur A5">
                     </div>
                 </div>
-                <div class="row mb-3">
-                    <label class="col-lg-3 col-form-label">Job Title</label>
-                    <div class="col-lg-9">
-                        <input type="text" class="form-control" value="Brosur Penawaran Bisnis">
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-6">
+              </div>
+              <div class="col-xl-6">
+              <div class="row mb-3">
+                  <label class="col-lg-3 col-form-label">Job Title</label>
+                  <div class="col-lg-9">
+                      <input type="text" class="form-control" disabled value="Brosur Penawaran Bisnis">
+                  </div>
+              </div>
                 <div class="row mb-3">
                     <label class="col-lg-3 col-form-label">Material</label>
                     <div class="col-lg-9">
-                        <input type="text" class="form-control" value="Art Paper 150 gsm">
+                        <input type="text" class="form-control" disabled value="Art Paper 150 gsm">
                     </div>
                 </div>
                 <div class="row mb-3">
                     <label class="col-lg-3 col-form-label">Size</label>
                     <div class="col-lg-9">
-                        <input type="text" class="form-control" value="A5 (297x210mm)">
+                        <input type="text" class="form-control" disabled value="A5 (297x210mm)">
                     </div>
                 </div>
                 <div class="row mb-3">
                     <label class="col-lg-3 col-form-label">Qty</label>
                     <div class="col-lg-9">
-                        <input type="number" class="form-control" value="5000">
+                        <input type="number" class="form-control" disabled value="5000">
                     </div>
                 </div>
                 <div class="row mb-3">
@@ -388,7 +394,10 @@ document.addEventListener("DOMContentLoaded", function () {
       newProcess.classList.add("row", "g-2", "align-items-center", "mb-2", "new-process", "fade-in");
       newProcess.innerHTML = `
         <div class="col-md-3 col-12">
-          <input type="text" class="form-control fw-medium process-name" placeholder="Nama Proses">
+                        <select class="form-control">
+                            <option>Artwork</option>
+                            <option>Design</option>
+                        </select>
         </div>
         <div class="col-md-6 col-9">
           <input type="text" class="form-control process-desc" placeholder="Deskripsi Proses">

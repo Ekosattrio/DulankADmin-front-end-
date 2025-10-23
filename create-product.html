@@ -256,14 +256,21 @@
 																data-bs-target="#pills-order" role="tab" aria-controls="pills-order"
 																aria-selected="false">
 																<input type="radio" class="form-control" name="sign">
-																<span class="checkmark"></span> Minimal Order</span>
+																<span class="checkmark"></span> Order Minimum</span>
 														</li>
 														<li class="nav-item" role="presentation">
 															<span class="custom_radio me-4 mb-0" id="pills-ukuran-tab" data-bs-toggle="pill"
 																data-bs-target="#pills-ukuran" role="tab" aria-controls="pills-ukuran"
 																aria-selected="false">
 																<input type="radio" class="form-control" name="sign">
-																<span class="checkmark"></span> Harga Ukuran luas</span>
+																<span class="checkmark"></span> Price By Size</span>
+														</li>
+														<li class="nav-item" role="presentation">
+															<span class="custom_radio me-4 mb-0" id="offset-tab" data-bs-toggle="pill"
+																data-bs-target="#offset" role="tab" aria-controls="offset"
+																aria-selected="false">
+																<input type="radio" class="form-control" name="sign">
+																<span class="checkmark"></span> Offset Service Price</span>
 														</li>
 													</ul>
 												</div>
@@ -532,6 +539,12 @@
 													<div class="row">
 														<div class="col-lg-4 col-sm-6 col-12">
 															<div class="input-blocks add-product">
+																<label>Price</label>
+																<input type="text" class="form-control">
+															</div>
+														</div>
+														<div class="col-lg-4 col-sm-6 col-12">
+															<div class="input-blocks add-product">
 																<label>Minimal Qty</label>
 																<input type="text" class="form-control">
 															</div>
@@ -542,35 +555,68 @@
 																<input type="text" class="form-control">
 															</div>
 														</div>
+														
+													</div>
+												</div>
+												<div class="tab-pane fade" id="offset" role="tabpanel" aria-labelledby="offset-tab">
+													<div class="row">
 														<div class="col-lg-4 col-sm-6 col-12">
 															<div class="input-blocks add-product">
-																<label>Qty Price</label>
+																<label>Druck Price</label>
 																<input type="text" class="form-control">
 															</div>
 														</div>
+		
+													</div>
+													<div class="row">
+														<div class="col-lg-4 col-sm-6 col-12">
+															<div class="input-blocks add-product">
+																<label>Minimal Qty</label>
+																<input type="text" class="form-control">
+															</div>
+														</div>
+														<div class="col-lg-4 col-sm-6 col-12">
+															<div class="input-blocks add-product">
+																<label>Minimal Price</label>
+																<input type="text" class="form-control">
+															</div>
+														</div>
+														
 													</div>
 												</div>
 												<div class="tab-pane fade" id="pills-ukuran" role="tabpanel" aria-labelledby="pills-ukuran-tab">
 													<div class="row">
-														<div class="col-lg-5 col-sm-6 col-12">
+														<div class="col-lg-4 col-sm-6 col-12">
+															<div class="input-blocks add-product">
+																<label>Price</label>
+																<input type="text" class="form-control">
+															</div>
+														</div>
+		
+													</div>
+													<div class="row">
+														<div class="col-lg-4 col-sm-6 col-12">
 															<div class="input-blocks add-product">
 																<label>Minimal Qty</label>
 																<input type="text" class="form-control">
 															</div>
 														</div>
-														<div class="col-lg-5 col-sm-6 col-12">
+														<div class="col-lg-4 col-sm-6 col-12">
 															<div class="input-blocks add-product">
 																<label>Minimal Price</label>
 																<input type="text" class="form-control">
 															</div>
 														</div>
-														<div class="col-lg-5 col-sm-6 col-12">
+														
+													</div>
+													<div class="row">
+														<div class="col-lg-4 col-sm-6 col-12">
 															<div class="input-blocks add-product">
 																<label>Minimal length</label>
 																<input type="text" class="form-control">
 															</div>
 														</div>
-														<div class="col-lg-5 col-sm-6 col-12">
+														<div class="col-lg-4 col-sm-6 col-12">
 															<div class="input-blocks add-product">
 																<label>Minimal Width</label>
 																<input type="text" class="form-control">
@@ -639,12 +685,12 @@
 															<input type="text" class="form-control">
 														</div>
 													</div>
-													<div class="col-lg-4 col-sm-8 col-12">
+													<!-- <div class="col-lg-4 col-sm-8 col-12">
 														<div class="input-blocks add-product">
 															<label>Minimum Order Qty</label>
 															<input type="text" class="form-control">
 														</div>
-													</div>
+													</div> -->
 													<div class="col-lg-4 col-sm-8 col-12">
 														<div class="input-blocks">
 															<label>Manufactured Date</label>

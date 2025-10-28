@@ -56,548 +56,849 @@
 			<div class="content">
 				<!-- tables -->
 				<div class="row">
-					<div class="col-12">
-						<div class="container-fluid bg-white border-bottom px-0">
-							<ul class="nav nav-tabs custom-nav-tabs mt-3 mb-0" id="mainTab" role="tablist">
+					<div class="col-12 bg-white">
+						<div class="my-3">
+							<h4>Special Product</h4>
+							<p class="small">Manage your Product</p>
+						</div>
+						<div class="my-2 d-flex justify-content-between align-items-center border-bottom pb-2">
+							<h4>Cetak Full Color</h4>
+							<div class="d-flex align-items-center gap-3">
+								<label>Display: </label>
+								<div class="form-check">
+									<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+									<label class="form-check-label" for="flexCheckDefault">
+										POS
+									</label>
+								</div>
+								<div class="form-check">
+									<input class="form-check-input" type="checkbox" value="" id="flexCheckChecked"
+										checked>
+									<label class="form-check-label" for="flexCheckChecked">
+										Website
+									</label>
+								</div>
+							</div>
+						</div>
+						<div class="container row">
+							<ul class="nav nav-tabs custom-nav-tabs mt-3 mb-0 col-md-3" id="mainTab" role="tablist">
 								<li class="nav-item" role="presentation">
-									<button class="nav-link active" id="produk-tab" data-bs-toggle="tab"
-										data-bs-target="#produkTabContent" type="button" role="tab"
-										aria-controls="produkTabContent" aria-selected="true">Produk Detail</button>
+									<button class="nav-link active" id="product-category" data-bs-toggle="tab"
+										data-bs-target="#categoryTabContent" type="button" role="tab"
+										aria-controls="categoryTabContent" aria-selected="true">Product
+										Category</button>
 								</li>
 								<li class="nav-item" role="presentation">
-									<button class="nav-link " id="brosur-tab" data-bs-toggle="tab"
-										data-bs-target="#brosurTabContent" type="button" role="tab"
-										aria-controls="brosurTabContent" aria-selected="false">Ukuran Brosur</button>
+									<button class="nav-link " id="product" data-bs-toggle="tab"
+										data-bs-target="#productTabContent" type="button" role="tab"
+										aria-controls="productTabContent" aria-selected="false">Product</button>
 								</li>
 								<li class="nav-item" role="presentation">
-									<button class="nav-link" id="sorting-tab" data-bs-toggle="tab"
-										data-bs-target="#sortingTabContent" type="button" role="tab"
-										aria-controls="sortingTabContent" aria-selected="false">Sorting</button>
+									<button class="nav-link" id="product-size" data-bs-toggle="tab"
+										data-bs-target="#sizeTabContent" type="button" role="tab"
+										aria-controls="sizeTabContent" aria-selected="false">Product Size</button>
 								</li>
 								<li class="nav-item" role="presentation">
-									<button class="nav-link" id="spesifikasi-tab" data-bs-toggle="tab"
-										data-bs-target="#spesifikasiTabContent" type="button" role="tab"
-										aria-controls="spesifikasiTabContent" aria-selected="false">Spesifikasi
-										Brosur</button>
+									<button class="nav-link" id="paper-type" data-bs-toggle="tab"
+										data-bs-target="#paperTypeTabContent" type="button" role="tab"
+										aria-controls="paperTypeTabContent" aria-selected="false">Paper Type</button>
 								</li>
 								<li class="nav-item" role="presentation">
-									<button class="nav-link" id="gambar-tab" data-bs-toggle="tab"
-										data-bs-target="#gambarTabContent" type="button" role="tab"
-										aria-controls="gambarTabContent" aria-selected="false">Pengaturan
-										Gambar</button>
+									<button class="nav-link" id="offset-machine" data-bs-toggle="tab"
+										data-bs-target="#offsetMachineTabContent" type="button" role="tab"
+										aria-controls="offsetMachineTabContent" aria-selected="false">Offset
+										Machine</button>
 								</li>
 								<li class="nav-item" role="presentation">
-									<button class="nav-link" id="artikel-tab" data-bs-toggle="tab"
-										data-bs-target="#artikelTabContent" type="button" role="tab"
-										aria-controls="artikelTabContent" aria-selected="false">Artikel</button>
+									<button class="nav-link" id="laminate" data-bs-toggle="tab"
+										data-bs-target="#laminateTabContent" type="button" role="tab"
+										aria-controls="laminateTabContent" aria-selected="false">Laminate</button>
+								</li>
+								<li class="nav-item" role="presentation">
+									<button class="nav-link" id="process-arrange" data-bs-toggle="tab"
+										data-bs-target="#processArrangeTabContent" type="button" role="tab"
+										aria-controls="processArrangeTabContent" aria-selected="false">Process
+										Arrange</button>
+								</li>
+								<li class="nav-item" role="presentation">
+									<button class="nav-link" id="components" data-bs-toggle="tab"
+										data-bs-target="#componentsTabContent" type="button" role="tab"
+										aria-controls="componentsTabContent" aria-selected="false">Components</button>
 								</li>
 							</ul>
-							<div class="tab-content py-4 px-2" id="mainTabContent">
-								<div class="tab-pane fade show active" id="produkTabContent" role="tabpanel"
-									aria-labelledby="produk-tab">
-									<div class="card">
-										<div class="card-header align-items-center d-flex">
-											<h4 class="card-title mb-0 flex-grow-1">Produk Detail</h4>
-										</div>
-										<div class="card-body">
-											<div class="d-flex align-items-center text-muted mb-4">
-												<div class="flex-grow-1">
-													<div class="d-flex align-items-center mb-1">
-														<h5 class="fs-14 mb-0">Center Aligned media</h5>
-														<a href="javascript:void(0);"
-															class="ms-2 text-warning btn-edit-paragraf" title="Edit"
-															data-target="deskProduk"
-															style="padding:2px 6px;font-size:13px;">
-															<i data-feather="edit"></i>
-														</a>
-													</div>
-													<div class="editable-paragraf" data-id="deskProduk">
-														<p class="mb-1">Cras sit amet nibh libero, in gravida nulla.
-															Nulla vel metus scelerisque ante sollicitudin. Cras purus
-															odio, vestibulum in vulputate at, tempus viverra turpis.
-															Fusce condimentum nunc ac nisi vulputate fringilla. Donec
-															lacinia congue felis in faucibus.</p>
-														<p class="mb-0">Donec sed odio dui. Nullam quis risus eget urna
-															mollis ornare vel eu leo. Cum sociis natoque penatibus et
-															magnis dis parturient montes, nascetur ridiculus mus.</p>
-													</div>
-												</div>
-											</div>
-											<div class="d-flex align-items-end text-muted">
-												<div class="flex-grow-1">
-													<div class="d-flex align-items-center mb-1">
-														<h5 class="fs-14 mb-0">Bottom Aligned media</h5>
-														<a href="javascript:void(0);"
-															class="ms-2 text-warning btn-edit-paragraf" title="Edit"
-															data-target="spekKertas"
-															style="padding:2px 6px;font-size:13px;">
-															<i data-feather="edit"></i>
-														</a>
-													</div>
-													<div class="editable-paragraf" data-id="spekKertas">
-														<p class="mb-1">Cras sit amet nibh libero, in gravida nulla.
-															Nulla vel metus scelerisque ante sollicitudin.Cras purus
-															odio, vestibulum in vulputate at, tempus viverra turpis.
-															Fusce condimentum nunc ac nisi vulputate fringilla. Donec
-															lacinia congue felis in faucibus.</p>
-														<p class="mb-0">Donec sed odio dui. Nullam quis risus eget urna
-															mollis ornare vel eu leo. Cum sociis natoque penatibus et
-															magnis dis parturient montes, nascetur ridiculus mus.</p>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="tab-pane fade show " id="brosurTabContent" role="tabpanel"
-									aria-labelledby="brosur-tab">
-									<div class="card">
-										<div class="card-header justify-content-between d-flex align-items-center">
-											<div class="card-title">
-												Ukuran Brosur
-											</div>
-											<button class="btn btn-warning btn-sm" id="btnTambahRow">
-												<i class="fa fa-plus"></i> Tambah
-											</button>
-										</div>
-										<div class="card-body">
-											<div class="table-responsive">
-												<table class="table text-nowrap table-sm" id="tableUkuran">
-													<thead>
-														<tr>
-															<th>No</th>
-															<th>Ukuran Kertas</th>
-															<th>Panjang</th>
-															<th>Lebar</th>
-															<th>status</th>
-															<th>Created date</th>
-															<th>User Create</th>
-															<th>Update</th>
-															<th>User Update</th>
-															<th>Aksi</th>
-														</tr>
-													</thead>
-													<tbody>
-														<tr>
-															<td>1</td>
-															<td>A3+ (32.5x48)</td>
-															<td>32.5</td>
-															<td>48</td>
-															<td><span class="badge bg-soft-success">Active</span></td>
-															<td>25/05/2024, 23:15:13</td>
-															<td>Admin1</td>
-															<td>25/05/2024, 23:15:13</td>
-															<td>Admin1</td>
-															<td>
-																<div class="hstack gap-2 fs-15">
-																	<a href="javascript:void(0);"
-																		class="btn btn-icon btn-sm btn-light btn-delete"><i
-																			class="feather-trash"></i></a>
-																	<a href="javascript:void(0);"
-																		class="btn btn-icon btn-sm btn-light btn-edit"><i
-																			class="feather-edit"></i></a>
-																</div>
-															</td>
-														</tr>
-														<tr>
-															<td>2</td>
-															<td>A3+ (32.5x48)</td>
-															<td>32.5</td>
-															<td>48</td>
-															<td><span class="badge bg-soft-success">Active</span></td>
-															<td>25/05/2024, 23:15:13</td>
-															<td>Admin1</td>
-															<td>25/05/2024, 23:15:13</td>
-															<td>Admin1</td>
-															<td>
-																<div class="hstack gap-2 fs-15">
-																	<a href="javascript:void(0);"
-																		class="btn btn-icon btn-sm btn-light btn-delete"><i
-																			class="feather-trash"></i></a>
-																	<a href="javascript:void(0);"
-																		class="btn btn-icon btn-sm btn-light btn-edit"><i
-																			class="feather-edit"></i></a>
-																</div>
-															</td>
-														</tr>
-														<tr>
-															<td>3</td>
-															<td>A3+ (32.5x48)</td>
-															<td>32.5</td>
-															<td>48</td>
-															<td><span class="badge bg-soft-success">Active</span></td>
-															<td>25/05/2024, 23:15:13</td>
-															<td>Admin1</td>
-															<td>25/05/2024, 23:15:13</td>
-															<td>Admin1</td>
-															<td>
-																<div class="hstack gap-2 fs-15">
-																	<a href="javascript:void(0);"
-																		class="btn btn-icon btn-sm btn-light btn-delete"><i
-																			class="feather-trash"></i></a>
-																	<a href="javascript:void(0);"
-																		class="btn btn-icon btn-sm btn-light btn-edit"><i
-																			class="feather-edit"></i></a>
-																</div>
-															</td>
-														</tr>
-													</tbody>
-												</table>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="tab-pane fade" id="sortingTabContent" role="tabpanel"
-									aria-labelledby="sorting-tab">
-									<div class="card">
-										<div class="card-header justify-content-between d-flex align-items-center">
-											<div class="card-title">
-												Sorting Tag Brosur
-											</div>
-											<button class="btn btn-warning btn-sm" id="btnTambahSorting">
-												<i class="fa fa-plus"></i> Tambah
-											</button>
-										</div>
-										<div class="card-body">
-											<div class="table-responsive">
-												<table class="table  table-sm align-middle" id="tableSorting">
-													<thead>
-														<tr>
-															<th>No</th>
-															<th>Nama Sorting Tag</th>
-															<th>Qty</th>
-															<th>Ukuran</th>
-															<th>Bahan Kertas</th>
-															<th>Sisi Cetak</th>
-															<th>Laminasi</th>
-															<th>Lipat</th>
-															<th>Link/Route</th>
-															<th>Status</th>
-															<th>Aksi</th>
-														</tr>
-													</thead>
-													<tbody>
-														<tr>
-															<td>1</td>
-															<td>Brosur Murah</td>
-															<td>10</td>
-															<td>A4 (210 x 297)</td>
-															<td>Art Paper 150gr</td>
-															<td>1 Sisi</td>
-															<td>Doff</td>
-															<td>Tanpa Lipat</td>
-															<td>kahalsjajk</td>
-															<td>
-																<div class="dropdown">
-																	<button
-																		class="btn btn-sm btn-light border dropdown-toggle"
-																		type="button" data-bs-toggle="dropdown"
-																		aria-expanded="false">
-																		Default
-																	</button>
-																	<ul class="dropdown-menu">
-																		<li><a class="dropdown-item"
-																				href="#">Default</a></li>
-																		<li><a class="dropdown-item"
-																				href="#">Publish</a></li>
-																	</ul>
-																</div>
-															</td>
-															<td>
-																<div class="hstack gap-2 fs-15">
-																	<a href="javascript:void(0);"
-																		class="btn btn-icon btn-sm btn-light text-info btn-edit-sorting"><i
-																			class="feather-trash"></i></a>
-																	<a href="javascript:void(0);"
-																		class="btn btn-icon btn-sm btn-light text-danger btn-delete-sorting"><i
-																			class="feather-edit"></i></a>
-																</div>
-															</td>
-														</tr>
-														<tr>
-															<td>2</td>
-															<td>Brosur Cetak Cepet</td>
-															<td>10</td>
-															<td>A4 (210 x 297)</td>
-															<td>Art Paper 150gr</td>
-															<td>1 Sisi</td>
-															<td>Doff</td>
-															<td>Tanpa Lipat</td>
-															<td>wuwtiquoyw</td>
-															<td>
-																<div class="dropdown">
-																	<button
-																		class="btn btn-sm btn-light border dropdown-toggle"
-																		type="button" data-bs-toggle="dropdown"
-																		aria-expanded="false">
-																		Publish
-																	</button>
-																	<ul class="dropdown-menu">
-																		<li><a class="dropdown-item"
-																				href="#">Default</a></li>
-																		<li><a class="dropdown-item"
-																				href="#">Publish</a></li>
-																	</ul>
-																</div>
-															</td>
-															<td>
-																<div class="hstack gap-2 fs-15">
-																	<a href="javascript:void(0);"
-																		class="btn btn-icon btn-sm btn-light text-info btn-edit-sorting"><i
-																			class="feather-trash"></i></a>
-																	<a href="javascript:void(0);"
-																		class="btn btn-icon btn-sm btn-light text-danger btn-delete-sorting"><i
-																			class="feather-edit"></i></a>
-																</div>
-															</td>
-														</tr>
-														<tr>
-															<td>3</td>
-															<td>Brosur Murah Papua</td>
-															<td>10</td>
-															<td>A4 (210 x 297)</td>
-															<td>Art Paper 150gr</td>
-															<td>1 Sisi</td>
-															<td>Doff</td>
-															<td>Tanpa Lipat</td>
-															<td>gajhsjauyuas</td>
-															<td>
-																<div class="dropdown">
-																	<button
-																		class="btn btn-sm btn-light border dropdown-toggle"
-																		type="button" data-bs-toggle="dropdown"
-																		aria-expanded="false">
-																		Publish
-																	</button>
-																	<ul class="dropdown-menu">
-																		<li><a class="dropdown-item"
-																				href="#">Default</a></li>
-																		<li><a class="dropdown-item"
-																				href="#">Publish</a></li>
-																	</ul>
-																</div>
-															</td>
-															<td>
-																<div class="hstack gap-2 fs-15">
-																	<a href="javascript:void(0);"
-																		class="btn btn-icon btn-sm btn-light text-info btn-edit-sorting"><i
-																			class="feather-trash"></i></a>
-																	<a href="javascript:void(0);"
-																		class="btn btn-icon btn-sm btn-light text-danger btn-delete-sorting"><i
-																			class="feather-edit"></i></a>
-																</div>
-															</td>
-														</tr>
-														<tr>
-															<td>4</td>
-															<td>Brosur Mewah</td>
-															<td>10</td>
-															<td>A4 (210 x 297)</td>
-															<td>Art Paper 150gr</td>
-															<td>1 Sisi</td>
-															<td>Doff</td>
-															<td>Tanpa Lipat</td>
-															<td>jghaskjdghay</td>
-															<td>
-																<div class="dropdown">
-																	<button
-																		class="btn btn-sm btn-light border dropdown-toggle"
-																		type="button" data-bs-toggle="dropdown"
-																		aria-expanded="false">
-																		Publish
-																	</button>
-																	<ul class="dropdown-menu">
-																		<li><a class="dropdown-item"
-																				href="#">Default</a></li>
-																		<li><a class="dropdown-item"
-																				href="#">Publish</a></li>
-																	</ul>
-																</div>
-															</td>
-															<td>
-																<div class="hstack gap-2 fs-15">
-																	<a href="javascript:void(0);"
-																		class="btn btn-icon btn-sm btn-light text-info btn-edit-sorting"><i
-																			class="feather-trash"></i></a>
-																	<a href="javascript:void(0);"
-																		class="btn btn-icon btn-sm btn-light text-danger btn-delete-sorting"><i
-																			class="feather-edit"></i></a>
-																</div>
-															</td>
-														</tr>
-													</tbody>
-												</table>
-											</div>
-										</div>
-									</div>
-
-								</div>
-								<div class="tab-pane fade" id="spesifikasiTabContent" role="tabpanel"
-									aria-labelledby="spesifikasi-tab">
-									<h4 class="mb-2 ms-2">Pengaturan Spesifikasi Brosur</h4>
-									<form id="formSpesifikasi" class="px-2">
-										<div class="row mb-3 align-items-center">
-											<div class="col-md-2 col-12 mb-2 mb-md-0 fw-semibold">Minimal Qty</div>
-											<div class="col-md-2 col-6">
-												<input type="number" class="form-control" value="1" min="1"
-													style="max-width:100px;">
-											</div>
-										</div>
-										<div class="row mb-3 align-items-center">
-											<div class="col-md-2 col-12 mb-2 mb-md-0 fw-semibold">Ukuran Brosur</div>
-											<div class="col-md-10 col-12 d-flex flex-wrap gap-2">
-												<input type="checkbox" class="btn-check" id="ukA3" checked>
-												<label class="btn btn-outline-primary ukuran-btn" for="ukA3">A3</label>
-												<input type="checkbox" class="btn-check" id="ukA4" checked>
-												<label class="btn btn-outline-primary ukuran-btn" for="ukA4">A4</label>
-												<input type="checkbox" class="btn-check" id="ukA5" checked>
-												<label class="btn btn-outline-primary ukuran-btn" for="ukA5">A5</label>
-												<input type="checkbox" class="btn-check" id="ukA6">
-												<label class="btn btn-outline-primary ukuran-btn" for="ukA6">A6</label>
-												<input type="checkbox" class="btn-check" id="ukFolio">
-												<label class="btn btn-outline-primary ukuran-btn"
-													for="ukFolio">Folio</label>
-												<input type="checkbox" class="btn-check" id="ukDFolio">
-												<label class="btn btn-outline-primary ukuran-btn" for="ukDFolio">Double
-													Folio</label>
-											</div>
-										</div>
-										<div class="row mb-3 align-items-center">
-											<div class="col-md-2 col-12 mb-2 mb-md-0 fw-semibold">Custom Ukuran</div>
-											<div class="col-md-10 col-12 d-flex gap-3">
-												<input type="radio" class="btn-check" name="customUkuran" id="customIya"
-													checked>
-												<label class="btn btn-outline-primary rounded-pill px-4"
-													for="customIya">Iya</label>
-												<input type="radio" class="btn-check" name="customUkuran"
-													id="customTidak">
-												<label class="btn btn-outline-primary rounded-pill px-4"
-													for="customTidak">Tidak</label>
-											</div>
-										</div>
-										<div class="row mb-3 align-items-center">
-											<div class="col-md-2 col-12 mb-2 mb-md-0 fw-semibold"></div>
-											<div class="col-md-10 col-12 d-flex flex-wrap gap-2 align-items-center">
-												<span>Satuan</span>
-												<select class="form-select d-inline-block"
-													style="width:auto;min-width:120px;">
-													<option>Milimeter</option>
-													<option>Centimeter</option>
-												</select>
-												<span>Minimal Panjang</span>
-												<input type="number" class="form-control d-inline-block" value="80"
-													style="width:90px;">
-												<span>Minimal Lebar</span>
-												<input type="number" class="form-control d-inline-block" value="80"
-													style="width:90px;">
-											</div>
-										</div>
-										<div class="row mb-3 align-items-center">
-											<div class="col-md-2 col-12 mb-2 mb-md-0 fw-semibold">Group Kertas</div>
-											<div class="col-md-10 col-12 d-flex flex-wrap gap-2">
-												<input type="checkbox" class="btn-check" id="kertasArtPaper" checked>
-												<label class="btn btn-outline-primary" for="kertasArtPaper">Art
-													Paper</label>
-												<input type="checkbox" class="btn-check" id="kertasArtCarton">
-												<label class="btn btn-outline-primary" for="kertasArtCarton">Art
-													Carton</label>
-												<input type="checkbox" class="btn-check" id="kertasHVS" checked>
-												<label class="btn btn-outline-primary" for="kertasHVS">HVS</label>
-												<input type="checkbox" class="btn-check" id="kertasDuplex">
-												<label class="btn btn-outline-primary" for="kertasDuplex">Duplex</label>
-												<input type="checkbox" class="btn-check" id="kertasBookpaper">
-												<label class="btn btn-outline-primary"
-													for="kertasBookpaper">Bookpaper</label>
-											</div>
-										</div>
-										<div class="row mb-3 align-items-center">
-											<div class="col-md-2 col-12 mb-2 mb-md-0 fw-semibold">Mesin</div>
-											<div class="col-md-10 col-12 d-flex flex-wrap gap-2">
-												<input type="checkbox" class="btn-check" id="mesinGTO">
-												<label class="btn btn-outline-primary" for="mesinGTO">GTO 52 4
-													Warna</label>
-												<input type="checkbox" class="btn-check" id="mesinSM52" checked>
-												<label class="btn btn-outline-primary" for="mesinSM52">SM 52 4
-													Warna</label>
-												<input type="checkbox" class="btn-check" id="mesinSM72" checked>
-												<label class="btn btn-outline-primary" for="mesinSM72">SM 72 4
-													Warna</label>
-												<input type="checkbox" class="btn-check" id="mesinSM104">
-												<label class="btn btn-outline-primary" for="mesinSM104">SM 104 4
-													Warna</label>
-											</div>
-										</div>
-										<div class="row mb-3 align-items-center">
-											<div class="col-md-2 col-12 mb-2 mb-md-0 fw-semibold">Sisi Cetak</div>
-											<div class="col-md-10 col-12 d-flex flex-wrap gap-2">
-												<input type="checkbox" class="btn-check" id="sisi1" checked>
-												<label class="btn btn-outline-primary" for="sisi1">1 Sisi Cetak</label>
-												<input type="checkbox" class="btn-check" id="sisi2" checked>
-												<label class="btn btn-outline-primary" for="sisi2">2 Sisi Cetak</label>
-											</div>
-										</div>
-										<div class="row mb-3 align-items-center">
-											<div class="col-md-2 col-12 mb-2 mb-md-0 fw-semibold">Laminasi</div>
-											<div class="col-md-10 col-12 d-flex flex-wrap gap-2">
-												<input type="checkbox" class="btn-check" id="lamDoff" checked>
-												<label class="btn btn-outline-primary" for="lamDoff">Doff</label>
-												<input type="checkbox" class="btn-check" id="lamGlossy" checked>
-												<label class="btn btn-outline-primary" for="lamGlossy">Glossy</label>
-												<input type="checkbox" class="btn-check" id="lamUV" checked>
-												<label class="btn btn-outline-primary" for="lamUV">UV Varnish</label>
-												<input type="checkbox" class="btn-check" id="lamSpotUV" checked>
-												<label class="btn btn-outline-primary" for="lamSpotUV">Spot UV</label>
-											</div>
-										</div>
-										<div class="row mb-4 align-items-center">
-											<div class="col-md-2 col-12 mb-2 mb-md-0 fw-semibold">Lipat</div>
-											<div class="col-md-10 col-12 d-flex flex-wrap gap-2">
-												<input type="checkbox" class="btn-check" id="lipat1" checked>
-												<label class="btn btn-outline-primary" for="lipat1">1 Lipatan</label>
-												<input type="checkbox" class="btn-check" id="lipat2" checked>
-												<label class="btn btn-outline-primary" for="lipat2">2 Lipatan</label>
-											</div>
-										</div>
-										<div class="row">
-											<div class="col-md-2"></div>
+							<div class="tab-content py-4 px-2 col-md-9 id=" mainTabContent">
+								<div class="tab-pane fade show active" id="categoryTabContent" role="tabpanel"
+									aria-labelledby="product-category">
+									<h4 class="mb-0 flex-grow-1">Produk Detail</h4>
+									<div>
+										<div class="row my-3">
+											<div class="col-md-2">Product Category</div>
 											<div class="col-md-10">
-												<button type="submit" class="btn btn-warning px-4">Update</button>
+												<input type="text" class="form-control" placeholder="Category">
 											</div>
 										</div>
-									</form>
-
-								</div>
-								<div class="tab-pane fade" id="gambarTabContent" role="tabpanel"
-									aria-labelledby="gambar-tab">
-									<div class="card mb-4">
-										<div class="card-header d-flex justify-content-between align-items-center">
-											<strong>Pengaturan Gambar Brosur</strong>
-											<button class="btn btn-warning btn-sm" id="btnTambahGambar">
-												<i class="fa fa-plus"></i> Tambah
-											</button>
+										<div class="row my-3">
+											<div class="col-md-2">Description</div>
+											<div class="col-md-10">
+												<div id="summernote"></div>
+											</div>
 										</div>
-										<div class="card-body">
-											<div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 g-3"
-												id="gridGambarBrosur">
-												<div class="col">
-													<div
-														class="brosur-item position-relative border rounded overflow-hidden">
-														<img src="assets/img/placeholder.png" class="img-brosur" alt="">
-														<input type="checkbox"
-															class="form-check-input position-absolute top-0 end-0 m-1"
-															checked>
+										<div class="row my-3">
+											<div class="col-md-2">
+												<p>Image</p>
+												<button class="btn btn-warning btn-sm" id="btnTambahGambar">
+													<i class="fa fa-plus"></i> Tambah
+												</button>
+											</div>
+											<div class="col-md-10">
+												<div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 g-3"
+													id="gridGambarBrosur">
+													<div class="col">
+														<div
+															class="brosur-item position-relative border rounded overflow-hidden">
+															<img src="assets/img/placeholder.png" class="img-brosur"
+																alt="">
+															<input type="checkbox"
+																class="form-check-input position-absolute top-0 end-0 m-1"
+																checked>
+														</div>
 													</div>
-												</div>
 
+												</div>
+												<div class="mt-3 d-flex gap-2">
+													<button class="btn btn-warning btn-sm"
+														id="btnHapusGambar">Hapus</button>
+													<button class="btn btn-warning btn-sm" id="btnGambarUtama">Gambar
+														Utama</button>
+												</div>
 											</div>
-											<div class="mt-3 d-flex gap-2">
-												<button class="btn btn-warning btn-sm"
-													id="btnHapusGambar">Hapus</button>
-												<button class="btn btn-warning btn-sm" id="btnGambarUtama">Gambar
-													Utama</button>
+										</div>
+
+									</div>
+								</div>
+								<div class="tab-pane fade show " id="productTabContent" role="tabpanel"
+									aria-labelledby="product">
+									<div class="justify-content-between d-flex align-items-center mb-2">
+										<h4 class="flex-grow-1">Product Name</h4>
+										<button class="btn btn-warning btn-sm" id="btnTambahRow">
+											Add Product
+										</button>
+									</div>
+									<div>
+										<div class="table-responsive">
+											<table class="table text-nowrap table-sm" id="tableUkuran">
+												<thead>
+													<tr>
+														<th>No.</th>
+														<th>Product</th>
+														<th>Description</th>
+														<th>Material</th>
+														<th>Size</th>
+														<th>Laminate</th>
+														<th>Printing Side</th>
+														<th>Fold</th>
+														<th>Default Qty</th>
+														<th>Status</th>
+														<th>Aksi</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td>1</td>
+														<td>Brosur A4 Standar</td>
+														<td>Brosur promosi ukuran A4 yang ideal untuk flyer acara
+															atau pengumuman.</td>
+														<td>Art Paper 150 gsm</td>
+														<td>A4 (21x29.7cm)</td>
+														<td>Laminasi Doff</td>
+														<td>Cetak 2 Sisi</td>
+														<td>2 Lipatan</td>
+														<td>25</td>
+														<td><span class="badge bg-soft-success">Publish</span></td>
+														<td>
+															<div class="hstack gap-2 fs-15">
+																<a href="javascript:void(0);"
+																	class="btn btn-icon btn-sm btn-light btn-delete"><i
+																		class="feather-trash"></i></a>
+																<a href="javascript:void(0);"
+																	class="btn btn-icon btn-sm btn-light btn-edit"><i
+																		class="feather-edit"></i></a>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>2</td>
+														<td>Kartu Nama Premium</td>
+														<td>Kartu nama eksklusif dengan sentuhan mewah, cocok untuk
+															professional</td>
+														<td>Art Carton 310 gsm</td>
+														<td>Custom (9x5.5cm)</td>
+														<td>Spot UV</td>
+														<td>Cetak 1 Sisi</td>
+														<td>Tanpa Lipatan</td>
+														<td>30</td>
+														<td><span class="badge bg-soft-success">Publish</span></td>
+														<td>
+															<div class="hstack gap-2 fs-15">
+																<a href="javascript:void(0);"
+																	class="btn btn-icon btn-sm btn-light btn-delete"><i
+																		class="feather-trash"></i></a>
+																<a href="javascript:void(0);"
+																	class="btn btn-icon btn-sm btn-light btn-edit"><i
+																		class="feather-edit"></i></a>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>3</td>
+														<td>Pamflet A5 Ekonomi</td>
+														<td>Pamflet hemat biaya ukuran A5, umum digunakan untuk
+															distribusi cepat</td>
+														<td>HVS 100 gsm</td>
+														<td>A5 (15x21.2cm)</td>
+														<td>Tanpa Laminasi</td>
+														<td>Cetak 1 Sisi</td>
+														<td>Tanpa Lipatan</td>
+														<td>40</td>
+														<td><span class="badge bg-soft-success">Archived</span></td>
+														<td>
+															<div class="hstack gap-2 fs-15">
+																<a href="javascript:void(0);"
+																	class="btn btn-icon btn-sm btn-light btn-delete"><i
+																		class="feather-trash"></i></a>
+																<a href="javascript:void(0);"
+																	class="btn btn-icon btn-sm btn-light btn-edit"><i
+																		class="feather-edit"></i></a>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>4</td>
+														<td>Poster A3 Glossy</td>
+														<td>Poster berukuran A3 dengan hasil cetak yang mengilap,
+															menarik perhatian</td>
+														<td>Art Paper 120 gsm</td>
+														<td>A3 (30x42cm)</td>
+														<td>Laminasi Glossy</td>
+														<td>Cetak 1 Sisi</td>
+														<td>Tanpa Lipatan</td>
+														<td>15</td>
+														<td><span class="badge bg-soft-success">Publish</span></td>
+														<td>
+															<div class="hstack gap-2 fs-15">
+																<a href="javascript:void(0);"
+																	class="btn btn-icon btn-sm btn-light btn-delete"><i
+																		class="feather-trash"></i></a>
+																<a href="javascript:void(0);"
+																	class="btn btn-icon btn-sm btn-light btn-edit"><i
+																		class="feather-edit"></i></a>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>5</td>
+														<td>Katalog Produk Segar</td>
+														<td>Katalog produk berbentuk segar, informatif dan
+															profesional</td>
+														<td>Art Carton 260 gsm</td>
+														<td>Custom (21x21cm)</td>
+														<td>Laminasi Doff</td>
+														<td>Cetak 2 Sisi</td>
+														<td>2 Lipatan</td>
+														<td>12</td>
+														<td><span class="badge bg-soft-success">Publish</span></td>
+														<td>
+															<div class="hstack gap-2 fs-15">
+																<a href="javascript:void(0);"
+																	class="btn btn-icon btn-sm btn-light btn-delete"><i
+																		class="feather-trash"></i></a>
+																<a href="javascript:void(0);"
+																	class="btn btn-icon btn-sm btn-light btn-edit"><i
+																		class="feather-edit"></i></a>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>6</td>
+														<td>Hang Tag Pakaian</td>
+														<td>Label gantung untuk produk pakaian dengan desain full
+															Color</td>
+														<td>Art Carton 310 gsm</td>
+														<td>Custom (6x10cm)</td>
+														<td>Tanpa Laminasi</td>
+														<td>Cetak 1 Sisi</td>
+														<td>Tanpa Lipatan</td>
+														<td>28</td>
+														<td><span class="badge bg-soft-success">Archived</span></td>
+														<td>
+															<div class="hstack gap-2 fs-15">
+																<a href="javascript:void(0);"
+																	class="btn btn-icon btn-sm btn-light btn-delete"><i
+																		class="feather-trash"></i></a>
+																<a href="javascript:void(0);"
+																	class="btn btn-icon btn-sm btn-light btn-edit"><i
+																		class="feather-edit"></i></a>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>7</td>
+														<td>Kartu Ucapan Lipat</td>
+														<td>Kartu ucapan selamat atau terima kasih yang bisa dilipat
+															dua</td>
+														<td>BC TIK 220 gsm</td>
+														<td>A5 (15x21cm)</td>
+														<td>Laminasi Glossy</td>
+														<td>Cetak 2 Sisi</td>
+														<td>2 Lipatan</td>
+														<td>21</td>
+														<td><span class="badge bg-soft-success">Publish</span></td>
+														<td>
+															<div class="hstack gap-2 fs-15">
+																<a href="javascript:void(0);"
+																	class="btn btn-icon btn-sm btn-light btn-delete"><i
+																		class="feather-trash"></i></a>
+																<a href="javascript:void(0);"
+																	class="btn btn-icon btn-sm btn-light btn-edit"><i
+																		class="feather-edit"></i></a>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>8</td>
+														<td>Map Dokumen Doff</td>
+														<td>Map folder untuk menyimpan dokumen penting, memberikan
+															kesan formal</td>
+														<td>Art Carton 310 gsm</td>
+														<td>A4 (21x30cm)</td>
+														<td>Laminasi Glossy</td>
+														<td>Cetak 2 Sisi</td>
+														<td>2 Lipatan</td>
+														<td>21</td>
+														<td><span class="badge bg-soft-success">Publish</span></td>
+														<td>
+															<div class="hstack gap-2 fs-15">
+																<a href="javascript:void(0);"
+																	class="btn btn-icon btn-sm btn-light btn-delete"><i
+																		class="feather-trash"></i></a>
+																<a href="javascript:void(0);"
+																	class="btn btn-icon btn-sm btn-light btn-edit"><i
+																		class="feather-edit"></i></a>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>9</td>
+														<td>Stiker Kertas A5</td>
+														<td>Stiker full color ukuran A5, cocok untuk label stiker
+															atau promosi</td>
+														<td>Kertas Stiker RVS</td>
+														<td>A5 (15x21cm)</td>
+														<td>Tanpa Laminasi</td>
+														<td>Cetak 1 Sisi</td>
+														<td>Tanpa Lipatan</td>
+														<td>14</td>
+														<td><span class="badge bg-soft-success">Archived</span></td>
+														<td>
+															<div class="hstack gap-2 fs-15">
+																<a href="javascript:void(0);"
+																	class="btn btn-icon btn-sm btn-light btn-delete"><i
+																		class="feather-trash"></i></a>
+																<a href="javascript:void(0);"
+																	class="btn btn-icon btn-sm btn-light btn-edit"><i
+																		class="feather-edit"></i></a>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>10</td>
+														<td>Brosur DL Elegan</td>
+														<td>Brosur ukuran DL (sepeting A4) dengan lipatan, ideal
+															untuk pricelist</td>
+														<td>Art Paper 150 gsm</td>
+														<td>Custom (10x21cm)</td>
+														<td>Laminasi Glossy</td>
+														<td>Cetak 2 Sisi</td>
+														<td>2 Lipatan</td>
+														<td>27</td>
+														<td><span class="badge bg-soft-success">Publish</span></td>
+														<td>
+															<div class="hstack gap-2 fs-15">
+																<a href="javascript:void(0);"
+																	class="btn btn-icon btn-sm btn-light btn-delete"><i
+																		class="feather-trash"></i></a>
+																<a href="javascript:void(0);"
+																	class="btn btn-icon btn-sm btn-light btn-edit"><i
+																		class="feather-edit"></i></a>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>11</td>
+														<td>Kupon Diskon Kertas</td>
+														<td>Kupon voucher dengan bahan tebal, tahan lama dan
+															eksklusif</td>
+														<td>Art Carton 260 gsm</td>
+														<td>Custom (10x20cm)</td>
+														<td>Cetak 2 Sisi</td>
+														<td>Cetak 2 Sisi</td>
+														<td>Tanpa Lipatan</td>
+														<td>14</td>
+														<td><span class="badge bg-soft-success">Publish</span></td>
+														<td>
+															<div class="hstack gap-2 fs-15">
+																<a href="javascript:void(0);"
+																	class="btn btn-icon btn-sm btn-light btn-delete"><i
+																		class="feather-trash"></i></a>
+																<a href="javascript:void(0);"
+																	class="btn btn-icon btn-sm btn-light btn-edit"><i
+																		class="feather-edit"></i></a>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>12</td>
+														<td>Leaflet Informasi A5</td>
+														<td>Leaflet satu sisi ukuran A5, sering digunakan untuk
+															handout singkat</td>
+														<td>HVS 80 gsm</td>
+														<td>A5 (15x21cm)</td>
+														<td>Tanpa Laminasi</td>
+														<td>Cetak 1 Sisi</td>
+														<td>Tanpa Lipatan</td>
+														<td>10</td>
+														<td><span class="badge bg-soft-success">Archived</span></td>
+														<td>
+															<div class="hstack gap-2 fs-15">
+																<a href="javascript:void(0);"
+																	class="btn btn-icon btn-sm btn-light btn-delete"><i
+																		class="feather-trash"></i></a>
+																<a href="javascript:void(0);"
+																	class="btn btn-icon btn-sm btn-light btn-edit"><i
+																		class="feather-edit"></i></a>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>13</td>
+														<td>Jadwal Acara A4</td>
+														<td>Jadwal atau rundown acara full color ukuran A4</td>
+														<td>Art Paper 120 gsm</td>
+														<td>A4 (21x29.7cm)</td>
+														<td>Laminasi Doff</td>
+														<td>Cetak 1 Sisi</td>
+														<td>Tanpa Lipatan</td>
+														<td>16</td>
+														<td><span class="badge bg-soft-success">Publish</span></td>
+														<td>
+															<div class="hstack gap-2 fs-15">
+																<a href="javascript:void(0);"
+																	class="btn btn-icon btn-sm btn-light btn-delete"><i
+																		class="feather-trash"></i></a>
+																<a href="javascript:void(0);"
+																	class="btn btn-icon btn-sm btn-light btn-edit"><i
+																		class="feather-edit"></i></a>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>14</td>
+														<td>Cover Buku Tebal</td>
+														<td>Sampul buku atau majalah dengan bahan tebal dan cetak
+															berkawan</td>
+														<td>Art Carton 310 gsm</td>
+														<td>A3 (30x42cm)</td>
+														<td>Laminasi Glossy</td>
+														<td>Cetak 1 Sisi</td>
+														<td>Tanpa Lipatan</td>
+														<td>19</td>
+														<td><span class="badge bg-soft-success">Publish</span></td>
+														<td>
+															<div class="hstack gap-2 fs-15">
+																<a href="javascript:void(0);"
+																	class="btn btn-icon btn-sm btn-light btn-delete"><i
+																		class="feather-trash"></i></a>
+																<a href="javascript:void(0);"
+																	class="btn btn-icon btn-sm btn-light btn-edit"><i
+																		class="feather-edit"></i></a>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>15</td>
+														<td>Flyer Lipat Dua A4</td>
+														<td>Flyer ukuran A4 yang dapat terlipat, memaksimalkan ruang
+															promosi</td>
+														<td>Art Paper 100 gsm</td>
+														<td>A4 (21x30cm)</td>
+														<td>Tanpa Laminasi</td>
+														<td>Cetak 2 Sisi</td>
+														<td>2 Lipatan</td>
+														<td>21</td>
+														<td><span class="badge bg-soft-success">Archived</span></td>
+														<td>
+															<div class="hstack gap-2 fs-15">
+																<a href="javascript:void(0);"
+																	class="btn btn-icon btn-sm btn-light btn-delete"><i
+																		class="feather-trash"></i></a>
+																<a href="javascript:void(0);"
+																	class="btn btn-icon btn-sm btn-light btn-edit"><i
+																		class="feather-edit"></i></a>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>16</td>
+														<td>Label Produk Kecil</td>
+														<td>Label kecil untuk informasi produk pada kemasan</td>
+														<td>Kertas Stiker Art Paper</td>
+														<td>Custom (5x8cm)</td>
+														<td>Laminasi Glossy</td>
+														<td>Cetak 1 Sisi</td>
+														<td>Tanpa Lipatan</td>
+														<td>25</td>
+														<td><span class="badge bg-soft-success">Publish</span></td>
+														<td>
+															<div class="hstack gap-2 fs-15">
+																<a href="javascript:void(0);"
+																	class="btn btn-icon btn-sm btn-light btn-delete"><i
+																		class="feather-trash"></i></a>
+																<a href="javascript:void(0);"
+																	class="btn btn-icon btn-sm btn-light btn-edit"><i
+																		class="feather-edit"></i></a>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>17</td>
+														<td>Sertifikat Penghargaan</td>
+														<td>Sertifikat full color untuk acara atau pemberian,
+															berkesan formal</td>
+														<td>Paper Tiger 250 gsm</td>
+														<td>A4 (21x30cm)</td>
+														<td>Laminasi Laminasi</td>
+														<td>Cetak 1 Sisi</td>
+														<td>Tanpa Lipatan</td>
+														<td>17</td>
+														<td><span class="badge bg-soft-success">Publish</span></td>
+														<td>
+															<div class="hstack gap-2 fs-15">
+																<a href="javascript:void(0);"
+																	class="btn btn-icon btn-sm btn-light btn-delete"><i
+																		class="feather-trash"></i></a>
+																<a href="javascript:void(0);"
+																	class="btn btn-icon btn-sm btn-light btn-edit"><i
+																		class="feather-edit"></i></a>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>20</td>
+														<td>Katalog Mini Lipat</td>
+														<td>Katalog kecil yang didesain untuk bisa berdiri di meja
+															(model 3 lipatan)</td>
+														<td>Art Carton 260 gsm</td>
+														<td>A5 (15x21cm)</td>
+														<td>Laminasi Doff</td>
+														<td>Cetak 2 Sisi</td>
+														<td>3 Lipatan</td>
+														<td>26</td>
+														<td><span class="badge bg-soft-success">Publish</span></td>
+														<td>
+															<div class="hstack gap-2 fs-15">
+																<a href="javascript:void(0);"
+																	class="btn btn-icon btn-sm btn-light btn-delete"><i
+																		class="feather-trash"></i></a>
+																<a href="javascript:void(0);"
+																	class="btn btn-icon btn-sm btn-light btn-edit"><i
+																		class="feather-edit"></i></a>
+															</div>
+														</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+								</div>
+								<div class="tab-pane fade" id="sizeTabContent" role="tabpanel"
+									aria-labelledby="product-size">
+									<div class="justify-content-between d-flex align-items-center mb-2">
+										<div>
+											<h4>Size Options for Product</h4>
+											<p class="text-muted small">The following are the datas for options and
+												calculations</p>
+										</div>
+										<a class="btn btn-outline-warning btn-sm" href="kertas-ukuran-self.html">
+											Add New Size
+										</a>
+									</div>
+									<div>
+										<div class="table-responsive mb-4">
+											<table class="table">
+												<thead>
+													<tr>
+														<th>Size Name</th>
+														<th>size</th>
+														<th>Status</th>
+														<th>Action</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td>A5</td>
+														<td>21x15cm</td>
+														<td>
+															<select class="form-select form-select-sm">
+																<option>Show</option>
+																<option>Hide</option>
+															</select>
+														</td>
+														<td>
+															<a href="#" class="text-danger">Remove</a>
+														</td>
+													</tr>
+													<tr>
+														<td>A4</td>
+														<td>21x30cm</td>
+														<td>
+															<select class="form-select form-select-sm">
+																<option>Show</option>
+																<option>Hide</option>
+															</select>
+														</td>
+														<td>
+															<a href="#" class="text-danger">Remove</a>
+														</td>
+													</tr>
+													<tr>
+														<td>A3</td>
+														<td>30x42cm</td>
+														<td>
+															<select class="form-select form-select-sm">
+																<option>Hide</option>
+																<option>Show</option>
+															</select>
+														</td>
+														<td>
+															<a href="#" class="text-danger">Remove</a>
+														</td>
+													</tr>
+													<tr>
+														<td>Folio</td>
+														<td>21x33cm</td>
+														<td>
+															<select class="form-select form-select-sm">
+																<option>Show</option>
+																<option>Hide</option>
+															</select>
+														</td>
+														<td>
+															<a href="#" class="text-danger">Remove</a>
+														</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+										<button class="btn btn-warning btn-sm mb-4" data-bs-toggle="modal"
+											data-bs-target="#modalSize">Add
+											Size</button>
+
+										<div>
+											<h6 class="mb-3">Custom size for Product</h6>
+											<div class="d-flex align-items-center gap-3">
+												<label>Enable Product for Custom Size ?</label>
+												<div class="btn-group" role="group">
+													<input type="radio" class="btn-check" name="customSize"
+														id="customYes">
+													<label class="btn btn-outline-primary" for="customYes">Yes</label>
+
+													<input type="radio" class="btn-check" name="customSize"
+														id="customNo">
+													<label class="btn btn-outline-primary" for="customNo">No</label>
+												</div>
 											</div>
 										</div>
 									</div>
+
+								</div>
+								<div class="tab-pane fade" id="paperTypeTabContent" role="tabpanel"
+									aria-labelledby="paper-type">
+									<!-- Setting for Paper Type Section -->
+									<div>
+										<div class="justify-content-between d-flex align-items-center mb-2">
+											<div>
+												<h4>Setting for option paper type</h4>
+												<p class="text-muted small">The following are the datas for options and
+													calculations</p>
+											</div>
+											<a class="btn btn-outline-warning btn-sm" href="kertas-jenis-self.html">
+												Add New Paper Type
+											</a>
+										</div>
+										<div>
+											<div class="table-responsive mb-4">
+												<table class="table">
+													<thead>
+														<tr>
+															<th>Paper Group</th>
+															<th>Mark</th>
+															<th>Gramature</th>
+															<th>Status</th>
+															<th>Action</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>Art Paper</td>
+															<td>Pindo</td>
+															<td>120 gsm</td>
+															<td>
+																<select class="form-select form-select-sm">
+																	<option>Show</option>
+																	<option>Hide</option>
+																</select>
+															</td>
+															<td>
+																<a href="#" class="text-danger">Remove</a>
+															</td>
+														</tr>
+														<tr>
+															<td>Art Paper</td>
+															<td>Pindo</td>
+															<td>150 gsm</td>
+															<td>
+																<select class="form-select form-select-sm">
+																	<option>Show</option>
+																	<option>Hide</option>
+																</select>
+															</td>
+															<td>
+																<a href="#" class="text-danger">Remove</a>
+															</td>
+														</tr>
+														<tr>
+															<td>Art Paper</td>
+															<td>Pindo</td>
+															<td>190 gsm</td>
+															<td>
+																<select class="form-select form-select-sm">
+																	<option>Show</option>
+																	<option>Hide</option>
+																</select>
+															</td>
+															<td>
+																<a href="#" class="text-danger">Remove</a>
+															</td>
+														</tr>
+														<tr>
+															<td>Art Carton</td>
+															<td>Pindo</td>
+															<td>210 gsm</td>
+															<td>
+																<select class="form-select form-select-sm">
+																	<option>Show</option>
+																	<option>Hide</option>
+																</select>
+															</td>
+															<td>
+																<a href="#" class="text-danger">Remove</a>
+															</td>
+														</tr>
+														<tr>
+															<td>Art Carton</td>
+															<td>Pindo</td>
+															<td>230 gsm</td>
+															<td>
+																<select class="form-select form-select-sm">
+																	<option>Show</option>
+																	<option>Hide</option>
+																</select>
+															</td>
+															<td>
+																<a href="#" class="text-danger">Remove</a>
+															</td>
+														</tr>
+														<tr>
+															<td>Art Carton</td>
+															<td>Pindo</td>
+															<td>260 gsm</td>
+															<td>
+																<select class="form-select form-select-sm">
+																	<option>Show</option>
+																	<option>Hide</option>
+																</select>
+															</td>
+															<td>
+																<a href="#" class="text-danger">Remove</a>
+															</td>
+														</tr>
+														<tr>
+															<td>Art Carton</td>
+															<td>Pindo</td>
+															<td>310 gsm</td>
+															<td>
+																<select class="form-select form-select-sm">
+																	<option>Hide</option>
+																	<option>Show</option>
+																</select>
+															</td>
+															<td>
+																<a href="#" class="text-danger">Remove</a>
+															</td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+											<button class="btn btn-warning btn-sm" data-bs-toggle="modal"
+												data-bs-target="#modalPaperType">Add Paper Type</button>
+										</div>
+									</div>
+
+									<!-- List of Process Section -->
+									<div class="mt-5">
+										<div class="justify-content-between d-flex align-items-center mb-2">
+											<div>
+												<h4>List of Process</h4>
+												<p class="text-muted small">The following are the datas for Process
+													Arrange</p>
+											</div>
+											<a class="btn btn-outline-warning btn-sm" href="job-proses.html">
+												Add New Process
+											</a>
+										</div>
+										<div>
+											<div class="table-responsive mb-4">
+												<table class="table">
+													<thead>
+														<tr>
+															<th>Process Category</th>
+															<th>Process</th>
+															<th>Incentive</th>
+															<th>Action</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>Pracetak</td>
+															<td>Pesan Kertas ke Toko</td>
+															<td>5.000 per Job</td>
+															<td>
+																<a href="#" class="text-danger">Remove</a>
+															</td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+											<button class="btn btn-warning btn-sm" data-bs-toggle="modal"
+												data-bs-target="#modalProcess">Add Process</button>
+										</div>
+
+									</div>
+
+								</div>
+								<div class="tab-pane fade" id="offsetMachineTabContent" role="tabpanel"
+									aria-labelledby="offset-machine">
+									Isi Offset Machine
 
 								</div>
 								<div class="modal fade" id="modalTambahGambar" tabindex="-1" aria-hidden="true">
@@ -622,16 +923,17 @@
 										</div>
 									</div>
 								</div>
-								<div class="tab-pane fade" id="artikelTabContent" role="tabpanel"
-									aria-labelledby="artikel-tab">
-									<div class="card">
-										<div class="card-header">
-											<h5 class="card-title">Editor</h5>
-										</div>
-										<div class="card-body">
-											<div id="summernote"></div>
-										</div>
-									</div>
+								<div class="tab-pane fade" id="laminateTabContent" role="tabpanel"
+									aria-labelledby="laminate">
+									Isi Laminate
+								</div>
+								<div class="tab-pane fade" id="processArrangeTabContent" role="tabpanel"
+									aria-labelledby="process-arrange">
+									Isi Process Arrange
+								</div>
+								<div class="tab-pane fade" id="componentsTabContent" role="tabpanel"
+									aria-labelledby="components">
+									Isi Components
 								</div>
 
 							</div>
@@ -653,65 +955,96 @@
 			<div class="modal-dialog modal-dialog-centered">
 				<form class="modal-content" id="formRow">
 					<div class="modal-header">
-						<h5 class="modal-title" id="modalFormLabel">Tambah Data</h5>
+						<h5 class="modal-title" id="modalFormLabel">Variant</h5>
 						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 					</div>
-					<div class="modal-body row g-2">
-						<input type="hidden" id="editRowIndex">
-						<div class="col-6">
-							<label class="form-label">Ukuran Kertas</label>
-							<input type="text" class="form-control" id="inputUkuran" required>
+					<div class="modal-body">
+						<div class="mb-3 row">
+							<div class="col-md-3">
+								<label class="form-label">Product</label>
+							</div>
+							<div class="col-md-9">
+								<input type="text" class="form-control" id="inputProduct" required>
+							</div>
+							<div class="mb-3 row">
+							</div>
+							<div class="col-md-3">
+								<label class="form-label">Description</label>
+							</div>
+							<div class="col-md-9">
+								<textarea class="form-control" id="inputDescription" required></textarea>
+							</div>
+							<div class="mb-3 row">
+							</div>
+							<div class="col-md-3">
+								<label class="form-label">Paper Type</label>
+							</div>
+							<div class="col-md-9">
+								<select class="form-select" id="inputPaperType">
+									<!-- Add paper type options -->
+								</select>
+							</div>
 						</div>
-						<div class="col-3">
-							<label class="form-label">Panjang</label>
-							<input type="number" step="any" class="form-control" id="inputPanjang" required>
+						<div class="mb-3 row">
+							<div class="col-md-3">
+								<label class="form-label">Product Size</label>
+							</div>
+							<div class="col-md-9">
+								<select class="form-select" id="inputProductSize">
+									<!-- Add size options -->
+								</select>
+							</div>
 						</div>
-						<div class="col-3">
-							<label class="form-label">Lebar</label>
-							<input type="number" step="any" class="form-control" id="inputLebar" required>
+						<div class="mb-3 row">
+							<div class="col-md-3">
+								<label class="form-label">Laminate type</label>
+							</div>
+							<div class="col-md-9">
+								<select class="form-select" id="inputLaminateType">
+									<!-- Add laminate options -->
+								</select>
+							</div>
 						</div>
-						<div class="col-6">
-							<label class="form-label">Status</label>
-							<select class="form-select" id="inputStatus">
-								<option value="Active">Active</option>
-								<option value="Inactive">Inactive</option>
-							</select>
+						<div class="mb-3 row">
+							<div class="col-md-3">
+								<label class="form-label">Printing Side</label>
+							</div>
+							<div class="col-md-9">
+								<select class="form-select" id="inputPrintingSide">
+									<!-- Add printing side options -->
+								</select>
+							</div>
 						</div>
-					</div>
-					<div class="modal-footer">
-						<button type="submit" class="btn btn-warning">Simpan</button>
-					</div>
-				</form>
-			</div>
-		</div>
-		<!-- Modal Edit Ukuran Kertas -->
-		<div class="modal fade" id="modalEditUkuran" tabindex="-1" aria-labelledby="modalEditLabel" aria-hidden="true">
-			<div class="modal-dialog modal-dialog-centered">
-				<form class="modal-content" id="formEditRow">
-					<div class="modal-header">
-						<h5 class="modal-title" id="modalEditLabel">Edit Data</h5>
-						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-					</div>
-					<div class="modal-body row g-2">
-						<input type="hidden" id="editRowIndex2">
-						<div class="col-6">
-							<label class="form-label">Ukuran Kertas</label>
-							<input type="text" class="form-control" id="editUkuran" required>
+						<div class="mb-3 row">
+							<div class="col-md-3">
+								<label class="form-label">Fold</label>
+							</div>
+							<div class="col-md-9">
+								<select class="form-select" id="inputFold">
+									<!-- Add fold options -->
+								</select>
+							</div>
 						</div>
-						<div class="col-3">
-							<label class="form-label">Panjang</label>
-							<input type="number" step="any" class="form-control" id="editPanjang" required>
-						</div>
-						<div class="col-3">
-							<label class="form-label">Lebar</label>
-							<input type="number" step="any" class="form-control" id="editLebar" required>
-						</div>
-						<div class="col-6">
-							<label class="form-label">Status</label>
-							<select class="form-select" id="editStatus">
-								<option value="Active">Active</option>
-								<option value="Inactive">Inactive</option>
-							</select>
+						<div class="mb-3 row">
+							<div class="col-md-3">
+								<label class="form-label">Default Qty</label>
+							</div>
+							<div class="col-md-9">
+								<input type="number" class="form-control" id="inputDefaultQty" required>
+							</div>
+							<div class="mb-3 row">
+							</div>
+							<div class="col-md-3">
+								<label class="form-label">Picture</label>
+							</div>
+							<div class="col-md-9">
+								<div class="d-flex align-items-center gap-2">
+									<button type="button" class="btn btn-light border">
+										<i class="fas fa-image"></i>
+								</div>
+								</button>
+								<span>Add Image</span>
+							</div>
 						</div>
 					</div>
 					<div class="modal-footer">
@@ -723,70 +1056,136 @@
 
 		<!-- end modal ukuran -->
 
-		<!-- modal sorting -->
 		<!-- Modal Tambah/Edit Sorting Tag -->
-		<div class="modal fade" id="modalSorting" tabindex="-1" aria-labelledby="modalSortingLabel" aria-hidden="true">
+		<div class="modal fade" id="modalSize" tabindex="-1" aria-labelledby="modalSizeLabel" aria-hidden="true">
 			<div class="modal-dialog modal-dialog-centered">
 				<form class="modal-content" id="formSorting">
 					<div class="modal-header">
-						<h5 class="modal-title" id="modalSortingLabel">Tambah Sorting Tag</h5>
+						<h5 class="modal-title" id="modalSizeLabel">Add Size</h5>
 						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 					</div>
 					<div class="modal-body row g-2">
 						<input type="hidden" id="editSortingIndex">
-						<div class="col-12">
-							<label class="form-label">Nama Sorting Tag</label>
-							<input type="text" class="form-control" id="inputSortingNama" required>
-						</div>
-						<div class="col-4">
-							<label class="form-label">Qty</label>
-							<input type="number" class="form-control" id="inputSortingQty" required>
-						</div>
-						<div class="col-8">
-							<label class="form-label">Ukuran</label>
-							<input type="text" class="form-control" id="inputSortingUkuran" required>
-						</div>
-						<div class="col-12">
-							<label class="form-label">Bahan Kertas</label>
-							<input type="text" class="form-control" id="inputSortingKertas" required>
-						</div>
-						<div class="col-6">
-							<label class="form-label">Sisi Cetak</label>
-							<input type="text" class="form-control" id="inputSortingSisi" required>
-						</div>
-						<div class="col-6">
-							<label class="form-label">Laminasi</label>
-							<input type="text" class="form-control" id="inputSortingLaminasi" required>
-						</div>
-						<div class="col-6">
-							<label class="form-label">Lipat</label>
-							<input type="text" class="form-control" id="inputSortingLipat" required>
-						</div>
-						<div class="col-6">
-							<label class="form-label">Link/Route</label>
-							<input type="text" class="form-control" id="inputSortingRoute" required>
-						</div>
-						<div class="col-12">
-							<label class="form-label">Status</label>
-							<select class="form-select" id="inputSortingStatus">
-								<option value="Default">Default</option>
-								<option value="Publish">Publish</option>
-							</select>
+						<div class="row">
+							<div class="col-md-3">
+								<label class="form-label">Available Size</label>
+							</div>
+							<div class="col-md-9">
+								<select class="form-select" id="inputSortingStatus">
+									<option value="Default">Folio (21x33cm)</option>
+									<option value="Publish">HVS</option>
+								</select>
+							</div>
 						</div>
 					</div>
 					<div class="modal-footer">
+						<button type="submit" class="btn btn-outline-warning">Cancel</button>
 						<button type="submit" class="btn btn-warning">Simpan</button>
 					</div>
 				</form>
 			</div>
 		</div>
 		<!-- end modal sorting -->
+
+		<!-- Modal Tambah/Edit Paper Type -->
+		<div class="modal fade" id="modalPaperType" tabindex="-1" aria-labelledby="modalPaperTypeLabel"
+			aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered">
+				<form class="modal-content" id="formSorting">
+					<div class="modal-header">
+						<h5 class="modal-title" id="modalPaperTypeLabel">Add Paper Type</h5>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					</div>
+					<div class="modal-body">
+						<div class="mb-3 row">
+							<div class="col-md-3">
+								<label class="form-label">Paper Group</label>
+							</div>
+							<div class="col-md-9">
+								<select class="form-select">
+									<option>Art Carton</option>
+									<!-- Add other paper group options -->
+								</select>
+							</div>
+						</div>
+						<div class="mb-3 row">
+							<div class="col-md-3">
+								<label class="form-label">Mark</label>
+							</div>
+							<div class="col-md-9">
+								<select class="form-select">
+									<option>Pindo</option>
+									<!-- Add other mark options -->
+								</select>
+							</div>
+						</div>
+						<div class="mb-3 row">
+							<div class="col-md-3">
+								<label class="form-label">Gramature</label>
+							</div>
+							<div class="col-md-9">
+								<select class="form-select">
+									<option>310</option>
+									<!-- Add other gramature options -->
+								</select>
+							</div>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="submit" class="btn btn-outline-warning">Cancel</button>
+						<button type="submit" class="btn btn-warning">Simpan</button>
+					</div>
+				</form>
+			</div>
+		</div>
+		<!-- end modal paper type -->
+		<!-- Modal Tambah/Edit add process -->
+		<div class="modal fade" id="modalProcess" tabindex="-1" aria-labelledby="modalProcessLabel" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered">
+				<form class="modal-content" id="formSorting">
+					<div class="modal-header">
+						<h5 class="modal-title" id="modalProcessLabel">Add Process</h5>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					</div>
+					<div class="modal-body row g-2">
+						<input type="hidden" id="editSortingIndex">
+						<div class="row">
+							<div class="col-md-3">
+								<label class="form-label">Process Category</label>
+							</div>
+							<div class="col-md-9">
+								<select class="form-select">
+									<option>Pracetak</option>
+								</select>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-3">
+								<label class="form-label">Process Name</label>
+							</div>
+							<div class="col-md-9">
+								<select class="form-select">
+									<option>Pesan Kertas ke Toko</option>
+								</select>
+							</div>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="submit" class="btn btn-outline-warning">Cancel</button>
+						<button type="submit" class="btn btn-warning">Simpan</button>
+					</div>
+				</form>
+			</div>
+		</div>
+		<!-- end modal add process  -->
 	</div>
 	<!-- /Main Wrapper -->
-	
+
 	<!-- jQuery -->
 	<script src="assets/js/jquery-3.7.1.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.loadtemplate/1.5.10/jquery.loadTemplate.min.js" integrity="sha512-T1zx+UG2gXu9mr29wvzaKkNUmAOAie40T32ZPIvcRPJgO5br53+Ocqj8gzguUuix7FK+Z3ncRCJMaZcumnPZzg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.loadtemplate/1.5.10/jquery.loadTemplate.min.js"
+		integrity="sha512-T1zx+UG2gXu9mr29wvzaKkNUmAOAie40T32ZPIvcRPJgO5br53+Ocqj8gzguUuix7FK+Z3ncRCJMaZcumnPZzg=="
+		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 	<!-- Feather Icon JS -->
 	<script src="assets/js/feather.min.js"></script>

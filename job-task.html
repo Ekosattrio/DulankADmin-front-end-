@@ -150,6 +150,12 @@
                             </div>
                         </div>
                         <!-- /Filter -->
+                        <div class="m-3">
+                            <button class="btn btn-process btn-info">Design</button>
+                            <button class="btn btn-process btn-outline-info">Pracetak</button>
+                            <button class="btn btn-process btn-outline-info">Cetak</button>
+                            <button class="btn btn-process btn-outline-info">Finishing</button>
+                        </div>
                         <!-- Job Task Table -->
                         <div class="table-responsive mb-5">
                             <table class="table datanew">
@@ -482,21 +488,26 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            const takeBtn = document.querySelectorAll('.take-btn');
+            const takeBtn = document.querySelectorAll('.btn-process');
             takeBtn.forEach(btn => {
-                console.log(btn)
                 btn.addEventListener("click", function (e) {
                     e.preventDefault();
 
-                    Swal.fire({
-                        title: 'Are you sure?',
-                        text: "Mau ambil job ini?",
-                        showCancelButton: true,
-                        confirmButtonColor: '#f39c12', // oranye
-                        cancelButtonColor: '#d33',     // merah
-                        confirmButtonText: 'Yes, take it!',
-                        cancelButtonText: 'Cancel'
+                    // Swal.fire({
+                    //     title: 'Are you sure?',
+                    //     text: "Mau ambil job ini?",
+                    //     showCancelButton: true,
+                    //     confirmButtonColor: '#f39c12', // oranye
+                    //     cancelButtonColor: '#d33',     // merah
+                    //     confirmButtonText: 'Yes, take it!',
+                    //     cancelButtonText: 'Cancel'
+                    // })
+                    takeBtn.forEach(btns => {
+                        btns.classList.remove('btn-info')
+                        btns.classList.add('btn-outline-info')
                     })
+                    btn.classList.remove('btn-outline-info')
+                    btn.classList.add('btn-info')
                 });
 
             });

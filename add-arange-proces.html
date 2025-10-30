@@ -41,8 +41,13 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <style>
         .process-list {
-            max-width: 900px;
-            margin: 0 auto;
+
+            margin: 0 10px;
+        }
+
+        select {
+            width: 200px !important;
+            margin-left: 35px;
         }
 
         .process-category {
@@ -129,7 +134,7 @@
 
         <div class="page-wrapper mt-3">
             <!-- Main content tulis disini -->
-            <div class="content">
+            <div class="content bg-white">
                 <div class="page-header">
                     <div class="add-item d-flex">
                         <div class="page-title">
@@ -153,118 +158,122 @@
                             </div>
                         </div>
 
-                        <div class="row mb-5 align-items-center">
+                        <div class="row align-items-center">
                             <label class="col-lg-2 col-form-label">Product</label>
                             <div class="col-lg-9">
                                 <p class="fw-bold">NCR 3 Rangkap</p>
                             </div>
                         </div>
 
-
                     </div>
 
-                    <div class="d-flex">
-                        <span style="width:220px">Process Category</span>
-                        <span>Process Name</span>
+                    <div class="col-12 mb-3">
+                        <div class="process-list">
+                            <!-- existing process item -->
+                            <div class="process-item d-flex align-items-start py-2" data-id="1">
+                                <div class="fw-bold me-3" style="width:150px">Process Category</div>
+                                <div class="ms-1 fw-bold me-5">Process Name</div>
+                            </div>
+                        </div>
                     </div>
 
 
                     <!-- Category block: Design -->
                     <div class="col-12 mb-3">
-                        <div class="d-flex align-items-center justify-content-between">
+                        <div class="d-flex align-items-center">
                             <span class="fw-bold my-2">1. Design</span>
-                            <button class="btn text-primary add-process-btn">Add Process</button>
                         </div>
                         <div class="process-list mt-2" data-category-id="1">
                             <!-- existing process item -->
                             <div class="process-item d-flex align-items-start py-2" data-id="1">
-                                <div class="me-3" style="width:110px">#Process 1</div>
-                                <div class="flex-grow-1 d-flex align-items-start justify-content-between">
-                                    <div class="fw-bold ms-1 me-5">Design</div>
+                                <div class="me-3" style="width:150px">#Process 1</div>
+                                <div class="flex-grow-1 d-flex align-items-start">
+                                    <div class="fw-bold ms-1 me-5" style="width: 120px;">Design</div>
                                     <div>
                                         <button class="btn p-0 text-danger remove-process">Remove</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <button class="btn text-primary add-process-btn">Add Process</button>
                     </div>
 
                     <!-- Category block: Development -->
                     <div class="col-12 mb-3">
-                        <div class="d-flex align-items-center justify-content-between">
+                        <div class="d-flex align-items-center">
                             <span class="fw-bold my-2">2. Pracetak</span>
-                            <button class="btn text-primary add-process-btn">Add Process</button>
                         </div>
                         <div class="process-list mt-2" data-category-id="2">
                             <!-- existing process item -->
                             <div class="process-item d-flex align-items-start py-2" data-id="1">
-                                <div class="me-3" style="width:110px">#Process 1</div>
-                                <div class="flex-grow-1 d-flex align-items-start justify-content-between">
-                                    <div class="fw-bold ms-1 me-5">Flat CTP</div>
+                                <div class="me-3" style="width:150px">#Process 1</div>
+                                <div class="flex-grow-1 d-flex align-items-start">
+                                    <div class="fw-bold ms-1 me-5" style="width: 120px;">Flat CTP</div>
                                     <div>
                                         <button class="btn p-0 text-danger remove-process">Remove</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <button class="btn text-primary add-process-btn">Add Process</button>
                     </div>
 
                     <!-- Category block: Testing -->
                     <div class="col-12 mb-3">
-                        <div class="d-flex align-items-center justify-content-between">
+                        <div class="d-flex align-items-center">
                             <span class="fw-bold my-2">3. Cetak</span>
-                            <button class="btn text-primary add-process-btn">Add Process</button>
                         </div>
                         <div class="process-list mt-2" data-category-id="3">
                             <!-- existing process item -->
                             <div class="process-item d-flex align-items-start py-2" data-id="1">
-                                <div class="me-3" style="width:110px">#Process 1</div>
-                                <div class="flex-grow-1 d-flex align-items-start justify-content-between">
-                                    <div class="fw-bold ms-1 me-5">Multilith</div>
+                                <div class="me-3" style="width:150px">#Process 1</div>
+                                <div class="flex-grow-1 d-flex align-items-start">
+                                    <div class="fw-bold ms-1 me-5" style="width: 120px;">Multilith</div>
                                     <div>
                                         <button class="btn p-0 text-danger remove-process">Remove</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <button class="btn text-primary add-process-btn">Add Process</button>
                     </div>
 
                     <!-- Category block: Deployment -->
                     <div class="col-12 mb-3">
-                        <div class="d-flex align-items-center justify-content-between">
+                        <div class="d-flex align-items-center">
                             <span class="fw-bold my-2">4. Finishing</span>
-                            <button class="btn text-primary add-process-btn">Add Process</button>
                         </div>
                         <div class="process-list mt-2" data-category-id="4">
                             <!-- existing process item -->
                             <div class="process-item d-flex align-items-start py-2" data-id="1">
-                                <div class="me-3" style="width:110px">#Process 1</div>
-                                <div class="flex-grow-1 d-flex align-items-start justify-content-between">
-                                    <div class="fw-bold ms-1 me-5">Numerator</div>
+                                <div class="me-3" style="width:150px">#Process 1</div>
+                                <div class="flex-grow-1 d-flex align-items-start">
+                                    <div class="fw-bold ms-1 me-5" style="width: 120px;">Numerator</div>
                                     <div>
                                         <button class="btn p-0 text-danger remove-process">Remove</button>
                                     </div>
                                 </div>
                             </div>
                             <div class="process-item d-flex align-items-start py-2" data-id="1">
-                                <div class="me-3" style="width:110px">#Process 2</div>
-                                <div class="flex-grow-1 d-flex align-items-start justify-content-between">
-                                    <div class="fw-bold ms-1 me-5">Susun</div>
+                                <div class="me-3" style="width:150px">#Process 2</div>
+                                <div class="flex-grow-1 d-flex align-items-start">
+                                    <div class="fw-bold ms-1 me-5" style="width: 120px;">Susun</div>
                                     <div>
                                         <button class="btn p-0 text-danger remove-process">Remove</button>
                                     </div>
                                 </div>
                             </div>
                             <div class="process-item d-flex align-items-start py-2" data-id="1">
-                                <div class="me-3" style="width:110px">#Process 3</div>
-                                <div class="flex-grow-1 d-flex align-items-start justify-content-between">
-                                    <div class="fw-bold ms-1 me-5">Potong</div>
+                                <div class="me-3" style="width:150px">#Process 3</div>
+                                <div class="flex-grow-1 d-flex align-items-start">
+                                    <div class="fw-bold ms-1 me-5" style="width: 120px;">Potong</div>
                                     <div>
                                         <button class="btn p-0 text-danger remove-process">Remove</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <button class="btn text-primary add-process-btn">Add Process</button>
                     </div>
 
                 </div>
@@ -317,6 +326,7 @@
     <!-- Live Search -->
     <script src="assets/js/liveSearch.js"></script>
 
+    // ...existing code...
     <script>
         function updateProcessNumbers($list) {
             var number = 1;
@@ -325,26 +335,44 @@
                 number++;
             });
         }
-        // Tambah input ketika tombol "Add Process" diklik
+
+        // Map opsi select per category (ubah isi array sesuai kebutuhan)
+        var processOptions = {
+            '1': ['Design', 'Artwork',],
+            '2': ['Flat CTP', 'Output Film', 'Klise'],
+            '3': ['Multilith'],
+            '4': ['Numerator', 'Susun', 'Potong']
+        };
+
+        // Tambah input ketika tombol "Add Process" diklik (menggunakan select per kategori)
         $(document).on('click', '.add-process-btn', function () {
             var $btn = $(this);
             var $category = $btn.closest('.col-12');
             var $list = $category.find('.process-list').first();
+            var categoryId = String($list.data('category-id') || ''); // data-category-id pada .process-list
 
             // Jika sudah ada input terbuka, jangan buat lagi
             if ($list.find('.process-input-row').length) return;
 
-            var inputRow = $('<div class="process-input-row d-flex align-items-center py-2">' +
-                '<div style="width:110px">#</div>' +
+            // build option list sesuai kategori
+            var opts = processOptions[categoryId] || ['Custom Process'];
+            var optionsHtml = opts.map(function (o) {
+                return '<option value="' + $('<div>').text(o).html() + '">' + $('<div>').text(o).html() + '</option>';
+            }).join('');
+
+            var inputRow = $(
+                '<div class="process-input-row d-flex align-items-center py-2">' +
+                '<div style="width:150px">#</div>' +
                 '<div class="flex-grow-1 d-flex align-items-center">' +
-                '<input type="text" class="form-control form-control-sm me-2 process-name-input" placeholder="Enter process name">' +
+                '<select class="form-select select me-2 process-select">' + optionsHtml + '</select>' +
                 '<button class="btn btn-sm btn-primary save-add me-2">Save</button>' +
                 '<button class="btn btn-sm btn-secondary cancel-add">Cancel</button>' +
                 '</div>' +
-                '</div>');
+                '</div>'
+            );
 
             $list.append(inputRow);
-            inputRow.find('.process-name-input').focus();
+            inputRow.find('.process-select').focus();
         });
 
         // Cancel menutup input
@@ -352,16 +380,16 @@
             $(this).closest('.process-input-row').remove();
         });
 
-        // Save menambah process baru ke list
+        // Save menambah process baru ke list (mengambil nilai dari select)
         $(document).on('click', '.save-add', function () {
             var $row = $(this).closest('.process-input-row');
             var $list = $row.closest('.process-list');
-            var name = $row.find('.process-name-input').val().trim();
+            var name = $row.find('.process-select option:selected').text().trim();
             if (!name) {
                 if (window.Swal) {
-                    Swal.fire({ icon: 'warning', text: 'Please enter a process name.' });
+                    Swal.fire({ icon: 'warning', text: 'Please select a process.' });
                 } else {
-                    alert('Please enter a process name.');
+                    alert('Please select a process.');
                 }
                 return;
             }
@@ -371,9 +399,9 @@
 
             var newItem = $(
                 '<div class="process-item d-flex align-items-start py-2" data-id="' + id + '">' +
-                '<div class="me-3" style="width:110px">#Process ' + nextProcessNum + '</div>' +
-                '<div class="flex-grow-1 d-flex align-items-start justify-content-between">' +
-                '<div class="fw-bold ms-1 me-5"></div>' +
+                '<div class="me-3" style="width:150px">#Process ' + nextProcessNum + '</div>' +
+                '<div class="flex-grow-1 d-flex align-items-start">' +
+                '<div class="fw-bold ms-1 me-5" style="width: 120px;"></div>' +
                 '<div><button class="btn p-0 text-danger remove-process">Remove</button></div>' +
                 '</div>' +
                 '</div>'
@@ -410,6 +438,7 @@
             }
         });
     </script>
+    // ...existing code...
 
     <!-- Custom JS -->
     <script src="assets/js/theme-script.js"></script>

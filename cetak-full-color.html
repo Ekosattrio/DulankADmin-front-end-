@@ -898,7 +898,142 @@
 								</div>
 								<div class="tab-pane fade" id="offsetMachineTabContent" role="tabpanel"
 									aria-labelledby="offset-machine">
-									Isi Offset Machine
+									<div>
+										<div class="justify-content-between d-flex align-items-center mb-2">
+											<div>
+												<h4>Setting for option Offset Machine</h4>
+												<p class="text-muted small">The following are the datas for options and
+													calculations</p>
+											</div>
+											<a class="btn btn-outline-warning btn-sm" href="mesin-cetak-self.html">
+												Add New offset machine
+											</a>
+										</div>
+										<div>
+											<div class="table-responsive mb-4">
+												<table class="table">
+													<thead>
+														<tr>
+															<th>Name</th>
+															<th>Unit Color</th>
+															<th>Paper Area</th>
+															<th>Status</th>
+															<th>Action</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>heidlberg sm52</td>
+															<td>4 Color</td>
+															<td>120 gsm</td>
+															<td>
+																<select class="form-select form-select-sm">
+																	<option>Show</option>
+																	<option>Hide</option>
+																</select>
+															</td>
+															<td>
+																<a href="#" class="text-danger">Remove</a>
+															</td>
+														</tr>
+														<tr>
+															<td>heidlberg sm74</td>
+															<td>4 Color</td>
+															<td>150 gsm</td>
+															<td>
+																<select class="form-select form-select-sm">
+																	<option>Show</option>
+																	<option>Hide</option>
+																</select>
+															</td>
+															<td>
+																<a href="#" class="text-danger">Remove</a>
+															</td>
+														</tr>
+														<tr>
+															<td>heidlberg sm104</td>
+															<td>4 Color</td>
+															<td>190 gsm</td>
+															<td>
+																<select class="form-select form-select-sm">
+																	<option>Show</option>
+																	<option>Hide</option>
+																</select>
+															</td>
+															<td>
+																<a href="#" class="text-danger">Remove</a>
+															</td>
+														</tr>
+														<tr>
+															<td>Mitsubishi 73</td>
+															<td>4 Color</td>
+															<td>210 gsm</td>
+															<td>
+																<select class="form-select form-select-sm">
+																	<option>Show</option>
+																	<option>Hide</option>
+																</select>
+															</td>
+															<td>
+																<a href="#" class="text-danger">Remove</a>
+															</td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+											<button class="btn btn-warning btn-sm" data-bs-toggle="modal"
+												data-bs-target="#modalAddOfsett">Add Offset Machine</button>
+										</div>
+									</div>
+
+									<!-- List of Process Section -->
+									<div class="mt-5">
+										<div class="justify-content-between d-flex align-items-center mb-2">
+											<div>
+												<h4>List of Process</h4>
+												<p class="text-muted small">The following are the datas for Process
+													Arrange</p>
+											</div>
+											<a class="btn btn-outline-warning btn-sm" href="job-proses.html">
+												Add New Process
+											</a>
+										</div>
+										<div>
+											<div class="table-responsive mb-4">
+												<table class="table">
+													<thead>
+														<tr>
+															<th>Process Category</th>
+															<th>Process</th>
+															<th>Incentive</th>
+															<th>Action</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>Pracetak</td>
+															<td>Cetak Offset 4 Warna</td>
+															<td>5.000 per Job</td>
+															<td>
+																<a href="#" class="text-danger">Remove</a>
+															</td>
+														</tr>
+														<tr>
+															<td>Cetak</td>
+															<td>Cetak Offset 4 Warna</td>
+															<td>5.000 per Job</td>
+															<td>
+																<a href="#" class="text-danger">Remove</a>
+															</td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+											<button class="btn btn-warning btn-sm" data-bs-toggle="modal"
+												data-bs-target="#modalProcessOffsetMachine">Add Process</button>
+										</div>
+
+									</div>
 
 								</div>
 								<div class="modal fade" id="modalTambahGambar" tabindex="-1" aria-hidden="true">
@@ -925,208 +1060,854 @@
 								</div>
 								<div class="tab-pane fade" id="laminateTabContent" role="tabpanel"
 									aria-labelledby="laminate">
-									Isi Laminate
+									<div>
+										<div class="justify-content-between d-flex align-items-center mb-2">
+											<div>
+												<h4>Setting for option Laminate Type</h4>
+												<p class="text-muted small">The following are the datas for options and
+													calculations</p>
+											</div>
+											<a class="btn btn-outline-warning btn-sm" href="mesin-laminasi-self.html">
+												Add New Laminate Type
+											</a>
+										</div>
+										<div>
+											<div class="table-responsive mb-4">
+												<table class="table">
+													<thead>
+														<tr>
+															<th>Name</th>
+															<th>Status</th>
+															<th>Action</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>Laminasi Doff</td>
+															<td>
+																<select class="form-select form-select-sm">
+																	<option>Show</option>
+																	<option>Hide</option>
+																</select>
+															</td>
+															<td>
+																<a href="#" class="text-danger">Remove</a>
+															</td>
+														</tr>
+														<tr>
+															<td>Laminasi Glossy</td>
+															<td>
+																<select class="form-select form-select-sm">
+																	<option>Show</option>
+																	<option>Hide</option>
+																</select>
+															</td>
+															<td>
+																<a href="#" class="text-danger">Remove</a>
+															</td>
+														</tr>
+														<tr>
+															<td>Spot UV</td>
+															<td>
+																<select class="form-select form-select-sm">
+																	<option>Show</option>
+																	<option>Hide</option>
+																</select>
+															</td>
+															<td>
+																<a href="#" class="text-danger">Remove</a>
+															</td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+											<button class="btn btn-warning btn-sm" data-bs-toggle="modal"
+												data-bs-target="#modalAddLaminateType">Add Laminate Type</button>
+										</div>
+									</div>
+
+									<!-- List of Process Section -->
+									<div class="mt-5">
+										<div class="justify-content-between d-flex align-items-center mb-2">
+											<div>
+												<h4>List of Process</h4>
+												<p class="text-muted small">The following are the datas for Process
+													Arrange</p>
+											</div>
+											<a class="btn btn-outline-warning btn-sm" href="job-proses.html">
+												Add New Process
+											</a>
+										</div>
+										<div>
+											<div class="table-responsive mb-4">
+												<table class="table">
+													<thead>
+														<tr>
+															<th>Process Category</th>
+															<th>Process</th>
+															<th>Incentive</th>
+															<th>Action</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>Pracetak</td>
+															<td>Cetak Offset 4 Warna</td>
+															<td>5.000 per Job</td>
+															<td>
+																<a href="#" class="text-danger">Remove</a>
+															</td>
+														</tr>
+														<tr>
+															<td>Cetak</td>
+															<td>Cetak Offset 4 Warna</td>
+															<td>5.000 per Job</td>
+															<td>
+																<a href="#" class="text-danger">Remove</a>
+															</td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+											<button class="btn btn-warning btn-sm" data-bs-toggle="modal"
+												data-bs-target="#modalAddProsesLaminasi">Add Process</button>
+										</div>
+
+									</div>
 								</div>
 								<div class="tab-pane fade" id="processArrangeTabContent" role="tabpanel"
 									aria-labelledby="process-arrange">
-									Isi Process Arrange
+									<div>
+										<h4>Process Arrange for the product</h4>
+										<p class="text-muted small">
+											The following are the datas for <a href="#" class="text-decoration-none">Job
+												Task</a>
+										</p>
+										<p>Please setting up or down to arrange the process</p>
+
+										<div class="table-responsive mb-4">
+											<table class="table align-middle">
+												<thead>
+													<tr>
+														<th style="width: 60px;">No</th>
+														<th style="width: 90px;"></th>
+														<th>From</th>
+														<th>Process Category</th>
+														<th>Process</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td>1</td>
+														<td>
+															<div class="btn-group-horizontal">
+																<button class="btn btn-outline-secondary btn-sm">
+																	<i data-feather="arrow-up"></i>
+																</button>
+																<button class="ms-3 btn btn-outline-secondary btn-sm">
+																	<i data-feather="arrow-down"></i>
+																</button>
+															</div>
+														</td>
+														<td>Paper Type</td>
+														<td>Pracetak</td>
+														<td>Pesen Kertas ke Toko</td>
+													</tr>
+													<tr>
+														<td>2</td>
+														<td>
+															<div class="btn-group-horizontal">
+																<button class="btn btn-outline-secondary btn-sm">
+																	<i data-feather="arrow-up"></i>
+																</button>
+																<button class="ms-3 btn btn-outline-secondary btn-sm">
+																	<i data-feather="arrow-down"></i>
+																</button>
+															</div>
+														</td>
+														<td>Offset Machine</td>
+														<td>Cetak</td>
+														<td>Cetak Offset 4 Warna</td>
+													</tr>
+													<tr>
+														<td>3</td>
+														<td>
+															<div class="btn-group-horizontal">
+																<button class="btn btn-outline-secondary btn-sm">
+																	<i data-feather="arrow-up"></i>
+																</button>
+																<button class="ms-3 btn btn-outline-secondary btn-sm">
+																	<i data-feather="arrow-down"></i>
+																</button>
+															</div>
+														</td>
+														<td>Offset Machine</td>
+														<td>Pracetak</td>
+														<td>Buat Plat CTP</td>
+													</tr>
+													<tr>
+														<td>4</td>
+														<td>
+															<div class="btn-group-horizontal">
+																<button class="btn btn-outline-secondary btn-sm">
+																	<i data-feather="arrow-up"></i>
+																</button>
+																<button class="ms-3 btn btn-outline-secondary btn-sm">
+																	<i data-feather="arrow-down"></i>
+																</button>
+															</div>
+														</td>
+														<td>Laminate</td>
+														<td>Finishing</td>
+														<td>Laminasi doff dari Cetak Offset</td>
+													</tr>
+													<tr>
+														<td>5</td>
+														<td>
+															<div class="btn-group-horizontal">
+																<button class="btn btn-outline-secondary btn-sm">
+																	<i data-feather="arrow-up"></i>
+																</button>
+																<button class="ms-3 btn btn-outline-secondary btn-sm">
+																	<i data-feather="arrow-down"></i>
+																</button>
+															</div>
+														</td>
+														<td>Components</td>
+														<td>Finishing</td>
+														<td>Proses Lipat ke mesin</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+
+
 								</div>
 								<div class="tab-pane fade" id="componentsTabContent" role="tabpanel"
 									aria-labelledby="components">
-									Isi Components
+									<div class="justify-content-between d-flex align-items-center mb-2">
+										<div>
+											<h4>Setting for option Fold Type</h4>
+											<p class="text-muted small">The following are the datas for options and
+												calculations</p>
+										</div>
+										<!-- <a class="btn btn-outline-warning btn-sm" href="mesin-laminasi-self.html">
+											Add New Fold Type
+										</a> -->
+									</div>
+									<div>
+										<div class="table-responsive mb-4">
+											<table class="table">
+												<thead>
+													<tr>
+														<th>Fold Name</th>
+														<th>Fold Value</th>
+														<th>Status</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td>Tanpa Lipatan</td>
+														<td>0</td>
+														<td>
+															<select class="form-select form-select-sm">
+																<option>Show</option>
+																<option>Hide</option>
+															</select>
+														</td>
+
+													</tr>
+													<tr>
+														<td>1 Lipatan</td>
+														<td>2</td>
+														<td>
+															<select class="form-select form-select-sm">
+																<option>Show</option>
+																<option>Hide</option>
+															</select>
+														</td>
+
+													</tr>
+													<tr>
+														<td>2 Tanpa Lipatan</td>
+														<td>3</td>
+														<td>
+															<select class="form-select form-select-sm">
+																<option>Show</option>
+																<option>Hide</option>
+															</select>
+														</td>
+
+													</tr>
+
+												</tbody>
+											</table>
+										</div>
+										<!-- <button class="btn btn-warning btn-sm" data-bs-toggle="modal"
+											data-bs-target="#modalAddLaminateType">Add Laminate Type</button> -->
+									</div>
+									<div>
+										<div class="justify-content-between d-flex align-items-center mb-2">
+											<div>
+												<h4>Component List Added</h4>
+												<p class="text-muted small">Price For Other Service</p>
+											</div>
+											<!-- <a class="btn btn-outline-warning btn-sm" href="mesin-laminasi-self.html">
+												Add New Laminate Type
+											</a> -->
+										</div>
+										<div class="mb-3">
+											<div class="table-responsive mb-4">
+												<table class="table">
+													<thead>
+														<tr>
+															<th>Service Name</th>
+															<th>Price</th>
+															<th>Minimum Price</th>
+															<th>Unit</th>
+															<th>Action</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>1 Lipatan</td>
+															<td>10</td>
+															<td>150000</td>
+															<td>Pcs</td>
+															<td>
+																<a href="#" class="text-danger">Remove</a>
+															</td>
+														</tr>
+														<tr>
+															<td>2 Lipatan</td>
+															<td>15</td>
+															<td>250000</td>
+															<td>Pcs</td>
+															<td>
+																<a href="#" class="text-danger">Remove</a>
+															</td>
+														</tr>
+														<tr>
+															<td>Mobilisasi</td>
+															<td>2500</td>
+															<td>250000</td>
+															<td>Kg</td>
+															<td>
+																<a href="#" class="text-danger">Remove</a>
+															</td>
+														</tr>
+
+													</tbody>
+												</table>
+											</div>
+											<button class="btn btn-warning btn-sm" data-bs-toggle="modal"
+												data-bs-target="#modalAddComponentList">Add Price For Other
+												Service</button>
+										</div>
+									</div>
+									<div>
+										<div class="justify-content-between d-flex align-items-center mb-2">
+											<div>
+												<h4>Other Components</h4>
+											</div>
+											<!-- <a class="btn btn-outline-warning btn-sm" href="mesin-laminasi-self.html">
+												Add New Laminate Type
+											</a> -->
+										</div>
+										<div class="mb-3">
+											<div class="table-responsive mb-4">
+												<table class="table">
+													<thead>
+														<tr>
+															<th>Service Name</th>
+															<th>QTY</th>
+															<th>Unit</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>Jam Kerja</td>
+															<td>12</td>
+															<td>Jam</td>
+														</tr>
+														<tr>
+															<td>Kapasitas Beli Kertas per jam</td>
+															<td>1500</td>
+															<td>Lbr</td>
+														</tr>
+														<tr>
+															<td>Kapasitas Laminasi per jam</td>
+															<td>2000</td>
+															<td>Lbr</td>
+														</tr>
+														<tr>
+															<td>Kapasitas Lipat Per jam</td>
+															<td>8000</td>
+															<td>Lbr</td>
+														</tr>
+														<tr>
+															<td>Kapasitas Mesin Cetak Per jam</td>
+															<td>5000</td>
+															<td>Lbr</td>
+														</tr>
+														<tr>
+															<td>1 Lipatan</td>
+															<td>10</td>
+															<td>Pcs</td>
+														</tr>
+
+
+													</tbody>
+												</table>
+											</div>
+
+										</div>
+									</div>
+									<div class="justify-content-between d-flex align-items-center mb-2">
+										<div>
+											<h4>List Of Process</h4>
+											<p class="text-muted small">The following are the datas for Process Arrange
+											</p>
+										</div>
+										<a class="btn btn-outline-warning btn-sm" href="job-proses.html">
+											Add New Fold Type
+										</a>
+									</div>
+									<div>
+										<div class="table-responsive mb-4">
+											<table class="table">
+												<thead>
+													<tr>
+														<th>Process Category</th>
+														<th>Process</th>
+														<th>Incentive</th>
+														<th>Action</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td>Finishing</td>
+														<td>Proses Lipat Ke Mesin</td>
+														<td>10000 per job</td>
+														<td>
+															<a href="#" class="text-danger">Remove</a>
+														</td>
+													</tr>
+
+
+												</tbody>
+											</table>
+										</div>
+										<button class="btn btn-warning btn-sm" data-bs-toggle="modal"
+											data-bs-target="#modalAddProsesKomponen">Add Laminate Type</button>
+									</div>
 								</div>
-
 							</div>
+
+
+
+
+
 						</div>
-
-
-
-
-
 					</div>
+
+
 				</div>
-
-
 			</div>
-		</div>
-		<!-- Modal ukuran -->
-		<!-- Modal Tambah/Edit Ukuran Kertas -->
-		<div class="modal fade" id="modaladdukuran" tabindex="-1" aria-labelledby="modalFormLabel" aria-hidden="true">
-			<div class="modal-dialog modal-dialog-centered">
-				<form class="modal-content" id="formRow">
-					<div class="modal-header">
-						<h5 class="modal-title" id="modalFormLabel">Variant</h5>
-						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-					</div>
-					<div class="modal-body">
-						<div class="mb-3 row">
-							<div class="col-md-3">
-								<label class="form-label">Product</label>
-							</div>
-							<div class="col-md-9">
-								<input type="text" class="form-control" id="inputProduct" required>
-							</div>
+			<!-- Modal ukuran -->
+			<!-- Modal Tambah/Edit Ukuran Kertas -->
+			<div class="modal fade" id="modaladdukuran" tabindex="-1" aria-labelledby="modalFormLabel"
+				aria-hidden="true">
+				<div class="modal-dialog modal-dialog-centered">
+					<form class="modal-content" id="formRow">
+						<div class="modal-header">
+							<h5 class="modal-title" id="modalFormLabel">Variant</h5>
+							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+						</div>
+						<div class="modal-body">
 							<div class="mb-3 row">
-							</div>
-							<div class="col-md-3">
-								<label class="form-label">Description</label>
-							</div>
-							<div class="col-md-9">
-								<textarea class="form-control" id="inputDescription" required></textarea>
-							</div>
-							<div class="mb-3 row">
-							</div>
-							<div class="col-md-3">
-								<label class="form-label">Paper Type</label>
-							</div>
-							<div class="col-md-9">
-								<select class="form-select" id="inputPaperType">
-									<!-- Add paper type options -->
-								</select>
-							</div>
-						</div>
-						<div class="mb-3 row">
-							<div class="col-md-3">
-								<label class="form-label">Product Size</label>
-							</div>
-							<div class="col-md-9">
-								<select class="form-select" id="inputProductSize">
-									<!-- Add size options -->
-								</select>
-							</div>
-						</div>
-						<div class="mb-3 row">
-							<div class="col-md-3">
-								<label class="form-label">Laminate type</label>
-							</div>
-							<div class="col-md-9">
-								<select class="form-select" id="inputLaminateType">
-									<!-- Add laminate options -->
-								</select>
-							</div>
-						</div>
-						<div class="mb-3 row">
-							<div class="col-md-3">
-								<label class="form-label">Printing Side</label>
-							</div>
-							<div class="col-md-9">
-								<select class="form-select" id="inputPrintingSide">
-									<!-- Add printing side options -->
-								</select>
-							</div>
-						</div>
-						<div class="mb-3 row">
-							<div class="col-md-3">
-								<label class="form-label">Fold</label>
-							</div>
-							<div class="col-md-9">
-								<select class="form-select" id="inputFold">
-									<!-- Add fold options -->
-								</select>
-							</div>
-						</div>
-						<div class="mb-3 row">
-							<div class="col-md-3">
-								<label class="form-label">Default Qty</label>
-							</div>
-							<div class="col-md-9">
-								<input type="number" class="form-control" id="inputDefaultQty" required>
-							</div>
-							<div class="mb-3 row">
-							</div>
-							<div class="col-md-3">
-								<label class="form-label">Picture</label>
-							</div>
-							<div class="col-md-9">
-								<div class="d-flex align-items-center gap-2">
-									<button type="button" class="btn btn-light border">
-										<i class="fas fa-image"></i>
+								<div class="col-md-3">
+									<label class="form-label">Product</label>
 								</div>
-								</button>
-								<span>Add Image</span>
+								<div class="col-md-9">
+									<input type="text" class="form-control" id="inputProduct" required>
+								</div>
+								<div class="mb-3 row">
+								</div>
+								<div class="col-md-3">
+									<label class="form-label">Description</label>
+								</div>
+								<div class="col-md-9">
+									<textarea class="form-control" id="inputDescription" required></textarea>
+								</div>
+								<div class="mb-3 row">
+								</div>
+								<div class="col-md-3">
+									<label class="form-label">Paper Type</label>
+								</div>
+								<div class="col-md-9">
+									<select class="form-select" id="inputPaperType">
+										<!-- Add paper type options -->
+									</select>
+								</div>
+							</div>
+							<div class="mb-3 row">
+								<div class="col-md-3">
+									<label class="form-label">Product Size</label>
+								</div>
+								<div class="col-md-9">
+									<select class="form-select" id="inputProductSize">
+										<!-- Add size options -->
+									</select>
+								</div>
+							</div>
+							<div class="mb-3 row">
+								<div class="col-md-3">
+									<label class="form-label">Laminate type</label>
+								</div>
+								<div class="col-md-9">
+									<select class="form-select" id="inputLaminateType">
+										<!-- Add laminate options -->
+									</select>
+								</div>
+							</div>
+							<div class="mb-3 row">
+								<div class="col-md-3">
+									<label class="form-label">Printing Side</label>
+								</div>
+								<div class="col-md-9">
+									<select class="form-select" id="inputPrintingSide">
+										<!-- Add printing side options -->
+									</select>
+								</div>
+							</div>
+							<div class="mb-3 row">
+								<div class="col-md-3">
+									<label class="form-label">Fold</label>
+								</div>
+								<div class="col-md-9">
+									<select class="form-select" id="inputFold">
+										<!-- Add fold options -->
+									</select>
+								</div>
+							</div>
+							<div class="mb-3 row">
+								<div class="col-md-3">
+									<label class="form-label">Default Qty</label>
+								</div>
+								<div class="col-md-9">
+									<input type="number" class="form-control" id="inputDefaultQty" required>
+								</div>
+								<div class="mb-3 row">
+								</div>
+								<div class="col-md-3">
+									<label class="form-label">Picture</label>
+								</div>
+								<div class="col-md-9">
+									<div class="d-flex align-items-center gap-2">
+										<button type="button" class="btn btn-light border">
+											<i class="fas fa-image"></i>
+									</div>
+									</button>
+									<span>Add Image</span>
+								</div>
 							</div>
 						</div>
-					</div>
-					<div class="modal-footer">
-						<button type="submit" class="btn btn-warning">Simpan</button>
-					</div>
-				</form>
+						<div class="modal-footer">
+							<button type="submit" class="btn btn-warning">Simpan</button>
+						</div>
+					</form>
+				</div>
 			</div>
-		</div>
 
-		<!-- end modal ukuran -->
+			<!-- end modal ukuran -->
 
-		<!-- Modal Tambah/Edit Sorting Tag -->
-		<div class="modal fade" id="modalSize" tabindex="-1" aria-labelledby="modalSizeLabel" aria-hidden="true">
-			<div class="modal-dialog modal-dialog-centered">
-				<form class="modal-content" id="formSorting">
-					<div class="modal-header">
-						<h5 class="modal-title" id="modalSizeLabel">Add Size</h5>
-						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-					</div>
-					<div class="modal-body row g-2">
-						<input type="hidden" id="editSortingIndex">
-						<div class="row">
-							<div class="col-md-3">
-								<label class="form-label">Available Size</label>
-							</div>
-							<div class="col-md-9">
-								<select class="form-select" id="inputSortingStatus">
-									<option value="Default">Folio (21x33cm)</option>
-									<option value="Publish">HVS</option>
-								</select>
+			<!-- Modal Tambah/Edit Sorting Tag -->
+			<div class="modal fade" id="modalSize" tabindex="-1" aria-labelledby="modalSizeLabel" aria-hidden="true">
+				<div class="modal-dialog modal-dialog-centered">
+					<form class="modal-content" id="formSorting">
+						<div class="modal-header">
+							<h5 class="modal-title" id="modalSizeLabel">Add Size</h5>
+							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+						</div>
+						<div class="modal-body row g-2">
+							<input type="hidden" id="editSortingIndex">
+							<div class="row">
+								<div class="col-md-3">
+									<label class="form-label">Available Size</label>
+								</div>
+								<div class="col-md-9">
+									<select class="form-select" id="inputSortingStatus">
+										<option value="Default">Folio (21x33cm)</option>
+										<option value="Publish">HVS</option>
+									</select>
+								</div>
 							</div>
 						</div>
-					</div>
-					<div class="modal-footer">
-						<button type="submit" class="btn btn-outline-warning">Cancel</button>
-						<button type="submit" class="btn btn-warning">Simpan</button>
-					</div>
-				</form>
+						<div class="modal-footer">
+							<button type="submit" class="btn btn-outline-warning">Cancel</button>
+							<button type="submit" class="btn btn-warning">Simpan</button>
+						</div>
+					</form>
+				</div>
 			</div>
-		</div>
-		<!-- end modal sorting -->
+			<!-- end modal sorting -->
 
-		<!-- Modal Tambah/Edit Paper Type -->
-		<div class="modal fade" id="modalPaperType" tabindex="-1" aria-labelledby="modalPaperTypeLabel"
+			<!-- Modal Tambah/Edit Paper Type -->
+			<div class="modal fade" id="modalPaperType" tabindex="-1" aria-labelledby="modalPaperTypeLabel"
+				aria-hidden="true">
+				<div class="modal-dialog modal-dialog-centered">
+					<form class="modal-content" id="formSorting">
+						<div class="modal-header">
+							<h5 class="modal-title" id="modalPaperTypeLabel">Add Paper Type</h5>
+							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+						</div>
+						<div class="modal-body">
+							<div class="mb-3 row">
+								<div class="col-md-3">
+									<label class="form-label">Paper Group</label>
+								</div>
+								<div class="col-md-9">
+									<select class="form-select">
+										<option>Art Carton</option>
+										<!-- Add other paper group options -->
+									</select>
+								</div>
+							</div>
+							<div class="mb-3 row">
+								<div class="col-md-3">
+									<label class="form-label">Mark</label>
+								</div>
+								<div class="col-md-9">
+									<select class="form-select">
+										<option>Pindo</option>
+										<!-- Add other mark options -->
+									</select>
+								</div>
+							</div>
+							<div class="mb-3 row">
+								<div class="col-md-3">
+									<label class="form-label">Gramature</label>
+								</div>
+								<div class="col-md-9">
+									<select class="form-select">
+										<option>310</option>
+										<!-- Add other gramature options -->
+									</select>
+								</div>
+							</div>
+						</div>
+						<div class="modal-footer">
+							<button type="submit" class="btn btn-outline-warning">Cancel</button>
+							<button type="submit" class="btn btn-warning">Simpan</button>
+						</div>
+					</form>
+				</div>
+			</div>
+			<!-- end modal paper type -->
+			<!-- modal add proses komponen -->
+			<div class="modal fade" id="modalAddProsesKomponen" tabindex="-1"
+				aria-labelledby="modalAddProsesKomponenLabel" aria-hidden="true">
+				<div class="modal-dialog modal-dialog-centered">
+					<form class="modal-content" id="formSorting">
+						<div class="modal-header">
+							<h5 class="modal-title" id="modalAddProsesKomponenLabel">Add Process</h5>
+							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+						</div>
+						<div class="modal-body row g-2">
+							<input type="hidden" id="editSortingIndex">
+							<div class="row">
+								<div class="col-md-3">
+									<label class="form-label">Process Category</label>
+								</div>
+								<div class="col-md-9">
+									<select class="form-select">
+										<option>Pracetak</option>
+									</select>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-3">
+									<label class="form-label">Process Name</label>
+								</div>
+								<div class="col-md-9">
+									<select class="form-select">
+										<option>Pesan Kertas ke Toko</option>
+									</select>
+								</div>
+							</div>
+						</div>
+						<div class="modal-footer">
+							<button type="submit" class="btn btn-outline-warning">Cancel</button>
+							<button type="submit" class="btn btn-warning">Simpan</button>
+						</div>
+					</form>
+				</div>
+			</div>
+			<!-- modal add proses komponen -->
+			<!-- Modal Tambah/Edit add process -->
+			<div class="modal fade" id="modalProcess" tabindex="-1" aria-labelledby="modalProcessLabel"
+				aria-hidden="true">
+				<div class="modal-dialog modal-dialog-centered">
+					<form class="modal-content" id="formSorting">
+						<div class="modal-header">
+							<h5 class="modal-title" id="modalProcessLabel">Add Process</h5>
+							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+						</div>
+						<div class="modal-body row g-2">
+							<input type="hidden" id="editSortingIndex">
+							<div class="row">
+								<div class="col-md-3">
+									<label class="form-label">Process Category</label>
+								</div>
+								<div class="col-md-9">
+									<select class="form-select">
+										<option>Pracetak</option>
+									</select>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-3">
+									<label class="form-label">Process Name</label>
+								</div>
+								<div class="col-md-9">
+									<select class="form-select">
+										<option>Pesan Kertas ke Toko</option>
+									</select>
+								</div>
+							</div>
+						</div>
+						<div class="modal-footer">
+							<button type="submit" class="btn btn-outline-warning">Cancel</button>
+							<button type="submit" class="btn btn-warning">Simpan</button>
+						</div>
+					</form>
+				</div>
+			</div>
+			<!-- end modal add process  -->
+			<!-- modal proccess offset -->
+			<div class="modal fade" id="modalProcessOffsetMachine" tabindex="-1"
+				aria-labelledby="modalProcessOffsetMachineLabel" aria-hidden="true">
+				<div class="modal-dialog modal-dialog-centered">
+					<form class="modal-content" id="formSorting">
+						<div class="modal-header">
+							<h5 class="modal-title" id="modalProcessOffsetMachineLabel">Add Process</h5>
+							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+						</div>
+						<div class="modal-body row g-2">
+							<input type="hidden" id="editSortingIndex">
+							<div class="row">
+								<div class="col-md-3">
+									<label class="form-label">Category Process</label>
+								</div>
+								<div class="col-md-9">
+									<select class="form-select">
+										<option>Pracetak</option>
+										<option>Cetak</option>
+									</select>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-3">
+									<label class="form-label">Process Name</label>
+								</div>
+								<div class="col-md-9">
+									<select class="form-select">
+										<option>Buat Plat CTP</option>
+										<option>Cetak Offset 4 Warna</option>
+									</select>
+								</div>
+							</div>
+						</div>
+						<div class="modal-footer">
+							<button type="submit" class="btn btn-outline-warning">Cancel</button>
+							<button type="submit" class="btn btn-warning">Simpan</button>
+						</div>
+					</form>
+				</div>
+			</div>
+			<!-- modal proccess offset -->
+			<!-- add offsetMachine -->
+			<div class="modal fade" id="modalAddOfsett" tabindex="-1" aria-labelledby="modalAddOfsettLabel"
+				aria-hidden="true">
+				<div class="modal-dialog modal-dialog-centered">
+					<form class="modal-content" id="formSorting">
+						<div class="modal-header">
+							<h5 class="modal-title" id="modalAddOfsettLabel">Add Offset Machine</h5>
+							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+						</div>
+						<div class="modal-body row g-2">
+							<input type="hidden" id="editSortingIndex">
+							<div class="row">
+								<div class="col-md-3">
+									<label class="form-label">Paper Group</label>
+								</div>
+								<div class="col-md-9">
+									<select class="form-select">
+										<option>Headlberg Sm52(52x36cm)</option>
+										<option>Headlberg Sm74(72x52cm)</option>
+										<option>Mitsubishi 73(73x50cm)</option>
+										<option>Headlberg Sm104(104x74cm)</option>
+									</select>
+								</div>
+							</div>
+						</div>
+						<div class="modal-footer">
+							<button type="submit" class="btn btn-outline-warning">Cancel</button>
+							<button type="submit" class="btn btn-warning">Simpan</button>
+						</div>
+					</form>
+				</div>
+			</div>
+			<!-- add offsetMachine -->
+		</div>
+		<!-- /Main Wrapper -->
+		<!-- modal add component list -->
+		<div class="modal fade" id="modalAddComponentList" tabindex="-1" aria-labelledby="modalAddComponentListLabel"
 			aria-hidden="true">
 			<div class="modal-dialog modal-dialog-centered">
 				<form class="modal-content" id="formSorting">
 					<div class="modal-header">
-						<h5 class="modal-title" id="modalPaperTypeLabel">Add Paper Type</h5>
+						<h5 class="modal-title" id="modalAddComponentListLabel">Add Price For Other Service</h5>
 						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 					</div>
-					<div class="modal-body">
-						<div class="mb-3 row">
+					<div class="modal-body row g-2">
+						<input type="hidden" id="editSortingIndex">
+						<div class="row">
 							<div class="col-md-3">
-								<label class="form-label">Paper Group</label>
+								<label class="form-label">Services Name</label>
 							</div>
 							<div class="col-md-9">
-								<select class="form-select">
-									<option>Art Carton</option>
-									<!-- Add other paper group options -->
-								</select>
+								<input type="text" class="form-control">
 							</div>
 						</div>
-						<div class="mb-3 row">
+						<div class="row">
 							<div class="col-md-3">
-								<label class="form-label">Mark</label>
+								<label class="form-label">Price</label>
 							</div>
 							<div class="col-md-9">
-								<select class="form-select">
-									<option>Pindo</option>
-									<!-- Add other mark options -->
-								</select>
+								<input type="text" class="form-control">
 							</div>
 						</div>
-						<div class="mb-3 row">
+						<div class="row">
 							<div class="col-md-3">
-								<label class="form-label">Gramature</label>
+								<label class="form-label">Minimum Price</label>
+							</div>
+							<div class="col-md-9">
+								<input type="text" class="form-control">
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-3">
+								<label class="form-label">Unit</label>
 							</div>
 							<div class="col-md-9">
 								<select class="form-select">
-									<option>310</option>
-									<!-- Add other gramature options -->
+									<option>Jam</option>
+									<option>Lebar</option>
+									<option>Kg</option>
+									<option>Pack</option>
 								</select>
 							</div>
 						</div>
@@ -1138,23 +1919,58 @@
 				</form>
 			</div>
 		</div>
-		<!-- end modal paper type -->
-		<!-- Modal Tambah/Edit add process -->
-		<div class="modal fade" id="modalProcess" tabindex="-1" aria-labelledby="modalProcessLabel" aria-hidden="true">
+		<!-- modal add component list -->
+		<!-- modal laminasi Type -->
+		<div class="modal fade" id="modalAddLaminateType" tabindex="-1" aria-labelledby="modalAddLaminateTypeLabel"
+			aria-hidden="true">
 			<div class="modal-dialog modal-dialog-centered">
 				<form class="modal-content" id="formSorting">
 					<div class="modal-header">
-						<h5 class="modal-title" id="modalProcessLabel">Add Process</h5>
+						<h5 class="modal-title" id="modalAddLaminateTypeLabel">Add Laminate Type</h5>
 						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 					</div>
 					<div class="modal-body row g-2">
 						<input type="hidden" id="editSortingIndex">
 						<div class="row">
 							<div class="col-md-3">
-								<label class="form-label">Process Category</label>
+								<label class="form-label">Laminate Type</label>
 							</div>
 							<div class="col-md-9">
 								<select class="form-select">
+									<option>Laminasi Doff</option>
+									<option>Laminasi Glossy</option>
+									<option>Spot UV</option>
+								</select>
+							</div>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="submit" class="btn btn-outline-warning">Cancel</button>
+						<button type="submit" class="btn btn-warning">Simpan</button>
+					</div>
+				</form>
+			</div>
+		</div>
+
+		<div class="modal fade" id="modalAddProsesLaminasi" tabindex="-1" aria-labelledby="modalAddProsesLaminasiLabel"
+			aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered">
+				<form class="modal-content" id="formSorting">
+					<div class="modal-header">
+						<h5 class="modal-title" id="modalAddProsesLaminasiLabel">Add Process Laminate Type</h5>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					</div>
+					<div class="modal-body row g-2">
+						<input type="hidden" id="editSortingIndex">
+						<div class="row">
+							<div class="col-md-3">
+								<label class="form-label">Category Process</label>
+							</div>
+							<div class="col-md-9">
+								<select class="form-select">
+									<option>Finishing</option>
+									<option>Design</option>
+									<option>Cetak</option>
 									<option>Pracetak</option>
 								</select>
 							</div>
@@ -1165,7 +1981,9 @@
 							</div>
 							<div class="col-md-9">
 								<select class="form-select">
-									<option>Pesan Kertas ke Toko</option>
+									<option>Laminasi Doff Dari Cetak Offset</option>
+									<option>Laminasi Glossy</option>
+									<option>Spot UV</option>
 								</select>
 							</div>
 						</div>
@@ -1177,43 +1995,41 @@
 				</form>
 			</div>
 		</div>
-		<!-- end modal add process  -->
-	</div>
-	<!-- /Main Wrapper -->
 
-	<!-- jQuery -->
-	<script src="assets/js/jquery-3.7.1.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.loadtemplate/1.5.10/jquery.loadTemplate.min.js"
-		integrity="sha512-T1zx+UG2gXu9mr29wvzaKkNUmAOAie40T32ZPIvcRPJgO5br53+Ocqj8gzguUuix7FK+Z3ncRCJMaZcumnPZzg=="
-		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+		<!-- modal laminasi Type -->
+		<!-- jQuery -->
+		<script src="assets/js/jquery-3.7.1.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.loadtemplate/1.5.10/jquery.loadTemplate.min.js"
+			integrity="sha512-T1zx+UG2gXu9mr29wvzaKkNUmAOAie40T32ZPIvcRPJgO5br53+Ocqj8gzguUuix7FK+Z3ncRCJMaZcumnPZzg=="
+			crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-	<!-- Feather Icon JS -->
-	<script src="assets/js/feather.min.js"></script>
+		<!-- Feather Icon JS -->
+		<script src="assets/js/feather.min.js"></script>
 
-	<!-- custom JS -->
-	<script src="assets/js/tableukuran.js"></script>
+		<!-- custom JS -->
+		<script src="assets/js/tableukuran.js"></script>
 
 
-	<!-- Slimscroll JS -->
-	<script src="assets/js/jquery.slimscroll.min.js"></script>
+		<!-- Slimscroll JS -->
+		<script src="assets/js/jquery.slimscroll.min.js"></script>
 
-	<!-- Bootstrap Core JS -->
-	<script src="assets/js/bootstrap.bundle.min.js"></script>
+		<!-- Bootstrap Core JS -->
+		<script src="assets/js/bootstrap.bundle.min.js"></script>
 
-	<!-- Chart JS -->
-	<script src="assets/plugins/apexchart/apexcharts.min.js"></script>
-	<script src="assets/plugins/apexchart/chart-data.js"></script>
+		<!-- Chart JS -->
+		<script src="assets/plugins/apexchart/apexcharts.min.js"></script>
+		<script src="assets/plugins/apexchart/chart-data.js"></script>
 
-	<!-- Sweetalert 2 -->
-	<script src="assets/plugins/sweetalert/sweetalert2.all.min.js"></script>
-	<script src="assets/plugins/sweetalert/sweetalerts.min.js"></script>
+		<!-- Sweetalert 2 -->
+		<script src="assets/plugins/sweetalert/sweetalert2.all.min.js"></script>
+		<script src="assets/plugins/sweetalert/sweetalerts.min.js"></script>
 
-	<!-- Summernote JS -->
-	<script src="assets/plugins/summernote/summernote-bs4.min.js"></script>
+		<!-- Summernote JS -->
+		<script src="assets/plugins/summernote/summernote-bs4.min.js"></script>
 
-	<!-- Custom JS -->
-	<script src="assets/js/theme-script.js"></script>
-	<script src="assets/js/script.js"></script>
+		<!-- Custom JS -->
+		<script src="assets/js/theme-script.js"></script>
+		<script src="assets/js/script.js"></script>
 
 
 </body>

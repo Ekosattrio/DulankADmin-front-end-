@@ -186,7 +186,7 @@
 									</div>
 									<div>
 										<div class="table-responsive">
-											<table class="table text-nowrap table-sm" id="tableUkuran">
+											<table class="table text-nowrap" id="tableUkuran">
 												<thead>
 													<tr>
 														<th>No.</th>
@@ -1197,81 +1197,110 @@
 													</tr>
 												</thead>
 												<tbody>
-													<tr>
+													<tr data-row="1">
 														<td>1</td>
 														<td>
 															<div class="btn-group-horizontal">
-																<button class="btn btn-outline-secondary btn-sm">
+																<button
+																	class="btn btn-outline-secondary btn-sm move-up">
+																	<!-- CLASS DITAMBAHKAN -->
 																	<i data-feather="arrow-up"></i>
 																</button>
-																<button class="ms-3 btn btn-outline-secondary btn-sm">
+																<button
+																	class="ms-3 btn btn-outline-secondary btn-sm move-down">
+																	<!-- CLASS DITAMBAHKAN -->
 																	<i data-feather="arrow-down"></i>
 																</button>
 															</div>
+															<!-- ===== PERBAIKAN HTML SELESAI ===== -->
 														</td>
 														<td>Paper Type</td>
 														<td>Pracetak</td>
 														<td>Pesen Kertas ke Toko</td>
 													</tr>
-													<tr>
+													<tr data-row="2">
 														<td>2</td>
 														<td>
+															<!-- ===== PERBAIKAN HTML DIMULAI ===== -->
 															<div class="btn-group-horizontal">
-																<button class="btn btn-outline-secondary btn-sm">
+																<button
+																	class="btn btn-outline-secondary btn-sm move-up">
+																	<!-- CLASS DITAMBAHKAN -->
 																	<i data-feather="arrow-up"></i>
 																</button>
-																<button class="ms-3 btn btn-outline-secondary btn-sm">
+																<button
+																	class="ms-3 btn btn-outline-secondary btn-sm move-down">
+																	<!-- CLASS DITAMBAHKAN -->
 																	<i data-feather="arrow-down"></i>
 																</button>
 															</div>
+															<!-- ===== PERBAIKAN HTML SELESAI ===== -->
 														</td>
 														<td>Offset Machine</td>
 														<td>Cetak</td>
 														<td>Cetak Offset 4 Warna</td>
 													</tr>
-													<tr>
+													<tr data-row="3">
 														<td>3</td>
 														<td>
+															<!-- ===== PERBAIKAN HTML DIMULAI ===== -->
 															<div class="btn-group-horizontal">
-																<button class="btn btn-outline-secondary btn-sm">
+																<button
+																	class="btn btn-outline-secondary btn-sm move-up">
+																	<!-- CLASS DITAMBAHKAN -->
 																	<i data-feather="arrow-up"></i>
 																</button>
-																<button class="ms-3 btn btn-outline-secondary btn-sm">
+																<button
+																	class="ms-3 btn btn-outline-secondary btn-sm move-down">
+																	<!-- CLASS DITAMBAHKAN -->
 																	<i data-feather="arrow-down"></i>
 																</button>
 															</div>
+															<!-- ===== PERBAIKAN HTML SELESAI ===== -->
 														</td>
 														<td>Offset Machine</td>
 														<td>Pracetak</td>
 														<td>Buat Plat CTP</td>
 													</tr>
-													<tr>
+													<tr data-row="4">
 														<td>4</td>
 														<td>
+															<!-- ===== PERBAIKAN HTML DIMULAI ===== -->
 															<div class="btn-group-horizontal">
-																<button class="btn btn-outline-secondary btn-sm">
+																<button
+																	class="btn btn-outline-secondary btn-sm move-up">
+																	<!-- CLASS DITAMBAHKAN -->
 																	<i data-feather="arrow-up"></i>
 																</button>
-																<button class="ms-3 btn btn-outline-secondary btn-sm">
+																<button
+																	class="ms-3 btn btn-outline-secondary btn-sm move-down">
+																	<!-- CLASS DITAMBAHKAN -->
 																	<i data-feather="arrow-down"></i>
 																</button>
 															</div>
+															<!-- ===== PERBAIKAN HTML SELESAI ===== -->
 														</td>
 														<td>Laminate</td>
 														<td>Finishing</td>
 														<td>Laminasi doff dari Cetak Offset</td>
 													</tr>
-													<tr>
+													<tr data-row="5">
 														<td>5</td>
 														<td>
+															<!-- ===== PERBAIKAN HTML DIMULAI ===== -->
 															<div class="btn-group-horizontal">
-																<button class="btn btn-outline-secondary btn-sm">
+																<button
+																	class="btn btn-outline-secondary btn-sm move-up">
+																	<!-- CLASS DITAMBAHKAN -->
 																	<i data-feather="arrow-up"></i>
 																</button>
-																<button class="ms-3 btn btn-outline-secondary btn-sm">
+																<button
+																	class="ms-3 btn btn-outline-secondary btn-sm move-down">
+																	<!-- CLASS DITAMBAHKAN -->
 																	<i data-feather="arrow-down"></i>
 																</button>
 															</div>
+															<!-- ===== PERBAIKAN HTML SELESAI ===== -->
 														</td>
 														<td>Components</td>
 														<td>Finishing</td>
@@ -1467,18 +1496,21 @@
 									<div class="justify-content-between d-flex align-items-center mb-2">
 										<div>
 											<h4>List Of Process</h4>
-											<p class="text-muted small">The following are the datas for Process Arrange
+											<p class="text-muted small">
+												The following are the datas for Process Arrange
 											</p>
 										</div>
 										<a class="btn btn-outline-warning btn-sm" href="job-proses.html">
 											Add New Fold Type
 										</a>
 									</div>
+
 									<div>
 										<div class="table-responsive mb-4">
-											<table class="table">
+											<table class="table align-middle">
 												<thead>
 													<tr>
+														<th style="width: 40px;">No</th>
 														<th>Process Category</th>
 														<th>Process</th>
 														<th>Incentive</th>
@@ -1487,20 +1519,69 @@
 												</thead>
 												<tbody>
 													<tr>
+														<td>1</td>
 														<td>Finishing</td>
 														<td>Proses Lipat Ke Mesin</td>
 														<td>10000 per job</td>
 														<td>
-															<a href="#" class="text-danger">Remove</a>
+															<div class="btn-group">
+																<button
+																	class="btn btn-outline-secondary btn-sm move-up">
+																	<i data-feather="arrow-up"></i>
+																</button>
+																<button
+																	class="btn btn-outline-secondary btn-sm move-down">
+																	<i data-feather="arrow-down"></i>
+																</button>
+																<a href="#" class="text-danger ms-2 small">Remove</a>
+															</div>
 														</td>
 													</tr>
-
-
+													<tr>
+														<td>2</td>
+														<td>Pracetak</td>
+														<td>Pesen Kertas ke Toko</td>
+														<td>8000 per job</td>
+														<td>
+															<div class="btn-group">
+																<button
+																	class="btn btn-outline-secondary btn-sm move-up">
+																	<i data-feather="arrow-up"></i>
+																</button>
+																<button
+																	class="btn btn-outline-secondary btn-sm move-down">
+																	<i data-feather="arrow-down"></i>
+																</button>
+																<a href="#" class="text-danger ms-2 small">Remove</a>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>3</td>
+														<td>Cetak</td>
+														<td>Cetak Offset 4 Warna</td>
+														<td>15000 per job</td>
+														<td>
+															<div class="btn-group">
+																<button
+																	class="btn btn-outline-secondary btn-sm move-up">
+																	<i data-feather="arrow-up"></i>
+																</button>
+																<button
+																	class="btn btn-outline-secondary btn-sm move-down">
+																	<i data-feather="arrow-down"></i>
+																</button>
+																<a href="#" class="text-danger ms-2 small">Remove</a>
+															</div>
+														</td>
+													</tr>
 												</tbody>
 											</table>
 										</div>
 										<button class="btn btn-warning btn-sm" data-bs-toggle="modal"
-											data-bs-target="#modalAddProsesKomponen">Add Laminate Type</button>
+											data-bs-target="#modalAddProsesKomponen">
+											Add Laminate Type
+										</button>
 									</div>
 								</div>
 							</div>
@@ -1997,6 +2078,53 @@
 		</div>
 
 		<!-- modal laminasi Type -->
+		<script>
+			document.addEventListener('DOMContentLoaded', () => {
+
+				try { feather.replace(); } catch (e) { }
+
+				const allTbodies = document.querySelectorAll('.table tbody');
+
+				allTbodies.forEach(tbody => {
+
+					tbody.addEventListener('click', function (event) {
+						const target = event.target;
+						const upButton = target.closest('.move-up');
+						const downButton = target.closest('.move-down');
+						const currentRow = target.closest('tr');
+
+						if (!currentRow || (!upButton && !downButton)) return;
+
+						function swapContent(rowA, rowB) {
+							const cellsA = rowA.querySelectorAll('td:not(:first-child)');
+							const cellsB = rowB.querySelectorAll('td:not(:first-child)');
+
+							cellsA.forEach((cellA, i) => {
+								const temp = cellA.innerHTML;
+								cellA.innerHTML = cellsB[i].innerHTML;
+								cellsB[i].innerHTML = temp;
+							});
+						}
+
+						if (upButton) {
+							const prevRow = currentRow.previousElementSibling;
+							if (prevRow) swapContent(currentRow, prevRow);
+						}
+
+						if (downButton) {
+							const nextRow = currentRow.nextElementSibling;
+							if (nextRow) swapContent(currentRow, nextRow);
+						}
+
+					});
+				});
+			});
+		</script>
+
+
+
+
+
 		<!-- jQuery -->
 		<script src="assets/js/jquery-3.7.1.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.loadtemplate/1.5.10/jquery.loadTemplate.min.js"
@@ -2030,6 +2158,7 @@
 		<!-- Custom JS -->
 		<script src="assets/js/theme-script.js"></script>
 		<script src="assets/js/script.js"></script>
+
 
 
 </body>

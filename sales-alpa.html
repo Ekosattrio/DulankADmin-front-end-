@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <meta name="description" content="POS - Bootstrap Admin Template">
+    <meta name="keywords"
+        content="admin, estimates, bootstrap, business, corporate, creative, invoice, html5, responsive, Projects">
+    <meta name="author" content="Dreamguys - Bootstrap Admin Template">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Dreams Pos Admin Template</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+
+    <!-- animation CSS -->
+    <link rel="stylesheet" href="assets/css/animate.css">
+
+    <!-- Select2 CSS -->
+    <link rel="stylesheet" href="assets/plugins/select2/css/select2.min.css">
+
+    <!-- Datatable CSS -->
+    <link rel="stylesheet" href="assets/css/dataTables.bootstrap5.min.css">
+
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css">
+    <link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .text-start p {
+            margin: 0;
+            line-height: 1;
+        }
+
+        @media print {
+
+            @page {
+                size: A6;
+                margin: 0;
+            }
+
+            /* Sembunyikan semua elemen lain */
+            body * {
+                visibility: hidden !important;
+            }
+
+            html,
+            body {
+                margin: 0 !important;
+                padding: 0 !important;
+                width: 80mm !important;
+                max-width: 80mm !important;
+                background: white !important;
+                box-sizing: content-box !important;
+            }
+
+            body {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+
+            /* Tampilkan struk */
+            .eko,
+            .eko * {
+                visibility: visible !important;
+                height: auto !important;
+                overflow: visible !important;
+            }
+
+            .eko {
+                position: fixed !important;
+                top: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 80mm !important;
+                background: white !important;
+                padding: 0 !important;
+                margin: 0 !important;
+            }
+
+            #receipt-content {
+                width: 80mm !important;
+                max-width: 80mm !important;
+                background: white !important;
+                padding: 10px !important;
+                border-radius: 0 !important;
+                box-shadow: none !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="global-loader">
+        <div class="loader"> </div>
+    </div>
+    <!-- Main Wrapper -->
+    <div class="main-wrapper">
+
+        <!-- header -->
+        <div id="header-placeholder"></div>
+        <!-- sidebar -->
+        <div id="sidebar-placeholder"></div>
+
+        <div class="page-wrapper mt-3">
+            <!-- Main content tulis disini -->
+            <div class="content mb-3">
+                <div class="pay-slip-box" id="pay-slip">
+                    <div class="modal-dialog modal-dialog-centered stock-adjust-modal">
+                        <div class="modal-content">
+                            <div class="page-wrapper-new p-0">
+                                <div class="contents">
+                                    <div class="modal-header border-0 custom-modal-header">
+                                        <div class="page-header mb-0 w-100">
+                                            <div class="add-item payslip-list d-flex justify-content-between">
+                                                <div class="page-title">
+                                                    <h4>Payslip</h4>
+                                                </div>
+                                                <div class="page-btn d-flex align-items-center mt-3 mt-md-0">
+                                                    <div class="d-block d-sm-flex align-items-center">
+                                                        <a href="javascript:void(0);" id="print-trigger"
+                                                            class="btn btn-primary">Print Struk</a>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="eko d-flex justify-content-center align-items-center p-2">
+
+                                        <!-- Konten Struk Sebenarnya. ID INI PENTING UNTUK CSS PRINT -->
+                                        <div id="receipt-content"
+                                            style="width: 320px; text-align: center; background-color: white; padding: 15px; border-radius: 6px;">
+
+                                            <!-- Logo -->
+                                            <div class="mb-3">
+                                                <img src="assets/img/logo-small.png" alt="Logo" style="width: 60px;">
+                                            </div>
+
+                                            <!-- Judul -->
+                                            <h5 class="fw-bold mb-2">Transaction Receipt</h5>
+                                            <p class="text-muted small mb-4">Generated on 02 January 2025</p>
+
+                                            <!-- Detail Transaksi -->
+                                            <div class="text-start mb-3">
+                                                <p><strong>Customer:</strong> Siti</p>
+                                                <p><strong>Reference:</strong> PT002</p>
+                                                <p><strong>Date:</strong> 02 Jan 2025</p>
+                                                <p><strong>Status:</strong> Pending</p>
+                                            </div>
+
+                                            <!-- Rincian Pembayaran -->
+                                            <div class="border-top border-bottom py-2 mb-3">
+                                                <h6 class="text-center mb-2">Payment Details</h6>
+                                                <div class="d-flex justify-content-between">
+                                                    <span>Grand Total</span><span>Rp 200.000</span>
+                                                </div>
+                                                <div class="d-flex justify-content-between">
+                                                    <span>Paid</span><span>Rp 150.000</span>
+                                                </div>
+                                                <div class="d-flex justify-content-between">
+                                                    <span>Due</span><span>Rp 50.000</span>
+                                                </div>
+                                                <div class="d-flex justify-content-between">
+                                                    <span>Channel</span><span>Mobile App</span>
+                                                </div>
+                                                <div class="d-flex justify-content-between">
+                                                    <span>Payment Status</span><span>Unpaid</span>
+                                                </div>
+                                                <div
+                                                    class="d-flex justify-content-between fw-bold mt-2 pt-2 border-top">
+                                                    <span>Biller</span><span>Staff</span>
+                                                </div>
+                                            </div>
+
+                                            <!-- Footer -->
+                                            <div class="text-center border-top pt-3 small">
+                                                <h6 class="fw-bold mb-1">Percetakan Dulank</h6>
+                                                <p class="mb-0">
+                                                    81, Randall Drive, Hornchurch<br>
+                                                    RM126TA
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- /Main Wrapper -->
+    <!-- modals -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            feather.replace();
+
+            const printButton = document.getElementById('print-trigger');
+
+            if (printButton) {
+                printButton.addEventListener('click', (event) => {
+                    event.preventDefault(); // Mencegah navigasi
+
+                    // Panggil fungsi print browser
+                    window.print();
+                });
+            }
+        });
+    </script>
+
+
+    <!-- /modals -->
+    <!-- jQuery -->
+    <script src="assets/js/jquery-3.7.1.min.js"></script>
+
+    <!-- Feather Icon JS -->
+    <script src="assets/js/feather.min.js"></script>
+
+    <!-- Slimscroll JS -->
+    <script src="assets/js/jquery.slimscroll.min.js"></script>
+
+    <!-- Datatable JS -->
+    <script src="assets/js/jquery.dataTables.min.js"></script>
+    <script src="assets/js/dataTables.bootstrap5.min.js"></script>
+
+    <!-- Bootstrap Core JS -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Select2 JS -->
+    <script src="assets/plugins/select2/js/select2.min.js"></script>
+
+    <!-- Sweetalert 2 -->
+    <script src="assets/plugins/sweetalert/sweetalert2.all.min.js"></script>
+    <script src="assets/plugins/sweetalert/sweetalerts.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="assets/js/theme-script.js"></script>
+    <script src="assets/js/script.js"></script>
+
+
+</body>
+
+</html>

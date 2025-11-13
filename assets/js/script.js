@@ -2587,7 +2587,11 @@ $(function () {
 				if (!m.addedNodes) return;
 				m.addedNodes.forEach(function (n) {
 					if (n.nodeType !== 1) return;
-					if (n.matches && n.matches('td, tr, tbody, table')) formatTdNumbers(n);
+					if (n.matches && n.matches('td, tr, tbody, table')) {
+						z
+						formatTdNumbers(n)
+						console.log(n)
+					}
 					else if (n.querySelector && n.querySelector('td')) formatTdNumbers(n);
 				});
 			});

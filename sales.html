@@ -164,36 +164,93 @@
 							<table class="table datanew">
 								<thead>
 									<tr>
-										<th class="no-sort">
-											<label class="checkboxs">
-												<input type="checkbox" id="select-all">
-												<span class="checkmarks"></span>
-											</label>
-										</th>
+										<th class="no-sort"></th>
 										<th>No Sales</th>
 										<th>Customer</th>
 										<th>Date</th>
-										<th>Sub Total (IDR)</th>
-										<th>Delivery Fee (IDR)</th>
-										<th>Discount (IDR)</th>
-										<th>Tax (IDR)</th>
-										<th>Total (IDR)</th>
+										<th>Sub Total</th>
+										<th>Delivery Fee</th>
+										<th>Discount</th>
+										<th>Tax</th>
+										<th>Total</th>
 										<th>Delivery</th>
 										<th>Sales Channel</th>
 										<th>Payment Status</th>
 										<th>Method</th>
-										<th>Action</th>
 									</tr>
 								</thead>
 								<tbody>
 									<tr>
 										<td>
-											<label class="checkboxs">
-												<input type="checkbox">
-												<span class="checkmarks"></span>
-											</label>
+											<button type="button" class="btn btn-light btn-sm p-1"
+												data-bs-toggle="dropdown">
+												<i data-feather="more-vertical" width="14" height="14"></i>
+											</button>
+											<ul class="dropdown-menu dropdown-menu-end shadow-sm p-1">
+												<li>
+													<button class="dropdown-item d-flex align-items-center small py-1"
+														type="button" data-bs-toggle="modal"
+														data-bs-target="#sales-details-new">
+														<i data-feather="eye" class="me-2" width="14" height="14"></i>
+														Sale Detail
+													</button>
+												</li>
+												<li><button class="dropdown-item d-flex align-items-center small py-1"
+														type="button" data-bs-toggle="modal"
+														data-bs-target="#editSaleModal"><i data-feather="edit"
+															class="me-2" width="14" height="14"></i>Edit Units</button>
+												</li>
+												<li>
+													<button class="dropdown-item d-flex align-items-center small py-1"
+														data-bs-toggle="modal" data-bs-target="#showpayment"
+														type="button">
+														<i data-feather="dollar-sign" class="me-2" width="14"
+															height="14"></i> Show Payments
+													</button>
+												</li>
+												<li>
+													<button class="dropdown-item d-flex align-items-center small py-1"
+														data-bs-toggle="modal" data-bs-target="#createpayment"
+														type="button">
+														<i data-feather="plus-circle" class="me-2" width="14"
+															height="14"></i> Create Payment
+													</button>
+												</li>
+												<li>
+													<a href="sales-alpa.html"
+														class="dropdown-item d-flex align-items-center small py-1">
+														<i data-feather="download" class="me-2" width="14"
+															height="14"></i>
+														Download PDF
+													</a>
+												</li>
+												<li>
+													<a href="invoice.html"
+														class="dropdown-item d-flex align-items-center small py-1">
+														<i data-feather="file-plus" class="me-2" width="14"
+															height="14"></i>
+														Create Invoice
+													</a>
+												</li>
+												<li>
+													<a href="invoice.html"
+														class="dropdown-item d-flex align-items-center small py-1">
+														<i data-feather="file-plus" class="me-2" width="14"
+															height="14"></i>
+														Create Delivery Note
+													</a>
+												</li>
+												<li>
+													<button
+														class="dropdown-item d-flex align-items-center small py-1 text-danger btn-delete-sale"
+														type="button">
+														<i data-feather="trash-2" class="me-2" width="14"
+															height="14"></i> Delete Sale
+													</button>
+												</li>
+											</ul>
 										</td>
-										<td>2511000001</td>
+										<td class="str-value">2511000001</td>
 										<td>PT Makmur Abadi</td>
 										<td>01/11/2025</td>
 										<td>1.200.000</td>
@@ -209,30 +266,44 @@
 											</span>
 										</td>
 										<td>Bank Transfer</td>
+
+									</tr>
+									<tr>
 										<td>
 											<button type="button" class="btn btn-light btn-sm p-1"
 												data-bs-toggle="dropdown">
 												<i data-feather="more-vertical" width="14" height="14"></i>
 											</button>
 											<ul class="dropdown-menu dropdown-menu-end shadow-sm p-1">
-												<li><button class="dropdown-item d-flex align-items-center small py-1"
+												<li>
+													<button class="dropdown-item d-flex align-items-center small py-1"
 														type="button" data-bs-toggle="modal"
-														data-bs-target="#sales-details-new"><i data-feather="eye"
-															class="me-2" width="14" height="14"></i>Sale Detail</button>
+														data-bs-target="#sales-details-new">
+														<i data-feather="eye" class="me-2" width="14" height="14"></i>
+														Sale Detail
+													</button>
 												</li>
 												<li><button class="dropdown-item d-flex align-items-center small py-1"
 														type="button" data-bs-toggle="modal"
 														data-bs-target="#editSaleModal"><i data-feather="edit"
 															class="me-2" width="14" height="14"></i>Edit Units</button>
 												</li>
-												<li><button class="dropdown-item d-flex align-items-center small py-1"
+												<li>
+													<button class="dropdown-item d-flex align-items-center small py-1"
 														data-bs-toggle="modal" data-bs-target="#showpayment"
-														type="button"><i data-feather="dollar-sign" class="me-2"
-															width="14" height="14"></i>Show Payments</button></li>
-												<li><button class="dropdown-item d-flex align-items-center small py-1"
+														type="button">
+														<i data-feather="dollar-sign" class="me-2" width="14"
+															height="14"></i> Show Payments
+													</button>
+												</li>
+												<li>
+													<button class="dropdown-item d-flex align-items-center small py-1"
 														data-bs-toggle="modal" data-bs-target="#createpayment"
-														type="button"><i data-feather="plus-circle" class="me-2"
-															width="14" height="14"></i>Create Payment</button></li>
+														type="button">
+														<i data-feather="plus-circle" class="me-2" width="14"
+															height="14"></i> Create Payment
+													</button>
+												</li>
 												<li>
 													<a href="sales-alpa.html"
 														class="dropdown-item d-flex align-items-center small py-1">
@@ -249,24 +320,25 @@
 														Create Invoice
 													</a>
 												</li>
-
-
-												<li><button
+												<li>
+													<a href="invoice.html"
+														class="dropdown-item d-flex align-items-center small py-1">
+														<i data-feather="file-plus" class="me-2" width="14"
+															height="14"></i>
+														Create Delivery Note
+													</a>
+												</li>
+												<li>
+													<button
 														class="dropdown-item d-flex align-items-center small py-1 text-danger btn-delete-sale"
-														type="button"><i data-feather="trash-2" class="me-2" width="14"
-															height="14"></i>Delete
-														Sale</button></li>
+														type="button">
+														<i data-feather="trash-2" class="me-2" width="14"
+															height="14"></i> Delete Sale
+													</button>
+												</li>
 											</ul>
 										</td>
-									</tr>
-									<tr>
-										<td>
-											<label class="checkboxs">
-												<input type="checkbox">
-												<span class="checkmarks"></span>
-											</label>
-										</td>
-										<td>2511000002</td>
+										<td class="str-value">2511000002</td>
 										<td>Toko Buku Cerdas</td>
 										<td>02/11/2025</td>
 										<td>3.500.000</td>
@@ -282,6 +354,9 @@
 											</span>
 										</td>
 										<td>Bank Transfer</td>
+									</tr>
+
+									<tr>
 										<td>
 											<button type="button" class="btn btn-light btn-sm p-1"
 												data-bs-toggle="dropdown">
@@ -334,6 +409,14 @@
 													</a>
 												</li>
 												<li>
+													<a href="invoice.html"
+														class="dropdown-item d-flex align-items-center small py-1">
+														<i data-feather="file-plus" class="me-2" width="14"
+															height="14"></i>
+														Create Delivery Note
+													</a>
+												</li>
+												<li>
 													<button
 														class="dropdown-item d-flex align-items-center small py-1 text-danger btn-delete-sale"
 														type="button">
@@ -343,16 +426,7 @@
 												</li>
 											</ul>
 										</td>
-									</tr>
-
-									<tr>
-										<td>
-											<label class="checkboxs">
-												<input type="checkbox">
-												<span class="checkmarks"></span>
-											</label>
-										</td>
-										<td>2511000003</td>
+										<td class="str-value">2511000003</td>
 										<td>Bpk. Rahmat</td>
 										<td>03/11/2025</td>
 										<td>550.000</td>
@@ -368,6 +442,9 @@
 											</span>
 										</td>
 										<td>Cash</td>
+									</tr>
+
+									<tr>
 										<td>
 											<button type="button" class="btn btn-light btn-sm p-1"
 												data-bs-toggle="dropdown">
@@ -420,6 +497,14 @@
 													</a>
 												</li>
 												<li>
+													<a href="invoice.html"
+														class="dropdown-item d-flex align-items-center small py-1">
+														<i data-feather="file-plus" class="me-2" width="14"
+															height="14"></i>
+														Create Delivery Note
+													</a>
+												</li>
+												<li>
 													<button
 														class="dropdown-item d-flex align-items-center small py-1 text-danger btn-delete-sale"
 														type="button">
@@ -429,16 +514,7 @@
 												</li>
 											</ul>
 										</td>
-									</tr>
-
-									<tr>
-										<td>
-											<label class="checkboxs">
-												<input type="checkbox">
-												<span class="checkmarks"></span>
-											</label>
-										</td>
-										<td>2511000004</td>
+										<td class="str-value">2511000004</td>
 										<td>CV Jaya Sentosa</td>
 										<td>04/11/2025</td>
 										<td>2.800.000</td>
@@ -455,6 +531,9 @@
 											</span>
 										</td>
 										<td>Payment Gateway</td>
+									</tr>
+
+									<tr>
 										<td>
 											<button type="button" class="btn btn-light btn-sm p-1"
 												data-bs-toggle="dropdown">
@@ -507,6 +586,14 @@
 													</a>
 												</li>
 												<li>
+													<a href="invoice.html"
+														class="dropdown-item d-flex align-items-center small py-1">
+														<i data-feather="file-plus" class="me-2" width="14"
+															height="14"></i>
+														Create Delivery Note
+													</a>
+												</li>
+												<li>
 													<button
 														class="dropdown-item d-flex align-items-center small py-1 text-danger btn-delete-sale"
 														type="button">
@@ -516,12 +603,7 @@
 												</li>
 											</ul>
 										</td>
-									</tr>
-
-									<tr>
-										<td><label class="checkboxs"><input type="checkbox"><span
-													class="checkmarks"></span></label></td>
-										<td>2510000005</td>
+										<td class="str-value">2510000005</td>
 										<td>Ibu Dian</td>
 										<td>28/10/2025</td>
 										<td>6.500.000</td>
@@ -538,6 +620,9 @@
 											</span>
 										</td>
 										<td>Bank Transfer</td>
+									</tr>
+
+									<tr>
 										<td>
 											<button type="button" class="btn btn-light btn-sm p-1"
 												data-bs-toggle="dropdown">
@@ -590,6 +675,14 @@
 													</a>
 												</li>
 												<li>
+													<a href="invoice.html"
+														class="dropdown-item d-flex align-items-center small py-1">
+														<i data-feather="file-plus" class="me-2" width="14"
+															height="14"></i>
+														Create Delivery Note
+													</a>
+												</li>
+												<li>
 													<button
 														class="dropdown-item d-flex align-items-center small py-1 text-danger btn-delete-sale"
 														type="button">
@@ -599,12 +692,7 @@
 												</li>
 											</ul>
 										</td>
-									</tr>
-
-									<tr>
-										<td><label class="checkboxs"><input type="checkbox"><span
-													class="checkmarks"></span></label></td>
-										<td>2510000006</td>
+										<td class="str-value">2510000006</td>
 										<td>PT Global Solusi</td>
 										<td>26/10/2025</td>
 										<td>4.000.000</td>
@@ -620,6 +708,9 @@
 											</span>
 										</td>
 										<td>Payment Gateway</td>
+									</tr>
+
+									<tr>
 										<td>
 											<button type="button" class="btn btn-light btn-sm p-1"
 												data-bs-toggle="dropdown">
@@ -672,6 +763,14 @@
 													</a>
 												</li>
 												<li>
+													<a href="invoice.html"
+														class="dropdown-item d-flex align-items-center small py-1">
+														<i data-feather="file-plus" class="me-2" width="14"
+															height="14"></i>
+														Create Delivery Note
+													</a>
+												</li>
+												<li>
 													<button
 														class="dropdown-item d-flex align-items-center small py-1 text-danger btn-delete-sale"
 														type="button">
@@ -681,12 +780,7 @@
 												</li>
 											</ul>
 										</td>
-									</tr>
-
-									<tr>
-										<td><label class="checkboxs"><input type="checkbox"><span
-													class="checkmarks"></span></label></td>
-										<td>2510000007</td>
+										<td class="str-value">2510000007</td>
 										<td>Klinik Sehat</td>
 										<td>24/10/2025</td>
 										<td>900.000</td>
@@ -754,6 +848,14 @@
 													</a>
 												</li>
 												<li>
+													<a href="invoice.html"
+														class="dropdown-item d-flex align-items-center small py-1">
+														<i data-feather="file-plus" class="me-2" width="14"
+															height="14"></i>
+														Create Delivery Note
+													</a>
+												</li>
+												<li>
 													<button
 														class="dropdown-item d-flex align-items-center small py-1 text-danger btn-delete-sale"
 														type="button">
@@ -767,9 +869,76 @@
 									</tr>
 
 									<tr>
-										<td><label class="checkboxs"><input type="checkbox"><span
-													class="checkmarks"></span></label></td>
-										<td>2509000008</td>
+										<td>
+											<button type="button" class="btn btn-light btn-sm p-1"
+												data-bs-toggle="dropdown">
+												<i data-feather="more-vertical" width="14" height="14"></i>
+											</button>
+											<ul class="dropdown-menu dropdown-menu-end shadow-sm p-1">
+												<li>
+													<button class="dropdown-item d-flex align-items-center small py-1"
+														type="button" data-bs-toggle="modal"
+														data-bs-target="#sales-details-new">
+														<i data-feather="eye" class="me-2" width="14" height="14"></i>
+														Sale Detail
+													</button>
+												</li>
+												<li><button class="dropdown-item d-flex align-items-center small py-1"
+														type="button" data-bs-toggle="modal"
+														data-bs-target="#editSaleModal"><i data-feather="edit"
+															class="me-2" width="14" height="14"></i>Edit Units</button>
+												</li>
+												<li>
+													<button class="dropdown-item d-flex align-items-center small py-1"
+														data-bs-toggle="modal" data-bs-target="#showpayment"
+														type="button">
+														<i data-feather="dollar-sign" class="me-2" width="14"
+															height="14"></i> Show Payments
+													</button>
+												</li>
+												<li>
+													<button class="dropdown-item d-flex align-items-center small py-1"
+														data-bs-toggle="modal" data-bs-target="#createpayment"
+														type="button">
+														<i data-feather="plus-circle" class="me-2" width="14"
+															height="14"></i> Create Payment
+													</button>
+												</li>
+												<li>
+													<a href="sales-alpa.html"
+														class="dropdown-item d-flex align-items-center small py-1">
+														<i data-feather="download" class="me-2" width="14"
+															height="14"></i>
+														Download PDF
+													</a>
+												</li>
+												<li>
+													<a href="invoice.html"
+														class="dropdown-item d-flex align-items-center small py-1">
+														<i data-feather="file-plus" class="me-2" width="14"
+															height="14"></i>
+														Create Invoice
+													</a>
+												</li>
+												<li>
+													<a href="invoice.html"
+														class="dropdown-item d-flex align-items-center small py-1">
+														<i data-feather="file-plus" class="me-2" width="14"
+															height="14"></i>
+														Create Delivery Note
+													</a>
+												</li>
+												<li>
+													<button
+														class="dropdown-item d-flex align-items-center small py-1 text-danger btn-delete-sale"
+														type="button">
+														<i data-feather="trash-2" class="me-2" width="14"
+															height="14"></i> Delete Sale
+													</button>
+												</li>
+											</ul>
+										</td>
+										<td class="str-value">2509000008</td>
 										<td>Sdr. Andri</td>
 										<td>15/09/2025</td>
 										<td>1.500.000</td>
@@ -785,6 +954,9 @@
 											</span>
 										</td>
 										<td>Qris</td>
+									</tr>
+
+									<tr>
 										<td>
 											<button type="button" class="btn btn-light btn-sm p-1"
 												data-bs-toggle="dropdown">
@@ -837,6 +1009,14 @@
 													</a>
 												</li>
 												<li>
+													<a href="invoice.html"
+														class="dropdown-item d-flex align-items-center small py-1">
+														<i data-feather="file-plus" class="me-2" width="14"
+															height="14"></i>
+														Create Delivery Note
+													</a>
+												</li>
+												<li>
 													<button
 														class="dropdown-item d-flex align-items-center small py-1 text-danger btn-delete-sale"
 														type="button">
@@ -846,12 +1026,7 @@
 												</li>
 											</ul>
 										</td>
-									</tr>
-
-									<tr>
-										<td><label class="checkboxs"><input type="checkbox"><span
-													class="checkmarks"></span></label></td>
-										<td>2509000009</td>
+										<td class="str-value">2509000009</td>
 										<td>Yayasan Lentera</td>
 										<td>10/09/2025</td>
 										<td>5.200.000</td>
@@ -867,6 +1042,9 @@
 											</span>
 										</td>
 										<td>Bank Transfer</td>
+									</tr>
+
+									<tr>
 										<td>
 											<button type="button" class="btn btn-light btn-sm p-1"
 												data-bs-toggle="dropdown">
@@ -919,6 +1097,14 @@
 													</a>
 												</li>
 												<li>
+													<a href="invoice.html"
+														class="dropdown-item d-flex align-items-center small py-1">
+														<i data-feather="file-plus" class="me-2" width="14"
+															height="14"></i>
+														Create Delivery Note
+													</a>
+												</li>
+												<li>
 													<button
 														class="dropdown-item d-flex align-items-center small py-1 text-danger btn-delete-sale"
 														type="button">
@@ -928,20 +1114,11 @@
 												</li>
 											</ul>
 										</td>
-									</tr>
-
-									<tr>
-										<td>
-											<label class="checkboxs">
-												<input type="checkbox">
-												<span class="checkmarks"></span>
-											</label>
-										</td>
-										<td>2509000010</td>
+										<td class="str-value">2509000010</td>
 										<td>Cafe Senja</td>
 										<td>05/09/2025</td>
 										<td>750.000</td>
-										<td>25.000</td>
+										<td class="str-value">25.000</td>
 										<td>0</td>
 										<td>85.250</td>
 										<td>860.250</td>
@@ -953,6 +1130,9 @@
 											</span>
 										</td>
 										<td>Cash</td>
+									</tr>
+
+									<tr>
 										<td>
 											<button type="button" class="btn btn-light btn-sm p-1"
 												data-bs-toggle="dropdown">
@@ -1005,6 +1185,14 @@
 													</a>
 												</li>
 												<li>
+													<a href="invoice.html"
+														class="dropdown-item d-flex align-items-center small py-1">
+														<i data-feather="file-plus" class="me-2" width="14"
+															height="14"></i>
+														Create Delivery Note
+													</a>
+												</li>
+												<li>
 													<button
 														class="dropdown-item d-flex align-items-center small py-1 text-danger btn-delete-sale"
 														type="button">
@@ -1014,16 +1202,7 @@
 												</li>
 											</ul>
 										</td>
-									</tr>
-
-									<tr>
-										<td>
-											<label class="checkboxs">
-												<input type="checkbox">
-												<span class="checkmarks"></span>
-											</label>
-										</td>
-										<td>2508000011</td>
+										<td class="str-value">2508000011</td>
 										<td>PT Dirgantara</td>
 										<td>28/08/2025</td>
 										<td>3.100.000</td>
@@ -1039,6 +1218,9 @@
 											</span>
 										</td>
 										<td>Payment Gateway</td>
+									</tr>
+
+									<tr>
 										<td>
 											<button type="button" class="btn btn-light btn-sm p-1"
 												data-bs-toggle="dropdown">
@@ -1091,6 +1273,14 @@
 													</a>
 												</li>
 												<li>
+													<a href="invoice.html"
+														class="dropdown-item d-flex align-items-center small py-1">
+														<i data-feather="file-plus" class="me-2" width="14"
+															height="14"></i>
+														Create Delivery Note
+													</a>
+												</li>
+												<li>
 													<button
 														class="dropdown-item d-flex align-items-center small py-1 text-danger btn-delete-sale"
 														type="button">
@@ -1100,18 +1290,9 @@
 												</li>
 											</ul>
 										</td>
-									</tr>
-
-									<tr>
-										<td>
-											<label class="checkboxs">
-												<input type="checkbox">
-												<span class="checkmarks"></span>
-											</label>
-										</td>
-										<td>2508000012</td>
+										<td class="str-value">2508000012</td>
 										<td>Bapak Joko</td>
-										<td>25/08/2025</td>
+										<td class="str-value">25/08/2025</td>
 										<td>600.000</td>
 										<td>0</td>
 										<td>0</td>
@@ -1126,6 +1307,9 @@
 										</td>
 										</span>
 										<td>Qris</td>
+									</tr>
+
+									<tr>
 										<td>
 											<button type="button" class="btn btn-light btn-sm p-1"
 												data-bs-toggle="dropdown">
@@ -1178,6 +1362,14 @@
 													</a>
 												</li>
 												<li>
+													<a href="invoice.html"
+														class="dropdown-item d-flex align-items-center small py-1">
+														<i data-feather="file-plus" class="me-2" width="14"
+															height="14"></i>
+														Create Delivery Note
+													</a>
+												</li>
+												<li>
 													<button
 														class="dropdown-item d-flex align-items-center small py-1 text-danger btn-delete-sale"
 														type="button">
@@ -1187,12 +1379,7 @@
 												</li>
 											</ul>
 										</td>
-									</tr>
-
-									<tr>
-										<td><label class="checkboxs"><input type="checkbox"><span
-													class="checkmarks"></span></label></td>
-										<td>2508000013</td>
+										<td class="str-value">2508000013</td>
 										<td>Toko Perlengkapan</td>
 										<td>20/08/2025</td>
 										<td>4.800.000</td>
@@ -1208,6 +1395,9 @@
 											</span>
 										</td>
 										<td>-</td>
+									</tr>
+
+									<tr>
 										<td>
 											<button type="button" class="btn btn-light btn-sm p-1"
 												data-bs-toggle="dropdown">
@@ -1260,6 +1450,14 @@
 													</a>
 												</li>
 												<li>
+													<a href="invoice.html"
+														class="dropdown-item d-flex align-items-center small py-1">
+														<i data-feather="file-plus" class="me-2" width="14"
+															height="14"></i>
+														Create Delivery Note
+													</a>
+												</li>
+												<li>
 													<button
 														class="dropdown-item d-flex align-items-center small py-1 text-danger btn-delete-sale"
 														type="button">
@@ -1269,12 +1467,7 @@
 												</li>
 											</ul>
 										</td>
-									</tr>
-
-									<tr>
-										<td><label class="checkboxs"><input type="checkbox"><span
-													class="checkmarks"></span></label></td>
-										<td>2507000014</td>
+										<td class="str-value">2507000014</td>
 										<td>PT Angkasa Raya</td>
 										<td>15/07/2025</td>
 										<td>2.000.000</td>
@@ -1290,6 +1483,9 @@
 											</span>
 										</td>
 										<td>Bank Transfer</td>
+									</tr>
+
+									<tr>
 										<td>
 											<button type="button" class="btn btn-light btn-sm p-1"
 												data-bs-toggle="dropdown">
@@ -1342,6 +1538,14 @@
 													</a>
 												</li>
 												<li>
+													<a href="invoice.html"
+														class="dropdown-item d-flex align-items-center small py-1">
+														<i data-feather="file-plus" class="me-2" width="14"
+															height="14"></i>
+														Create Delivery Note
+													</a>
+												</li>
+												<li>
 													<button
 														class="dropdown-item d-flex align-items-center small py-1 text-danger btn-delete-sale"
 														type="button">
@@ -1351,12 +1555,7 @@
 												</li>
 											</ul>
 										</td>
-									</tr>
-
-									<tr>
-										<td><label class="checkboxs"><input type="checkbox"><span
-													class="checkmarks"></span></label></td>
-										<td>2507000015</td>
+										<td class="str-value">2507000015</td>
 										<td>Ibu Laras</td>
 										<td>10/07/2025</td>
 										<td>580.000</td>
@@ -1372,6 +1571,9 @@
 												</spain>
 										</td>
 										<td>Cash</td>
+									</tr>
+
+									<tr>
 										<td>
 											<button type="button" class="btn btn-light btn-sm p-1"
 												data-bs-toggle="dropdown">
@@ -1424,6 +1626,14 @@
 													</a>
 												</li>
 												<li>
+													<a href="invoice.html"
+														class="dropdown-item d-flex align-items-center small py-1">
+														<i data-feather="file-plus" class="me-2" width="14"
+															height="14"></i>
+														Create Delivery Note
+													</a>
+												</li>
+												<li>
 													<button
 														class="dropdown-item d-flex align-items-center small py-1 text-danger btn-delete-sale"
 														type="button">
@@ -1433,12 +1643,7 @@
 												</li>
 											</ul>
 										</td>
-									</tr>
-
-									<tr>
-										<td><label class="checkboxs"><input type="checkbox"><span
-													class="checkmarks"></span></label></td>
-										<td>2506000016</td>
+										<td class="str-value">2506000016</td>
 										<td>Universitas Bintang</td>
 										<td>05/06/2025</td>
 										<td>3.700.000</td>
@@ -1454,6 +1659,9 @@
 											</span>
 										</td>
 										<td>Payment Gateway</td>
+									</tr>
+
+									<tr>
 										<td>
 											<button type="button" class="btn btn-light btn-sm p-1"
 												data-bs-toggle="dropdown">
@@ -1506,6 +1714,14 @@
 													</a>
 												</li>
 												<li>
+													<a href="invoice.html"
+														class="dropdown-item d-flex align-items-center small py-1">
+														<i data-feather="file-plus" class="me-2" width="14"
+															height="14"></i>
+														Create Delivery Note
+													</a>
+												</li>
+												<li>
 													<button
 														class="dropdown-item d-flex align-items-center small py-1 text-danger btn-delete-sale"
 														type="button">
@@ -1515,12 +1731,7 @@
 												</li>
 											</ul>
 										</td>
-									</tr>
-
-									<tr>
-										<td><label class="checkboxs"><input type="checkbox"><span
-													class="checkmarks"></span></label></td>
-										<td>2506000017</td>
+										<td class="str-value">2506000017</td>
 										<td>Sdr. Bayu</td>
 										<td>01/06/2025</td>
 										<td>800.000</td>
@@ -1536,6 +1747,9 @@
 											</span>
 										</td>
 										<td>Qris</td>
+									</tr>
+
+									<tr>
 										<td>
 											<button type="button" class="btn btn-light btn-sm p-1"
 												data-bs-toggle="dropdown">
@@ -1588,6 +1802,14 @@
 													</a>
 												</li>
 												<li>
+													<a href="invoice.html"
+														class="dropdown-item d-flex align-items-center small py-1">
+														<i data-feather="file-plus" class="me-2" width="14"
+															height="14"></i>
+														Create Delivery Note
+													</a>
+												</li>
+												<li>
 													<button
 														class="dropdown-item d-flex align-items-center small py-1 text-danger btn-delete-sale"
 														type="button">
@@ -1597,12 +1819,7 @@
 												</li>
 											</ul>
 										</td>
-									</tr>
-
-									<tr>
-										<td><label class="checkboxs"><input type="checkbox"><span
-													class="checkmarks"></span></label></td>
-										<td>2505000018</td>
+										<td class="str-value">2505000018</td>
 										<td>Toko Elektronik Maju</td>
 										<td>20/05/2025</td>
 										<td>2.500.000</td>
@@ -1618,6 +1835,9 @@
 											</span>
 										</td>
 										<td>-</td>
+									</tr>
+
+									<tr>
 										<td>
 											<button type="button" class="btn btn-light btn-sm p-1"
 												data-bs-toggle="dropdown">
@@ -1670,6 +1890,14 @@
 													</a>
 												</li>
 												<li>
+													<a href="invoice.html"
+														class="dropdown-item d-flex align-items-center small py-1">
+														<i data-feather="file-plus" class="me-2" width="14"
+															height="14"></i>
+														Create Delivery Note
+													</a>
+												</li>
+												<li>
 													<button
 														class="dropdown-item d-flex align-items-center small py-1 text-danger btn-delete-sale"
 														type="button">
@@ -1679,12 +1907,7 @@
 												</li>
 											</ul>
 										</td>
-									</tr>
-
-									<tr>
-										<td><label class="checkboxs"><input type="checkbox"><span
-													class="checkmarks"></span></label></td>
-										<td>2505000019</td>
+										<td class="str-value">2505000019</td>
 										<td>PT Cipta Kreasi</td>
 										<td>15/05/2025</td>
 										<td>1.800.000</td>
@@ -1700,6 +1923,9 @@
 											</span>
 										</td>
 										<td>Payment Gateway</td>
+									</tr>
+
+									<tr>
 										<td>
 											<button type="button" class="btn btn-light btn-sm p-1"
 												data-bs-toggle="dropdown">
@@ -1752,6 +1978,14 @@
 													</a>
 												</li>
 												<li>
+													<a href="invoice.html"
+														class="dropdown-item d-flex align-items-center small py-1">
+														<i data-feather="file-plus" class="me-2" width="14"
+															height="14"></i>
+														Create Delivery Note
+													</a>
+												</li>
+												<li>
 													<button
 														class="dropdown-item d-flex align-items-center small py-1 text-danger btn-delete-sale"
 														type="button">
@@ -1761,12 +1995,7 @@
 												</li>
 											</ul>
 										</td>
-									</tr>
-
-									<tr>
-										<td><label class="checkboxs"><input type="checkbox"><span
-													class="checkmarks"></span></label></td>
-										<td>2504000020</td>
+										<td class="str-value">2504000020</td>
 										<td>Bapak Doni</td>
 										<td>10/04/2025</td>
 										<td>500.000</td>
@@ -1782,67 +2011,6 @@
 											</span>
 										</td>
 										<td>Cash</td>
-										<td>
-											<button type="button" class="btn btn-light btn-sm p-1"
-												data-bs-toggle="dropdown">
-												<i data-feather="more-vertical" width="14" height="14"></i>
-											</button>
-											<ul class="dropdown-menu dropdown-menu-end shadow-sm p-1">
-												<li>
-													<button class="dropdown-item d-flex align-items-center small py-1"
-														type="button" data-bs-toggle="modal"
-														data-bs-target="#sales-details-new">
-														<i data-feather="eye" class="me-2" width="14" height="14"></i>
-														Sale Detail
-													</button>
-												</li>
-												<li><button class="dropdown-item d-flex align-items-center small py-1"
-														type="button" data-bs-toggle="modal"
-														data-bs-target="#editSaleModal"><i data-feather="edit"
-															class="me-2" width="14" height="14"></i>Edit Units</button>
-												</li>
-												<li>
-													<button class="dropdown-item d-flex align-items-center small py-1"
-														data-bs-toggle="modal" data-bs-target="#showpayment"
-														type="button">
-														<i data-feather="dollar-sign" class="me-2" width="14"
-															height="14"></i> Show Payments
-													</button>
-												</li>
-												<li>
-													<button class="dropdown-item d-flex align-items-center small py-1"
-														data-bs-toggle="modal" data-bs-target="#createpayment"
-														type="button">
-														<i data-feather="plus-circle" class="me-2" width="14"
-															height="14"></i> Create Payment
-													</button>
-												</li>
-												<li>
-													<a href="sales-alpa.html"
-														class="dropdown-item d-flex align-items-center small py-1">
-														<i data-feather="download" class="me-2" width="14"
-															height="14"></i>
-														Download PDF
-													</a>
-												</li>
-												<li>
-													<a href="invoice.html"
-														class="dropdown-item d-flex align-items-center small py-1">
-														<i data-feather="file-plus" class="me-2" width="14"
-															height="14"></i>
-														Create Invoice
-													</a>
-												</li>
-												<li>
-													<button
-														class="dropdown-item d-flex align-items-center small py-1 text-danger btn-delete-sale"
-														type="button">
-														<i data-feather="trash-2" class="me-2" width="14"
-															height="14"></i> Delete Sale
-													</button>
-												</li>
-											</ul>
-										</td>
 									</tr>
 								</tbody>
 								<tfoot>
@@ -2681,8 +2849,14 @@
 								</div>
 
 								<div class="col-md-4">
-									<label class="form-label">Customer</label>
-									<input type="text" class="form-control mb-2" placeholder="Search Address">
+									<label class="form-label">Shipping</label>
+									<select class="form-control mb-3" style="height: 40px !important;">
+										<option>
+											<p>PT Cipta Kreasi</p><br>
+											<p>Cyber 2 Tower, Lantai 29, Jalan HR Rasuna Said, X5 No.13, Jakarta
+												Selatan, 12950</p>
+										</option>
+									</select>
 									<div>
 										<strong>PT Cipta Kreasi</strong><br>
 										<small>ciptakreasi@gmail.com</small><br>
@@ -2694,7 +2868,7 @@
 
 								<div class="col-md-4">
 									<label class="form-label">Delivery</label>
-									<select class="form-select mb-3">
+									<select class="form-control mb-3" style="height: 40px !important;">
 										<option>Express</option>
 									</select>
 									<div class="mt-2">
@@ -2706,7 +2880,7 @@
 
 							<!-- Produk -->
 							<div class="row align-items-start mb-4 gx-3"> <!-- gx-3 agar ada jarak antar kolom -->
-								<div class="col-md-5">
+								<div class="col-md-4">
 									<label class="form-label">Product Name</label>
 									<input type="text" class="form-control mb-2" value="Brosur PPDB SMAN 1 Bandung">
 									<em class="text-muted">Description:</em>
@@ -2717,7 +2891,7 @@
 								</div>
 								<div class="col-md-2">
 									<label class="form-label">Qty</label>
-									<div class="product-quantity">
+									<div class="product-quantity" style="width: 100% !important;">
 										<span class="quantity-btn">+<i data-feather="plus-circle"
 												class="plus-circle"></i></span>
 										<input type="text" class="quntity-input" value="2">
@@ -2727,7 +2901,7 @@
 								</div>
 								<div class="col-md-2">
 									<label class="form-label">Unit</label>
-									<select class="form-select mt-1">
+									<select class="form-control mt-1" style="height: 40px !important;">
 										<option selected>Ream</option>
 										<option>Pcs</option>
 										<option>Box</option>

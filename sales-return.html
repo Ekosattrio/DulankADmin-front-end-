@@ -161,14 +161,18 @@
 												<span class="checkmarks"></span>
 											</label>
 										</th>
+										<th>No Return</th>
 										<th>Date</th>
+										<th>No Sales</th>
 										<th>Customer</th>
-										<th>Status</th>
-										<th>Grand Total ($)</th>
-										<th>Paid ($)</th>
-										<th>Due ($)</th>
+										<th>Product Name</th>
+										<th>Qty</th>
+										<th>Qty Return</th>
+										<th>Price (IDR)</th>
+										<th>Return Amount (IDR)</th>
+										<th>Description</th>
 										<th>Payment Status</th>
-										<th class="no-sort"></th>
+										<th class="no-sort">Action</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -179,13 +183,21 @@
 												<span class="checkmarks"></span>
 											</label>
 										</td>
-										<td>19 Nov 2022</td>
-										<td>Thomas</td>
-										<td><span class="badge bg-soft-success">Received</span></td>
-										<td>550.000</td>
-										<td>120.000</td>
-										<td>550.000</td>
-										<td><span class="badge bg-outline-success">Paid</span></td>
+										<td>RTN0001</td>
+										<td>05/10/2025</td>
+										<td>2511000001</td>
+										<td>PT Makmur Abadi</td>
+										<td>Nota NCR 3 Ply</td>
+										<td>120</td>
+										<td>5</td>
+										<td>1.500</td>
+										<td>7.500</td>
+										<td>Salah Cetak Halaman</td>
+										<td>
+											<span class="badge bg-soft-success">
+												Complete
+											</span>
+										</td>
 										<td class="action-table-data">
 											<div class="edit-delete-action">
 												<a class="me-2 p-2" href="#" data-bs-toggle="modal"
@@ -202,13 +214,21 @@
 									<tr>
 										<td><label class="checkboxs"><input type="checkbox"><span
 													class="checkmarks"></span></label></td>
-										<td>19 Nov 2022</td>
-										<td>Thomas</td>
-										<td><span class="badge bg-soft-success">Received</span></td>
-										<td>550.000</td>
-										<td>120.000</td>
-										<td>550.000</td>
-										<td><span class="badge bg-outline-success">Paid</span></td>
+										<td>RTN0002</td>
+										<td>07/10/2025</td>
+										<td>2511000002</td>
+										<td>Toko Buku Cerdas</td>
+										<td>Brosur A5 Art Paper</td>
+										<td>1500</td>
+										<td>150</td>
+										<td>1.200</td>
+										<td>180.000</td>
+										<td>Warna Pudar</td>
+										<td>
+											<span class="badge bg-soft-warning">
+												Waiting
+											</span>
+										</td>
 										<td class="action-table-data">
 											<div class="edit-delete-action">
 												<a class="me-2 p-2" href="#" data-bs-toggle="modal"
@@ -225,13 +245,20 @@
 									<tr>
 										<td><label class="checkboxs"><input type="checkbox"><span
 													class="checkmarks"></span></label></td>
-										<td>21 Nov 2022</td>
-										<td>Sinta</td>
-										<td><span class="badge bg-soft-warning">Processing</span></td>
-										<td>750.000</td>
-										<td>80.000</td>
-										<td>830.000</td>
-										<td><span class="badge bg-outline-warning">Unpaid</span></td>
+										<td>RTN0003</td>
+										<td>10/10/2025</td>
+										<td>2511000003</td>
+										<td>Bpk. Rahmat</td>
+										<td>Kartu Nama Matte</td>
+										<td>200</td>
+										<td>10</td>
+										<td>1.800</td>
+										<td>18.000</td>
+										<td>Potongan Tidak Rapi</td>
+										<td>
+											<span class="badge bg-soft-success">
+												Complete</span>
+										</td>
 										<td class="action-table-data">
 											<div class="edit-delete-action">
 												<a class="me-2 p-2" href="#" data-bs-toggle="modal"
@@ -248,13 +275,21 @@
 									<tr>
 										<td><label class="checkboxs"><input type="checkbox"><span
 													class="checkmarks"></span></label></td>
-										<td>22 Nov 2022</td>
-										<td>Rahman</td>
-										<td><span class="badge bg-soft-danger">Returned</span></td>
-										<td>430.000</td>
-										<td>0</td>
-										<td>430.000</td>
-										<td><span class="badge bg-outline-danger">Refunded</span></td>
+										<td>RTN0004</td>
+										<td>15/10/2025</td>
+										<td>2511000004</td>
+										<td>CV Jaya Sentosa</td>
+										<td>Undangan Hardcover</td>
+										<td>500</td>
+										<td>25</td>
+										<td>5.500</td>
+										<td>137.500</td>
+										<td>Kerusakan Pengiriman</td>
+										<td>
+											<span class="badge bg-soft-success">
+												Complete
+											</span>
+										</td>
 										<td class="action-table-data">
 											<div class="edit-delete-action">
 												<a class="me-2 p-2" href="#" data-bs-toggle="modal"
@@ -271,36 +306,21 @@
 									<tr>
 										<td><label class="checkboxs"><input type="checkbox"><span
 													class="checkmarks"></span></label></td>
-										<td>23 Nov 2022</td>
-										<td>Rini</td>
-										<td><span class="badge bg-soft-info">Shipped</span></td>
-										<td>1.050.000</td>
-										<td>100.000</td>
-										<td>1.150.000</td>
-										<td><span class="badge bg-outline-info">Pending</span></td>
-										<td class="action-table-data">
-											<div class="edit-delete-action">
-												<a class="me-2 p-2" href="#" data-bs-toggle="modal"
-													data-bs-target="#edit-sales-new">
-													<i data-feather="edit" class="feather-edit"></i>
-												</a>
-												<a class="confirm-text p-2" href="javascript:void(0);">
-													<i data-feather="trash-2" class="feather-trash-2"></i>
-												</a>
-											</div>
-										</td>
-									</tr>
-
-									<tr>
-										<td><label class="checkboxs"><input type="checkbox"><span
-													class="checkmarks"></span></label></td>
-										<td>25 Nov 2022</td>
-										<td>Joko</td>
-										<td><span class="badge bg-soft-success">Received</span></td>
-										<td>980.000</td>
+										<td>RTN0005</td>
+										<td>20/10/2025</td>
+										<td>2510000005</td>
+										<td>Ibu Dian</td>
+										<td>Spanduk Flexi 280gr</td>
+										<td>2500</td>
+										<td>50</td>
+										<td>3.000</td>
 										<td>150.000</td>
-										<td>1.130.000</td>
-										<td><span class="badge bg-outline-success">Paid</span></td>
+										<td>Ukuran Tidak Sesuai</td>
+										<td>
+											<span class="badge bg-soft-danger">
+												Rejected
+											</span>
+										</td>
 										<td class="action-table-data">
 											<div class="edit-delete-action">
 												<a class="me-2 p-2" href="#" data-bs-toggle="modal"
@@ -317,36 +337,21 @@
 									<tr>
 										<td><label class="checkboxs"><input type="checkbox"><span
 													class="checkmarks"></span></label></td>
-										<td>27 Nov 2022</td>
-										<td>Lutfi</td>
-										<td><span class="badge bg-soft-warning">Processing</span></td>
-										<td>660.000</td>
-										<td>75.000</td>
-										<td>735.000</td>
-										<td><span class="badge bg-outline-warning">Unpaid</span></td>
-										<td class="action-table-data">
-											<div class="edit-delete-action">
-												<a class="me-2 p-2" href="#" data-bs-toggle="modal"
-													data-bs-target="#edit-sales-new">
-													<i data-feather="edit" class="feather-edit"></i>
-												</a>
-												<a class="confirm-text p-2" href="javascript:void(0);">
-													<i data-feather="trash-2" class="feather-trash-2"></i>
-												</a>
-											</div>
-										</td>
-									</tr>
-
-									<tr>
-										<td><label class="checkboxs"><input type="checkbox"><span
-													class="checkmarks"></span></label></td>
-										<td>29 Nov 2022</td>
-										<td>Agnes</td>
-										<td><span class="badge bg-soft-info">Shipped</span></td>
+										<td>RTN0006</td>
+										<td>25/10/2025</td>
+										<td>2510000006</td>
+										<td>PT Global Solusi</td>
+										<td>Kaos Cotton 30s</td>
+										<td>1200</td>
+										<td>120</td>
+										<td>6.000</td>
 										<td>720.000</td>
-										<td>50.000</td>
-										<td>770.000</td>
-										<td><span class="badge bg-outline-info">Pending</span></td>
+										<td>Sablon Retak</td>
+										<td>
+											<span class="badge bg-soft-warning">
+												Waiting
+											</span>
+										</td>
 										<td class="action-table-data">
 											<div class="edit-delete-action">
 												<a class="me-2 p-2" href="#" data-bs-toggle="modal"
@@ -363,13 +368,21 @@
 									<tr>
 										<td><label class="checkboxs"><input type="checkbox"><span
 													class="checkmarks"></span></label></td>
-										<td>30 Nov 2022</td>
-										<td>Yusuf</td>
-										<td><span class="badge bg-soft-danger">Returned</span></td>
-										<td>1.250.000</td>
-										<td>0</td>
-										<td>1.250.000</td>
-										<td><span class="badge bg-outline-danger">Refunded</span></td>
+										<td>RTN0007</td>
+										<td>28/10/2025</td>
+										<td>2510000007</td>
+										<td>Klinik Sehat</td>
+										<td>Cetak Stiker Vinyl</td>
+										<td>800</td>
+										<td>80</td>
+										<td>1.000</td>
+										<td>80.000</td>
+										<td>Lem Tidak Kuat</td>
+										<td>
+											<span class="badge bg-soft-success">
+												Complete
+											</span>
+										</td>
 										<td class="action-table-data">
 											<div class="edit-delete-action">
 												<a class="me-2 p-2" href="#" data-bs-toggle="modal"
@@ -386,13 +399,21 @@
 									<tr>
 										<td><label class="checkboxs"><input type="checkbox"><span
 													class="checkmarks"></span></label></td>
-										<td>02 Des 2022</td>
-										<td>Maya</td>
-										<td><span class="badge bg-soft-success">Received</span></td>
-										<td>870.000</td>
-										<td>110.000</td>
-										<td>980.000</td>
-										<td><span class="badge bg-outline-success">Paid</span></td>
+										<td>RTN0008</td>
+										<td>01/11/2025</td>
+										<td>2509000008</td>
+										<td>Sdr. Andri</td>
+										<td>Amplop Kop Surat</td>
+										<td>150</td>
+										<td>15</td>
+										<td>2.200</td>
+										<td>33.000</td>
+										<td>Logo Salah Posisi</td>
+										<td>
+											<span class="badge bg-soft-success">
+												Complete
+											</span>
+										</td>
 										<td class="action-table-data">
 											<div class="edit-delete-action">
 												<a class="me-2 p-2" href="#" data-bs-toggle="modal"
@@ -409,13 +430,83 @@
 									<tr>
 										<td><label class="checkboxs"><input type="checkbox"><span
 													class="checkmarks"></span></label></td>
-										<td>05 Des 2022</td>
-										<td>Fauzan</td>
-										<td><span class="badge bg-soft-warning">Processing</span></td>
-										<td>1.000.000</td>
-										<td>125.000</td>
-										<td>1.125.000</td>
-										<td><span class="badge bg-outline-warning">Unpaid</span></td>
+										<td>RTN0009</td>
+										<td>04/11/2025</td>
+										<td>2509000009</td>
+										<td>Yayasan Lentera</td>
+										<td>Kalender Dinding</td>
+										<td>700</td>
+										<td>70</td>
+										<td>4.500</td>
+										<td>315.000</td>
+										<td>Cacat di Spiral</td>
+										<td>
+											<span class="badge bg-soft-warning">
+												Waiting
+											</span>
+										</td>
+										<td class="action-table-data">
+											<div class="edit-delete-action">
+												<a class="me-2 p-2" href="#" data-bs-toggle="modal"
+													data-bs-target="#edit-sales-new">
+													<i data-feather="edit" class="feather-edit"></i>
+												</a>
+												<a class="confirm-text p-2" href="javascript:void(0);">
+													<i data-feather="trash-2" class="feather-trash-2"></i>
+												</a>
+											</div>
+										</td>
+									</tr>
+
+									<tr>
+										<td><label class="checkboxs"><input type="checkbox"><span
+													class="checkmarks"></span></label></td>
+										<td>RTN0010</td>
+										<td>08/11/2025</td>
+										<td>2509000010</td>
+										<td>Cafe Senja</td>
+										<td>Cetak Map Folder</td>
+										<td>400</td>
+										<td>40</td>
+										<td>3.500</td>
+										<td>140.000</td>
+										<td>Bahan Kertas Tipis</td>
+										<td>
+											<span class="badge bg-soft-danger">
+												Rejected
+											</span>
+										</td>
+										<td class="action-table-data">
+											<div class="edit-delete-action">
+												<a class="me-2 p-2" href="#" data-bs-toggle="modal"
+													data-bs-target="#edit-sales-new">
+													<i data-feather="edit" class="feather-edit"></i>
+												</a>
+												<a class="confirm-text p-2" href="javascript:void(0);">
+													<i data-feather="trash-2" class="feather-trash-2"></i>
+												</a>
+											</div>
+										</td>
+									</tr>
+
+									<tr>
+										<td><label class="checkboxs"><input type="checkbox"><span
+													class="checkmarks"></span></label></td>
+										<td>RTN0011</td>
+										<td>11/11/2025</td>
+										<td>2508000011</td>
+										<td>PT Dirgantara</td>
+										<td>X-Banner Albatros</td>
+										<td>300</td>
+										<td>30</td>
+										<td>5.000</td>
+										<td>150.000</td>
+										<td>Tiang Penyangga Rusak</td>
+										<td>
+											<span class="badge bg-soft-success">
+												Complete
+											</span>
+										</td>
 										<td class="action-table-data">
 											<div class="edit-delete-action">
 												<a class="me-2 p-2" href="#" data-bs-toggle="modal"
@@ -435,13 +526,21 @@
 												<span class="checkmarks"></span>
 											</label>
 										</td>
-										<td>19 Nov 2022</td>
-										<td>Thomas</td>
-										<td><span class="badge bg-soft-danger">Pending</span></td>
-										<td>550.000</td>
-										<td>120.000</td>
-										<td>550.000</td>
-										<td><span class="badge bg-outline-danger">Unpaid</span></td>
+										<td>RTN0012</td>
+										<td>14/11/2025</td>
+										<td>2508000012</td>
+										<td>Bapak Joko</td>
+										<td>Paper Bag Custom</td>
+										<td>1800</td>
+										<td>180</td>
+										<td>1.700</td>
+										<td>306.000</td>
+										<td>Tali Pegangan Putus</td>
+										<td>
+											<span class="badge bg-soft-warning">
+												Waiting
+											</span>
+										</td>
 										<td class="action-table-data">
 											<div class="edit-delete-action">
 												<a class="me-2 p-2" href="#" data-bs-toggle="modal"
@@ -462,13 +561,91 @@
 												<span class="checkmarks"></span>
 											</label>
 										</td>
-										<td>19 Nov 2022</td>
-										<td>Thomas</td>
-										<td><span class="badge bg-soft-warning">Ordered</span></td>
-										<td>550.000</td>
-										<td>120.000</td>
-										<td>550.000</td>
-										<td><span class="badge bg-outline-warning">Partial</span></td>
+										<td>RTN0013</td>
+										<td>17/11/2025</td>
+										<td>2508000013</td>
+										<td>Toko Perlengkapan</td>
+										<td>Mug Sablon</td>
+										<td>650</td>
+										<td>65</td>
+										<td>4.000</td>
+										<td>260.000</td>
+										<td>Gambar Retak</td>
+										<td>
+											<span class="badge bg-soft-success">
+												Complete
+											</span>
+										</td>
+										<td class="action-table-data">
+											<div class="edit-delete-action">
+												<a class="me-2 p-2" href="#" data-bs-toggle="modal"
+													data-bs-target="#edit-sales-new">
+													<i data-feather="edit" class="feather-edit"></i>
+												</a>
+												<a class="confirm-text p-2" href="javascript:void(0);">
+													<i data-feather="trash-2" class="feather-trash-2"></i>
+												</a>
+											</div>
+										</td>
+									</tr>
+
+									<tr>
+										<td>
+											<label class="checkboxs">
+												<input type="checkbox">
+												<span class="checkmarks"></span>
+											</label>
+										</td>
+										<td>RTN0014</td>
+										<td>20/11/2025</td>
+										<td>2507000014</td>
+										<td>PT Angkasa Raya</td>
+										<td>ID Card PVC</td>
+										<td>1100</td>
+										<td>110</td>
+										<td>2.500</td>
+										<td>275.000</td>
+										<td>Laminasi Mengelupas</td>
+										<td>
+											<span class="badge bg-soft-danger">
+												Rejected
+											</span>
+										</td>
+										<td class="action-table-data">
+											<div class="edit-delete-action">
+												<a class="me-2 p-2" href="#" data-bs-toggle="modal"
+													data-bs-target="#edit-sales-new">
+													<i data-feather="edit" class="feather-edit"></i>
+												</a>
+												<a class="confirm-text p-2" href="javascript:void(0);">
+													<i data-feather="trash-2" class="feather-trash-2"></i>
+												</a>
+											</div>
+										</td>
+									</tr>
+
+									<tr>
+										<td>
+											<label class="checkboxs">
+												<input type="checkbox">
+												<span class="checkmarks"></span>
+											</label>
+										</td>
+										<td>RTN0015</td>
+										<td>23/11/2025</td>
+										<td>2507000015</td>
+										<td>Ibu Laras</td>
+										<td>Cutting Sticker</td>
+										<td>130</td>
+										<td>13</td>
+										<td>5.800</td>
+										<td>75.400</td>
+										<td>Salah Pola Potong</td>
+										<td>
+											<span class="badge bg-soft-success">
+												Complete
+											</span>
+										</td>
 										<td class="action-table-data">
 											<div class="edit-delete-action">
 												<a class="me-2 p-2" href="#" data-bs-toggle="modal"
@@ -480,6 +657,179 @@
 												</a>
 											</div>
 
+										</td>
+									</tr>
+
+									<tr>
+										<td>
+											<label class="checkboxs">
+												<input type="checkbox">
+												<span class="checkmarks"></span>
+											</label>
+										</td>
+										<td>RTN0016</td>
+										<td>26/11/2025</td>
+										<td>2506000016</td>
+										<td>Universitas Bintang</td>
+										<td>Buku Yasin Soft Cover</td>
+										<td>1000</td>
+										<td>100</td>
+										<td>3.800</td>
+										<td>380.000</td>
+										<td>Jilid Terlepas</td>
+										<td>
+											<span class="badge bg-soft-warning">
+												Waiting
+											</span>
+										</td>
+										<td class="action-table-data">
+											<div class="edit-delete-action">
+												<a class="me-2 p-2" href="#" data-bs-toggle="modal"
+													data-bs-target="#edit-sales-new">
+													<i data-feather="edit" class="feather-edit"></i>
+												</a>
+												<a class="confirm-text p-2" href="javascript:void(0);">
+													<i data-feather="trash-2" class="feather-trash-2"></i>
+												</a>
+											</div>
+										</td>
+									</tr>
+
+									<tr>
+										<td>
+											<label class="checkboxs">
+												<input type="checkbox">
+												<span class="checkmarks"></span>
+											</label>
+										</td>
+										<td>RTN0017</td>
+										<td>29/11/2025</td>
+										<td>2506000017</td>
+										<td>Sdr. Bayu</td>
+										<td>Cetak Hang Tag</td>
+										<td>220</td>
+										<td>22</td>
+										<td>1.900</td>
+										<td>41.800</td>
+										<td>Lubang Kurang Presisi</td>
+										<td>
+											<span class="badge bg-soft-success">Complete
+											</span>
+										</td>
+										<td class="action-table-data">
+											<div class="edit-delete-action">
+												<a class="me-2 p-2" href="#" data-bs-toggle="modal"
+													data-bs-target="#edit-sales-new">
+													<i data-feather="edit" class="feather-edit"></i>
+												</a>
+												<a class="confirm-text p-2" href="javascript:void(0);">
+													<i data-feather="trash-2" class="feather-trash-2"></i>
+												</a>
+											</div>
+										</td>
+									</tr>
+
+									<tr>
+										<td>
+											<label class="checkboxs">
+												<input type="checkbox">
+												<span class="checkmarks"></span>
+											</label>
+										</td>
+										<td>RTN0018</td>
+										<td>02/12/2025</td>
+										<td>2505000018</td>
+										<td>Toko Elektronik Maju</td>
+										<td>Tinta Sablon Rubber</td>
+										<td>950</td>
+										<td>95</td>
+										<td>4.200</td>
+										<td>399.000</td>
+										<td>Kemasan Bocor</td>
+										<td>
+											<span class="badge bg-soft-danger">Rejected
+											</span>
+										</td>
+										<td class="action-table-data">
+											<div class="edit-delete-action">
+												<a class="me-2 p-2" href="#" data-bs-toggle="modal"
+													data-bs-target="#edit-sales-new">
+													<i data-feather="edit" class="feather-edit"></i>
+												</a>
+												<a class="confirm-text p-2" href="javascript:void(0);">
+													<i data-feather="trash-2" class="feather-trash-2"></i>
+												</a>
+											</div>
+										</td>
+									</tr>
+
+									<tr>
+										<td>
+											<label class="checkboxs">
+												<input type="checkbox">
+												<span class="checkmarks"></span>
+											</label>
+										</td>
+										<td>RTN0019</td>
+										<td>05/12/2025</td>
+										<td>2505000019</td>
+										<td>PT Cipta Kreasi</td>
+										<td>Kalender Meja Spiral</td>
+										<td>1600</td>
+										<td>160</td>
+										<td>3.200</td>
+										<td>512.000</td>
+										<td>Salah Susunan Bulan</td>
+										<td>
+											<span class="badge bg-soft-success">
+												Complete
+											</span>
+										</td>
+										<td class="action-table-data">
+											<div class="edit-delete-action">
+												<a class="me-2 p-2" href="#" data-bs-toggle="modal"
+													data-bs-target="#edit-sales-new">
+													<i data-feather="edit" class="feather-edit"></i>
+												</a>
+												<a class="confirm-text p-2" href="javascript:void(0);">
+													<i data-feather="trash-2" class="feather-trash-2"></i>
+												</a>
+											</div>
+										</td>
+									</tr>
+
+									<tr>
+										<td>
+											<label class="checkboxs">
+												<input type="checkbox">
+												<span class="checkmarks"></span>
+											</label>
+										</td>
+										<td>RTN0020</td>
+										<td>08/12/2025</td>
+										<td>2504000020</td>
+										<td>Bapak Doni</td>
+										<td>Brosur Lipat Tiga</td>
+										<td>750</td>
+										<td>75</td>
+										<td>1.100</td>
+										<td>82.500</td>
+										<td>Salah Jenis Kertas</td>
+										<td>
+											<span class="badge bg-soft-warning">
+												Waiting
+											</span>
+										</td>
+										<td class="action-table-data">
+											<div class="edit-delete-action">
+												<a class="me-2 p-2" href="#" data-bs-toggle="modal"
+													data-bs-target="#edit-sales-new">
+													<i data-feather="edit" class="feather-edit"></i>
+												</a>
+												<a class="confirm-text p-2" href="javascript:void(0);">
+													<i data-feather="trash-2" class="feather-trash-2"></i>
+												</a>
+											</div>
 										</td>
 									</tr>
 

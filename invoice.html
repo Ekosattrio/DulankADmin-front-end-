@@ -105,8 +105,9 @@
 								<!-- Date Range -->
 								<div class="my-2">
 									<div class="pemilihrentang-container ">
-										<input type="text" id="pemilihrentang-input" class="pemilihrentang-input form-control"
-											readonly placeholder="Date" style="height: fit-content !important;width: 100% !important;">
+										<input type="text" id="pemilihrentang-input"
+											class="pemilihrentang-input form-control" readonly placeholder="Date"
+											style="height: fit-content !important;width: 100% !important;">
 										<div id="pemilihrentang-panel" class="pemilihrentang-panel">
 											<div class="pemilihrentang-isi">
 												<div class="opsi-cepat">
@@ -126,7 +127,8 @@
 							</div>
 							<div class="filters d-flex justify-content-end">
 								<div class="dropdown w-100 me-2">
-									<button class="btn btn-outline-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+									<button class="btn btn-outline-primary dropdown-toggle" type="button"
+										data-bs-toggle="dropdown" aria-expanded="false">
 										Status
 									</button>
 									<ul class="dropdown-menu">
@@ -135,13 +137,13 @@
 									</ul>
 								</div>
 							</div>
-						</div>					
-						<!-- /Filter -->		
+						</div>
+						<!-- /Filter -->
 						<div class="table-responsive">
 							<table class="table  datanew">
 								<thead>
 									<tr>
-										<th class="no-sort">
+										<th class="no-sort checkbox">
 											<label class="checkboxs">
 												<input type="checkbox" id="select-all">
 												<span class="checkmarks"></span>
@@ -150,28 +152,32 @@
 										<th>Invoice No</th>
 										<th>Customer</th>
 										<th>Due Date</th>
-										<th>Amount</th>
-										<th>Paid</th>
-										<th>Amount Due</th>
+										<th>Amount (IDR)</th>
+										<th>Paid (IDR)</th>
+										<th>Amount Due (IDR)</th>
 										<th>Status</th>
-										<th></th>
+										<th class="action-head">Action</th>
 									</tr>
 								</thead>
 								<tbody>
 									<tr>
-										<td>
+										<td class="checkbox">
 											<label class="checkboxs">
 												<input type="checkbox">
 												<span class="checkmarks"></span>
 											</label>
 										</td>
-										<td>INV001</td>
-										<td>Thomas</td>
-										<td>19 Jan 2023</td>
-										<td>1.000.000</td>
-										<td>1.240.000</td>
+										<td>INV00001</td>
+										<td>PT Makmur Abadi</td>
+										<td>01/12/2025</td>
+										<td>1.332.000</td>
+										<td>1.332.000</td>
 										<td>0</td>
-										<td><span class="badge bg-outline-success">Paid</span></td>
+										<td>
+											<span class="badge bg-outline-success">
+												Paid
+											</span>
+										</td>
 										<td class="action-table-data">
 											<div class="edit-delete-action">
 												<a class="me-2 edit-icon p-2" href="invoice-details.html">
@@ -184,187 +190,480 @@
 										</td>
 									</tr>
 									<tr>
-	<td>
-		<label class="checkboxs">
-			<input type="checkbox">
-			<span class="checkmarks"></span>
-		</label>
-	</td>
-	<td>INV002</td>
-	<td>Farid Akbar</td>
-	<td>25 Jan 2023</td>
-	<td>2.300.000</td>
-	<td>2.500.000</td>
-	<td>0</td>
-	<td><span class="badge bg-outline-success">Paid</span></td>
-	<td class="action-table-data">
-		<div class="edit-delete-action">
-			<a class="me-2 edit-icon p-2" href="invoice-details.html">
-				<i data-feather="eye" class="action-eye"></i>
-			</a>
-			<a class="confirm-text p-2" href="javascript:void(0);">
-				<i data-feather="trash-2" class="feather-trash-2"></i>
-			</a>
-		</div>
-	</td>
-</tr>
-<tr>
-	<td><label class="checkboxs"><input type="checkbox"><span class="checkmarks"></span></label></td>
-	<td>INV003</td>
-	<td>Rina Putri</td>
-	<td>02 Feb 2023</td>
-	<td>850.000</td>
-	<td>1.000.000</td>
-	<td>150.000</td>
-	<td><span class="badge bg-outline-warning">Partial</span></td>
-	<td class="action-table-data">
-		<div class="edit-delete-action">
-			<a class="me-2 edit-icon p-2" href="invoice-details.html"><i data-feather="eye"></i></a>
-			<a class="confirm-text p-2" href="javascript:void(0);"><i data-feather="trash-2"></i></a>
-		</div>
-	</td>
-</tr>
-<tr>
-	<td><label class="checkboxs"><input type="checkbox"><span class="checkmarks"></span></label></td>
-	<td>INV004</td>
-	<td>Dewi Lestari</td>
-	<td>10 Feb 2023</td>
-	<td>1.200.000</td>
-	<td>1.200.000</td>
-	<td>0</td>
-	<td><span class="badge bg-outline-success">Paid</span></td>
-	<td class="action-table-data">
-		<div class="edit-delete-action">
-			<a class="me-2 edit-icon p-2" href="invoice-details.html"><i data-feather="eye"></i></a>
-			<a class="confirm-text p-2" href="javascript:void(0);"><i data-feather="trash-2"></i></a>
-		</div>
-	</td>
-</tr>
-<tr>
-	<td><label class="checkboxs"><input type="checkbox"><span class="checkmarks"></span></label></td>
-	<td>INV005</td>
-	<td>Ahmad Rizky</td>
-	<td>28 Feb 2023</td>
-	<td>3.500.000</td>
-	<td>3.500.000</td>
-	<td>0</td>
-	<td><span class="badge bg-outline-success">Paid</span></td>
-	<td class="action-table-data">
-		<div class="edit-delete-action">
-			<a class="me-2 edit-icon p-2" href="invoice-details.html"><i data-feather="eye"></i></a>
-			<a class="confirm-text p-2" href="javascript:void(0);"><i data-feather="trash-2"></i></a>
-		</div>
-	</td>
-</tr>
-<tr>
-	<td><label class="checkboxs"><input type="checkbox"><span class="checkmarks"></span></label></td>
-	<td>INV006</td>
-	<td>Bayu Aditya</td>
-	<td>12 Mar 2023</td>
-	<td>750.000</td>
-	<td>1.000.000</td>
-	<td>250.000</td>
-	<td><span class="badge bg-outline-warning">Partial</span></td>
-	<td class="action-table-data">
-		<div class="edit-delete-action">
-			<a class="me-2 edit-icon p-2" href="invoice-details.html"><i data-feather="eye"></i></a>
-			<a class="confirm-text p-2" href="javascript:void(0);"><i data-feather="trash-2"></i></a>
-		</div>
-	</td>
-</tr>
-<tr>
-	<td><label class="checkboxs"><input type="checkbox"><span class="checkmarks"></span></label></td>
-	<td>INV007</td>
-	<td>Siti Aminah</td>
-	<td>01 Apr 2023</td>
-	<td>2.000.000</td>
-	<td>2.000.000</td>
-	<td>0</td>
-	<td><span class="badge bg-outline-success">Paid</span></td>
-	<td class="action-table-data">
-		<div class="edit-delete-action">
-			<a class="me-2 edit-icon p-2" href="invoice-details.html"><i data-feather="eye"></i></a>
-			<a class="confirm-text p-2" href="javascript:void(0);"><i data-feather="trash-2"></i></a>
-		</div>
-	</td>
-</tr>
-<tr>
-	<td><label class="checkboxs"><input type="checkbox"><span class="checkmarks"></span></label></td>
-	<td>INV008</td>
-	<td>Fajar Nugraha</td>
-	<td>18 Apr 2023</td>
-	<td>1.450.000</td>
-	<td>1.700.000</td>
-	<td>250.000</td>
-	<td><span class="badge bg-outline-warning">Partial</span></td>
-	<td class="action-table-data">
-		<div class="edit-delete-action">
-			<a class="me-2 edit-icon p-2" href="invoice-details.html"><i data-feather="eye"></i></a>
-			<a class="confirm-text p-2" href="javascript:void(0);"><i data-feather="trash-2"></i></a>
-		</div>
-	</td>
-</tr>
-<tr>
-	<td><label class="checkboxs"><input type="checkbox"><span class="checkmarks"></span></label></td>
-	<td>INV009</td>
-	<td>Nanda Prasetyo</td>
-	<td>30 Apr 2023</td>
-	<td>1.800.000</td>
-	<td>2.000.000</td>
-	<td>200.000</td>
-	<td><span class="badge bg-outline-danger">Unpaid</span></td>
-	<td class="action-table-data">
-		<div class="edit-delete-action">
-			<a class="me-2 edit-icon p-2" href="invoice-details.html"><i data-feather="eye"></i></a>
-			<a class="confirm-text p-2" href="javascript:void(0);"><i data-feather="trash-2"></i></a>
-		</div>
-	</td>
-</tr>
-<tr>
-	<td><label class="checkboxs"><input type="checkbox"><span class="checkmarks"></span></label></td>
-	<td>INV010</td>
-	<td>Indah Lestari</td>
-	<td>12 Mei 2023</td>
-	<td>950.000</td>
-	<td>950.000</td>
-	<td>0</td>
-	<td><span class="badge bg-outline-success">Paid</span></td>
-	<td class="action-table-data">
-		<div class="edit-delete-action">
-			<a class="me-2 edit-icon p-2" href="invoice-details.html"><i data-feather="eye"></i></a>
-			<a class="confirm-text p-2" href="javascript:void(0);"><i data-feather="trash-2"></i></a>
-		</div>
-	</td>
-</tr>
-<tr>
-	<td><label class="checkboxs"><input type="checkbox"><span class="checkmarks"></span></label></td>
-	<td>INV011</td>
-	<td>Bagas Permana</td>
-	<td>20 Mei 2023</td>
-	<td>3.250.000</td>
-	<td>3.250.000</td>
-	<td>0</td>
-	<td><span class="badge bg-outline-success">Paid</span></td>
-	<td class="action-table-data">
-		<div class="edit-delete-action">
-			<a class="me-2 edit-icon p-2" href="invoice-details.html"><i data-feather="eye"></i></a>
-			<a class="confirm-text p-2" href="javascript:void(0);"><i data-feather="trash-2"></i></a>
-		</div>
-	</td>
-</tr>
+										<td class="checkbox">
+											<label class="checkboxs">
+												<input type="checkbox">
+												<span class="checkmarks"></span>
+											</label>
+										</td>
+										<td>INV00002</td>
+										<td>Toko Buku Cerdas</td>
+										<td>02/12/2025</td>
+										<td>3.552.000</td>
+										<td>1.500.000</td>
+										<td>2.052.000</td>
+										<td>
+											<span class="badge bg-outline-warning">
+												Partial
+											</span>
+										</td>
+										<td class="action-table-data">
+											<div class="edit-delete-action">
+												<a class="me-2 edit-icon p-2" href="invoice-details.html">
+													<i data-feather="eye" class="action-eye"></i>
+												</a>
+												<a class="confirm-text p-2" href="javascript:void(0);">
+													<i data-feather="trash-2" class="feather-trash-2"></i>
+												</a>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td class="checkbox">
+											<label class="checkboxs"><input type="checkbox"><span
+													class="checkmarks"></span></label>
+										</td>
+										<td>INV00003</td>
+										<td>Bpk. Rahmat</td>
+										<td>03/12/2025</td>
+										<td>610.500</td>
+										<td>610.500</td>
+										<td>0</td>
+										<td>
+											<span class="badge bg-outline-success">
+												Paid
+											</span>
+										</td>
+										<td class="action-table-data">
+											<div class="edit-delete-action">
+												<a class="me-2 edit-icon p-2" href="invoice-details.html"><i
+														data-feather="eye"></i></a>
+												<a class="confirm-text p-2" href="javascript:void(0);"><i
+														data-feather="trash-2"></i></a>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td class="checkbox">
+											<label class="checkboxs"><input type="checkbox"><span
+													class="checkmarks"></span></label>
+										</td>
+										<td>INV00004</td>
+										<td>CV Jaya Sentosa</td>
+										<td>04/12/2025</td>
+										<td>3.241.200</td>
+										<td>3.241.200</td>
+										<td>0</td>
+										<td>
+											<span class="badge bg-outline-success">
+												Paid
+											</span>
+										</td>
+										<td class="action-table-data">
+											<div class="edit-delete-action">
+												<a class="me-2 edit-icon p-2" href="invoice-details.html"><i
+														data-feather="eye"></i></a>
+												<a class="confirm-text p-2" href="javascript:void(0);"><i
+														data-feather="trash-2"></i></a>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td class="checkbox">
+											<label class="checkboxs"><input type="checkbox"><span
+													class="checkmarks"></span></label>
+										</td>
+										<td>INV00005</td>
+										<td>Ibu Dian</td>
+										<td>27/11/2025</td>
+										<td>6.493.500</td>
+										<td>3.000.000</td>
+										<td>3.493.500</td>
+										<td>
+											<span class="badge bg-outline-warning">
+												Partial
+											</span>
+										</td>
+										<td class="action-table-data">
+											<div class="edit-delete-action">
+												<a class="me-2 edit-icon p-2" href="invoice-details.html"><i
+														data-feather="eye"></i></a>
+												<a class="confirm-text p-2" href="javascript:void(0);"><i
+														data-feather="trash-2"></i></a>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td class="checkbox">
+											<label class="checkboxs"><input type="checkbox"><span
+													class="checkmarks"></span></label>
+										</td>
+										<td>INV00006</td>
+										<td>PT Global Solusi</td>
+										<td>25/11/2025</td>
+										<td>4.484.400</td>
+										<td>4.484.400</td>
+										<td>0</td>
+										<td>
+											<span class="badge bg-outline-success">
+												Paid
+											</span>
+										</td>
+										<td class="action-table-data">
+											<div class="edit-delete-action">
+												<a class="me-2 edit-icon p-2" href="invoice-details.html"><i
+														data-feather="eye"></i></a>
+												<a class="confirm-text p-2" href="javascript:void(0);"><i
+														data-feather="trash-2"></i></a>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td class="checkbox">
+											<label class="checkboxs"><input type="checkbox"><span
+													class="checkmarks"></span></label>
+										</td>
+										<td>INV00007</td>
+										<td>Klinik Sehat</td>
+										<td>23/11/2025</td>
+										<td>900.000</td>
+										<td>0</td>
+										<td>900.000</td>
+										<td>
+											<span class="badge bg-outline-danger">
+												Unpaid
+											</span>
+										</td>
+										<td class="action-table-data">
+											<div class="edit-delete-action">
+												<a class="me-2 edit-icon p-2" href="invoice-details.html"><i
+														data-feather="eye"></i></a>
+												<a class="confirm-text p-2" href="javascript:void(0);"><i
+														data-feather="trash-2"></i></a>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td class="checkbox">
+											<label class="checkboxs"><input type="checkbox"><span
+													class="checkmarks"></span></label>
+										</td>
+										<td>INV00008</td>
+										<td>Sdr. Andri</td>
+										<td>15/10/2025</td>
+										<td>1.681.650</td>
+										<td>1.681.650</td>
+										<td>0</td>
+										<td>
+											<span class="badge bg-outline-success">
+												Paid
+											</span>
+										</td>
+										<td class="action-table-data">
+											<div class="edit-delete-action">
+												<a class="me-2 edit-icon p-2" href="invoice-details.html"><i
+														data-feather="eye"></i></a>
+												<a class="confirm-text p-2" href="javascript:void(0);"><i
+														data-feather="trash-2"></i></a>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td class="checkbox">
+											<label class="checkboxs"><input type="checkbox"><span
+													class="checkmarks"></span></label>
+										</td>
+										<td>INV00009</td>
+										<td>Yayasan Lentera</td>
+										<td>10/10/2025</td>
+										<td>5.217.000</td>
+										<td>2.500.000</td>
+										<td>2.717.000</td>
+										<td>
+											<span class="badge bg-outline-warning">
+												Partial
+											</span>
+										</td>
+										<td class="action-table-data">
+											<div class="edit-delete-action">
+												<a class="me-2 edit-icon p-2" href="invoice-details.html"><i
+														data-feather="eye"></i></a>
+												<a class="confirm-text p-2" href="javascript:void(0);"><i
+														data-feather="trash-2"></i></a>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td class="checkbox">
+											<label class="checkboxs"><input type="checkbox"><span
+													class="checkmarks"></span></label>
+										</td>
+										<td>INV00010</td>
+										<td>Cafe Senja</td>
+										<td>05/10/2025</td>
+										<td>860.250</td>
+										<td>860.250</td>
+										<td>0</td>
+										<td>
+											<span class="badge bg-outline-success">
+												Paid
+											</span>
+										</td>
+										<td class="action-table-data">
+											<div class="edit-delete-action">
+												<a class="me-2 edit-icon p-2" href="invoice-details.html"><i
+														data-feather="eye"></i></a>
+												<a class="confirm-text p-2" href="javascript:void(0);"><i
+														data-feather="trash-2"></i></a>
+											</div>
+										</td>
+									</tr>
+
+									<tr>
+										<td class="checkbox">
+											<label class="checkboxs"><input type="checkbox"><span
+													class="checkmarks"></span></label>
+										</td>
+										<td>INV00011</td>
+										<td>PT Dirgantara</td>
+										<td>27/09/2025</td>
+										<td>3.174.700</td>
+										<td>3.174.700</td>
+										<td>0</td>
+										<td>
+											<span class="badge bg-outline-success">
+												Paid
+											</span>
+										</td>
+										<td class="action-table-data">
+											<div class="edit-delete-action">
+												<a class="me-2 edit-icon p-2" href="invoice-details.html"><i
+														data-feather="eye"></i></a>
+												<a class="confirm-text p-2" href="javascript:void(0);"><i
+														data-feather="trash-2"></i></a>
+											</div>
+										</td>
+									</tr>
+
+									<tr>
+										<td class="checkbox">
+											<label class="checkboxs"><input type="checkbox"><span
+													class="checkmarks"></span></label>
+										</td>
+										<td>INV00012</td>
+										<td>Bapak Joko</td>
+										<td>24/09/2025</td>
+										<td>666.000</td>
+										<td>666.000</td>
+										<td>0</td>
+										<td>
+											<span class="badge bg-outline-success">
+												Paid
+											</span>
+										</td>
+										<td class="action-table-data">
+											<div class="edit-delete-action">
+												<a class="me-2 edit-icon p-2" href="invoice-details.html"><i
+														data-feather="eye"></i></a>
+												<a class="confirm-text p-2" href="javascript:void(0);"><i
+														data-feather="trash-2"></i></a>
+											</div>
+										</td>
+									</tr>
+
+									<tr>
+										<td class="checkbox">
+											<label class="checkboxs"><input type="checkbox"><span
+													class="checkmarks"></span></label>
+										</td>
+										<td>INV00013</td>
+										<td>Toko Perlengkapan</td>
+										<td>19/09/2025</td>
+										<td>5.416.800</td>
+										<td>0</td>
+										<td>5.416.800</td>
+										<td>
+											<span class="badge bg-outline-danger">
+												Unpaid
+											</span>
+										</td>
+										<td class="action-table-data">
+											<div class="edit-delete-action">
+												<a class="me-2 edit-icon p-2" href="invoice-details.html"><i
+														data-feather="eye"></i></a>
+												<a class="confirm-text p-2" href="javascript:void(0);"><i
+														data-feather="trash-2"></i></a>
+											</div>
+										</td>
+									</tr>
+
+									<tr>
+										<td class="checkbox">
+											<label class="checkboxs"><input type="checkbox"><span
+													class="checkmarks"></span></label>
+										</td>
+										<td>INV00014</td>
+										<td>PT Angkasa Raya</td>
+										<td>14/08/2025</td>
+										<td>1.998.000</td>
+										<td>1.000.000</td>
+										<td>998.000</td>
+										<td>
+											<span class="badge bg-outline-warning">
+												Partial
+											</span>
+										</td>
+										<td class="action-table-data">
+											<div class="edit-delete-action">
+												<a class="me-2 edit-icon p-2" href="invoice-details.html"><i
+														data-feather="eye"></i></a>
+												<a class="confirm-text p-2" href="javascript:void(0);"><i
+														data-feather="trash-2"></i></a>
+											</div>
+										</td>
+									</tr>
+
+									<tr>
+										<td class="checkbox">
+											<label class="checkboxs"><input type="checkbox"><span
+													class="checkmarks"></span></label>
+										</td>
+										<td>INV00015</td>
+										<td>Ibu Laras</td>
+										<td>09/08/2025</td>
+										<td>677.100</td>
+										<td>677.100</td>
+										<td>0</td>
+										<td>
+											<span class="badge bg-outline-success">
+												Paid
+											</span>
+										</td>
+										<td class="action-table-data">
+											<div class="edit-delete-action">
+												<a class="me-2 edit-icon p-2" href="invoice-details.html"><i
+														data-feather="eye"></i></a>
+												<a class="confirm-text p-2" href="javascript:void(0);"><i
+														data-feather="trash-2"></i></a>
+											</div>
+										</td>
+									</tr>
+
+									<tr>
+										<td class="checkbox">
+											<label class="checkboxs"><input type="checkbox"><span
+													class="checkmarks"></span></label>
+										</td>
+										<td>INV00016</td>
+										<td>Universitas Bintang</td>
+										<td>05/07/2025</td>
+										<td>4.107.000</td>
+										<td>2.000.000</td>
+										<td>2.107.000</td>
+										<td>
+											<span class="badge bg-outline-success">
+												Partial
+										</td>
+										<td class="action-table-data">
+											<div class="edit-delete-action">
+												<a class="me-2 edit-icon p-2" href="invoice-details.html"><i
+														data-feather="eye"></i></a>
+												<a class="confirm-text p-2" href="javascript:void(0);"><i
+														data-feather="trash-2"></i></a>
+											</div>
+										</td>
+									</tr>
+
+									<tr>
+										<td class="checkbox">
+											<label class="checkboxs"><input type="checkbox"><span
+													class="checkmarks"></span></label>
+										</td>
+										<td>INV00017</td>
+										<td>Sdr. Bayu</td>
+										<td>01/07/2025</td>
+										<td>821.400</td>
+										<td>821.400</td>
+										<td>0</td>
+										<td>
+											<span class="badge bg-outline-success">
+												Paid
+											</span>
+										</td>
+										<td class="action-table-data">
+											<div class="edit-delete-action">
+												<a class="me-2 edit-icon p-2" href="invoice-details.html"><i
+														data-feather="eye"></i></a>
+												<a class="confirm-text p-2" href="javascript:void(0);"><i
+														data-feather="trash-2"></i></a>
+											</div>
+										</td>
+									</tr>
+
+									<tr>
+										<td class="checkbox">
+											<label class="checkboxs"><input type="checkbox"><span
+													class="checkmarks"></span></label>
+										</td>
+										<td>INV00019</td>
+										<td>PT Cipta Kreasi</td>
+										<td>14/06/2025</td>
+										<td>1.900.000</td>
+										<td>1.900.000</td>
+										<td>0</td>
+										<td>
+											<span class="badge bg-outline-success">
+												Paid
+											</span>
+										</td>
+										<td class="action-table-data">
+											<div class="edit-delete-action">
+												<a class="me-2 edit-icon p-2" href="invoice-details.html"><i
+														data-feather="eye"></i></a>
+												<a class="confirm-text p-2" href="javascript:void(0);"><i
+														data-feather="trash-2"></i></a>
+											</div>
+										</td>
+									</tr>
+
+									<tr>
+										<td class="checkbox">
+											<label class="checkboxs"><input type="checkbox"><span
+													class="checkmarks"></span></label>
+										</td>
+										<td>INV00020</td>
+										<td>Bapak Doni</td>
+										<td>10/05/2025</td>
+										<td>555.000</td>
+										<td>555.000</td>
+										<td>0</td>
+										<td>
+											<span class="badge bg-outline-success">
+												Paid
+											</span>
+										</td>
+										<td class="action-table-data">
+											<div class="edit-delete-action">
+												<a class="me-2 edit-icon p-2" href="invoice-details.html"><i
+														data-feather="eye"></i></a>
+												<a class="confirm-text p-2" href="javascript:void(0);"><i
+														data-feather="trash-2"></i></a>
+											</div>
+										</td>
+									</tr>
 
 								</tbody>
 								<tfoot>
-                                    <tr>
-                                        <td colspan="1"></td>
-                                        <td class="text-start fw-bold">Total</td>
-                                        <!-- gunakan class sum-target dan data-col-index agar reusable -->
-                                        <td colspan="2"></td>
-                                        <td id="amount-total" class="fw-bold sum-target" data-col-index="4">0</td>
-                                        <td id="amount-total" class="fw-bold sum-target" data-col-index="5">0</td>
-                                        <td id="amount-total" class="fw-bold sum-target" data-col-index="6">0</td>
-                                    </tr>
-                                </tfoot>
+									<tr>
+										<td colspan="1"></td>
+										<td class="text-start fw-bold">Total</td>
+										<!-- gunakan class sum-target dan data-col-index agar reusable -->
+										<td colspan="2"></td>
+										<td id="amount-total" class="fw-bold sum-target" data-col-index="4">0</td>
+										<td id="amount-total" class="fw-bold sum-target" data-col-index="5">0</td>
+										<td id="amount-total" class="fw-bold sum-target" data-col-index="6">0</td>
+									</tr>
+								</tfoot>
 							</table>
 						</div>
 					</div>

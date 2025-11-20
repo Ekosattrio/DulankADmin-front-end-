@@ -2537,12 +2537,16 @@ $(function () {
 	window.updateTableSums = updateSums;
 
 	// ------------ tambahan: format angka di <td> (thousand dot) kecuali td.str-value ------------
+	// ...existing code...
+
+	// Format angka & tambah class text-end ke <td> numeric
 	(function () {
 		function looksNumeric(s) {
 			if (s === undefined || s === null) return false;
 			s = String(s).trim();
 			return /^[\d\.\,\s\-]+$/.test(s);
 		}
+
 		function formatTdCell($td) {
 			if (!$td || $td.hasClass('str-value')) return;
 			// skip cells with interactive content
@@ -2556,11 +2560,13 @@ $(function () {
 				return;
 			}
 			var num = parseNumber(raw);
-			// if parseNumber returned 0 but raw isn't zero, still format accordingly
 			var formatted = formatNumber(num);
 			$td.text(formatted);
 			$td.data('raw-number', raw);
+			// TAMBAH: berikan class text-end ke cell numeric
+			$td.addClass('text-end');
 		}
+
 		function formatTdNumbers(root) {
 			root = root || document;
 			$(root).find('td').not('.str-value').each(function () {
@@ -2571,7 +2577,7 @@ $(function () {
 		// initial format
 		$(function () { formatTdNumbers(); });
 
-		// format after DataTable redraw for each table
+		// format after DataTable redraw
 		if ($.fn.dataTable) {
 			$('table').each(function () {
 				var $t = $(this);
@@ -2581,16 +2587,14 @@ $(function () {
 			});
 		}
 
-		// observe DOM additions (new rows)
+		// observe DOM additions
 		var mo = new MutationObserver(function (muts) {
 			muts.forEach(function (m) {
 				if (!m.addedNodes) return;
 				m.addedNodes.forEach(function (n) {
 					if (n.nodeType !== 1) return;
 					if (n.matches && n.matches('td, tr, tbody, table')) {
-						z
 						formatTdNumbers(n)
-						console.log(n)
 					}
 					else if (n.querySelector && n.querySelector('td')) formatTdNumbers(n);
 				});
@@ -2598,9 +2602,10 @@ $(function () {
 		});
 		mo.observe(document.body, { childList: true, subtree: true });
 
-		// expose helper
 		window.formatTdNumbers = formatTdNumbers;
 	})();
+
+	// ...existing code...
 	// ------------------------------------------------------------------------------------------
 });
 

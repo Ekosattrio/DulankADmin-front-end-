@@ -3211,10 +3211,10 @@ button:focus {
 }
 
 .dropdown-item {
-  color: #5B6670;
+  color: #5B6670 !important;
   white-space: unset;
   padding: 0.5rem 0.9375rem;
-  font-size: 0.8125rem;
+  font-size: 0.8125rem !important;
 }
 
 .dropdown-item.disabled,

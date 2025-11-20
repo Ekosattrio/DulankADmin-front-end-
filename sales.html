@@ -218,7 +218,8 @@
 												</li>
 												<li>
 													<a href="sales-alpa.html"
-														class="dropdown-item d-flex align-items-center small py-1">
+														class="dropdown-item d-flex align-items-center small py-1"
+														type="button">
 														<i data-feather="download" class="me-2" width="14"
 															height="14"></i>
 														Download PDF
@@ -1049,7 +1050,7 @@
 										<td>Cafe Senja</td>
 										<td>05/09/2025</td>
 										<td>750.000</td>
-										<td class="str-value">25.000</td>
+										<td>25.000</td>
 										<td>0</td>
 										<td>85.250</td>
 										<td>860.250</td>
@@ -1967,7 +1968,7 @@
 	<!-- /Main Wrapper -->
 	<!-- modals -->
 	<!-- Add Unit -->
-	<div class="modal fade" id="add-sels">
+	 <div class="modal fade" id="add-sels">
 		<div class="modal-dialog add-centered">
 			<div class="modal-content">
 				<!-- Header -->
@@ -1986,7 +1987,140 @@
 						<div class="card-body pb-0">
 
 							<!-- Table -->
-							<div class="table-responsive no-pagination mb-3">
+							
+
+							<!-- row ke satu add sales -->
+							<div class="row">
+								<!-- Customer -->
+								<div class="col-lg-6 col-sm-6 col-12">
+									<div class="mb-3">
+										<div class="add-newplus">
+											<label class="form-label">Customer<span
+												class="text-danger ms-1">*</span></label>
+												<a href="javascript:void(0);" data-bs-toggle="modal"
+																	data-bs-target="#add-units-category"><i
+																		data-feather="plus-circle"
+																		class="plus-down-add"></i><span>Add
+																		New</span></a>
+										</div>
+										<div class="input-groupicon select-code">
+											<div class="search-container">
+												<input type="text" class="form-control customer-input"
+													placeholder="Search Customer">
+												<div class="search-results"></div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<!-- Date -->
+								<div class="col-lg-6 col-sm-6 col-12">
+									<div class="mb-3">
+										<label class="form-label">
+											Delivery<span class="text-danger ms-1">*</span>
+										</label>
+										<select class="select">
+																<option>Express </option>
+																<option>Cargo</option>
+															</select>
+									</div>
+								</div>
+
+
+
+								<!-- Supplier -->
+								<!-- <div class="col-lg-4 col-sm-6 col-12">
+									<div class="mb-3">
+										<div class="input-blocks align-items-center">
+											<label class="form-label">PO Number</label>
+											<input type="text" class="form-control">
+											<span class="btn btn-primaryadd">
+												Generate Code
+											</span>
+										</div>
+									</div>
+								</div> -->
+
+								<!-- Product -->
+							
+							</div>
+
+							<!-- row ke 2 add sales -->
+							 <div class="row d-flex align-items-center justify-content-between">
+								<!-- Customer -->
+								<div class="col-lg-6 col-sm-6 col-12">
+									<div class="mb-0">
+									<strong>PT Cipta Kreasi</strong><br>
+										<small>ciptakreasi@gmail.com</small><br>
+										<small>6218 9 6855 554</small><br>
+										<small>Cyber 2 Tower, Lantai 29, Jalan HR Rasuna Said,<br> X5 No.13, Jakarta
+											Selatan, 12950</small>		
+									</div>					
+								</div>
+
+								<!-- Date -->
+								<div class="col-lg-6 col-sm-6 col-12">
+									<div class="mb-3">
+										<div class="add-newplus">
+											<label class="form-label">Shipping<span
+												class="text-danger ms-1">*</span></label>
+												<a href="javascript:void(0);" data-bs-toggle="modal"
+																	data-bs-target="#add-units-category"><i
+																		data-feather="plus-circle"
+																		class="plus-down-add"></i><span>Add
+																		New</span></a>
+										</div>
+										<div class="input-groupicon select-code">
+											<div class="search-container">
+												<input type="text" class="form-control customer-input"
+													placeholder="Search Customer">
+												<div class="search-results"></div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+
+
+								<!-- Supplier -->
+								<!-- <div class="col-lg-4 col-sm-6 col-12">
+									<div class="mb-3">
+										<div class="input-blocks align-items-center">
+											<label class="form-label">PO Number</label>
+											<input type="text" class="form-control">
+											<span class="btn btn-primaryadd">
+												Generate Code
+											</span>
+										</div>
+									</div>
+								</div> -->
+
+								<!-- Product -->
+							
+							</div>
+							<!-- Order Summary -->
+<div class="row">
+	<div class="col-lg-6 col-sm-6 col-12">
+	<div class="mb-3">
+			<div class="input-blocks align-items-center">
+				<label class="form-label">PO Number</label>
+				<input type="text" class="form-control">
+				
+			</div>
+		</div>
+								</div>
+								<div class="col-lg-6 col-sm-6 col-12">
+									<div class="mb-0">
+									<strong>PT Cipta Kreasi</strong><br>
+										<small>ciptakreasi@gmail.com</small><br>
+										<small>6218 9 6855 554</small><br>
+										<small>Cyber 2 Tower, Lantai 29, Jalan HR Rasuna Said,<br> X5 No.13, Jakarta
+											Selatan, 12950</small>		
+									</div>					
+								</div>
+
+</div>
+<div class="table-responsive no-pagination mb-3">
 								<table class="table datanew">
 									<thead>
 										<tr>
@@ -2018,83 +2152,20 @@
 									</tbody>
 								</table>
 							</div>
-
-							<!-- Top Form -->
+							<!-- Bottom Inputs -->
 							<div class="row">
-								<!-- Customer -->
-								<div class="col-lg-4 col-sm-6 col-12">
-									<div class="mb-3">
-										<label class="form-label">Customer<span
-												class="text-danger ms-1">*</span></label>
-										<div class="input-groupicon select-code">
-											<div class="search-container">
-												<input type="text" class="form-control customer-input"
-													placeholder="Search Customer">
-												<div class="search-results"></div>
-											</div>
-										</div>
-									</div>
-								</div>
-
-								<!-- Date -->
-								<div class="col-lg-4 col-sm-6 col-12">
-									<div class="mb-3">
-										<label class="form-label">
-											Date<span class="text-danger ms-1">*</span>
-										</label>
-										<div class="input-group">
-											<input type="text" class="datetimepicker form-control" placeholder="Choose">
-										</div>
-									</div>
-								</div>
-
-
-
-								<!-- Supplier -->
 								<div class="col-lg-4 col-sm-6 col-12">
 									<div class="mb-3">
 										<div class="input-blocks align-items-center">
-											<label class="form-label">PO Number</label>
+											<label class="form-label">Voucher</label>
 											<input type="text" class="form-control">
-											<span class="btn btn-primaryadd">
-												Generate Code
-											</span>
+											
 										</div>
 									</div>
 								</div>
-
-								<!-- Product -->
-								<div class="col-lg-12 col-sm-6 col-12">
+								<div class="col-lg-4 col-sm-6 col-12">
 									<div class="mb-3">
-										<label class="form-label">Product<span class="text-danger ms-1">*</span></label>
-										<div class="input-groupicon select-code">
-											<input type="text" class="form-control"
-												placeholder="Please type product code and select">
-
-										</div>
-									</div>
-								</div>
-							</div>
-
-							<!-- Order Summary -->
-
-
-							<!-- Bottom Inputs -->
-							<div class="row">
-								<div class="col-lg-3 col-sm-6 col-12">
-									<div class="mb-3">
-										<label class="form-label">Order Tax<span
-												class="text-danger ms-1">*</span></label>
-										<div class="input-groupicon select-code">
-											<input type="text" class="form-control number-separator" inputmode="numeric"
-												pattern="[0-9]*">
-											<input type="hidden" class="result-input" id="tax">
-										</div>
-									</div>
-								</div>
-								<div class="col-lg-3 col-sm-6 col-12">
-									<div class="mb-3">
-										<label class="form-label">Discount<span
+										<label class="form-label">Shipping Cost<span
 												class="text-danger ms-1">*</span></label>
 										<div class="input-groupicon select-code">
 											<input type="text" class="form-control number-separator" inputmode="numeric"
@@ -2103,29 +2174,25 @@
 										</div>
 									</div>
 								</div>
-								<div class="col-lg-3 col-sm-6 col-12">
+								
+								<div class="col-lg-4 col-sm-6 col-12">
 									<div class="mb-3">
-										<div class="input-blocks align-items-center">
-											<label class="form-label">Voucher</label>
-											<input type="text" class="form-control">
-											<span class="btn btn-primaryadd">
-												Generate Code
-											</span>
-										</div>
-									</div>
-								</div>
-								<div class="col-lg-3 col-sm-6 col-12">
-									<div class="mb-3">
-										<label class="form-label">Shipping<span
-												class="text-danger ms-1">*</span></label>
-										<div class="input-groupicon select-code">
-											<input type="text" class="form-control number-separator" inputmode="numeric"
-												pattern="[0-9]*">
-											<input type="hidden" class="result-input" id="shipping">
-										</div>
+											<label class="form-label">Shipping Costs</label>
+									<select class="form-select">
+										<option>Ppn 11% (125.000)</option>
+									</select>
 									</div>
 								</div>
 
+							</div>
+							<div class="row">
+								<div class="col-12">
+									<div class="input-blocks align-items-center">
+											<label class="form-label">Notes</label>
+											<input type="text" class="form-control">
+											
+										</div>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -2809,8 +2876,12 @@
 							<div class="row mb-4">
 								<div class="col-md-4">
 									<label class="form-label">Customer</label>
-									<input type="text" class="form-control mb-2" placeholder="Search Customers">
-									<div>
+									<div class="search-container">
+										<input type="text" class="form-control customer-input"
+											placeholder="Search Customer">
+										<div class="search-results"></div>
+									</div>
+									<div class="mt-3">
 										<strong>PT Cipta Kreasi</strong><br>
 										<small>ciptakreasi@gmail.com</small><br>
 										<small>6218 9 6855 554</small><br>
@@ -2821,14 +2892,16 @@
 
 								<div class="col-md-4">
 									<label class="form-label">Shipping</label>
-									<select class="form-control mb-3" style="height: 40px !important;">
-										<option>
-											<p>PT Cipta Kreasi</p><br>
-											<p>Cyber 2 Tower, Lantai 29, Jalan HR Rasuna Said, X5 No.13, Jakarta
-												Selatan, 12950</p>
+									<select class="form-control select">
+										<option value="1"
+											data-lines="PT Cipta Kreasi|Cyber 2 Tower, Lantai 29, Jalan HR Rasuna Said, X5 No.13, Jakarta Selatan, 12950">
+											PT Cipta Kreasi
+										</option>
+										<option value="2" data-lines="PT Lainnya|Alamat Lengkap">
+											PT Lainnya
 										</option>
 									</select>
-									<div>
+									<div class="mt-3">
 										<strong>PT Cipta Kreasi</strong><br>
 										<small>ciptakreasi@gmail.com</small><br>
 										<small>6218 9 6855 554</small><br>
@@ -2839,7 +2912,7 @@
 
 								<div class="col-md-4">
 									<label class="form-label">Delivery</label>
-									<select class="form-control mb-3" style="height: 40px !important;">
+									<select class="form-control select mb-3">
 										<option>Express</option>
 									</select>
 									<div class="mt-2">
@@ -2872,7 +2945,7 @@
 								</div>
 								<div class="col-md-2">
 									<label class="form-label">Unit</label>
-									<select class="form-control mt-1" style="height: 40px !important;">
+									<select class="form-control select mt-1">
 										<option selected>Ream</option>
 										<option>Pcs</option>
 										<option>Box</option>
@@ -2906,7 +2979,7 @@
 
 								<div class="col-md-4">
 									<label class="form-label">Shipping Costs</label>
-									<select class="form-select">
+									<select class="form-control select">
 										<option>Ppn 11% (125.000)</option>
 									</select>
 								</div>

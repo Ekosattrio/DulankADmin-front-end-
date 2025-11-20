@@ -80,6 +80,44 @@
         }
 
         @media print {
+
+            /* kecilkan semua font saat print */
+            html,
+            body {
+                font-size: 12px !important;
+                /* ubah angka ini bila ingin lebih kecil/lebih besar */
+                line-height: 1.2 !important;
+            }
+
+            /* fallback spesifik untuk elemen penting */
+            h1 {
+                font-size: 1.25rem !important;
+            }
+
+            h2 {
+                font-size: 1.1rem !important;
+            }
+
+            h3,
+            h4,
+            h5,
+            h6 {
+                font-size: 1rem !important;
+            }
+
+            .text-standard,
+            .order-table,
+            .table,
+            .order-section-title,
+            .page-title,
+            p,
+            span,
+            label {
+                font-size: 0.85rem !important;
+                /* skala turun lagi untuk konten */
+            }
+
+            /* tetap pertahankan rules sebelumnya */
             body {
                 background: #fff;
                 padding: 0.1in !important;
@@ -139,8 +177,8 @@
                         <div class="page-title">
                             <h4>Invoice Details</h4>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                <label class="form-check-label" for="flexCheckDefault">
+                                <input class="form-check-input" type="checkbox" value="" id="proformaCheck">
+                                <label class="form-check-label" for="proformaCheck">
                                     Proforma Invoice
                                 </label>
                             </div>
@@ -177,7 +215,8 @@
                                 <div class="row">
                                     <div class="mb-2 d-flex justify-content-end align-items-end">
                                         <div>
-                                            <h2 class="fw-normal fs-1 mb-0" style="font-size:2rem;">Invoice
+                                            <h2 class="fw-normal fs-1 mb-0" style="font-size:2rem;" id="invoice-title">
+                                                Invoice
                                             </h2>
                                         </div>
                                         <!-- <div><span class="badge text-bg-danger">Unpaid</span></div> -->
@@ -357,6 +396,21 @@
 
             window.print()
         });
+
+        // sinkron awal + ubah judul ketika checkbox berubah
+        (function () {
+            const chk = document.getElementById('proformaCheck');
+            const title = document.getElementById('invoice-title');
+            if (!chk || !title) return;
+
+            // sync saat halaman dimuat
+            title.textContent = chk.checked ? 'Proforma Invoice' : 'Invoice';
+
+            // update saat checkbox berubah
+            chk.addEventListener('change', function () {
+                title.textContent = this.checked ? 'Proforma Invoice' : 'Invoice';
+            });
+        })();
     </script>
 
 </body>

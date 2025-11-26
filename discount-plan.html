@@ -141,12 +141,7 @@
               <table class="table  datanew">
                 <thead class="thead-light">
                   <tr>
-                    <th class="no-sort">
-                      <label class="checkboxs">
-                        <input type="checkbox" id="select-all">
-                        <span class="checkmarks"></span>
-                      </label>
-                    </th>
+
                     <th>Plane Name</th>
                     <th>Customers</th>
                     <th>Status</th>
@@ -155,12 +150,7 @@
                 </thead>
                 <tbody>
                   <tr>
-                    <td>
-                      <label class="checkboxs">
-                        <input type="checkbox">
-                        <span class="checkmarks"></span>
-                      </label>
-                    </td>
+
                     <td class="text-gray-9">Standard Plan</td>
                     <td>All Customers</td>
                     <td><span class="badge table-badge bg-success fw-medium fs-10">Active</span></td>
@@ -176,12 +166,7 @@
                     </td>
                   </tr>
                   <tr>
-                    <td>
-                      <label class="checkboxs">
-                        <input type="checkbox">
-                        <span class="checkmarks"></span>
-                      </label>
-                    </td>
+
                     <td class="text-gray-9">Membership Plan</td>
                     <td>Members Only</td>
                     <td><span class="badge table-badge bg-success fw-medium fs-10">Active</span></td>
@@ -197,12 +182,7 @@
                     </td>
                   </tr>
                   <tr>
-                    <td>
-                      <label class="checkboxs">
-                        <input type="checkbox">
-                        <span class="checkmarks"></span>
-                      </label>
-                    </td>
+
                     <td class="text-gray-9">Premium Plan</td>
                     <td>High-Spending Customers</td>
                     <td><span class="badge table-badge bg-success fw-medium fs-10">Active</span></td>
@@ -218,12 +198,7 @@
                     </td>
                   </tr>
                   <tr>
-                    <td>
-                      <label class="checkboxs">
-                        <input type="checkbox">
-                        <span class="checkmarks"></span>
-                      </label>
-                    </td>
+
                     <td class="text-gray-9">Seasonal Plan</td>
                     <td>All Customers</td>
                     <td><span class="badge table-badge bg-success fw-medium fs-10">Active</span></td>
@@ -239,12 +214,7 @@
                     </td>
                   </tr>
                   <tr>
-                    <td>
-                      <label class="checkboxs">
-                        <input type="checkbox">
-                        <span class="checkmarks"></span>
-                      </label>
-                    </td>
+
                     <td class="text-gray-9">Student Plan</td>
                     <td>Students</td>
                     <td><span class="badge table-badge bg-success fw-medium fs-10">Active</span></td>
@@ -260,12 +230,7 @@
                     </td>
                   </tr>
                   <tr>
-                    <td>
-                      <label class="checkboxs">
-                        <input type="checkbox">
-                        <span class="checkmarks"></span>
-                      </label>
-                    </td>
+
                     <td class="text-gray-9">Free Shipping Plan</td>
                     <td>Online Customers</td>
                     <td><span class="badge table-badge bg-success fw-medium fs-10">Active</span></td>
@@ -281,12 +246,7 @@
                     </td>
                   </tr>
                   <tr>
-                    <td>
-                      <label class="checkboxs">
-                        <input type="checkbox">
-                        <span class="checkmarks"></span>
-                      </label>
-                    </td>
+
                     <td class="text-gray-9">Celebration Plan</td>
                     <td>All Customers</td>
                     <td><span class="badge table-badge bg-success fw-medium fs-10">Active</span></td>
@@ -313,140 +273,143 @@
   <!-- /Main Wrapper -->
   <!-- modals -->
   <!-- Add discount plan-->
-		<div class="modal fade" id="add-discount-plan">
-			<div class="modal-dialog modal-dialog-centered">
-				<div class="modal-content">
-					<div class="page-wrapper-new p-0">
-						<div class="content">
-							<div class="modal-header">
-								<div class="page-title">
-									<h4>Add Discount Plan</h4>
-								</div>
-								<button type="button" class="close bg-danger text-white fs-16" data-bs-dismiss="modal" aria-label="Close">
-									<span aria-hidden="true">&times;</span>
-								</button>
-							</div>
-							<form action="discount-plan.html">
-								<div class="modal-body">
-									<div class="mb-3">
-										<label class="form-label">Plan Name<span class="text-danger ms-1">*</span></label>
-										<input type="text" class="form-control">
-									</div>
-										<div class="mb-3 add-product">
-											<div class="add-newplus">
-												<label class="form-label">Customer<span class="text-danger ms-1">*</span></label>
-												<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#add_customer"><i data-feather="plus-circle" class="plus-down-add"></i><span>Add
-														New</span></a>
-											</div>
-											<select class="select">
-												<option>Select</option>
-												<option>All Customers</option>
-												<option>Members Only</option>
-												<option>High-Spending Customers</option>
-											</select>
-										</div>
+  <div class="modal fade" id="add-discount-plan">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="page-wrapper-new p-0">
+          <div class="content">
+            <div class="modal-header">
+              <div class="page-title">
+                <h4>Add Discount Plan</h4>
+              </div>
+              <button type="button" class="close bg-danger text-white fs-16" data-bs-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <form action="discount-plan.html">
+              <div class="modal-body">
+                <div class="mb-3">
+                  <label class="form-label">Plan Name<span class="text-danger ms-1">*</span></label>
+                  <input type="text" class="form-control">
+                </div>
+                <div class="mb-3 add-product">
+                  <div class="add-newplus">
+                    <label class="form-label">Customer<span class="text-danger ms-1">*</span></label>
+                    <a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#add_customer"><i
+                        data-feather="plus-circle" class="plus-down-add"></i><span>Add
+                        New</span></a>
+                  </div>
+                  <select class="select">
+                    <option>Select</option>
+                    <option>All Customers</option>
+                    <option>Members Only</option>
+                    <option>High-Spending Customers</option>
+                  </select>
+                </div>
 
-									<div class="mb-0">
-										<div class="status-toggle modal-status d-flex justify-content-between align-items-center">
-											<span class="status-label">Status</span>
-											<input type="checkbox" id="user2" class="check">
-											<label for="user2" class="checktoggle"></label>
-										</div>
-									</div>
-								</div>
-								<div class="modal-footer">
-									<button type="button" class="btn me-2 btn-secondary" data-bs-dismiss="modal">Cancel</button>
-									<button type="submit" class="btn btn-primary">Add Discount Plan</button>
-								</div>
-							</form>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- /Add discount plan -->
+                <div class="mb-0">
+                  <div class="status-toggle modal-status d-flex justify-content-between align-items-center">
+                    <span class="status-label">Status</span>
+                    <input type="checkbox" id="user2" class="check">
+                    <label for="user2" class="checktoggle"></label>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn me-2 btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <button type="submit" class="btn btn-primary">Add Discount Plan</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /Add discount plan -->
 
-<!-- Edit discount plan -->
-		<div class="modal fade" id="edit-discount-plan">
-			<div class="modal-dialog modal-dialog-centered">
-				<div class="modal-content">
-					<div class="page-wrapper-new p-0">
-						<div class="content">
-							<div class="modal-header">
-								<div class="page-title">
-									<h4>Edit Discount Plan</h4>
-								</div>
-								<button type="button" class="close bg-danger text-white fs-16" data-bs-dismiss="modal" aria-label="Close">
-									<span aria-hidden="true">&times;</span>
-								</button>
-							</div>
-							<form action="discount-plan.html">
-                            	<div class="modal-body">
-									<div class="mb-3">
-										<label class="form-label">Plan Name<span class="text-danger ms-1">*</span></label>
-										<input type="text" class="form-control" value="Standard Plan">
-									</div>
-									<div class="mb-3 add-product">
-										<div class="add-newplus">
-											<label class="form-label">Customer<span class="text-danger ms-1">*</span></label>
-											<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#add_customer"><i data-feather="plus-circle" class="plus-down-add"></i><span>Add
-													New</span></a>
-										</div>
-										<select class="select">
-											<option>Select</option>
-											<option selected>All Customers</option>
-											<option>Members Only</option>
-											<option>High-Spending Customers</option>								
-										</select>
-									</div>
-									<div class="mb-0">
-										<div class="status-toggle modal-status d-flex justify-content-between align-items-center">
-											<span class="status-label">Status</span>
-											<input type="checkbox" id="user3" class="check">
-											<label for="user3" class="checktoggle"></label>
-										</div>
-									</div>
-								</div>
-								<div class="modal-footer">
-									<button type="button" class="btn me-1 btn-secondary" data-bs-dismiss="modal">Cancel</button>
-									<button type="submit" class="btn btn-primary">Save Changes</button>
-								</div>
-							</form>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- /Edit discount plan -->
+  <!-- Edit discount plan -->
+  <div class="modal fade" id="edit-discount-plan">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="page-wrapper-new p-0">
+          <div class="content">
+            <div class="modal-header">
+              <div class="page-title">
+                <h4>Edit Discount Plan</h4>
+              </div>
+              <button type="button" class="close bg-danger text-white fs-16" data-bs-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <form action="discount-plan.html">
+              <div class="modal-body">
+                <div class="mb-3">
+                  <label class="form-label">Plan Name<span class="text-danger ms-1">*</span></label>
+                  <input type="text" class="form-control" value="Standard Plan">
+                </div>
+                <div class="mb-3 add-product">
+                  <div class="add-newplus">
+                    <label class="form-label">Customer<span class="text-danger ms-1">*</span></label>
+                    <a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#add_customer"><i
+                        data-feather="plus-circle" class="plus-down-add"></i><span>Add
+                        New</span></a>
+                  </div>
+                  <select class="select">
+                    <option>Select</option>
+                    <option selected>All Customers</option>
+                    <option>Members Only</option>
+                    <option>High-Spending Customers</option>
+                  </select>
+                </div>
+                <div class="mb-0">
+                  <div class="status-toggle modal-status d-flex justify-content-between align-items-center">
+                    <span class="status-label">Status</span>
+                    <input type="checkbox" id="user3" class="check">
+                    <label for="user3" class="checktoggle"></label>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn me-1 btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <button type="submit" class="btn btn-primary">Save Changes</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /Edit discount plan -->
 
   <!-- Add Customer -->
-		<div class="modal fade" id="add_customer">
-			<div class="modal-dialog modal-dialog-centered">
-				<div class="modal-content">
-					<div class="modal-header">
-						<div class="page-title">
-							<h4>Add Customer</h4>
-						</div>
-						<button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-							<span aria-hidden="true">&times;</span>
-						</button>
-					</div>
-					<form action="discount-plan.html">
-						<div class="modal-body">
-							<div>
-								<label class="form-label">Customer <span class="text-danger">*</span></label>
-								<input type="text" class="form-control">
-							</div>												
-						</div>
-						<div class="modal-footer">
-							<button type="button" class="btn me-2 btn-secondary fs-13 fw-medium p-2 px-3 shadow-none" data-bs-dismiss="modal">Cancel</button>
-							<button  type="submit" class="btn btn-primary fs-13 fw-medium p-2 px-3">Add Customer</button>
-						</div>						
-					</form>
-				</div>
-			</div>
-		</div>
-		<!-- /Add Customer -->
+  <div class="modal fade" id="add_customer">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class="page-title">
+            <h4>Add Customer</h4>
+          </div>
+          <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <form action="discount-plan.html">
+          <div class="modal-body">
+            <div>
+              <label class="form-label">Customer <span class="text-danger">*</span></label>
+              <input type="text" class="form-control">
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn me-2 btn-secondary fs-13 fw-medium p-2 px-3 shadow-none"
+              data-bs-dismiss="modal">Cancel</button>
+            <button type="submit" class="btn btn-primary fs-13 fw-medium p-2 px-3">Add Customer</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!-- /Add Customer -->
   <!-- /Edit discount plan -->
   <!-- /modals -->
   <!-- jQuery -->

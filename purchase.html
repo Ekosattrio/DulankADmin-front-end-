@@ -187,16 +187,56 @@
 										<td>750000</td>
 										<td>Partial</td>
 										<td>Pembelian rutin bulanan</td>
-										<td class="action-table-data">
-											<div class="edit-delete-action">
-												<a class="me-2 p-2" href="javascript:void(0);"><i data-feather="eye"
-														class="action-eye"></i></a>
-												<a class="me-2 p-2" data-bs-toggle="modal"
-													data-bs-target="#edit-purchase"><i data-feather="edit"
-														class="feather-edit"></i></a>
-												<a class="confirm-text p-2" href="javascript:void(0);"><i
-														data-feather="trash-2" class="feather-trash-2"></i></a>
-											</div>
+										<td>
+											<button type="button" class="btn btn-light btn-sm p-1"
+												data-bs-toggle="dropdown">
+												<i data-feather="more-vertical" width="14" height="14"></i>
+											</button>
+											<ul class="dropdown-menu dropdown-menu-right shadow-sm p-1">
+												<li>
+													<button class="dropdown-item d-flex align-items-center small py-1"
+														type="button" data-bs-toggle="modal"
+														data-bs-target="#lihat-purchase">
+														<i data-feather="eye" class="me-2" width="14" height="14"></i>
+														Purchase Detail
+													</button>
+												</li>
+												<li><button class="dropdown-item d-flex align-items-center small py-1"
+														type="button" data-bs-toggle="modal"
+														data-bs-target="#editSaleModal"><i data-feather="edit"
+															class="me-2" width="14" height="14"></i>Edit</button>
+												</li>
+												<li><button class="dropdown-item d-flex align-items-center small py-1"
+														type="button" data-bs-toggle="modal"
+														data-bs-target="#editSaleModal"><i data-feather="edit"
+															class="me-2" width="14" height="14"></i>Delete</button>
+												</li>
+												<li>
+													<button class="dropdown-item d-flex align-items-center small py-1"
+														data-bs-toggle="modal" data-bs-target="#showpayment"
+														type="button">
+														<i data-feather="dollar-sign" class="me-2" width="14"
+															height="14"></i> Create PO
+													</button>
+												</li>
+												<li>
+													<button class="dropdown-item d-flex align-items-center small py-1"
+														data-bs-toggle="modal" data-bs-target="#createpayment"
+														type="button">
+														<i data-feather="plus-circle" class="me-2" width="14"
+															height="14"></i> Payment
+													</button>
+												</li>
+												<li>
+													<a href="sales-alpa.html"
+														class="dropdown-item d-flex align-items-center small py-1">
+														<i data-feather="download" class="me-2" width="14"
+															height="14"></i>
+														Show Payment
+													</a>
+												</li>
+
+											</ul>
 										</td>
 									</tr>
 									<tr>
@@ -704,7 +744,7 @@
 								<!-- Top Info -->
 								<div class="row mb-4 d-flex justify-content-between">
 									<div class="col-md-8">
-										<h6 class="fw-bold mb-1">Customer :</h6>
+										<h6 class="fw-bold mb-1">Supplier :</h6>
 										<p class="mb-0">PT Cipta Kreasi<br>
 											ciptakreasi@gmail.com<br>
 											62819 0685 5554<br>
@@ -713,12 +753,11 @@
 										</p>
 									</div>
 									<div class="col-md-4">
-										<h6 class="fw-bold mb-1">Invoice Info</h6>
-										<p class="mb-0">No. Sales : 2505000018<br>
+										<h6 class="fw-bold mb-1">Purchase Info</h6>
+										<p class="mb-0">No. Purchase : 2505000018<br>
 											Date : 25/12/2025<br>
-											Payment Status : Paid<br>
-											Delivery : Express<br>
-											PO Number : -
+											Created : Sales Staff<br>
+											Payment Status : Paid
 										</p>
 									</div>
 								</div>
@@ -739,10 +778,7 @@
 										<tbody>
 											<tr>
 												<td>
-													<strong>Brosur PPDB SMAN 1 Bandung</strong><br>
-													<small><em>Brosur Full Color A4 (210x297 Millimeter), Art paper
-															150gr,<br>
-															Tanpa Laminasi, Tanpa Lipatan</em></small>
+													<strong>Tinta Neotex 1Kg Cyan</strong>
 												</td>
 												<td>2</td>
 												<td>Ream</td>
@@ -767,23 +803,11 @@
 													<td class="text-end">900.000</td>
 												</tr>
 												<tr>
-													<td>Voucher (DULANK12)</td>
-													<td class="text-end">0</td>
-												</tr>
-												<tr>
-													<td>Shipping Costs</td>
-													<td class="text-end">125.000</td>
-												</tr>
-												<tr>
-													<td>Sub Total Before Tax</td>
-													<td class="text-end">1.025.000</td>
-												</tr>
-												<tr>
 													<td>Tax (Ppn 11%)</td>
 													<td class="text-end">125.000</td>
 												</tr>
 												<tr class="table-active fw-bold">
-													<td>Grand Total (IDR)</td>
+													<td>Total (IDR)</td>
 													<td class="text-end">1.150.000</td>
 												</tr>
 											</tbody>
@@ -972,6 +996,7 @@
 												<th>Unit</th>
 												<th>Price (IDR)</th>
 												<th>Amount (IDR)</th>
+												<th></th>
 											</tr>
 										</thead>
 										<tbody>
@@ -982,10 +1007,24 @@
 															150gr,<br>
 															Tanpa Laminasi, Tanpa Lipatan</em></small>
 												</td>
-												<td>2</td>
+												<td>
+													<div class="product-quantity" style="width: 100% !important;">
+														<span class="quantity-btn">+<i data-feather="plus-circle"
+																class="plus-circle"></i></span>
+														<input type="text" class="quntity-input" value="2">
+														<span class="quantity-btn"><i data-feather="minus-circle"
+																class="feather-search"></i></span>
+													</div>
+												</td>
 												<td>Ream</td>
 												<td>450.000</td>
 												<td>900.000</td>
+												<td><button
+														class="dropdown-item d-flex align-items-center small py-1 text-danger btn-delete-sale"
+														type="button">
+														<i data-feather="trash-2" class="me-2" width="14"
+															height="14"></i>
+													</button></td>
 											</tr>
 										</tbody>
 									</table>

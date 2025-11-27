@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <meta name="description" content="POS - Bootstrap Admin Template">
+    <meta name="keywords"
+        content="admin, estimates, bootstrap, business, corporate, creative, invoice, html5, responsive, Projects">
+    <meta name="author" content="Dreamguys - Bootstrap Admin Template">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Dreams Pos Admin Template</title>
+
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
+    <!-- Summernote CSS -->
+    <link rel="stylesheet" href="assets/plugins/summernote/summernote-bs4.min.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+
+    <!-- animation CSS -->
+    <link rel="stylesheet" href="assets/css/animate.css">
+
+    <!-- Select2 CSS -->
+    <link rel="stylesheet" href="assets/plugins/select2/css/select2.min.css">
+
+    <!-- Datetimepicker CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap-datetimepicker.min.css">
+
+    <!-- Datatable CSS -->
+    <link rel="stylesheet" href="assets/css/dataTables.bootstrap5.min.css">
+
+    <!-- Bootstrap Tagsinput CSS -->
+    <link rel="stylesheet" href="assets/plugins/bootstrap-tagsinput/bootstrap-tagsinput.css">
+
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css">
+    <link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+</head>
+
+<body>
+    <div id="global-loader">
+        <div class="loader"> </div>
+    </div>
+    <!-- Main Wrapper -->
+    <div class="main-wrapper">
+
+        <!-- header -->
+        <div id="header-placeholder"></div>
+        <!-- sidebar -->
+        <div id="sidebar-placeholder"></div>
+
+        <div class="page-wrapper mt-1">
+            <!-- Main content tulis disini -->
+            <div class="content">
+
+                <div class="page-header mt-5">
+                    <div class="add-item d-flex">
+                        <div class="page-title">
+                            <h4>Add Purchase</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="card border-0">
+                    <div class="card-body pb-0">
+                        <div class="row">
+                            <div class="col-lg-6 col-sm-6 col-12">
+                                <div class="mb-3">
+                                    <div class="add-newplus">
+                                        <label class="form-label">Customer<span
+                                                class="text-danger ms-1">*</span></label>
+                                        <a href="javascript:void(0);" data-bs-toggle="modal"
+                                            data-bs-target="#add-units-category"><i data-feather="plus-circle"
+                                                class="plus-down-add"></i><span>Add
+                                                New</span></a>
+                                    </div>
+                                    <div class="input-groupicon select-code">
+                                        <div class="search-container">
+                                            <input type="text" class="form-control customer-input"
+                                                placeholder="Search Customer">
+                                            <div class="search-results"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-sm-6 col-12">
+                                    <div class="mb-0">
+                                        <strong>PT Cipta Kreasi</strong><br>
+                                        <small>ciptakreasi@gmail.com</small><br>
+                                        <small>6218 9 6855 554</small><br>
+                                        <small>Cyber 2 Tower, Lantai 29, Jalan HR Rasuna Said,<br> X5 No.13, Jakarta
+                                            Selatan, 12950</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-sm-6 col-12">
+                                <div class="mb-2 row align-items-center">
+                                    <label class="form-label col-4 mb-0">Shipping By</label>
+                                    <div class="col-8">
+                                        <input type="text" class="form-control" value="Car">
+                                    </div>
+                                </div>
+
+                                <div class="mb-2 row align-items-center">
+                                    <label class="form-label col-4 mb-0">Reference</label>
+                                    <div class="col-8">
+                                        <input type="text" class="form-control" value="Mr. Arman">
+                                    </div>
+                                </div>
+                                <div class="row align-items-center">
+                                    <label class="form-label col-4 mb-0">Reference</label>
+                                    <div class="col-8">
+                                        <input type="text" class="form-control" value="Mr. Arman">
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-lg-6 col-sm-6 col-12">
+                                <div class="mb-3">
+                                    <div class="add-newplus">
+                                        <label class="form-label">Customer<span
+                                                class="text-danger ms-1">*</span></label>
+                                        <a href="javascript:void(0);" data-bs-toggle="modal"
+                                            data-bs-target="#add-units-category"><i data-feather="plus-circle"
+                                                class="plus-down-add"></i><span>Add
+                                                New</span></a>
+                                    </div>
+                                    <div class="input-groupicon select-code">
+                                        <div class="search-container">
+                                            <input type="text" class="form-control customer-input"
+                                                placeholder="Search Customer">
+                                            <div class="search-results"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="table-responsive mt-2">
+                            <table class="table table-bordered align-middle" style="border-color:#ccc;">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th style="width:40%;">Product Name</th>
+                                        <th>Qty</th>
+                                        <th>Unit</th>
+                                        <th>Price (IDR)</th>
+                                        <th>Amount (IDR)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <strong>Brosur PPDB SMAN 1 Bandung</strong><br>
+                                            <small><em>Brosur Full Color A4 (210x297 Millimeter), Art paper
+                                                    150gr,<br>
+                                                    Tanpa Laminasi, Tanpa Lipatan</em></small>
+                                        </td>
+                                        <td>2</td>
+                                        <td>Ream</td>
+                                        <td>450.000</td>
+                                        <td>900.000</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-8">
+                                <div class="input-blocks align-items-center">
+                                    <label class="form-label">Notes</label>
+                                    <input type="text" class="form-control">
+
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-sm-6 col-12">
+                                <div class="">
+                                    <div class="input-blocks align-items-center">
+                                        <label class="form-label">Sub Total</label>
+                                        <input type="text" class="form-control">
+
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="input-blocks align-items-center">
+                                        <label class="form-label">tax</label>
+                                        <select class="select select-payment">
+                                            <option value="credit">Credit Card</option>
+                                            <option value="cash" selected>Cash</option>
+                                            <option value="cheque">Cheque</option>
+                                            <option value="deposit">Deposit</option>
+                                            <option value="points">Points</option>
+                                        </select>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer justify-content-end">
+                            <button type="button" class="btn btn-secondary add-cancel me-3"
+                                data-bs-dismiss="modal">Cancel</button>
+                            <button type="submit" class="btn btn-primary add-sale">Submit</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    <!-- /Main Wrapper -->
+    <!-- modals -->
+
+    <!-- /modals -->
+    <!-- jQuery -->
+    <script src="assets/js/jquery-3.7.1.min.js"></script>
+
+    <!-- Feather Icon JS -->
+    <script src="assets/js/feather.min.js"></script>
+
+    <!-- Slimscroll JS -->
+    <script src="assets/js/jquery.slimscroll.min.js"></script>
+
+    <!-- Datatable JS -->
+    <script src="assets/js/jquery.dataTables.min.js"></script>
+    <script src="assets/js/dataTables.bootstrap5.min.js"></script>
+
+    <!-- Bootstrap Core JS -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+
+
+    <!-- Datetimepicker JS -->
+    <script src="assets/js/moment.min.js"></script>
+    <script src="assets/js/bootstrap-datetimepicker.min.js"></script>
+
+    <!-- Summernote JS -->
+    <script src="assets/plugins/summernote/summernote-bs4.min.js"></script>
+    <script src="assets/plugins/summernote/summernote-bs4.min.js"></script>
+    <script src="assets/plugins/summernote/summernote-bs4.min.js"></script>
+    <!-- Select2 JS -->
+    <script src="assets/plugins/select2/js/select2.min.js"></script>
+
+    <!-- Bootstrap Tagsinput JS -->
+    <script src="assets/plugins/bootstrap-tagsinput/bootstrap-tagsinput.js"></script>
+
+    <!-- Sweetalert 2 -->
+    <script src="assets/plugins/sweetalert/sweetalert2.all.min.js"></script>
+    <script src="assets/plugins/sweetalert/sweetalerts.min.js"></script>
+
+    <!-- Separator -->
+    <script src="assets/js/easy-number-separator.js"></script>
+
+    <!-- Live Search -->
+    <script src="assets/js/liveSearch.js"></script>
+
+    <!-- Custom JS -->
+    <script src="assets/js/theme-script.js"></script>
+    <script src="assets/js/script.js"></script>
+
+    <!-- js buat id summernote nabrak buatan eko	 -->
+    <script>
+        $(document).ready(function () {
+            $('#summernote-create').summernote({
+                placeholder: 'Type description...',
+                height: 150
+            });
+
+            $('#summernote-edit').summernote({
+                placeholder: 'Edit description...',
+                height: 150
+            });
+        });
+
+    </script>
+
+</body>
+
+</html>

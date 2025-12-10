@@ -39025,8 +39025,16 @@ th {
 }
 
 td {
-  padding: 0.5rem 0.75rem !important;
+  height: 1.5rem;
+  /* padding: 0.5rem 0.75rem !important; */
   border: none;
+  align-items: center !important;
+}
+
+.action-table-data {
+  height: 1.5rem;
+  /* padding: 0rem 0.75rem !important; */
+  align-items: center !important;
 }
 
 tfoot td {
@@ -39037,11 +39045,6 @@ tfoot td {
   border: none;
 }
 
-.action-table-data {
-  height: 100%;
-  padding: 0rem 0.75rem !important;
-  align-items: center;
-}
 
 a.product-img img {
   width: 30px !important;

@@ -2005,7 +2005,7 @@
 										<div class="input-groupicon select-code">
 											<div class="search-container">
 												<input type="text" class="form-control customer-input"
-													placeholder="Search Customer">
+													placeholder="Search Customer" data-target="data-customer">
 												<div class="search-results"></div>
 											</div>
 										</div>
@@ -2026,34 +2026,17 @@
 								</div>
 
 
-
-								<!-- Supplier -->
-								<!-- <div class="col-lg-4 col-sm-6 col-12">
-									<div class="mb-3">
-										<div class="input-blocks align-items-center">
-											<label class="form-label">PO Number</label>
-											<input type="text" class="form-control">
-											<span class="btn btn-primaryadd">
-												Generate Code
-											</span>
-										</div>
-									</div>
-								</div> -->
-
-								<!-- Product -->
-
 							</div>
 
 							<!-- row ke 2 add sales -->
 							<div class="row d-flex align-items-center justify-content-between">
 								<!-- Customer -->
 								<div class="col-lg-6 col-sm-6 col-12">
-									<div class="mb-0">
-										<strong>PT Cipta Kreasi</strong><br>
-										<small>ciptakreasi@gmail.com</small><br>
-										<small>6218 9 6855 554</small><br>
-										<small>Cyber 2 Tower, Lantai 29, Jalan HR Rasuna Said,<br> X5 No.13, Jakarta
-											Selatan, 12950</small>
+									<div class="mb-3" id="data-customer">
+										<strong class="name"></strong><br>
+										<small class="email"></small><br>
+										<small class="phone"></small><br>
+										<small class="address"></small>
 									</div>
 								</div>
 
@@ -2071,7 +2054,7 @@
 										<div class="input-groupicon select-code">
 											<div class="search-container">
 												<input type="text" class="form-control customer-input"
-													placeholder="Search Customer">
+													placeholder="Search Customer" data-target="data-shipping">
 												<div class="search-results"></div>
 											</div>
 										</div>
@@ -2079,21 +2062,6 @@
 								</div>
 
 
-
-								<!-- Supplier -->
-								<!-- <div class="col-lg-4 col-sm-6 col-12">
-									<div class="mb-3">
-										<div class="input-blocks align-items-center">
-											<label class="form-label">PO Number</label>
-											<input type="text" class="form-control">
-											<span class="btn btn-primaryadd">
-												Generate Code
-											</span>
-										</div>
-									</div>
-								</div> -->
-
-								<!-- Product -->
 
 							</div>
 							<!-- Order Summary -->
@@ -2108,12 +2076,11 @@
 									</div>
 								</div>
 								<div class="col-lg-6 col-sm-6 col-12">
-									<div class="mb-0">
-										<strong>PT Cipta Kreasi</strong><br>
-										<small>ciptakreasi@gmail.com</small><br>
-										<small>6218 9 6855 554</small><br>
-										<small>Cyber 2 Tower, Lantai 29, Jalan HR Rasuna Said,<br> X5 No.13, Jakarta
-											Selatan, 12950</small>
+									<div class="mb-3" id="data-shipping">
+										<strong class="name"></strong><br>
+										<small class="email"></small><br>
+										<small class="phone"></small><br>
+										<small class="address"></small>
 									</div>
 								</div>
 
@@ -2770,10 +2737,10 @@
 								<!-- Order Summary -->
 								<h6 class="fw-bold mb-2">Order Summary</h6>
 								<div class="table-responsive">
-									<table class="table table-bordered align-middle" style="border-color:#ccc;">
+									<table class="table table-bordered datanew" style="border-color:#ccc;">
 										<thead class="table-light">
 											<tr>
-												<th style="width:40%;">Product Name</th>
+												<th>Product Name</th>
 												<th>Qty</th>
 												<th>Unit</th>
 												<th>Price (IDR)</th>
@@ -2790,8 +2757,8 @@
 												</td>
 												<td>2</td>
 												<td>Ream</td>
-												<td>450.000</td>
-												<td>900.000</td>
+												<td>450000</td>
+												<td>900000</td>
 											</tr>
 										</tbody>
 									</table>
@@ -2868,36 +2835,30 @@
 								<div class="col-md-4">
 									<label class="form-label">Customer</label>
 									<div class="search-container">
-										<!-- <input type="text" class="form-control customer-input"
-											placeholder="Search Customer">
-										<div class="search-results"></div> -->
+										<input type="text" class="form-control customer-input"
+											placeholder="Search Customer" data-target="data-customer-edit">
+										<div class="search-results"></div>
 									</div>
-									<div class="mt-3">
-										<strong>PT Cipta Kreasi</strong><br>
-										<small>ciptakreasi@gmail.com</small><br>
-										<small>6218 9 6855 554</small><br>
-										<small>Cyber 2 Tower, Lantai 29, Jalan HR Rasuna Said, X5 No.13, Jakarta
-											Selatan, 12950</small>
+									<div class="mt-3" id="data-customer-edit">
+										<strong class="name"></strong><br>
+										<small class="email"></small><br>
+										<small class="phone"></small><br>
+										<small class="address"></small>
 									</div>
 								</div>
 
 								<div class="col-md-4">
 									<label class="form-label">Shipping</label>
-									<select class="form-control select">
-										<option value="1"
-											data-lines="PT Cipta Kreasi|Cyber 2 Tower, Lantai 29, Jalan HR Rasuna Said, X5 No.13, Jakarta Selatan, 12950">
-											PT Cipta Kreasi
-										</option>
-										<option value="2" data-lines="PT Lainnya|Alamat Lengkap">
-											PT Lainnya
-										</option>
-									</select>
-									<div class="mt-3">
-										<strong>PT Cipta Kreasi</strong><br>
-										<small>ciptakreasi@gmail.com</small><br>
-										<small>6218 9 6855 554</small><br>
-										<small>Cyber 2 Tower, Lantai 29, Jalan HR Rasuna Said, X5 No.13, Jakarta
-											Selatan, 12950</small>
+									<div class="search-container">
+										<input type="text" class="form-control customer-input"
+											placeholder="Search Shipping" data-target="data-shipping-edit">
+										<div class="search-results"></div>
+									</div>
+									<div class="mt-3" id="data-shipping-edit">
+										<strong class="name"></strong><br>
+										<small class="email"></small><br>
+										<small class="phone"></small><br>
+										<small class="address"></small>
 									</div>
 								</div>
 

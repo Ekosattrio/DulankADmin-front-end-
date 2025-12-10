@@ -156,10 +156,11 @@
 							</div>
 						</div>
 						<!-- /Filter -->
-						<div class="table-responsive product-list">
-							<table class="table  datanew list">
+						<div class="table-responsive">
+							<table class="table  datanew">
 								<thead>
 									<tr>
+										<th class="no-sort"></th>
 										<th>No Purchase</th>
 										<th>Date</th>
 										<th>Created</th>
@@ -171,22 +172,10 @@
 										<th>Due (IDR)</th>
 										<th>Status</th>
 										<th>Notes</th>
-										<th class="no-sort">Action</th>
 									</tr>
 								</thead>
 								<tbody>
 									<tr>
-										<td>PR-2512000001</td>
-										<td>01/10/2025</td>
-										<td>Sales Staff</td>
-										<td>PT Kertas Jaya</td>
-										<td>Kertas Art Paper 150gr, Tinta Offset Merah</td>
-										<td>Ordered</td>
-										<td>1500000</td>
-										<td>750000</td>
-										<td>750000</td>
-										<td>Partial</td>
-										<td>Pembelian rutin bulanan</td>
 										<td>
 											<button type="button" class="btn btn-light btn-sm p-1"
 												data-bs-toggle="dropdown">
@@ -203,7 +192,7 @@
 												</li>
 												<li><button class="dropdown-item d-flex align-items-center small py-1"
 														type="button" data-bs-toggle="modal"
-														data-bs-target="#editSaleModal"><i data-feather="edit"
+														data-bs-target="#edit-purchase"><i data-feather="edit"
 															class="me-2" width="14" height="14"></i>Edit</button>
 												</li>
 												<li><button class="dropdown-item d-flex align-items-center small py-1"
@@ -238,8 +227,71 @@
 
 											</ul>
 										</td>
+										<td>PR-2512000001</td>
+										<td>01/10/2025</td>
+										<td>Sales Staff</td>
+										<td>PT Kertas Jaya</td>
+										<td>Kertas Art Paper 150gr, Tinta Offset Merah</td>
+										<td>Ordered</td>
+										<td>1500000</td>
+										<td>750000</td>
+										<td>750000</td>
+										<td>Partial</td>
+										<td>Pembelian rutin bulanan</td>
+
 									</tr>
 									<tr>
+										<td>
+											<button type="button" class="btn btn-light btn-sm p-1"
+												data-bs-toggle="dropdown">
+												<i data-feather="more-vertical" width="14" height="14"></i>
+											</button>
+											<ul class="dropdown-menu dropdown-menu-right shadow-sm p-1">
+												<li>
+													<button class="dropdown-item d-flex align-items-center small py-1"
+														type="button" data-bs-toggle="modal"
+														data-bs-target="#lihat-purchase">
+														<i data-feather="eye" class="me-2" width="14" height="14"></i>
+														Purchase Detail
+													</button>
+												</li>
+												<li><button class="dropdown-item d-flex align-items-center small py-1"
+														type="button" data-bs-toggle="modal"
+														data-bs-target="#edit-purchase"><i data-feather="edit"
+															class="me-2" width="14" height="14"></i>Edit</button>
+												</li>
+												<li><button class="dropdown-item d-flex align-items-center small py-1"
+														type="button" data-bs-toggle="modal"
+														data-bs-target="#editSaleModal"><i data-feather="edit"
+															class="me-2" width="14" height="14"></i>Delete</button>
+												</li>
+												<li>
+													<button class="dropdown-item d-flex align-items-center small py-1"
+														data-bs-toggle="modal" data-bs-target="#showpayment"
+														type="button">
+														<i data-feather="dollar-sign" class="me-2" width="14"
+															height="14"></i> Create PO
+													</button>
+												</li>
+												<li>
+													<button class="dropdown-item d-flex align-items-center small py-1"
+														data-bs-toggle="modal" data-bs-target="#createpayment"
+														type="button">
+														<i data-feather="plus-circle" class="me-2" width="14"
+															height="14"></i> Payment
+													</button>
+												</li>
+												<li>
+													<a href="sales-alpa.html"
+														class="dropdown-item d-flex align-items-center small py-1">
+														<i data-feather="download" class="me-2" width="14"
+															height="14"></i>
+														Show Payment
+													</a>
+												</li>
+
+											</ul>
+										</td>
 										<td>PR-2512000002</td>
 										<td>03/10/2025</td>
 										<td>Sales Staff</td>
@@ -251,19 +303,60 @@
 										<td>0</td>
 										<td>Paid</td>
 										<td>-</td>
-										<td class="action-table-data">
-											<div class="edit-delete-action">
-												<a class="me-2 p-2" href="javascript:void(0);"><i data-feather="eye"
-														class="action-eye"></i></a>
-												<a class="me-2 p-2" data-bs-toggle="modal"
-													data-bs-target="#edit-purchase"><i data-feather="edit"
-														class="feather-edit"></i></a>
-												<a class="confirm-text p-2" href="javascript:void(0);"><i
-														data-feather="trash-2" class="feather-trash-2"></i></a>
-											</div>
-										</td>
+
 									</tr>
 									<tr>
+										<td>
+											<button type="button" class="btn btn-light btn-sm p-1"
+												data-bs-toggle="dropdown">
+												<i data-feather="more-vertical" width="14" height="14"></i>
+											</button>
+											<ul class="dropdown-menu dropdown-menu-right shadow-sm p-1">
+												<li>
+													<button class="dropdown-item d-flex align-items-center small py-1"
+														type="button" data-bs-toggle="modal"
+														data-bs-target="#lihat-purchase">
+														<i data-feather="eye" class="me-2" width="14" height="14"></i>
+														Purchase Detail
+													</button>
+												</li>
+												<li><button class="dropdown-item d-flex align-items-center small py-1"
+														type="button" data-bs-toggle="modal"
+														data-bs-target="#edit-purchase"><i data-feather="edit"
+															class="me-2" width="14" height="14"></i>Edit</button>
+												</li>
+												<li><button class="dropdown-item d-flex align-items-center small py-1"
+														type="button" data-bs-toggle="modal"
+														data-bs-target="#editSaleModal"><i data-feather="edit"
+															class="me-2" width="14" height="14"></i>Delete</button>
+												</li>
+												<li>
+													<button class="dropdown-item d-flex align-items-center small py-1"
+														data-bs-toggle="modal" data-bs-target="#showpayment"
+														type="button">
+														<i data-feather="dollar-sign" class="me-2" width="14"
+															height="14"></i> Create PO
+													</button>
+												</li>
+												<li>
+													<button class="dropdown-item d-flex align-items-center small py-1"
+														data-bs-toggle="modal" data-bs-target="#createpayment"
+														type="button">
+														<i data-feather="plus-circle" class="me-2" width="14"
+															height="14"></i> Payment
+													</button>
+												</li>
+												<li>
+													<a href="sales-alpa.html"
+														class="dropdown-item d-flex align-items-center small py-1">
+														<i data-feather="download" class="me-2" width="14"
+															height="14"></i>
+														Show Payment
+													</a>
+												</li>
+
+											</ul>
+										</td>
 										<td>PR-2512000003</td>
 										<td>05/10/2025</td>
 										<td>Sales Staff</td>
@@ -275,19 +368,60 @@
 										<td>850000</td>
 										<td>Unpaid</td>
 										<td>Menunggu konfirmasi stok</td>
-										<td class="action-table-data">
-											<div class="edit-delete-action">
-												<a class="me-2 p-2" href="javascript:void(0);"><i data-feather="eye"
-														class="action-eye"></i></a>
-												<a class="me-2 p-2" data-bs-toggle="modal"
-													data-bs-target="#edit-purchase"><i data-feather="edit"
-														class="feather-edit"></i></a>
-												<a class="confirm-text p-2" href="javascript:void(0);"><i
-														data-feather="trash-2" class="feather-trash-2"></i></a>
-											</div>
-										</td>
+
 									</tr>
 									<tr>
+										<td>
+											<button type="button" class="btn btn-light btn-sm p-1"
+												data-bs-toggle="dropdown">
+												<i data-feather="more-vertical" width="14" height="14"></i>
+											</button>
+											<ul class="dropdown-menu dropdown-menu-right shadow-sm p-1">
+												<li>
+													<button class="dropdown-item d-flex align-items-center small py-1"
+														type="button" data-bs-toggle="modal"
+														data-bs-target="#lihat-purchase">
+														<i data-feather="eye" class="me-2" width="14" height="14"></i>
+														Purchase Detail
+													</button>
+												</li>
+												<li><button class="dropdown-item d-flex align-items-center small py-1"
+														type="button" data-bs-toggle="modal"
+														data-bs-target="#edit-purchase"><i data-feather="edit"
+															class="me-2" width="14" height="14"></i>Edit</button>
+												</li>
+												<li><button class="dropdown-item d-flex align-items-center small py-1"
+														type="button" data-bs-toggle="modal"
+														data-bs-target="#editSaleModal"><i data-feather="edit"
+															class="me-2" width="14" height="14"></i>Delete</button>
+												</li>
+												<li>
+													<button class="dropdown-item d-flex align-items-center small py-1"
+														data-bs-toggle="modal" data-bs-target="#showpayment"
+														type="button">
+														<i data-feather="dollar-sign" class="me-2" width="14"
+															height="14"></i> Create PO
+													</button>
+												</li>
+												<li>
+													<button class="dropdown-item d-flex align-items-center small py-1"
+														data-bs-toggle="modal" data-bs-target="#createpayment"
+														type="button">
+														<i data-feather="plus-circle" class="me-2" width="14"
+															height="14"></i> Payment
+													</button>
+												</li>
+												<li>
+													<a href="sales-alpa.html"
+														class="dropdown-item d-flex align-items-center small py-1">
+														<i data-feather="download" class="me-2" width="14"
+															height="14"></i>
+														Show Payment
+													</a>
+												</li>
+
+											</ul>
+										</td>
 										<td>PR-2512000004</td>
 										<td>07/10/2025</td>
 										<td>Sales Staff</td>
@@ -299,19 +433,60 @@
 										<td>0</td>
 										<td>Paid</td>
 										<td>-</td>
-										<td class="action-table-data">
-											<div class="edit-delete-action">
-												<a class="me-2 p-2" href="javascript:void(0);"><i data-feather="eye"
-														class="action-eye"></i></a>
-												<a class="me-2 p-2" data-bs-toggle="modal"
-													data-bs-target="#edit-purchase"><i data-feather="edit"
-														class="feather-edit"></i></a>
-												<a class="confirm-text p-2" href="javascript:void(0);"><i
-														data-feather="trash-2" class="feather-trash-2"></i></a>
-											</div>
-										</td>
+
 									</tr>
 									<tr>
+										<td>
+											<button type="button" class="btn btn-light btn-sm p-1"
+												data-bs-toggle="dropdown">
+												<i data-feather="more-vertical" width="14" height="14"></i>
+											</button>
+											<ul class="dropdown-menu dropdown-menu-right shadow-sm p-1">
+												<li>
+													<button class="dropdown-item d-flex align-items-center small py-1"
+														type="button" data-bs-toggle="modal"
+														data-bs-target="#lihat-purchase">
+														<i data-feather="eye" class="me-2" width="14" height="14"></i>
+														Purchase Detail
+													</button>
+												</li>
+												<li><button class="dropdown-item d-flex align-items-center small py-1"
+														type="button" data-bs-toggle="modal"
+														data-bs-target="#edit-purchase"><i data-feather="edit"
+															class="me-2" width="14" height="14"></i>Edit</button>
+												</li>
+												<li><button class="dropdown-item d-flex align-items-center small py-1"
+														type="button" data-bs-toggle="modal"
+														data-bs-target="#editSaleModal"><i data-feather="edit"
+															class="me-2" width="14" height="14"></i>Delete</button>
+												</li>
+												<li>
+													<button class="dropdown-item d-flex align-items-center small py-1"
+														data-bs-toggle="modal" data-bs-target="#showpayment"
+														type="button">
+														<i data-feather="dollar-sign" class="me-2" width="14"
+															height="14"></i> Create PO
+													</button>
+												</li>
+												<li>
+													<button class="dropdown-item d-flex align-items-center small py-1"
+														data-bs-toggle="modal" data-bs-target="#createpayment"
+														type="button">
+														<i data-feather="plus-circle" class="me-2" width="14"
+															height="14"></i> Payment
+													</button>
+												</li>
+												<li>
+													<a href="sales-alpa.html"
+														class="dropdown-item d-flex align-items-center small py-1">
+														<i data-feather="download" class="me-2" width="14"
+															height="14"></i>
+														Show Payment
+													</a>
+												</li>
+
+											</ul>
+										</td>
 										<td>PR-2512000005</td>
 										<td>09/10/2025</td>
 										<td>Sales Staff</td>
@@ -323,19 +498,60 @@
 										<td>1950000</td>
 										<td>Unpaid</td>
 										<td>Pembelian dialihkan ke supplier lain</td>
-										<td class="action-table-data">
-											<div class="edit-delete-action">
-												<a class="me-2 p-2" href="javascript:void(0);"><i data-feather="eye"
-														class="action-eye"></i></a>
-												<a class="me-2 p-2" data-bs-toggle="modal"
-													data-bs-target="#edit-purchase"><i data-feather="edit"
-														class="feather-edit"></i></a>
-												<a class="confirm-text p-2" href="javascript:void(0);"><i
-														data-feather="trash-2" class="feather-trash-2"></i></a>
-											</div>
-										</td>
+
 									</tr>
 									<tr>
+										<td>
+											<button type="button" class="btn btn-light btn-sm p-1"
+												data-bs-toggle="dropdown">
+												<i data-feather="more-vertical" width="14" height="14"></i>
+											</button>
+											<ul class="dropdown-menu dropdown-menu-right shadow-sm p-1">
+												<li>
+													<button class="dropdown-item d-flex align-items-center small py-1"
+														type="button" data-bs-toggle="modal"
+														data-bs-target="#lihat-purchase">
+														<i data-feather="eye" class="me-2" width="14" height="14"></i>
+														Purchase Detail
+													</button>
+												</li>
+												<li><button class="dropdown-item d-flex align-items-center small py-1"
+														type="button" data-bs-toggle="modal"
+														data-bs-target="#edit-purchase"><i data-feather="edit"
+															class="me-2" width="14" height="14"></i>Edit</button>
+												</li>
+												<li><button class="dropdown-item d-flex align-items-center small py-1"
+														type="button" data-bs-toggle="modal"
+														data-bs-target="#editSaleModal"><i data-feather="edit"
+															class="me-2" width="14" height="14"></i>Delete</button>
+												</li>
+												<li>
+													<button class="dropdown-item d-flex align-items-center small py-1"
+														data-bs-toggle="modal" data-bs-target="#showpayment"
+														type="button">
+														<i data-feather="dollar-sign" class="me-2" width="14"
+															height="14"></i> Create PO
+													</button>
+												</li>
+												<li>
+													<button class="dropdown-item d-flex align-items-center small py-1"
+														data-bs-toggle="modal" data-bs-target="#createpayment"
+														type="button">
+														<i data-feather="plus-circle" class="me-2" width="14"
+															height="14"></i> Payment
+													</button>
+												</li>
+												<li>
+													<a href="sales-alpa.html"
+														class="dropdown-item d-flex align-items-center small py-1">
+														<i data-feather="download" class="me-2" width="14"
+															height="14"></i>
+														Show Payment
+													</a>
+												</li>
+
+											</ul>
+										</td>
 										<td>PR-2512000006</td>
 										<td>12/10/2025</td>
 										<td>Sales Staff</td>
@@ -347,19 +563,60 @@
 										<td>0</td>
 										<td>Paid</td>
 										<td>-</td>
-										<td class="action-table-data">
-											<div class="edit-delete-action">
-												<a class="me-2 p-2" href="javascript:void(0);"><i data-feather="eye"
-														class="action-eye"></i></a>
-												<a class="me-2 p-2" data-bs-toggle="modal"
-													data-bs-target="#edit-purchase"><i data-feather="edit"
-														class="feather-edit"></i></a>
-												<a class="confirm-text p-2" href="javascript:void(0);"><i
-														data-feather="trash-2" class="feather-trash-2"></i></a>
-											</div>
-										</td>
+
 									</tr>
 									<tr>
+										<td>
+											<button type="button" class="btn btn-light btn-sm p-1"
+												data-bs-toggle="dropdown">
+												<i data-feather="more-vertical" width="14" height="14"></i>
+											</button>
+											<ul class="dropdown-menu dropdown-menu-right shadow-sm p-1">
+												<li>
+													<button class="dropdown-item d-flex align-items-center small py-1"
+														type="button" data-bs-toggle="modal"
+														data-bs-target="#lihat-purchase">
+														<i data-feather="eye" class="me-2" width="14" height="14"></i>
+														Purchase Detail
+													</button>
+												</li>
+												<li><button class="dropdown-item d-flex align-items-center small py-1"
+														type="button" data-bs-toggle="modal"
+														data-bs-target="#edit-purchase"><i data-feather="edit"
+															class="me-2" width="14" height="14"></i>Edit</button>
+												</li>
+												<li><button class="dropdown-item d-flex align-items-center small py-1"
+														type="button" data-bs-toggle="modal"
+														data-bs-target="#editSaleModal"><i data-feather="edit"
+															class="me-2" width="14" height="14"></i>Delete</button>
+												</li>
+												<li>
+													<button class="dropdown-item d-flex align-items-center small py-1"
+														data-bs-toggle="modal" data-bs-target="#showpayment"
+														type="button">
+														<i data-feather="dollar-sign" class="me-2" width="14"
+															height="14"></i> Create PO
+													</button>
+												</li>
+												<li>
+													<button class="dropdown-item d-flex align-items-center small py-1"
+														data-bs-toggle="modal" data-bs-target="#createpayment"
+														type="button">
+														<i data-feather="plus-circle" class="me-2" width="14"
+															height="14"></i> Payment
+													</button>
+												</li>
+												<li>
+													<a href="sales-alpa.html"
+														class="dropdown-item d-flex align-items-center small py-1">
+														<i data-feather="download" class="me-2" width="14"
+															height="14"></i>
+														Show Payment
+													</a>
+												</li>
+
+											</ul>
+										</td>
 										<td>PR-2512000007</td>
 										<td>15/10/2025</td>
 										<td>Sales Staff</td>
@@ -371,19 +628,60 @@
 										<td>0</td>
 										<td>Paid</td>
 										<td>-</td>
-										<td class="action-table-data">
-											<div class="edit-delete-action">
-												<a class="me-2 p-2" href="javascript:void(0);"><i data-feather="eye"
-														class="action-eye"></i></a>
-												<a class="me-2 p-2" data-bs-toggle="modal"
-													data-bs-target="#edit-purchase"><i data-feather="edit"
-														class="feather-edit"></i></a>
-												<a class="confirm-text p-2" href="javascript:void(0);"><i
-														data-feather="trash-2" class="feather-trash-2"></i></a>
-											</div>
-										</td>
+
 									</tr>
 									<tr>
+										<td>
+											<button type="button" class="btn btn-light btn-sm p-1"
+												data-bs-toggle="dropdown">
+												<i data-feather="more-vertical" width="14" height="14"></i>
+											</button>
+											<ul class="dropdown-menu dropdown-menu-right shadow-sm p-1">
+												<li>
+													<button class="dropdown-item d-flex align-items-center small py-1"
+														type="button" data-bs-toggle="modal"
+														data-bs-target="#lihat-purchase">
+														<i data-feather="eye" class="me-2" width="14" height="14"></i>
+														Purchase Detail
+													</button>
+												</li>
+												<li><button class="dropdown-item d-flex align-items-center small py-1"
+														type="button" data-bs-toggle="modal"
+														data-bs-target="#edit-purchase"><i data-feather="edit"
+															class="me-2" width="14" height="14"></i>Edit</button>
+												</li>
+												<li><button class="dropdown-item d-flex align-items-center small py-1"
+														type="button" data-bs-toggle="modal"
+														data-bs-target="#editSaleModal"><i data-feather="edit"
+															class="me-2" width="14" height="14"></i>Delete</button>
+												</li>
+												<li>
+													<button class="dropdown-item d-flex align-items-center small py-1"
+														data-bs-toggle="modal" data-bs-target="#showpayment"
+														type="button">
+														<i data-feather="dollar-sign" class="me-2" width="14"
+															height="14"></i> Create PO
+													</button>
+												</li>
+												<li>
+													<button class="dropdown-item d-flex align-items-center small py-1"
+														data-bs-toggle="modal" data-bs-target="#createpayment"
+														type="button">
+														<i data-feather="plus-circle" class="me-2" width="14"
+															height="14"></i> Payment
+													</button>
+												</li>
+												<li>
+													<a href="sales-alpa.html"
+														class="dropdown-item d-flex align-items-center small py-1">
+														<i data-feather="download" class="me-2" width="14"
+															height="14"></i>
+														Show Payment
+													</a>
+												</li>
+
+											</ul>
+										</td>
 										<td>PR-2512000008</td>
 										<td>18/10/2025</td>
 										<td>Sales Staff</td>
@@ -395,19 +693,60 @@
 										<td>2300000</td>
 										<td>Partial</td>
 										<td>Pembayaran termin 1</td>
-										<td class="action-table-data">
-											<div class="edit-delete-action">
-												<a class="me-2 p-2" href="javascript:void(0);"><i data-feather="eye"
-														class="action-eye"></i></a>
-												<a class="me-2 p-2" data-bs-toggle="modal"
-													data-bs-target="#edit-purchase"><i data-feather="edit"
-														class="feather-edit"></i></a>
-												<a class="confirm-text p-2" href="javascript:void(0);"><i
-														data-feather="trash-2" class="feather-trash-2"></i></a>
-											</div>
-										</td>
+
 									</tr>
 									<tr>
+										<td>
+											<button type="button" class="btn btn-light btn-sm p-1"
+												data-bs-toggle="dropdown">
+												<i data-feather="more-vertical" width="14" height="14"></i>
+											</button>
+											<ul class="dropdown-menu dropdown-menu-right shadow-sm p-1">
+												<li>
+													<button class="dropdown-item d-flex align-items-center small py-1"
+														type="button" data-bs-toggle="modal"
+														data-bs-target="#lihat-purchase">
+														<i data-feather="eye" class="me-2" width="14" height="14"></i>
+														Purchase Detail
+													</button>
+												</li>
+												<li><button class="dropdown-item d-flex align-items-center small py-1"
+														type="button" data-bs-toggle="modal"
+														data-bs-target="#edit-purchase"><i data-feather="edit"
+															class="me-2" width="14" height="14"></i>Edit</button>
+												</li>
+												<li><button class="dropdown-item d-flex align-items-center small py-1"
+														type="button" data-bs-toggle="modal"
+														data-bs-target="#editSaleModal"><i data-feather="edit"
+															class="me-2" width="14" height="14"></i>Delete</button>
+												</li>
+												<li>
+													<button class="dropdown-item d-flex align-items-center small py-1"
+														data-bs-toggle="modal" data-bs-target="#showpayment"
+														type="button">
+														<i data-feather="dollar-sign" class="me-2" width="14"
+															height="14"></i> Create PO
+													</button>
+												</li>
+												<li>
+													<button class="dropdown-item d-flex align-items-center small py-1"
+														data-bs-toggle="modal" data-bs-target="#createpayment"
+														type="button">
+														<i data-feather="plus-circle" class="me-2" width="14"
+															height="14"></i> Payment
+													</button>
+												</li>
+												<li>
+													<a href="sales-alpa.html"
+														class="dropdown-item d-flex align-items-center small py-1">
+														<i data-feather="download" class="me-2" width="14"
+															height="14"></i>
+														Show Payment
+													</a>
+												</li>
+
+											</ul>
+										</td>
 										<td>PR-2512000009</td>
 										<td>21/10/2025</td>
 										<td>Sales Staff</td>
@@ -419,19 +758,60 @@
 										<td>650000</td>
 										<td>Pending</td>
 										<td>Menunggu tagihan final</td>
-										<td class="action-table-data">
-											<div class="edit-delete-action">
-												<a class="me-2 p-2" href="javascript:void(0);"><i data-feather="eye"
-														class="action-eye"></i></a>
-												<a class="me-2 p-2" data-bs-toggle="modal"
-													data-bs-target="#edit-purchase"><i data-feather="edit"
-														class="feather-edit"></i></a>
-												<a class="confirm-text p-2" href="javascript:void(0);"><i
-														data-feather="trash-2" class="feather-trash-2"></i></a>
-											</div>
-										</td>
+
 									</tr>
 									<tr>
+										<td>
+											<button type="button" class="btn btn-light btn-sm p-1"
+												data-bs-toggle="dropdown">
+												<i data-feather="more-vertical" width="14" height="14"></i>
+											</button>
+											<ul class="dropdown-menu dropdown-menu-right shadow-sm p-1">
+												<li>
+													<button class="dropdown-item d-flex align-items-center small py-1"
+														type="button" data-bs-toggle="modal"
+														data-bs-target="#lihat-purchase">
+														<i data-feather="eye" class="me-2" width="14" height="14"></i>
+														Purchase Detail
+													</button>
+												</li>
+												<li><button class="dropdown-item d-flex align-items-center small py-1"
+														type="button" data-bs-toggle="modal"
+														data-bs-target="#edit-purchase"><i data-feather="edit"
+															class="me-2" width="14" height="14"></i>Edit</button>
+												</li>
+												<li><button class="dropdown-item d-flex align-items-center small py-1"
+														type="button" data-bs-toggle="modal"
+														data-bs-target="#editSaleModal"><i data-feather="edit"
+															class="me-2" width="14" height="14"></i>Delete</button>
+												</li>
+												<li>
+													<button class="dropdown-item d-flex align-items-center small py-1"
+														data-bs-toggle="modal" data-bs-target="#showpayment"
+														type="button">
+														<i data-feather="dollar-sign" class="me-2" width="14"
+															height="14"></i> Create PO
+													</button>
+												</li>
+												<li>
+													<button class="dropdown-item d-flex align-items-center small py-1"
+														data-bs-toggle="modal" data-bs-target="#createpayment"
+														type="button">
+														<i data-feather="plus-circle" class="me-2" width="14"
+															height="14"></i> Payment
+													</button>
+												</li>
+												<li>
+													<a href="sales-alpa.html"
+														class="dropdown-item d-flex align-items-center small py-1">
+														<i data-feather="download" class="me-2" width="14"
+															height="14"></i>
+														Show Payment
+													</a>
+												</li>
+
+											</ul>
+										</td>
 										<td>PR-2512000010</td>
 										<td>24/10/2025</td>
 										<td>Admin</td>
@@ -443,19 +823,60 @@
 										<td>0</td>
 										<td>Paid</td>
 										<td>Kebutuhan cetak ID Card</td>
-										<td class="action-table-data">
-											<div class="edit-delete-action">
-												<a class="me-2 p-2" href="javascript:void(0);"><i data-feather="eye"
-														class="action-eye"></i></a>
-												<a class="me-2 p-2" data-bs-toggle="modal"
-													data-bs-target="#edit-purchase"><i data-feather="edit"
-														class="feather-edit"></i></a>
-												<a class="confirm-text p-2" href="javascript:void(0);"><i
-														data-feather="trash-2" class="feather-trash-2"></i></a>
-											</div>
-										</td>
+
 									</tr>
 									<tr>
+										<td>
+											<button type="button" class="btn btn-light btn-sm p-1"
+												data-bs-toggle="dropdown">
+												<i data-feather="more-vertical" width="14" height="14"></i>
+											</button>
+											<ul class="dropdown-menu dropdown-menu-right shadow-sm p-1">
+												<li>
+													<button class="dropdown-item d-flex align-items-center small py-1"
+														type="button" data-bs-toggle="modal"
+														data-bs-target="#lihat-purchase">
+														<i data-feather="eye" class="me-2" width="14" height="14"></i>
+														Purchase Detail
+													</button>
+												</li>
+												<li><button class="dropdown-item d-flex align-items-center small py-1"
+														type="button" data-bs-toggle="modal"
+														data-bs-target="#edit-purchase"><i data-feather="edit"
+															class="me-2" width="14" height="14"></i>Edit</button>
+												</li>
+												<li><button class="dropdown-item d-flex align-items-center small py-1"
+														type="button" data-bs-toggle="modal"
+														data-bs-target="#editSaleModal"><i data-feather="edit"
+															class="me-2" width="14" height="14"></i>Delete</button>
+												</li>
+												<li>
+													<button class="dropdown-item d-flex align-items-center small py-1"
+														data-bs-toggle="modal" data-bs-target="#showpayment"
+														type="button">
+														<i data-feather="dollar-sign" class="me-2" width="14"
+															height="14"></i> Create PO
+													</button>
+												</li>
+												<li>
+													<button class="dropdown-item d-flex align-items-center small py-1"
+														data-bs-toggle="modal" data-bs-target="#createpayment"
+														type="button">
+														<i data-feather="plus-circle" class="me-2" width="14"
+															height="14"></i> Payment
+													</button>
+												</li>
+												<li>
+													<a href="sales-alpa.html"
+														class="dropdown-item d-flex align-items-center small py-1">
+														<i data-feather="download" class="me-2" width="14"
+															height="14"></i>
+														Show Payment
+													</a>
+												</li>
+
+											</ul>
+										</td>
 										<td>PR-2512000011</td>
 										<td>28/10/2025</td>
 										<td>Sales Staff</td>
@@ -467,19 +888,60 @@
 										<td>1750000</td>
 										<td>Unpaid</td>
 										<td>-</td>
-										<td class="action-table-data">
-											<div class="edit-delete-action">
-												<a class="me-2 p-2" href="javascript:void(0);"><i data-feather="eye"
-														class="action-eye"></i></a>
-												<a class="me-2 p-2" data-bs-toggle="modal"
-													data-bs-target="#edit-purchase"><i data-feather="edit"
-														class="feather-edit"></i></a>
-												<a class="confirm-text p-2" href="javascript:void(0);"><i
-														data-feather="trash-2" class="feather-trash-2"></i></a>
-											</div>
-										</td>
+
 									</tr>
 									<tr>
+										<td>
+											<button type="button" class="btn btn-light btn-sm p-1"
+												data-bs-toggle="dropdown">
+												<i data-feather="more-vertical" width="14" height="14"></i>
+											</button>
+											<ul class="dropdown-menu dropdown-menu-right shadow-sm p-1">
+												<li>
+													<button class="dropdown-item d-flex align-items-center small py-1"
+														type="button" data-bs-toggle="modal"
+														data-bs-target="#lihat-purchase">
+														<i data-feather="eye" class="me-2" width="14" height="14"></i>
+														Purchase Detail
+													</button>
+												</li>
+												<li><button class="dropdown-item d-flex align-items-center small py-1"
+														type="button" data-bs-toggle="modal"
+														data-bs-target="#edit-purchase"><i data-feather="edit"
+															class="me-2" width="14" height="14"></i>Edit</button>
+												</li>
+												<li><button class="dropdown-item d-flex align-items-center small py-1"
+														type="button" data-bs-toggle="modal"
+														data-bs-target="#editSaleModal"><i data-feather="edit"
+															class="me-2" width="14" height="14"></i>Delete</button>
+												</li>
+												<li>
+													<button class="dropdown-item d-flex align-items-center small py-1"
+														data-bs-toggle="modal" data-bs-target="#showpayment"
+														type="button">
+														<i data-feather="dollar-sign" class="me-2" width="14"
+															height="14"></i> Create PO
+													</button>
+												</li>
+												<li>
+													<button class="dropdown-item d-flex align-items-center small py-1"
+														data-bs-toggle="modal" data-bs-target="#createpayment"
+														type="button">
+														<i data-feather="plus-circle" class="me-2" width="14"
+															height="14"></i> Payment
+													</button>
+												</li>
+												<li>
+													<a href="sales-alpa.html"
+														class="dropdown-item d-flex align-items-center small py-1">
+														<i data-feather="download" class="me-2" width="14"
+															height="14"></i>
+														Show Payment
+													</a>
+												</li>
+
+											</ul>
+										</td>
 										<td>PR-2512000012</td>
 										<td>01/11/2025</td>
 										<td>Sales Staff</td>
@@ -491,19 +953,60 @@
 										<td>0</td>
 										<td>Paid</td>
 										<td>-</td>
-										<td class="action-table-data">
-											<div class="edit-delete-action">
-												<a class="me-2 p-2" href="javascript:void(0);"><i data-feather="eye"
-														class="action-eye"></i></a>
-												<a class="me-2 p-2" data-bs-toggle="modal"
-													data-bs-target="#edit-purchase"><i data-feather="edit"
-														class="feather-edit"></i></a>
-												<a class="confirm-text p-2" href="javascript:void(0);"><i
-														data-feather="trash-2" class="feather-trash-2"></i></a>
-											</div>
-										</td>
+
 									</tr>
 									<tr>
+										<td>
+											<button type="button" class="btn btn-light btn-sm p-1"
+												data-bs-toggle="dropdown">
+												<i data-feather="more-vertical" width="14" height="14"></i>
+											</button>
+											<ul class="dropdown-menu dropdown-menu-right shadow-sm p-1">
+												<li>
+													<button class="dropdown-item d-flex align-items-center small py-1"
+														type="button" data-bs-toggle="modal"
+														data-bs-target="#lihat-purchase">
+														<i data-feather="eye" class="me-2" width="14" height="14"></i>
+														Purchase Detail
+													</button>
+												</li>
+												<li><button class="dropdown-item d-flex align-items-center small py-1"
+														type="button" data-bs-toggle="modal"
+														data-bs-target="#edit-purchase"><i data-feather="edit"
+															class="me-2" width="14" height="14"></i>Edit</button>
+												</li>
+												<li><button class="dropdown-item d-flex align-items-center small py-1"
+														type="button" data-bs-toggle="modal"
+														data-bs-target="#editSaleModal"><i data-feather="edit"
+															class="me-2" width="14" height="14"></i>Delete</button>
+												</li>
+												<li>
+													<button class="dropdown-item d-flex align-items-center small py-1"
+														data-bs-toggle="modal" data-bs-target="#showpayment"
+														type="button">
+														<i data-feather="dollar-sign" class="me-2" width="14"
+															height="14"></i> Create PO
+													</button>
+												</li>
+												<li>
+													<button class="dropdown-item d-flex align-items-center small py-1"
+														data-bs-toggle="modal" data-bs-target="#createpayment"
+														type="button">
+														<i data-feather="plus-circle" class="me-2" width="14"
+															height="14"></i> Payment
+													</button>
+												</li>
+												<li>
+													<a href="sales-alpa.html"
+														class="dropdown-item d-flex align-items-center small py-1">
+														<i data-feather="download" class="me-2" width="14"
+															height="14"></i>
+														Show Payment
+													</a>
+												</li>
+
+											</ul>
+										</td>
 										<td>PR-2512000013</td>
 										<td>04/11/2025</td>
 										<td>Sales Staff</td>
@@ -515,19 +1018,60 @@
 										<td>1100000</td>
 										<td>Unpaid</td>
 										<td>Produk tidak tersedia</td>
-										<td class="action-table-data">
-											<div class="edit-delete-action">
-												<a class="me-2 p-2" href="javascript:void(0);"><i data-feather="eye"
-														class="action-eye"></i></a>
-												<a class="me-2 p-2" data-bs-toggle="modal"
-													data-bs-target="#edit-purchase"><i data-feather="edit"
-														class="feather-edit"></i></a>
-												<a class="confirm-text p-2" href="javascript:void(0);"><i
-														data-feather="trash-2" class="feather-trash-2"></i></a>
-											</div>
-										</td>
+
 									</tr>
 									<tr>
+										<td>
+											<button type="button" class="btn btn-light btn-sm p-1"
+												data-bs-toggle="dropdown">
+												<i data-feather="more-vertical" width="14" height="14"></i>
+											</button>
+											<ul class="dropdown-menu dropdown-menu-right shadow-sm p-1">
+												<li>
+													<button class="dropdown-item d-flex align-items-center small py-1"
+														type="button" data-bs-toggle="modal"
+														data-bs-target="#lihat-purchase">
+														<i data-feather="eye" class="me-2" width="14" height="14"></i>
+														Purchase Detail
+													</button>
+												</li>
+												<li><button class="dropdown-item d-flex align-items-center small py-1"
+														type="button" data-bs-toggle="modal"
+														data-bs-target="#edit-purchase"><i data-feather="edit"
+															class="me-2" width="14" height="14"></i>Edit</button>
+												</li>
+												<li><button class="dropdown-item d-flex align-items-center small py-1"
+														type="button" data-bs-toggle="modal"
+														data-bs-target="#editSaleModal"><i data-feather="edit"
+															class="me-2" width="14" height="14"></i>Delete</button>
+												</li>
+												<li>
+													<button class="dropdown-item d-flex align-items-center small py-1"
+														data-bs-toggle="modal" data-bs-target="#showpayment"
+														type="button">
+														<i data-feather="dollar-sign" class="me-2" width="14"
+															height="14"></i> Create PO
+													</button>
+												</li>
+												<li>
+													<button class="dropdown-item d-flex align-items-center small py-1"
+														data-bs-toggle="modal" data-bs-target="#createpayment"
+														type="button">
+														<i data-feather="plus-circle" class="me-2" width="14"
+															height="14"></i> Payment
+													</button>
+												</li>
+												<li>
+													<a href="sales-alpa.html"
+														class="dropdown-item d-flex align-items-center small py-1">
+														<i data-feather="download" class="me-2" width="14"
+															height="14"></i>
+														Show Payment
+													</a>
+												</li>
+
+											</ul>
+										</td>
 										<td>PR-2512000014</td>
 										<td>07/11/2025</td>
 										<td>Sales Staff</td>
@@ -539,19 +1083,60 @@
 										<td>1500000</td>
 										<td>Partial</td>
 										<td>-</td>
-										<td class="action-table-data">
-											<div class="edit-delete-action">
-												<a class="me-2 p-2" href="javascript:void(0);"><i data-feather="eye"
-														class="action-eye"></i></a>
-												<a class="me-2 p-2" data-bs-toggle="modal"
-													data-bs-target="#edit-purchase"><i data-feather="edit"
-														class="feather-edit"></i></a>
-												<a class="confirm-text p-2" href="javascript:void(0);"><i
-														data-feather="trash-2" class="feather-trash-2"></i></a>
-											</div>
-										</td>
+
 									</tr>
 									<tr>
+										<td>
+											<button type="button" class="btn btn-light btn-sm p-1"
+												data-bs-toggle="dropdown">
+												<i data-feather="more-vertical" width="14" height="14"></i>
+											</button>
+											<ul class="dropdown-menu dropdown-menu-right shadow-sm p-1">
+												<li>
+													<button class="dropdown-item d-flex align-items-center small py-1"
+														type="button" data-bs-toggle="modal"
+														data-bs-target="#lihat-purchase">
+														<i data-feather="eye" class="me-2" width="14" height="14"></i>
+														Purchase Detail
+													</button>
+												</li>
+												<li><button class="dropdown-item d-flex align-items-center small py-1"
+														type="button" data-bs-toggle="modal"
+														data-bs-target="#edit-purchase"><i data-feather="edit"
+															class="me-2" width="14" height="14"></i>Edit</button>
+												</li>
+												<li><button class="dropdown-item d-flex align-items-center small py-1"
+														type="button" data-bs-toggle="modal"
+														data-bs-target="#editSaleModal"><i data-feather="edit"
+															class="me-2" width="14" height="14"></i>Delete</button>
+												</li>
+												<li>
+													<button class="dropdown-item d-flex align-items-center small py-1"
+														data-bs-toggle="modal" data-bs-target="#showpayment"
+														type="button">
+														<i data-feather="dollar-sign" class="me-2" width="14"
+															height="14"></i> Create PO
+													</button>
+												</li>
+												<li>
+													<button class="dropdown-item d-flex align-items-center small py-1"
+														data-bs-toggle="modal" data-bs-target="#createpayment"
+														type="button">
+														<i data-feather="plus-circle" class="me-2" width="14"
+															height="14"></i> Payment
+													</button>
+												</li>
+												<li>
+													<a href="sales-alpa.html"
+														class="dropdown-item d-flex align-items-center small py-1">
+														<i data-feather="download" class="me-2" width="14"
+															height="14"></i>
+														Show Payment
+													</a>
+												</li>
+
+											</ul>
+										</td>
 										<td>PR-2512000015</td>
 										<td>10/11/2025</td>
 										<td>Sales Staff</td>
@@ -563,19 +1148,60 @@
 										<td>0</td>
 										<td>Paid</td>
 										<td>-</td>
-										<td class="action-table-data">
-											<div class="edit-delete-action">
-												<a class="me-2 p-2" href="javascript:void(0);"><i data-feather="eye"
-														class="action-eye"></i></a>
-												<a class="me-2 p-2" data-bs-toggle="modal"
-													data-bs-target="#edit-purchase"><i data-feather="edit"
-														class="feather-edit"></i></a>
-												<a class="confirm-text p-2" href="javascript:void(0);"><i
-														data-feather="trash-2" class="feather-trash-2"></i></a>
-											</div>
-										</td>
+
 									</tr>
 									<tr>
+										<td>
+											<button type="button" class="btn btn-light btn-sm p-1"
+												data-bs-toggle="dropdown">
+												<i data-feather="more-vertical" width="14" height="14"></i>
+											</button>
+											<ul class="dropdown-menu dropdown-menu-right shadow-sm p-1">
+												<li>
+													<button class="dropdown-item d-flex align-items-center small py-1"
+														type="button" data-bs-toggle="modal"
+														data-bs-target="#lihat-purchase">
+														<i data-feather="eye" class="me-2" width="14" height="14"></i>
+														Purchase Detail
+													</button>
+												</li>
+												<li><button class="dropdown-item d-flex align-items-center small py-1"
+														type="button" data-bs-toggle="modal"
+														data-bs-target="#edit-purchase"><i data-feather="edit"
+															class="me-2" width="14" height="14"></i>Edit</button>
+												</li>
+												<li><button class="dropdown-item d-flex align-items-center small py-1"
+														type="button" data-bs-toggle="modal"
+														data-bs-target="#editSaleModal"><i data-feather="edit"
+															class="me-2" width="14" height="14"></i>Delete</button>
+												</li>
+												<li>
+													<button class="dropdown-item d-flex align-items-center small py-1"
+														data-bs-toggle="modal" data-bs-target="#showpayment"
+														type="button">
+														<i data-feather="dollar-sign" class="me-2" width="14"
+															height="14"></i> Create PO
+													</button>
+												</li>
+												<li>
+													<button class="dropdown-item d-flex align-items-center small py-1"
+														data-bs-toggle="modal" data-bs-target="#createpayment"
+														type="button">
+														<i data-feather="plus-circle" class="me-2" width="14"
+															height="14"></i> Payment
+													</button>
+												</li>
+												<li>
+													<a href="sales-alpa.html"
+														class="dropdown-item d-flex align-items-center small py-1">
+														<i data-feather="download" class="me-2" width="14"
+															height="14"></i>
+														Show Payment
+													</a>
+												</li>
+
+											</ul>
+										</td>
 										<td>PR-2512000016</td>
 										<td>13/11/2025</td>
 										<td>Sales Staff</td>
@@ -587,19 +1213,60 @@
 										<td>2600000</td>
 										<td>Unpaid</td>
 										<td>Menunggu harga diskon</td>
-										<td class="action-table-data">
-											<div class="edit-delete-action">
-												<a class="me-2 p-2" href="javascript:void(0);"><i data-feather="eye"
-														class="action-eye"></i></a>
-												<a class="me-2 p-2" data-bs-toggle="modal"
-													data-bs-target="#edit-purchase"><i data-feather="edit"
-														class="feather-edit"></i></a>
-												<a class="confirm-text p-2" href="javascript:void(0);"><i
-														data-feather="trash-2" class="feather-trash-2"></i></a>
-											</div>
-										</td>
+
 									</tr>
 									<tr>
+										<td>
+											<button type="button" class="btn btn-light btn-sm p-1"
+												data-bs-toggle="dropdown">
+												<i data-feather="more-vertical" width="14" height="14"></i>
+											</button>
+											<ul class="dropdown-menu dropdown-menu-right shadow-sm p-1">
+												<li>
+													<button class="dropdown-item d-flex align-items-center small py-1"
+														type="button" data-bs-toggle="modal"
+														data-bs-target="#lihat-purchase">
+														<i data-feather="eye" class="me-2" width="14" height="14"></i>
+														Purchase Detail
+													</button>
+												</li>
+												<li><button class="dropdown-item d-flex align-items-center small py-1"
+														type="button" data-bs-toggle="modal"
+														data-bs-target="#edit-purchase"><i data-feather="edit"
+															class="me-2" width="14" height="14"></i>Edit</button>
+												</li>
+												<li><button class="dropdown-item d-flex align-items-center small py-1"
+														type="button" data-bs-toggle="modal"
+														data-bs-target="#editSaleModal"><i data-feather="edit"
+															class="me-2" width="14" height="14"></i>Delete</button>
+												</li>
+												<li>
+													<button class="dropdown-item d-flex align-items-center small py-1"
+														data-bs-toggle="modal" data-bs-target="#showpayment"
+														type="button">
+														<i data-feather="dollar-sign" class="me-2" width="14"
+															height="14"></i> Create PO
+													</button>
+												</li>
+												<li>
+													<button class="dropdown-item d-flex align-items-center small py-1"
+														data-bs-toggle="modal" data-bs-target="#createpayment"
+														type="button">
+														<i data-feather="plus-circle" class="me-2" width="14"
+															height="14"></i> Payment
+													</button>
+												</li>
+												<li>
+													<a href="sales-alpa.html"
+														class="dropdown-item d-flex align-items-center small py-1">
+														<i data-feather="download" class="me-2" width="14"
+															height="14"></i>
+														Show Payment
+													</a>
+												</li>
+
+											</ul>
+										</td>
 										<td>PR-2512000017</td>
 										<td>16/11/2025</td>
 										<td>Sales Staff</td>
@@ -611,19 +1278,60 @@
 										<td>0</td>
 										<td>Paid</td>
 										<td>-</td>
-										<td class="action-table-data">
-											<div class="edit-delete-action">
-												<a class="me-2 p-2" href="javascript:void(0);"><i data-feather="eye"
-														class="action-eye"></i></a>
-												<a class="me-2 p-2" data-bs-toggle="modal"
-													data-bs-target="#edit-purchase"><i data-feather="edit"
-														class="feather-edit"></i></a>
-												<a class="confirm-text p-2" href="javascript:void(0);"><i
-														data-feather="trash-2" class="feather-trash-2"></i></a>
-											</div>
-										</td>
+
 									</tr>
 									<tr>
+										<td>
+											<button type="button" class="btn btn-light btn-sm p-1"
+												data-bs-toggle="dropdown">
+												<i data-feather="more-vertical" width="14" height="14"></i>
+											</button>
+											<ul class="dropdown-menu dropdown-menu-right shadow-sm p-1">
+												<li>
+													<button class="dropdown-item d-flex align-items-center small py-1"
+														type="button" data-bs-toggle="modal"
+														data-bs-target="#lihat-purchase">
+														<i data-feather="eye" class="me-2" width="14" height="14"></i>
+														Purchase Detail
+													</button>
+												</li>
+												<li><button class="dropdown-item d-flex align-items-center small py-1"
+														type="button" data-bs-toggle="modal"
+														data-bs-target="#edit-purchase"><i data-feather="edit"
+															class="me-2" width="14" height="14"></i>Edit</button>
+												</li>
+												<li><button class="dropdown-item d-flex align-items-center small py-1"
+														type="button" data-bs-toggle="modal"
+														data-bs-target="#editSaleModal"><i data-feather="edit"
+															class="me-2" width="14" height="14"></i>Delete</button>
+												</li>
+												<li>
+													<button class="dropdown-item d-flex align-items-center small py-1"
+														data-bs-toggle="modal" data-bs-target="#showpayment"
+														type="button">
+														<i data-feather="dollar-sign" class="me-2" width="14"
+															height="14"></i> Create PO
+													</button>
+												</li>
+												<li>
+													<button class="dropdown-item d-flex align-items-center small py-1"
+														data-bs-toggle="modal" data-bs-target="#createpayment"
+														type="button">
+														<i data-feather="plus-circle" class="me-2" width="14"
+															height="14"></i> Payment
+													</button>
+												</li>
+												<li>
+													<a href="sales-alpa.html"
+														class="dropdown-item d-flex align-items-center small py-1">
+														<i data-feather="download" class="me-2" width="14"
+															height="14"></i>
+														Show Payment
+													</a>
+												</li>
+
+											</ul>
+										</td>
 										<td>PR-2512000018</td>
 										<td>19/11/2025</td>
 										<td>Admin</td>
@@ -635,19 +1343,60 @@
 										<td>950000</td>
 										<td>Partial</td>
 										<td>Pesanan Mendesak</td>
-										<td class="action-table-data">
-											<div class="edit-delete-action">
-												<a class="me-2 p-2" href="javascript:void(0);"><i data-feather="eye"
-														class="action-eye"></i></a>
-												<a class="me-2 p-2" data-bs-toggle="modal"
-													data-bs-target="#edit-purchase"><i data-feather="edit"
-														class="feather-edit"></i></a>
-												<a class="confirm-text p-2" href="javascript:void(0);"><i
-														data-feather="trash-2" class="feather-trash-2"></i></a>
-											</div>
-										</td>
+
 									</tr>
 									<tr>
+										<td>
+											<button type="button" class="btn btn-light btn-sm p-1"
+												data-bs-toggle="dropdown">
+												<i data-feather="more-vertical" width="14" height="14"></i>
+											</button>
+											<ul class="dropdown-menu dropdown-menu-right shadow-sm p-1">
+												<li>
+													<button class="dropdown-item d-flex align-items-center small py-1"
+														type="button" data-bs-toggle="modal"
+														data-bs-target="#lihat-purchase">
+														<i data-feather="eye" class="me-2" width="14" height="14"></i>
+														Purchase Detail
+													</button>
+												</li>
+												<li><button class="dropdown-item d-flex align-items-center small py-1"
+														type="button" data-bs-toggle="modal"
+														data-bs-target="#edit-purchase"><i data-feather="edit"
+															class="me-2" width="14" height="14"></i>Edit</button>
+												</li>
+												<li><button class="dropdown-item d-flex align-items-center small py-1"
+														type="button" data-bs-toggle="modal"
+														data-bs-target="#editSaleModal"><i data-feather="edit"
+															class="me-2" width="14" height="14"></i>Delete</button>
+												</li>
+												<li>
+													<button class="dropdown-item d-flex align-items-center small py-1"
+														data-bs-toggle="modal" data-bs-target="#showpayment"
+														type="button">
+														<i data-feather="dollar-sign" class="me-2" width="14"
+															height="14"></i> Create PO
+													</button>
+												</li>
+												<li>
+													<button class="dropdown-item d-flex align-items-center small py-1"
+														data-bs-toggle="modal" data-bs-target="#createpayment"
+														type="button">
+														<i data-feather="plus-circle" class="me-2" width="14"
+															height="14"></i> Payment
+													</button>
+												</li>
+												<li>
+													<a href="sales-alpa.html"
+														class="dropdown-item d-flex align-items-center small py-1">
+														<i data-feather="download" class="me-2" width="14"
+															height="14"></i>
+														Show Payment
+													</a>
+												</li>
+
+											</ul>
+										</td>
 										<td>PR-2512000019</td>
 										<td>22/11/2025</td>
 										<td>Sales Staff</td>
@@ -659,19 +1408,60 @@
 										<td>550000</td>
 										<td>Unpaid</td>
 										<td>-</td>
-										<td class="action-table-data">
-											<div class="edit-delete-action">
-												<a class="me-2 p-2" href="javascript:void(0);"><i data-feather="eye"
-														class="action-eye"></i></a>
-												<a class="me-2 p-2" data-bs-toggle="modal"
-													data-bs-target="#edit-purchase"><i data-feather="edit"
-														class="feather-edit"></i></a>
-												<a class="confirm-text p-2" href="javascript:void(0);"><i
-														data-feather="trash-2" class="feather-trash-2"></i></a>
-											</div>
-										</td>
+
 									</tr>
 									<tr>
+										<td>
+											<button type="button" class="btn btn-light btn-sm p-1"
+												data-bs-toggle="dropdown">
+												<i data-feather="more-vertical" width="14" height="14"></i>
+											</button>
+											<ul class="dropdown-menu dropdown-menu-right shadow-sm p-1">
+												<li>
+													<button class="dropdown-item d-flex align-items-center small py-1"
+														type="button" data-bs-toggle="modal"
+														data-bs-target="#lihat-purchase">
+														<i data-feather="eye" class="me-2" width="14" height="14"></i>
+														Purchase Detail
+													</button>
+												</li>
+												<li><button class="dropdown-item d-flex align-items-center small py-1"
+														type="button" data-bs-toggle="modal"
+														data-bs-target="#edit-purchase"><i data-feather="edit"
+															class="me-2" width="14" height="14"></i>Edit</button>
+												</li>
+												<li><button class="dropdown-item d-flex align-items-center small py-1"
+														type="button" data-bs-toggle="modal"
+														data-bs-target="#editSaleModal"><i data-feather="edit"
+															class="me-2" width="14" height="14"></i>Delete</button>
+												</li>
+												<li>
+													<button class="dropdown-item d-flex align-items-center small py-1"
+														data-bs-toggle="modal" data-bs-target="#showpayment"
+														type="button">
+														<i data-feather="dollar-sign" class="me-2" width="14"
+															height="14"></i> Create PO
+													</button>
+												</li>
+												<li>
+													<button class="dropdown-item d-flex align-items-center small py-1"
+														data-bs-toggle="modal" data-bs-target="#createpayment"
+														type="button">
+														<i data-feather="plus-circle" class="me-2" width="14"
+															height="14"></i> Payment
+													</button>
+												</li>
+												<li>
+													<a href="sales-alpa.html"
+														class="dropdown-item d-flex align-items-center small py-1">
+														<i data-feather="download" class="me-2" width="14"
+															height="14"></i>
+														Show Payment
+													</a>
+												</li>
+
+											</ul>
+										</td>
 										<td>PR-2512000020</td>
 										<td>25/11/2025</td>
 										<td>Sales Staff</td>
@@ -683,27 +1473,17 @@
 										<td>0</td>
 										<td>Paid</td>
 										<td>-</td>
-										<td class="action-table-data">
-											<div class="edit-delete-action">
-												<a class="me-2 p-2" href="javascript:void(0);"><i data-feather="eye"
-														class="action-eye"></i></a>
-												<a class="me-2 p-2" data-bs-toggle="modal"
-													data-bs-target="#edit-purchase"><i data-feather="edit"
-														class="feather-edit"></i></a>
-												<a class="confirm-text p-2" href="javascript:void(0);"><i
-														data-feather="trash-2" class="feather-trash-2"></i></a>
-											</div>
-										</td>
+
 									</tr>
 								</tbody>
 								<tfoot>
 									<tr>
+										<td colspan="1"></td>
 										<td class="text-start fw-bold">Total</td>
 										<td colspan="5"></td>
-										<td id="amount-total" class="fw-bold sum-target" data-col-index="6">0</td>
-										<td id="paid-total" class="fw-bold sum-target" data-col-index="7">0</td>
-										<td id="due-total" class="fw-bold sum-target" data-col-index="8">0</td>
-										<td colspan="3"></td>
+										<td id="amount-total" class="fw-bold sum-target" data-col-index="7">0</td>
+										<td id="paid-total" class="fw-bold sum-target" data-col-index="8">0</td>
+										<td id="due-total" class="fw-bold sum-target" data-col-index="9">0</td>
 									</tr>
 								</tfoot>
 							</table>
@@ -728,9 +1508,10 @@
 
 						<!-- Header -->
 						<div class="modal-header d-flex justify-content-between align-items-start border-0 pb-0">
-							<div class="flex-grow-1">
-
+							<div class="page-title">
+								<h4>Purchase</h4>
 							</div>
+
 
 							<!-- Tombol close di kanan -->
 							<button type="button" class="btn-close ms-3 mt-1" data-bs-dismiss="modal"
@@ -753,20 +1534,33 @@
 										</p>
 									</div>
 									<div class="col-md-4">
-										<h6 class="fw-bold mb-1">Purchase Info</h6>
-										<p class="mb-0">No. Purchase : 2505000018<br>
-											Date : 25/12/2025<br>
-											Created : Sales Staff<br>
-											Payment Status : Paid
-										</p>
+										<div class="row my-1">
+											<div class="offset-4 col-4 text-start fw-bold">Purchase Info</div>
+										</div>
+										<div class="row my-1">
+											<div class="offset-4 col-4 text-start small">No. Purchase</div>
+											<div class="col-4 small">: 2505000018</div>
+										</div>
+										<div class="row my-1">
+											<div class="offset-4 col-4 text-start small">Date</div>
+											<div class="col-4 small">: 25/12/2025</div>
+										</div>
+										<div class="row my-1">
+											<div class="offset-4 col-4 text-start small">Created</div>
+											<div class="col-4 small">: Sales Staff</div>
+										</div>
+										<div class="row my-1">
+											<div class="offset-4 col-4 text-start small">Payment Status</div>
+											<div class="col-4 small">: Paid</div>
+										</div>
 									</div>
 								</div>
 
 								<!-- Order Summary -->
 								<h6 class="fw-bold mb-2">Order Summary</h6>
 								<div class="table-responsive">
-									<table class="table table-bordered align-middle" style="border-color:#ccc;">
-										<thead class="table-light">
+									<table class="table table-bordered">
+										<thead>
 											<tr>
 												<th style="width:40%;">Product Name</th>
 												<th>Qty</th>
@@ -796,7 +1590,7 @@
 										<p>Pembelian Rutin Bulanan</p>
 									</div>
 									<div class="col-md-6">
-										<table class="table table-bordered" style="border-color:#ccc;">
+										<table class="table">
 											<tbody>
 												<tr>
 													<td>Sub Total</td>
@@ -965,7 +1759,7 @@
 
 								<!-- Top Info -->
 								<div class="row mb-4 d-flex justify-content-between">
-									<div class="col-md-8">
+									<div class="col-md-6">
 										<h6 class="fw-bold mb-1">Customer :</h6>
 										<p class="mb-0">PT Cipta Kreasi<br>
 											ciptakreasi@gmail.com<br>
@@ -974,22 +1768,43 @@
 											X5 No. 13, Jakarta Selatan, 12950
 										</p>
 									</div>
-									<div class="col-md-4">
-										<h6 class="fw-bold mb-1">Invoice Info</h6>
-										<p class="mb-0">No. Sales : 2505000018<br>
-											Date : 25/12/2025<br>
-											Payment Status : Paid<br>
-											Delivery : Express<br>
-											PO Number : -
-										</p>
+									<div class="col-md-6">
+										<div class="row my-1">
+											<div class="offset-4 col-4 text-start fw-bold">Purchase Info</div>
+										</div>
+										<div class="row my-1">
+											<div class="offset-4 col-3 text-start small">No. Purchase</div>
+											<div class="col-5 small"><input type="text" class="form-control small"
+													value="2505000018"></div>
+										</div>
+										<div class="row my-1">
+											<div class="offset-4 col-3 text-start small">Date</div>
+											<div class="col-5 small"><input type="date" class="form-control small">
+											</div>
+										</div>
+										<div class="row my-1">
+											<div class="offset-4 col-3 text-start small">Created</div>
+											<div class="col-5 small"><input type="text" class="form-control small"
+													value="Sales Staff"></div>
+										</div>
+										<div class="row my-1">
+											<div class="offset-4 col-3 text-start small">Payment Status</div>
+											<div class="col-5 small">
+												<select class="form-select form-select-sm select">
+													<option selected>Paid</option>
+													<option>Refunded</option>
+													<option>Pending</option>
+												</select>
+											</div>
+										</div>
 									</div>
 								</div>
 
 								<!-- Order Summary -->
 								<h6 class="fw-bold mb-2">Order Summary</h6>
 								<div class="table-responsive">
-									<table class="table table-bordered align-middle" style="border-color:#ccc;">
-										<thead class="table-light">
+									<table class="table table-bordered">
+										<thead>
 											<tr>
 												<th style="width:40%;">Product Name</th>
 												<th>Qty</th>
@@ -1037,7 +1852,7 @@
 										<p>Pembelian Rutin Bulanan</p>
 									</div>
 									<div class="col-md-6">
-										<table class="table table-bordered" style="border-color:#ccc;">
+										<table class="table">
 											<tbody>
 												<tr>
 													<td>Sub Total</td>

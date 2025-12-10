@@ -38,7 +38,19 @@
 
     <!-- Main CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .product-desc[contenteditable="true"]:empty:before {
+            content: attr(data-placeholder);
+            color: #aaa;
+            pointer-events: none;
+        }
 
+
+        .product-desc {
+            outline: none;
+            white-space: pre-wrap;
+        }
+    </style>
 
 </head>
 
@@ -60,8 +72,8 @@
                 <div class="page-header">
                     <div class="add-item d-flex">
                         <div class="page-title">
-                            <h4>Quotation List</h4>
-                            <h6>Manage Your Quotation</h6>
+                            <h4>Delivery Note</h4>
+                            <h6>Manage Your Delivery Note</h6>
                         </div>
                     </div>
                     <ul class="table-top-head">
@@ -87,9 +99,11 @@
                         </li>
                     </ul>
                     <div class="page-btn">
-                        <a href="add-quotation.html" class="btn btn-added"><i data-feather="plus-circle"
-                                class="me-2"></i>Add New Quotation</a>
+                        <a href="javascript:void(0);" class="btn btn-added" data-bs-toggle="modal"
+                            data-bs-target="#tambah"><i data-feather="plus-circle" class="me-2"></i>Add New
+                            Delivery Note</a>
                     </div>
+
                 </div>
 
 
@@ -613,176 +627,32 @@
     </div>
     <!-- /Main Wrapper -->
     <!-- modals -->
-    <!--Add Quotation -->
-    <div class="modal fade" id="add-units">
-        <div class="modal-dialog purchase modal-dialog-centered stock-adjust-modal">
-            <div class="modal-content">
-                <div class="page-wrapper-new p-0">
-                    <div class="content">
-                        <div class="modal-header border-0 custom-modal-header">
-                            <div class="page-title">
-                                <h4>Add Quotation</h4>
-                            </div>
-                            <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body custom-modal-body">
-                            <form action="online-orders.html">
-                                <div class="card border-0">
-                                    <div class="card-body pb-0">
 
-                                        <!-- Table -->
-                                        <div class="table-responsive no-pagination mb-3">
-                                            <table class="table datanew">
-                                                <thead>
-                                                    <tr>
-                                                        <th>Product</th>
-                                                        <th>Qty</th>
-                                                        <th>Title Job</th>
-                                                        <th>Harga</th>
-                                                        <th>Description</th>
-                                                        <th>Total Cost</th>
-                                                        <th>Art Work</th>
-                                                        <th>Hasil Cetak</th>
-                                                        <th>Note</th>
-                                                        <th>Unit Cost($)</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-
-                                        <!-- Top Form -->
-                                        <div class="row">
-                                            <!-- Customer -->
-                                            <div class="col-lg-4 col-sm-6 col-12">
-                                                <div class="mb-3">
-                                                    <label class="form-label">Customer<span
-                                                            class="text-danger ms-1">*</span></label>
-                                                    <div class="input-groupicon select-code">
-                                                        <div class="search-container">
-                                                            <input type="text" class="form-control customer-input"
-                                                                placeholder="Search Customer">
-                                                            <div class="search-results"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <!-- Date -->
-                                            <div class="col-lg-4 col-sm-6 col-12">
-                                                <div class="mb-3">
-                                                    <label class="form-label">
-                                                        Date<span class="text-danger ms-1">*</span>
-                                                    </label>
-                                                    <div class="input-group">
-                                                        <input type="text" class="datetimepicker form-control"
-                                                            placeholder="Choose">
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <!-- Product -->
-                                            <div class="col-lg-12 col-sm-6 col-12">
-                                                <div class="mb-3">
-                                                    <label class="form-label">Product<span
-                                                            class="text-danger ms-1">*</span></label>
-                                                    <div class="input-groupicon select-code">
-                                                        <input type="text" class="form-control"
-                                                            placeholder="Please type product code and select">
-
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <!-- Order Summary -->
-
-
-                                        <!-- Bottom Inputs -->
-                                        <div class="row">
-                                            <div class="col-lg-3 col-sm-6 col-12">
-                                                <div class="mb-3">
-                                                    <label class="form-label">Order Tax<span
-                                                            class="text-danger ms-1">*</span></label>
-                                                    <div class="input-groupicon select-code">
-                                                        <input type="text" class="form-control number-separator"
-                                                            inputmode="numeric" pattern="[0-9]*">
-                                                        <input type="hidden" class="result-input" id="tax">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-3 col-sm-6 col-12">
-                                                <div class="mb-3">
-                                                    <label class="form-label">Discount<span
-                                                            class="text-danger ms-1">*</span></label>
-                                                    <div class="input-groupicon select-code">
-                                                        <input type="text" class="form-control number-separator"
-                                                            inputmode="numeric" pattern="[0-9]*">
-                                                        <input type="hidden" class="result-input" id="discount">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-3 col-sm-6 col-12">
-                                                <div class="mb-3">
-                                                    <div class="input-blocks align-items-center">
-                                                        <label class="form-label">Voucher</label>
-                                                        <input type="text" class="form-control">
-                                                        <span class="btn btn-primaryadd">
-                                                            Generate Code
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-3 col-sm-6 col-12">
-                                                <div class="mb-3">
-                                                    <label class="form-label">Shipping<span
-                                                            class="text-danger ms-1">*</span></label>
-                                                    <div class="input-groupicon select-code">
-                                                        <input type="text" class="form-control number-separator"
-                                                            inputmode="numeric" pattern="[0-9]*">
-                                                        <input type="hidden" class="result-input" id="shipping">
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Footer -->
-                                <div class="modal-footer justify-content-end">
-                                    <button type="button" class="btn btn-secondary add-cancel me-3"
-                                        data-bs-dismiss="modal">Cancel</button>
-                                    <button type="submit" class="btn btn-primary add-sale">Submit</button>
-                                </div>
-
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- /Add Quotation -->
 
     <!-- modal lihat -->
     <!-- TRIGGER -->
+    <!-- template add new -->
+    <template id="product-row-template">
+        <tr class="product-row">
+            <td class="product-no"></td>
+            <td><input type="text" class="form-control product-code"></td>
+            <td>
+                <div class="product-desc empty" contenteditable="true" data-placeholder="Enter item description"></div>
+            </td>
+            <td><input type="number" class="form-control product-qty"></td>
+            <td><select class="form-select product-unit">
+                    <option value="Ream">Ream</option>
+                    <option value="Pieces">Pieces</option>
+                </select></td>
+            <td><input type="text" class="form-control"></td>
+            <td><input type="text" class="form-control"></td>
+            <td><a class="text-danger btn-delete-product"><i data-feather="trash-2"></i></a></td>
+        </tr>
+    </template>
 
+
+
+    <!-- template add new -->
     <!-- MODAL DELIVERY NOTE -->
     <div class="modal fade" id="lihat" tabindex="-1">
         <div class="modal-dialog modal-xl modal-dialog-centered">
@@ -947,255 +817,340 @@
 
     <!-- modal lihat -->
 
-    <div class="modal fade" id="edit-units">
-        <div class="modal-dialog edit-sales-modal">
+    <div class="modal fade" id="edit-units" tabindex="-1">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
             <div class="modal-content">
-                <div class="page-wrapper p-0 m-0">
-                    <div class="content p-0">
-                        <div class="page-header p-4 mb-0">
-                            <div class="add-item new-sale-items d-flex">
-                                <div class="page-title">
-                                    <h4>Edit Sales</h4>
-                                </div>
-                                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
+
+                <div class="modal-header">
+                    <h5 class="modal-title">Edit Delivery Note</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+                <div class="modal-body">
+
+                    <!-- HEADER -->
+                    <div class="row align-items-start justify-content-between  p-5">
+                        <div class="col-md-2 text-center border p-4">
+                            <strong>LOGO</strong>
                         </div>
-                        <form action="">
-                            <div class="card border-0">
-                                <div class="card-body pb-0">
-                                    <div class="table-responsive no-pagination mb-3">
-                                        <table class="table  datanew">
-                                            <thead>
-                                                <tr>
-                                                    <th>Product</th>
-                                                    <th>Qty</th>
-                                                    <th>Title Job</th>
-                                                    <th>Harga</th>
-                                                    <th>Description</th>
-                                                    <th>Total Cost</th>
-                                                    <th>Art Work</th>
-                                                    <th>Hasil Cetak</th>
-                                                    <th>Note</th>
-                                                    <th>Unit Cost($)</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <!-- Product -->
-                                                    <td>
-                                                        <div class="d-flex align-items-center">
-                                                            <a href="javascript:void(0);" class="avatar avatar-md me-2">
-                                                                <img src="assets/img/products/stock-img-01.png"
-                                                                    alt="product">
-                                                            </a>
-                                                            <a href="javascript:void(0);">Nike Air Max</a>
-                                                        </div>
-                                                    </td>
-                                                    <!-- Qty -->
-                                                    <td>
-                                                        <div class="product-quantity bg-gray-transparent border-0">
-                                                            <span class="quantity-btn">+<i data-feather="plus-circle"
-                                                                    class="plus-circle"></i></span>
-                                                            <input type="text"
-                                                                class="quntity-input form-control bg-transparent"
-                                                                value="1">
-                                                            <span class="quantity-btn"><i data-feather="minus-circle"
-                                                                    class="feather-search"></i></span>
-                                                        </div>
-                                                    </td>
-                                                    <td>Designer</td>
-                                                    <td>120.000</td>
-                                                    <td>Shoes limited edition</td>
-                                                    <td>120.000</td>
-                                                    <td>HVS 100gr</td>
-                                                    <td><span class="badge bg-soft-warning">Process</span></td>
-                                                    <td>-</td>
-                                                    <td>80</td>
-                                                </tr>
 
-                                                <tr>
-                                                    <td>
-                                                        <div class="d-flex align-items-center">
-                                                            <a href="javascript:void(0);" class="avatar avatar-md me-2">
-                                                                <img src="assets/img/products/stock-img-02.png"
-                                                                    alt="product">
-                                                            </a>
-                                                            <a href="javascript:void(0);">Nike Jordan</a>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="product-quantity bg-gray-transparent border-0">
-                                                            <span class="quantity-btn">+<i data-feather="plus-circle"
-                                                                    class="plus-circle"></i></span>
-                                                            <input type="text"
-                                                                class="quntity-input form-control bg-transparent"
-                                                                value="2">
-                                                            <span class="quantity-btn"><i data-feather="minus-circle"
-                                                                    class="feather-search"></i></span>
-                                                        </div>
-                                                    </td>
-                                                    <td>Marketing</td>
-                                                    <td>200.000</td>
-                                                    <td>High top sneakers</td>
-                                                    <td>400.000</td>
-                                                    <td>Art Paper 120gr</td>
-                                                    <td><span class="badge bg-soft-success">Approved</span></td>
-                                                    <td>Urgent</td>
-                                                    <td>150</td>
-                                                </tr>
+                        <div class="col-md-4 text-start">
+                            <h4 class="fw-bold">PT. DULANK SEMESTA CIDA</h4>
+                            <small>
+                                Jl. Arif Rahman Hakim Niaga Kel. Nagasari<br>
+                                Karawang Barat - Karawang<br>
+                                Email : ptdulanksemestacida@gmail.com<br>
+                                Website : www.percetakan-dulank.com<br>
+                                WhatsApp : 0877 8813 1400
+                            </small>
+                        </div>
+
+                        <div class="col-md-5">
+                            <h5 class="fw-bold text-start">DELIVERY NOTE</h5>
+                            <small>
+                                <table>
+                                    <tr>
+                                        <td>Dn No</td>
+                                        <td>:</td>
+                                        <td>DN00001</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Dn Date</td>
+                                        <td>:</td>
+                                        <td>DN00001</td>
+                                    </tr>
+                                    <tr>
+                                        <td>PO</td>
+                                        <td>:</td>
+                                        <td>DN00001</td>
+                                    </tr>
+                                </table>
+                            </small>
 
 
-
-                                                <tr>
-                                                    <td>
-                                                        <div class="d-flex align-items-center">
-                                                            <a href="javascript:void(0);" class="avatar avatar-md me-2">
-                                                                <img src="assets/img/products/stock-img-05.png"
-                                                                    alt="product">
-                                                            </a>
-                                                            <a href="javascript:void(0);">Converse Chuck 70</a>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="product-quantity bg-gray-transparent border-0">
-                                                            <span class="quantity-btn">+<i data-feather="plus-circle"
-                                                                    class="plus-circle"></i></span>
-                                                            <input type="text"
-                                                                class="quntity-input form-control bg-transparent"
-                                                                value="5">
-                                                            <span class="quantity-btn"><i data-feather="minus-circle"
-                                                                    class="feather-search"></i></span>
-                                                        </div>
-                                                    </td>
-                                                    <td>Operator</td>
-                                                    <td>90.000</td>
-                                                    <td>Canvas shoes classic</td>
-                                                    <td>450.000</td>
-                                                    <td>Art Paper 150 gr</td>
-                                                    <td><span class="badge bg-soft-danger">Rejected</span></td>
-                                                    <td>Stock limited</td>
-                                                    <td>60</td>
-                                                </tr>
-
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-lg-4 col-sm-6 col-12">
-                                            <div class="mb-3">
-                                                <label class="form-label">Customer Name<span
-                                                        class="text-danger ms-1">*</span></label>
-                                                <div class="search-container">
-                                                    <input type="text" class="form-control customer-input"
-                                                        placeholder="Search Customer">
-                                                    <div class="search-results"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-4 col-sm-6 col-12">
-                                            <div class="mb-3">
-                                                <label class="form-label">Date<span
-                                                        class="text-danger ms-1">*</span></label>
-                                                <div class="input-groupicon calender-input">
-                                                    <input type="text" class="datetimepicker form-control"
-                                                        placeholder="19 jan 2023">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-4 col-sm-6 col-12">
-                                            <div class="mb-3">
-                                                <div class="input-blocks align-items-center">
-                                                    <label class="form-label">PO Number</label>
-                                                    <input type="text" class="form-control">
-                                                    <span class="btn btn-primaryadd">
-                                                        Generate Code
-                                                    </span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-12 col-sm-6 col-12">
-                                            <div class="mb-3">
-                                                <label class="form-label">Product Name<span
-                                                        class="text-danger ms-1">*</span></label>
-                                                <div class="input-groupicon select-code">
-                                                    <input type="text" class="form-control"
-                                                        placeholder="Please type product code and select">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-
-
-                                    <div class="row">
-                                        <div class="col-lg-3 col-sm-6 col-12">
-                                            <div class="mb-3">
-                                                <label class="form-label">Order Tax<span
-                                                        class="text-danger ms-1">*</span></label>
-                                                <div class="input-groupicon select-code">
-                                                    <input type="text" class="form-control number-separator"
-                                                        inputmode="numeric" pattern="[0-9]*">
-                                                    <input type="hidden" class="result-input" id="tax">
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-3 col-sm-6 col-12">
-                                            <div class="mb-3">
-                                                <label class="form-label">Discount<span
-                                                        class="text-danger ms-1">*</span></label>
-                                                <div class="input-groupicon select-code">
-                                                    <input type="text" class="form-control number-separator"
-                                                        inputmode="numeric" pattern="[0-9]*">
-                                                    <input type="hidden" class="result-input" id="discount">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-3 col-sm-6 col-12">
-                                            <div class="mb-3">
-                                                <label class="form-label">Shipping<span
-                                                        class="text-danger ms-1">*</span></label>
-                                                <div class="input-groupicon select-code">
-                                                    <input type="text" class="form-control number-separator"
-                                                        inputmode="numeric" pattern="[0-9]*">
-                                                    <input type="hidden" class="result-input" id="shipping">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-3 col-sm-6 col-12">
-                                            <div class="mb-3">
-                                                <div class="input-blocks align-items-center">
-                                                    <label class="form-label">Voucher</label>
-                                                    <input type="text" class="form-control">
-                                                    <span class="btn btn-primaryadd">
-                                                        Generate
-                                                    </span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-12">
-                                            <div class="mb-3">
-                                                <label class="form-label">Notes<span
-                                                        class="text-danger ms-1">*</span></label>
-                                                <textarea class="form-control"></textarea>
-                                            </div>
-                                        </div>
-                                    </div>
+                            <div class="mb-2 row align-items-center">
+                                <label class="form-label col-4 mb-0">Shipping By</label>
+                                <div class="col-8">
+                                    <input type="text" class="form-control" value="Car">
                                 </div>
                             </div>
-                            <div class="modal-footer justify-content-end">
-                                <button type="button" class="btn btn-secondary add-cancel me-3"
-                                    data-bs-dismiss="modal">Cancel</button>
-                                <button type="submit" class="btn btn-primary add-sale">Save Changes</button>
+
+                            <div class="row align-items-center">
+                                <label class="form-label col-4 mb-0">Reference</label>
+                                <div class="col-8">
+                                    <input type="text" class="form-control" value="Mr. Arman">
+                                </div>
                             </div>
-                        </form>
+
+                        </div>
+                    </div>
+
+                    <!-- TABLE ITEM -->
+                    <div class="table-responsive mt-2 mb-4">
+                        <table class="table" id="product-table">
+                            <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>Code</th>
+                                    <th>Item Description</th>
+                                    <th>Qty</th>
+                                    <th>Unit</th>
+                                    <th>Packing Qty</th>
+                                    <th>Weight (Kg)</th>
+                                    <th style="width: 50px;">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="product-body-edit">
+                                <tr>
+                                    <td>1</td>
+                                    <td><input type="text" class="form-control"></td>
+                                    <td class="text-start">
+                                        Brosur Full Color<br>
+                                        Brosur PPDB SMAN 1 Bandung
+                                    </td>
+                                    <td> <input type="number" class="form-control product-qty text-end" value="0"
+                                            min="0">
+                                    </td>
+                                    <td width="120px">
+                                        <select class="form-select">
+                                            <option value="" disabled>Select Unit</option>
+                                            <option value="Ream">Ream</option>
+                                            <option value="Pieces">Pieces</option>
+                                        </select>
+                                    </td>
+                                    <td><input type="text" class="form-control" value="2 Pax"></td>
+                                    <td><input type="text" class="form-control" value="6 Kg"></td>
+                                    <td><a href="javascript:void(0);" class="text-danger btn-delete-product">
+                                            <i data-feather="trash-2"></i>
+                                        </a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <a href="javascript:void(0);" id="btn-add-product" class="mt-2">
+                            <i data-feather="plus-circle" class="plus-down-add"></i>
+                            <span>add New</span>
+                        </a>
+                    </div>
+
+                    <!-- SIGNATURE SECTION -->
+                    <div class="row text-center mt-5">
+
+                        <div class="col-md-3 d-flex flex-column align-items-center">
+                            <p class="fw-bold">Receive By</p>
+                            <div style="height:70px"></div>
+                            <div style="width:200px; border-bottom:1px solid #000"></div>
+                            <small>Your Name, Sign and Stamp</small>
+                        </div>
+
+                        <div class="col-md-3 d-flex flex-column align-items-center">
+                            <p class="fw-bold">Security / Check</p>
+                            <div style="height:70px"></div>
+                            <div style="width:200px; border-bottom:1px solid #000"></div>
+                            <small>Your Name, Sign and Stamp</small>
+                        </div>
+
+                        <div class="col-md-3 d-flex flex-column align-items-center">
+                            <p class="fw-bold">Driver</p>
+                            <div style="height:70px"></div>
+                            <div style="width:200px; border-bottom:1px solid #000"></div>
+                            <small>Nurdin</small>
+                        </div>
+
+                        <div class="col-md-3 d-flex flex-column align-items-center">
+                            <p class="fw-bold">Issued By</p>
+                            <div style="height:70px"></div>
+                            <div style="width:200px; border-bottom:1px solid #000"></div>
+                            <small>Nurdin</small>
+                        </div>
+
+                    </div>
+
+
+
+                </div>
+
+                <!-- FOOTER BUTTON -->
+                <div class="modal-footer justify-content-between">
+                    <div>
+                        <button class="btn btn-warning text-white">
+                            <i data-feather="printer"></i> Print
+                        </button>
+                        <button class="btn btn-dark">
+                            <i data-feather="download"></i> Download
+                        </button>
+                    </div>
+
+                    <div>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                            Cancel
+                        </button>
+                        <button class="btn btn-warning">
+                            Save Changes
+                        </button>
                     </div>
                 </div>
+
             </div>
         </div>
     </div>
+
+    <div class="modal fade" id="tambah" tabindex="-1">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h5 class="modal-title">Add Delivery Note</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+                <div class="modal-body">
+
+                    <!-- HEADER -->
+                    <div class="row align-items-start justify-content-between  p-5">
+                        <div class="col-md-2 text-center border p-4">
+                            <strong>LOGO</strong>
+                        </div>
+
+                        <div class="col-md-4 text-start">
+                            <h4 class="fw-bold">PT. DULANK SEMESTA CIDA</h4>
+                            <small>
+                                Jl. Arif Rahman Hakim Niaga Kel. Nagasari<br>
+                                Karawang Barat - Karawang<br>
+                                Email : ptdulanksemestacida@gmail.com<br>
+                                Website : www.percetakan-dulank.com<br>
+                                WhatsApp : 0877 8813 1400
+                            </small>
+                        </div>
+
+                        <div class="col-md-5">
+                            <h5 class="fw-bold text-start">DELIVERY NOTE</h5>
+                            <small>
+                                <table>
+                                    <tr>
+                                        <td>Dn No</td>
+                                        <td>:</td>
+                                        <td>DN00001</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Dn Date</td>
+                                        <td>:</td>
+                                        <td>DN00001</td>
+                                    </tr>
+                                    <tr>
+                                        <td>PO</td>
+                                        <td>:</td>
+                                        <td>DN00001</td>
+                                    </tr>
+                                </table>
+                            </small>
+
+
+                            <div class="mb-2 row align-items-center">
+                                <label class="form-label col-4 mb-0">Shipping By</label>
+                                <div class="col-8">
+                                    <input type="text" class="form-control" value="Car">
+                                </div>
+                            </div>
+
+                            <div class="row align-items-center">
+                                <label class="form-label col-4 mb-0">Reference</label>
+                                <div class="col-8">
+                                    <input type="text" class="form-control" value="Mr. Arman">
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- TABLE ITEM -->
+                    <div class="table-responsive mt-2 mb-4">
+                        <table class="table" id="product-tambah">
+                            <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>Code</th>
+                                    <th>Item Description</th>
+                                    <th>Qty</th>
+                                    <th>Unit</th>
+                                    <th>Packing Qty</th>
+                                    <th>Weight (Kg)</th>
+                                    <th style="width: 50px;">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="product-body-add">
+
+                            </tbody>
+                        </table>
+
+                        <a href="javascript:void(0);" id="btn-tambahin-product" class="mt-2">
+                            <i data-feather="plus-circle" class="plus-down-add"></i>
+                            <span>add New</span>
+                        </a>
+                    </div>
+
+                    <!-- SIGNATURE SECTION -->
+                    <div class="row text-center mt-5">
+
+                        <div class="col-md-3 d-flex flex-column align-items-center">
+                            <p class="fw-bold">Receive By</p>
+                            <div style="height:70px"></div>
+                            <div style="width:200px; border-bottom:1px solid #000"></div>
+                            <small>Your Name, Sign and Stamp</small>
+                        </div>
+
+                        <div class="col-md-3 d-flex flex-column align-items-center">
+                            <p class="fw-bold">Security / Check</p>
+                            <div style="height:70px"></div>
+                            <div style="width:200px; border-bottom:1px solid #000"></div>
+                            <small>Your Name, Sign and Stamp</small>
+                        </div>
+
+                        <div class="col-md-3 d-flex flex-column align-items-center">
+                            <p class="fw-bold">Driver</p>
+                            <div style="height:70px"></div>
+                            <div style="width:200px; border-bottom:1px solid #000"></div>
+                            <small>Nurdin</small>
+                        </div>
+
+                        <div class="col-md-3 d-flex flex-column align-items-center">
+                            <p class="fw-bold">Issued By</p>
+                            <div style="height:70px"></div>
+                            <div style="width:200px; border-bottom:1px solid #000"></div>
+                            <small>Nurdin</small>
+                        </div>
+
+                    </div>
+
+
+
+                </div>
+
+                <!-- FOOTER BUTTON -->
+                <div class="modal-footer justify-content-between">
+                    <div>
+                        <button class="btn btn-warning text-white">
+                            <i data-feather="printer"></i> Print
+                        </button>
+                        <button class="btn btn-dark">
+                            <i data-feather="download"></i> Download
+                        </button>
+                    </div>
+
+                    <div>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                            Cancel
+                        </button>
+                        <button class="btn btn-warning">
+                            Save Changes
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
 
     <!-- /modals -->
     <!-- jQuery -->
@@ -1237,6 +1192,105 @@
     <!-- Custom JS -->
     <script src="assets/js/theme-script.js"></script>
     <script src="assets/js/script.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+
+            // ===================== GLOBAL PLACEHOLDER HANDLER =====================
+            function initPlaceholder(el) {
+                function toggle() {
+                    // Menggunakan getAttribute("data-placeholder") untuk mendukung IE/Edge
+                    // dan memastikan kompatibilitas dengan CSS yang kamu buat.
+                    el.classList.toggle("empty", el.textContent.trim() === "");
+                }
+                toggle();
+                el.addEventListener("input", toggle);
+                el.addEventListener("blur", toggle);
+            }
+
+            // ===================== FUNGSI GENERIK (dipakai edit & tambah) =====================
+            function initProductTable(btnId, bodyId, templateId) {
+
+                const btnAdd = document.getElementById(btnId);
+                const tbody = document.getElementById(bodyId);
+                const template = document.getElementById(templateId);
+
+                if (!btnAdd || !tbody || !template) return;
+
+                // Tambahkan pengecekan ini untuk memastikan ID/Elemen benar
+                console.log(`Inisialisasi: Tombol(${btnId}) = ${!!btnAdd}, Body(${bodyId}) = ${!!tbody}`);
+
+                function updateNumbers() {
+                    const rows = tbody.querySelectorAll("tr");
+                    rows.forEach((row, i) => {
+                        const noCell = row.querySelector(".product-no");
+                        if (noCell) noCell.textContent = i + 1;
+                    });
+                }
+
+                // ===== DELETE (event delegation)
+                tbody.addEventListener("click", e => {
+                    const btn = e.target.closest(".btn-delete-product");
+                    if (!btn) return;
+
+                    e.preventDefault(); // Mencegah perilaku default link
+                    btn.closest("tr").remove();
+                    updateNumbers();
+
+                    if (window.feather) feather.replace();
+                });
+
+                // ===== ADD NEW ROW
+                btnAdd.addEventListener("click", function () {
+                    const clone = template.content.cloneNode(true);
+                    const row = clone.querySelector("tr");
+
+                    // aktifkan placeholder untuk contenteditable
+                    row.querySelectorAll("[contenteditable]").forEach(initPlaceholder);
+
+                    tbody.appendChild(row);
+                    updateNumbers();
+
+                    // refresh icons
+                    if (window.feather) feather.replace();
+
+                    const codeInput = row.querySelector(".product-code");
+                    if (codeInput) codeInput.focus();
+                });
+
+                // ===== Inisialisasi:
+                // 1. init placeholder untuk row default/yang sudah ada
+                tbody.querySelectorAll("[contenteditable]").forEach(initPlaceholder);
+
+                // 2. Update penomoran awal (Penting untuk Edit yang ada hardcoded row)
+                updateNumbers();
+
+                // 3. initial feather
+                if (window.feather) feather.replace();
+            }
+
+            // ===================== INISIALISASI UNTUK KEDUA MODAL =====================
+            // INISIALISASI UNTUK MODAL EDIT (#edit-units)
+            initProductTable(
+                "btn-add-product",         // ID Tombol Add di modal Edit
+                "product-body-edit",       // ID <tbody> di modal Edit
+                "product-row-template"     // ID <template>
+            );
+
+            // INISIALISASI UNTUK MODAL TAMBAH (#tambah)
+            initProductTable(
+                "btn-tambahin-product",    // ID Tombol Add di modal Tambah
+                "product-body-add",        // <--- PERBAIKAN DI SINI: Menggunakan ID yang BENAR (product-body-add)
+                "product-row-template"     // ID <template>
+            );
+
+        });
+    </script>
+
+
+
+
+
 
 
 </body>

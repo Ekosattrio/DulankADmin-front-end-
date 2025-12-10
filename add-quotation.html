@@ -38,6 +38,20 @@
 	<!-- Main CSS -->
 	<link rel="stylesheet" href="assets/css/style.css">
 
+
+	<style>
+		.product-desc[contenteditable="true"]:empty:before {
+			content: attr(data-placeholder);
+			color: #aaa;
+			pointer-events: none;
+		}
+
+
+		.product-desc {
+			outline: none;
+			white-space: pre-wrap;
+		}
+	</style>
 </head>
 
 <body>
@@ -57,262 +71,272 @@
 			<div class="content">
 
 
-				<div class="row mt-3">
-					<div class="col-lg-6 col-sm-6 col-12">
-						<div class="mb-3">
-							<div class="add-newplus">
-								<label class="form-label">Customer<span class="text-danger ms-1">*</span></label>
-								<a href="javascript:void(0);" data-bs-toggle="modal"
-									data-bs-target="#add-units-category"><i data-feather="plus-circle"
-										class="plus-down-add"></i><span>+Search Customer</span></a>
-							</div>
-							<div class="input-groupicon select-code">
-								<div class="search-container">
-									<input type="text" class="form-control customer-input"
-										placeholder="Search Customer">
-									<div class="search-results"></div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-6 col-sm-6 col-12">
-						<div class="mb-3">
-							<div class="input-blocks align-items-center">
-								<div class="add-newplus">
-									<div class="col-6">
-										<label class="form-label">Delivery</label>
+				<div class="card">
+					<div class="card-body">
+						<div class="row mt-3">
+							<div class="col-lg-6 col-sm-6 col-12">
+								<div class="mb-3">
+									<div class="add-newplus">
+										<label class="form-label">Customer<span
+												class="text-danger ms-1">*</span></label>
+										<a href="javascript:void(0);" data-bs-toggle="modal"
+											data-bs-target="#add-units-category"><i data-feather="plus-circle"
+												class="plus-down-add"></i><span>+Search Customer</span></a>
 									</div>
-									<div class="col-6">
-										<div class="form-check form-check-inline">
-											<input class="form-check-input" type="radio" name="shipping_type"
-												id="sameAddress" value="same">
-											<label class="form-check-label" for="sameAddress">Same Address</label>
-										</div>
-
-										<div class="form-check form-check-inline">
-											<input class="form-check-input" type="radio" name="shipping_type"
-												id="pickup" value="pickup">
-											<label class="form-check-label" for="pickup">Pickup</label>
+									<div class="input-groupicon select-code">
+										<div class="search-container customer-input">
+											<input type="text" class="form-control customer-input"
+												placeholder="Search Customer" data-target="data-customer">
+											<div class="search-results"></div>
 										</div>
 									</div>
-
 								</div>
-								<input type="text" class="form-control" value="Pt Cipta kreasi">
-
 							</div>
-						</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-lg-6 col-sm-6 col-12">
-						<label class="form-label">Address</label>
-						<input type="text" class="form-control"
-							value="Cyber tower 2 lantai 29 jalan Hr Rasuna Said x5 no 13,Jakarta Selatan,12950">
+							<div class="col-lg-6 col-sm-6 col-12">
+								<div class="mb-3">
+									<div class="input-blocks align-items-center customer-input">
+										<div class="add-newplus">
+											<div class="col-6">
+												<label class="form-label">Delivery</label>
+											</div>
+											<div class="col-6">
+												<div class="form-check form-check-inline">
+													<input class="form-check-input" type="radio" name="shipping_type"
+														id="sameAddress" value="same">
+													<label class="form-check-label" for="sameAddress">Same
+														Address</label>
+												</div>
 
-					</div>
-					<div class="col-lg-6 col-sm-6 col-12">
-						<label class="form-label">Address</label>
-						<input type="text" class="form-control"
-							value="Cyber tower 2 lantai 29 jalan Hr Rasuna Said x5 no 13,Jakarta Selatan,12950">
+												<div class="form-check form-check-inline">
+													<input class="form-check-input" type="radio" name="shipping_type"
+														id="pickup" value="pickup" checked> <label
+														class="form-check-label" for="pickup">Pickup</label>
+												</div>
+											</div>
 
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-lg-6 col-sm-6 col-12">
-						<label class="form-label">Email</label>
-						<input type="text" class="form-control" value="ciptaKreasi@gmail.com">
+										</div>
+										<div class="search-container customer-input">
+											<input type="text" class="form-control customer-input"
+												placeholder="Search Delivery" data-target="data-customer">
+											<div class="search-results"></div>
+										</div>
 
-					</div>
-					<div class="col-lg-6 col-sm-6 col-12">
-						<label class="form-label">Email</label>
-						<input type="text" class="form-control" value="ciptaKreasi@gmail.com">
 
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-lg-6 col-sm-6 col-12">
-						<label class="form-label">Phone</label>
-						<input type="text" class="form-control" value="ciptaKreasi@gmail.com">
-
-					</div>
-					<div class="col-lg-6 col-sm-6 col-12">
-						<label class="form-label">Phone</label>
-						<input type="text" class="form-control" value="ciptaKreasi@gmail.com">
-
-					</div>
-				</div>
-				<div class="row mt-2">
-					<div class="col-lg-6 col-sm-6 col-12">
-						<div class="">
-							<div class="add-newplus">
-								<label class="form-label">Search Product<span class="text-danger ms-1">*</span></label>
-								<a href="javascript:void(0);" data-bs-toggle="modal"
-									data-bs-target="#add-units-category"><i data-feather="plus-circle"
-										class="plus-down-add"></i><span>add New</span></a>
-							</div>
-							<div class="input-groupicon select-code">
-								<div class="search-container">
-									<input type="text" class="form-control customer-input"
-										placeholder="Search Customer">
-									<div class="search-results"></div>
+									</div>
 								</div>
 							</div>
 						</div>
-					</div>
-				</div>
-				<div class="row mt-3">
-					<div class="col-12">
-						<div>
-							<div class="table-responsive mb-4">
-								<table class="table">
-									<thead>
-										<tr>
-											<th>Item Description</th>
-											<th>Qty</th>
-											<th>Unit</th>
-											<th>Price(IDR)</th>
-											<th>Amount(IDR)</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<td>Brosur Full Collor</td>
-											<td>2</td>
-											<td>
-												<select class="form-select form-select-sm">
-													<option>Ream</option>
-													<option>Pieces</option>
-												</select>
-											</td>
-											<td>10000</td>
-											<td>90000</td>
+						<div class="row">
+							<div class="col-lg-6 col-sm-6 col-12">
+								<label class="form-label">Address</label>
+								<input type="text" class="form-control" id="billingAddress"
+									value="Cyber tower 2 lantai 29 jalan Hr Rasuna Said x5 no 13,Jakarta Selatan,12950">
 
-										</tr>
-
-									</tbody>
-								</table>
 							</div>
-							<button class="btn btn-warning btn-sm" data-bs-toggle="modal"
-								data-bs-target="#modalPaperType">Add Paper Type</button>
+							<div class="col-lg-6 col-sm-6 col-12">
+								<label class="form-label">Address</label>
+								<input type="text" class="form-control" id="shippingAddress"
+									value="Cyber tower 2 lantai 29 jalan Hr Rasuna Said x5 no 13,Jakarta Selatan,12950">
+
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-lg-6 col-sm-6 col-12">
+								<label class="form-label">Email</label>
+								<input type="text" class="form-control" id="billingEmail" value="ciptaKreasi@gmail.com">
+
+							</div>
+							<div class="col-lg-6 col-sm-6 col-12">
+								<label class="form-label">Email</label>
+								<input type="text" class="form-control" id="shippingEmail"
+									value="ciptaKreasi@gmail.com">
+
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-lg-6 col-sm-6 col-12">
+								<label class="form-label">Phone</label>
+								<input type="text" class="form-control" id="billingPhone" value="0812xxxxxx">
+
+							</div>
+							<div class="col-lg-6 col-sm-6 col-12">
+								<label class="form-label">Phone</label>
+								<input type="text" class="form-control" id="shippingPhone" value="0812xxxxxx">
+
+							</div>
 						</div>
 					</div>
 				</div>
-				<div class="row">
-					<div class="col-6">
-						<div>
-							<div class="table-responsive mb-4">
-								<table class="table">
-									<thead>
-										<tr>
-											<th>&nbsp;</th>
-											<th>&nbsp;</th>
-											<th>&nbsp;</th>
+				<div class="card" id="product-card">
+					<div class="card-body">
+						<div class="row mt-2">
+							<div class="col-lg-6 col-sm-6 col-12">
+								<div class="">
+									<div class="add-newplus">
+										<label class="form-label">Search Product
+											<span class="text-danger ms-1">*</span>
+										</label>
+										<a href="javascript:void(0);" id="btn-add-product">
+											<i data-feather="plus-circle" class="plus-down-add"></i>
+											<span>add New</span>
+										</a>
+									</div>
 
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<td>1</td>
-											<td>this Quotation Is Valid for 30 Days the date of issue</td>
-											<td></td>
-											<td>
-												<a class="confirm-text p-2" href="javascript:void(0);"
-													style="color: red;"><i data-feather="trash-2"></i></a>
-											</td>
-										</tr>
-										<tr>
-											<td>2</td>
-											<td>A 50% Deposit Is required to confirm the order,<br> the remaining
-												balance is due upon delivery</td>
-											<td></td>
-											<td>
-												<a class="confirm-text p-2" href="javascript:void(0);"
-													style="color: red;"><i data-feather="trash-2"></i></a>
-											</td>
-										</tr>
-										<tr>
-											<td>1</td>
-											<td>Price Covers Only the items listed Changes,<br>require a written
-												revision and may extra charges</td>
-											<td></td>
-											<td>
-												<a class="confirm-text p-2" href="javascript:void(0);"
-													style="color: red;"><i data-feather="trash-2"></i></a>
-											</td>
-										</tr>
-										<tr>
-											<td>1</td>
-											<td>this Quotation Is Valid for 30 Days the date of issue</td>
-											<td></td>
-											<td>
-												<a class="confirm-text p-2" href="javascript:void(0);"
-													style="color: red;"><i data-feather="trash-2"></i></a>
-											</td>
-										</tr>
+									<div class="input-groupicon select-code">
+										<div class="search-container">
+											<input type="text" class="form-control customer-input"
+												placeholder="Search Customer">
+											<div class="search-results"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
 
-									</tbody>
-								</table>
+						<div class="row mt-3">
+							<div class="col-12">
+								<div>
+									<div class="table-responsive mb-4">
+										<table class="table" id="item-table">
+											<thead>
+												<tr>
+													<th>Item Description</th>
+													<th class="text-end" style="width: 100px;">Qty</th>
+													<th style="width: 150px;">Unit</th>
+													<th class="text-end">Price(IDR)</th>
+													<th class="text-end">Amount(IDR)</th>
+													<th style="width: 50px;">Action</th>
+												</tr>
+											</thead>
+
+											<tbody id="item-body">
+											</tbody>
+										</table>
+									</div>
+
+									<a href="javascript:void(0);" id="btn-add-blank-item">
+										<i data-feather="plus-circle" class="plus-down-add"></i>
+										<span>add New blank</span>
+									</a>
+								</div>
 							</div>
 						</div>
 					</div>
-					<div class="col-6 mt-5">
-						<div class="row align-items-center">
-							<div class="col-4">
-								<label class="form-label m-0">Shipping Cost</label>
+				</div>
+
+
+
+
+
+				<div class="card">
+					<div class="card-body">
+						<div class="row">
+							<div class="col-6">
+								<div>
+									<h3 class="mb-3">Term & Condition</h3>
+									<div class="mb-4">
+
+										<div id="termContainer">
+
+											<div class="d-flex py-2 term-item" data-term-id="1">
+												<div class="me-3 term-number" style="width:30px;">1</div>
+												<div class="flex-grow-1 term-content text-start">
+													<div class="product-desc" contenteditable="true"
+														data-placeholder="Enter item description"
+														style="min-height: 38px;"></div>
+
+												</div>
+												<a class="confirm-text p-2 text-danger delete-term-btn"
+													href="javascript:void(0);">
+													<i data-feather="trash-2"></i>
+												</a>
+											</div>
+
+											<div class="d-flex py-2 term-item" data-term-id="2">
+												<div class="me-3 term-number" style="width:30px;">2</div>
+												<div class="flex-grow-1 term-content text-start">
+													<div class="product-desc" contenteditable="true"
+														data-placeholder="Enter item description"
+														style="min-height: 38px;"></div>
+
+												</div>
+												<a class="confirm-text p-2 text-danger delete-term-btn"
+													href="javascript:void(0);">
+													<i data-feather="trash-2"></i>
+												</a>
+											</div>
+
+											<div class="d-flex py-2 term-item" data-term-id="3">
+												<div class="me-3 term-number" style="width:30px;">3</div>
+												<div class="flex-grow-1 term-content text-start">
+													<div class="product-desc" contenteditable="true"
+														data-placeholder="Enter item description"
+														style="min-height: 38px;"></div>
+
+												</div>
+												<a class="confirm-text p-2 text-danger delete-term-btn"
+													href="javascript:void(0);">
+													<i data-feather="trash-2"></i>
+												</a>
+											</div>
+
+											<div class="d-flex py-2 term-item" data-term-id="4">
+												<div class="me-3 term-number" style="width:30px;">4</div>
+												<div class="flex-grow-1 term-content text-start">
+													<div class="product-desc" contenteditable="true"
+														data-placeholder="Enter item description"
+														style="min-height: 38px;"></div>
+
+												</div>
+												<a class="confirm-text p-2 text-danger delete-term-btn"
+													href="javascript:void(0);">
+													<i data-feather="trash-2"></i>
+												</a>
+											</div>
+
+										</div> <a href="javascript:void(0);" id="btnAddNewTerm"
+											class="mt-3 d-inline-block">
+											<i data-feather="plus-circle" class="plus-down-add"></i>
+											<span>add New blank</span>
+										</a>
+
+									</div>
+								</div>
 							</div>
-							<div class="col-8">
-								<input type="text" class="form-control" value="ciptaKreasi@gmail.com">
+							<div class="col-6 ">
+								<div class="row align-items-center">
+									<div class="col-4">
+										<label class="form-label m-0">Shipping Cost</label>
+									</div>
+									<div class="col-8">
+										<input type="text" class="form-control" value="ciptaKreasi@gmail.com">
+									</div>
+								</div>
+								<div class="row align-items-center mt-3">
+									<div class="col-4">
+										<label class="form-label m-0">Shipping Cost</label>
+									</div>
+									<div class="col-8">
+										<select class="form-select form-select-sm">
+											<option>Ppn 11% (11250)</option>
+											<option>Ppn 11% (11250)</option>
+										</select>
+									</div>
+								</div>
+								<div class="row align-items-center mt-3">
+									<div class="col-4">
+										<label class="form-label m-0">Grand Total</label>
+									</div>
+									<div class="col-8 text-end fw-bold">
+										1125000
+									</div>
+								</div>
 							</div>
-						</div>
-						<div class="row align-items-center mt-3">
-							<div class="col-4">
-								<label class="form-label m-0">Shipping Cost</label>
-							</div>
-							<div class="col-8">
-								<select class="form-select form-select-sm">
-									<option>Ppn 11% (11250)</option>
-									<option>Ppn 11% (11250)</option>
-								</select>
-							</div>
-						</div>
-						<div class="row align-items-center mt-3">
-							<div class="col-4">
-								<label class="form-label m-0">Grand Total</label>
-							</div>
-							<div class="col-8 text-end fw-bold">
-								1125000
-							</div>
+
 						</div>
 					</div>
+				</div>
 
-				</div>
-				<div class="table-responsive">
-					<table class="table table-bordered align-middle" style="border-color:#ccc;">
-						<thead class="table-light">
-							<tr>
-								<th style="width:40%;">Product Name</th>
-								<th>Qty</th>
-								<th>Unit</th>
-								<th>Price (IDR)</th>
-								<th>Amount (IDR)</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>
-									<strong>Brosur PPDB SMAN 1 Bandung</strong><br>
-									<small><em>Brosur Full Color A4 (210x297 Millimeter), Art paper
-											150gr,<br>
-											Tanpa Laminasi, Tanpa Lipatan</em></small>
-								</td>
-								<td>2</td>
-								<td>Ream</td>
-								<td>450.000</td>
-								<td>900.000</td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
 			</div>
 		</div>
 
@@ -322,10 +346,50 @@
 
 	<!-- /modals -->
 	<!-- jQuery -->
+	<template id="blank-item-template">
+		<tr class="item-row new-item-row">
+			<td class="text-start">
+				<div class="product-desc" contenteditable="true" data-placeholder="Enter item description"
+					style="min-height: 38px;"></div>
+			</td>
+			<td style="width: 150px;" class="text-end">
+				<div class="product-quantity" style="width: 100% !important;">
+					<span class="quantity-btn plus-btn">+<i data-feather="plus-circle" class="plus-circle"></i></span>
+					<input type="text" class="quntity-input input-qty" value="0">
+					<span class="quantity-btn minus-btn"><i data-feather="minus-circle"
+							class="feather-search"></i></span>
+				</div>
+			</td>
+			<td style="width: 150px;">
+				<select class="form-select form-select-sm input-unit select">
+					<option value="" selected disabled>Select Unit</option>
+					<option value="s-1">Ream</option>
+					<option value="s-5">Pieces</option>
+				</select>
+			</td>
+			<td class="text-end">
+				<input type="number" class="form-control form-control-sm input-price text-end" value="0" min="0">
+			</td>
+			<td class="text-end">
+				<input type="number" class="form-control form-control-sm input-amount text-end" value="0" readonly>
+			</td>
+			<td style="width: 50px;">
+				<a href="javascript:void(0);" class="confirm-text p-2 text-danger btn-delete-row">
+					<i data-feather="trash-2"></i>
+				</a>
+			</td>
+		</tr>
+	</template>
+
+
 	<script src="assets/js/jquery-3.7.1.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.loadtemplate/1.5.10/jquery.loadTemplate.min.js"
 		integrity="sha512-T1zx+UG2gXu9mr29wvzaKkNUmAOAie40T32ZPIvcRPJgO5br53+Ocqj8gzguUuix7FK+Z3ncRCJMaZcumnPZzg=="
 		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script src="assets/js/liveSearch.js"></script>
+
+	<!-- Select2 JS - TAMBAHKAN INI -->
+	<script src="assets/plugins/select2/js/select2.min.js"></script>
 
 	<!-- Feather Icon JS -->
 	<script src="assets/js/feather.min.js"></script>
@@ -354,6 +418,424 @@
 	<!-- Custom JS -->
 	<script src="assets/js/theme-script.js"></script>
 	<script src="assets/js/script.js"></script>
+	<script>
+		document.addEventListener("DOMContentLoaded", function () {
+			// --- 1. Ambil Referensi Elemen Radio Button ---
+			const sameAddressRadio = document.getElementById('sameAddress');
+			const pickupRadio = document.getElementById('pickup');
+
+			// --- 2. Ambil Referensi Elemen Input Kolom Kiri (Billing) ---
+			const billingAddress = document.getElementById('billingAddress');
+			const billingEmail = document.getElementById('billingEmail');
+			const billingPhone = document.getElementById('billingPhone');
+
+			// --- 3. Ambil Referensi Elemen Input Kolom Kanan (Shipping) ---
+			const shippingAddress = document.getElementById('shippingAddress');
+			const shippingEmail = document.getElementById('shippingEmail');
+			const shippingPhone = document.getElementById('shippingPhone');
+
+			// Simpan nilai awal shipping (Delivery)
+			const initialShippingValues = {
+				address: shippingAddress.value,
+				email: shippingEmail.value,
+				phone: shippingPhone.value
+			};
+
+			function handleShippingTypeChange() {
+				if (sameAddressRadio.checked) {
+					// Mode Same Address: Salin data dan DISABLED
+					shippingAddress.value = billingAddress.value;
+					shippingEmail.value = billingEmail.value;
+					shippingPhone.value = billingPhone.value;
+
+					shippingAddress.disabled = true;
+					shippingEmail.disabled = true;
+					shippingPhone.disabled = true;
+
+				} else if (pickupRadio.checked) {
+					// Mode Pickup: Buka DISABLED dan kembalikan nilai awal/kosongkan
+					shippingAddress.disabled = false;
+					shippingEmail.disabled = false;
+					shippingPhone.disabled = false;
+
+					// Mengembalikan ke nilai awal/default
+					shippingAddress.value = initialShippingValues.address;
+					shippingEmail.value = initialShippingValues.email;
+					shippingPhone.value = initialShippingValues.phone;
+				}
+			}
+
+			function syncBillingToShipping() {
+				if (sameAddressRadio.checked) {
+					// Update nilai kolom kanan secara real-time saat kolom kiri diubah
+					shippingAddress.value = billingAddress.value;
+					shippingEmail.value = billingEmail.value;
+					shippingPhone.value = billingPhone.value;
+				}
+			}
+
+			// --- 4. Hubungkan Event Listener ---
+			sameAddressRadio.addEventListener('change', handleShippingTypeChange);
+			pickupRadio.addEventListener('change', handleShippingTypeChange);
+
+			// Pantau perubahan pada kolom billing jika Same Address aktif
+			billingAddress.addEventListener('input', syncBillingToShipping);
+			billingEmail.addEventListener('input', syncBillingToShipping);
+			billingPhone.addEventListener('input', syncBillingToShipping);
+
+			// Panggil fungsi saat halaman dimuat untuk mengatur status awal (Pickup checked)
+			// Karena Pickup adalah default, kolom kanan akan enabled dan terisi nilai awal.
+			handleShippingTypeChange();
+		});
+	</script>
+	<!-- ini script buat add item -->
+	<script>
+		document.addEventListener("DOMContentLoaded", function () {
+			const btnAddBlank = document.getElementById("btn-add-blank-item");
+			const tbody = document.getElementById("item-body");
+			const template = document.getElementById("blank-item-template");
+
+			// Fungsi untuk menonaktifkan input/select dan tombol QTY pada suatu baris
+			function disableRowInputs(row) {
+				row.classList.add('disabled-row');
+				row.classList.remove('new-item-row');
+
+				// Disable semua input dan select (kecuali yang readonly)
+				row.querySelectorAll('input:not([readonly]), select').forEach(element => {
+					element.setAttribute('disabled', 'disabled');
+				});
+
+				// Hancurkan Select2 
+				row.querySelectorAll('.select.select2-hidden-accessible').forEach(select => {
+					$(select).select2('destroy');
+					select.setAttribute('disabled', 'disabled');
+				});
+			}
+
+			// Fungsi untuk mengaktifkan kembali input/select pada suatu baris
+			function enableRowInputs(row) {
+				row.classList.remove('disabled-row');
+				row.classList.add('new-item-row');
+
+				// Enable semua input dan select
+				row.querySelectorAll('[disabled]').forEach(element => {
+					if (!element.hasAttribute('readonly')) {
+						element.removeAttribute('disabled');
+					}
+				});
+
+				// Inisialisasi ulang Select2
+				row.querySelectorAll('.select').forEach(select => {
+					$(select).next('.select2-container').remove();
+					$(select).select2({
+						width: '100%',
+					});
+				});
+			}
+
+			// Setup handlers untuk baris (QTY buttons, calculation, delete)
+			function setupRowHandlers(row) {
+				const qty = row.querySelector(".input-qty");
+				const price = row.querySelector(".input-price");
+				const amount = row.querySelector(".input-amount");
+
+				// Fungsi kalkulasi
+				function calc() {
+					amount.value = (Number(qty.value || 0) * Number(price.value || 0));
+				}
+
+				// Event listener untuk input manual
+				qty.addEventListener("input", calc);
+				price.addEventListener("input", calc);
+
+				// Kalkulasi awal
+				calc();
+			}
+
+			// --- INISIALISASI AWAL ---
+			// Setup handlers untuk semua baris yang sudah ada di HTML
+			tbody.querySelectorAll(".item-row").forEach((row) => {
+				console.log('Processing row:', row);
+				console.log('Has disabled-row class:', row.classList.contains('disabled-row'));
+
+				// Pastikan tidak ada class disabled-row saat load
+				row.classList.remove('disabled-row');
+
+				// Pastikan semua input tidak disabled
+				row.querySelectorAll('[disabled]').forEach(element => {
+					console.log('Found disabled element:', element);
+					if (!element.hasAttribute('readonly')) {
+						element.removeAttribute('disabled');
+						console.log('Removed disabled from:', element);
+					}
+				});
+
+				// Inisialisasi Select2 jika sudah tersedia dan belum di-init
+				const select = row.querySelector('.select');
+				if (select) {
+					try {
+						// Cek apakah Select2 sudah loaded
+						if (typeof $.fn.select2 !== 'undefined' && !$(select).hasClass('select2-hidden-accessible')) {
+							console.log('Initializing Select2 for:', select);
+							$(select).select2({
+								width: '100%'
+							});
+						} else if (typeof $.fn.select2 === 'undefined') {
+							console.warn('Select2 library not loaded yet, skipping initialization');
+						}
+					} catch (e) {
+						console.error('Error initializing Select2:', e);
+					}
+				}
+
+				setupRowHandlers(row);
+				console.log('Row setup complete');
+			});
+
+			// --- Event Delegation untuk Plus/Minus/Delete Buttons ---
+			// Gunakan event delegation pada tbody agar semua button (lama & baru) langsung berfungsi
+			tbody.addEventListener('click', function (e) {
+				// Cek apakah yang diklik adalah plus button atau parent-nya
+				const plusBtn = e.target.closest('.plus-btn');
+				if (plusBtn) {
+					e.preventDefault();
+					e.stopPropagation();
+
+					const row = plusBtn.closest('tr');
+					// Cek apakah baris sedang disabled
+					if (row.classList.contains('disabled-row')) {
+						return; // Jangan lakukan apa-apa jika disabled
+					}
+
+					const qtyInput = row.querySelector('.input-qty');
+					const priceInput = row.querySelector('.input-price');
+					const amountInput = row.querySelector('.input-amount');
+
+					let currentQty = Number(qtyInput.value || 0);
+					qtyInput.value = currentQty + 1;
+					amountInput.value = (Number(qtyInput.value || 0) * Number(priceInput.value || 0));
+					return;
+				}
+
+				// Cek apakah yang diklik adalah minus button atau parent-nya
+				const minusBtn = e.target.closest('.minus-btn');
+				if (minusBtn) {
+					e.preventDefault();
+					e.stopPropagation();
+
+					const row = minusBtn.closest('tr');
+					// Cek apakah baris sedang disabled
+					if (row.classList.contains('disabled-row')) {
+						return; // Jangan lakukan apa-apa jika disabled
+					}
+
+					const qtyInput = row.querySelector('.input-qty');
+					const priceInput = row.querySelector('.input-price');
+					const amountInput = row.querySelector('.input-amount');
+
+					let currentQty = Number(qtyInput.value || 0);
+					if (currentQty > 0) {
+						qtyInput.value = currentQty - 1;
+						amountInput.value = (Number(qtyInput.value || 0) * Number(priceInput.value || 0));
+					}
+					return;
+				}
+
+				// Cek apakah yang diklik adalah delete button atau parent-nya
+				const deleteBtn = e.target.closest('.btn-delete-row');
+				if (deleteBtn) {
+					e.preventDefault();
+					e.stopPropagation();
+
+					const row = deleteBtn.closest('tr');
+					row.remove();
+
+					// Setelah baris dihapus, aktifkan kembali baris terakhir yang tersisa
+					const remainingRows = tbody.querySelectorAll('.item-row');
+					if (remainingRows.length > 0) {
+						const lastRow = remainingRows[remainingRows.length - 1];
+						// Hanya enable jika baris terakhir masih disabled
+						if (lastRow.classList.contains('disabled-row')) {
+							enableRowInputs(lastRow);
+						}
+					}
+
+					if (typeof feather !== 'undefined') {
+						feather.replace();
+					}
+				}
+			});
+
+			// --- Event Listener untuk Tombol 'add New blank' ---
+			btnAddBlank.addEventListener("click", function () {
+				// 1. NONAKTIFKAN SEMUA BARIS YANG SUDAH ADA
+				tbody.querySelectorAll(".item-row").forEach(row => {
+					disableRowInputs(row);
+				});
+
+				// 2. KLONING DAN TAMBAHKAN BARIS BARU
+				const templateContent = template.content.cloneNode(true);
+				const newRow = templateContent.querySelector('tr');
+
+				// Pastikan baris baru ditandai sebagai aktif
+				newRow.classList.add('new-item-row');
+
+				// Tambahkan ke DOM
+				tbody.appendChild(newRow);
+
+				// 3. REPLACE FEATHER ICONS
+				if (typeof feather !== 'undefined') {
+					feather.replace();
+				}
+
+				// 4. SETUP SELECT2 untuk baris baru
+				const unitSelect = newRow.querySelector(".select");
+				$(unitSelect).select2({
+					width: '100%'
+				});
+
+				// 5. Setup calculation handlers untuk baris baru
+				setupRowHandlers(newRow);
+
+				// Focus ke input description
+				const descInput = newRow.querySelector('.input-desc');
+				if (descInput) {
+					descInput.focus();
+				}
+				// ▼ Tambahkan ini
+				feather.replace();
+			});
+		});
+	</script>
+	<!-- ini script buat add item -->
+	<script>
+		document.addEventListener("DOMContentLoaded", function () {
+
+			const termContainer = document.getElementById('termContainer');
+			const addNewTermBtn = document.getElementById('btnAddNewTerm');
+
+			// ===========================
+			// AUTO RESIZE UNTUK contenteditable
+			// ===========================
+			function autoResizeEditable(el) {
+				el.style.height = 'auto';
+				el.style.height = el.scrollHeight + 'px';
+			}
+
+			// ===========================
+			// UPDATE NOMOR URUT
+			// ===========================
+			function updateTermNumbers() {
+				const termItems = termContainer.querySelectorAll('.term-item');
+				termItems.forEach((item, index) => {
+					const termNumberDiv = item.querySelector('.term-number');
+					if (termNumberDiv) {
+						termNumberDiv.textContent = index + 1;
+					}
+				});
+			}
+
+			// ===========================
+			// BUAT ELEMEN BARU TERM
+			// ===========================
+			function createNewTermElement(content = '') {
+				const newTermItem = document.createElement('div');
+				newTermItem.classList.add('d-flex', 'py-2', 'term-item');
+
+				const currentCount = termContainer.querySelectorAll('.term-item').length;
+
+				newTermItem.innerHTML = `
+            <div class="me-3 term-number" style="width:30px;">
+                ${currentCount + 1}
+            </div>
+
+            <div class="flex-grow-1 term-content text-start">
+                <div class="product-desc"
+                     contenteditable="true"
+                     data-placeholder="Enter item description"
+                     style="
+                        min-height: 38px;
+                        border:1px solid transparent;
+                        border-radius:4px;
+                        white-space:pre-wrap;
+                        outline:none;
+                     "
+                >${content ? content : ""}</div>
+            </div>
+
+            <a class="confirm-text p-2 text-danger delete-term-btn" href="javascript:void(0);">
+                <i data-feather="trash-2"></i>
+            </a>
+        `;
+
+				return newTermItem;
+			}
+
+			// ===========================
+			// TAMBAH TERM
+			// ===========================
+			addNewTermBtn.addEventListener('click', function () {
+				const newTerm = createNewTermElement('');
+				termContainer.appendChild(newTerm);
+				updateTermNumbers();
+
+				const newEditable = newTerm.querySelector('.product-desc');
+
+				// event auto-resize
+				newEditable.addEventListener('input', function () {
+					autoResizeEditable(this);
+				});
+
+				// pertama kali resize
+				autoResizeEditable(newEditable);
+
+				newEditable.focus();
+
+				// replace icons
+				if (typeof feather !== 'undefined') {
+					feather.replace();
+				}
+			});
+
+			// ===========================
+			// DELETE TERM (DELEGATION)
+			// ===========================
+			termContainer.addEventListener('click', function (event) {
+				const deleteButton = event.target.closest('.delete-term-btn');
+
+				if (deleteButton) {
+					const termItem = deleteButton.closest('.term-item');
+					if (termItem) {
+						termItem.remove();
+						updateTermNumbers();
+					}
+
+					if (typeof feather !== 'undefined') {
+						feather.replace();
+					}
+				}
+			});
+
+			// ===========================
+			// INIT PERTAMA KALI
+			// ===========================
+			termContainer.querySelectorAll('.product-desc').forEach(editable => {
+
+				editable.addEventListener('input', function () {
+					autoResizeEditable(this);
+				});
+
+				autoResizeEditable(editable);
+			});
+
+			updateTermNumbers();
+
+			if (typeof feather !== 'undefined') {
+				feather.replace();
+			}
+
+		});
+	</script>
 
 
 </body>

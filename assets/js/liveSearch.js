@@ -22,6 +22,12 @@ fetch("/assets/json/customer.json")
                     item.addEventListener("click", () => {
                         input.value = cust.name;
                         resultBox.style.display = "none";
+                        let el = document.getElementById(input.getAttribute("data-target"))
+                        el.querySelector('.name').textContent = cust.name
+                        el.querySelector('.phone').textContent = cust.phone
+                        el.querySelector('.email').textContent = cust.email
+                        el.querySelector('.address').textContent = cust.address
+                        console.log(el)
                     });
                     resultBox.appendChild(item);
                 });

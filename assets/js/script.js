@@ -2464,6 +2464,69 @@ function initSidebarActive() {
 
 })(jQuery);
 
+$(document).ready(function () {
+
+	$("table.datanew").each(function () {
+
+		const table = $(this);
+
+		table.find("thead th").each(function (colIndex) {
+
+			let isNumericColumn = true;
+
+			table.find("tbody tr").each(function () {
+
+				const td = $(this).find("td").eq(colIndex);
+
+				// ❗ PENGECUALIAN BARU: jika ada class str-value → langsung bukan numeric
+				if (td.hasClass("str-value")) {
+					isNumericColumn = false;
+					return false; // stop
+				}
+
+				// ambil text pure (tanpa icon, span, dll)
+				let raw = td
+					.clone()
+					.children()
+					.remove()
+					.end()
+					.text()
+					.trim();
+
+				// bersihkan format angka
+				let cleaned = raw
+					.replace(/\s+/g, "")   // hapus semua whitespace
+					.replace(/\u00A0/g, "") // hapus nbsp
+					.replace(/\./g, "")    // hapus titik
+					.replace(/,/g, "");    // hapus koma
+
+				// REGEX pure digit → hanya boleh angka
+				if (!/^\d+$/.test(cleaned)) {
+					isNumericColumn = false;
+					return false;
+				}
+			});
+
+			// apply align kanan untuk kolom numeric
+			if (isNumericColumn) {
+
+				// TH numeric → kanan
+				table.find("thead th").eq(colIndex).addClass("text-end");
+
+				// TD numeric → kanan (kecuali str-value)
+				table.find("tbody tr").each(function () {
+					const td = $(this).find("td").eq(colIndex);
+
+					if (!td.hasClass("str-value")) {
+						td.addClass("text-end");
+					}
+				});
+			}
+		});
+
+	});
+
+});
 
 $(function () {
 	function parseNumber(str) {

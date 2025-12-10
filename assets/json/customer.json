@@ -2,83 +2,123 @@
     "customer": [
         {
             "name": "Desman Dwi",
-            "phone": "+628972873752"
+            "phone": "+628972873752",
+            "email": "desman_dwi@example.com",
+            "address": "Jl. Sudirman No. 10, Jakarta Pusat, 10220"
         },
         {
             "name": "Eko Satrio",
-            "phone": "+628973873452"
+            "phone": "+628973873452",
+            "email": "eko_satrio@example.com",
+            "address": "Jl. Gatot Subroto Kav. 15, Jakarta Selatan, 12930"
         },
         {
             "name": "Dafa Al",
-            "phone": "+628483763784"
+            "phone": "+628483763784",
+            "email": "dafa_al@example.com",
+            "address": "Jl. MH Thamrin No. 5, Jakarta Pusat, 10340"
         },
         {
             "name": "Obud",
-            "phone": "+62897346387"
+            "phone": "+62897346387",
+            "email": "obud@example.com",
+            "address": "Jl. Casablanca Raya No. 27, Jakarta Selatan, 12870"
         },
         {
             "name": "Akbar",
-            "phone": "+628973484784"
+            "phone": "+628973484784",
+            "email": "akbar@example.com",
+            "address": "Jl. Rasuna Said Kav. 62, Jakarta Selatan, 12920"
         },
         {
             "name": "Rama Nusa",
-            "phone": "+628123456789"
+            "phone": "+628123456789",
+            "email": "rama_nusa@example.com",
+            "address": "Jl. Kemang Raya No. 88, Jakarta Selatan, 12730"
         },
         {
             "name": "Bagas Arya",
-            "phone": "+628987654321"
+            "phone": "+628987654321",
+            "email": "bagas_arya@example.com",
+            "address": "Jl. Senopati No. 21, Jakarta Selatan, 12190"
         },
         {
             "name": "Fahri Rizal",
-            "phone": "+628778899001"
+            "phone": "+628778899001",
+            "email": "fahri_rizal@example.com",
+            "address": "Jl. Pangeran Antasari No. 45, Jakarta Selatan, 12410"
         },
         {
             "name": "Hana Putri",
-            "phone": "+628556677889"
+            "phone": "+628556677889",
+            "email": "hana_putri@example.com",
+            "address": "Jl. Gajah Mada No. 12, Jakarta Barat, 11130"
         },
         {
             "name": "Cahyo Pratama",
-            "phone": "+628998877665"
+            "phone": "+628998877665",
+            "email": "cahyo_pratama@example.com",
+            "address": "Jl. Kelapa Gading Boulevard No. 33, Jakarta Utara, 14240"
         },
         {
             "name": "Lestari Dewi",
-            "phone": "+628111222333"
+            "phone": "+628111222333",
+            "email": "lestari_dewi@example.com",
+            "address": "Jl. Pluit Raya No. 78, Jakarta Utara, 14450"
         },
         {
             "name": "Galih Santoso",
-            "phone": "+628444555666"
+            "phone": "+628444555666",
+            "email": "galih_santoso@example.com",
+            "address": "Jl. Daan Mogot No. 55, Jakarta Barat, 11740"
         },
         {
             "name": "Dimas Ardi",
-            "phone": "+628999000111"
+            "phone": "+628999000111",
+            "email": "dimas_ardi@example.com",
+            "address": "Jl. Tebet Raya No. 17, Jakarta Selatan, 12810"
         },
         {
             "name": "Rizky Fauzan",
-            "phone": "+628234567890"
+            "phone": "+628234567890",
+            "email": "rizky_fauzan@example.com",
+            "address": "Jl. Sunter Agung No. 29, Jakarta Utara, 14350"
         },
         {
             "name": "Maya Anindya",
-            "phone": "+628765432109"
+            "phone": "+628765432109",
+            "email": "maya_anindya@example.com",
+            "address": "Jl. Cempaka Putih Raya No. 8, Jakarta Pusat, 10510"
         },
         {
             "name": "Bayu Wicaksono",
-            "phone": "+628543210987"
+            "phone": "+628543210987",
+            "email": "bayu_wicaksono@example.com",
+            "address": "Jl. Rawamangun Muka No. 44, Jakarta Timur, 13220"
         },
         {
             "name": "Wulan Pertiwi",
-            "phone": "+628112233445"
+            "phone": "+628112233445",
+            "email": "wulan_pertiwi@example.com",
+            "address": "Jl. Matraman Raya No. 19, Jakarta Timur, 13140"
         },
         {
             "name": "Tio Rahman",
-            "phone": "+628667788990"
+            "phone": "+628667788990",
+            "email": "tio_rahman@example.com",
+            "address": "Jl. Pondok Indah Raya No. 51, Jakarta Selatan, 12310"
         },
         {
             "name": "Silvi Karina",
-            "phone": "+628900112233"
+            "phone": "+628900112233",
+            "email": "silvi_karina@example.com",
+            "address": "Jl. Wijaya Kusuma No. 7, Jakarta Selatan, 12170"
         },
         {
             "name": "Andi Saputra",
-            "phone": "+628123009988"
+            "phone": "+628123009988",
+            "email": "andi_saputra@example.com",
+            "address": "Jl. Kalibata Raya No. 90, Jakarta Selatan, 12740"
         }
     ]
 }

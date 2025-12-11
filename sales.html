@@ -2417,8 +2417,9 @@
 									<table class="table datatable">
 										<thead class="thead-light">
 											<tr>
-												<th>Date</th>
-												<th>Reference</th>
+												<th>#Payment Out</th>
+												<th>Dated</th>
+												<th>Created</th>
 												<th>Amount</th>
 												<th>Method</th>
 												<th class="no-sort"></th>
@@ -2427,8 +2428,9 @@
 										</thead>
 										<tbody>
 											<tr>
+												<td>Out-25113123131</td>
 												<td>19 Jan 2023</td>
-												<td>INV/SL0101</td>
+												<td>Admin</td>
 												<td>$1500</td>
 												<td>Cash</td>
 												<td>
@@ -2812,6 +2814,7 @@
 	<!-- sales detail modal -->
 
 
+	<!-- edit Modal -->
 	<div class="modal fade" id="editSaleModal">
 		<div class="modal-dialog sales-details-modal modal-lg">
 			<div class="modal-content" style="border-radius: 10px; overflow: hidden; position: relative;">
@@ -2875,58 +2878,87 @@
 							</div>
 
 							<!-- Produk -->
-							<div class="row align-items-start mb-4 gx-3"> <!-- gx-3 agar ada jarak antar kolom -->
-								<div class="col-md-4">
-									<label class="form-label">Product Name</label>
-									<input type="text" class="form-control mb-2" value="Brosur PPDB SMAN 1 Bandung">
-									<em class="text-muted">Description:</em>
-									<p class="small mb-0">
-										Brosur Full Color A4 (210x297 Milimeter), Art paper 150gr,<br>
-										Tanpa Laminasi, Tanpa Lipatan
-									</p>
-								</div>
-								<div class="col-md-2">
-									<label class="form-label">Qty</label>
-									<div class="product-quantity" style="width: 100% !important;">
-										<span class="quantity-btn">+<i data-feather="plus-circle"
-												class="plus-circle"></i></span>
-										<input type="text" class="quntity-input" value="2">
-										<span class="quantity-btn"><i data-feather="minus-circle"
-												class="feather-search"></i></span>
+							<div id="productContainer">
+								<div class="product-item">
+									<div class="row align-items-start gx-3 mb-2 position-relative">
+
+										<div class="col-md-4">
+											<label class="form-label">Product Name</label>
+											<input type="text" class="form-control mb-2"
+												value="Brosur PPDB SMAN 1 Bandung">
+											<em class="text-muted">Description:</em>
+											<p class="small mb-0">
+												Brosur Full Color A4 (210x297 Milimeter), Art paper 150gr,<br>
+												Tanpa Laminasi, Tanpa Lipatan
+											</p>
+										</div>
+
+										<div class="col-md-2">
+											<label class="form-label">Qty</label>
+											<div class="product-quantity" style="width: 100% !important;">
+												<span class="quantity-btn">
+													<i data-feather="plus-circle" class="plus-circle"></i>
+												</span>
+
+												<input type="text" class="quntity-input" value="2">
+
+												<span class="quantity-btn">
+													<i data-feather="minus-circle" class="minus-circle"></i>
+												</span>
+											</div>
+										</div>
+
+										<div class="col-md-2">
+											<label class="form-label">Unit</label>
+											<select class="form-control select mt-1">
+												<option selected>Ream</option>
+												<option>Pcs</option>
+												<option>Box</option>
+												<option>Set</option>
+											</select>
+										</div>
+
+										<div class="col-md-2">
+											<label class="form-label">Price (IDR)</label>
+											<input type="text" class="form-control text-end price-input"
+												value="450.000">
+										</div>
+
+										<div class="col-md-2">
+											<label class="form-label">Amount (IDR)</label>
+											<input type="text" id="amountInput1"
+												class="form-control text-end amount-input" value="900.000" disabled>
+										</div>
 									</div>
 								</div>
-								<div class="col-md-2">
-									<label class="form-label">Unit</label>
-									<select class="form-control select mt-1">
-										<option selected>Ream</option>
-										<option>Pcs</option>
-										<option>Box</option>
-										<option>Set</option>
-									</select>
-								</div>
-								<div class="col-md-2">
-									<label class="form-label">Price (IDR)</label>
-									<input type="text" class="form-control text-end" value="450.000">
-								</div>
-								<div class="col-md-2">
-									<label class="form-label">Amount (IDR)</label>
-									<input type="text" class="form-control text-end" value="900.000" disabled>
-								</div>
 							</div>
+
+							<div class="inline-block mb-4">
+								<a href="javascript:void(0);" id="btnAddNewProduct" class="mt-3 d-inline-block">
+									<i data-feather="plus-circle" class="plus-down-add"></i>
+									<span>add New blank</span>
+								</a>
+							</div>
+
+
 
 							<!-- Voucher dan Shipping -->
 							<div class="row mb-4 gx-3">
 								<div class="col-md-4">
 									<label class="form-label">Voucher</label>
+									<div id="voucher-alert" class="alert alert-success py-1 px-2 small d-none">
+										Voucher berhasil diterapkan
+									</div>
 									<div class="input-group">
-										<input type="text" class="form-control" value="DUILANK12">
-										<button class="btn btn-warning text-white" type="button">Apply</button>
+										<input type="text" id="voucherInput" class="form-control" value="DUILANK12">
+										<button class="btn btn-warning text-white" type="button"
+											onclick="applyVoucher(event)">Apply</button>
 									</div>
 								</div>
 
 								<div class="col-md-4">
 									<label class="form-label">Shipping Costs</label>
-									<input type="text" class="form-control" value="125.000">
+									<input type="text" id="shippingInput" class="form-control" value="125.000">
 								</div>
 
 								<div class="col-md-4">
@@ -2946,7 +2978,7 @@
 							<!-- Grand Total -->
 							<div class="d-flex justify-content-end align-items-center mb-3 pe-3">
 								<h6 class="me-3 mb-0">Grand Total (IDR)</h6>
-								<h5 class="fw-bold mb-0">1.150.000</h5>
+								<h5 class="fw-bold mb-0" id="grandTotal">1.150.000</h5>
 							</div>
 
 							<!-- Footer Buttons -->
@@ -3023,9 +3055,251 @@
 				height: 150
 			});
 		});
+	</script>
+
+	<script>
+		function applyVoucher(e) {
+			try {
+				if (e) e.preventDefault();
+
+				function formatRupiah(num) {
+					return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+				}
+
+				function parseRupiah(str) {
+					return parseInt(str.replace(/\./g, "")) || 0;
+				}
+
+				const voucherInput = document.getElementById("voucherInput");
+				const alertBox = document.getElementById("voucher-alert");
+				const shippingInput = document.getElementById("shippingInput");
+				const grandTotalEl = document.getElementById("grandTotal");
+
+				let code = voucherInput.value.trim().toUpperCase();
+
+				// 🔥 Hitung total dari semua amountInputX
+				let amountInputs = document.querySelectorAll(".amount-input");
+				let subtotal = 0;
+
+				amountInputs.forEach(inp => {
+					subtotal += parseRupiah(inp.value);
+				});
+
+				let shipping = parseRupiah(shippingInput.value);
+				let discount = 0;
+
+				if (code === "DUILANK12") {
+					alertBox.classList.remove("d-none");
+
+					discount = subtotal * 0.10;
+
+					voucherInput.value = "DUILANK12 - 10%";
+					setTimeout(() => { voucherInput.value = "DUILANK12 - 10%"; }, 10);
+				} else {
+					alertBox.classList.add("d-none");
+				}
+
+				let grandTotal = subtotal + shipping - discount;
+				grandTotalEl.textContent = formatRupiah(grandTotal);
+
+			} catch (err) {
+				console.error("Error in applyVoucher:", err);
+			}
+		}
 
 	</script>
 
+
+	<script>
+		document.addEventListener("DOMContentLoaded", function () {
+
+			const productContainer = document.getElementById("productContainer");
+			const btnAdd = document.getElementById("btnAddNewProduct");
+
+			// counter untuk generate ID unik
+			let productIndex = document.querySelectorAll(".product-item").length + 1;
+
+			// ---- util ----
+			function clean(num) {
+				if (!num) return 0;
+				return parseInt(String(num).replace(/\./g, "").replace(/\D/g, "")) || 0;
+			}
+			function format(num) {
+				if (num === 0) return "0";
+				return String(num).replace(/\D/g, "").replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+			}
+
+			// ---- recalc ----
+			function recalc(item) {
+				const qtyEl = item.querySelector(".quntity-input");
+				const priceEl = item.querySelector(".price-input");
+				const amountEl = item.querySelector(".amount-input");
+				const qty = parseInt(qtyEl.value || "0") || 0;
+				const price = clean(priceEl.value || "0");
+				amountEl.value = price === 0 ? "" : format(qty * price);
+			}
+
+			// ---- attach input listener ----
+			function attachInputsFor(item) {
+				const qtyEl = item.querySelector(".quntity-input");
+				const priceEl = item.querySelector(".price-input");
+
+				if (qtyEl) {
+					qtyEl.addEventListener("input", () => {
+						qtyEl.value = qtyEl.value.replace(/\D/g, "");
+						if (qtyEl.value === "") qtyEl.value = "1";
+						recalc(item);
+					});
+				}
+
+				if (priceEl) {
+					priceEl.addEventListener("input", () => {
+						const cleaned = priceEl.value.replace(/\D/g, "");
+						priceEl.value = format(cleaned);
+						recalc(item);
+					});
+				}
+			}
+
+			// ---- button detector ----
+			function isPlusBtn(el) {
+				if (!el) return false;
+				if (el.classList.contains("plus-btn")) return true;
+				if (el.classList.contains("feather-plus-circle")) return true;
+				if (el.querySelector('[data-feather="plus-circle"]')) return true;
+				return false;
+			}
+
+			function isMinusBtn(el) {
+				if (!el) return false;
+				if (el.classList.contains("minus-btn")) return true;
+				if (el.classList.contains("feather-minus-circle")) return true;
+				if (el.querySelector('[data-feather="minus-circle"]')) return true;
+				return false;
+			}
+
+			// ---- event delegation ----
+			productContainer.addEventListener("click", function (ev) {
+				const clicked = ev.target;
+
+				const qtyBtn = clicked.closest(".quantity-btn, .plus-btn, .minus-btn");
+				if (qtyBtn) {
+					const item = qtyBtn.closest(".product-item");
+					if (!item) return;
+
+					if (isPlusBtn(qtyBtn)) {
+						const qtyEl = item.querySelector(".quntity-input");
+						qtyEl.value = String((parseInt(qtyEl.value || "1") || 1) + 1);
+						recalc(item);
+						return;
+					}
+
+					if (isMinusBtn(qtyBtn)) {
+						const qtyEl = item.querySelector(".quntity-input");
+						let cur = parseInt(qtyEl.value || "1") || 1;
+						qtyEl.value = String(cur > 1 ? cur - 1 : 1);
+						recalc(item);
+						return;
+					}
+				}
+
+				// delete
+				const delA = clicked.closest(".delete-section-btn");
+				if (delA) {
+					ev.preventDefault();
+					const item = delA.closest(".product-item");
+					if (item) item.remove();
+				}
+			});
+
+
+			// ---- TEMPLATE dengan ID dinamis ----
+			function generateTemplate(index) {
+				return `
+			// ---- template (class selectpicker sudah diperbaiki) ----
+    <div class="product-item mb-2">
+<div class="justify-content-end d-flex mb-3"> 
+										<a href="javascript:void(0);"
+											class="delete-section-btn mt-3 d-inline-block"> 
+											<i data-feather="minus-circle"
+												class="minus-down-add" style="width: 15px; align-items:center; margin-right: 10px;"></i>
+											<span>Delete Section</span> 
+										</a> 
+									</div>
+
+
+        <div class="row align-items-start gx-3">
+
+            <div class="col-md-4">
+                <label class="form-label">Product Name</label>
+                <input type="text" class="form-control mb-2" value="">
+                <em class="text-muted">Description:</em>
+                <p class="small mb-0 text-muted">-</p>
+            </div>
+
+            <div class="col-md-2">
+                <label class="form-label">Qty</label>
+                <div class="product-quantity" style="width:100% !important;">
+                    <span class="quantity-btn plus-btn"><i data-feather="plus-circle"></i></span>
+                    <input type="text" class="quntity-input text-center" value="1" style="max-width:60px;">
+                    <span class="quantity-btn minus-btn"><i data-feather="minus-circle"></i></span>
+                </div>
+            </div>
+
+            <div class="col-md-2">
+                <label class="form-label">Unit</label>
+                <select class="form-control selectpicker mt-1">
+                    <option disabled selected>Pilih Unit</option>
+                    <option>Ream</option>
+                    <option>Pcs</option>
+                    <option>Box</option>
+                    <option>Set</option>
+                </select>
+            </div>
+
+            <div class="col-md-2">
+                <label class="form-label">Price (IDR)</label>
+                <input type="text" class="form-control text-end price-input">
+            </div>
+
+            <div class="col-md-2">
+                    <label class="form-label">Amount (IDR)</label>
+                    <input type="text" id="amountInput${index}" class="form-control text-end amount-input" disabled>
+                </div>
+        </div>
+    </div>
+    `;
+			}
+			// ---- tambah item baru ----
+			btnAdd.addEventListener("click", function (ev) {
+				ev.preventDefault();
+
+				const wrapper = document.createElement("div");
+				wrapper.innerHTML = generateTemplate(productIndex);
+				const newItem = wrapper.firstElementChild;
+				productContainer.appendChild(newItem);
+
+				attachInputsFor(newItem);
+
+				if (window.feather) feather.replace();
+				if (window.jQuery && $.fn.selectpicker) {
+					$(newItem).find(".selectpicker").selectpicker();
+				}
+				productIndex++;
+			});
+
+			// ---- init untuk item awal ----
+			document.querySelectorAll(".product-item").forEach(item => {
+				attachInputsFor(item);
+			});
+
+			// Init selectpicker untuk item awal
+			if (window.feather) feather.replace();
+			if (window.jQuery && $.fn.selectpicker) {
+				$(".selectpicker").selectpicker();
+			}
+		});
+	</script>
 </body>
 
 </html>

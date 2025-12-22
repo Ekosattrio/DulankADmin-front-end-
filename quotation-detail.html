@@ -30,9 +30,84 @@
     <!-- Main CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
     <style>
+        /* CSS Tambahan agar download rapi */
+        .download-mode {
+            width: 750px !important;
+            margin: 0 !important;
+            padding: 30px !important;
+            box-shadow: none !important;
+            background: white !important;
+        }
+
+        /* Memastikan tabel dan grid tidak berantakan */
+        .download-mode .col-6 {
+            width: 50% !important;
+            float: left !important;
+        }
+
+        .download-mode .row {
+            display: flex !important;
+            flex-wrap: nowrap !important;
+        }
+
+        /* Kompres spacing untuk download mode */
+        .download-mode .mb-4 {
+            margin-bottom: 1rem !important;
+        }
+
+        .download-mode .my-5 {
+            margin-top: 1.5rem !important;
+            margin-bottom: 1.5rem !important;
+        }
+
+        .download-mode .mt-5 {
+            margin-top: 1.5rem !important;
+        }
+
+        .download-mode .my-1 {
+            margin-top: 0.25rem !important;
+            margin-bottom: 0.25rem !important;
+        }
+
+        .download-mode h2 {
+            font-size: 1.3rem !important;
+            margin-bottom: 0 !important;
+        }
+
+        .download-mode .small {
+            font-size: 0.85rem !important;
+        }
+
+        .download-mode .text-standard {
+            font-size: 0.9rem !important;
+        }
+
+        .download-mode table {
+            font-size: 0.85rem !important;
+        }
+
+        .download-mode .border {
+            padding: 0.75rem !important;
+            height: 80px !important;
+            width: 140px !important;
+        }
+
         th {
             background-color: #FF9F43 !important;
             color: white !important;
+        }
+
+        @media print {
+            #detail {
+                margin: 0 !important;
+                padding: 20px !important;
+                shadow: none !important;
+            }
+        }
+
+        /* Memastikan teks tetap hitam dan jelas saat ditarik ke canvas */
+        #detail * {
+            color: black !important;
         }
     </style>
 </head>
@@ -214,7 +289,7 @@
     </div>
 
     </div>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
     <!-- /Main Wrapper -->
     <script src="assets/js/jquery-3.7.1.min.js"></script>
 
@@ -252,7 +327,42 @@
 
     <script src="assets/js/theme-script.js"></script>
     <script src="assets/js/script.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.btn-warning:contains("Download Quotation")').on('click', function () {
+                // Targetkan elemen yang berisi seluruh info (ID #detail)
+                const element = document.getElementById('detail');
 
+                // 1. Tambahkan class khusus agar ukuran pas A4
+                $(element).addClass('download-mode');
+
+                // Ambil Nomor Quotation untuk nama file
+                const qNumber = "Q21000220213";
+
+                // Konfigurasi khusus agar layout bootstrap tidak berantakan
+                const opt = {
+                    margin: [10, 10, 10, 10],
+                    filename: 'Quotation_' + qNumber + '.pdf',
+                    image: { type: 'jpeg', quality: 1 },
+                    html2canvas: {
+                        scale: 2.5,
+                        useCORS: true,
+                        scrollY: 0,
+                        scrollX: 0,
+                        x: 0,
+                        letterRendering: true,
+                        // Gunakan lebar yang cukup luas agar elemen memiliki ruang untuk margin otomatis
+                        windowWidth: 650
+                    },
+                    jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+                };
+                html2pdf().set(opt).from(element).save().then(() => {
+                    // 3. Hapus kembali class khusus setelah download selesai
+                    $(element).removeClass('download-mode');
+                });
+            });
+        });
+    </script>
 
 </body>
 

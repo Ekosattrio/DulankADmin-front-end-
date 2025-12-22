@@ -65,9 +65,11 @@ fetch("/assets/json/customer.json")
             });
         }
 
-        // inisialisasi untuk semua input dengan class "customer-input"
-        document.querySelectorAll(".customer-input").forEach(containerInput => {
-            const resultBox = containerInput.parentElement.querySelector(".search-results");
-            initCustomerSearch(containerInput, resultBox);
+        document.querySelectorAll(".customer-input").forEach(input => {
+            const container = input.closest(".search-container");
+            const resultBox = container.querySelector(".search-results");
+            initCustomerSearch(input, resultBox);
         });
+
+
     });

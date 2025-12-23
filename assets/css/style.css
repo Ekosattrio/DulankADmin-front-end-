@@ -39180,3 +39180,20 @@ a.product-img img {
     min-width: 90px;
   }
 }
+
+.input-no-border {
+  field-sizing: content;
+  border: none;
+}
+
+.product-desc[contenteditable="true"]:empty:before {
+  content: attr(data-placeholder);
+  color: #aaa;
+  pointer-events: none;
+}
+
+
+.product-desc {
+  outline: none;
+  white-space: pre-wrap;
+}

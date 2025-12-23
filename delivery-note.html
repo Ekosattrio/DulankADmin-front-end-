@@ -50,6 +50,95 @@
             outline: none;
             white-space: pre-wrap;
         }
+
+        .line {
+            width: 200px;
+            border-bottom: 1px solid #000
+        }
+
+        .signature input {
+            border: none !important;
+            field-sizing: content;
+        }
+
+        @page {
+            size: A4;
+            margin: 0.3in !important;
+
+        }
+
+        @media print {
+            body {
+                visibility: hidden;
+            }
+
+            html,
+            body {
+                font-size: 12px !important;
+                /* ubah angka ini bila ingin lebih kecil/lebih besar */
+                line-height: 1.2 !important;
+            }
+
+            /* fallback spesifik untuk elemen penting */
+            h1 {
+                font-size: 1.25rem !important;
+            }
+
+            h2 {
+                font-size: 1.1rem !important;
+            }
+
+            h3,
+            h4,
+            h5,
+            h6 {
+                font-size: 1rem !important;
+            }
+
+            .text-standard,
+            .order-table,
+            .table,
+            .order-section-title,
+            .page-title,
+            p,
+            span,
+            label {
+                font-size: 0.85rem !important;
+                /* skala turun lagi untuk konten */
+            }
+
+            #section-to-print {
+                width: 100vw;
+                visibility: visible;
+                padding: 0 !important;
+                margin: 0 !important;
+            }
+
+            .line {
+                width: 90%;
+                margin: 0 auto;
+            }
+
+            .modal-xl {
+                position: absolute;
+                top: 0;
+                width: 100vw !important;
+                align-items: self-start;
+                padding: 0 !important;
+                margin: 0 !important;
+            }
+
+            .modal-header {
+                display: none;
+            }
+
+
+            .dataTables_paginate,
+            .dataTables_length,
+            .dataTables_info {
+                display: none;
+            }
+        }
     </style>
 
 </head>
@@ -655,7 +744,7 @@
     <!-- template add new -->
     <!-- MODAL DELIVERY NOTE -->
     <div class="modal fade" id="lihat" tabindex="-1">
-        <div class="modal-dialog modal-xl modal-dialog-centered">
+        <div class="modal-dialog modal-xl modal-dialog-centered modal-print">
             <div class="modal-content">
 
                 <div class="modal-header">
@@ -663,7 +752,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
 
-                <div class="modal-body">
+                <div class="modal-body" id="section-to-print">
 
                     <!-- HEADER -->
                     <div class="d-flex  justify-content-between mb-4">
@@ -759,33 +848,33 @@
                     </div>
 
                     <!-- SIGNATURE SECTION -->
-                    <div class="row text-center mt-5">
+                    <div class="row text-center mt-5 signature">
 
-                        <div class="col-md-3 d-flex flex-column align-items-center">
+                        <div class="col-3 d-flex flex-column align-items-center">
                             <p class="fw-bold">Receive By</p>
                             <div style="height:70px"></div>
-                            <div style="width:200px; border-bottom:1px solid #000"></div>
+                            <div class="line"></div>
                             <small>Your Name, Sign and Stamp</small>
                         </div>
 
-                        <div class="col-md-3 d-flex flex-column align-items-center">
+                        <div class="col-3 d-flex flex-column align-items-center">
                             <p class="fw-bold">Security / Check</p>
                             <div style="height:70px"></div>
-                            <div style="width:200px; border-bottom:1px solid #000"></div>
+                            <div class="line"></div>
                             <small>Your Name, Sign and Stamp</small>
                         </div>
 
-                        <div class="col-md-3 d-flex flex-column align-items-center">
+                        <div class="col-3 d-flex flex-column align-items-center">
                             <p class="fw-bold">Driver</p>
                             <div style="height:70px"></div>
-                            <div style="width:200px; border-bottom:1px solid #000"></div>
+                            <div class="line"></div>
                             <small>Nurdin</small>
                         </div>
 
-                        <div class="col-md-3 d-flex flex-column align-items-center">
+                        <div class="col-3 d-flex flex-column align-items-center">
                             <p class="fw-bold">Issued By</p>
                             <div style="height:70px"></div>
-                            <div style="width:200px; border-bottom:1px solid #000"></div>
+                            <div class="line"></div>
                             <small>Nurdin</small>
                         </div>
 
@@ -798,7 +887,7 @@
                 <!-- FOOTER BUTTON -->
                 <div class="modal-footer justify-content-between">
                     <div>
-                        <button class="btn btn-warning text-white">
+                        <button class="btn btn-warning text-white" id="download-pdf">
                             <i data-feather="printer"></i> Print
                         </button>
                         <button class="btn btn-dark">
@@ -827,25 +916,41 @@
                 <div class="modal-body">
 
                     <!-- HEADER -->
-                    <div class="row align-items-start justify-content-between  p-5">
-                        <div class="col-md-2 text-center border p-4">
-                            <strong>LOGO</strong>
+                    <div class="d-flex  justify-content-between mb-4">
+                        <div class="col-7">
+                            <div class="d-flex justify-content-start">
+                                <div class="border p-4 d-flex align-items-center justify-content-center"
+                                    style="height:110px; width: 180px;">
+                                    <h5 class="mb-0">Logo</h5>
+                                </div>
+                            </div>
                         </div>
 
-                        <div class="col-md-4 text-start">
+                        <div class="col-5">
                             <h4 class="fw-bold">PT. DULANK SEMESTA CIDA</h4>
                             <small>
-                                Jl. Arif Rahman Hakim Niaga Kel. Nagasari<br>
-                                Karawang Barat - Karawang<br>
+                                Jl. Arif Rahman Hakim Niaga Kel. Nagasari Karawang Barat - Karawang<br>
                                 Email : ptdulanksemestacida@gmail.com<br>
                                 Website : www.percetakan-dulank.com<br>
                                 WhatsApp : 0877 8813 1400
                             </small>
                         </div>
+                    </div>
 
+                    <h5 class="fw-bold text-start mb-3">DELIVERY NOTE</h5>
+                    <div class="d-flex justify-content-between">
+                        <div class="col-7">
+                            <div class="mb-2 fw-semibold text-standard">Ship To:</div>
+                            <div class="text-standard">
+                                PT. Exabytes Network Indonesia<br>
+                                Cyber 2 Tower, Lantai 29,<br>
+                                Jalan HR Rasuna Said,<br>
+                                XS No. 13, Jakarta Selatan, 12950.
+                            </div>
+                        </div>
 
-                        <div class="col-md-5">
-                            <h5 class="fw-bold text-start">DELIVERY NOTE</h5>
+                        <div class="col-5">
+
                             <div class="row">
                                 <span class="col-6 text-standard fw-semibold">DN No</span>
                                 <span class="col-6 text-standard">00539</span>
@@ -854,31 +959,32 @@
                                 <span class="col-6 text-standard fw-semibold">Dn Date</span>
                                 <span class="col-6 text-standard">12/12/2025</span>
                             </div>
-                            <div class="row">
-                                <span class="col-6 text-standard fw-semibold">PO</span>
-                                <span class="col-6 text-standard">PO - 2512000009</span>
-                            </div>
-
-
-                            <div class="mb-2 row align-items-center">
-                                <label class="form-label col-4 mb-0">Shipping By</label>
-                                <div class="col-8">
-                                    <input type="text" class="form-control" value="Car">
-                                </div>
-                            </div>
-
                             <div class="row align-items-center">
-                                <label class="form-label col-4 mb-0">Reference</label>
-                                <div class="col-8">
-                                    <input type="text" class="form-control" value="Mr. Arman">
-                                </div>
+                                <span class="col-6 text-standard fw-semibold">PO</span>
+                                <span class="col-6 text-standard">
+                                    <input type="text" class="form-control form-control-sm" value="PO - 12120009">
+                                </span>
+                            </div>
+                            <div class="row align-items-center">
+                                <span class="col-6 text-standard fw-semibold">Shipping BY</span>
+                                <span class="col-6 text-standard">
+                                    <input type="text" class="form-control form-control-sm" value="Car">
+                                </span>
+                            </div>
+                            <div class="row align-items-center">
+                                <span class="col-6 text-standard fw-semibold">Reference</span>
+                                <span class="col-6 text-standard">
+                                    <input type="text" class="form-control form-control-sm" value="Mr. Aman">
+                                </span>
                             </div>
 
                         </div>
+
+
                     </div>
 
                     <!-- TABLE ITEM -->
-                    <div class="table-responsive mt-2 mb-4">
+                    <div class="table-responsive mt-2 mt-4 mb-4">
                         <table class="table" id="product-table">
                             <thead>
                                 <tr>
@@ -926,34 +1032,35 @@
                     </div>
 
                     <!-- SIGNATURE SECTION -->
-                    <div class="row text-center mt-5">
+                    <div class="row text-center mt-5 signature">
 
-                        <div class="col-md-3 d-flex flex-column align-items-center">
+                        <div class=" col-md-3 d-flex flex-column align-items-center">
                             <p class="fw-bold">Receive By</p>
                             <div style="height:70px"></div>
-                            <div style="width:200px; border-bottom:1px solid #000"></div>
-                            <small>Your Name, Sign and Stamp</small>
+                            <div class="line"></div>
+                            <input type="text" placeholder="Your Name, Sign and Stamp">
                         </div>
 
                         <div class="col-md-3 d-flex flex-column align-items-center">
                             <p class="fw-bold">Security / Check</p>
                             <div style="height:70px"></div>
-                            <div style="width:200px; border-bottom:1px solid #000"></div>
-                            <small>Your Name, Sign and Stamp</small>
+                            <div class="line"></div>
+                            <input type="text" placeholder="Your Name, Sign and Stamp">
+
                         </div>
 
                         <div class="col-md-3 d-flex flex-column align-items-center">
                             <p class="fw-bold">Driver</p>
                             <div style="height:70px"></div>
-                            <div style="width:200px; border-bottom:1px solid #000"></div>
-                            <small>Nurdin</small>
+                            <div class="line"></div>
+                            <input type="text" value="Nurdin" placeholder="Your Name, Sign and Stamp">
                         </div>
 
                         <div class="col-md-3 d-flex flex-column align-items-center">
                             <p class="fw-bold">Issued By</p>
                             <div style="height:70px"></div>
-                            <div style="width:200px; border-bottom:1px solid #000"></div>
-                            <small>Nurdin</small>
+                            <div class="line"></div>
+                            <input type="text" value="Nurdin" placeholder="Your Name, Sign and Stamp">
                         </div>
 
                     </div>
@@ -991,24 +1098,41 @@
                 <div class="modal-body">
 
                     <!-- HEADER -->
-                    <div class="row align-items-start justify-content-between  p-5">
-                        <div class="col-md-2 text-center border p-4">
-                            <strong>LOGO</strong>
+                    <div class="d-flex  justify-content-between mb-4">
+                        <div class="col-7">
+                            <div class="d-flex justify-content-start">
+                                <div class="border p-4 d-flex align-items-center justify-content-center"
+                                    style="height:110px; width: 180px;">
+                                    <h5 class="mb-0">Logo</h5>
+                                </div>
+                            </div>
                         </div>
 
-                        <div class="col-md-4 text-start">
+                        <div class="col-5">
                             <h4 class="fw-bold">PT. DULANK SEMESTA CIDA</h4>
                             <small>
-                                Jl. Arif Rahman Hakim Niaga Kel. Nagasari<br>
-                                Karawang Barat - Karawang<br>
+                                Jl. Arif Rahman Hakim Niaga Kel. Nagasari Karawang Barat - Karawang<br>
                                 Email : ptdulanksemestacida@gmail.com<br>
                                 Website : www.percetakan-dulank.com<br>
                                 WhatsApp : 0877 8813 1400
                             </small>
                         </div>
+                    </div>
 
-                        <div class="col-md-5">
-                            <h5 class="fw-bold text-start">DELIVERY NOTE</h5>
+                    <h5 class="fw-bold text-start mb-3">DELIVERY NOTE</h5>
+                    <div class="d-flex justify-content-between">
+                        <div class="col-7">
+                            <div class="mb-2 fw-semibold text-standard">Ship To:</div>
+                            <div class="text-standard">
+                                PT. Exabytes Network Indonesia<br>
+                                Cyber 2 Tower, Lantai 29,<br>
+                                Jalan HR Rasuna Said,<br>
+                                XS No. 13, Jakarta Selatan, 12950.
+                            </div>
+                        </div>
+
+                        <div class="col-5">
+
                             <div class="row">
                                 <span class="col-6 text-standard fw-semibold">DN No</span>
                                 <span class="col-6 text-standard">00539</span>
@@ -1017,35 +1141,32 @@
                                 <span class="col-6 text-standard fw-semibold">Dn Date</span>
                                 <span class="col-6 text-standard">12/12/2025</span>
                             </div>
-
-
-
-                            <div class="mb-2 row align-items-center">
-                                <label class="form-label col-4 mb-0">PO</label>
-                                <div class="col-8">
-                                    <input type="text" class="form-control" value="PO - 12120009">
-                                </div>
-                            </div>
-
-                            <div class="mb-2 row align-items-center">
-                                <label class="form-label col-4 mb-0">Shipping By</label>
-                                <div class="col-8">
-                                    <input type="text" class="form-control" value="Car">
-                                </div>
-                            </div>
-
                             <div class="row align-items-center">
-                                <label class="form-label col-4 mb-0">Reference</label>
-                                <div class="col-8">
-                                    <input type="text" class="form-control" value="Mr. Arman">
-                                </div>
+                                <span class="col-6 text-standard fw-semibold">PO</span>
+                                <span class="col-6 text-standard">
+                                    <input type="text" class="form-control form-control-sm" value="PO - 12120009">
+                                </span>
+                            </div>
+                            <div class="row align-items-center">
+                                <span class="col-6 text-standard fw-semibold">Shipping BY</span>
+                                <span class="col-6 text-standard">
+                                    <input type="text" class="form-control form-control-sm" value="">
+                                </span>
+                            </div>
+                            <div class="row align-items-center">
+                                <span class="col-6 text-standard fw-semibold">Reference</span>
+                                <span class="col-6 text-standard">
+                                    <input type="text" class="form-control form-control-sm" value="">
+                                </span>
                             </div>
 
                         </div>
+
+
                     </div>
 
                     <!-- TABLE ITEM -->
-                    <div class="table-responsive mt-2 mb-4">
+                    <div class="table-responsive mt-2 mt-4 mb-4">
                         <table class="table" id="product-tambah">
                             <thead>
                                 <tr>
@@ -1064,41 +1185,42 @@
                             </tbody>
                         </table>
 
-                        <a href="javascript:void(0);" id="btn-tambahin-product" class="mt-2">
+                        <a href="javascript:void(0);" id="btn-tambahin-product" class="mt-2 text-primary ms-2">
                             <i data-feather="plus-circle" class="plus-down-add"></i>
                             <span>add New</span>
                         </a>
                     </div>
 
                     <!-- SIGNATURE SECTION -->
-                    <div class="row text-center mt-5">
+                    <div class="row text-center mt-5 signature">
 
-                        <div class="col-md-3 d-flex flex-column align-items-center">
+                        <div class=" col-md-3 d-flex flex-column align-items-center">
                             <p class="fw-bold">Receive By</p>
                             <div style="height:70px"></div>
-                            <div style="width:200px; border-bottom:1px solid #000"></div>
-                            <small>Your Name, Sign and Stamp</small>
+                            <div class="line"></div>
+                            <input type="text" placeholder="Your Name, Sign and Stamp">
                         </div>
 
                         <div class="col-md-3 d-flex flex-column align-items-center">
                             <p class="fw-bold">Security / Check</p>
                             <div style="height:70px"></div>
-                            <div style="width:200px; border-bottom:1px solid #000"></div>
-                            <small>Your Name, Sign and Stamp</small>
+                            <div class="line"></div>
+                            <input type="text" placeholder="Your Name, Sign and Stamp">
+
                         </div>
 
                         <div class="col-md-3 d-flex flex-column align-items-center">
                             <p class="fw-bold">Driver</p>
                             <div style="height:70px"></div>
-                            <div style="width:200px; border-bottom:1px solid #000"></div>
-                            <small>Nurdin</small>
+                            <div class="line"></div>
+                            <input type="text" placeholder="Your Name, Sign and Stamp">
                         </div>
 
                         <div class="col-md-3 d-flex flex-column align-items-center">
                             <p class="fw-bold">Issued By</p>
                             <div style="height:70px"></div>
-                            <div style="width:200px; border-bottom:1px solid #000"></div>
-                            <small>Nurdin</small>
+                            <div class="line"></div>
+                            <input type="text" placeholder="Your Name, Sign and Stamp">
                         </div>
 
                     </div>
@@ -1109,14 +1231,6 @@
 
                 <!-- FOOTER BUTTON -->
                 <div class="modal-footer justify-content-between">
-                    <div>
-                        <button class="btn btn-warning text-white">
-                            <i data-feather="printer"></i> Print
-                        </button>
-                        <button class="btn btn-dark">
-                            <i data-feather="download"></i> Download
-                        </button>
-                    </div>
 
                     <div>
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
@@ -1264,6 +1378,12 @@
                 "product-body-add",        // <--- PERBAIKAN DI SINI: Menggunakan ID yang BENAR (product-body-add)
                 "product-row-template"     // ID <template>
             );
+
+            document.getElementById('download-pdf').addEventListener('click', function (e) {
+                e.preventDefault();
+
+                window.print()
+            });
 
         });
     </script>

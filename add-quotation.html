@@ -37,6 +37,7 @@
 
 	<!-- Main CSS -->
 	<link rel="stylesheet" href="assets/css/style.css">
+	<script src="assets/js/shipping-pickup.js"></script>
 
 
 	<style>
@@ -73,97 +74,96 @@
 
 				<div class="card">
 					<div class="card-body">
-						<div class="row mt-3">
-							<div class="col-lg-6 col-sm-6 col-12">
-								<div class="mb-3">
-									<div class="add-newplus">
-										<label class="form-label">Customer<span
-												class="text-danger ms-1">*</span></label>
-										<a href="javascript:void(0);" data-bs-toggle="modal"
-											data-bs-target="#add-units-category"><i data-feather="plus-circle"
-												class="plus-down-add"></i><span>+Search Customer</span></a>
+
+						<div class="pb-2 border-bottom border-2 mb-4" id="shipping-section">
+							<div class="row" id="add-method">
+								<div class="col-md-6">
+									<div class="mt-3 ms-4">
+										<div class="mb-3">
+											<div class="add-newplus">
+												<h4 class="fs-6 text-dark mt-2">Customer:</h4>
+												<a href="javascript:void(0);" data-bs-toggle="modal"
+													data-bs-target="#add-units-category"><i data-feather="plus-circle"
+														class="plus-down-add"></i><span>Add
+														New</span></a>
+											</div>
+											<div class="input-groupicon select-code">
+												<div class="search-container">
+													<input type="text" class="form-control customer-input"
+														placeholder="Search Customer" data-target="data-customer">
+													<div class="search-results" onchange="console.log('masuk')"
+														id="customer-add"></div>
+												</div>
+											</div>
+										</div>
+
+										<div class="mb-3" id="data-customer">
+											<strong class="name"></strong><br>
+											<small class="email"></small><br>
+											<small class="phone"></small><br>
+											<small class="address"></small>
+										</div>
 									</div>
-									<div class="input-groupicon select-code">
-										<div class="search-container customer-input">
-											<input type="text" class="form-control customer-input"
-												placeholder="Search Customer" data-target="data-customer">
-											<div class="search-results"></div>
+								</div>
+								<div class="col-md-6">
+									<div class="mt-1 ms-4">
+										<div class="">
+											<div class="d-flex mt-3 align-items-center">
+												<h4 class="fs-6 text-dark mt-2">Shiping Method:</h4>
+												<div class="form-check ms-3 align-items-center">
+													<input class="form-check-input" type="radio" name="radioShipping"
+														id="radioShipping1" checked
+														onclick="displayShipping(this, true)">
+													<label class="form-check-label text-standard" for="radioShipping1">
+														Shipping
+													</label>
+												</div>
+												<div class="form-check ms-3 align-items-center">
+													<input class="form-check-input" type="radio" name="radioShipping"
+														id="radioShipping2" onclick="displayShipping(this, false)">
+													<label class="form-check-label text-standard" for="radioShipping2">
+														Pickup
+													</label>
+												</div>
+											</div>
+										</div>
+										<div class="shipping-method">
+											<div class="shipping-address">
+												<div class="align-items-center">
+													<span class="fw-semibold text-dark">Ahmad Dhani</span>
+													<span class="text-secondary ms-2">(+62) 852053769 </span>
+													<span
+														class="badge my-bg-primary text-white align-middle ms-2">Office</span>
+													<!-- <span class="badge bg-white border border-danger text-danger ms-2 py-1 px-2">Utama</span> -->
+												</div>
+												<div class="text-standard text-dark small mt-1">
+													Toko Kelontong Depan Desa Teluk Jambe, <br>
+													515 Sarah Shore Suite 828, Port Kennethstad (Depan Stasiun) <br>
+													KAB. KARAWANG - TELUK JAMBE TIMUR, JAWA BARAT, ID 41360
+												</div>
+											</div>
+											<button
+												class="btn my-btn-outline-primary float-end mb-2 shipping-change-address">Ubah
+												Alamat</button>
+										</div>
+										<div class="pickup-method d-none">
+											<div class="pickup-method-address">
+												<span class="fw-semibold text-dark">Dulank Pickup 2 <span
+														class="text-dark">(081906855554)</span></span>
+												<div class="mt-1 mb-2 text-color text-standard pickup-list-value">
+													Toko Kelontong Depan Desa Teluk Jambe<br />
+													515 Sarah Shore Suite 828, Port Kennethstad, Iowa, TH,<br />
+													KAB. KARAWANG - TELUK JAMBE TIMUR, JAWA BARAT, ID 41360
+												</div>
+											</div>
+											<button
+												class="btn my-btn-outline-primary float-end mb-2 pickup-change-address">Pilih
+												Alamat Pickup</button>
 										</div>
 									</div>
 								</div>
 							</div>
-							<div class="col-lg-6 col-sm-6 col-12">
-								<div class="mb-3">
-									<div class="input-blocks align-items-center customer-input">
-										<div class="add-newplus">
-											<div class="col-6">
-												<label class="form-label">Delivery</label>
-											</div>
-											<div class="col-6">
-												<div class="form-check form-check-inline">
-													<input class="form-check-input" type="radio" name="shipping_type"
-														id="sameAddress" value="same">
-													<label class="form-check-label" for="sameAddress">Same
-														Address</label>
-												</div>
 
-												<div class="form-check form-check-inline">
-													<input class="form-check-input" type="radio" name="shipping_type"
-														id="pickup" value="pickup" checked> <label
-														class="form-check-label" for="pickup">Pickup</label>
-												</div>
-											</div>
-
-										</div>
-										<div class="search-container customer-input">
-											<input type="text" class="form-control customer-input"
-												placeholder="Search Delivery" data-target="data-customer">
-											<div class="search-results"></div>
-										</div>
-
-
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-lg-6 col-sm-6 col-12">
-								<label class="form-label">Address</label>
-								<input type="text" class="form-control" id="billingAddress"
-									value="Cyber tower 2 lantai 29 jalan Hr Rasuna Said x5 no 13,Jakarta Selatan,12950">
-
-							</div>
-							<div class="col-lg-6 col-sm-6 col-12">
-								<label class="form-label">Address</label>
-								<input type="text" class="form-control" id="shippingAddress"
-									value="Cyber tower 2 lantai 29 jalan Hr Rasuna Said x5 no 13,Jakarta Selatan,12950">
-
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-lg-6 col-sm-6 col-12">
-								<label class="form-label">Email</label>
-								<input type="text" class="form-control" id="billingEmail" value="ciptaKreasi@gmail.com">
-
-							</div>
-							<div class="col-lg-6 col-sm-6 col-12">
-								<label class="form-label">Email</label>
-								<input type="text" class="form-control" id="shippingEmail"
-									value="ciptaKreasi@gmail.com">
-
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-lg-6 col-sm-6 col-12">
-								<label class="form-label">Phone</label>
-								<input type="text" class="form-control" id="billingPhone" value="0812xxxxxx">
-
-							</div>
-							<div class="col-lg-6 col-sm-6 col-12">
-								<label class="form-label">Phone</label>
-								<input type="text" class="form-control" id="shippingPhone" value="0812xxxxxx">
-
-							</div>
 						</div>
 					</div>
 				</div>
@@ -216,7 +216,7 @@
 									</div>
 
 									<a href="javascript:void(0);" id="btn-add-blank-item">
-										<i data-feather="plus-circle" class="plus-down-add"></i>
+										<i data-feather="plus-circle" class="plus-down-add text-primary"></i>
 										<span>add New blank</span>
 									</a>
 								</div>
@@ -420,78 +420,10 @@
 	<script src="assets/plugins/summernote/summernote-bs4.min.js"></script>
 
 	<!-- Custom JS -->
+	<script src="assets/js/shipping-pickup.js"></script>
 	<script src="assets/js/theme-script.js"></script>
 	<script src="assets/js/script.js"></script>
-	<script>
-		document.addEventListener("DOMContentLoaded", function () {
-			// --- 1. Ambil Referensi Elemen Radio Button ---
-			const sameAddressRadio = document.getElementById('sameAddress');
-			const pickupRadio = document.getElementById('pickup');
 
-			// --- 2. Ambil Referensi Elemen Input Kolom Kiri (Billing) ---
-			const billingAddress = document.getElementById('billingAddress');
-			const billingEmail = document.getElementById('billingEmail');
-			const billingPhone = document.getElementById('billingPhone');
-
-			// --- 3. Ambil Referensi Elemen Input Kolom Kanan (Shipping) ---
-			const shippingAddress = document.getElementById('shippingAddress');
-			const shippingEmail = document.getElementById('shippingEmail');
-			const shippingPhone = document.getElementById('shippingPhone');
-
-			// Simpan nilai awal shipping (Delivery)
-			const initialShippingValues = {
-				address: shippingAddress.value,
-				email: shippingEmail.value,
-				phone: shippingPhone.value
-			};
-
-			function handleShippingTypeChange() {
-				if (sameAddressRadio.checked) {
-					// Mode Same Address: Salin data dan DISABLED
-					shippingAddress.value = billingAddress.value;
-					shippingEmail.value = billingEmail.value;
-					shippingPhone.value = billingPhone.value;
-
-					shippingAddress.disabled = true;
-					shippingEmail.disabled = true;
-					shippingPhone.disabled = true;
-
-				} else if (pickupRadio.checked) {
-					// Mode Pickup: Buka DISABLED dan kembalikan nilai awal/kosongkan
-					shippingAddress.disabled = false;
-					shippingEmail.disabled = false;
-					shippingPhone.disabled = false;
-
-					// Mengembalikan ke nilai awal/default
-					shippingAddress.value = initialShippingValues.address;
-					shippingEmail.value = initialShippingValues.email;
-					shippingPhone.value = initialShippingValues.phone;
-				}
-			}
-
-			function syncBillingToShipping() {
-				if (sameAddressRadio.checked) {
-					// Update nilai kolom kanan secara real-time saat kolom kiri diubah
-					shippingAddress.value = billingAddress.value;
-					shippingEmail.value = billingEmail.value;
-					shippingPhone.value = billingPhone.value;
-				}
-			}
-
-			// --- 4. Hubungkan Event Listener ---
-			sameAddressRadio.addEventListener('change', handleShippingTypeChange);
-			pickupRadio.addEventListener('change', handleShippingTypeChange);
-
-			// Pantau perubahan pada kolom billing jika Same Address aktif
-			billingAddress.addEventListener('input', syncBillingToShipping);
-			billingEmail.addEventListener('input', syncBillingToShipping);
-			billingPhone.addEventListener('input', syncBillingToShipping);
-
-			// Panggil fungsi saat halaman dimuat untuk mengatur status awal (Pickup checked)
-			// Karena Pickup adalah default, kolom kanan akan enabled dan terisi nilai awal.
-			handleShippingTypeChange();
-		});
-	</script>
 	<!-- ini script buat add item -->
 	<script>
 		document.addEventListener("DOMContentLoaded", function () {

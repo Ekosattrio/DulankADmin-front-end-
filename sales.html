@@ -1971,205 +1971,222 @@
 	<div class="modal fade" id="add-sels">
 		<div class="modal-dialog add-centered">
 			<div class="modal-content">
-				<!-- Header -->
-				<div class="modal-header">
-					<div class="page-title">
-						<h4>Add Sales</h4>
+				<div class="content p-4">
+					<div class="page-header modal-header p-3 mb-4 border-bottom">
+						<div class="add-item new-sale-items d-flex w-100 justify-content-between align-items-center">
+							<div class="page-title">
+								<h4>Add Sales</h4>
+							</div>
+							<button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+						</div>
 					</div>
-					<button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
-				</div>
 
-				<!-- Form -->
-				<form action="online-orders.html">
-					<div class="card border-0">
-						<div class="card-body pb-0">
+					<div>
 
-							<!-- Table -->
-
-
-							<!-- row ke satu add sales -->
-							<div class="row">
-								<!-- Customer -->
-								<div class="col-lg-6 col-sm-6 col-12">
-									<div class="mb-3">
-										<div class="add-newplus">
-											<label class="form-label">Customer<span
-													class="text-danger ms-1">*</span></label>
-											<a href="javascript:void(0);" data-bs-toggle="modal"
-												data-bs-target="#add-units-category"><i data-feather="plus-circle"
-													class="plus-down-add"></i><span>Add
-													New</span></a>
-										</div>
-										<div class="input-groupicon select-code">
-											<div class="search-container">
-												<input type="text" class="form-control customer-input"
-													placeholder="Search Customer" data-target="data-customer">
-												<div class="search-results"></div>
+						<!-- Address -->
+						<div class="pb-2 border-bottom border-2 mb-4" id="shipping-section">
+							<div class="row" id="add-method">
+								<div class="col-md-6">
+									<div class="mt-3 ms-4">
+										<div class="mb-3">
+											<div class="add-newplus">
+												<h4 class="fs-6 text-dark mt-2">Customer:</h4>
+												<a href="javascript:void(0);" data-bs-toggle="modal"
+													data-bs-target="#add-units-category"><i data-feather="plus-circle"
+														class="plus-down-add"></i><span>Add
+														New</span></a>
+											</div>
+											<div class="input-groupicon select-code">
+												<div class="search-container">
+													<input type="text" class="form-control customer-input"
+														placeholder="Search Customer" data-target="data-customer">
+													<div class="search-results" onchange="console.log('masuk')"
+														id="customer-add"></div>
+												</div>
 											</div>
 										</div>
-									</div>
-								</div>
 
-								<!-- Date -->
-								<div class="col-lg-6 col-sm-6 col-12">
-									<div class="mb-3">
-										<label class="form-label">
-											Delivery<span class="text-danger ms-1">*</span>
-										</label>
-										<select class="select">
-											<option>Express </option>
-											<option>Cargo</option>
-										</select>
-									</div>
-								</div>
-
-
-							</div>
-
-							<!-- row ke 2 add sales -->
-							<div class="row d-flex align-items-center justify-content-between">
-								<!-- Customer -->
-								<div class="col-lg-6 col-sm-6 col-12">
-									<div class="mb-3" id="data-customer">
-										<strong class="name"></strong><br>
-										<small class="email"></small><br>
-										<small class="phone"></small><br>
-										<small class="address"></small>
-									</div>
-								</div>
-
-								<!-- Date -->
-								<div class="col-lg-6 col-sm-6 col-12">
-									<div class="mb-3">
-										<div class="add-newplus">
-											<label class="form-label">Shipping<span
-													class="text-danger ms-1">*</span></label>
-											<a href="javascript:void(0);" data-bs-toggle="modal"
-												data-bs-target="#add-units-category"><i data-feather="plus-circle"
-													class="plus-down-add"></i><span>Add
-													New</span></a>
+										<div class="mb-3" id="data-customer">
+											<strong class="name"></strong><br>
+											<small class="email"></small><br>
+											<small class="phone"></small><br>
+											<small class="address"></small>
 										</div>
-										<div class="input-groupicon select-code">
-											<div class="search-container">
-												<input type="text" class="form-control customer-input"
-													placeholder="Search Customer" data-target="data-shipping">
-												<div class="search-results"></div>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="mt-1 ms-4">
+										<div class="">
+											<div class="d-flex mt-3 align-items-center">
+												<h4 class="fs-6 text-dark mt-2">Shiping Method:</h4>
+												<div class="form-check ms-3 align-items-center">
+													<input class="form-check-input" type="radio" name="radioShipping"
+														id="radioShipping1" checked
+														onclick="displayShipping(this, true)">
+													<label class="form-check-label text-standard" for="radioShipping1">
+														Shipping
+													</label>
+												</div>
+												<div class="form-check ms-3 align-items-center">
+													<input class="form-check-input" type="radio" name="radioShipping"
+														id="radioShipping2" onclick="displayShipping(this, false)">
+													<label class="form-check-label text-standard" for="radioShipping2">
+														Pickup
+													</label>
+												</div>
 											</div>
 										</div>
-									</div>
-								</div>
-
-
-
-							</div>
-							<!-- Order Summary -->
-							<div class="row">
-								<div class="col-lg-6 col-sm-6 col-12">
-									<div class="mb-3">
-										<div class="input-blocks align-items-center">
-											<label class="form-label">PO Number</label>
-											<input type="text" class="form-control">
-
+										<div class="shipping-method">
+											<div class="shipping-address">
+												<div class="align-items-center">
+													<span class="fw-semibold text-dark">Ahmad Dhani</span>
+													<span class="text-secondary ms-2">(+62) 852053769 </span>
+													<span
+														class="badge my-bg-primary text-white align-middle ms-2">Office</span>
+													<!-- <span class="badge bg-white border border-danger text-danger ms-2 py-1 px-2">Utama</span> -->
+												</div>
+												<div class="text-standard text-dark small mt-1">
+													Toko Kelontong Depan Desa Teluk Jambe, <br>
+													515 Sarah Shore Suite 828, Port Kennethstad (Depan Stasiun) <br>
+													KAB. KARAWANG - TELUK JAMBE TIMUR, JAWA BARAT, ID 41360
+												</div>
+											</div>
+											<button
+												class="btn my-btn-outline-primary float-end mb-2 shipping-change-address">Ubah
+												Alamat</button>
+										</div>
+										<div class="pickup-method" class="d-none">
+											<div id="pickup-method-address">
+												<span class="fw-semibold text-dark">Dulank Pickup 2 <span
+														class="text-dark">(081906855554)</span></span>
+												<div class="mt-1 mb-2 text-color text-standard pickup-list-value">
+													Toko Kelontong Depan Desa Teluk Jambe<br />
+													515 Sarah Shore Suite 828, Port Kennethstad, Iowa, TH,<br />
+													KAB. KARAWANG - TELUK JAMBE TIMUR, JAWA BARAT, ID 41360
+												</div>
+											</div>
+											<button
+												class="btn my-btn-outline-primary float-end mb-2 pickup-change-address">Pilih
+												Alamat Pickup</button>
 										</div>
 									</div>
 								</div>
-								<div class="col-lg-6 col-sm-6 col-12">
-									<div class="mb-3" id="data-shipping">
-										<strong class="name"></strong><br>
-										<small class="email"></small><br>
-										<small class="phone"></small><br>
-										<small class="address"></small>
+							</div>
+
+						</div>
+
+						<div id="productContainer" class="card p-2" style="background-color: rgba(254, 159, 67, 0.08);">
+							<div class="product-item">
+								<div class="row align-items-start gx-3 mb-2 position-relative">
+
+									<div class="col-md-4">
+										<label class="form-label">Product Name</label>
+										<input type="text" class="form-control mb-2" value="Brosur PPDB SMAN 1 Bandung">
+										<em class="text-muted">Description:</em>
+										<p class="small mb-0">
+											Brosur Full Color A4 (210x297 Milimeter), Art paper 150gr,<br>
+											Tanpa Laminasi, Tanpa Lipatan
+										</p>
 									</div>
-								</div>
 
-							</div>
-							<div class="table-responsive no-pagination mb-3">
-								<table class="table datanew">
-									<thead>
-										<tr>
-											<th>Product</th>
-											<th>Qty</th>
-											<th>Title Job</th>
-											<th>Harga</th>
-											<th>Description</th>
-											<th>Art Work</th>
-											<th>Hasil Cetak</th>
-											<th>Note</th>
-											<th>Unit Cost($)</th>
-											<th>Total Cost</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-										</tr>
-									</tbody>
-								</table>
-							</div>
-							<!-- Bottom Inputs -->
-							<div class="row">
-								<div class="col-lg-4 col-sm-6 col-12">
-									<div class="mb-3">
-										<div class="input-blocks align-items-center">
-											<label class="form-label">Voucher</label>
-											<input type="text" class="form-control">
+									<div class="col-md-2">
+										<label class="form-label">Qty</label>
+										<div class="product-quantity" style="width: 100% !important;">
+											<span class="quantity-btn">
+												<i data-feather="plus-circle" class="plus-circle"></i>
+											</span>
 
+											<input type="text" class="quntity-input" value="2">
+
+											<span class="quantity-btn">
+												<i data-feather="minus-circle" class="minus-circle"></i>
+											</span>
 										</div>
 									</div>
-								</div>
-								<div class="col-lg-4 col-sm-6 col-12">
-									<div class="mb-3">
-										<label class="form-label">Shipping Cost<span
-												class="text-danger ms-1">*</span></label>
-										<div class="input-groupicon select-code">
-											<input type="text" class="form-control number-separator" inputmode="numeric"
-												pattern="[0-9]*">
-											<input type="hidden" class="result-input" id="discount">
-										</div>
-									</div>
-								</div>
 
-								<div class="col-lg-4 col-sm-6 col-12">
-									<div class="mb-3">
-										<label class="form-label">Shipping Costs</label>
-										<select class="form-select">
-											<option>Ppn 11% (125.000)</option>
+									<div class="col-md-2">
+										<label class="form-label">Unit</label>
+										<select class="form-control select mt-1">
+											<option selected>Ream</option>
+											<option>Pcs</option>
+											<option>Box</option>
+											<option>Set</option>
 										</select>
 									</div>
-								</div>
 
-							</div>
-							<div class="row">
-								<div class="col-12">
-									<div class="input-blocks align-items-center">
-										<label class="form-label">Notes</label>
-										<input type="text" class="form-control">
+									<div class="col-md-2">
+										<label class="form-label">Price (IDR)</label>
+										<input type="text" class="form-control text-end price-input" value="450.000">
+									</div>
 
+									<div class="col-md-2">
+										<label class="form-label">Amount (IDR)</label>
+										<input type="text" id="amountInput1" class="form-control text-end amount-input"
+											value="900.000" disabled>
 									</div>
 								</div>
 							</div>
 						</div>
-					</div>
 
-					<!-- Footer -->
-					<div class="modal-footer justify-content-end">
-						<button type="button" class="btn btn-secondary add-cancel me-3"
-							data-bs-dismiss="modal">Cancel</button>
-						<button type="submit" class="btn btn-primary add-sale">Submit</button>
-					</div>
+						<div class="inline-block mb-4">
+							<a href="javascript:void(0);" id="btnAddNewProduct" class="mt-3 d-inline-block">
+								<i data-feather="plus-circle" class="plus-down-add"></i>
+								<span>add New blank</span>
+							</a>
+						</div>
 
-				</form>
+
+
+						<!-- Voucher dan Shipping -->
+						<div class="row mb-4 gx-3">
+							<div class="col-md-4">
+								<label class="form-label">Voucher</label>
+								<div id="voucher-alert" class="alert alert-success py-1 px-2 small d-none">
+									Voucher berhasil diterapkan
+								</div>
+								<div class="input-group">
+									<input type="text" id="voucherInput" class="form-control" value="DUILANK12">
+									<button class="btn btn-warning text-white" type="button"
+										onclick="applyVoucher(event)">Apply</button>
+								</div>
+							</div>
+
+							<div class="col-md-4">
+								<label class="form-label">Shipping Costs</label>
+								<input type="text" id="shippingInput" class="form-control" value="125.000">
+							</div>
+
+							<div class="col-md-4">
+								<label class="form-label">Tax</label>
+								<select class="form-control select">
+									<option>Ppn 11% (125.000)</option>
+								</select>
+							</div>
+						</div>
+
+						<!-- Notes -->
+						<div class="mb-4">
+							<label class="form-label">Notes</label>
+							<input type="text" class="form-control">
+						</div>
+
+						<!-- Grand Total -->
+						<div class="d-flex justify-content-end align-items-center mb-3 pe-3">
+							<h6 class="me-3 mb-0">Grand Total (IDR)</h6>
+							<h5 class="fw-bold mb-0" id="grandTotal">1.150.000</h5>
+						</div>
+
+						<!-- Footer Buttons -->
+						<div class="modal-footer border-0 justify-content-end pe-3 pt-3">
+							<button type="button" class="btn btn-secondary add-cancel me-3"
+								data-bs-dismiss="modal">Cancel</button>
+							<button type="submit" class="btn btn-primary add-sale">Save Changes</button>
+						</div>
+
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -2832,67 +2849,7 @@
 							</div>
 						</div>
 
-						<form action="">
-							<!-- Bagian Customer & Delivery -->
-							<!-- <div class="row mb-4">
-								<div class="col-md-4">
-									<label class="form-label">Customer</label>
-									<div class="search-container">
-										<input type="text" class="form-control customer-input"
-											placeholder="Search Customer" data-target="data-customer-edit">
-										<div class="search-results"></div>
-									</div>
-									<div class="mt-3" id="data-customer-edit">
-										<strong class="name"></strong><br>
-										<small class="email"></small><br>
-										<small class="phone"></small><br>
-										<small class="address"></small>
-									</div>
-								</div>
-
-								<div class="col-md-4">
-									<div class="input-blocks align-items-center customer-input">
-										<div class="add-newplus">
-											<div class="col-6">
-												<label class="form-label">Shipping</label>
-											</div>
-											<div class="col-6">
-												<div class="form-check form-check-inline">
-													<input class="form-check-input" type="radio" name="shipping_type"
-														id="sameAddress" value="same">
-													<label class="form-check-label" for="sameAddress">Same
-														Address</label>
-												</div>
-
-												<div class="form-check form-check-inline">
-													<input class="form-check-input" type="radio" name="shipping_type"
-														id="pickup" value="pickup" checked> <label
-														class="form-check-label" for="pickup">Pickup</label>
-												</div>
-											</div>
-
-										</div>
-										<div class="search-container customer-input">
-											<input type="text" class="form-control customer-input"
-												placeholder="Search Delivery" data-target="data-customer">
-											<div class="search-results"></div>
-										</div>
-
-
-									</div>
-								</div>
-
-								<div class="col-md-4">
-									<label class="form-label">Delivery</label>
-									<select class="form-control select mb-3">
-										<option>Express</option>
-									</select>
-									<div class="mt-2">
-										<label class="form-label">PO Number</label>
-										<input type="text" class="form-control">
-									</div>
-								</div>
-							</div> -->
+						<div>
 
 							<!-- Address -->
 							<div class="pb-2 border-bottom border-2 mb-4" id="shipping-section">
@@ -2924,7 +2881,7 @@
 													<div class="form-check ms-3 align-items-center">
 														<input class="form-check-input" type="radio"
 															name="radioShipping" id="radioShipping1" checked
-															onclick="displayShipping(true)">
+															onclick="displayShipping(this, true)">
 														<label class="form-check-label text-standard"
 															for="radioShipping1">
 															Shipping
@@ -2933,7 +2890,7 @@
 													<div class="form-check ms-3 align-items-center">
 														<input class="form-check-input" type="radio"
 															name="radioShipping" id="radioShipping2"
-															onclick="displayShipping(false)">
+															onclick="displayShipping(this, false)">
 														<label class="form-check-label text-standard"
 															for="radioShipping2">
 															Pickup
@@ -2941,7 +2898,7 @@
 													</div>
 												</div>
 											</div>
-											<div id="shipping-method">
+											<div class="shipping-method">
 												<div class="shipping-address">
 													<div class="align-items-center">
 														<span class="fw-semibold text-dark">Ahmad Dhani</span>
@@ -2956,11 +2913,11 @@
 														KAB. KARAWANG - TELUK JAMBE TIMUR, JAWA BARAT, ID 41360
 													</div>
 												</div>
-												<button class="btn my-btn-outline-primary float-end mb-2"
-													data-bs-toggle="modal"
-													data-bs-target="#addressSelectShippingModal">Ubah Alamat</button>
+												<button
+													class="btn my-btn-outline-primary float-end mb-2 shipping-change-address">Ubah
+													Alamat</button>
 											</div>
-											<div id="pickup-method" class="d-none">
+											<div class="pickup-method" class="d-none">
 												<div id="pickup-method-address">
 													<span class="fw-semibold text-dark">Dulank Pickup 2 <span
 															class="text-dark">(081906855554)</span></span>
@@ -2970,64 +2927,16 @@
 														KAB. KARAWANG - TELUK JAMBE TIMUR, JAWA BARAT, ID 41360
 													</div>
 												</div>
-												<button class="btn my-btn-outline-primary float-end mb-2"
-													id="pickup-btn-select">Pilih Alamat Pickup</button>
+												<button
+													class="btn my-btn-outline-primary float-end mb-2 pickup-change-address">Pilih
+													Alamat Pickup</button>
 											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<!-- Pickup Method Address -->
-							<div class="bg-light p-3 d-none" id="pickup-list">
-								<div class="d-flex justify-content-between align-items-center mb-2">
-									<span class="fw-semibold fs-6">Pilih Alamat Pengiriman</span>
-								</div>
-								<div class="mb-3">
-									<div class="border-bottom pb-2 mb-2">
-										<div class="pickup-list-value">
-											<span class="fw-semibold text-dark">Dulank Pickup 1 <span
-													class="text-dark">(081906855554)</span></span>
-											<div class="mt-1 mb-2 text-color text-standard">
-												Toko Kelontong Depan Desa Teluk Jambe<br />
-												515 Sarah Shore Suite 828, Port Kennethstad, Iowa, TH,<br />
-												KAB. KARAWANG - TELUK JAMBE TIMUR, JAWA BARAT, ID 41360
-											</div>
-										</div>
-										<div class="text-end">
-											<button
-												class="btn my-btn-outline-primary btn-sm px-4 select-pickup-btn">Pilih</button>
-										</div>
-									</div>
-								</div>
-								<div class="mb-3">
-									<div class="border-bottom pb-2 mb-2">
-										<div class="pickup-list-value">
-											<span class="fw-semibold text-dark">Dulank Pickup 2 <span
-													class="text-dark">(081906855554)</span></span>
-											<div class="mt-1 mb-2 text-color text-standard">
-												Toko Kelontong Depan Desa Teluk Jambe<br />
-												515 Sarah Shore Suite 828, Port Kennethstad, Iowa, TH,<br />
-												KAB. KARAWANG - TELUK JAMBE TIMUR, JAWA BARAT, ID 41360
-											</div>
-										</div>
-										<div class="text-end">
-											<button
-												class="btn my-btn-primary btn-sm px-4 select-pickup-btn">Dipilih</button>
 										</div>
 									</div>
 								</div>
 
 							</div>
-							<div class="row my-2 align-items-center">
-								<label class="form-label col-1">Nomor PO</label>
-								<div class="col-5">
-									<input type="text" class="form-control " value="PO - 251200020">
-								</div>
-							</div>
 
-
-
-							<!-- Produk -->
 							<div id="productContainer" class="card p-2"
 								style="background-color: rgba(254, 159, 67, 0.08);">
 								<div class="product-item">
@@ -3139,7 +3048,7 @@
 								<button type="submit" class="btn btn-primary add-sale">Save Changes</button>
 							</div>
 
-						</form>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -3192,9 +3101,9 @@
 	<!-- Custom JS -->
 	<script src="assets/js/theme-script.js"></script>
 	<script src="assets/js/script.js"></script>
-
-	<!-- js buat id summernote nabrak buatan eko	 -->
+	<script src="assets/js/shipping-pickup.js"></script>
 	<script>
+
 		$(document).ready(function () {
 			$('#summernote-create').summernote({
 				placeholder: 'Type description...',

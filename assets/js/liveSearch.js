@@ -27,6 +27,70 @@ fetch("/assets/json/customer.json")
                         el.querySelector('.phone').textContent = cust.phone
                         el.querySelector('.email').textContent = cust.email
                         el.querySelector('.address').textContent = cust.address
+
+                        // If this input is inside a modal/section or inline form that has a .shipping-method, populate it now
+                        // Prefer broader containers that group customer + shipping (modal, #add-method, #shipping-section, .row)
+                        const root = input.closest('.modal') || input.closest('#add-method') || input.closest('#shipping-section') || input.closest('.row') || input.closest('.col-md-6') || input.closest('.mt-3') || document;
+                        const shippingEl = root ? root.querySelector('.shipping-method') : null;
+                        if (shippingEl) {
+                            // render a simple shipping block based on the selected customer address
+                            shippingEl.innerHTML = `
+                                <div class="shipping-address">
+                                    <div class="align-items-center">
+                                        <span class="fw-semibold text-dark">${cust.name}</span>
+                                        <span class="text-secondary ms-2">${cust.phone}</span>
+                                    </div>
+                                    <div class="text-standard text-dark small mt-1">
+                                        ${cust.address}
+                                    </div>
+                                </div>
+                                <button class="btn my-btn-outline-primary float-end mb-2 shipping-change-address">Ubah Alamat</button>
+                            `;
+
+                            // attach a lightweight address picker using the global window.shippingAddresses (mock)
+                            const btn = shippingEl.querySelector('.shipping-change-address');
+                            if (btn) {
+                                btn.addEventListener('click', function () {
+                                    let opts = (window.shippingAddresses || []).map(a => `<option value="${a.id}">${a.name} — ${a.addressHtml.replace(/<br\s*\/?\>/gi, ' ').slice(0, 90)}</option>`).join('');
+                                    shippingEl.innerHTML = `
+                                        <div class="mb-2">
+                                            <select class="form-select select shipping-select">
+                                                <option value="">-- Pilih alamat --</option>
+                                                ${opts}
+                                            </select>
+                                        </div>
+                                        <div class="d-flex justify-content-end">
+                                            <button class="btn btn-secondary me-2 shipping-cancel">Batal</button>
+                                        </div>
+                                    `;
+                                    const sel = shippingEl.querySelector('.shipping-select');
+                                    const cancelBtn = shippingEl.querySelector('.shipping-cancel');
+                                    sel.addEventListener('change', function () {
+                                        const id = parseInt(this.value);
+                                        const addr = (window.shippingAddresses || []).find(a => a.id === id);
+                                        if (addr) {
+                                            shippingEl.innerHTML = `
+                                                <div class="shipping-address">
+                                                    <div class="align-items-center">
+                                                        <span class="fw-semibold text-dark">${addr.name}</span>
+                                                        <span class="text-secondary ms-2">${addr.phone}</span>
+                                                        <span class="badge my-bg-primary text-white align-middle ms-2">${addr.tag}</span>
+                                                    </div>
+                                                    <div class="text-standard text-dark small mt-1">
+                                                        ${addr.addressHtml}
+                                                    </div>
+                                                </div>
+                                                <button class="btn my-btn-outline-primary float-end mb-2 shipping-change-address">Ubah Alamat</button>
+                                            `;
+                                        }
+                                    });
+                                    cancelBtn.addEventListener('click', function () {
+                                        shippingEl.innerHTML = `<div class="no-address text-muted small mt-1">Pilih customer untuk menampilkan alamat</div>`;
+                                    });
+                                });
+                            }
+                        }
+
                         console.log(el)
                     });
                     resultBox.appendChild(item);

@@ -693,8 +693,7 @@
 												data-feather="edit" class="action-edit sales-action"></i></a></li>
 									<li><a data-bs-toggle="tooltip" title="PDF"><img src="assets/img/icons/pdf.svg"
 												alt="pdf"></a></li>
-									<li><a data-bs-toggle="tooltip" title="Excel"><img src="assets/img/icons/excel.svg"
-												alt="excel"></a>
+
 									</li>
 									<li><a data-bs-toggle="tooltip" title="Print"><i data-feather="printer"
 												class="feather-rotate-ccw"></i></a></li>
@@ -752,7 +751,7 @@
 								</div>
 
 								<!-- Order Summary -->
-								<h6 class="fw-bold mb-2">Order Summary</h6>
+								<h6 class="fw-bold mb-2">Return Summary</h6>
 								<div class="table-responsive">
 									<table class="table table-bordered datanew" style="border-color:#ccc;">
 										<thead class="table-light">
@@ -818,7 +817,7 @@
 		<div class="modal-dialog modal-dialog-centered modal-lg">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h5 class="modal-title">Payment</h5>
+					<h5 class="modal-title">Payment-OUT</h5>
 					<button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">×</span>
 					</button>
@@ -827,13 +826,10 @@
 					<div class="modal-body pb-1">
 						<div class="col-md-12">
 							<div class="mb-3">
-								<label class="form-label">Payment Type <span class="text-danger">*</span></label>
+								<label class="form-label">Payment-OUT Type <span class="text-danger">*</span></label>
 								<select class="select select-payment">
-									<option value="credit">Credit Card</option>
+									<option value="credit">Transfer</option>
 									<option value="cash" selected>Cash</option>
-									<option value="cheque">Cheque</option>
-									<option value="deposit">Deposit</option>
-									<option value="points">Points</option>
 								</select>
 							</div>
 							<div class="col-md-12">
@@ -853,33 +849,7 @@
 						</div>
 						<div class="row">
 
-							<div class="col-md-6">
-								<div class="mb-3">
-									<label class="form-label">Total<span class="text-danger">*</span></label>
-									<div class="input-icon-start position-relative">
-										<span class="input-icon-addon text-gray-9">
-											<i class="ti ti-currency-dollar"></i>
-										</span>
-										<input type="text" class="form-control number-separator no-border bg-light"
-											inputmode="numeric" pattern="[0-9]*" value="1800" disabled>
-										<input type="hidden" class="result-input" id="paying" value="1800">
-									</div>
-								</div>
-							</div>
 
-							<div class="col-md-6">
-								<div class="change-item mb-3">
-									<label class="form-label">Change</label>
-									<div class="input-icon-start position-relative">
-										<span class="input-icon-addon text-gray-9">
-											<i class="ti ti-currency-dollar"></i>
-										</span>
-										<input type="text" class="form-control number-separator no-border bg-light"
-											inputmode="numeric" pattern="[0-9]*" value="0" disabled>
-										<input type="hidden" class="result-input" id="change" value="0">
-									</div>
-								</div>
-							</div>
 
 
 							<div class="col-md-12">
@@ -919,7 +889,7 @@
 				<!-- Header -->
 				<div class="modal-header border-0 pb-0">
 					<h5 class="modal-title fw-bold">
-						Sales Return : RTN000002
+						Add New Sales Return : RTN000002
 					</h5>
 					<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
 				</div>
@@ -955,10 +925,10 @@
 									No Sales<span class="text-danger ms-1">*</span>
 								</label>
 								<select class="select">
-									<option>25110000001</option>
-									<option>25110000002</option>
-									<option>25110000003</option>
-									<option>25110000004</option>
+									<option>25110000001 - 24/12/2025</option>
+									<option>25110000002 - 10/10/2025</option>
+									<option>25110000003 - 9/9/2025</option>
+									<option>25110000004 - 7/8/2025</option>
 								</select>
 							</div>
 						</div>

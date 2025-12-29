@@ -756,7 +756,7 @@
 									<table class="table table-bordered datanew" style="border-color:#ccc;">
 										<thead class="table-light">
 											<tr>
-												<th>Product Name</th>
+												<th style="width: 450px;">Product Name</th>
 												<th>Qty</th>
 												<th>Qty Return</th>
 												<th>Unit</th>
@@ -844,6 +844,40 @@
 										<input type="hidden" class="result-input" id="paying-amount" value="1800">
 									</div>
 								</div>
+								<div id="formTransferOut" class="d-none">
+									<div class="row mb-3 d-flex">
+										<div class="col-md-5">
+											<label class="form-label mt-2">Bank / Wallet</label>
+										</div>
+										<div class="col-md-6">
+											<input type="text" class="form-control" value="BCA">
+										</div>
+									</div>
+									<div class="row d-flex mb-3">
+										<div class="col-md-5">
+											<label class="form-label mt-2">Account Name</label>
+										</div>
+										<div class="col-md-6">
+											<input type="text" class="form-control" value="Manan">
+										</div>
+									</div>
+									<div class="row d-flex mb-3">
+										<div class="col-md-5">
+											<label class="form-label mt-2">Account Number</label>
+										</div>
+										<div class="col-md-6">
+											<input type="text" class="form-control" value="123-456-7890">
+										</div>
+									</div>
+									<div class="row d-flex mb-3">
+										<div class="col-md-5">
+											<label class="form-label mt-2">Reference</label>
+										</div>
+										<div class="col-md-6">
+											<input type="text" class="form-control">
+										</div>
+									</div>
+								</div>
 							</div>
 
 						</div>
@@ -863,7 +897,12 @@
 							<div class="col-md-12">
 								<div class="mb-3">
 									<label class="form-label">Notes</label>
-									<textarea class="form-control" rows="3" placeholder="Type your message"></textarea>
+									<div class="flex-grow-1 term-content text-start">
+									<div class="product-desc" contenteditable="true"
+										data-placeholder="Enter note here....."
+										style="min-height: 38px;"></div>
+
+								</div>
 								</div>
 							</div>
 
@@ -924,11 +963,12 @@
 								<label class="form-label">
 									No Sales<span class="text-danger ms-1">*</span>
 								</label>
-								<select class="select">
-									<option>25110000001 - 24/12/2025</option>
-									<option>25110000002 - 10/10/2025</option>
-									<option>25110000003 - 9/9/2025</option>
-									<option>25110000004 - 7/8/2025</option>
+								<select class="select" id="no-sales-select" disabled>
+									<option value="">Select No Sales</option>
+									<option value="25110000001">25110000001 - 24/12/2025</option>
+									<option value="25110000002">25110000002 - 10/10/2025</option>
+									<option value="25110000003">25110000003 - 9/9/2025</option>
+									<option value="25110000004">25110000004 - 7/8/2025</option>
 								</select>
 							</div>
 						</div>
@@ -969,7 +1009,7 @@
 						<table class="table table-bordered align-middle">
 							<thead class="bg-light">
 								<tr>
-									<th>Product Name</th>
+									<th style="width: 450px;">Product Name</th>
 									<th class="text-center">Qty</th>
 									<th class="text-center">Qty Return</th>
 									<th>Unit</th>
@@ -980,7 +1020,7 @@
 								</tr>
 							</thead>
 
-							<tbody>
+							<tbody id="product-table-body">
 								<tr>
 									<td>
 										<strong>Brosur Full Color</strong><br>
@@ -1028,8 +1068,12 @@
 						<div class="col-lg-6">
 							<div class="mb-3">
 								<label class="form-label fw-bold">Notes</label>
-								<textarea class="form-control" style="height: 150px!important;"
-									placeholder="Enter notes here..."></textarea>
+								<div class="flex-grow-1 term-content text-start">
+									<div class="product-desc" contenteditable="true"
+										data-placeholder="Enter note here....."
+										style="min-height: 38px;"></div>
+
+								</div>
 							</div>
 						</div>
 						<div class="col-lg-6">
@@ -1045,37 +1089,56 @@
 								</div>
 							</div>
 
-							<h5 class="fw-bold mb-2 ml-5 text-center">Payment Info</h5>
-							<div class="row mb-3 d-flex justify-content-end align-items-end">
-								<div class="col-md-5">
-									<label class="form-label mt-2">Bank / Wallet</label>
+							<div class="d-flex my-3 align-items-center justify-content-center">
+								<h5 class="fw-bold ml-5">Payment Info</h5>
+								<div class="form-check ms-3 align-items-center">
+									<input class="form-check-input" type="radio" name="radioPayment"
+										id="radioPayment1" checked
+										onclick="formTransferAdd.classList.add('d-none')">
+									<label class="form-check-label text-standard" for="radioPayment1">
+										Cash
+									</label>
 								</div>
-								<div class="col-md-6">
-									<input type="text" class="form-control" value="BCA">
-								</div>
-							</div>
-							<div class="row d-flex justify-content-end align-items-end mb-3">
-								<div class="col-md-5">
-									<label class="form-label mt-2">Account Name</label>
-								</div>
-								<div class="col-md-6">
-									<input type="text" class="form-control" value="Manan">
-								</div>
-							</div>
-							<div class="row d-flex justify-content-end align-items-end mb-3">
-								<div class="col-md-5">
-									<label class="form-label mt-2">Account Number</label>
-								</div>
-								<div class="col-md-6">
-									<input type="text" class="form-control" value="123-456-7890">
+								<div class="form-check ms-3 align-items-center">
+									<input class="form-check-input" type="radio" name="radioPayment"
+										id="radioPayment2" onclick="formTransferAdd.classList.remove('d-none')">
+									<label class="form-check-label text-standard" for="radioPayment2">
+										Transfer
+									</label>
 								</div>
 							</div>
-							<div class="row d-flex justify-content-end align-items-end mb-3">
-								<div class="col-md-5">
-									<label class="form-label mt-2">Reference</label>
+							<div id="formTransferAdd" class="d-none">
+								<div class="row mb-3 d-flex justify-content-end align-items-end">
+									<div class="col-md-5">
+										<label class="form-label mt-2">Bank / Wallet</label>
+									</div>
+									<div class="col-md-6">
+										<input type="text" class="form-control" value="BCA">
+									</div>
 								</div>
-								<div class="col-md-6">
-									<input type="text" class="form-control">
+								<div class="row d-flex justify-content-end align-items-end mb-3">
+									<div class="col-md-5">
+										<label class="form-label mt-2">Account Name</label>
+									</div>
+									<div class="col-md-6">
+										<input type="text" class="form-control" value="Manan">
+									</div>
+								</div>
+								<div class="row d-flex justify-content-end align-items-end mb-3">
+									<div class="col-md-5">
+										<label class="form-label mt-2">Account Number</label>
+									</div>
+									<div class="col-md-6">
+										<input type="text" class="form-control" value="123-456-7890">
+									</div>
+								</div>
+								<div class="row d-flex justify-content-end align-items-end mb-3">
+									<div class="col-md-5">
+										<label class="form-label mt-2">Reference</label>
+									</div>
+									<div class="col-md-6">
+										<input type="text" class="form-control">
+									</div>
 								</div>
 							</div>
 						</div>
@@ -1171,7 +1234,7 @@
 						<table class="table table-bordered align-middle">
 							<thead class="bg-light">
 								<tr>
-									<th>Product Name</th>
+									<th style="width: 450px;">Product Name</th>
 									<th class="text-center">Qty</th>
 									<th class="text-center">Qty Return</th>
 									<th>Unit</th>
@@ -1229,8 +1292,12 @@
 						<div class="col-lg-6">
 							<div class="mb-3">
 								<label class="form-label fw-bold">Notes</label>
-								<textarea class="form-control" style="height: 150px!important;"
-									placeholder="Enter notes here..."></textarea>
+								<div class="flex-grow-1 term-content text-start">
+									<div class="product-desc" contenteditable="true"
+										data-placeholder="Enter note here....."
+										style="min-height: 38px;"></div>
+
+								</div>
 							</div>
 						</div>
 						<div class="col-lg-6">
@@ -1246,37 +1313,56 @@
 								</div>
 							</div>
 
-							<h5 class="fw-bold mb-2 ml-5 text-center">Payment Info</h5>
-							<div class="row mb-3 d-flex justify-content-end align-items-end">
-								<div class="col-md-5">
-									<label class="form-label mt-2">Bank / Wallet</label>
+							<div class="d-flex my-3 align-items-center justify-content-center">
+								<h5 class="fw-bold ml-5">Payment Info</h5>
+								<div class="form-check ms-3 align-items-center">
+									<input class="form-check-input" type="radio" name="radioPaymentEdit"
+										id="radioPaymentEdit1" checked
+										onclick="formTransferEdit.classList.add('d-none');formTransferOut.classList.add('d-none')">
+									<label class="form-check-label text-standard" for="radioPaymentEdit1">
+										Cash
+									</label>
 								</div>
-								<div class="col-md-6">
-									<input type="text" class="form-control" value="BCA">
-								</div>
-							</div>
-							<div class="row d-flex justify-content-end align-items-end mb-3">
-								<div class="col-md-5">
-									<label class="form-label mt-2">Account Name</label>
-								</div>
-								<div class="col-md-6">
-									<input type="text" class="form-control" value="Manan">
-								</div>
-							</div>
-							<div class="row d-flex justify-content-end align-items-end mb-3">
-								<div class="col-md-5">
-									<label class="form-label mt-2">Account Number</label>
-								</div>
-								<div class="col-md-6">
-									<input type="text" class="form-control" value="123-456-7890">
+								<div class="form-check ms-3 align-items-center">
+									<input class="form-check-input" type="radio" name="radioPaymentEdit"
+										id="radioPaymentEdit2" onclick="formTransferEdit.classList.remove('d-none');formTransferOut.classList.remove('d-none')">
+									<label class="form-check-label text-standard" for="radioPaymentEdit2">
+										Transfer
+									</label>
 								</div>
 							</div>
-							<div class="row d-flex justify-content-end align-items-end mb-3">
-								<div class="col-md-5">
-									<label class="form-label mt-2">Reference</label>
+							<div id="formTransferEdit" class="d-none">
+								<div class="row mb-3 d-flex justify-content-end align-items-end">
+									<div class="col-md-5">
+										<label class="form-label mt-2">Bank / Wallet</label>
+									</div>
+									<div class="col-md-6">
+										<input type="text" class="form-control" value="BCA">
+									</div>
 								</div>
-								<div class="col-md-6">
-									<input type="text" class="form-control">
+								<div class="row d-flex justify-content-end align-items-end mb-3">
+									<div class="col-md-5">
+										<label class="form-label mt-2">Account Name</label>
+									</div>
+									<div class="col-md-6">
+										<input type="text" class="form-control" value="Manan">
+									</div>
+								</div>
+								<div class="row d-flex justify-content-end align-items-end mb-3">
+									<div class="col-md-5">
+										<label class="form-label mt-2">Account Number</label>
+									</div>
+									<div class="col-md-6">
+										<input type="text" class="form-control" value="123-456-7890">
+									</div>
+								</div>
+								<div class="row d-flex justify-content-end align-items-end mb-3">
+									<div class="col-md-5">
+										<label class="form-label mt-2">Reference</label>
+									</div>
+									<div class="col-md-6">
+										<input type="text" class="form-control">
+									</div>
 								</div>
 							</div>
 						</div>
@@ -1330,6 +1416,86 @@
 	<!-- Custom JS -->
 	<script src="assets/js/theme-script.js"></script>
 	<script src="assets/js/script.js"></script>
+
+	<script>
+		$(document).ready(function() {
+			// When modal is shown, disable no-sales-select and clear product table
+			$('#salesReturnModal').on('show.bs.modal', function() {
+				$('#no-sales-select').prop('disabled', true).val('');
+				$('#product-table-body').empty();
+			});
+
+			// When customer is selected (input changes), enable no-sales-select
+			$('#salesReturnModal .customer-input').on('input', function() {
+				if ($(this).val().trim() !== '') {
+					$('#no-sales-select').prop('disabled', false);
+				} else {
+					$('#no-sales-select').prop('disabled', true).val('');
+					$('#product-table-body').empty();
+				}
+			});
+
+			// When no-sales is selected, populate products
+			$('#no-sales-select').on('change', function() {
+				const selectedValue = $(this).val();
+				if (selectedValue) {
+					// Mock data for products based on no-sales
+					const products = {
+						'25110000001': [
+							{ name: 'Brosur Full Color', desc: 'Brosur PPDB SMAN 1 Bandung', qty: 2, unit: 'Ream', price: '450.000' }
+						],
+						'25110000002': [
+							{ name: 'Kartu Nama', desc: 'Kartu Nama Standard', qty: 5, unit: 'Pack', price: '50.000' }
+						],
+						'25110000003': [
+							{ name: 'Flyer A5', desc: 'Flyer Promosi', qty: 10, unit: 'Sheet', price: '20.000' }
+						],
+						'25110000004': [
+							{ name: 'Stiker Vinyl', desc: 'Stiker Custom', qty: 1, unit: 'Roll', price: '100.000' }
+						]
+					};
+					const productList = products[selectedValue] || [];
+					let tbody = '';
+					productList.forEach(product => {
+						tbody += `
+							<tr>
+								<td>
+									<strong>${product.name}</strong><br>
+									${product.desc}
+								</td>
+								<td class="text-center">${product.qty}</td>
+								<td class="text-center">
+									<div class="product-quantity bg-gray-transparent border-0">
+										<span class="quantity-btn">+<i data-feather="plus-circle" class="plus-circle"></i></span>
+										<input type="text" class="quntity-input form-control bg-transparent" value="1">
+										<span class="quantity-btn"><i data-feather="minus-circle" class="feather-search"></i></span>
+									</div>
+								</td>
+								<td>${product.unit}</td>
+								<td>
+									<input type="text" class="form-control" value="${product.price}">
+								</td>
+								<td class="fw-semibold">${product.price}</td>
+								<td>
+									<textarea class="form-control" rows="2"></textarea>
+								</td>
+								<td>
+									<button class="dropdown-item d-flex align-items-center small py-1 text-danger btn-delete-sale" type="button">
+										<i data-feather="trash-2" class="me-2" width="14" height="14"></i>
+									</button>
+								</td>
+							</tr>
+						`;
+					});
+					$('#product-table-body').html(tbody);
+					// Reinitialize feather icons if needed
+					feather.replace();
+				} else {
+					$('#product-table-body').empty();
+				}
+			});
+		});
+	</script>
 </body>
 
 </html>

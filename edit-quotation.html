@@ -309,10 +309,18 @@
 											</table>
 										</div>
 
-										<a href="javascript:void(0);" id="btn-add-blank-item">
-											<i data-feather="plus-circle" class="plus-down-add text-primary"></i>
-											<span>add New blank</span>
-										</a>
+										<div class="d-flex justify-content-between">
+											<a href="javascript:void(0);" id="btn-add-blank-item">
+												<i data-feather="plus-circle" class="plus-down-add text-primary"></i>
+												<span>add New blank</span>
+											</a>
+											<div class="form-check">
+												<input class="form-check-input" type="checkbox" value="" id="ppnCheck" onchange="PPN.classList.toggle('d-none');NonPPN.classList.toggle('d-none')">
+												<label class="form-check-label" for="ppnCheck" >
+													Harga termasuk PPN
+												</label>
+											</div>
+										</div>
 									</div>
 								</div>
 							</div>
@@ -403,13 +411,18 @@
 									</div>
 									<div class="row align-items-center mt-3">
 										<div class="col-4">
-											<label class="form-label m-0">Shipping Cost</label>
+											<label class="form-label m-0">Tax</label>
 										</div>
 										<div class="col-8">
-											<select class="form-select form-select-sm select">
-												<option>Ppn 11% (11250)</option>
-												<option>Ppn 11% (11250)</option>
-											</select>
+											<div id="PPN">
+													<select class="form-select form-select-sm select" >
+													<option value="Ppn">Ppn 11% (11250)</option>
+													<option value="Ppn">Ppn 11% (11250)</option>
+												</select>
+											</div>
+											<div id="NonPPN" class="d-none">
+												<input type="text" class="form-control" disabled value="0">
+											</div>
 										</div>
 									</div>
 									<div class="row align-items-center mt-3">

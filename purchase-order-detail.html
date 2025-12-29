@@ -38,6 +38,86 @@
 
 	<!-- Main CSS -->
 	<link rel="stylesheet" href="assets/css/style.css">
+	<style>
+		 @media print {
+
+            /* kecilkan semua font saat print */
+            html,
+            body {
+                font-size: 12px !important;
+                /* ubah angka ini bila ingin lebih kecil/lebih besar */
+                line-height: 1.2 !important;
+            }
+
+            /* fallback spesifik untuk elemen penting */
+            h1 {
+                font-size: 1.25rem !important;
+            }
+
+            h2 {
+                font-size: 1.1rem !important;
+            }
+
+            h3,
+            h4,
+            h5,
+            h6 {
+                font-size: 1rem !important;
+            }
+
+            .text-standard,
+            .order-table,
+            .table,
+            .order-section-title,
+            .page-title,
+            p,
+            span,
+            label {
+                font-size: 0.85rem !important;
+                /* skala turun lagi untuk konten */
+            }
+
+            /* tetap pertahankan rules sebelumnya */
+            body {
+                background: #fff;
+                padding: 0.1in !important;
+            }
+
+            @page {
+                size: A4;
+                margin: 0.3in !important;
+
+                @bottom-right {
+                    content: counter(page) "/" counter(pages);
+                    margin-bottom: 15px;
+                }
+            }
+
+            #header-placeholder,
+            .button-block,
+            .page-header {
+                display: none !important;
+            }
+            .action-button {
+                visibility: hidden;
+            }
+
+            #detail {
+                padding: 0 !important;
+                box-shadow: none !important;
+            }
+
+            .content,
+            .page-wrapper {
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+
+            .no-print {
+                display: none;
+            }
+        }
+	</style>
 
 </head>
 
@@ -62,20 +142,32 @@
 							<h4>Purchase Detail</h4>
 						</div>
 					</div>
+					<ul class="table-top-head">
+                        <li>
+                            <div class="page-btn">
+                                <a href="purchase-order.html" class="btn btn-secondary"><i data-feather="arrow-left"
+                                        class="me-2"></i>Back to Purchase Order List</a>
+                            </div>
+                        </li>
+                        <li>
+                            <a data-bs-toggle="tooltip" data-bs-placement="top" title="Collapse" id="collapse-header"><i
+                                    data-feather="chevron-up" class="feather-chevron-up"></i></a>
+                        </li>
+                    </ul>
 				</div>
 
 				<!-- START: Purchase Order Detail layout -->
-				<div class="card mt-4">
-					<div class="card-body py-5">
+				<div class="mt-4">
+					<div class="p-5 shadow" id="detail">
 						<div class="container-fluid">
 							<div class="row align-items-start mb-4">
-								<div class="col-md-3 text-center">
+								<div class="col-3 text-center">
 									<div class="border p-4"
 										style="height:100px;width: 200px; display:flex; align-items:center; justify-content:center;">
 										<h5 class="mb-0">Logo</h5>
 									</div>
 								</div>
-								<div class="col-md-5">
+								<div class="col-5">
 									<h4 class="mb-1 fw-bold">PT. DULANK SEMESTA CIDA</h4>
 									<p class="mb-0 small">Jl. Arif Rahman Hakim Niaga Kel. Nagasari<br>
 										Kec. Karawang Barat Kab. Karawang<br>
@@ -89,7 +181,7 @@
 
 							<h5 class="fw-bold fs-4 mb-2">PURCHASE ORDER</h5>
 							<div class="row mb-4">
-								<div class="col-md-7">
+								<div class="col-7">
 									<div class="row">
 										<div class="col-2"><strong>To</strong></div>
 										<div class="col-8">
@@ -101,7 +193,7 @@
 										</div>
 									</div>
 								</div>
-								<div class="col-md-5">
+								<div class="col-5">
 									<div class="row my-1">
 										<div class="offset-4 col-4 text-start small">PO</div>
 										<div class="col-4 small">: PO2545852200</div>
@@ -153,7 +245,7 @@
 							</div>
 
 							<div class="row mt-4">
-								<div class="col-md-6">
+								<div class="col-6">
 									<h6 class="fw-bold">PO Detail</h6>
 									<div class="row small">
 										<div class="col-4">No. PR</div>
@@ -171,7 +263,7 @@
 									</div>
 								</div>
 
-								<div class="col-md-6 text-end">
+								<div class="col-6 text-end">
 									<div class="d-inline-block text-start" style="min-width:240px;">
 										<div class="row fw-bold mt-2">
 											<div class="col-6 text-end small">Sub Total</div>
@@ -189,15 +281,22 @@
 								</div>
 							</div>
 
-							<div class="row mt-5">
-								<div class="col-12 d-flex justify-content-end gap-3">
-									<button class="btn btn-warning"><i data-feather="printer" class="me-2"></i> Print
-										Purchase Order</button>
-									<button class="btn btn-dark"><i data-feather="download" class="me-2"></i> Download
-										Purchase Order</button>
-								</div>
-							</div>
+							
 						</div>
+					</div>
+					<div class="my-4 d-flex justify-content-end action-button">
+						<ul class="table-top-head">
+							<li >
+								<a data-bs-toggle="tooltip" data-bs-placement="top" title="Pdf"><img
+										src="assets/img/icons/pdf.svg" alt="img"></a>
+							</li>
+	
+							<li id="download-pdf">
+								<a data-bs-toggle="tooltip" data-bs-placement="top" title="Print"><i data-feather="printer"
+										class="feather-rotate-ccw"></i></a>
+							</li>
+	
+						</ul>
 					</div>
 				</div>
 				<!-- END: Purchase Order Detail layout -->
@@ -247,6 +346,14 @@
 		<!-- Custom JS -->
 		<script src="assets/js/theme-script.js"></script>
 		<script src="assets/js/script.js"></script>
+
+		<script>
+			document.getElementById('download-pdf').addEventListener('click', function (e) {
+            e.preventDefault();
+
+            window.print()
+        });
+		</script>
 
 
 

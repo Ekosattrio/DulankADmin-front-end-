@@ -138,9 +138,6 @@
             .page-header {
                 display: none !important;
             }
-            .action-button {
-                visibility: hidden;
-            }
 
             #detail {
                 padding: 0 !important;
@@ -178,20 +175,15 @@
                 <div class="page-header">
                     <div class="add-item d-flex">
                         <div class="page-title">
-                            <h4>Invoice Details</h4>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="proformaCheck">
-                                <label class="form-check-label" for="proformaCheck">
-                                    Proforma Invoice
-                                </label>
-                            </div>
+                            <h4>Sales Note</h4>
+
                         </div>
                     </div>
                     <ul class="table-top-head">
                         <li>
                             <div class="page-btn">
-                                <a href="invoice.html" class="btn btn-secondary"><i data-feather="arrow-left"
-                                        class="me-2"></i>Back to Invoices List</a>
+                                <a href="sales.html" class="btn btn-secondary"><i data-feather="arrow-left"
+                                        class="me-2"></i>Back to Sales List</a>
                             </div>
                         </li>
                         <li>
@@ -231,7 +223,7 @@
                         </div>
 
                         <div class="text-center mb-2">
-                            <h2 class="fw-normal mb-0" style="font-size:2rem;" id="invoice-title">Invoice</h2>
+                            <h2 class="fw-normal mb-0" style="font-size:2rem;">Sales Note</h2>
                         </div>
 
                         <div class="d-flex justify-content-between">
@@ -246,22 +238,12 @@
                                         XS No. 13, Jakarta Selatan, 12950.
                                     </div>
                                 </div>
-                                <div class="mb-2 fw-semibold text-standard">PO Number: 600449168</div>
-                                <div class="my-4">
-                                    <div class="mb-2 fw-semibold text-standard">Shipping To:</div>
-                                    <div class="text-standard">
-                                        PT. Exabytes Network Indonesia<br>
-                                        Cyber 2 Tower, Lantai 29,<br>
-                                        Jalan HR Rasuna Said,<br>
-                                        XS No. 13, Jakarta Selatan, 12950.
-                                    </div>
-                                </div>
                             </div>
 
-                            <!-- INVOICE INFO -->
+                            <!-- SALES INFO -->
                             <div>
                                 <div class="d-flex justify-content-end small my-1">
-                                    <div style="width: 120px;" class="text-end">Invoice Date</div>
+                                    <div style="width: 120px;" class="text-end">Sales Date</div>
                                     <div style="width: 100%;" class="text-end">: 26/06/2025</div>
                                 </div>
 
@@ -275,7 +257,7 @@
 
 
                         <div class="mb-3">
-                            <div class="fw-semibold text-standard mb-2">Invoice Items</div>
+                            <div class="fw-semibold text-standard mb-2">Sales Items</div>
                             <div class="table-responsive">
                                 <table class="table table-bordered align-middle mb-0">
                                     <thead>
@@ -369,21 +351,13 @@
 
                         </div>
 
-                        
-                    </div>
-                    <div class="mt-4 d-flex justify-content-end action-button">
-                        <ul class="table-top-head">
-                            <li >
-                                <a data-bs-toggle="tooltip" data-bs-placement="top" title="Pdf"><img
-                                        src="assets/img/icons/pdf.svg" alt="img"></a>
-                            </li>
-
-                            <li id="download-pdf">
-                                <a data-bs-toggle="tooltip" data-bs-placement="top" title="Print"><i data-feather="printer"
-                                        class="feather-rotate-ccw"></i></a>
-                            </li>
-
-                        </ul>
+                        <div class="d-flex justify-content-end button-block">
+                            <a href="#" class="btn btn-primary d-flex justify-content-center align-items-center me-2"
+                                id="download-pdf"><i data-feather="printer" class="me-2"></i>Print Sales Note</a>
+                            <a href="#"
+                                class="btn btn-secondary d-flex justify-content-center align-items-center me-2"><i
+                                    data-feather="download" class="me-2"></i>Download Sales Note</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -436,20 +410,7 @@
             window.print()
         });
 
-        // sinkron awal + ubah judul ketika checkbox berubah
-        (function () {
-            const chk = document.getElementById('proformaCheck');
-            const title = document.getElementById('invoice-title');
-            if (!chk || !title) return;
 
-            // sync saat halaman dimuat
-            title.textContent = chk.checked ? 'Proforma Invoice' : 'Invoice';
-
-            // update saat checkbox berubah
-            chk.addEventListener('change', function () {
-                title.textContent = this.checked ? 'Proforma Invoice' : 'Invoice';
-            });
-        })();
     </script>
 
 </body>

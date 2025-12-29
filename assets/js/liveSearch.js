@@ -21,6 +21,7 @@ fetch("/assets/json/customer.json")
               `;
                     item.addEventListener("click", () => {
                         input.value = cust.name;
+                        input.dispatchEvent(new Event('input'));
                         resultBox.style.display = "none";
                         let el = document.getElementById(input.getAttribute("data-target"))
                         el.querySelector('.name').textContent = cust.name

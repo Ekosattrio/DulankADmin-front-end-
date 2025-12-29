@@ -211,3 +211,30 @@ document.addEventListener('DOMContentLoaded', function () {
 document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('#pickup-method-address').forEach(el => { el.classList.add('pickup-method-address'); el.removeAttribute('id'); });
 });
+document.addEventListener('DOMContentLoaded', function () {
+    const modalAddSales = document.getElementById('add-sels');
+
+    if (modalAddSales) {
+        modalAddSales.addEventListener('hidden.bs.modal', function () {
+            const shippingMethod = modalAddSales.querySelector('.shipping-method');
+            if (shippingMethod) {
+                shippingMethod.innerHTML = '<div class="no-address text-muted small mt-1">Pilih customer untuk menampilkan alamat</div>';
+            }
+            const pickupMethod = modalAddSales.querySelector('.pickup-method');
+            if (pickupMethod) {
+                pickupMethod.classList.add('d-none'); 
+            }
+            const radioShipping1 = document.getElementById('radioShipping1');
+            if (radioShipping1) {
+                radioShipping1.checked = true;
+                displayShipping(radioShipping1, true);
+            }
+            const customerData = document.getElementById('data-customer');
+            if (customerData) {
+                customerData.querySelectorAll('strong, small').forEach(el => el.innerText = '');
+            }
+            const customerInput = modalAddSales.querySelector('.customer-input');
+            if (customerInput) customerInput.value = '';
+        });
+    }
+});

@@ -38,6 +38,88 @@
 
 	<!-- Main CSS -->
 	<link rel="stylesheet" href="assets/css/style.css">
+	<style>
+		/* Container untuk dropdown */
+.product-search-container {
+    position: relative;
+}
+
+/* Box hasil pencarian */
+.product-search-results {
+    display: none; /* Sembunyi secara default */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1060; /* Di atas modal */
+    max-height: 250px;
+    overflow-y: auto;
+    background: white;
+    border: 1px solid #dee2e6;
+    width: 100%;
+}
+
+.product-search-results.show {
+    display: block;
+}
+
+/* Item di dalam dropdown */
+.product-item-result {
+    padding: 10px 15px;
+    border-bottom: 1px solid #f1f1f1;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.product-item-result:hover {
+    background-color: #f8f9fa;
+}
+
+.product-item-result strong {
+    color: #333;
+    display: block;
+}
+
+.product-item-result small {
+    color: #777;
+}
+
+/* Style Contenteditable agar mirip Textarea */
+.custom-textarea {
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    padding: 8px 12px;
+    min-height: 60px;
+    background: #fff;
+    font-size: 0.875rem;
+    outline: none;
+}
+
+.custom-textarea:focus {
+    border-color: #ff9f43;
+    box-shadow: 0 0 0 0.2rem rgba(254, 159, 67, 0.25);
+}
+		.custom-textarea {
+    border: 1px solid #dce1e6;
+    border-radius: 5px;
+    padding: 8px 12px;
+    min-height: 40px;
+    background-color: #fff;
+    font-size: 13px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.custom-textarea:focus {
+    border-color: #ff9f43; /* Warna orange bootstrap lu */
+}
+
+/* Placeholder simulasi */
+.custom-textarea:empty:before {
+    content: attr(placeholder);
+    color: #adb5bd;
+    pointer-events: none;
+}
+	</style>
 
 </head>
 
@@ -2082,12 +2164,18 @@
 
 									<div class="col-md-4">
 										<label class="form-label">Product Name</label>
-										<input type="text" class="form-control mb-2" value="Brosur PPDB SMAN 1 Bandung">
+										<div class="product-search-container position-relative">
+											<input type="text" class="form-control mb-2 product-search-input" 
+												placeholder="Ketik minimal 3 huruf..." autocomplete="off">
+											
+											<div class="product-search-results dropdown-menu w-100 shadow-sm">
+												</div>
+										</div>
+										
 										<em class="text-muted">Description:</em>
-										<p class="small mb-0">
-											Brosur Full Color A4 (210x297 Milimeter), Art paper 150gr,<br>
-											Tanpa Laminasi, Tanpa Lipatan
-										</p>
+										<div class="description-edit custom-textarea" 
+											contenteditable="true" 
+											placeholder="Enter description here...">-</div>
 									</div>
 
 									<div class="col-md-2">
@@ -2131,7 +2219,7 @@
 
 						<div class="inline-block mb-4">
 							<a href="javascript:void(0);" id="btnAddNewProduct" class="mt-3 d-inline-block">
-								<i data-feather="plus-circle" style="color: primari;" class="plus-down-add"></i>
+								<i data-feather="plus-circle" style="color: primari;" class="plus-down-add text-primary"></i>
 								<span class="text-primary">add New blank</span>
 							</a>
 						</div>
@@ -2140,17 +2228,18 @@
 
 						<!-- Voucher dan Shipping -->
 						<div class="row mb-4 gx-3">
-							<div class="col-md-4">
-								<label class="form-label">Voucher</label>
-								<div id="voucher-alert" class="alert alert-success py-1 px-2 small d-none">
-									Voucher berhasil diterapkan
-								</div>
-								<div class="input-group">
-									<input type="text" id="voucherInput" class="form-control" value="DUILANK12">
-									<button class="btn btn-warning text-white" type="button"
-										onclick="applyVoucher(event)">Apply</button>
-								</div>
-							</div>
+							<div class="col-md-4 voucher-container"> 
+    <div class="d-flex justify-content-between align-items-center mb-2">
+        <label class="form-label mb-0">Voucher</label>
+        <div class="alert alert-success py-0 px-2 small mb-0 d-none voucher-alert" style="line-height: 1.5;">
+            Voucher berhasil diterapkan
+        </div>
+    </div>
+    <div class="input-group">
+        <input type="text" class="form-control voucher-input" value="DUILANK12">
+        <button class="btn btn-warning text-white" type="button" onclick="applyVoucher(event, this)">Apply</button>
+    </div>
+</div>
 
 							<div class="col-md-4">
 								<label class="form-label">Shipping Costs</label>
@@ -2703,7 +2792,7 @@
 									<li><a href="#" data-bs-toggle="modal" data-bs-target="#editSaleModal" title="Edit"
 											id="linkToEdit"><i data-feather="edit"
 												class="action-edit sales-action"></i></a></li>
-									<li><a data-bs-toggle="tooltip" title="PDF"><img src="assets/img/icons/pdf.svg"
+									<li><a  href="sales-note.html" title="PDF"><img src="assets/img/icons/pdf.svg"
 												alt="pdf"></a></li>
 
 									</li>
@@ -2943,12 +3032,11 @@
 
 										<div class="col-md-4">
 											<label class="form-label">Product Name</label>
-											<input type="text" class="form-control mb-2"
-												value="Brosur PPDB SMAN 1 Bandung">
+											<input type="text" class="form-control mb-2" value="">
 											<em class="text-muted">Description:</em>
-											<label class="form-label">Description</label>
-											<input type="text" class="form-control mb-2" value="Brosur Full Color A4 (210x297 Milimeter), Art paper 150gr,<br>
-												Tanpa Laminasi, Tanpa Lipatan">
+											<div class="description-edit custom-textarea" 
+												contenteditable="true" 
+												placeholder="Enter description here...">-</div>
 										</div>
 
 										<div class="col-md-2">
@@ -2992,27 +3080,28 @@
 							</div>
 
 							<div class="inline-block mb-4">
-								<a href="javascript:void(0);" id="btnAddNewProduct" class="mt-3 d-inline-block">
-									<i data-feather="plus-circle" class="plus-down-add"></i>
-									<span>add New blank</span>
-								</a>
-							</div>
+							<a href="javascript:void(0);" id="btnAddNewProduct" class="mt-3 d-inline-block">
+								<i data-feather="plus-circle" style="color: primari;" class="plus-down-add text-primary"></i>
+								<span class="text-primary">add New blank</span>
+							</a>
+						</div>
 
 
 
 							<!-- Voucher dan Shipping -->
 							<div class="row mb-4 gx-3">
-								<div class="col-md-4">
-									<label class="form-label">Voucher</label>
-									<div id="voucher-alert" class="alert alert-success py-1 px-2 small d-none">
-										Voucher berhasil diterapkan
-									</div>
-									<div class="input-group">
-										<input type="text" id="voucherInput" class="form-control" value="DUILANK12">
-										<button class="btn btn-warning text-white" type="button"
-											onclick="applyVoucher(event)">Apply</button>
-									</div>
-								</div>
+								<div class="col-md-4 voucher-container"> 
+    <div class="d-flex justify-content-between align-items-center mb-2">
+        <label class="form-label mb-0">Voucher</label>
+        <div class="alert alert-success py-0 px-2 small mb-0 d-none voucher-alert" style="line-height: 1.5;">
+            Voucher berhasil diterapkan
+        </div>
+    </div>
+    <div class="input-group">
+        <input type="text" class="form-control voucher-input" value="DUILANK12">
+        <button class="btn btn-warning text-white" type="button" onclick="applyVoucher(event, this)">Apply</button>
+    </div>
+</div>
 
 								<div class="col-md-4">
 									<label class="form-label">Shipping Costs</label>
@@ -3114,61 +3203,420 @@
 			});
 		});
 	</script>
-
+<!-- add new blank baru -->
 	<script>
-		function applyVoucher(e) {
-			try {
-				if (e) e.preventDefault();
+		function applyVoucher(e, btn) {
+    try {
+        if (e) e.preventDefault();
 
-				function formatRupiah(num) {
-					return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-				}
+        function formatRupiah(num) {
+            return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+        }
 
-				function parseRupiah(str) {
-					return parseInt(str.replace(/\./g, "")) || 0;
-				}
+        function parseRupiah(str) {
+            return parseInt(str.replace(/[^\d]/g, "")) || 0;
+        }
 
-				const voucherInput = document.getElementById("voucherInput");
-				const alertBox = document.getElementById("voucher-alert");
-				const shippingInput = document.getElementById("shippingInput");
-				const grandTotalEl = document.getElementById("grandTotal");
+        // Cari container voucher terdekat dari tombol yang diklik
+        const container = btn.closest('.voucher-container');
+        // Cari modal terdekat agar bisa hitung total di modal yang benar saja
+        const modal = btn.closest('.modal');
 
-				let code = voucherInput.value.trim().toUpperCase();
+        const voucherInput = container.querySelector(".voucher-input");
+        const alertBox = container.querySelector(".voucher-alert");
+        
+        // Cari shipping & grandTotal di dalam modal yang aktif
+        const shippingInput = modal.querySelector(".shipping-cost-input") || document.getElementById("shippingInput");
+        const grandTotalEl = modal.querySelector(".grand-total-display") || document.getElementById("grandTotal");
 
-				// 🔥 Hitung total dari semua amountInputX
-				let amountInputs = document.querySelectorAll(".amount-input");
-				let subtotal = 0;
+        let code = voucherInput.value.trim().toUpperCase();
 
-				amountInputs.forEach(inp => {
-					subtotal += parseRupiah(inp.value);
-				});
+        // Hitung subtotal hanya dari input di modal yang aktif
+        let amountInputs = modal.querySelectorAll(".amount-input");
+        let subtotal = 0;
+        amountInputs.forEach(inp => {
+            subtotal += parseRupiah(inp.value);
+        });
 
-				let shipping = parseRupiah(shippingInput.value);
-				let discount = 0;
+        let shipping = parseRupiah(shippingInput.value);
+        let discount = 0;
 
-				if (code === "DUILANK12") {
-					alertBox.classList.remove("d-none");
+        // Logic Voucher
+        if (code.includes("DUILANK12")) {
+            alertBox.classList.remove("d-none");
+            discount = subtotal * 0.10; // Diskon 10%
+            voucherInput.value = "DUILANK12 - 10%";
+        } else if (code.includes("PROMO20")) { // Contoh voucher kedua
+            alertBox.classList.remove("d-none");
+            discount = subtotal * 0.20; // Diskon 20%
+            voucherInput.value = "PROMO20 - 20%";
+        } else {
+            alertBox.classList.add("d-none");
+        }
 
-					discount = subtotal * 0.10;
+        let grandTotal = subtotal + shipping - discount;
+        grandTotalEl.textContent = formatRupiah(Math.round(grandTotal));
 
-					voucherInput.value = "DUILANK12 - 10%";
-					setTimeout(() => { voucherInput.value = "DUILANK12 - 10%"; }, 10);
-				} else {
-					alertBox.classList.add("d-none");
-				}
+    } catch (err) {
+        console.error("Error in applyVoucher:", err);
+    }
+}
+	</script>
+<!-- product search -->
+	<script>
+document.addEventListener("DOMContentLoaded", function () {
+    // 1. DATA MASTER PRODUK
+    const masterProducts = [
+        { name: "Brosur Full Color A4", price: "450.000", desc: "Art paper 150gr, Cetak 2 Sisi" },
+        { name: "Kartu Nama Matte", price: "75.000", desc: "Art Carton 260gr, Box isi 100" },
+        { name: "Spanduk Banner Flexi", price: "25.000", desc: "Bahan 280gr, Cetak High Res" }
+    ];
 
-				let grandTotal = subtotal + shipping - discount;
-				grandTotalEl.textContent = formatRupiah(grandTotal);
+    let productIndex = 1000; // Counter unik untuk ID dinamis
 
-			} catch (err) {
-				console.error("Error in applyVoucher:", err);
-			}
-		}
+    // ---- UTILITAS ----
+    function clean(num) {
+        if (!num) return 0;
+        return parseInt(String(num).replace(/[^\d]/g, "")) || 0;
+    }
 
+    function format(num) {
+        if (!num || num === 0) return "0";
+        return String(num).replace(/\D/g, "").replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+    }
+
+    // ---- FUNGSI RECALC (Hanya mencari elemen di dalam modal yang aktif) ----
+    function recalc(item) {
+        const row = item.closest(".product-item");
+        const qtyEl = row.querySelector(".quntity-input");
+        const priceEl = row.querySelector(".price-input");
+        const amountEl = row.querySelector(".amount-input");
+        
+        const qty = parseInt(qtyEl.value || "0") || 0;
+        const price = clean(priceEl.value || "0");
+        
+        amountEl.value = format(qty * price);
+
+        // Update Grand Total modal terkait
+        const activeModal = row.closest('.modal');
+        const btnApply = activeModal.querySelector('button[onclick*="applyVoucher"]');
+        if (btnApply && typeof applyVoucher === "function") {
+            applyVoucher(null, btnApply);
+        }
+    }
+
+    // ---- TEMPLATE PRODUK ----
+    function generateTemplate(index) {
+        return `
+        <div class="product-item mb-2 mt-2">
+            <div class="row align-items-start gx-3">
+                <div class="col-md-4">
+                    <label class="form-label">Product Name</label>
+                    <div class="product-search-container position-relative">
+                        <input type="text" class="form-control mb-2 product-search-input" placeholder="Cari produk..." autocomplete="off">
+                        <div class="product-search-results dropdown-menu w-100 shadow-sm"></div>
+                    </div>
+                    <em class="text-muted">Description:</em>
+                    <div class="description-edit custom-textarea" contenteditable="true" placeholder="Enter description here...">-</div>
+                </div>
+                <div class="col-md-2">
+                    <label class="form-label">Qty</label>
+                    <div class="product-quantity" style="width:100% !important;">
+                        <span class="quantity-btn plus-btn"><i data-feather="plus-circle"></i></span>
+                        <input type="text" class="quntity-input text-center" value="1" style="max-width:60px;">
+                        <span class="quantity-btn minus-btn"><i data-feather="minus-circle"></i></span>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <label class="form-label">Unit</label>
+                    <select class="form-control mt-1">
+                        <option>Pcs</option><option>Ream</option><option>Box</option>
+                    </select>
+                </div>
+                <div class="col-md-2">
+                    <label class="form-label">Price (IDR)</label>
+                    <input type="text" class="form-control text-end price-input">
+                </div>
+                <div class="col-md-2">
+                    <label class="form-label">Amount (IDR)</label>
+                    <input type="text" class="form-control text-end amount-input" disabled>
+                </div>
+                <div class="justify-content-end d-flex mb-3"> 
+                    <a href="javascript:void(0);" class="delete-section-btn text-primary mt-3 d-inline-block"> 
+                        <i data-feather="minus-circle" style="width: 15px; margin-right: 10px;"></i>
+                        <span>Delete Product</span> 
+                    </a> 
+                </div>
+            </div>
+        </div>`;
+    }
+
+    // ---- EVENT DELEGATION: INPUT (Autocomplete & Recalc) ----
+    document.addEventListener("input", function (e) {
+        const target = e.target;
+        const activeModal = target.closest('.modal');
+        if (!activeModal) return; // Jika input bukan di dalam modal, abaikan
+
+        const row = target.closest(".product-item");
+
+        // A. Autocomplete Pencarian
+        if (target.classList.contains("product-search-input")) {
+            const resultsBox = target.nextElementSibling; // .product-search-results
+            const keyword = target.value.toLowerCase();
+
+            if (keyword.length >= 3) {
+                const matched = masterProducts.filter(p => p.name.toLowerCase().includes(keyword));
+                if (matched.length > 0) {
+                    resultsBox.innerHTML = matched.map(p => `
+                        <div class="product-item-result p-2" data-name="${p.name}" data-price="${p.price}" data-desc="${p.desc}" style="cursor:pointer; border-bottom:1px solid #eee;">
+                            <strong>${p.name}</strong><br><small class="text-muted">Harga: ${p.price}</small>
+                        </div>
+                    `).join("");
+                    resultsBox.classList.add("show");
+                } else {
+                    resultsBox.innerHTML = '<div class="p-2 text-muted">Produk tidak ditemukan</div>';
+                    resultsBox.classList.add("show");
+                }
+            } else {
+                resultsBox.classList.remove("show");
+            }
+        }
+
+        // B. Format & Recalc
+        if (target.classList.contains("price-input")) {
+            target.value = format(target.value.replace(/\D/g, ""));
+            recalc(row);
+        }
+        if (target.classList.contains("quntity-input")) {
+            target.value = target.value.replace(/\D/g, "");
+            recalc(row);
+        }
+    });
+
+    // ---- EVENT DELEGATION: KLIK ----
+    document.addEventListener("click", function (e) {
+        const target = e.target;
+        const activeModal = target.closest('.modal');
+
+        // 1. Pilih Produk dari Search
+        const resultItem = target.closest(".product-item-result");
+        if (resultItem && activeModal) {
+            const row = resultItem.closest(".product-item");
+            row.querySelector(".product-search-input").value = resultItem.dataset.name;
+            row.querySelector(".price-input").value = resultItem.dataset.price;
+            row.querySelector(".description-edit").innerText = resultItem.dataset.desc;
+            resultItem.closest(".product-search-results").classList.remove("show");
+            recalc(row);
+            return;
+        }
+
+        // 2. Add New Product (Mencari ID di dalam modal aktif)
+        if (target.closest("#btnAddNewProduct") && activeModal) {
+            e.preventDefault();
+            const container = activeModal.querySelector("#productContainer");
+            const div = document.createElement("div");
+            div.innerHTML = generateTemplate(productIndex++);
+            container.appendChild(div.firstElementChild);
+            if (window.feather) feather.replace();
+            return;
+        }
+
+        // 3. Delete Product
+        if (target.closest(".delete-section-btn") && activeModal) {
+            const row = target.closest(".product-item");
+            row.remove();
+            // Trigger recalculate grand total modal ini
+            const btnApply = activeModal.querySelector('button[onclick*="applyVoucher"]');
+            if (btnApply && typeof applyVoucher === "function") applyVoucher(null, btnApply);
+            return;
+        }
+
+        // 4. Quantity Plus/Minus
+        const qtyBtn = target.closest(".plus-btn, .minus-btn");
+        if (qtyBtn && activeModal) {
+            const row = qtyBtn.closest(".product-item");
+            const input = row.querySelector(".quntity-input");
+            let val = parseInt(input.value) || 1;
+            input.value = qtyBtn.classList.contains("plus-btn") ? val + 1 : (val > 1 ? val - 1 : 1);
+            recalc(row);
+            return;
+        }
+
+        // 5. Tutup dropdown jika klik luar
+        if (!target.closest(".product-search-container")) {
+            document.querySelectorAll(".product-search-results").forEach(el => el.classList.remove("show"));
+        }
+    });
+});
+	</script>
+	<script>
+		document.addEventListener("DOMContentLoaded", function () {
+    // Counter global agar index tetap unik untuk ID amountInput
+    let productIndex = document.querySelectorAll(".product-item").length + 1;
+
+    // ---- util ----
+    function clean(num) {
+        if (!num) return 0;
+        return parseInt(String(num).replace(/\./g, "").replace(/\D/g, "")) || 0;
+    }
+
+    function format(num) {
+        if (!num || num === 0) return "0";
+        return String(num).replace(/\D/g, "").replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+    }
+
+    // ---- recalc ----
+    function recalc(item) {
+        const qtyEl = item.querySelector(".quntity-input");
+        const priceEl = item.querySelector(".price-input");
+        const amountEl = item.querySelector(".amount-input");
+        
+        const qty = parseInt(qtyEl.value || "0") || 0;
+        const price = clean(priceEl.value || "0");
+        
+        amountEl.value = qty * price === 0 ? "" : format(qty * price);
+
+        // Update Grand Total otomatis tiap ada perubahan angka
+        const modal = item.closest('.modal');
+        const btnApply = modal.querySelector('button[onclick*="applyVoucher"]');
+        if (btnApply && typeof applyVoucher === "function") {
+            applyVoucher(null, btnApply);
+        }
+    }
+
+    // ---- attach input listener ----
+  function attachInputsFor(item) {
+    const qtyEl = item.querySelector(".quntity-input");
+    const priceEl = item.querySelector(".price-input");
+    const descEl = item.querySelector(".description-edit"); // Tambahkan ini
+
+
+    if (descEl) {
+        descEl.addEventListener("paste", function(e) {
+            e.preventDefault();
+            const text = e.clipboardData.getData("text/plain");
+            document.execCommand("insertHTML", false, text);
+        });
+
+        // Contoh jika lu mau simpan datanya ke hidden input atau diproses
+        descEl.addEventListener("input", () => {
+            console.log("Deskripsi berubah:", descEl.innerText);
+        });
+    }
+}
+
+    // ---- TEMPLATE ----
+    function generateTemplate(index) {
+        return `
+        <div class="product-item mb-2 mt-2">
+            <div class="row align-items-start gx-3">
+               <div class="col-md-4">
+    <label class="form-label">Product Name</label>
+    <input type="text" class="form-control mb-2" value="">
+    <em class="text-muted">Description:</em>
+    <div class="description-edit custom-textarea" 
+         contenteditable="true" 
+         placeholder="Enter description here...">-</div>
+			</div>
+                <div class="col-md-2">
+                    <label class="form-label">Qty</label>
+                    <div class="product-quantity" style="width:100% !important;">
+                        <span class="quantity-btn plus-btn"><i data-feather="plus-circle"></i></span>
+                        <input type="text" class="quntity-input text-center" value="1" style="max-width:60px;">
+                        <span class="quantity-btn minus-btn"><i data-feather="minus-circle"></i></span>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <label class="form-label">Unit</label>
+                    <select class="form-control selectpicker-new mt-1">
+                        <option disabled selected>Pilih Unit</option>
+                        <option>Ream</option>
+                        <option>Pcs</option>
+                        <option>Box</option>
+                        <option>Set</option>
+                    </select>
+                </div>
+                <div class="col-md-2">
+                    <label class="form-label">Price (IDR)</label>
+                    <input type="text" class="form-control text-end price-input">
+                </div>
+                <div class="col-md-2">
+                    <label class="form-label">Amount (IDR)</label>
+                    <input type="text" id="amountInput${index}" class="form-control text-end amount-input" disabled>
+                </div>
+                <div class="justify-content-end d-flex mb-3"> 
+                    <a href="javascript:void(0);" class="delete-section-btn text-primary mt-3 d-inline-block"> 
+                        <i data-feather="minus-circle" class="minus-down-add" style="width: 15px; align-items:center; margin-right: 10px;"></i>
+                        <span>Delete Product</span> 
+                    </a> 
+                </div>
+            </div>
+        </div>`;
+    }
+
+    // ---- EVENT DELEGATION (Handle Click Add, Delete, Plus, Minus) ----
+    document.addEventListener("click", function (ev) {
+        const target = ev.target;
+
+        // 1. Tombol Add New Product
+        const btnAdd = target.closest("#btnAddNewProduct");
+        if (btnAdd) {
+            ev.preventDefault();
+            const modal = btnAdd.closest('.modal');
+            const container = modal.querySelector("#productContainer");
+            
+            const wrapper = document.createElement("div");
+            wrapper.innerHTML = generateTemplate(productIndex++);
+            const newItem = wrapper.firstElementChild;
+            
+            container.appendChild(newItem);
+            attachInputsFor(newItem);
+
+            if (window.feather) feather.replace();
+            // Re-init selectpicker jika pakai library select
+            if (window.jQuery && $.fn.selectpicker) {
+                $(newItem).find(".selectpicker-new").selectpicker();
+            }
+        }
+
+        // 2. Tombol Plus / Minus (Quantity)
+        const qtyBtn = target.closest(".plus-btn, .minus-btn");
+        if (qtyBtn) {
+            const item = qtyBtn.closest(".product-item");
+            const qtyEl = item.querySelector(".quntity-input");
+            let val = parseInt(qtyEl.value || "1");
+
+            if (qtyBtn.classList.contains("plus-btn")) {
+                qtyEl.value = val + 1;
+            } else {
+                qtyEl.value = val > 1 ? val - 1 : 1;
+            }
+            recalc(item);
+        }
+
+        // 3. Tombol Delete
+        const delBtn = target.closest(".delete-section-btn");
+        if (delBtn) {
+            ev.preventDefault();
+            const modal = delBtn.closest('.modal');
+            delBtn.closest(".product-item").remove();
+            
+            // Re-calculate grand total setelah hapus baris
+            const btnApply = modal.querySelector('button[onclick*="applyVoucher"]');
+            if (btnApply && typeof applyVoucher === "function") {
+                applyVoucher(null, btnApply);
+            }
+        }
+    });
+
+    // ---- Init awal untuk baris yang sudah ada di HTML ----
+    document.querySelectorAll(".product-item").forEach(item => {
+        attachInputsFor(item);
+    });
+});
 	</script>
 
-
-	<script>
+	<!-- <script>
 		document.addEventListener("DOMContentLoaded", function () {
 
 			const productContainer = document.getElementById("productContainer");
@@ -3359,7 +3807,7 @@
 				$(".selectpicker").selectpicker();
 			}
 		});
-	</script>
+	</script> -->
 </body>
 
 </html>

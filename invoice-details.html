@@ -29,135 +29,7 @@
 
     <!-- Main CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
-
-    <style>
-        .order-header {
-            border-bottom: 2px solid #bbb;
-            margin-bottom: 16px;
-        }
-
-        .order-table th,
-        .order-table td {
-            vertical-align: middle;
-        }
-
-        .order-table th {
-            background: #f5f5f5;
-            font-weight: 600;
-        }
-
-        .order-table td {
-            background: #fff;
-        }
-
-        .order-table {
-            font-size: 13px;
-        }
-
-        .order-section-title {
-            font-weight: 600;
-            font-size: 1rem;
-            margin-top: 24px;
-        }
-
-        .order-summary tr td:last-child,
-        .order-summary tr th:last-child {
-            text-align: right;
-        }
-
-        .order-summary {
-            margin-bottom: 0;
-        }
-
-        .order-instruction {
-            font-size: 13px;
-        }
-
-        .order-note {
-            font-size: 12px;
-            color: #555;
-            margin-top: 16px;
-        }
-
-        @media print {
-
-            /* kecilkan semua font saat print */
-            html,
-            body {
-                font-size: 12px !important;
-                /* ubah angka ini bila ingin lebih kecil/lebih besar */
-                line-height: 1.2 !important;
-            }
-
-            /* fallback spesifik untuk elemen penting */
-            h1 {
-                font-size: 1.25rem !important;
-            }
-
-            h2 {
-                font-size: 1.1rem !important;
-            }
-
-            h3,
-            h4,
-            h5,
-            h6 {
-                font-size: 1rem !important;
-            }
-
-            .text-standard,
-            .order-table,
-            .table,
-            .order-section-title,
-            .page-title,
-            p,
-            span,
-            label {
-                font-size: 0.85rem !important;
-                /* skala turun lagi untuk konten */
-            }
-
-            /* tetap pertahankan rules sebelumnya */
-            body {
-                background: #fff;
-                padding: 0.1in !important;
-            }
-
-            @page {
-                size: A4;
-                margin: 0.3in !important;
-
-                @bottom-right {
-                    content: counter(page) "/" counter(pages);
-                    margin-bottom: 15px;
-                }
-            }
-
-            #header-placeholder,
-            .button-block,
-            .page-header {
-                display: none !important;
-            }
-            .action-button {
-                visibility: hidden;
-            }
-
-            #detail {
-                padding: 0 !important;
-                box-shadow: none !important;
-            }
-
-            .content,
-            .page-wrapper {
-                margin: 0 !important;
-                padding: 0 !important;
-            }
-
-            .no-print {
-                display: none;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="assets/css/print.css">
 </head>
 
 <body>
@@ -200,8 +72,22 @@
                         </li>
                     </ul>
                 </div>
-                <div class="mb-4">
-                    <div class="shadow p-5" id="detail">
+                <div class="mb-4 shadow">
+                    <div class="d-flex justify-content-end action-button pt-4 pe-4">
+                        <ul class="table-top-head gap-4">
+                            <li>
+                                <a data-bs-toggle="tooltip" data-bs-placement="top" title="Pdf"><img
+                                        src="assets/img/icons/pdf.svg" alt="img"></a>
+                            </li>
+
+                            <li id="download-pdf">
+                                <a data-bs-toggle="tooltip" data-bs-placement="top" title="Print"><i
+                                        data-feather="printer" class="feather-rotate-ccw"></i></a>
+                            </li>
+
+                        </ul>
+                    </div>
+                    <div class="p-5" id="detail">
                         <div class="d-flex justify-content-between mb-4">
 
                             <!-- LOGO -->
@@ -231,7 +117,7 @@
                         </div>
 
                         <div class="text-center mb-2">
-                            <h2 class="fw-normal mb-0" style="font-size:2rem;" id="invoice-title">Invoice</h2>
+                            <h1 class="fw-bold mb-0" style="font-size:2rem;" id="invoice-title">Invoice</h1>
                         </div>
 
                         <div class="d-flex justify-content-between">
@@ -261,13 +147,13 @@
                             <!-- INVOICE INFO -->
                             <div>
                                 <div class="d-flex justify-content-end small my-1">
-                                    <div style="width: 120px;" class="text-end">Invoice Date</div>
-                                    <div style="width: 100%;" class="text-end">: 26/06/2025</div>
+                                    <div style="width: 200px;" class="text-end text-standard ">Invoice Date</div>
+                                    <div style="width: 100%;" class="text-end text-standard">: 26/06/2025</div>
                                 </div>
 
                                 <div class="d-flex justify-content-end small my-1">
-                                    <div style="width: 120px;" class="text-end">Due Date</div>
-                                    <div style="width: 100%;" class="text-end">: 03/07/2025</div>
+                                    <div style="width: 200px;" class="text-end text-standard">Due Date</div>
+                                    <div style="width: 100%;" class="text-end text-standard">: 03/07/2025</div>
                                 </div>
 
                             </div>
@@ -337,7 +223,7 @@
 
                             </div>
                         </div>
-                        <div class="mb-3 row">
+                        <div class="mb-3 row align-items-end">
                             <div class="col-6">
                                 <div class="fw-semibold text-standard mb-2">Payment Information</div>
                                 <div class="">
@@ -360,7 +246,7 @@
                                 <p>Kindly be informed if the payment has been sent, <br>
                                     Thank you</p>
                             </div>
-                            <div class="col-6 text-end">
+                            <div class="col-6 text-end align-items-end text-standard">
                                 Best Regard,
                                 <br><br><br><br>
                                 Eko Satrio
@@ -369,22 +255,9 @@
 
                         </div>
 
-                        
-                    </div>
-                    <div class="mt-4 d-flex justify-content-end action-button">
-                        <ul class="table-top-head">
-                            <li >
-                                <a data-bs-toggle="tooltip" data-bs-placement="top" title="Pdf"><img
-                                        src="assets/img/icons/pdf.svg" alt="img"></a>
-                            </li>
 
-                            <li id="download-pdf">
-                                <a data-bs-toggle="tooltip" data-bs-placement="top" title="Print"><i data-feather="printer"
-                                        class="feather-rotate-ccw"></i></a>
-                            </li>
-
-                        </ul>
                     </div>
+
                 </div>
             </div>
         </div>

@@ -38,86 +38,8 @@
 
 	<!-- Main CSS -->
 	<link rel="stylesheet" href="assets/css/style.css">
-	<style>
-		 @media print {
-
-            /* kecilkan semua font saat print */
-            html,
-            body {
-                font-size: 12px !important;
-                /* ubah angka ini bila ingin lebih kecil/lebih besar */
-                line-height: 1.2 !important;
-            }
-
-            /* fallback spesifik untuk elemen penting */
-            h1 {
-                font-size: 1.25rem !important;
-            }
-
-            h2 {
-                font-size: 1.1rem !important;
-            }
-
-            h3,
-            h4,
-            h5,
-            h6 {
-                font-size: 1rem !important;
-            }
-
-            .text-standard,
-            .order-table,
-            .table,
-            .order-section-title,
-            .page-title,
-            p,
-            span,
-            label {
-                font-size: 0.85rem !important;
-                /* skala turun lagi untuk konten */
-            }
-
-            /* tetap pertahankan rules sebelumnya */
-            body {
-                background: #fff;
-                padding: 0.1in !important;
-            }
-
-            @page {
-                size: A4;
-                margin: 0.3in !important;
-
-                @bottom-right {
-                    content: counter(page) "/" counter(pages);
-                    margin-bottom: 15px;
-                }
-            }
-
-            #header-placeholder,
-            .button-block,
-            .page-header {
-                display: none !important;
-            }
-            .action-button {
-                visibility: hidden;
-            }
-
-            #detail {
-                padding: 0 !important;
-                box-shadow: none !important;
-            }
-
-            .content,
-            .page-wrapper {
-                margin: 0 !important;
-                padding: 0 !important;
-            }
-
-            .no-print {
-                display: none;
-            }
-        }
-	</style>
+	<link rel="stylesheet" href="assets/css/print.css">
+	
 
 </head>
 
@@ -179,7 +101,7 @@
 
 							</div>
 
-							<h5 class="fw-bold fs-4 mb-2">PURCHASE ORDER</h5>
+							<h1 class="fw-bold mb-2">Purchase Order</h1>
 							<div class="row mb-4">
 								<div class="col-7">
 									<div class="row">

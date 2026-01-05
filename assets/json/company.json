@@ -1,0 +1,64 @@
+{
+    "company": [
+        {
+            "name": "PT Nusantara Teknologi",
+            "phone": "+622112345678",
+            "email": "info@nusantarateknologi.co.id",
+            "address": "Jl. Jenderal Sudirman No. 45, Jakarta Pusat, 10210"
+        },
+        {
+            "name": "CV Maju Jaya Sejahtera",
+            "phone": "+622176543210",
+            "email": "contact@majujayasejahtera.co.id",
+            "address": "Jl. Gatot Subroto No. 88, Jakarta Selatan, 12950"
+        },
+        {
+            "name": "PT Digital Kreatif Indonesia",
+            "phone": "+622134567890",
+            "email": "hello@digitalkreatif.id",
+            "address": "Jl. HR Rasuna Said Kav. 20, Jakarta Selatan, 12940"
+        },
+        {
+            "name": "PT Sinar Abadi Group",
+            "phone": "+622198765432",
+            "email": "admin@sinarabadi.co.id",
+            "address": "Jl. Pangeran Jayakarta No. 12, Jakarta Barat, 11110"
+        },
+        {
+            "name": "PT Global Solusi Mandiri",
+            "phone": "+622155566677",
+            "email": "support@globalsolusi.co.id",
+            "address": "Jl. Ahmad Yani No. 77, Jakarta Timur, 13230"
+        },
+        {
+            "name": "PT Cipta Inovasi Bangsa",
+            "phone": "+622144433322",
+            "email": "office@cipta-inovasi.id",
+            "address": "Jl. Tebet Raya No. 56, Jakarta Selatan, 12820"
+        },
+        {
+            "name": "PT Arjuna Data Sistem",
+            "phone": "+622133344455",
+            "email": "cs@arjunadata.co.id",
+            "address": "Jl. Sunter Permai No. 9, Jakarta Utara, 14360"
+        },
+        {
+            "name": "PT Mitra Usaha Bersama",
+            "phone": "+622166677788",
+            "email": "info@mitrausaha.co.id",
+            "address": "Jl. Daan Mogot No. 120, Jakarta Barat, 11840"
+        },
+        {
+            "name": "PT Solusi Pintar Nusantara",
+            "phone": "+622122233344",
+            "email": "mail@solusipintar.id",
+            "address": "Jl. Cempaka Putih Tengah No. 18, Jakarta Pusat, 10520"
+        },
+        {
+            "name": "PT Bintang Timur Logistik",
+            "phone": "+622188899900",
+            "email": "logistic@bintangtimur.co.id",
+            "address": "Jl. Raya Bekasi KM 18, Jakarta Timur, 13450"
+        }
+    ]
+}

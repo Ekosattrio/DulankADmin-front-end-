@@ -35,6 +35,90 @@
 
 	<!-- Main CSS -->
 	<link rel="stylesheet" href="assets/css/style.css">
+	<style>
+		@page {
+			size: A4;
+			margin: 0.3in !important;
+
+			@bottom-right {
+				content: counter(page) "/" counter(pages);
+				margin-bottom: 15px;
+			}
+		}
+		
+		
+		@media print {
+            body {
+                visibility: hidden;
+            }
+
+            html,
+            body {
+                font-size: 12px !important;
+                /* ubah angka ini bila ingin lebih kecil/lebih besar */
+                line-height: 1.2 !important;
+            }
+
+            /* fallback spesifik untuk elemen penting */
+            h1 {
+                font-size: 1.25rem !important;
+            }
+
+            h2 {
+                font-size: 1.1rem !important;
+            }
+
+            h3,
+            h4,
+            h5,
+            h6 {
+                font-size: 1rem !important;
+            }
+
+            .text-standard,
+            .order-table,
+            .table,
+            .order-section-title,
+            .page-title,
+            p,
+            span,
+            label {
+                font-size: 0.85rem !important;
+                /* skala turun lagi untuk konten */
+            }
+
+            #section-to-print {
+                width: 100vw;
+                visibility: visible;
+                padding: 0 !important;
+                margin: 0 !important;
+            }
+
+            .line {
+                width: 90%;
+                margin: 0 auto;
+            }
+
+            .modal-xl {
+                position: absolute;
+                top: 0;
+                width: 100vw !important;
+                align-items: self-start;
+                padding: 0 !important;
+                margin: 0 !important;
+            }
+
+            .table-top-head{
+				display: none !important;
+			}
+
+            .dataTables_paginate,
+            .dataTables_length,
+            .dataTables_info {
+                display: none;
+            }
+        }
+	</style>
 
 </head>
 
@@ -157,6 +241,7 @@
 										<th>Customer</th>
 										<th>Payment Status</th>
 										<th>Payment Date</th>
+										<th>Payment Method</th>
 										<th>Total</th>
 										<th class="no-sort">Action</th>
 									</tr>
@@ -167,8 +252,9 @@
 										<td>05/10/2025</td>
 										<td class="str-value">2511000001</td>
 										<td>PT Makmur Abadi</td>
-										<td><span class="badge badge-linesuccess">Paid</span></td>
+										<td><span class="badge bg-soft-success">Paid</span></td>
 										<td>06/10/2025</td>
+										<td>Cash</td>
 										<td>900000</td>
 										<td class="action-table-data">
 											<div class="edit-delete-action">
@@ -191,7 +277,8 @@
 										<td>07/10/2025</td>
 										<td class="str-value">2511000002</td>
 										<td>Toko Buku Cerdas</td>
-										<td><span class="badge badge-linedanger">Unpaid</span></td>
+										<td><span class="badge bg-soft-danger">Unpaid</span></td>
+										<td>-</td>
 										<td>-</td>
 										<td>234000</td>
 										<td class="action-table-data">
@@ -215,8 +302,9 @@
 										<td>10/10/2025</td>
 										<td class="str-value">2511000003</td>
 										<td>Bpk. Rahmat</td>
-										<td><span class="badge badge-linesuccess">Paid</span></td>
+										<td><span class="badge bg-soft-success">Paid</span></td>
 										<td>10/10/2025</td>
+										<td>Cash</td>
 										<td>89000</td>
 										<td class="action-table-data">
 											<div class="edit-delete-action">
@@ -239,8 +327,9 @@
 										<td>15/10/2025</td>
 										<td class="str-value">2511000004</td>
 										<td>CV Jaya Sentosa</td>
-										<td><span class="badge badge-linesuccess">Paid</span></td>
+										<td><span class="badge bg-soft-success">Paid</span></td>
 										<td>16/10/2025</td>
+										<td>Transfer</td>
 										<td>463000</td>
 										<td class="action-table-data">
 											<div class="edit-delete-action">
@@ -263,8 +352,9 @@
 										<td>20/10/2025</td>
 										<td class="str-value">2510000005</td>
 										<td>Ibu Dian</td>
-										<td><span class="badge badge-linesuccess">Paid</span></td>
+										<td><span class="badge bg-soft-success">Paid</span></td>
 										<td>20/10/2025</td>
+										<td>Transfer</td>
 										<td>12000</td>
 										<td class="action-table-data">
 											<div class="edit-delete-action">
@@ -287,8 +377,9 @@
 										<td>25/10/2025</td>
 										<td class="str-value">2510000006</td>
 										<td>PT Global Solusi</td>
-										<td><span class="badge badge-linewarning">Partial</span></td>
+										<td><span class="badge bg-soft-success">Paid</span></td>
 										<td>27/10/2025</td>
+										<td>Cash</td>
 										<td>34000</td>
 										<td class="action-table-data">
 											<div class="edit-delete-action">
@@ -311,8 +402,9 @@
 										<td>28/10/2025</td>
 										<td class="str-value">2510000007</td>
 										<td>Klinik Sehat</td>
-										<td><span class="badge badge-linesuccess">Paid</span></td>
+										<td><span class="badge bg-soft-success">Paid</span></td>
 										<td>30/10/2025</td>
+										<td>Transfer</td>
 										<td>234000</td>
 										<td class="action-table-data">
 											<div class="edit-delete-action">
@@ -335,8 +427,9 @@
 										<td>01/11/2025</td>
 										<td class="str-value">2509000008</td>
 										<td>Sdr. Andri</td>
-										<td><span class="badge badge-linesuccess">Paid</span></td>
+										<td><span class="badge bg-soft-success">Paid</span></td>
 										<td>01/11/2025</td>
+										<td>Transfer</td>
 										<td>10000</td>
 										<td class="action-table-data">
 											<div class="edit-delete-action">
@@ -359,7 +452,8 @@
 										<td>04/11/2025</td>
 										<td class="str-value">2509000009</td>
 										<td>Yayasan Lentera</td>
-										<td><span class="badge badge-linedanger">Unpaid</span></td>
+										<td><span class="badge bg-soft-danger">Unpaid</span></td>
+										<td>-</td>
 										<td>-</td>
 										<td>200000</td>
 										<td class="action-table-data">
@@ -383,8 +477,9 @@
 										<td>08/11/2025</td>
 										<td class="str-value">2509000010</td>
 										<td>Cafe Senja</td>
-										<td><span class="badge badge-linesuccess">Paid</span></td>
+										<td><span class="badge bg-soft-success">Paid</span></td>
 										<td>09/11/2025</td>
+										<td>Cash</td>
 										<td>124000</td>
 										<td class="action-table-data">
 											<div class="edit-delete-action">
@@ -407,8 +502,9 @@
 										<td>11/11/2025</td>
 										<td class="str-value">2508000011</td>
 										<td>PT Dirgantara</td>
-										<td><span class="badge badge-linesuccess">Paid</span></td>
+										<td><span class="badge bg-soft-success">Paid</span></td>
 										<td>15/11/2025</td>
+										<td>Transfer</td>
 										<td>2340000</td>
 										<td class="action-table-data">
 											<div class="edit-delete-action">
@@ -431,8 +527,9 @@
 										<td>14/11/2025</td>
 										<td class="str-value">2508000012</td>
 										<td>Bapak Joko</td>
-										<td><span class="badge badge-linesuccess">Paid</span></td>
+										<td><span class="badge bg-soft-success">Paid</span></td>
 										<td>14/11/2025</td>
+										<td>Transfer</td>
 										<td>65000</td>
 										<td class="action-table-data">
 											<div class="edit-delete-action">
@@ -455,8 +552,9 @@
 										<td>17/11/2025</td>
 										<td class="str-value">2508000013</td>
 										<td>Toko Perlengkapan</td>
-										<td><span class="badge badge-linewarning">Partial</span></td>
+										<td><span class="badge bg-soft-success">Paid</span></td>
 										<td>18/11/2025</td>
+										<td>Transfer</td>
 										<td>62000</td>
 										<td class="action-table-data">
 											<div class="edit-delete-action">
@@ -479,8 +577,9 @@
 										<td>20/11/2025</td>
 										<td class="str-value">2507000014</td>
 										<td>PT Angkasa Raya</td>
-										<td><span class="badge badge-linesuccess">Paid</span></td>
+										<td><span class="badge bg-soft-success">Paid</span></td>
 										<td>22/11/2025</td>
+										<td>Cash</td>
 										<td>545000</td>
 										<td class="action-table-data">
 											<div class="edit-delete-action">
@@ -503,8 +602,9 @@
 										<td>23/11/2025</td>
 										<td class="str-value">2507000015</td>
 										<td>Ibu Laras</td>
-										<td><span class="badge badge-linesuccess">Paid</span></td>
+										<td><span class="badge bg-soft-success">Paid</span></td>
 										<td>23/11/2025</td>
+										<td>Cash</td>
 										<td>80000</td>
 										<td class="action-table-data">
 											<div class="edit-delete-action">
@@ -527,7 +627,8 @@
 										<td>26/11/2025</td>
 										<td class="str-value">2506000016</td>
 										<td>Universitas Bintang</td>
-										<td><span class="badge badge-linedanger">Unpaid</span></td>
+										<td><span class="badge bg-soft-danger">Unpaid</span></td>
+										<td>-</td>
 										<td>-</td>
 										<td>56000</td>
 										<td class="action-table-data">
@@ -551,8 +652,9 @@
 										<td>29/11/2025</td>
 										<td class="str-value">2506000017</td>
 										<td>Sdr. Bayu</td>
-										<td><span class="badge badge-linesuccess">Paid</span></td>
+										<td><span class="badge bg-soft-success">Paid</span></td>
 										<td>30/11/2025</td>
+										<td>Transfer</td>
 										<td>74000</td>
 										<td class="action-table-data">
 											<div class="edit-delete-action">
@@ -575,8 +677,9 @@
 										<td>02/12/2025</td>
 										<td class="str-value">2505000018</td>
 										<td>Toko Elektronik Maju</td>
-										<td><span class="badge badge-linesuccess">Paid</span></td>
+										<td><span class="badge bg-soft-success">Paid</span></td>
 										<td>02/12/2025</td>
+										<td>Cash</td>
 										<td>23000</td>
 										<td class="action-table-data">
 											<div class="edit-delete-action">
@@ -599,8 +702,9 @@
 										<td>05/12/2025</td>
 										<td class="str-value">2505000019</td>
 										<td>PT Cipta Kreasi</td>
-										<td><span class="badge badge-linesuccess">Paid</span></td>
+										<td><span class="badge bg-soft-success">Paid</span></td>
 										<td>07/12/2025</td>
+										<td>Transfer</td>
 										<td>654000</td>
 										<td class="action-table-data">
 											<div class="edit-delete-action">
@@ -623,7 +727,8 @@
 										<td>08/12/2025</td>
 										<td class="str-value">2504000020</td>
 										<td>Bapak Doni</td>
-										<td><span class="badge badge-linedanger">Unpaid</span></td>
+										<td><span class="badge bg-soft-danger">Unpaid</span></td>
+										<td>-</td>
 										<td>-</td>
 										<td>76000</td>
 										<td class="action-table-data">
@@ -646,8 +751,8 @@
 								<tfoot>
 									<tr>
 										<td class="text-start fw-bold">Total</td>
-										<td colspan="5"></td>
-										<td id="amount-total" class="fw-bold sum-target" data-col-index="6">5,901,000
+										<td colspan="6"></td>
+										<td id="amount-total" class="fw-bold sum-target" data-col-index="7">5,901,000
 										</td>
 										<td></td>
 									</tr>
@@ -666,13 +771,13 @@
 
 	<!-- view modal -->
 	<div class="modal fade" id="view-units">
-		<div class="modal-dialog sales-details-modal modal-lg">
+		<div class="modal-dialog sales-details-modal modal-xl">
 			<div class="modal-content" style="border-radius: 10px; overflow: hidden; position: relative;">
 				<div class="page-wrapper details-blk">
-					<div class="content p-4">
+					<div class="content p-4" id="section-to-print">
 
 						<!-- Header -->
-						<div class="modal-header d-flex justify-content-between align-items-start border-0 pb-0">
+						<div class="modal-header d-flex justify-content-between align-items-start border-0">
 							<div class="flex-grow-1">
 								<div class="page-header mb-3">
 									<div class="d-flex justify-content-between align-items-center flex-wrap">
@@ -685,13 +790,13 @@
 
 								<!-- Icon action -->
 								<ul class="table-top-head d-flex gap-3 mt-2 mb-0 justify-content-end pe-4">
-									<li><a href="#" data-bs-toggle="tooltip" title="Edit" id="linkToEdit"><i
+									<li><a href="#" data-bs-toggle="modal" data-bs-target="#edit-sales-new" title="Edit" id="linkToEdit"><i
 												data-feather="edit" class="action-edit sales-action"></i></a></li>
 									<li><a data-bs-toggle="tooltip" title="PDF"><img src="assets/img/icons/pdf.svg"
 												alt="pdf"></a></li>
 
 									</li>
-									<li><a data-bs-toggle="tooltip" title="Print"><i data-feather="printer"
+									<li><a data-bs-toggle="tooltip" title="Print" id="download-pdf"><i data-feather="printer"
 												class="feather-rotate-ccw"></i></a></li>
 								</ul>
 							</div>
@@ -702,12 +807,12 @@
 						</div>
 
 						<!-- Body -->
-						<div class="mt-4 mb-3 px-3">
+						<div class="mt-4 mb-3 px-3 modla-body">
 							<div class="invoice-box" style="font-size:14px; line-height:22px; color:#555;">
 
 								<!-- Top Info -->
 								<div class="row mb-4">
-									<div class="col-md-6">
+									<div class="col-6">
 										<h6 class="fw-bold mb-1">Customer :</h6>
 										<p class="mb-0">PT Cipta Kreasi<br>
 											ciptakreasi@gmail.com<br>
@@ -717,7 +822,7 @@
 										</p>
 									</div>
 
-									<div class="col-md-6">
+									<div class="col-6">
 										<h6 class="fw-bold mb-1">Payment Method</h6>
 										<div class="row">
 											<span class="col-6 text-standard fw-semibold">Payment Status</span>
@@ -798,10 +903,12 @@
 									</div>
 								</div>
 
+								
 							</div>
 						</div>
-
+						
 					</div>
+				
 				</div>
 			</div>
 		</div>
@@ -812,7 +919,7 @@
 	<div class="modal fade modal-default" id="createpayment">
 		<div class="modal-dialog modal-dialog-centered modal-lg">
 			<div class="modal-content">
-				<div class="modal-header">
+				<div class="modal-header border-0">
 					<h5 class="modal-title">Payment-OUT</h5>
 					<button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">×</span>
@@ -918,7 +1025,7 @@
 			<div class="modal-content p-3">
 
 				<!-- Header -->
-				<div class="modal-header border-0 pb-0">
+				<div class="modal-header border-0">
 					<h5 class="modal-title fw-bold">
 						Add New Sales Return : RTN000002
 					</h5>
@@ -1151,7 +1258,7 @@
 		<div class="modal-dialog modal-xl">
 			<div class="modal-content p-3">
 
-				<div class="modal-header border-0 pb-0">
+				<div class="modal-header border-0">
 					<h5 class="modal-title fw-bold">
 						Edit Sales Return : RTN000002
 					</h5>
@@ -1407,6 +1514,12 @@
 	<script src="assets/js/script.js"></script>
 
 	<script>
+		 document.getElementById('download-pdf').addEventListener('click', function (e) {
+			e.preventDefault();
+
+			window.print()
+		});
+		
 		$(document).ready(function() {
 			// When modal is shown, disable no-sales-select and clear product table
 			$('#salesReturnModal').on('show.bs.modal', function() {

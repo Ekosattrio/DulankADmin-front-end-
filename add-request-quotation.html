@@ -61,11 +61,24 @@
                     <div class="add-item d-flex">
                         <div class="page-title">
                             <h4>Add New Request For Quotation (RFQ)</h4>
+
                         </div>
                     </div>
+                    <ul class="table-top-head">
+                        <li>
+                            <div class="page-btn">
+                                <a href="request-quotation.html" class="btn btn-secondary"><i data-feather="arrow-left"
+                                        class="me-2"></i>Back to Quotation List</a>
+                            </div>
+                        </li>
+                        <li>
+                            <a data-bs-toggle="tooltip" data-bs-placement="top" title="Collapse" id="collapse-header"><i
+                                    data-feather="chevron-up" class="feather-chevron-up"></i></a>
+                        </li>
+                    </ul>
                 </div>
 
-                <div class="mb-4">
+                <div class="mb-4 bg-white">
                     <div class="shadow p-5" id="detail">
 
                         <div class="d-flex justify-content-between mb-4">
@@ -186,52 +199,35 @@
 
                                             <div class="d-flex py-2 term-item align-items-center" data-term-id="1">
                                                 <span class="fw-bold me-2">Department: </span>
-                                                <!-- <div class="flex-grow-1 term-content text-start">
-                                                    <div contenteditable="true" data-placeholder="Departemen keuangan"
-                                                        style="min-height: 38px;">Departemen Kuangan</div>
-
-                                                </div> -->
+                    
                                                 <input type="text" class="form-control form-control-sm" placeholder="Example: Department keuangan" value="Departement keuangan">
                                                 <a class="confirm-text p-2 text-danger delete-term-btn"
                                                     href="javascript:void(0);">
                                                     <i data-feather="trash-2"></i>
                                                 </a>
                                             </div>
-                                            <div class="d-flex py-2 term-item" data-term-id="1">
+                                            <div class="d-flex py-2 term-item align-items-center" data-term-id="1">
                                                 <span class="fw-bold me-2">Attn: </span>
-                                                <div class="flex-grow-1 term-content text-start">
-                                                    <div contenteditable="true" data-placeholder="Eko Satrio Handoyo "
-                                                        style="min-height: 38px;">Attn Eko Satrio Handoyoo Putro</div>
-
-                                                </div>
+                      
+                                                <input type="text" class="form-control form-control-sm" placeholder="Example: Eko Satrio Handoyo" value="Eko Satrio Handoyo">
                                                 <a class="confirm-text p-2 text-danger delete-term-btn"
                                                     href="javascript:void(0);">
                                                     <i data-feather="trash-2"></i>
                                                 </a>
                                             </div>
-                                            <div class="d-flex py-2 term-item" data-term-id="1">
+                                            <div class="d-flex py-2 term-item align-items-center" data-term-id="1">
                                                 <span class="fw-bold me-2">Email: </span>
-                                                <div class="flex-grow-1 term-content text-start">
-                                                    <div contenteditable="true" data-placeholder="Email"
-                                                        style="min-height: 38px;">
-                                                        EkoSatrio@gmail.com
-                                                    </div>
-
-                                                </div>
+                                         
+                                                <input type="text" class="form-control form-control-sm" placeholder="Example: EkoSatrio@gmail.com" value="EkoSatrio@gmail.com">
                                                 <a class="confirm-text p-2 text-danger delete-term-btn"
                                                     href="javascript:void(0);">
                                                     <i data-feather="trash-2"></i>
                                                 </a>
                                             </div>
-                                            <div class="d-flex py-2 term-item" data-term-id="1">
+                                            <div class="d-flex py-2 term-item align-items-center" data-term-id="1">
                                                 <span class="fw-bold me-2">Telp: </span>
-                                                <div class="flex-grow-1 term-content text-start">
-                                                    <div contenteditable="true" data-placeholder="Email"
-                                                        style="min-height: 38px;">
-                                                        +6289716828726
-                                                    </div>
-
-                                                </div>
+              
+                                                <input type="text" class="form-control form-control-sm" placeholder="Example: +6289716828726" value="+6289716828726">
                                                 <a class="confirm-text p-2 text-danger delete-term-btn"
                                                     href="javascript:void(0);">
                                                     <i data-feather="trash-2"></i>
@@ -260,9 +256,22 @@
 
                         <div class="mt-5">
                             Hormat kami,<br><br><br>
-                            <b><input type="text" class="form-control form-control-sm" placeholder="Name"></b><br>
+                            <b><input type="text" class="form-control form-control-sm w-25" placeholder="Name"></b><br>
                         </div>
 
+                    </div>
+                </div>
+
+
+				<div class="modal-footer my-5 justify-content-end">
+
+                    <div>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                            Cancel
+                        </button>
+                        <button class="btn btn-warning">
+                            Save Changes
+                        </button>
                     </div>
                 </div>
 

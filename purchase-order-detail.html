@@ -79,8 +79,22 @@
 				</div>
 
 				<!-- START: Purchase Order Detail layout -->
-				<div class="mt-4">
-					<div class="p-5 shadow" id="detail">
+				<div class="mb-4 shadow bg-white">
+					<div class="d-flex justify-content-end action-button pt-4 pe-4">
+                        <ul class="table-top-head gap-4">
+                            <li>
+                                <a data-bs-toggle="tooltip" data-bs-placement="top" title="Pdf"><img
+                                        src="assets/img/icons/pdf.svg" alt="img"></a>
+                            </li>
+
+                            <li id="download-pdf">
+                                <a data-bs-toggle="tooltip" data-bs-placement="top" title="Print"><i
+                                        data-feather="printer" class="feather-rotate-ccw"></i></a>
+                            </li>
+
+                        </ul>
+                    </div>
+					<div class="p-5" id="detail">
 						<div class="container-fluid">
 							<div class="row align-items-start mb-4">
 								<div class="col-3 text-center">
@@ -89,8 +103,8 @@
 										<h5 class="mb-0">Logo</h5>
 									</div>
 								</div>
-								<div class="col-5">
-									<h4 class="mb-1 fw-bold">PT. DULANK SEMESTA CIDA</h4>
+								<div class="col-6">
+									<h3 class="mb-1 fw-normal">PT. DULANK SEMESTA CIDA</h3>
 									<p class="mb-0 small">Jl. Arif Rahman Hakim Niaga Kel. Nagasari<br>
 										Kec. Karawang Barat Kab. Karawang<br>
 										email : ptdulanksemestacida@gmail.com<br>
@@ -205,20 +219,6 @@
 
 							
 						</div>
-					</div>
-					<div class="my-4 d-flex justify-content-end action-button">
-						<ul class="table-top-head">
-							<li >
-								<a data-bs-toggle="tooltip" data-bs-placement="top" title="Pdf"><img
-										src="assets/img/icons/pdf.svg" alt="img"></a>
-							</li>
-	
-							<li id="download-pdf">
-								<a data-bs-toggle="tooltip" data-bs-placement="top" title="Print"><i data-feather="printer"
-										class="feather-rotate-ccw"></i></a>
-							</li>
-	
-						</ul>
 					</div>
 				</div>
 				<!-- END: Purchase Order Detail layout -->

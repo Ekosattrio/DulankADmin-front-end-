@@ -40,116 +40,116 @@
 	<link rel="stylesheet" href="assets/css/style.css">
 	<style>
 		/* Container untuk dropdown */
-.product-search-container {
-    position: relative;
-}
+		.product-search-container {
+			position: relative;
+		}
 
-/* Box hasil pencarian */
-.product-search-results {
-    display: none; /* Sembunyi secara default */
-    position: absolute;
-    top: 100%;
-    left: 0;
-    z-index: 1060; /* Di atas modal */
-    max-height: 250px;
-    overflow-y: auto;
-    background: white;
-    border: 1px solid #dee2e6;
-    width: 100%;
-}
+		/* Box hasil pencarian */
+		.product-search-results {
+			display: none; /* Sembunyi secara default */
+			position: absolute;
+			top: 100%;
+			left: 0;
+			z-index: 1060; /* Di atas modal */
+			max-height: 250px;
+			overflow-y: auto;
+			background: white;
+			border: 1px solid #dee2e6;
+			width: 100%;
+		}
 
-.product-search-results.show {
-    display: block;
-}
+		.product-search-results.show {
+			display: block;
+		}
 
-/* Item di dalam dropdown */
-.product-item-result {
-    padding: 10px 15px;
-    border-bottom: 1px solid #f1f1f1;
-    cursor: pointer;
-    transition: background 0.2s;
-}
+		/* Item di dalam dropdown */
+		.product-item-result {
+			padding: 10px 15px;
+			border-bottom: 1px solid #f1f1f1;
+			cursor: pointer;
+			transition: background 0.2s;
+		}
 
-.product-item-result:hover {
-    background-color: #f8f9fa;
-}
+		.product-item-result:hover {
+			background-color: #f8f9fa;
+		}
 
-.product-item-result strong {
-    color: #333;
-    display: block;
-}
+		.product-item-result strong {
+			color: #333;
+			display: block;
+		}
 
-.product-item-result small {
-    color: #777;
-}
+		.product-item-result small {
+			color: #777;
+		}
 
-/* Style Contenteditable agar mirip Textarea */
-.custom-textarea {
-    border: 1px solid #ced4da;
-    border-radius: 4px;
-    padding: 8px 12px;
-    min-height: 60px;
-    background: #fff;
-    font-size: 0.875rem;
-    outline: none;
-}
-
-.custom-textarea:focus {
-    border-color: #ff9f43;
-    box-shadow: 0 0 0 0.2rem rgba(254, 159, 67, 0.25);
-}
+		/* Style Contenteditable agar mirip Textarea */
 		.custom-textarea {
-    border: 1px solid #dce1e6;
-    border-radius: 5px;
-    padding: 8px 12px;
-    min-height: 40px;
-    background-color: #fff;
-    font-size: 13px;
-    outline: none;
-    transition: border-color 0.2s;
-}
+			border: 1px solid #ced4da;
+			border-radius: 4px;
+			padding: 8px 12px;
+			min-height: 60px;
+			background: #fff;
+			font-size: 0.875rem;
+			outline: none;
+		}
 
-.custom-textarea:focus {
-    border-color: #ff9f43; /* Warna orange bootstrap lu */
-}
+		.custom-textarea:focus {
+			border-color: #ff9f43;
+			box-shadow: 0 0 0 0.2rem rgba(254, 159, 67, 0.25);
+		}
+				.custom-textarea {
+			border: 1px solid #dce1e6;
+			border-radius: 5px;
+			padding: 8px 12px;
+			min-height: 40px;
+			background-color: #fff;
+			font-size: 13px;
+			outline: none;
+			transition: border-color 0.2s;
+		}
 
-/* Placeholder simulasi */
-.custom-textarea:empty:before {
-    content: attr(placeholder);
-    color: #adb5bd;
-    pointer-events: none;
-}
+		.custom-textarea:focus {
+			border-color: #ff9f43; /* Warna orange bootstrap lu */
+		}
+
+		/* Placeholder simulasi */
+		.custom-textarea:empty:before {
+			content: attr(placeholder);
+			color: #adb5bd;
+			pointer-events: none;
+		}
 	</style>
 
-</head>
+	</head>
 
-<body>
-	<div id="global-loader">
-		<div class="loader"> </div>
-	</div>
-	<!-- Main Wrapper -->
-	<div class="main-wrapper">
+	<body>
+		<div id="global-loader">
+			<div class="loader"> </div>
+		</div>
+		<!-- Main Wrapper -->
+		<div class="main-wrapper">
 
-		<!-- header -->
-		<div id="header-placeholder"></div>
-		<!-- sidebar -->
-		<div id="sidebar-placeholder"></div>
+			<!-- header -->
+			<div id="header-placeholder"></div>
+			<!-- sidebar -->
+			<div id="sidebar-placeholder"></div>
 
-		<div class="page-wrapper mt-5">
-			<!-- Main content tulis disini -->
-			<div class="content container-fluid">
-				<div class="page-header">
-					<div class="add-item d-flex">
-						<div class="page-title">
-							<h4>Sales</h4>
-							<h6>Manage Yours sales</h6>
+			<div class="page-wrapper mt-5">
+				<!-- Main content tulis disini -->
+				<div class="content container-fluid">
+					<div class="page-header">
+						<div class="add-item d-flex">
+							<div class="page-title">
+								<h4>Sales</h4>
+								<h6>Manage Yours sales</h6>
+							</div>
 						</div>
-					</div>
-					<ul class="table-top-head">
-						<li>
-							<a data-bs-toggle="tooltip" data-bs-placement="top" title="Pdf"><img
-									src="assets/img/icons/pdf.svg" alt="img"></a>
-						</li>
+						<ul class="table-top-head">
+							<li>
+								<a data-bs-toggle="tooltip" data-bs-placement="top" title="Pdf"><img
+										src="assets/img/icons/pdf.svg" alt="img"></a>
+							</li>
 						<li>
 							<a data-bs-toggle="tooltip" data-bs-placement="top" title="Print"><i data-feather="printer"
 									class="feather-rotate-ccw"></i></a>
@@ -295,7 +295,7 @@
 													</button>
 												</li>
 												<li>
-													<a href="sales-alpa.html"
+													<a href="sales-receipt.html"
 														class="dropdown-item d-flex align-items-center small py-1"
 														type="button">
 														<i data-feather="download" class="me-2" width="14"
@@ -384,7 +384,7 @@
 													</button>
 												</li>
 												<li>
-													<a href="sales-alpa.html"
+													<a href="sales-receipt.html"
 														class="dropdown-item d-flex align-items-center small py-1">
 														<i data-feather="download" class="me-2" width="14"
 															height="14"></i>
@@ -472,7 +472,7 @@
 													</button>
 												</li>
 												<li>
-													<a href="sales-alpa.html"
+													<a href="sales-receipt.html"
 														class="dropdown-item d-flex align-items-center small py-1">
 														<i data-feather="download" class="me-2" width="14"
 															height="14"></i>
@@ -560,7 +560,7 @@
 													</button>
 												</li>
 												<li>
-													<a href="sales-alpa.html"
+													<a href="sales-receipt.html"
 														class="dropdown-item d-flex align-items-center small py-1">
 														<i data-feather="download" class="me-2" width="14"
 															height="14"></i>
@@ -649,7 +649,7 @@
 													</button>
 												</li>
 												<li>
-													<a href="sales-alpa.html"
+													<a href="sales-receipt.html"
 														class="dropdown-item d-flex align-items-center small py-1">
 														<i data-feather="download" class="me-2" width="14"
 															height="14"></i>
@@ -738,7 +738,7 @@
 													</button>
 												</li>
 												<li>
-													<a href="sales-alpa.html"
+													<a href="sales-receipt.html"
 														class="dropdown-item d-flex align-items-center small py-1">
 														<i data-feather="download" class="me-2" width="14"
 															height="14"></i>
@@ -826,7 +826,7 @@
 													</button>
 												</li>
 												<li>
-													<a href="sales-alpa.html"
+													<a href="sales-receipt.html"
 														class="dropdown-item d-flex align-items-center small py-1">
 														<i data-feather="download" class="me-2" width="14"
 															height="14"></i>
@@ -915,7 +915,7 @@
 													</button>
 												</li>
 												<li>
-													<a href="sales-alpa.html"
+													<a href="sales-receipt.html"
 														class="dropdown-item d-flex align-items-center small py-1">
 														<i data-feather="download" class="me-2" width="14"
 															height="14"></i>
@@ -1003,7 +1003,7 @@
 													</button>
 												</li>
 												<li>
-													<a href="sales-alpa.html"
+													<a href="sales-receipt.html"
 														class="dropdown-item d-flex align-items-center small py-1">
 														<i data-feather="download" class="me-2" width="14"
 															height="14"></i>
@@ -1091,7 +1091,7 @@
 													</button>
 												</li>
 												<li>
-													<a href="sales-alpa.html"
+													<a href="sales-receipt.html"
 														class="dropdown-item d-flex align-items-center small py-1">
 														<i data-feather="download" class="me-2" width="14"
 															height="14"></i>
@@ -1179,7 +1179,7 @@
 													</button>
 												</li>
 												<li>
-													<a href="sales-alpa.html"
+													<a href="sales-receipt.html"
 														class="dropdown-item d-flex align-items-center small py-1">
 														<i data-feather="download" class="me-2" width="14"
 															height="14"></i>
@@ -1267,7 +1267,7 @@
 													</button>
 												</li>
 												<li>
-													<a href="sales-alpa.html"
+													<a href="sales-receipt.html"
 														class="dropdown-item d-flex align-items-center small py-1">
 														<i data-feather="download" class="me-2" width="14"
 															height="14"></i>
@@ -1356,7 +1356,7 @@
 													</button>
 												</li>
 												<li>
-													<a href="sales-alpa.html"
+													<a href="sales-receipt.html"
 														class="dropdown-item d-flex align-items-center small py-1">
 														<i data-feather="download" class="me-2" width="14"
 															height="14"></i>
@@ -1444,7 +1444,7 @@
 													</button>
 												</li>
 												<li>
-													<a href="sales-alpa.html"
+													<a href="sales-receipt.html"
 														class="dropdown-item d-flex align-items-center small py-1">
 														<i data-feather="download" class="me-2" width="14"
 															height="14"></i>
@@ -1532,7 +1532,7 @@
 													</button>
 												</li>
 												<li>
-													<a href="sales-alpa.html"
+													<a href="sales-receipt.html"
 														class="dropdown-item d-flex align-items-center small py-1">
 														<i data-feather="download" class="me-2" width="14"
 															height="14"></i>
@@ -1620,7 +1620,7 @@
 													</button>
 												</li>
 												<li>
-													<a href="sales-alpa.html"
+													<a href="sales-receipt.html"
 														class="dropdown-item d-flex align-items-center small py-1">
 														<i data-feather="download" class="me-2" width="14"
 															height="14"></i>
@@ -1708,7 +1708,7 @@
 													</button>
 												</li>
 												<li>
-													<a href="sales-alpa.html"
+													<a href="sales-receipt.html"
 														class="dropdown-item d-flex align-items-center small py-1">
 														<i data-feather="download" class="me-2" width="14"
 															height="14"></i>
@@ -1796,7 +1796,7 @@
 													</button>
 												</li>
 												<li>
-													<a href="sales-alpa.html"
+													<a href="sales-receipt.html"
 														class="dropdown-item d-flex align-items-center small py-1">
 														<i data-feather="download" class="me-2" width="14"
 															height="14"></i>
@@ -1884,7 +1884,7 @@
 													</button>
 												</li>
 												<li>
-													<a href="sales-alpa.html"
+													<a href="sales-receipt.html"
 														class="dropdown-item d-flex align-items-center small py-1">
 														<i data-feather="download" class="me-2" width="14"
 															height="14"></i>
@@ -1972,7 +1972,7 @@
 													</button>
 												</li>
 												<li>
-													<a href="sales-alpa.html"
+													<a href="sales-receipt.html"
 														class="dropdown-item d-flex align-items-center small py-1">
 														<i data-feather="download" class="me-2" width="14"
 															height="14"></i>
@@ -2032,6 +2032,7 @@
 										<td id="amount-total" class="fw-bold sum-target" data-col-index="5">0</td>
 										<td id="amount-total" class="fw-bold sum-target" data-col-index="6">0</td>
 										<td id="amount-total" class="fw-bold sum-target" data-col-index="7">0</td>
+										<td id="amount-total" class="fw-bold sum-target" data-col-index="8">0</td>
 									</tr>
 								</tfoot>
 							</table>
@@ -2050,7 +2051,7 @@
 		<div class="modal-dialog add-centered">
 			<div class="modal-content">
 				<div class="content p-4">
-					<div class="page-header modal-header p-3 mb-4 border-bottom">
+					<div class="page-header modal-header p-3 mb-4 border-0">
 						<div class="add-item new-sale-items d-flex w-100 justify-content-between align-items-center">
 							<div class="page-title">
 								<h4>Add Sales</h4>
@@ -2501,7 +2502,7 @@
 	<div class="modal fade" id="showpayment">
 		<div class="modal-dialog modal-dialog-centered stock-adjust-modal">
 			<div class="modal-content">
-				<div class="modal-header">
+				<div class="modal-header border-0">
 					<div class="page-title">
 						<h4>Show Payments-IN</h4>
 					</div>
@@ -2563,7 +2564,7 @@
 	<div class="modal fade modal-default" id="createpayment">
 		<div class="modal-dialog modal-dialog-centered modal-lg">
 			<div class="modal-content">
-				<div class="modal-header">
+				<div class="modal-header border-0">
 					<h5 class="modal-title">Payment-IN</h5>
 					<button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">×</span>
@@ -2661,7 +2662,7 @@
 	<div class="modal fade modal-default" id="editPaymentsModal">
 		<div class="modal-dialog modal-dialog-centered modal-lg">
 			<div class="modal-content">
-				<div class="modal-header">
+				<div class="modal-header border-0">
 					<h5 class="modal-title">Payment</h5>
 					<button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">×</span>
@@ -2773,12 +2774,7 @@
 										<div class="page-title modal-datail mt-2">
 											<h4 class="m-0 fw-bold">Sales Detail : 2505000018</h4>
 										</div>
-										<div class="page-btn mt-2">
-											<a href="#" class="btn btn-added" data-bs-toggle="modal"
-												data-bs-target="#add-payroll-new">
-												<i data-feather="plus-circle" class="me-2"></i> Add New Sales
-											</a>
-										</div>
+									
 									</div>
 								</div>
 
@@ -2921,7 +2917,7 @@
 			<div class="modal-content" style="border-radius: 10px; overflow: hidden; position: relative;">
 				<div class="page-wrapper details-blk">
 					<div class="content p-4">
-						<div class="page-header modal-header p-3 mb-4 border-bottom">
+						<div class="page-header modal-header p-3 mb-4 border-0">
 							<div
 								class="add-item new-sale-items d-flex w-100 justify-content-between align-items-center">
 								<div class="page-title">

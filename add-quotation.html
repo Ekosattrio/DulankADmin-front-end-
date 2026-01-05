@@ -55,10 +55,29 @@
 
 		<div class="page-wrapper mt-3">
 			<!-- Main content tulis disini -->
-			<div class="content">
+			<div class="content my-4">
+				<div class="page-header">
+                    <div class="add-item d-flex">
+                        <div class="page-title">
+                            <h4>Add Quotation</h4>
 
+                        </div>
+                    </div>
+                    <ul class="table-top-head">
+                        <li>
+                            <div class="page-btn">
+                                <a href="quotation.html" class="btn btn-secondary"><i data-feather="arrow-left"
+                                        class="me-2"></i>Back to Quotation List</a>
+                            </div>
+                        </li>
+                        <li>
+                            <a data-bs-toggle="tooltip" data-bs-placement="top" title="Collapse" id="collapse-header"><i
+                                    data-feather="chevron-up" class="feather-chevron-up"></i></a>
+                        </li>
+                    </ul>
+                </div>
 
-				<div>
+				<div class="mb-4 bg-white">
 					<div class="shadow p-5" id="detail">
 						<div class="d-flex justify-content-between mb-4">
 
@@ -250,13 +269,13 @@
 											<table class="table" id="item-table">
 												<thead>
 													<tr>
-														<th>Products</th>
-														<th style="width: 150px;">MOQ</th>
-														<th class="text-end" style="width: 100px;">Unit Price</th>
-														<th class="text-end" style="width: 100px;">Order</th>
-														<th style="width: 150px;">Unit</th>
-														<th class="text-end" style="width: 100px;">Amount</th>
-														<th style="width: 50px;">Action</th>
+														<th style="width: 300px;">Products</th>
+														<th style="width: 100px;">MOQ</th>
+														<th class="text-end" style="width: 120px;">Unit Price</th>
+														<th class="text-end">Order</th>
+														<th>Unit</th>
+														<th class="text-end">Amount</th>
+														<th>Action</th>
 													</tr>
 												</thead>
 
@@ -407,9 +426,9 @@
 	<!-- jQuery -->
 	<template id="blank-item-template">
 		<tr class="item-row new-item-row">
-			<td class="text-start">
+			<td class="text-start" style="width: 300px;"">
 				<div class="product-desc" contenteditable="true" data-placeholder="Enter item description"
-					style="min-height: 38px;"></div>
+					style="min-height: 38px;""></div>
 			</td>
 			<td class="text-end">
 				<input type="number" class="form-control form-control-sm price text-end" value="0" min="0">
@@ -419,7 +438,7 @@
 			<td class="text-end">
 				<input type="number" class="form-control form-control-sm input-price text-end" value="0" min="0">
 			</td>
-			<td style="width: 150px;" class="text-end">
+			<td  class="text-end">
 				<div class="product-quantity" style="width: 100% !important;">
 					<span class="quantity-btn plus-btn">+<i data-feather="plus-circle" class="plus-circle"></i></span>
 					<input type="text" class="quntity-input input-qty" value="0">
@@ -428,7 +447,7 @@
 				</div>
 			</td>
 
-			<td style="width: 150px;">
+			<td>
 				<select class="form-select form-select-sm input-unit select">
 					<option value="" selected disabled>Select Unit</option>
 					<option value="s-1">Ream</option>
@@ -438,7 +457,7 @@
 			<td class="text-end">
 				<input type="number" class="form-control form-control-sm input-amount text-end" value="0" readonly>
 			</td>
-			<td style="width: 50px;">
+			<td >
 				<a href="javascript:void(0);" class="confirm-text p-2 text-danger btn-delete-row">
 					<i data-feather="trash-2"></i>
 				</a>

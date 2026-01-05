@@ -10,6 +10,53 @@
 	<meta name="author" content="Dreamguys - Bootstrap Admin Template">
 	<meta name="robots" content="noindex, nofollow">
 	<title>Dreams Pos Admin Template</title>
+	<style>
+		/* Target spesifik ID modal add dan edit */
+#add-units .table-responsive, 
+#edit-units .table-responsive {
+    overflow: visible !important;
+}
+
+/* Styling dropdown pencarian di dalam modal tersebut */
+#add-units .product-search-results,
+#edit-units .product-search-results {
+    position: absolute !important;
+    top: 100% !important;
+    left: 0;
+    right: 0;
+    z-index: 9999 !important; /* Sangat tinggi agar melayang di atas footer modal */
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2); /* Shadow lebih tebal agar kontras */
+    max-height: 200px;
+    overflow-y: auto;
+    border-radius: 4px;
+    display: none;
+}
+
+/* Munculkan dropdown saat class .show ditambahkan */
+#add-units .product-search-results.show,
+#edit-units .product-search-results.show {
+    display: block !important;
+}
+
+/* Style isi hasil pencariannya */
+.product-item-result {
+    padding: 10px 15px;
+    border-bottom: 1px solid #f0f0f0;
+    cursor: pointer;
+}
+
+.product-item-result:hover {
+    background-color: #f8f9fa;
+}
+
+/* Hilangkan stacking context pada baris agar z-index tembus */
+#add-units tr.product-item,
+#edit-units tr.product-item {
+    position: static !important;
+}
+	</style>
 
 	<link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
 
@@ -315,8 +362,10 @@
 					<div class="content">
 						<div class="modal-header border-0 custom-modal-header">
 							<div class="page-title">
-								<h4 class="mb-0">Add Purchase &nbsp;&nbsp; Return &nbsp;&nbsp; : &nbsp;&nbsp;
+								<!-- <h4 class="mb-0">Add Purchase &nbsp;&nbsp; Return &nbsp;&nbsp; : &nbsp;&nbsp;
 									<strong>PRT-0001</strong>
+								</h4> -->
+								<h4 class="mb-0">Add new Purchase Order
 								</h4>
 							</div>
 							<button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
@@ -326,119 +375,153 @@
 
 						<div class="modal-body custom-modal-body">
 							<form>
-								<div class="row mb-3">
+								<div class="row mb-4">
 									<div class="col-md-7">
-										<label class="form-label">Supplier</label>
-										<div class="input-group mb-2">
-											<input type="text" class="form-control" placeholder="Search Supplier">
-										</div>
-
-										<div class="supplier-info p-3 small">
-											<strong>PT Cipta Kreasi</strong><br>
-											ciptakreasi@gmail.com<br>
-											62819 0685 5554<br>
-											Cyber 2 Tower, Lantai 29, Jalan HR Rasuna Said,<br>
-											XS No. 13, Jakarta Selatan, 12950
+										<h5 class="fw-bold">PURCHASE ORDER</h5>
+										<div class="row">
+											<div class="col-3"><strong>To</strong></div>
+											<div class="col-9">
+												<p class="mb-0">PT Cipta Kreasi</p>
+												<p class="small mb-0">Cyber 2 Tower, Lantai 29, Jalan HR Rasuna
+													Said,<br>XS No.13, Jakarta Selatan, 12950</p>
+												<p class="small mb-0">ciptakreasi@gmail.com</p>
+												<p class="small mb-0">62819 0685 5554</p>
+											</div>
 										</div>
 									</div>
 
 									<div class="col-md-5">
-										<label class="form-label">No Purchase</label>
-										<select class="form-select mb-2 select">
-											<option>PR-2512000001 (20/12/2025)</option>
-											<option>PR-2512000002 (18/12/2025)</option>
-											<option>PR-2512000003 (17/12/2025)</option>
-										</select>
-
-										<!-- additional PO metadata / placeholder if needed -->
+										<div class="row mb-2">
+											<div class="col-5 text-start small">Created</div>
+											<div class="col-7 small">: Sales Staff</div>
+										</div>
+										<div class="row mb-2">
+											<div class="col-5 text-start small">PO</div>
+											<div class="col-7 small">: PO2545852200</div>
+										</div>
+										<div class="row mb-2">
+											<div class="col-5 text-start small">PO Date</div>
+											<div class="col-7 small">: 25/12/2025</div>
+										</div>
+										<div class="row">
+											<div class="col-5 text-start small">Vendor Reff</div>
+											<div class="col-7 small">
+												<input type="text" class="form-control form-control-sm" placeholder="">
+											</div>
+										</div>
 									</div>
 								</div>
 
-								<div class="table-responsive mb-3">
-									<table class="table table-bordered align-middle">
+								<!-- products table -->
+								<div class="table-responsive mb-4">
+									<table class="table table-bordered">
 										<thead>
 											<tr>
+												<th style="width:50px;">No.</th>
 												<th>Product Name</th>
-												<th class="text-center" style="width:70px;">Qty</th>
-												<th class="text-center" style="width:150px;">Qty Return</th>
-												<th class="text-center" style="width:70px;">Unit</th>
-												<th class="text-end" style="width:120px;">Price</th>
-												<th class="text-end" style="width:120px;">Amount</th>
-												<th style="width:220px;">Description of return</th>
-												<th style="width:40px;"></th>
+												<th class="text-center" style="width:80px;">Qty</th>
+												<th class="text-center" style="width:80px;">Unit</th>
+												<th class="text-end" style="width:120px;">Unit Price</th>
+												<th class="text-end" style="width:140px;">Sub Total</th>
 											</tr>
 										</thead>
 										<tbody>
-											<tr>
-												<td>Tinta Cemani Cyan 1 Kg</td>
-												<td class="text-center">2</td>
-												<td class="text-center">
-													<div class="product-quantity" style="width: 100% !important;">
-														<span class="quantity-btn">+<i data-feather="plus-circle"
-																class="plus-circle"></i></span>
-														<input type="text" class="quntity-input" value="2">
-														<span class="quantity-btn"><i data-feather="minus-circle"
-																class="feather-search"></i></span>
-													</div>
-												</td>
-												<td class="text-center">Kg</td>
-												<td class="text-end">450.000</td>
-												<td class="text-end">900.000</td>
-												<td><input type="text" class="form-control form-control-sm"
-														placeholder=""></td>
-												<td class="text-center"><a href="javascript:void(0);"
-														class="text-danger"><i data-feather="trash-2"></i></a></td>
-											</tr>
-
-											<tr>
-												<td>Tinta Cemani Black 1 Kg</td>
-												<td class="text-center">2</td>
-												<td class="text-center">
-													<div class="product-quantity" style="width: 100% !important;">
-														<span class="quantity-btn">+<i data-feather="plus-circle"
-																class="plus-circle"></i></span>
-														<input type="text" class="quntity-input" value="2">
-														<span class="quantity-btn"><i data-feather="minus-circle"
-																class="feather-search"></i></span>
-													</div>
-												</td>
-												<td class="text-center">Kg</td>
-												<td class="text-end">450.000</td>
-												<td class="text-end">900.000</td>
-												<td><input type="text" class="form-control form-control-sm"
-														placeholder=""></td>
-												<td class="text-center"><a href="javascript:void(0);"
-														class="text-danger"><i data-feather="trash-2"></i></a></td>
-											</tr>
+										
+										
 										</tbody>
 									</table>
+									<div class="inline-block mb-4">
+        <a href="javascript:void(0);" class="btnAddNewProduct mt-3 d-inline-block">
+            <i data-feather="plus-circle" class="plus-down-add text-primary"></i>
+            <span class="text-primary">add New blank</span>
+        </a>
+    </div>
 								</div>
 
-								<div class="row">
-									<div class="col-md-7"></div>
-									<div class="col-md-5">
-										<div class="d-flex justify-content-end pe-3">
-											<div class="w-50">
-												<div class="d-flex mt-2 fw-bold">
-													<div class="flex-grow-1 text-end small">Sub Total</div>
-													<div class="text-end w-50">Rp. 900.000</div>
-												</div>
-												<div class="d-flex mt-2 fw-bold">
-													<div class="flex-grow-1 text-end small">Tax (Ppn 11%)</div>
-													<div class="text-end w-50">0</div>
-												</div>
-												<div class="d-flex mt-2 fw-bold">
-													<div class="flex-grow-1 text-end">Total (IDR)</div>
-													<div class="text-end w-50">Rp. 1.150.000</div>
-												</div>
-											</div>
+								<!-- PO Detail and totals -->
+								<div class="row mb-4">
+									<div class="col-md-6">
+										<h6 class="fw-bold">PO Detail</h6>
+										<div class="mb-2">
+											<label class="form-label small">No. PR</label>
+											<input type="text" class="form-control form-control-sm"
+												 readonly>
 										</div>
-
-										<div class="d-flex justify-content-end gap-2 mt-4">
-											<button type="button" class="btn btn-dark">Cancel</button>
-											<button type="submit" class="btn btn-warning">Save Changes</button>
+										<div class="mb-2">
+											<label class="form-label small">Delivery Date</label>
+											<select class="form-select select">
+												<option>25/12/2025</option>
+											</select>
+										</div>
+										<div class="mb-2">
+											<label class="form-label small">Term of Payment</label>
+											<select class="form-select select">
+												<option>30 Days</option>
+											</select>
+										</div>
+										<div class="mb-2">
+											<label class="form-label small">Delivery Address</label>
+											<textarea class="form-control form-control-sm"
+												rows="3"></textarea>
 										</div>
 									</div>
+
+									<div class="col-6 mt-5">
+										<div class="row align-items-center">
+											<div class="col-6 text-end">
+												<label class="form-label m-0">Sub Total</label>
+											</div>
+											<div class="col-6 text-end fw-bold">
+											</div>
+										</div>
+										<div class="row align-items-center mt-3">
+											<div class="col-6 text-end">
+												<label class="form-label m-0">Tax</label>
+											</div>
+											<div class="col-6">
+												<select class="form-select form-select-sm select">
+													<option>Ppn 11% (11250)</option>
+													<option>Ppn 11% (11250)</option>
+												</select>
+											</div>
+										</div>
+										<div class="row align-items-center mt-3">
+											<div class="col-6 text-end">
+												<label class="form-label m-0">Total (IDR)</label>
+											</div>
+											<div class="col-6 text-end fw-bold">
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<!-- Good Receive -->
+								<h5 class="fw-bold">GOOD RECEIVE</h5>
+								<div class="row g-3 mb-4">
+									<div class="col-md-4">
+										<label class="form-label small">Status Document</label>
+										<select class="form-select select">
+											<option>Sent</option>
+											<option>Draft</option>
+										</select>
+									</div>
+									<div class="col-md-4">
+										<label class="form-label small">Goods Receive Status</label>
+										<select class="form-select select">
+											<option>Scheduled</option>
+											<option>Complete</option>
+											<option>Cancel</option>
+										</select>
+									</div>
+									<div class="col-md-4">
+										<label class="form-label small">Goods Receive Date</label>
+										<input type="date" class="form-control">
+									</div>
+								</div>
+
+								<div class="d-flex justify-content-end gap-2 mt-3">
+									<button type="button" class="btn btn-dark" data-bs-dismiss="modal">Cancel</button>
+									<button type="submit" class="btn btn-warning">Save Changes</button>
 								</div>
 
 							</form>
@@ -459,7 +542,7 @@
 					<div class="content">
 						<div class="modal-header border-0 custom-modal-header">
 							<div class="page-title">
-								<h4 class="mb-0">Purchase Order Edit</h4>
+								<h4 class="mb-0">Edit Purchase Order</h4>
 							</div>
 							<button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
 								<span aria-hidden="true">&times;</span>
@@ -524,13 +607,10 @@
 												<td><input type="text" class="form-control"
 														value="Tinta Neotex 1Kg Cyan"></td>
 												<td class="text-center">
-													<div class="product-quantity" style="width: 100% !important;">
-														<span class="quantity-btn">+<i data-feather="plus-circle"
-																class="plus-circle"></i></span>
-														<input type="text" class="quntity-input" value="2">
-														<span class="quantity-btn"><i data-feather="minus-circle"
-																class="feather-search"></i></span>
-													</div>
+													 <div class=" product-search-container position-relative">
+                        <input type="text" class="form-control product-search-input fw-bold" placeholder="Cari Produk ketik minimal 3" autocomplete="off">
+                        <div class="product-search-results dropdown-menu w-100 shadow-sm"></div>
+                    </div>
 												</td>
 												<td class="text-center"><select class="form-control select mt-1">
 														<option selected>Kg</option>
@@ -541,19 +621,20 @@
 												<td class="text-end"><input type="text" class="form-control"
 														value="450.000"></td>
 												<td class="text-end">900.000</td>
+												<td class="text-end fw-bold">
+                <span class="amount-text">0</span>
+                <a href="javascript:void(0);" class="delete-row text-danger ms-2"><i data-feather="trash-2" style="width:14px;"></i></a>
+            </td>
 											</tr>
 											<tr>
 												<td>2</td>
 												<td><input type="text" class="form-control"
 														value="Kertas Art Paper 150gr"></td>
 												<td class="text-center">
-													<div class="product-quantity" style="width: 100% !important;">
-														<span class="quantity-btn">+<i data-feather="plus-circle"
-																class="plus-circle"></i></span>
-														<input type="text" class="quntity-input" value="2">
-														<span class="quantity-btn"><i data-feather="minus-circle"
-																class="feather-search"></i></span>
-													</div>
+													 <div class=" product-search-container position-relative">
+                        <input type="text" class="form-control product-search-input fw-bold" placeholder="Cari Produk ketik minimal 3" autocomplete="off">
+                        <div class="product-search-results dropdown-menu w-100 shadow-sm"></div>
+                    </div>
 												</td>
 												<td class="text-center"><select class="form-control select mt-1">
 														<option selected>Ream</option>
@@ -564,9 +645,20 @@
 												<td class="text-end"><input type="text" class="form-control"
 														value="600.000"></td>
 												<td class="text-end">600.000</td>
+												<td class="text-end fw-bold">
+                <span class="amount-text">0</span>
+                <a href="javascript:void(0);" class="delete-row text-danger ms-2"><i data-feather="trash-2" style="width:14px;"></i></a>
+            </td>
 											</tr>
 										</tbody>
 									</table>
+																	<div class="inline-block mb-4">
+										<a href="javascript:void(0);" class="btnAddNewProduct mt-3 d-inline-block">
+											<i data-feather="plus-circle" class="plus-down-add text-primary"></i>
+											<span class="text-primary">add New blank</span>
+										</a>
+									</div>
+									
 								</div>
 
 								<!-- PO Detail and totals -->
@@ -703,6 +795,161 @@
 	<!-- Custom JS -->
 	<script src="assets/js/theme-script.js"></script>
 	<script src="assets/js/script.js"></script>
+
+	<script>
+		document.addEventListener("DOMContentLoaded", function () {
+    // 1. DATA MASTER PRODUK
+    const masterProducts = [
+        { name: "Tinta Neotex 1Kg Cyan", price: "450.000" },
+        { name: "Kertas Art Paper 150gr", price: "600.000" },
+        { name: "Sticker Vinyl Putih", price: "120.000" }
+    ];
+
+    const clean = (num) => !num ? 0 : parseInt(String(num).replace(/[^\d]/g, "")) || 0;
+    const format = (num) => !num || num === 0 ? "0" : String(num).replace(/\D/g, "").replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+
+    function recalc(row) {
+        const qtyEl = row.querySelector(".quntity-input");
+        const priceEl = row.querySelector(".price-input");
+        const amountEl = row.querySelector(".amount-text");
+
+        if (!qtyEl || !priceEl || !amountEl) return;
+
+        const qty = parseInt(qtyEl.value || "0") || 0;
+        const price = clean(priceEl.value || "0");
+        amountEl.innerText = format(qty * price);
+    }
+
+    function generateTableTR(rowCount) {
+        return `
+        <tr class="product-item">
+            <td>${rowCount}</td>
+            <td>
+                <div class="product-search-container position-relative">
+                    <input type="text" class="form-control product-search-input fw-bold" placeholder="Cari Produk..." autocomplete="off">
+                    <div class="product-search-results dropdown-menu w-100 shadow-sm" style="display:none; position:absolute; z-index:9999;"></div>
+                </div>
+            </td>
+            <td class="text-center">
+                <div class="product-quantity" style="width: 100% !important;">
+                    <span class="quantity-btn plus-btn" style="cursor:pointer;"><i data-feather="plus-circle"></i></span>
+                    <input type="text" class="quntity-input" value="1" style="width:40px; text-align:center; border:1px solid #ddd; border-radius:4px;">
+                    <span class="quantity-btn minus-btn" style="cursor:pointer;"><i data-feather="minus-circle"></i></span>
+                </div>
+            </td>
+            <td class="text-center">
+                <select class="form-control select mt-1">
+                    <option selected>Pcs</option><option>Kg</option><option>Box</option><option>Set</option>
+                </select>
+            </td>
+            <td class="text-end">
+                <input type="text" class="form-control text-end price-input" value="0">
+            </td>
+            <td class="text-end fw-bold">
+                <span class="amount-text">0</span>
+                <a href="javascript:void(0);" class="delete-row text-danger ms-2"><i data-feather="trash-2" style="width:14px;"></i></a>
+            </td>
+        </tr>`;
+    }
+
+    // HANDLER CLICK UTAMA
+    document.addEventListener("click", function (ev) {
+        const target = ev.target;
+
+        // 1. Tombol Add New
+        const btnAdd = target.closest(".btnAddNewProduct");
+        if (btnAdd) {
+            ev.preventDefault();
+            const tbody = btnAdd.closest('.table-responsive').querySelector("tbody");
+            if (tbody) {
+                const rowCount = tbody.querySelectorAll("tr").length + 1;
+                tbody.insertAdjacentHTML('beforeend', generateTableTR(rowCount));
+                if (window.feather) feather.replace();
+            }
+            return;
+        }
+
+        // 2. PILIH HASIL SEARCH (DIPERBAIKI)
+        const resItem = target.closest(".product-item-result");
+        if (resItem) {
+            const row = resItem.closest("tr");
+            const resBox = resItem.closest(".product-search-results");
+            
+            // Set values
+            row.querySelector(".product-search-input").value = resItem.dataset.name;
+            row.querySelector(".price-input").value = resItem.dataset.price;
+            
+            // Tutup Dropdown
+            resBox.classList.remove("show");
+            resBox.style.display = "none";
+            
+            recalc(row);
+            return;
+        }
+
+        // 3. Delete Row
+        const btnDel = target.closest(".delete-row");
+        if (btnDel) {
+            btnDel.closest("tr").remove();
+            return;
+        }
+
+        // 4. Plus Minus
+        const qtyBtn = target.closest(".plus-btn, .minus-btn");
+        if (qtyBtn) {
+            const row = qtyBtn.closest("tr");
+            const input = row.querySelector(".quntity-input");
+            let val = parseInt(input.value) || 1;
+            input.value = qtyBtn.classList.contains("plus-btn") ? val + 1 : (val > 1 ? val - 1 : 1);
+            recalc(row);
+            return;
+        }
+
+        // 5. Klik Luar Dropdown (DIPERBAIKI)
+        if (!target.closest(".product-search-container")) {
+            document.querySelectorAll(".product-search-results").forEach(box => {
+                box.classList.remove("show");
+                box.style.display = "none";
+            });
+        }
+    });
+
+    // HANDLER INPUT
+    document.addEventListener("input", function (e) {
+        const target = e.target;
+        const row = target.closest("tr");
+        if (!row) return;
+
+        if (target.classList.contains("product-search-input")) {
+            const resBox = target.nextElementSibling;
+            const val = target.value.toLowerCase();
+            if (val.length >= 3) {
+                const matched = masterProducts.filter(p => p.name.toLowerCase().includes(val));
+                resBox.innerHTML = matched.map(p => `
+                    <div class="product-item-result p-2" data-name="${p.name}" data-price="${p.price}" style="cursor:pointer; border-bottom:1px solid #eee;">
+                        <strong>${p.name}</strong><br><small>Rp ${p.price}</small>
+                    </div>
+                `).join("") || '<div class="p-2 text-muted">No result</div>';
+                
+                resBox.classList.add("show");
+                resBox.style.display = "block";
+            } else {
+                resBox.classList.remove("show");
+                resBox.style.display = "none";
+            }
+        }
+
+        if (target.classList.contains("price-input")) {
+            target.value = format(target.value);
+            recalc(row);
+        }
+        if (target.classList.contains("quntity-input")) {
+            target.value = target.value.replace(/\D/g, "");
+            recalc(row);
+        }
+    });
+});
+	</script>
 
 </body>
 

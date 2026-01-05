@@ -38,6 +38,12 @@
 
     <!-- Main CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .table-responsive {
+    overflow: visible !important; 
+}
+
+    </style>
 
 </head>
 
@@ -64,7 +70,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="card border-0">
+                <div class="card border-0 shadow p-5">
                     <div class="card-body pb-0">
                         <div class="row">
                             <div class="col-lg-6 col-sm-6 col-12">
@@ -140,45 +146,28 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="table-responsive mt-2">
-                            <table class="table table-bordered align-middle" style="border-color:#ccc;">
-                                <thead class="table-light">
-                                    <tr>
-                                        <th style="width:40%;">Product Name</th>
-                                        <th>Qty</th>
-                                        <th>Unit</th>
-                                        <th style="width: 150px;">Price (IDR)</th>
-                                        <th>Amount (IDR)</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>
-                                            <strong>Tinta Neotex 1Kg Cyan</strong>
-                                        </td>
-                                        <td>
-                                            <div class="product-quantity" style="width: 100% !important;">
-                                                <span class="quantity-btn">+<i data-feather="plus-circle"
-                                                        class="plus-circle"></i></span>
-                                                <input type="text" class="quntity-input" value="2">
-                                                <span class="quantity-btn"><i data-feather="minus-circle"
-                                                        class="feather-search"></i></span>
-                                            </div>
-                                        </td>
-                                        <td><select class="form-control select mt-1">
-                                                <option selected>Pcs</option>
-                                                <option>Box</option>
-                                                <option>Set</option>
-                                            </select></td>
-                                        <td><input type="text" class="form-control" value="450.000"></td>
-                                        <td>900.000</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Add blank product</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
+                       <div class="table-responsive mt-2">
+    <table class="table table-bordered align-middle" style="border-color:#ccc;">
+        <thead class="table-light">
+            <tr>
+                <th style="width:40%;">Product Name</th>
+                <th>Qty</th>
+                <th>Unit</th>
+                <th style="width: 150px;">Price (IDR)</th>
+                <th>Amount (IDR)</th>
+            </tr>
+        </thead>
+        <tbody>
+           
+        </tbody>
+    </table>
+    <div class="inline-block mb-4">
+        <a href="javascript:void(0);" class="btnAddNewProduct mt-3 d-inline-block">
+            <i data-feather="plus-circle" class="plus-down-add text-primary"></i>
+            <span class="text-primary">add New blank</span>
+        </a>
+    </div>
+</div>
                         <div class="row mt-3">
                             <div class="col-4">
                                 <div class="input-blocks align-items-center">
@@ -214,14 +203,20 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="modal-footer justify-content-end">
-                            <button type="button" class="btn btn-secondary add-cancel me-3"
-                                data-bs-dismiss="modal">Cancel</button>
-                            <button type="submit" class="btn btn-primary add-sale">Save</button>
-                        </div>
+                       
                     </div>
                 </div>
+<div class="modal-footer my-5 justify-content-end">
 
+                    <div>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                            Cancel
+                        </button>
+                        <button class="btn btn-warning">
+                            Save Changes
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -290,6 +285,165 @@
         });
 
     </script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+    const masterProducts = [
+        { name: "Tinta Neotex 1Kg Cyan", price: "450.000", desc: "Tinta Pigment High Quality" },
+        { name: "Kertas Art Paper A4", price: "85.000", desc: "150gr, Glossy" },
+        { name: "Sticker Vinyl Putih", price: "120.000", desc: "Waterproof" }
+    ];
+
+    function clean(num) {
+        if (!num) return 0;
+        return parseInt(String(num).replace(/[^\d]/g, "")) || 0;
+    }
+
+    function format(num) {
+        if (!num || num === 0) return "0";
+        return String(num).replace(/\D/g, "").replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+    }
+
+    function recalc(row) {
+        const qtyEl = row.querySelector(".quntity-input");
+        const priceEl = row.querySelector(".price-input");
+        const amountEl = row.querySelector(".amount-text");
+
+        if (!qtyEl || !priceEl || !amountEl) return;
+
+        const qty = parseInt(qtyEl.value || "0") || 0;
+        const price = clean(priceEl.value || "0");
+        const total = qty * price;
+        
+        amountEl.innerText = format(total);
+
+        const modal = row.closest('.modal');
+        if (modal) {
+            const btnApply = modal.querySelector('button[onclick*="applyVoucher"]');
+            if (btnApply && typeof applyVoucher === "function") applyVoucher(null, btnApply);
+        }
+    }
+
+    function generateTableTR() {
+        return `
+        <tr class="product-item">
+            <td>
+                <div class="product-search-container position-relative">
+                    <input type="text" class="form-control product-search-input fw-bold" placeholder="Cari Produk... ketik minimal 3" autocomplete="off">
+                    <div class="product-search-results dropdown-menu w-100 shadow-sm"></div>
+                </div>
+            </td>
+            <td>
+                <div class="product-quantity" style="width: 100% !important;">
+                    <span class="quantity-btn plus-btn"><i data-feather="plus-circle"></i></span>
+                    <input type="text" class="quntity-input" value="1">
+                    <span class="quantity-btn minus-btn"><i data-feather="minus-circle"></i></span>
+                </div>
+            </td>
+            <td>
+                <select class="form-control select mt-1">
+                    <option selected>Pcs</option><option>Box</option><option>Set</option>
+                </select>
+            </td>
+            <td><input type="text" class="form-control text-end price-input" value="0"></td>
+            <td class="text-end fw-bold">
+                <span class="amount-text">0</span>
+                <a href="javascript:void(0);" class="delete-row text-danger ms-2"><i data-feather="trash-2" style="width:14px;"></i></a>
+            </td>
+        </tr>`;
+    }
+
+    document.addEventListener("click", function (ev) {
+        const target = ev.target;
+
+        // 1. ADD NEW BLANK
+        const btnAdd = target.closest(".btnAddNewProduct");
+        if (btnAdd) {
+            ev.preventDefault();
+            const container = btnAdd.closest('.table-responsive').querySelector("tbody");
+            if (container) {
+                container.insertAdjacentHTML('beforeend', generateTableTR());
+                if (window.feather) feather.replace();
+            }
+            return;
+        }
+
+        // 2. DELETE ROW
+        const btnDel = target.closest(".delete-row");
+        if (btnDel) {
+            btnDel.closest("tr").remove();
+            return;
+        }
+
+        // 3. PILIH PRODUK HASIL SEARCH (FIXED: TUTUP DROPDOWN)
+        const resItem = target.closest(".product-item-result");
+        if (resItem) {
+            const row = resItem.closest("tr");
+            const resBox = resItem.parentElement; // Container dropdownnya
+
+            row.querySelector(".product-search-input").value = resItem.dataset.name;
+            row.querySelector(".price-input").value = resItem.dataset.price;
+            
+            // Tutup dropdown
+            resBox.classList.remove("show");
+            resBox.style.display = "none"; // Paksa tutup biar nggak nge-glitch
+
+            recalc(row);
+            return;
+        }
+
+        // 4. PLUS MINUS
+        const qtyBtn = target.closest(".plus-btn, .minus-btn");
+        if (qtyBtn) {
+            const row = qtyBtn.closest("tr");
+            const input = row.querySelector(".quntity-input");
+            let val = parseInt(input.value) || 1;
+            input.value = qtyBtn.classList.contains("plus-btn") ? val + 1 : (val > 1 ? val - 1 : 1);
+            recalc(row);
+            return;
+        }
+
+        // KLIK LUAR UNTUK TUTUP
+        if (!target.closest(".product-search-container")) {
+            document.querySelectorAll(".product-search-results").forEach(box => {
+                box.classList.remove("show");
+                box.style.display = "none";
+            });
+        }
+    });
+
+    document.addEventListener("input", function (e) {
+        const target = e.target;
+        const row = target.closest("tr");
+        if (!row) return;
+
+        // AUTOCOMPLETE SEARCH
+        if (target.classList.contains("product-search-input")) {
+            const resBox = target.nextElementSibling;
+            const val = target.value.toLowerCase();
+            if (val.length >= 3) {
+                const matched = masterProducts.filter(p => p.name.toLowerCase().includes(val));
+                resBox.innerHTML = matched.map(p => `
+                    <div class="product-item-result p-2" data-name="${p.name}" data-price="${p.price}" data-desc="${p.desc}" style="cursor:pointer; border-bottom:1px solid #eee;">
+                        <strong>${p.name}</strong><br><small>Rp ${p.price}</small>
+                    </div>
+                `).join("") || '<div class="p-2 text-muted">No result</div>';
+                
+                resBox.classList.add("show");
+                resBox.style.display = "block"; // Tampilkan eksplisit
+            } else {
+                resBox.classList.remove("show");
+                resBox.style.display = "none";
+            }
+        }
+
+        if (target.classList.contains("price-input") || target.classList.contains("quntity-input")) {
+            if (target.classList.contains("price-input")) target.value = format(target.value);
+            recalc(row);
+        }
+    });
+});
+</script>
+
 
 </body>
 

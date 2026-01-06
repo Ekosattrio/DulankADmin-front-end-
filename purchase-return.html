@@ -38,7 +38,85 @@
 
 	<!-- Main CSS -->
 	<link rel="stylesheet" href="assets/css/style.css">
+	<style>
+		@page {
+			size: A4;
+			margin: 0.3in !important;
 
+			@bottom-right {
+				content: counter(page) "/" counter(pages);
+				margin-bottom: 15px;
+			}
+		}
+
+
+		@media print {
+			body {
+				visibility: hidden;
+			}
+
+			html,
+			body {
+				font-size: 12px !important;
+				/* ubah angka ini bila ingin lebih kecil/lebih besar */
+				line-height: 1.2 !important;
+			}
+
+			/* fallback spesifik untuk elemen penting */
+			h1 {
+				font-size: 1.25rem !important;
+			}
+
+			h2 {
+				font-size: 1.1rem !important;
+			}
+
+			h3,
+			h4,
+			h5,
+			h6 {
+				font-size: 1rem !important;
+			}
+
+			.text-standard,
+			.order-table,
+			.table,
+			.order-section-title,
+			.page-title,
+			p,
+			span,
+			label {
+				font-size: 0.85rem !important;
+				/* skala turun lagi untuk konten */
+			}
+
+			#section-to-print {
+				width: 100vw;
+				visibility: visible;
+				padding: 0 !important;
+				margin: 0 !important;
+			}
+
+			.modal-xl {
+				position: absolute;
+				top: 0;
+				width: 100vw !important;
+				align-items: self-start;
+				padding: 0 !important;
+				margin: 0 !important;
+			}
+
+			.table-top-head {
+				display: none !important;
+			}
+
+			.dataTables_paginate,
+			.dataTables_length,
+			.dataTables_info {
+				display: none;
+			}
+		}
+	</style>
 </head>
 
 <body>
@@ -65,15 +143,11 @@
 					</div>
 					<ul class="table-top-head">
 						<li>
-							<a data-bs-toggle="tooltip" data-bs-placement="top" title="Pdf"><img src="assets/img/icons/pdf.svg"
-									alt="img"></a>
+							<a data-bs-toggle="tooltip" data-bs-placement="top" title="Pdf"><img
+									src="assets/img/icons/pdf.svg" alt="img"></a>
 						</li>
 						<li>
 							<a data-bs-toggle="tooltip" data-bs-placement="top" title="Print"><i data-feather="printer"
-									class="feather-rotate-ccw"></i></a>
-						</li>
-						<li>
-							<a data-bs-toggle="tooltip" data-bs-placement="top" title="Refresh"><i data-feather="rotate-ccw"
 									class="feather-rotate-ccw"></i></a>
 						</li>
 						<li>
@@ -93,13 +167,14 @@
 						<div class="table-top">
 							<div class="search-set">
 								<div class="search-input">
-									<a href="" class="btn btn-searchset"><i data-feather="search" class="feather-search"></i></a>
+									<a href="" class="btn btn-searchset"><i data-feather="search"
+											class="feather-search"></i></a>
 								</div>
 							</div>
 							<div class="">
 								<div class="btn-group">
-									<button type="button" class="btn btn-outline-primary dropdown-toggle" data-bs-toggle="dropdown"
-										aria-expanded="false">
+									<button type="button" class="btn btn-outline-primary dropdown-toggle"
+										data-bs-toggle="dropdown" aria-expanded="false">
 										Status
 									</button>
 									<ul class="dropdown-menu">
@@ -108,8 +183,8 @@
 									</ul>
 								</div>
 								<div class="btn-group">
-									<button type="button" class="btn btn-outline-primary dropdown-toggle" data-bs-toggle="dropdown"
-										aria-expanded="false">
+									<button type="button" class="btn btn-outline-primary dropdown-toggle"
+										data-bs-toggle="dropdown" aria-expanded="false">
 										Sort by
 									</button>
 									<ul class="dropdown-menu">
@@ -158,7 +233,8 @@
 									</div>
 									<div class="col-lg-3 col-sm-6 col-12 ms-auto">
 										<div class="input-blocks">
-											<a class="btn btn-filters ms-auto"> <i data-feather="search" class="feather-search"></i> Search
+											<a class="btn btn-filters ms-auto"> <i data-feather="search"
+													class="feather-search"></i> Search
 											</a>
 										</div>
 									</div>
@@ -197,15 +273,17 @@
 										<td>-</td>
 										<td class="action-table-data">
 											<div class="edit-delete-action">
-												<a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#view-units"><i data-feather="eye"
+												<a class="me-2 p-2" data-bs-toggle="modal"
+													data-bs-target="#view-units"><i data-feather="eye"
 														class="action-eye"></i></a>
-												<a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#edit-units"><i data-feather="edit"
+												<a class="me-2 p-2" data-bs-toggle="modal"
+													data-bs-target="#edit-units"><i data-feather="edit"
 														class="feather-edit"></i></a>
-														<a class="me-2 p-2" href="#" data-bs-toggle="modal"
+												<a class="me-2 p-2" href="#" data-bs-toggle="modal"
 													data-bs-target="#createpayment"><i data-feather="dollar-sign"
 														class="feather-edit"></i></a>
-												<a class="confirm-text p-2" href="javascript:void(0);"><i data-feather="trash-2"
-														class="feather-trash-2"></i></a>
+												<a class="confirm-text p-2" href="javascript:void(0);"><i
+														data-feather="trash-2" class="feather-trash-2"></i></a>
 											</div>
 										</td>
 									</tr>
@@ -222,15 +300,17 @@
 										<td>Admin</td>
 										<td class="action-table-data">
 											<div class="edit-delete-action">
-												<a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#view-units"><i data-feather="eye"
+												<a class="me-2 p-2" data-bs-toggle="modal"
+													data-bs-target="#view-units"><i data-feather="eye"
 														class="action-eye"></i></a>
-												<a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#edit-units"><i data-feather="edit"
+												<a class="me-2 p-2" data-bs-toggle="modal"
+													data-bs-target="#edit-units"><i data-feather="edit"
 														class="feather-edit"></i></a>
-														<a class="me-2 p-2" href="#" data-bs-toggle="modal"
+												<a class="me-2 p-2" href="#" data-bs-toggle="modal"
 													data-bs-target="#createpayment"><i data-feather="dollar-sign"
 														class="feather-edit"></i></a>
-												<a class="confirm-text p-2" href="javascript:void(0);"><i data-feather="trash-2"
-														class="feather-trash-2"></i></a>
+												<a class="confirm-text p-2" href="javascript:void(0);"><i
+														data-feather="trash-2" class="feather-trash-2"></i></a>
 											</div>
 										</td>
 									</tr>
@@ -247,15 +327,17 @@
 										<td>Admin</td>
 										<td class="action-table-data">
 											<div class="edit-delete-action">
-												<a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#view-units"><i data-feather="eye"
+												<a class="me-2 p-2" data-bs-toggle="modal"
+													data-bs-target="#view-units"><i data-feather="eye"
 														class="action-eye"></i></a>
-												<a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#edit-units"><i data-feather="edit"
+												<a class="me-2 p-2" data-bs-toggle="modal"
+													data-bs-target="#edit-units"><i data-feather="edit"
 														class="feather-edit"></i></a>
-														<a class="me-2 p-2" href="#" data-bs-toggle="modal"
+												<a class="me-2 p-2" href="#" data-bs-toggle="modal"
 													data-bs-target="#createpayment"><i data-feather="dollar-sign"
 														class="feather-edit"></i></a>
-												<a class="confirm-text p-2" href="javascript:void(0);"><i data-feather="trash-2"
-														class="feather-trash-2"></i></a>
+												<a class="confirm-text p-2" href="javascript:void(0);"><i
+														data-feather="trash-2" class="feather-trash-2"></i></a>
 											</div>
 										</td>
 									</tr>
@@ -272,15 +354,17 @@
 										<td>Admin</td>
 										<td class="action-table-data">
 											<div class="edit-delete-action">
-												<a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#view-units"><i data-feather="eye"
+												<a class="me-2 p-2" data-bs-toggle="modal"
+													data-bs-target="#view-units"><i data-feather="eye"
 														class="action-eye"></i></a>
-												<a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#edit-units"><i data-feather="edit"
+												<a class="me-2 p-2" data-bs-toggle="modal"
+													data-bs-target="#edit-units"><i data-feather="edit"
 														class="feather-edit"></i></a>
-														<a class="me-2 p-2" href="#" data-bs-toggle="modal"
+												<a class="me-2 p-2" href="#" data-bs-toggle="modal"
 													data-bs-target="#createpayment"><i data-feather="dollar-sign"
 														class="feather-edit"></i></a>
-												<a class="confirm-text p-2" href="javascript:void(0);"><i data-feather="trash-2"
-														class="feather-trash-2"></i></a>
+												<a class="confirm-text p-2" href="javascript:void(0);"><i
+														data-feather="trash-2" class="feather-trash-2"></i></a>
 											</div>
 										</td>
 									</tr>
@@ -297,15 +381,17 @@
 										<td>Admin</td>
 										<td class="action-table-data">
 											<div class="edit-delete-action">
-												<a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#view-units"><i data-feather="eye"
+												<a class="me-2 p-2" data-bs-toggle="modal"
+													data-bs-target="#view-units"><i data-feather="eye"
 														class="action-eye"></i></a>
-												<a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#edit-units"><i data-feather="edit"
+												<a class="me-2 p-2" data-bs-toggle="modal"
+													data-bs-target="#edit-units"><i data-feather="edit"
 														class="feather-edit"></i></a>
-														<a class="me-2 p-2" href="#" data-bs-toggle="modal"
+												<a class="me-2 p-2" href="#" data-bs-toggle="modal"
 													data-bs-target="#createpayment"><i data-feather="dollar-sign"
 														class="feather-edit"></i></a>
-												<a class="confirm-text p-2" href="javascript:void(0);"><i data-feather="trash-2"
-														class="feather-trash-2"></i></a>
+												<a class="confirm-text p-2" href="javascript:void(0);"><i
+														data-feather="trash-2" class="feather-trash-2"></i></a>
 											</div>
 										</td>
 									</tr>
@@ -322,15 +408,17 @@
 										<td>Admin</td>
 										<td class="action-table-data">
 											<div class="edit-delete-action">
-												<a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#view-units"><i data-feather="eye"
+												<a class="me-2 p-2" data-bs-toggle="modal"
+													data-bs-target="#view-units"><i data-feather="eye"
 														class="action-eye"></i></a>
-												<a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#edit-units"><i data-feather="edit"
+												<a class="me-2 p-2" data-bs-toggle="modal"
+													data-bs-target="#edit-units"><i data-feather="edit"
 														class="feather-edit"></i></a>
-														<a class="me-2 p-2" href="#" data-bs-toggle="modal"
+												<a class="me-2 p-2" href="#" data-bs-toggle="modal"
 													data-bs-target="#createpayment"><i data-feather="dollar-sign"
 														class="feather-edit"></i></a>
-												<a class="confirm-text p-2" href="javascript:void(0);"><i data-feather="trash-2"
-														class="feather-trash-2"></i></a>
+												<a class="confirm-text p-2" href="javascript:void(0);"><i
+														data-feather="trash-2" class="feather-trash-2"></i></a>
 											</div>
 										</td>
 									</tr>
@@ -347,15 +435,17 @@
 										<td>Admin</td>
 										<td class="action-table-data">
 											<div class="edit-delete-action">
-												<a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#view-units"><i data-feather="eye"
+												<a class="me-2 p-2" data-bs-toggle="modal"
+													data-bs-target="#view-units"><i data-feather="eye"
 														class="action-eye"></i></a>
-												<a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#edit-units"><i data-feather="edit"
+												<a class="me-2 p-2" data-bs-toggle="modal"
+													data-bs-target="#edit-units"><i data-feather="edit"
 														class="feather-edit"></i></a>
-														<a class="me-2 p-2" href="#" data-bs-toggle="modal"
+												<a class="me-2 p-2" href="#" data-bs-toggle="modal"
 													data-bs-target="#createpayment"><i data-feather="dollar-sign"
 														class="feather-edit"></i></a>
-												<a class="confirm-text p-2" href="javascript:void(0);"><i data-feather="trash-2"
-														class="feather-trash-2"></i></a>
+												<a class="confirm-text p-2" href="javascript:void(0);"><i
+														data-feather="trash-2" class="feather-trash-2"></i></a>
 											</div>
 										</td>
 									</tr>
@@ -372,15 +462,17 @@
 										<td>Admin</td>
 										<td class="action-table-data">
 											<div class="edit-delete-action">
-												<a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#view-units"><i data-feather="eye"
+												<a class="me-2 p-2" data-bs-toggle="modal"
+													data-bs-target="#view-units"><i data-feather="eye"
 														class="action-eye"></i></a>
-												<a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#edit-units"><i data-feather="edit"
+												<a class="me-2 p-2" data-bs-toggle="modal"
+													data-bs-target="#edit-units"><i data-feather="edit"
 														class="feather-edit"></i></a>
-														<a class="me-2 p-2" href="#" data-bs-toggle="modal"
+												<a class="me-2 p-2" href="#" data-bs-toggle="modal"
 													data-bs-target="#createpayment"><i data-feather="dollar-sign"
 														class="feather-edit"></i></a>
-												<a class="confirm-text p-2" href="javascript:void(0);"><i data-feather="trash-2"
-														class="feather-trash-2"></i></a>
+												<a class="confirm-text p-2" href="javascript:void(0);"><i
+														data-feather="trash-2" class="feather-trash-2"></i></a>
 											</div>
 										</td>
 									</tr>
@@ -397,15 +489,17 @@
 										<td>Admin</td>
 										<td class="action-table-data">
 											<div class="edit-delete-action">
-												<a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#view-units"><i data-feather="eye"
+												<a class="me-2 p-2" data-bs-toggle="modal"
+													data-bs-target="#view-units"><i data-feather="eye"
 														class="action-eye"></i></a>
-												<a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#edit-units"><i data-feather="edit"
+												<a class="me-2 p-2" data-bs-toggle="modal"
+													data-bs-target="#edit-units"><i data-feather="edit"
 														class="feather-edit"></i></a>
-														<a class="me-2 p-2" href="#" data-bs-toggle="modal"
+												<a class="me-2 p-2" href="#" data-bs-toggle="modal"
 													data-bs-target="#createpayment"><i data-feather="dollar-sign"
 														class="feather-edit"></i></a>
-												<a class="confirm-text p-2" href="javascript:void(0);"><i data-feather="trash-2"
-														class="feather-trash-2"></i></a>
+												<a class="confirm-text p-2" href="javascript:void(0);"><i
+														data-feather="trash-2" class="feather-trash-2"></i></a>
 											</div>
 										</td>
 									</tr>
@@ -422,15 +516,17 @@
 										<td>Admin</td>
 										<td class="action-table-data">
 											<div class="edit-delete-action">
-												<a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#view-units"><i data-feather="eye"
+												<a class="me-2 p-2" data-bs-toggle="modal"
+													data-bs-target="#view-units"><i data-feather="eye"
 														class="action-eye"></i></a>
-												<a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#edit-units"><i data-feather="edit"
+												<a class="me-2 p-2" data-bs-toggle="modal"
+													data-bs-target="#edit-units"><i data-feather="edit"
 														class="feather-edit"></i></a>
-														<a class="me-2 p-2" href="#" data-bs-toggle="modal"
+												<a class="me-2 p-2" href="#" data-bs-toggle="modal"
 													data-bs-target="#createpayment"><i data-feather="dollar-sign"
 														class="feather-edit"></i></a>
-												<a class="confirm-text p-2" href="javascript:void(0);"><i data-feather="trash-2"
-														class="feather-trash-2"></i></a>
+												<a class="confirm-text p-2" href="javascript:void(0);"><i
+														data-feather="trash-2" class="feather-trash-2"></i></a>
 											</div>
 										</td>
 									</tr>
@@ -439,9 +535,9 @@
 									<tr>
 										<td class="text-start fw-bold">Total</td>
 										<td colspan="4"></td>
-										<td id="amount-total" class="fw-bold sum-target" data-col-index="6">0</td>
-										<td id="paid-total" class="fw-bold sum-target" data-col-index="7">0</td>
-										<td id="due-total" class="fw-bold sum-target" data-col-index="8">0</td>
+										<td id="amount-total" class="fw-bold sum-target" data-col-index="5">0</td>
+										<td id="paid-total" class="fw-bold sum-target" data-col-index="6">0</td>
+										<td id="due-total" class="fw-bold sum-target" data-col-index="7">0</td>
 										<td colspan="3"></td>
 									</tr>
 								</tfoot>
@@ -475,31 +571,69 @@
 
 						<div class="modal-body custom-modal-body">
 							<form>
-								<div class="row mb-3">
-									<div class="col-md-7">
-										<label class="form-label">Supplier</label>
-										<div class="input-group mb-2">
-											<input type="text" class="form-control" placeholder="Search Supplier">
-										</div>
-
-										<div class="supplier-info p-3 small">
-											<strong>PT Cipta Kreasi</strong><br>
-											ciptakreasi@gmail.com<br>
-											62819 0685 5554<br>
-											Cyber 2 Tower, Lantai 29, Jalan HR Rasuna Said,<br>
-											XS No. 13, Jakarta Selatan, 12950
+								<div class="row">
+									<!-- Customer -->
+									<div class="col-lg-6 col-sm-6 col-12">
+										<div class="mb-3">
+											<div class="add-newplus">
+												<label class="form-label">Supplier<span
+														class="text-danger ms-1">*</span></label>
+												<a href="javascript:void(0);" data-bs-toggle="modal"
+													data-bs-target="#add-units-category"><i data-feather="plus-circle"
+														class="plus-down-add"></i><span>Add
+														New</span></a>
+											</div>
+											<div class="input-groupicon select-code">
+												<div class="search-container">
+													<input type="text" class="form-control customer-input"
+														placeholder="Search Supplier" data-target="data-customer">
+													<div class="search-results"></div>
+												</div>
+											</div>
 										</div>
 									</div>
 
-									<div class="col-md-5">
-										<label class="form-label">No Purchase Order</label>
-										<select class="form-select mb-2 select">
-											<option>PR-2512000001 (20/12/2025)</option>
-											<option>PR-2512000002 (18/12/2025)</option>
-											<option>PR-2512000003 (17/12/2025)</option>
-										</select>
+									<!-- Date -->
+									<div class="col-lg-6 col-sm-6 col-12">
+										<div class="mb-3">
+											<label class="form-label">
+												No Purchase Return<span class="text-danger ms-1">*</span>
+											</label>
+											<select class="select" id="no-sales-select" disabled>
+												<option value="">Select No Sales</option>
+												<option value="25110000001">PR-25110000001 - 24/12/2025</option>
+												<option value="25110000002">PR-25110000002 - 10/10/2025</option>
+												<option value="25110000003">PR-25110000003 - 9/9/2025</option>
+												<option value="25110000004">PR-25110000004 - 7/8/2025</option>
+											</select>
+										</div>
+									</div>
 
-										<!-- additional PO metadata / placeholder if needed -->
+
+								</div>
+
+								<!-- row ke 2 add sales -->
+								<div class="row d-flex align-items-center justify-content-between">
+									<!-- Customer -->
+									<div class="col-lg-6 col-sm-6 col-12">
+										<div class="mb-3" id="data-customer">
+											<strong class="name"></strong><br>
+											<small class="email"></small><br>
+											<small class="phone"></small><br>
+											<small class="address"></small>
+										</div>
+									</div>
+
+									<!-- Date -->
+									<div class="col-lg-6 col-sm-6 col-12">
+										<div class="mb-3">
+
+											<div class="input-groupicon select-code">
+												<div class="search-container">
+													<div class="search-results"></div>
+												</div>
+											</div>
+										</div>
 									</div>
 								</div>
 
@@ -517,42 +651,8 @@
 												<th style="width:40px;"></th>
 											</tr>
 										</thead>
-										<tbody>
-											<tr>
-												<td>Tinta Cemani Cyan 1 Kg</td>
-												<td class="text-center">2</td>
-												<td class="text-center">
-													<div class="product-quantity" style="width: 100% !important;">
-														<span class="quantity-btn">+<i data-feather="plus-circle" class="plus-circle"></i></span>
-														<input type="text" class="quntity-input" value="2">
-														<span class="quantity-btn"><i data-feather="minus-circle" class="feather-search"></i></span>
-													</div>
-												</td>
-												<td class="text-center">Kg</td>
-												<td class="text-end">450.000</td>
-												<td class="text-end">900.000</td>
-												<td><input type="text" class="form-control form-control-sm" placeholder=""></td>
-												<td class="text-center"><a href="javascript:void(0);" class="text-danger"><i
-															data-feather="trash-2"></i></a></td>
-											</tr>
-
-											<tr>
-												<td>Tinta Cemani Black 1 Kg</td>
-												<td class="text-center">2</td>
-												<td class="text-center">
-													<div class="product-quantity" style="width: 100% !important;">
-														<span class="quantity-btn">+<i data-feather="plus-circle" class="plus-circle"></i></span>
-														<input type="text" class="quntity-input" value="2">
-														<span class="quantity-btn"><i data-feather="minus-circle" class="feather-search"></i></span>
-													</div>
-												</td>
-												<td class="text-center">Kg</td>
-												<td class="text-end">450.000</td>
-												<td class="text-end">900.000</td>
-												<td><input type="text" class="form-control form-control-sm" placeholder=""></td>
-												<td class="text-center"><a href="javascript:void(0);" class="text-danger"><i
-															data-feather="trash-2"></i></a></td>
-											</tr>
+										<tbody id="product-table-body">
+											<!-- Products will be populated here -->
 										</tbody>
 									</table>
 								</div>
@@ -578,57 +678,58 @@
 										</div>
 
 										<div class="d-flex my-3 align-items-center justify-content-center">
-								<h5 class="fw-bold ml-5">Payment Method</h5>
-								<div class="form-check ms-3 align-items-center">
-									<input class="form-check-input" type="radio" name="radioPayment"
-										id="radioPayment1" checked
-										onclick="formTransferAdd.classList.add('d-none')">
-									<label class="form-check-label text-standard" for="radioPayment1">
-										Cash
-									</label>
-								</div>
-								<div class="form-check ms-3 align-items-center">
-									<input class="form-check-input" type="radio" name="radioPayment"
-										id="radioPayment2" onclick="formTransferAdd.classList.remove('d-none')">
-									<label class="form-check-label text-standard" for="radioPayment2">
-										Transfer
-									</label>
-								</div>
-							</div>
-							<div id="formTransferAdd" class="d-none">
-								<div class="row mb-3 d-flex justify-content-end align-items-end">
-									<div class="col-md-5">
-										<label class="form-label mt-2">Bank / Wallet</label>
-									</div>
-									<div class="col-md-6">
-										<input type="text" class="form-control" value="BCA">
-									</div>
-								</div>
-								<div class="row d-flex justify-content-end align-items-end mb-3">
-									<div class="col-md-5">
-										<label class="form-label mt-2">Account Name</label>
-									</div>
-									<div class="col-md-6">
-										<input type="text" class="form-control" value="Manan">
-									</div>
-								</div>
-								<div class="row d-flex justify-content-end align-items-end mb-3">
-									<div class="col-md-5">
-										<label class="form-label mt-2">Account Number</label>
-									</div>
-									<div class="col-md-6">
-										<input type="text" class="form-control" value="123-456-7890">
-									</div>
-								</div>
-								<div class="row d-flex justify-content-end align-items-end mb-3">
-									<div class="col-md-5">
-										<label class="form-label mt-2">Reference</label>
-									</div>
-									<div class="col-md-6">
-										<input type="text" class="form-control">
-									</div>
-								</div>
-							</div>
+											<h5 class="fw-bold ml-5">Payment Method</h5>
+											<div class="form-check ms-3 align-items-center">
+												<input class="form-check-input" type="radio" name="radioPayment"
+													id="radioPayment1" checked
+													onclick="formTransferAdd.classList.add('d-none')">
+												<label class="form-check-label text-standard" for="radioPayment1">
+													Cash
+												</label>
+											</div>
+											<div class="form-check ms-3 align-items-center">
+												<input class="form-check-input" type="radio" name="radioPayment"
+													id="radioPayment2"
+													onclick="formTransferAdd.classList.remove('d-none')">
+												<label class="form-check-label text-standard" for="radioPayment2">
+													Transfer
+												</label>
+											</div>
+										</div>
+										<div id="formTransferAdd" class="d-none">
+											<div class="row mb-3 d-flex justify-content-end align-items-end">
+												<div class="col-md-5">
+													<label class="form-label mt-2">Bank / Wallet</label>
+												</div>
+												<div class="col-md-6">
+													<input type="text" class="form-control" value="BCA">
+												</div>
+											</div>
+											<div class="row d-flex justify-content-end align-items-end mb-3">
+												<div class="col-md-5">
+													<label class="form-label mt-2">Account Name</label>
+												</div>
+												<div class="col-md-6">
+													<input type="text" class="form-control" value="Manan">
+												</div>
+											</div>
+											<div class="row d-flex justify-content-end align-items-end mb-3">
+												<div class="col-md-5">
+													<label class="form-label mt-2">Account Number</label>
+												</div>
+												<div class="col-md-6">
+													<input type="text" class="form-control" value="123-456-7890">
+												</div>
+											</div>
+											<div class="row d-flex justify-content-end align-items-end mb-3">
+												<div class="col-md-5">
+													<label class="form-label mt-2">Reference</label>
+												</div>
+												<div class="col-md-6">
+													<input type="text" class="form-control">
+												</div>
+											</div>
+										</div>
 
 										<div class="d-flex justify-content-end gap-2 mt-4">
 											<button type="button" class="btn btn-dark">Cancel</button>
@@ -649,34 +750,40 @@
 
 	<!-- View Purchase -->
 	<div class="modal fade" id="view-units">
-		<div class="modal-dialog purchase modal-dialog-centered stock-adjust-modal">
+		<div class="modal-dialog purchase modal-dialog-centered stock-adjust-modal modal-xl">
 			<div class="modal-content">
 				<div class="page-wrapper-new p-0">
-					<div class="content">
-						<div class="modal-header border-0 custom-modal-header">
+					<div class="content p-4" id="section-to-print">
+						<div class="modal-header d-flex justify-content-between align-items-start border-0">
 							<div class="flex-grow-1">
-								<div class="page-title">
-								<div class="d-flex justify-content-between">
-									<h4>View Purchase Return</h4>
-									<button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-									<span aria-hidden="true">&times;</span>
-								</button>
+								<div class="page-header mb-3">
+									<div class="d-flex justify-content-between align-items-center flex-wrap">
+										<div class="page-title modal-datail mt-2">
+											<h4 class="m-0 fw-bold">Purchase Return Detail</h4>
+										</div>
+
+									</div>
 								</div>
-								</div>
+
 								<!-- Icon action -->
 								<ul class="table-top-head d-flex gap-3 mt-2 mb-0 justify-content-end pe-4">
-									<li><a href="#" data-bs-toggle="tooltip" title="Edit" id="linkToEdit"><i data-feather="edit"
+									<li><a href="#" data-bs-toggle="modal" data-bs-target="#edit-sales-new" title="Edit"
+											id="linkToEdit"><i data-feather="edit"
 												class="action-edit sales-action"></i></a></li>
-									<li><a data-bs-toggle="tooltip" title="PDF"><img src="assets/img/icons/pdf.svg" alt="pdf"></a></li>
+									<li><a data-bs-toggle="tooltip" title="PDF"><img src="assets/img/icons/pdf.svg"
+												alt="pdf"></a></li>
 
 									</li>
-									<li><a data-bs-toggle="tooltip" title="Print"><i data-feather="printer"
-												class="feather-rotate-ccw"></i></a></li>
+									<li><a data-bs-toggle="tooltip" title="Print" id="download-pdf"><i
+												data-feather="printer" class="feather-rotate-ccw"></i></a></li>
 								</ul>
-								
 							</div>
+
+							<!-- Tombol close di kanan -->
+							<button type="button" class="btn-close ms-3 mt-1" data-bs-dismiss="modal"
+								aria-label="Close"></button>
 						</div>
-						<div class="modal-body custom-modal-body">
+						<div class="modal-body">
 							<div class="purchase-view">
 								<div class="row">
 									<div class="col-sm-6">
@@ -825,7 +932,8 @@
 									</div>
 								</div>
 
-								<div class="mb-2"><strong>No Purchase Order :</strong> <span class="fw-bold">PRT00001</span></div>
+								<div class="mb-2"><strong>No Purchase Order :</strong> <span
+										class="fw-bold">PRT00001</span></div>
 
 								<div class="table-responsive">
 									<table class="table table-bordered">
@@ -847,20 +955,24 @@
 												<td class="text-center">2</td>
 												<td class="text-center">
 													<div class="product-quantity" style="width: 100% !important;">
-														<span class="quantity-btn">+<i data-feather="plus-circle" class="plus-circle"></i></span>
+														<span class="quantity-btn">+<i data-feather="plus-circle"
+																class="plus-circle"></i></span>
 														<input type="text" class="quntity-input" value="2">
-														<span class="quantity-btn"><i data-feather="minus-circle" class="feather-search"></i></span>
+														<span class="quantity-btn"><i data-feather="minus-circle"
+																class="feather-search"></i></span>
 													</div>
 												</td>
 												<td class="text-center">Kg</td>
 												<td class="text-end">
-													<input type="text" class="form-control form-control-sm number-separator text-end"
+													<input type="text"
+														class="form-control form-control-sm number-separator text-end"
 														value="450.000" style="width:120px; margin-left:auto;">
 												</td>
 												<td class="text-end">900.000</td>
-												<td><input type="text" class="form-control form-control-sm" value="Sudah Expired"></td>
-												<td class="text-center"><a href="#" class="text-danger"><i data-feather="trash-2"
-															class="feather-trash-2"></i></a></td>
+												<td><input type="text" class="form-control form-control-sm"
+														value="Sudah Expired"></td>
+												<td class="text-center"><a href="#" class="text-danger"><i
+															data-feather="trash-2" class="feather-trash-2"></i></a></td>
 											</tr>
 
 											<tr>
@@ -868,20 +980,24 @@
 												<td class="text-center">2</td>
 												<td class="text-center">
 													<div class="product-quantity" style="width: 100% !important;">
-														<span class="quantity-btn">+<i data-feather="plus-circle" class="plus-circle"></i></span>
+														<span class="quantity-btn">+<i data-feather="plus-circle"
+																class="plus-circle"></i></span>
 														<input type="text" class="quntity-input" value="2">
-														<span class="quantity-btn"><i data-feather="minus-circle" class="feather-search"></i></span>
+														<span class="quantity-btn"><i data-feather="minus-circle"
+																class="feather-search"></i></span>
 													</div>
 												</td>
 												<td class="text-center">Kg</td>
 												<td class="text-end">
-													<input type="text" class="form-control form-control-sm number-separator text-end"
+													<input type="text"
+														class="form-control form-control-sm number-separator text-end"
 														value="450.000" style="width:120px; margin-left:auto;">
 												</td>
 												<td class="text-end">900.000</td>
-												<td><input type="text" class="form-control form-control-sm" value="Salah Ukuran"></td>
-												<td class="text-center"><a href="#" class="text-danger"><i data-feather="trash-2"
-															class="feather-trash-2"></i></a></td>
+												<td><input type="text" class="form-control form-control-sm"
+														value="Salah Ukuran"></td>
+												<td class="text-center"><a href="#" class="text-danger"><i
+															data-feather="trash-2" class="feather-trash-2"></i></a></td>
 											</tr>
 										</tbody>
 									</table>
@@ -924,108 +1040,98 @@
 	<!-- /Edit Purchase -->
 	<!-- /modals -->
 
-	 <!-- Modal Payment-IN -->
-<div class="modal fade modal-default" id="createpayment" tabindex="-1">
-	<div class="modal-dialog modal-dialog-centered modal-lg">
-		<div class="modal-content">
-			<div class="modal-header">
-				<h5 class="modal-title">Payment-IN</h5>
-				<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-			</div>
+	<!-- Modal Payment-IN -->
+	<div class="modal fade modal-default" id="createpayment" tabindex="-1">
+		<div class="modal-dialog modal-dialog-centered modal-lg">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title">Payment-IN</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+				</div>
 
-			<form action="pos-4.html" method="post">
-				<div class="modal-body pb-1">
+				<form action="pos-4.html" method="post">
+					<div class="modal-body pb-1">
 
-					<!-- Payment Type -->
-					<div class="mb-3">
-						<label class="form-label">Payment-IN Type <span class="text-danger">*</span></label>
-						<div class="d-flex gap-4">
-							<div class="form-check">
-								<input class="form-check-input payment-type"
-									type="radio" name="payment_type"
+						<!-- Payment Type -->
+						<div class="mb-3 d-flex">
+							<label class="form-label">Payment-IN Type</label>
+							<div class="form-check ms-3 align-items-center">
+								<input class="form-check-input payment-type" type="radio" name="payment_type"
 									id="paymentCash" value="cash" checked>
 								<label class="form-check-label" for="paymentCash">
 									Cash
 								</label>
 							</div>
-							<div class="form-check">
-								<input class="form-check-input payment-type"
-									type="radio" name="payment_type"
+							<div class="form-check ms-3 align-items-center">
+								<input class="form-check-input payment-type" type="radio" name="payment_type"
 									id="paymentTransfer" value="transfer">
 								<label class="form-check-label" for="paymentTransfer">
 									Transfer
 								</label>
 							</div>
 						</div>
-					</div>
 
-					<!-- Paying Amount -->
-					<div class="mb-3">
-						<label class="form-label">Paying Amount <span class="text-danger">*</span></label>
-						<div class="input-icon-start position-relative">
-							<span class="input-icon-addon text-gray-9">
-								<i class="ti ti-currency-dollar"></i>
-							</span>
-							<input type="text" class="form-control number-separator"
-								inputmode="numeric" pattern="[0-9]*" value="1800">
-							<input type="hidden" id="paying-amount" value="1800">
-						</div>
-					</div>
-
-					<!-- Transfer Form -->
-					<div id="formTransferOut" class="d-none">
+						<!-- Paying Amount -->
 						<div class="mb-3">
-							<label class="form-label">Bank Account <span class="text-danger">*</span></label>
-							<select class="form-select">
-								<option value="">-- Select Bank Account --</option>
-								<option value="1234567">1234567 - BCA</option>
-								<option value="9876543">9876543 - Mandiri</option>
-								<option value="4567890">4567890 - BRI</option>
-							</select>
+							<label class="form-label">Paying Amount <span class="text-danger">*</span></label>
+							<div class="input-icon-start position-relative">
+								<span class="input-icon-addon text-gray-9">
+									<i class="ti ti-currency-dollar"></i>
+								</span>
+								<input type="text" class="form-control number-separator" inputmode="numeric"
+									pattern="[0-9]*" value="1800">
+								<input type="hidden" id="paying-amount" value="1800">
+							</div>
 						</div>
 
+						<!-- Transfer Form -->
+						<div id="formTransferOut" class="d-none">
+							<div class="mb-3">
+								<label class="form-label">Bank Account <span class="text-danger">*</span></label>
+								<select class="form-select select">
+									<option>Cipta Kreasi PT/Bank BRI/1320009982282</option>
+									<option>Dulank Semesta Cida PT/Bank BCA/109-2993242</option>
+								</select>
+							</div>
+
+							<div class="mb-3">
+								<label class="form-label">Reference</label>
+								<input type="text" class="form-control" placeholder="Transaction reference">
+							</div>
+						</div>
+
+						<!-- Total Due -->
 						<div class="mb-3">
-							<label class="form-label">Reference</label>
-							<input type="text" class="form-control"
-								placeholder="Transaction reference">
+							<label class="form-label">
+								Total Due (<a href="#">D-423827</a>)
+							</label>
+							<input type="text" class="form-control number-separator no-border bg-light" value="1800"
+								disabled>
+							<input type="hidden" id="total-due" value="1800">
 						</div>
+
+						<!-- Notes -->
+						<div class="mb-3">
+							<label class="form-label">Notes</label>
+							<div class="product-desc border rounded p-2" contenteditable="true"
+								data-placeholder="Enter note here....." style="min-height: 38px;"></div>
+						</div>
+
 					</div>
 
-					<!-- Total Due -->
-					<div class="mb-3">
-						<label class="form-label">
-							Total Due (<a href="#">D-423827</a>)
-						</label>
-						<input type="text"
-							class="form-control number-separator no-border bg-light"
-							value="1800" disabled>
-						<input type="hidden" id="total-due" value="1800">
+					<div class="modal-footer d-flex justify-content-end gap-2">
+						<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+							Cancel
+						</button>
+						<button type="submit" class="btn btn-primary">
+							Submit
+						</button>
 					</div>
+				</form>
 
-					<!-- Notes -->
-					<div class="mb-3">
-						<label class="form-label">Notes</label>
-						<div class="product-desc border rounded p-2"
-							contenteditable="true"
-							data-placeholder="Enter note here....."
-							style="min-height: 38px;"></div>
-					</div>
-
-				</div>
-
-				<div class="modal-footer d-flex justify-content-end gap-2">
-					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-						Cancel
-					</button>
-					<button type="submit" class="btn btn-primary">
-						Submit
-					</button>
-				</div>
-			</form>
-
+			</div>
 		</div>
 	</div>
-</div>
 	<!-- payment -->
 
 	<!-- jQuery -->
@@ -1067,18 +1173,117 @@
 	<!-- Custom JS -->
 	<script src="assets/js/theme-script.js"></script>
 	<script src="assets/js/script.js"></script>
+	<script>
+		document.getElementById('download-pdf').addEventListener('click', function (e) {
+			e.preventDefault();
+
+			window.print()
+		});
+	</script>
 
 	<script>
 		document.querySelectorAll('.payment-type').forEach(function (radio) {
-		radio.addEventListener('change', function () {
-			const transferForm = document.getElementById('formTransferOut');
-			if (this.value === 'transfer') {
-				transferForm.classList.remove('d-none');
+			radio.addEventListener('change', function () {
+				const transferForm = document.getElementById('formTransferOut');
+				if (this.value === 'transfer') {
+					transferForm.classList.remove('d-none');
+				} else {
+					transferForm.classList.add('d-none');
+				}
+			});
+		});
+	</script>
+
+	<script>
+		// Data dummy untuk produk berdasarkan No Purchase
+		const purchaseProducts = {
+			'25110000001': [
+				{ name: 'Tinta Cemani Cyan 1 Kg', qty: 2, unit: 'Kg', price: '450.000', amount: '900.000' },
+				{ name: 'Tinta Cemani Black 1 Kg', qty: 2, unit: 'Kg', price: '450.000', amount: '900.000' }
+			],
+			'25110000002': [
+				{ name: 'Kertas Art Paper 150gr', qty: 1, unit: 'Ream', price: '600.000', amount: '600.000' }
+			],
+			'25110000003': [
+				{ name: 'Tinta Neotex 1Kg Cyan', qty: 1, unit: 'Kg', price: '500.000', amount: '500.000' }
+			],
+			'25110000004': [
+				{ name: 'Mesin Cetak Offset', qty: 1, unit: 'Unit', price: '5.000.000', amount: '5.000.000' }
+			]
+		};
+
+		// Function to populate products
+		function populateProducts(products) {
+			const tbody = document.getElementById('product-table-body');
+			tbody.innerHTML = '';
+			products.forEach(product => {
+				const row = `
+					<tr>
+						<td>${product.name}</td>
+						<td class="text-center">${product.qty}</td>
+						<td class="text-center">
+							<div class="product-quantity" style="width: 100% !important;">
+								<span class="quantity-btn">+<i data-feather="plus-circle" class="plus-circle"></i></span>
+								<input type="text" class="quntity-input" value="${product.qty}">
+								<span class="quantity-btn"><i data-feather="minus-circle" class="feather-search"></i></span>
+							</div>
+						</td>
+						<td class="text-center">${product.unit}</td>
+						<td class="text-end">${product.price}</td>
+						<td class="text-end">${product.amount}</td>
+						<td><input type="text" class="form-control form-control-sm" placeholder=""></td>
+						<td class="text-center"><a href="javascript:void(0);" class="text-danger"><i data-feather="trash-2"></i></a></td>
+					</tr>
+				`;
+				tbody.insertAdjacentHTML('beforeend', row);
+			});
+			// Reinitialize feather icons if needed
+			if (typeof feather !== 'undefined') {
+				feather.replace();
+			}
+		}
+
+		// Reset modal when opened
+		document.getElementById('add-units').addEventListener('show.bs.modal', function () {
+			document.querySelector('.customer-input').value = '';
+			document.getElementById('data-customer').innerHTML = '<strong class="name"></strong><br><small class="email"></small><br><small class="phone"></small><br><small class="address"></small>';
+			document.getElementById('no-sales-select').disabled = true;
+			document.getElementById('no-sales-select').value = '';
+			document.getElementById('product-table-body').innerHTML = '';
+		});
+
+		// Observe changes in data-customer
+		const dataCustomer = document.getElementById('data-customer');
+		const observer = new MutationObserver(function (mutations) {
+			mutations.forEach(function (mutation) {
+				if (mutation.type === 'childList' || mutation.type === 'characterData') {
+					const name = dataCustomer.querySelector('.name').textContent.trim();
+					const noSalesSelect = document.getElementById('no-sales-select');
+					if (name) {
+						noSalesSelect.disabled = false;
+						// Reinitialize Select2 if needed
+						if ($.fn.select2) {
+							$('#no-sales-select').select2();
+						}
+					} else {
+						noSalesSelect.disabled = true;
+						noSalesSelect.value = '';
+						document.getElementById('product-table-body').innerHTML = '';
+					}
+				}
+			});
+		});
+		observer.observe(dataCustomer, { childList: true, subtree: true, characterData: true });
+
+		// Event listener for No Purchase Return selection using jQuery
+		$(document).on('change', '#no-sales-select', function () {
+			const selectedValue = $(this).val();
+			if (selectedValue && purchaseProducts[selectedValue]) {
+				populateProducts(purchaseProducts[selectedValue]);
 			} else {
-				transferForm.classList.add('d-none');
+				document.getElementById('product-table-body').innerHTML = '';
 			}
 		});
-	});
 	</script>
 
 </body>

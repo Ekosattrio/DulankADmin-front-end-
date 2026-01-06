@@ -40,9 +40,8 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <style>
         .table-responsive {
-    overflow: visible !important; 
-}
-
+            overflow: visible !important;
+        }
     </style>
 
 </head>
@@ -61,44 +60,49 @@
 
         <div class="page-wrapper mt-1">
             <!-- Main content tulis disini -->
-            <div class="content">
+            <div class="content my-4">
 
-                <div class="page-header mt-5">
+                <div class="page-header">
                     <div class="add-item d-flex">
                         <div class="page-title">
                             <h4>Add Purchase</h4>
+
                         </div>
                     </div>
+                    <ul class="table-top-head">
+                        <li>
+                            <div class="page-btn">
+                                <a href="purchase.html" class="btn btn-secondary"><i data-feather="arrow-left"
+                                        class="me-2"></i>Back to Purchase List</a>
+                            </div>
+                        </li>
+                        <li>
+                            <a data-bs-toggle="tooltip" data-bs-placement="top" title="Collapse" id="collapse-header"><i
+                                    data-feather="chevron-up" class="feather-chevron-up"></i></a>
+                        </li>
+                    </ul>
                 </div>
-                <div class="card border-0 shadow p-5">
+                <div class="card border-0 shadow p-4">
                     <div class="card-body pb-0">
                         <div class="row">
                             <div class="col-lg-6 col-sm-6 col-12">
-                                <div class="mb-3">
-                                    <div class="add-newplus">
-                                        <label class="form-label">Customer<span
-                                                class="text-danger ms-1">*</span></label>
-                                        <a href="javascript:void(0);" data-bs-toggle="modal"
-                                            data-bs-target="#add-units-category"><i data-feather="plus-circle"
-                                                class="plus-down-add"></i><span>Add
-                                                New</span></a>
-                                    </div>
+                                <div class="my-3">
+                                    <label class="form-label">Supplier:</label>
                                     <div class="input-groupicon select-code">
                                         <div class="search-container">
-                                            <input type="text" class="form-control customer-input"
-                                                placeholder="Search Customer">
-                                            <div class="search-results"></div>
+                                            <input type="text" class="form-control company-input"
+                                                placeholder="Search" data-target="data-company">
+                                            <div class="search-results" onchange="console.log('masuk')"
+                                                id="add"></div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-6 col-sm-6 col-12">
-                                    <div class="mb-0">
-                                        <strong>PT Cipta Kreasi</strong><br>
-                                        <small>ciptakreasi@gmail.com</small><br>
-                                        <small>6218 9 6855 554</small><br>
-                                        <small>Cyber 2 Tower, Lantai 29, Jalan HR Rasuna Said,<br> X5 No.13, Jakarta
-                                            Selatan, 12950</small>
-                                    </div>
+
+                                <div class="mb-3" id="data-company">
+                                    <strong class="name"></strong><br>
+                                    <small class="email"></small><br>
+                                    <small class="phone"></small><br>
+                                    <small class="address"></small>
                                 </div>
                             </div>
                             <div class="col-lg-6 col-sm-6 col-12">
@@ -125,49 +129,28 @@
 
 
                         </div>
-                        <div class="row mt-3">
-                            <div class="col-lg-6 col-sm-6 col-12">
-                                <div class="mb-3">
-                                    <div class="add-newplus">
-                                        <label class="form-label">Customer<span
-                                                class="text-danger ms-1">*</span></label>
-                                        <a href="javascript:void(0);" data-bs-toggle="modal"
-                                            data-bs-target="#add-units-category"><i data-feather="plus-circle"
-                                                class="plus-down-add"></i><span>Add
-                                                New</span></a>
-                                    </div>
-                                    <div class="input-groupicon select-code">
-                                        <div class="search-container">
-                                            <input type="text" class="form-control customer-input"
-                                                placeholder="Search Customer">
-                                            <div class="search-results"></div>
-                                        </div>
-                                    </div>
-                                </div>
+                        <div class="table-responsive mt-2">
+                            <table class="table table-bordered align-middle" style="border-color:#ccc;">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th style="width:40%;">Product Name</th>
+                                        <th>Qty</th>
+                                        <th>Unit</th>
+                                        <th style="width: 150px;">Price (IDR)</th>
+                                        <th>Amount (IDR)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                </tbody>
+                            </table>
+                            <div class="inline-block mb-4">
+                                <a href="javascript:void(0);" class="btnAddNewProduct mt-3 d-inline-block">
+                                    <i data-feather="plus-circle" class="plus-down-add text-primary"></i>
+                                    <span class="text-primary">add New blank</span>
+                                </a>
                             </div>
                         </div>
-                       <div class="table-responsive mt-2">
-    <table class="table table-bordered align-middle" style="border-color:#ccc;">
-        <thead class="table-light">
-            <tr>
-                <th style="width:40%;">Product Name</th>
-                <th>Qty</th>
-                <th>Unit</th>
-                <th style="width: 150px;">Price (IDR)</th>
-                <th>Amount (IDR)</th>
-            </tr>
-        </thead>
-        <tbody>
-           
-        </tbody>
-    </table>
-    <div class="inline-block mb-4">
-        <a href="javascript:void(0);" class="btnAddNewProduct mt-3 d-inline-block">
-            <i data-feather="plus-circle" class="plus-down-add text-primary"></i>
-            <span class="text-primary">add New blank</span>
-        </a>
-    </div>
-</div>
                         <div class="row mt-3">
                             <div class="col-4">
                                 <div class="input-blocks align-items-center">
@@ -203,10 +186,10 @@
                                 </div>
                             </div>
                         </div>
-                       
+
                     </div>
                 </div>
-<div class="modal-footer my-5 justify-content-end">
+                <div class="modal-footer my-5 justify-content-end">
 
                     <div>
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
@@ -264,7 +247,7 @@
     <script src="assets/js/easy-number-separator.js"></script>
 
     <!-- Live Search -->
-    <script src="assets/js/liveSearch.js"></script>
+    <script src="assets/js/liveSearch-company.js"></script>
 
     <!-- Custom JS -->
     <script src="assets/js/theme-script.js"></script>
@@ -285,46 +268,46 @@
         });
 
     </script>
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-    const masterProducts = [
-        { name: "Tinta Neotex 1Kg Cyan", price: "450.000", desc: "Tinta Pigment High Quality" },
-        { name: "Kertas Art Paper A4", price: "85.000", desc: "150gr, Glossy" },
-        { name: "Sticker Vinyl Putih", price: "120.000", desc: "Waterproof" }
-    ];
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const masterProducts = [
+                { name: "Tinta Neotex 1Kg Cyan", price: "450.000", desc: "Tinta Pigment High Quality" },
+                { name: "Kertas Art Paper A4", price: "85.000", desc: "150gr, Glossy" },
+                { name: "Sticker Vinyl Putih", price: "120.000", desc: "Waterproof" }
+            ];
 
-    function clean(num) {
-        if (!num) return 0;
-        return parseInt(String(num).replace(/[^\d]/g, "")) || 0;
-    }
+            function clean(num) {
+                if (!num) return 0;
+                return parseInt(String(num).replace(/[^\d]/g, "")) || 0;
+            }
 
-    function format(num) {
-        if (!num || num === 0) return "0";
-        return String(num).replace(/\D/g, "").replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-    }
+            function format(num) {
+                if (!num || num === 0) return "0";
+                return String(num).replace(/\D/g, "").replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+            }
 
-    function recalc(row) {
-        const qtyEl = row.querySelector(".quntity-input");
-        const priceEl = row.querySelector(".price-input");
-        const amountEl = row.querySelector(".amount-text");
+            function recalc(row) {
+                const qtyEl = row.querySelector(".quntity-input");
+                const priceEl = row.querySelector(".price-input");
+                const amountEl = row.querySelector(".amount-text");
 
-        if (!qtyEl || !priceEl || !amountEl) return;
+                if (!qtyEl || !priceEl || !amountEl) return;
 
-        const qty = parseInt(qtyEl.value || "0") || 0;
-        const price = clean(priceEl.value || "0");
-        const total = qty * price;
-        
-        amountEl.innerText = format(total);
+                const qty = parseInt(qtyEl.value || "0") || 0;
+                const price = clean(priceEl.value || "0");
+                const total = qty * price;
 
-        const modal = row.closest('.modal');
-        if (modal) {
-            const btnApply = modal.querySelector('button[onclick*="applyVoucher"]');
-            if (btnApply && typeof applyVoucher === "function") applyVoucher(null, btnApply);
-        }
-    }
+                amountEl.innerText = format(total);
 
-    function generateTableTR() {
-        return `
+                const modal = row.closest('.modal');
+                if (modal) {
+                    const btnApply = modal.querySelector('button[onclick*="applyVoucher"]');
+                    if (btnApply && typeof applyVoucher === "function") applyVoucher(null, btnApply);
+                }
+            }
+
+            function generateTableTR() {
+                return `
         <tr class="product-item">
             <td>
                 <div class="product-search-container position-relative">
@@ -350,99 +333,99 @@
                 <a href="javascript:void(0);" class="delete-row text-danger ms-2"><i data-feather="trash-2" style="width:14px;"></i></a>
             </td>
         </tr>`;
-    }
-
-    document.addEventListener("click", function (ev) {
-        const target = ev.target;
-
-        // 1. ADD NEW BLANK
-        const btnAdd = target.closest(".btnAddNewProduct");
-        if (btnAdd) {
-            ev.preventDefault();
-            const container = btnAdd.closest('.table-responsive').querySelector("tbody");
-            if (container) {
-                container.insertAdjacentHTML('beforeend', generateTableTR());
-                if (window.feather) feather.replace();
             }
-            return;
-        }
 
-        // 2. DELETE ROW
-        const btnDel = target.closest(".delete-row");
-        if (btnDel) {
-            btnDel.closest("tr").remove();
-            return;
-        }
+            document.addEventListener("click", function (ev) {
+                const target = ev.target;
 
-        // 3. PILIH PRODUK HASIL SEARCH (FIXED: TUTUP DROPDOWN)
-        const resItem = target.closest(".product-item-result");
-        if (resItem) {
-            const row = resItem.closest("tr");
-            const resBox = resItem.parentElement; // Container dropdownnya
+                // 1. ADD NEW BLANK
+                const btnAdd = target.closest(".btnAddNewProduct");
+                if (btnAdd) {
+                    ev.preventDefault();
+                    const container = btnAdd.closest('.table-responsive').querySelector("tbody");
+                    if (container) {
+                        container.insertAdjacentHTML('beforeend', generateTableTR());
+                        if (window.feather) feather.replace();
+                    }
+                    return;
+                }
 
-            row.querySelector(".product-search-input").value = resItem.dataset.name;
-            row.querySelector(".price-input").value = resItem.dataset.price;
-            
-            // Tutup dropdown
-            resBox.classList.remove("show");
-            resBox.style.display = "none"; // Paksa tutup biar nggak nge-glitch
+                // 2. DELETE ROW
+                const btnDel = target.closest(".delete-row");
+                if (btnDel) {
+                    btnDel.closest("tr").remove();
+                    return;
+                }
 
-            recalc(row);
-            return;
-        }
+                // 3. PILIH PRODUK HASIL SEARCH (FIXED: TUTUP DROPDOWN)
+                const resItem = target.closest(".product-item-result");
+                if (resItem) {
+                    const row = resItem.closest("tr");
+                    const resBox = resItem.parentElement; // Container dropdownnya
 
-        // 4. PLUS MINUS
-        const qtyBtn = target.closest(".plus-btn, .minus-btn");
-        if (qtyBtn) {
-            const row = qtyBtn.closest("tr");
-            const input = row.querySelector(".quntity-input");
-            let val = parseInt(input.value) || 1;
-            input.value = qtyBtn.classList.contains("plus-btn") ? val + 1 : (val > 1 ? val - 1 : 1);
-            recalc(row);
-            return;
-        }
+                    row.querySelector(".product-search-input").value = resItem.dataset.name;
+                    row.querySelector(".price-input").value = resItem.dataset.price;
 
-        // KLIK LUAR UNTUK TUTUP
-        if (!target.closest(".product-search-container")) {
-            document.querySelectorAll(".product-search-results").forEach(box => {
-                box.classList.remove("show");
-                box.style.display = "none";
+                    // Tutup dropdown
+                    resBox.classList.remove("show");
+                    resBox.style.display = "none"; // Paksa tutup biar nggak nge-glitch
+
+                    recalc(row);
+                    return;
+                }
+
+                // 4. PLUS MINUS
+                const qtyBtn = target.closest(".plus-btn, .minus-btn");
+                if (qtyBtn) {
+                    const row = qtyBtn.closest("tr");
+                    const input = row.querySelector(".quntity-input");
+                    let val = parseInt(input.value) || 1;
+                    input.value = qtyBtn.classList.contains("plus-btn") ? val + 1 : (val > 1 ? val - 1 : 1);
+                    recalc(row);
+                    return;
+                }
+
+                // KLIK LUAR UNTUK TUTUP
+                if (!target.closest(".product-search-container")) {
+                    document.querySelectorAll(".product-search-results").forEach(box => {
+                        box.classList.remove("show");
+                        box.style.display = "none";
+                    });
+                }
             });
-        }
-    });
 
-    document.addEventListener("input", function (e) {
-        const target = e.target;
-        const row = target.closest("tr");
-        if (!row) return;
+            document.addEventListener("input", function (e) {
+                const target = e.target;
+                const row = target.closest("tr");
+                if (!row) return;
 
-        // AUTOCOMPLETE SEARCH
-        if (target.classList.contains("product-search-input")) {
-            const resBox = target.nextElementSibling;
-            const val = target.value.toLowerCase();
-            if (val.length >= 3) {
-                const matched = masterProducts.filter(p => p.name.toLowerCase().includes(val));
-                resBox.innerHTML = matched.map(p => `
+                // AUTOCOMPLETE SEARCH
+                if (target.classList.contains("product-search-input")) {
+                    const resBox = target.nextElementSibling;
+                    const val = target.value.toLowerCase();
+                    if (val.length >= 3) {
+                        const matched = masterProducts.filter(p => p.name.toLowerCase().includes(val));
+                        resBox.innerHTML = matched.map(p => `
                     <div class="product-item-result p-2" data-name="${p.name}" data-price="${p.price}" data-desc="${p.desc}" style="cursor:pointer; border-bottom:1px solid #eee;">
                         <strong>${p.name}</strong><br><small>Rp ${p.price}</small>
                     </div>
                 `).join("") || '<div class="p-2 text-muted">No result</div>';
-                
-                resBox.classList.add("show");
-                resBox.style.display = "block"; // Tampilkan eksplisit
-            } else {
-                resBox.classList.remove("show");
-                resBox.style.display = "none";
-            }
-        }
 
-        if (target.classList.contains("price-input") || target.classList.contains("quntity-input")) {
-            if (target.classList.contains("price-input")) target.value = format(target.value);
-            recalc(row);
-        }
-    });
-});
-</script>
+                        resBox.classList.add("show");
+                        resBox.style.display = "block"; // Tampilkan eksplisit
+                    } else {
+                        resBox.classList.remove("show");
+                        resBox.style.display = "none";
+                    }
+                }
+
+                if (target.classList.contains("price-input") || target.classList.contains("quntity-input")) {
+                    if (target.classList.contains("price-input")) target.value = format(target.value);
+                    recalc(row);
+                }
+            });
+        });
+    </script>
 
 
 </body>

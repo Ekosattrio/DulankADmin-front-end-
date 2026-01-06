@@ -93,7 +93,7 @@ document.addEventListener('DOMContentLoaded', function () {
 										<div class="select-options" id="shippingSelectOptions">
 											${shippingAddresses.map(a => `<div class="select-option" data-value="${a.id}">
 												<strong>${a.name}</strong>
-												${stripHtml(a.addressHtml).replace(/, /g, ',<br>')}
+												${stripHtml(a.addressHtml)}
 											</div>`).join('')}
 										</div>
 									</div>
@@ -173,9 +173,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
         function renderPickup(address) {
             return `
-										<div id="pickup-method-address">
-											<span class="fw-semibold text-dark">${address.name} <span class="text-dark">${address.phone}</span></span>
-											<div class="mt-1 mb-2 text-color text-standard pickup-list-value">
+										<div class="pickup-address">
+											<div class="align-items-center">
+												<span class="fw-semibold text-dark">${address.name}</span>
+												<span class="text-secondary ms-2">${address.phone}</span>
+											</div>
+											<div class="text-standard text-dark small mt-1">
 												${address.addressHtml}
 											</div>
 										</div>
@@ -249,7 +252,7 @@ document.addEventListener('DOMContentLoaded', function () {
 })();
 // Ensure any legacy id="pickup-method-address" is converted to a class to avoid duplicate IDs
 document.addEventListener('DOMContentLoaded', function () {
-    document.querySelectorAll('#pickup-method-address').forEach(el => { el.classList.add('pickup-method-address'); el.removeAttribute('id'); });
+    // Removed legacy conversion as HTML now uses classes directly
 });
 document.addEventListener('DOMContentLoaded', function () {
     const modalAddSales = document.getElementById('add-sels');

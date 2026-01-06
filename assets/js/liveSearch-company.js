@@ -52,39 +52,61 @@ fetch("/assets/json/company.json")
                             const btn = shippingEl.querySelector('.shipping-change-address');
                             if (btn) {
                                 btn.addEventListener('click', function () {
-                                    let opts = (window.shippingAddresses || []).map(a => `<option value="${a.id}">${a.name} — ${a.addressHtml.replace(/<br\s*\/?\>/gi, ' ').slice(0, 90)}</option>`).join('');
+                                    let opts = (window.shippingAddresses || []).map(a => `<div class="select-option" data-value="${a.id}">
+                                        <strong>${a.name}</strong>
+                                        ${a.addressHtml.replace(/<br\s*\/?\>/gi, ' ').replace(/, /g, ',<br>')}
+                                    </div>`).join('');
                                     shippingEl.innerHTML = `
-                                        <div class="mb-2">
-                                            <select class="form-select select shipping-select">
-                                                <option value="">-- Pilih alamat --</option>
+                                        <div class="select-wrapper">
+                                            <div class="select-display" id="liveSearchSelectDisplay">
+                                                <span>-- Pilih alamat --</span>
+                                                <div class="select-arrow"></div>
+                                            </div>
+                                            <div class="select-options" id="liveSearchSelectOptions">
                                                 ${opts}
-                                            </select>
+                                            </div>
                                         </div>
-                                        <div class="d-flex justify-content-end">
+                                        <div class="d-flex justify-content-end mt-2">
                                             <button class="btn btn-secondary me-2 shipping-cancel">Batal</button>
                                         </div>
                                     `;
-                                    const sel = shippingEl.querySelector('.shipping-select');
+                                    const selectWrapper = shippingEl.querySelector('.select-wrapper');
+                                    const selectDisplay = shippingEl.querySelector('#liveSearchSelectDisplay');
+                                    const selectOptions = shippingEl.querySelector('#liveSearchSelectOptions');
                                     const cancelBtn = shippingEl.querySelector('.shipping-cancel');
-                                    sel.addEventListener('change', function () {
-                                        const id = parseInt(this.value);
-                                        const addr = (window.shippingAddresses || []).find(a => a.id === id);
-                                        if (addr) {
-                                            shippingEl.innerHTML = `
-                                                <div class="shipping-address">
-                                                    <div class="align-items-center">
-                                                        <span class="fw-semibold text-dark">${addr.name}</span>
-                                                        <span class="text-secondary ms-2">${addr.phone}</span>
-                                                        <span class="badge my-bg-primary text-white align-middle ms-2">${addr.tag}</span>
+
+                                    selectDisplay.addEventListener("click", () => {
+                                        selectWrapper.classList.toggle('open');
+                                    });
+
+                                    selectOptions.querySelectorAll(".select-option").forEach(option => {
+                                        option.addEventListener("click", () => {
+                                            const id = parseInt(option.dataset.value);
+                                            const addr = (window.shippingAddresses || []).find(a => a.id === id);
+                                            if (addr) {
+                                                shippingEl.innerHTML = `
+                                                    <div class="shipping-address">
+                                                        <div class="align-items-center">
+                                                            <span class="fw-semibold text-dark">${addr.name}</span>
+                                                            <span class="text-secondary ms-2">${addr.phone}</span>
+                                                            <span class="badge my-bg-primary text-white align-middle ms-2">${addr.tag}</span>
+                                                        </div>
+                                                        <div class="text-standard text-dark small mt-1">
+                                                            ${addr.addressHtml}
+                                                        </div>
                                                     </div>
-                                                    <div class="text-standard text-dark small mt-1">
-                                                        ${addr.addressHtml}
-                                                    </div>
-                                                </div>
-                                                <button class="btn my-btn-outline-primary float-end mb-2 shipping-change-address">Ubah Alamat</button>
-                                            `;
+                                                    <button class="btn my-btn-outline-primary float-end mb-2 shipping-change-address">Ubah Alamat</button>
+                                                `;
+                                            }
+                                        });
+                                    });
+
+                                    document.addEventListener("click", (e) => {
+                                        if (!e.target.closest(".select-wrapper")) {
+                                            selectWrapper.classList.remove('open');
                                         }
                                     });
+
                                     cancelBtn.addEventListener('click', function () {
                                         shippingEl.innerHTML = `<div class="no-address text-muted small mt-1">Pilih customer untuk menampilkan alamat</div>`;
                                     });

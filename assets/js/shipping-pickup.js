@@ -85,29 +85,50 @@ document.addEventListener('DOMContentLoaded', function () {
 
         function openSelect() {
             let html = `
-									<div class="mb-2">
-										<select id="shipping-select" class="form-select select">
-											<option value="">-- Pilih alamat --</option>
-											${shippingAddresses.map(a => `<option value="${a.id}">${a.name} — ${stripHtml(a.addressHtml).slice(0, 90)}</option>`).join('')}
-										</select>
+									<div class="select-wrapper">
+										<div class="select-display" id="shippingSelectDisplay">
+											<span>-- Pilih alamat shipping --</span>
+											<div class="select-arrow"></div>
+										</div>
+										<div class="select-options" id="shippingSelectOptions">
+											${shippingAddresses.map(a => `<div class="select-option" data-value="${a.id}">
+												<strong>${a.name}</strong>
+												${stripHtml(a.addressHtml).replace(/, /g, ',<br>')}
+											</div>`).join('')}
+										</div>
 									</div>
-									<div class="d-flex justify-content-end">
+									<div class="d-flex justify-content-end mt-2">
 										<button class="btn btn-secondary me-2" id="shipping-cancel">Batal</button>
 									</div>
 								`;
             shippingMethodEl.innerHTML = html;
 
-            const sel = shippingMethodEl.querySelector('#shipping-select');
-            const cancelBtn = shippingMethodEl.querySelector('#shipping-cancel');
+            const selectWrapper = shippingMethodEl.querySelector('.select-wrapper');
+            const selectDisplay = shippingMethodEl.querySelector('#shippingSelectDisplay');
+            const selectOptions = shippingMethodEl.querySelector('#shippingSelectOptions');
 
-            sel.addEventListener('change', function () {
-                const id = parseInt(this.value);
-                const addr = shippingAddresses.find(a => a.id === id);
-                if (addr) {
-                    shippingMethodEl.innerHTML = renderShipping(addr);
-                    attach();
+            selectDisplay.addEventListener("click", () => {
+                selectWrapper.classList.toggle('open');
+            });
+
+            selectOptions.querySelectorAll(".select-option").forEach(option => {
+                option.addEventListener("click", () => {
+                    const id = parseInt(option.dataset.value);
+                    const addr = shippingAddresses.find(a => a.id === id);
+                    if (addr) {
+                        shippingMethodEl.innerHTML = renderShipping(addr);
+                        attach();
+                    }
+                });
+            });
+
+            document.addEventListener("click", (e) => {
+                if (!e.target.closest(".select-wrapper")) {
+                    selectWrapper.classList.remove('open');
                 }
             });
+
+            const cancelBtn = shippingMethodEl.querySelector('#shipping-cancel');
 
             cancelBtn.addEventListener('click', function () {
                 shippingMethodEl.innerHTML = originalHTML;
@@ -131,16 +152,14 @@ document.addEventListener('DOMContentLoaded', function () {
             id: 1,
             name: 'Dulank Pickup 1',
             phone: '(081906855554)',
-            addressHtml: `Toko Kelontong Depan Desa Teluk Jambe<br />
-										515 Sarah Shore Suite 828, Port Kennethstad, Iowa, TH,<br />
-										KAB. KARAWANG - TELUK JAMBE TIMUR, JAWA BARAT, ID 41360`
+            addressHtml: `Toko Kelontong Depan Desa Teluk Jambe 515 Sarah Shore Suite 828, Port Kennethstad, Iowa, TH, KAB. KARAWANG - TELUK JAMBE TIMUR, JAWA BARAT, ID 41360`
         },
         {
             id: 2,
             name: 'Dulank Pickup 2',
             phone: '(081906855555)',
-            addressHtml: `Jl. Merpati No. 12<br />
-										Kel. Sukamaju, Kec. Cikampek<br />
+            addressHtml: `Jl. Merpati No. 12
+										Kel. Sukamaju, Kec. Cikampek
 										KAB. KARAWANG - JAWA BARAT, ID 41311`
         }
     ];
@@ -166,30 +185,51 @@ document.addEventListener('DOMContentLoaded', function () {
 
         function openPickupSelect() {
             let html = `
-										<div class="mb-2">
-											<select id="pickup-select" class="form-select select">
-												<option value="">-- Pilih alamat pickup --</option>
-												${pickupAddresses.map(a => `<option value="${a.id}">${a.name} — ${stripHtml(a.addressHtml).slice(0, 90)}</option>`).join('')}
-											</select>
+										<div class="select-wrapper">
+											<div class="select-display" id="pickupSelectDisplay">
+												<span>-- Pilih alamat pickup --</span>
+												<div class="select-arrow"></div>
+											</div>
+											<div class="select-options" id="pickupSelectOptions">
+												${pickupAddresses.map(a => `<div class="select-option" data-value="${a.id}">
+													<strong>${a.name}</strong>
+													${stripHtml(a.addressHtml)}
+												</div>`).join('')}
+											</div>
 										</div>
-										<div class="d-flex justify-content-end">
+										<div class="d-flex justify-content-end mt-2">
 											<button class="btn btn-secondary me-2" id="pickup-cancel">Batal</button>
 										</div>
 									`;
 
             pickupMethodEl.innerHTML = html;
 
-            const sel = pickupMethodEl.querySelector('#pickup-select');
-            const cancelBtn = pickupMethodEl.querySelector('#pickup-cancel');
+            const selectWrapper = pickupMethodEl.querySelector('.select-wrapper');
+            const selectDisplay = pickupMethodEl.querySelector('#pickupSelectDisplay');
+            const selectOptions = pickupMethodEl.querySelector('#pickupSelectOptions');
 
-            sel.addEventListener('change', function () {
-                const id = parseInt(this.value);
-                const addr = pickupAddresses.find(a => a.id === id);
-                if (addr) {
-                    pickupMethodEl.innerHTML = renderPickup(addr);
-                    attachPickup();
+            selectDisplay.addEventListener("click", () => {
+                selectWrapper.classList.toggle('open');
+            });
+
+            selectOptions.querySelectorAll(".select-option").forEach(option => {
+                option.addEventListener("click", () => {
+                    const id = parseInt(option.dataset.value);
+                    const addr = pickupAddresses.find(a => a.id === id);
+                    if (addr) {
+                        pickupMethodEl.innerHTML = renderPickup(addr);
+                        attachPickup();
+                    }
+                });
+            });
+
+            document.addEventListener("click", (e) => {
+                if (!e.target.closest(".select-wrapper")) {
+                    selectWrapper.classList.remove('open');
                 }
             });
+
+            const cancelBtn = pickupMethodEl.querySelector('#pickup-cancel');
 
             cancelBtn.addEventListener('click', function () {
                 pickupMethodEl.innerHTML = originalPickupHTML;
@@ -222,7 +262,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
             const pickupMethod = modalAddSales.querySelector('.pickup-method');
             if (pickupMethod) {
-                pickupMethod.classList.add('d-none'); 
+                pickupMethod.classList.add('d-none');
             }
             const radioShipping1 = document.getElementById('radioShipping1');
             if (radioShipping1) {

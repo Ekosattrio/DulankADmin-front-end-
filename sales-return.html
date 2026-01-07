@@ -922,14 +922,49 @@
 				</div>
 				<form action="pos-4.html">
 					<div class="modal-body pb-1">
-						<div class="col-md-12">
-							<div class="mb-3">
-								<label class="form-label">Payment-OUT Type <span class="text-danger">*</span></label>
-								<select class="select select-payment">
-									<option value="credit">Transfer</option>
-									<option value="cash" selected>Cash</option>
-								</select>
+						<div class="col-md-12 p-2">
+							<div class="mb-3 d-flex">
+								<label class="form-label fw-bold">Payment Method</label>
+								<div class="form-check ms-3 align-items-center">
+									<input class="form-check-input" type="radio" name="radioPayment"
+										id="radioPayment1" checked
+										onclick="bankInfo.classList.add('d-none')">
+									<label class="form-check-label text-standard" for="radioPayment1">
+										Cash
+									</label>
+								</div>
+								<div class="form-check ms-3 align-items-center">
+									<input class="form-check-input" type="radio" name="radioPayment"
+										id="radioPayment2" onclick="bankInfo.classList.remove('d-none')">
+									<label class="form-check-label text-standard" for="radioPayment2">
+										Transfer
+									</label>
+								</div>
+								
 							</div>
+
+							<div id="bankInfo" class="d-none card bg-light p-3">
+								<p class="fw-bold">Transfer Detail</p>
+								<div class="ms-2">
+									<div class="row">
+										<span class="col-3 text-standard fw-semibold">Bank / Wallet</span>
+										<span class="col-3 text-standard">BCA</span>
+									</div>
+									<div class="row">
+										<span class="col-3 text-standard fw-semibold">Account Number</span>
+										<span class="col-3 text-standard">109-2993242</span>
+									</div>
+									<div class="row">
+										<span class="col-3 text-standard fw-semibold">Account Name</span>
+										<span class="col-3 text-standard">PT. Dulank Semesta Cida</span>
+									</div>
+									<div class="row">
+										<span class="col-3 text-standard fw-semibold">Reference</span>
+										<span class="col-3 text-standard">-</span>
+									</div>
+								</div>
+							</div>
+
 							<div class="col-md-12">
 								<div class="mb-3">
 									<label class="form-label">Paying Amount <span class="text-danger">*</span></label>
@@ -979,7 +1014,7 @@
 							</div>
 
 						</div>
-						<div class="row">
+						<div class="row p-2">
 							<div class="col-md-12">
 								<div class="mb-3">
 									<label class="form-label">Total Due (<a href="#">D-423827</a>)</label>
@@ -1209,20 +1244,21 @@
 								</div>
 								<div class="row d-flex justify-content-end align-items-end mb-3">
 									<div class="col-md-5">
-										<label class="form-label mt-2">Account Name</label>
-									</div>
-									<div class="col-md-6">
-										<input type="text" class="form-control" value="Manan">
-									</div>
-								</div>
-								<div class="row d-flex justify-content-end align-items-end mb-3">
-									<div class="col-md-5">
 										<label class="form-label mt-2">Account Number</label>
 									</div>
 									<div class="col-md-6">
 										<input type="text" class="form-control" value="123-456-7890">
 									</div>
 								</div>
+								<div class="row d-flex justify-content-end align-items-end mb-3">
+									<div class="col-md-5">
+										<label class="form-label mt-2">Account Name</label>
+									</div>
+									<div class="col-md-6">
+										<input type="text" class="form-control" value="Manan">
+									</div>
+								</div>
+								
 								<div class="row d-flex justify-content-end align-items-end mb-3">
 									<div class="col-md-5">
 										<label class="form-label mt-2">Reference</label>

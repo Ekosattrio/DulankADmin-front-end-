@@ -164,35 +164,48 @@
 				<!-- /product list -->
 				<div class="card table-list-card">
 					<div class="card-body">
-						<div class="table-top">
-							<div class="search-set">
+						<!-- Filter -->
+						<div class="table-top d-flex align-items-center justify-content-between">
+							<!-- Search Input -->
+							<div class="search-set d-block d-md-flex">
 								<div class="search-input">
 									<a href="" class="btn btn-searchset"><i data-feather="search"
 											class="feather-search"></i></a>
 								</div>
+								<!-- Date Range -->
+								<div class="my-2">
+									<div class="pemilihrentang-container ">
+										<input type="text" id="pemilihrentang-input"
+											class="pemilihrentang-input form-control" readonly placeholder="Date"
+											style="height: fit-content !important;width: 100% !important;">
+										<div id="pemilihrentang-panel" class="pemilihrentang-panel">
+											<div class="pemilihrentang-isi">
+												<div class="opsi-cepat">
+													<div data-range="kemarin">Kemarin</div>
+													<div data-range="7hari">7 Hari Terakhir</div>
+													<div data-range="bulanIni">Bulan Ini</div>
+													<div data-range="bulanLalu">Bulan Lalu</div>
+													<div data-range="tahunLalu">Tahun Lalu</div>
+													<div data-range="kustom">Rentang Kustom</div>
+												</div>
+												<div class="kalender" id="kalender-view" style="display:none;">
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
 							</div>
-							<div class="">
-								<div class="btn-group">
-									<button type="button" class="btn btn-outline-primary dropdown-toggle"
+							<div class="filters d-flex justify-content-end">
+								<div class="dropdown w-100 me-2">
+									<button class="btn btn-outline-primary dropdown-toggle" type="button"
 										data-bs-toggle="dropdown" aria-expanded="false">
 										Status
 									</button>
 									<ul class="dropdown-menu">
-										<li><a class="dropdown-item" href="javascript:void(0);">paid</a></li>
-										<li><a class="dropdown-item" href="javascript:void(0);">Unpaid</a></li>
-									</ul>
-								</div>
-								<div class="btn-group">
-									<button type="button" class="btn btn-outline-primary dropdown-toggle"
-										data-bs-toggle="dropdown" aria-expanded="false">
-										Sort by
-									</button>
-									<ul class="dropdown-menu">
-										<li><a class="dropdown-item" href="javascript:void(0);">Ascending</a></li>
-										<li><a class="dropdown-item" href="javascript:void(0);">Descending</a></li>
-										<li><a class="dropdown-item" href="javascript:void(0);">Recently</a></li>
-										<li><a class="dropdown-item" href="javascript:void(0);">Last Month</a></li>
-										<li><a class="dropdown-item" href="javascript:void(0);">Last 7 Day</a></li>
+										<li><a class="dropdown-item" href="#">Cancel</a></li>
+										<li><a class="dropdown-item" href="#">Refunded</a></li>
+										<li><a class="dropdown-item" href="#">Ordered</a></li>
+										<li><a class="dropdown-item" href="#">Received</a></li>
 									</ul>
 								</div>
 							</div>

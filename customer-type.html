@@ -87,59 +87,62 @@
                 </div>
                 <!-- /product list -->
                 <div class="card table-list-card">
-                    <div class="card-header d-flex align-items-center justify-content-between flex-wrap row-gap-3">
-                        <div class="search-set">
-                            <div class="search-input">
-                                <a href="" class="btn btn-searchset"><i data-feather="search"
-                                        class="feather-search fs-14"></i></a>
-                            </div>
-                        </div>
-                        <div
-                            class="d-flex table-dropdown my-xl-auto right-content align-items-center flex-wrap row-gap-3">
-                            <div class="dropdown me-2">
-                                <a href="javascript:void(0);"
-                                    class="dropdown-toggle btn btn-white d-inline-flex align-items-center"
-                                    data-bs-toggle="dropdown">
-                                    Customer
-                                    <i data-feather="chevron-down" class="feather-chevron-down"></i>
-                                </a>
-                                <ul class="dropdown-menu  dropdown-menu-end p-3">
-                                    <li>
-                                        <a href="javascript:void(0);" class="dropdown-item rounded-1">All Customer</a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0);" class="dropdown-item rounded-1">Members Only</a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0);" class="dropdown-item rounded-1">High-Spending
-                                            Customers</a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0);" class="dropdown-item rounded-1">Online
-                                            Customers</a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="dropdown">
-                                <a href="javascript:void(0);"
-                                    class="dropdown-toggle btn btn-white d-inline-flex align-items-center"
-                                    data-bs-toggle="dropdown">
-                                    Status
-                                    <i data-feather="chevron-down" class="feather-chevron-down"></i>
-                                </a>
-                                <ul class="dropdown-menu  dropdown-menu-end p-3">
-                                    <li>
-                                        <a href="javascript:void(0);" class="dropdown-item rounded-1">Active</a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0);" class="dropdown-item rounded-1">Inactive</a>
-                                    </li>
-
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-body p-0">
+                    <div class="card-body">
+                        <!-- Filter -->
+						<div class="table-top d-flex align-items-center justify-content-between">
+							<!-- Search Input -->
+							<div class="search-set d-block d-md-flex">
+								<div class="search-input">
+									<a href="" class="btn btn-searchset"><i data-feather="search"
+											class="feather-search"></i></a>
+								</div>
+								<!-- Date Range -->
+								<div class="my-2">
+									<div class="pemilihrentang-container ">
+										<input type="text" id="pemilihrentang-input"
+											class="pemilihrentang-input form-control" readonly placeholder="Date"
+											style="height: fit-content !important;width: 100% !important;">
+										<div id="pemilihrentang-panel" class="pemilihrentang-panel">
+											<div class="pemilihrentang-isi">
+												<div class="opsi-cepat">
+													<div data-range="kemarin">Kemarin</div>
+													<div data-range="7hari">7 Hari Terakhir</div>
+													<div data-range="bulanIni">Bulan Ini</div>
+													<div data-range="bulanLalu">Bulan Lalu</div>
+													<div data-range="tahunLalu">Tahun Lalu</div>
+													<div data-range="kustom">Rentang Kustom</div>
+												</div>
+												<div class="kalender" id="kalender-view" style="display:none;">
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="filters d-flex justify-content-end">
+								<div class="dropdown w-100 me-2">
+									<button class="btn btn-outline-primary dropdown-toggle" type="button"
+										data-bs-toggle="dropdown" aria-expanded="false">
+										Customer Type
+									</button>
+									<ul class="dropdown-menu">
+										<li><a class="dropdown-item" href="#">Standard</a></li>
+										<li><a class="dropdown-item" href="#">Premium</a></li>
+										<li><a class="dropdown-item" href="#">Free Shipping </a></li>
+									</ul>
+								</div>
+								<div class="dropdown w-100 me-2">
+									<button class="btn btn-outline-primary dropdown-toggle" type="button"
+										data-bs-toggle="dropdown" aria-expanded="false">
+										Status
+									</button>
+									<ul class="dropdown-menu">
+										<li><a class="dropdown-item" href="#">Active</a></li>
+										<li><a class="dropdown-item" href="#">Inactive</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
                         <div class="table-responsive">
                             <table class="table  datanew">
                                 <thead class="thead-light">
@@ -147,7 +150,7 @@
 
                                         <th>Customer Type</th>
                                         <th>Status</th>
-                                        <th class="no-sort"></th>
+                                        <th class="no-sort">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>

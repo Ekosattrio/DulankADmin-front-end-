@@ -162,7 +162,7 @@
 										<th class="no-sort">Action</th>
 									</tr>
 								</thead>
-								<tbody class="Expense-list-blk">
+								<tbody>
 									<tr>
 
 										<td>19 Jan 2023</td>
@@ -364,6 +364,14 @@
 										</td>
 									</tr>
 								</tbody>
+								<tfoot>
+									<tr>
+										<td class="text-start fw-bold">Total</td>
+										<!-- gunakan class sum-target dan data-col-index agar reusable -->
+										<td colspan="3"></td>
+										<td id="amount-total" class="fw-bold sum-target" data-col-index="4">0</td>
+									</tr>
+								</tfoot>
 							</table>
 						</div>
 

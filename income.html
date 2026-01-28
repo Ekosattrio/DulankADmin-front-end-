@@ -575,6 +575,85 @@
 	<!-- /Main Wrapper -->
 	<!-- modals -->
 	<!-- modals -->
+
+	<!-- View Expense -->
+	<div class="modal fade" id="view-units">
+		<div class="modal-dialog modal-dialog-centered custom-modal-two">
+			<div class="modal-content">
+				<div class="page-wrapper-new p-0">
+					<div class="content">
+						<div class="modal-header border-0 custom-modal-header">
+							<div class="page-title">
+								<h4>View Income</h4>
+							</div>
+							<button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+						</div>
+						<div class="modal-body custom-modal-body">
+							<div class="row">
+								<div class="row my-2">
+									<div class="col-6">
+										<p class="fw-bold">Income Category</p>
+									</div>
+									<div class="col-6">
+										<p>Limbah Berharga</p>
+									</div>
+								</div>
+								<div class="row my-2">
+									<div class="col-6">
+										<p class="fw-bold">Date</p>
+									</div>
+									<div class="col-6">
+										<p>25/02/2026</p>
+									</div>
+								</div>
+								<div class="row my-2">
+									<div class="col-6">
+										<p class="fw-bold">Amount</p>
+									</div>
+									<div class="col-6">
+										<p>50.000</p>
+									</div>
+								</div>			
+								<div class="row my-2">
+									<div class="col-6">
+										<p class="fw-bold">Payment Methode</p>
+									</div>
+									<div class="col-6">
+										<p>Transfer Bank</p>
+									</div>
+								</div>
+								<div class="row my-2">
+									<div class="col-6">
+										<p class="fw-bold">Bank Account</p>
+									</div>
+									<div class="col-6">
+										<p>Mandiri 1320009982282</p>
+									</div>
+								</div>
+								<div class="row my-2">
+									<div class="col-6">
+										<p class="fw-bold">Notes</p>
+									</div>
+									<div class="col-6">
+										<p>Pembayaran lunas cetak brosur 1000 pcs.</p>
+									</div>
+								</div>
+
+							</div>
+							<div class="modal-footer-btn">
+								<a href="javascript:void(0);" class="btn btn-cancel me-2"
+									data-bs-dismiss="modal">Close</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- /View Expense -->
+
 	<div class="modal fade" id="edit-income">
 		<div class="modal-dialog modal-dialog-centered custom-modal-two">
 			<div class="modal-content">
@@ -611,7 +690,8 @@
 										<div class="input-blocks date-group mt-0">
 											<i data-feather="calendar" class="info-img"></i>
 											<div class="input-groupicon">
-												<input type="text" value="20-01-2027" class="datetimepicker" placeholder="Choose Date">
+												<input type="text" value="20-01-2027" class="datetimepicker"
+													placeholder="Choose Date">
 											</div>
 										</div>
 									</div>
@@ -620,7 +700,7 @@
 									<div class="mb-3">
 										<label class="form-label">Amount</label>
 										<input type="text" class="form-control number-separator" inputmode="numeric"
-										pattern="[0-9]*" value="1.000.000">
+											pattern="[0-9]*" value="1.000.000">
 										<input type="hidden" value="1.000.000" class="result-input" id="amount">
 									</div>
 								</div>
@@ -629,13 +709,17 @@
 										<div class="d-flex my-3 align-items-center">
 											<label class="form-label">Payment Method</label>
 											<div class="form-check ms-3 align-items-center">
-												<input class="form-check-input" type="radio" name="radioPayment" id="radioPayment1" checked="" onclick="formTransferAdd.classList.add('d-none')">
+												<input class="form-check-input" type="radio" name="radioPayment"
+													id="radioPayment1" checked=""
+													onclick="formTransferAdd.classList.add('d-none')">
 												<label class="form-check-label text-standard" for="radioPayment1">
 													Cash
 												</label>
 											</div>
 											<div class="form-check ms-3 align-items-center">
-												<input class="form-check-input" type="radio" name="radioPayment" id="radioPayment2" onclick="formTransferAdd.classList.remove('d-none')">
+												<input class="form-check-input" type="radio" name="radioPayment"
+													id="radioPayment2"
+													onclick="formTransferAdd.classList.remove('d-none')">
 												<label class="form-check-label text-standard" for="radioPayment2">
 													Transfer
 												</label>
@@ -649,7 +733,8 @@
 										<select class="select">
 											<option>Choose</option>
 											<option>BCA - 109-2993242 (PT. Dulank Semesta Cida)</option>
-											<option selected>Bank Mandiri - 132009982282 (PT. Dulank Semesta Cida)</option>
+											<option selected>Bank Mandiri - 132009982282 (PT. Dulank Semesta Cida)
+											</option>
 										</select>
 									</div>
 								</div>
@@ -662,10 +747,11 @@
 										<div class="card-body-list input-blocks mb-0">
 											<div class="flex-grow-1 term-content text-start">
 												<div class="product-desc p-2 border rounded" contenteditable="true"
-													data-placeholder="Enter note here.....">Pembayaran lunas cetak brosur 1000 pcs.</div>
+													data-placeholder="Enter note here.....">Pembayaran lunas cetak
+													brosur 1000 pcs.</div>
 											</div>
 										</div>
-										
+
 									</div>
 								</div>
 								<!-- /Editor -->
@@ -728,7 +814,7 @@
 									<div class="mb-3">
 										<label class="form-label">Amount</label>
 										<input type="text" class="form-control number-separator" inputmode="numeric"
-										pattern="[0-9]*">
+											pattern="[0-9]*">
 										<input type="hidden" class="result-input" id="amount">
 									</div>
 								</div>
@@ -737,13 +823,17 @@
 										<div class="d-flex my-3 align-items-center">
 											<label class="form-label">Payment Method</label>
 											<div class="form-check ms-3 align-items-center">
-												<input class="form-check-input" type="radio" name="radioPayment" id="radioPayment1" checked="" onclick="formTransferAdd.classList.add('d-none')">
+												<input class="form-check-input" type="radio" name="radioPayment"
+													id="radioPayment1" checked=""
+													onclick="formTransferAdd.classList.add('d-none')">
 												<label class="form-check-label text-standard" for="radioPayment1">
 													Cash
 												</label>
 											</div>
 											<div class="form-check ms-3 align-items-center">
-												<input class="form-check-input" type="radio" name="radioPayment" id="radioPayment2" onclick="formTransferAdd.classList.remove('d-none')">
+												<input class="form-check-input" type="radio" name="radioPayment"
+													id="radioPayment2"
+													onclick="formTransferAdd.classList.remove('d-none')">
 												<label class="form-check-label text-standard" for="radioPayment2">
 													Transfer
 												</label>
@@ -773,7 +863,7 @@
 													data-placeholder="Enter note here....."></div>
 											</div>
 										</div>
-										
+
 									</div>
 								</div>
 								<!-- /Editor -->

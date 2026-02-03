@@ -48,74 +48,74 @@
 				margin-bottom: 15px;
 			}
 		}
-		
-		
+
+
 		@media print {
-            body {
-                visibility: hidden;
-            }
+			body {
+				visibility: hidden;
+			}
 
-            html,
-            body {
-                font-size: 12px !important;
-                /* ubah angka ini bila ingin lebih kecil/lebih besar */
-                line-height: 1.2 !important;
-            }
+			html,
+			body {
+				font-size: 12px !important;
+				/* ubah angka ini bila ingin lebih kecil/lebih besar */
+				line-height: 1.2 !important;
+			}
 
-            /* fallback spesifik untuk elemen penting */
-            h1 {
-                font-size: 1.25rem !important;
-            }
+			/* fallback spesifik untuk elemen penting */
+			h1 {
+				font-size: 1.25rem !important;
+			}
 
-            h2 {
-                font-size: 1.1rem !important;
-            }
+			h2 {
+				font-size: 1.1rem !important;
+			}
 
-            h3,
-            h4,
-            h5,
-            h6 {
-                font-size: 1rem !important;
-            }
+			h3,
+			h4,
+			h5,
+			h6 {
+				font-size: 1rem !important;
+			}
 
-            .text-standard,
-            .order-table,
-            .table,
-            .order-section-title,
-            .page-title,
-            p,
-            span,
-            label {
-                font-size: 0.85rem !important;
-                /* skala turun lagi untuk konten */
-            }
+			.text-standard,
+			.order-table,
+			.table,
+			.order-section-title,
+			.page-title,
+			p,
+			span,
+			label {
+				font-size: 0.85rem !important;
+				/* skala turun lagi untuk konten */
+			}
 
-            #section-to-print {
-                width: 100vw;
-                visibility: visible;
-                padding: 0 !important;
-                margin: 0 !important;
-            }
+			#section-to-print {
+				width: 100vw;
+				visibility: visible;
+				padding: 0 !important;
+				margin: 0 !important;
+			}
 
-            .modal-xl {
-                position: absolute;
-                top: 0;
-                width: 100vw !important;
-                align-items: self-start;
-                padding: 0 !important;
-                margin: 0 !important;
-            }
+			.modal-xl {
+				position: absolute;
+				top: 0;
+				width: 100vw !important;
+				align-items: self-start;
+				padding: 0 !important;
+				margin: 0 !important;
+			}
 
-            .table-top-head{
+			.table-top-head {
 				display: none !important;
 			}
 
-            .dataTables_paginate,
-            .dataTables_length,
-            .dataTables_info {
-                display: none;
-            }
-        }
+			.dataTables_paginate,
+			.dataTables_length,
+			.dataTables_info {
+				display: none;
+			}
+		}
 	</style>
 </head>
 
@@ -268,7 +268,7 @@
 												<li><button
 														class="dropdown-item d-flex align-items-center small py-1 text-danger  btn-delete-sale"
 														type="button">
-														<i data-feather="trash-2" class="me-2"  width="14"
+														<i data-feather="trash-2" class="me-2" width="14"
 															height="14"></i> Delete
 													</button>
 												</li>
@@ -280,7 +280,7 @@
 													</button>
 												</li>
 												<li>
-													<a href="sales-receipt.html"
+													<button data-bs-toggle="modal" data-bs-target="#showpayment"
 														class="dropdown-item d-flex align-items-center small py-1">
 														<i data-feather="download" class="me-2" width="14"
 															height="14"></i>
@@ -288,7 +288,7 @@
 													</a>
 												</li>
 												<li>
-													<a href="sales-receipt.html"
+													<a href="purchase-order.html"
 														class="dropdown-item d-flex align-items-center small py-1">
 														<i data-feather="plus-circle" class="me-2" width="14"
 															height="14"></i>
@@ -334,7 +334,7 @@
 												<li><button
 														class="dropdown-item d-flex align-items-center small py-1 text-danger  btn-delete-sale"
 														type="button">
-														<i data-feather="trash-2" class="me-2"  width="14"
+														<i data-feather="trash-2" class="me-2" width="14"
 															height="14"></i> Delete
 													</button>
 												</li>
@@ -346,7 +346,7 @@
 													</button>
 												</li>
 												<li>
-													<a href="sales-receipt.html"
+													<button data-bs-toggle="modal" data-bs-target="#showpayment"
 														class="dropdown-item d-flex align-items-center small py-1">
 														<i data-feather="download" class="me-2" width="14"
 															height="14"></i>
@@ -354,7 +354,7 @@
 													</a>
 												</li>
 												<li>
-													<a href="sales-receipt.html"
+													<a href="purchase-order.html"
 														class="dropdown-item d-flex align-items-center small py-1">
 														<i data-feather="plus-circle" class="me-2" width="14"
 															height="14"></i>
@@ -400,7 +400,7 @@
 												<li><button
 														class="dropdown-item d-flex align-items-center small py-1 text-danger  btn-delete-sale"
 														type="button">
-														<i data-feather="trash-2" class="me-2"  width="14"
+														<i data-feather="trash-2" class="me-2" width="14"
 															height="14"></i> Delete
 													</button>
 												</li>
@@ -412,7 +412,7 @@
 													</button>
 												</li>
 												<li>
-													<a href="sales-receipt.html"
+													<button data-bs-toggle="modal" data-bs-target="#showpayment"
 														class="dropdown-item d-flex align-items-center small py-1">
 														<i data-feather="download" class="me-2" width="14"
 															height="14"></i>
@@ -420,7 +420,7 @@
 													</a>
 												</li>
 												<li>
-													<a href="sales-receipt.html"
+													<a href="purchase-order.html"
 														class="dropdown-item d-flex align-items-center small py-1">
 														<i data-feather="plus-circle" class="me-2" width="14"
 															height="14"></i>
@@ -466,7 +466,7 @@
 												<li><button
 														class="dropdown-item d-flex align-items-center small py-1 text-danger  btn-delete-sale"
 														type="button">
-														<i data-feather="trash-2" class="me-2"  width="14"
+														<i data-feather="trash-2" class="me-2" width="14"
 															height="14"></i> Delete
 													</button>
 												</li>
@@ -478,7 +478,7 @@
 													</button>
 												</li>
 												<li>
-													<a href="sales-receipt.html"
+													<button data-bs-toggle="modal" data-bs-target="#showpayment"
 														class="dropdown-item d-flex align-items-center small py-1">
 														<i data-feather="download" class="me-2" width="14"
 															height="14"></i>
@@ -486,7 +486,7 @@
 													</a>
 												</li>
 												<li>
-													<a href="sales-receipt.html"
+													<a href="purchase-order.html"
 														class="dropdown-item d-flex align-items-center small py-1">
 														<i data-feather="plus-circle" class="me-2" width="14"
 															height="14"></i>
@@ -532,7 +532,7 @@
 												<li><button
 														class="dropdown-item d-flex align-items-center small py-1 text-danger  btn-delete-sale"
 														type="button">
-														<i data-feather="trash-2" class="me-2"  width="14"
+														<i data-feather="trash-2" class="me-2" width="14"
 															height="14"></i> Delete
 													</button>
 												</li>
@@ -544,7 +544,7 @@
 													</button>
 												</li>
 												<li>
-													<a href="sales-receipt.html"
+													<button data-bs-toggle="modal" data-bs-target="#showpayment"
 														class="dropdown-item d-flex align-items-center small py-1">
 														<i data-feather="download" class="me-2" width="14"
 															height="14"></i>
@@ -552,7 +552,7 @@
 													</a>
 												</li>
 												<li>
-													<a href="sales-receipt.html"
+													<a href="purchase-order.html"
 														class="dropdown-item d-flex align-items-center small py-1">
 														<i data-feather="plus-circle" class="me-2" width="14"
 															height="14"></i>
@@ -598,7 +598,7 @@
 												<li><button
 														class="dropdown-item d-flex align-items-center small py-1 text-danger  btn-delete-sale"
 														type="button">
-														<i data-feather="trash-2" class="me-2"  width="14"
+														<i data-feather="trash-2" class="me-2" width="14"
 															height="14"></i> Delete
 													</button>
 												</li>
@@ -610,7 +610,7 @@
 													</button>
 												</li>
 												<li>
-													<a href="sales-receipt.html"
+													<button data-bs-toggle="modal" data-bs-target="#showpayment"
 														class="dropdown-item d-flex align-items-center small py-1">
 														<i data-feather="download" class="me-2" width="14"
 															height="14"></i>
@@ -618,7 +618,7 @@
 													</a>
 												</li>
 												<li>
-													<a href="sales-receipt.html"
+													<a href="purchase-order.html"
 														class="dropdown-item d-flex align-items-center small py-1">
 														<i data-feather="plus-circle" class="me-2" width="14"
 															height="14"></i>
@@ -664,7 +664,7 @@
 												<li><button
 														class="dropdown-item d-flex align-items-center small py-1 text-danger  btn-delete-sale"
 														type="button">
-														<i data-feather="trash-2" class="me-2"  width="14"
+														<i data-feather="trash-2" class="me-2" width="14"
 															height="14"></i> Delete
 													</button>
 												</li>
@@ -676,7 +676,7 @@
 													</button>
 												</li>
 												<li>
-													<a href="sales-receipt.html"
+													<button data-bs-toggle="modal" data-bs-target="#showpayment"
 														class="dropdown-item d-flex align-items-center small py-1">
 														<i data-feather="download" class="me-2" width="14"
 															height="14"></i>
@@ -684,7 +684,7 @@
 													</a>
 												</li>
 												<li>
-													<a href="sales-receipt.html"
+													<a href="purchase-order.html"
 														class="dropdown-item d-flex align-items-center small py-1">
 														<i data-feather="plus-circle" class="me-2" width="14"
 															height="14"></i>
@@ -730,7 +730,7 @@
 												<li><button
 														class="dropdown-item d-flex align-items-center small py-1 text-danger  btn-delete-sale"
 														type="button">
-														<i data-feather="trash-2" class="me-2"  width="14"
+														<i data-feather="trash-2" class="me-2" width="14"
 															height="14"></i> Delete
 													</button>
 												</li>
@@ -742,7 +742,7 @@
 													</button>
 												</li>
 												<li>
-													<a href="sales-receipt.html"
+													<button data-bs-toggle="modal" data-bs-target="#showpayment"
 														class="dropdown-item d-flex align-items-center small py-1">
 														<i data-feather="download" class="me-2" width="14"
 															height="14"></i>
@@ -750,7 +750,7 @@
 													</a>
 												</li>
 												<li>
-													<a href="sales-receipt.html"
+													<a href="purchase-order.html"
 														class="dropdown-item d-flex align-items-center small py-1">
 														<i data-feather="plus-circle" class="me-2" width="14"
 															height="14"></i>
@@ -796,7 +796,7 @@
 												<li><button
 														class="dropdown-item d-flex align-items-center small py-1 text-danger  btn-delete-sale"
 														type="button">
-														<i data-feather="trash-2" class="me-2"  width="14"
+														<i data-feather="trash-2" class="me-2" width="14"
 															height="14"></i> Delete
 													</button>
 												</li>
@@ -808,7 +808,7 @@
 													</button>
 												</li>
 												<li>
-													<a href="sales-receipt.html"
+													<button data-bs-toggle="modal" data-bs-target="#showpayment"
 														class="dropdown-item d-flex align-items-center small py-1">
 														<i data-feather="download" class="me-2" width="14"
 															height="14"></i>
@@ -816,7 +816,7 @@
 													</a>
 												</li>
 												<li>
-													<a href="sales-receipt.html"
+													<a href="purchase-order.html"
 														class="dropdown-item d-flex align-items-center small py-1">
 														<i data-feather="plus-circle" class="me-2" width="14"
 															height="14"></i>
@@ -862,7 +862,7 @@
 												<li><button
 														class="dropdown-item d-flex align-items-center small py-1 text-danger  btn-delete-sale"
 														type="button">
-														<i data-feather="trash-2" class="me-2"  width="14"
+														<i data-feather="trash-2" class="me-2" width="14"
 															height="14"></i> Delete
 													</button>
 												</li>
@@ -874,7 +874,7 @@
 													</button>
 												</li>
 												<li>
-													<a href="sales-receipt.html"
+													<button data-bs-toggle="modal" data-bs-target="#showpayment"
 														class="dropdown-item d-flex align-items-center small py-1">
 														<i data-feather="download" class="me-2" width="14"
 															height="14"></i>
@@ -882,7 +882,7 @@
 													</a>
 												</li>
 												<li>
-													<a href="sales-receipt.html"
+													<a href="purchase-order.html"
 														class="dropdown-item d-flex align-items-center small py-1">
 														<i data-feather="plus-circle" class="me-2" width="14"
 															height="14"></i>
@@ -928,7 +928,7 @@
 												<li><button
 														class="dropdown-item d-flex align-items-center small py-1 text-danger  btn-delete-sale"
 														type="button">
-														<i data-feather="trash-2" class="me-2"  width="14"
+														<i data-feather="trash-2" class="me-2" width="14"
 															height="14"></i> Delete
 													</button>
 												</li>
@@ -940,7 +940,7 @@
 													</button>
 												</li>
 												<li>
-													<a href="sales-receipt.html"
+													<button data-bs-toggle="modal" data-bs-target="#showpayment"
 														class="dropdown-item d-flex align-items-center small py-1">
 														<i data-feather="download" class="me-2" width="14"
 															height="14"></i>
@@ -948,7 +948,7 @@
 													</a>
 												</li>
 												<li>
-													<a href="sales-receipt.html"
+													<a href="purchase-order.html"
 														class="dropdown-item d-flex align-items-center small py-1">
 														<i data-feather="plus-circle" class="me-2" width="14"
 															height="14"></i>
@@ -994,7 +994,7 @@
 												<li><button
 														class="dropdown-item d-flex align-items-center small py-1 text-danger  btn-delete-sale"
 														type="button">
-														<i data-feather="trash-2" class="me-2"  width="14"
+														<i data-feather="trash-2" class="me-2" width="14"
 															height="14"></i> Delete
 													</button>
 												</li>
@@ -1006,7 +1006,7 @@
 													</button>
 												</li>
 												<li>
-													<a href="sales-receipt.html"
+													<button data-bs-toggle="modal" data-bs-target="#showpayment"
 														class="dropdown-item d-flex align-items-center small py-1">
 														<i data-feather="download" class="me-2" width="14"
 															height="14"></i>
@@ -1014,7 +1014,7 @@
 													</a>
 												</li>
 												<li>
-													<a href="sales-receipt.html"
+													<a href="purchase-order.html"
 														class="dropdown-item d-flex align-items-center small py-1">
 														<i data-feather="plus-circle" class="me-2" width="14"
 															height="14"></i>
@@ -1060,7 +1060,7 @@
 												<li><button
 														class="dropdown-item d-flex align-items-center small py-1 text-danger  btn-delete-sale"
 														type="button">
-														<i data-feather="trash-2" class="me-2"  width="14"
+														<i data-feather="trash-2" class="me-2" width="14"
 															height="14"></i> Delete
 													</button>
 												</li>
@@ -1072,7 +1072,7 @@
 													</button>
 												</li>
 												<li>
-													<a href="sales-receipt.html"
+													<button data-bs-toggle="modal" data-bs-target="#showpayment"
 														class="dropdown-item d-flex align-items-center small py-1">
 														<i data-feather="download" class="me-2" width="14"
 															height="14"></i>
@@ -1080,7 +1080,7 @@
 													</a>
 												</li>
 												<li>
-													<a href="sales-receipt.html"
+													<a href="purchase-order.html"
 														class="dropdown-item d-flex align-items-center small py-1">
 														<i data-feather="plus-circle" class="me-2" width="14"
 															height="14"></i>
@@ -1126,7 +1126,7 @@
 												<li><button
 														class="dropdown-item d-flex align-items-center small py-1 text-danger  btn-delete-sale"
 														type="button">
-														<i data-feather="trash-2" class="me-2"  width="14"
+														<i data-feather="trash-2" class="me-2" width="14"
 															height="14"></i> Delete
 													</button>
 												</li>
@@ -1138,7 +1138,7 @@
 													</button>
 												</li>
 												<li>
-													<a href="sales-receipt.html"
+													<button data-bs-toggle="modal" data-bs-target="#showpayment"
 														class="dropdown-item d-flex align-items-center small py-1">
 														<i data-feather="download" class="me-2" width="14"
 															height="14"></i>
@@ -1146,7 +1146,7 @@
 													</a>
 												</li>
 												<li>
-													<a href="sales-receipt.html"
+													<a href="purchase-order.html"
 														class="dropdown-item d-flex align-items-center small py-1">
 														<i data-feather="plus-circle" class="me-2" width="14"
 															height="14"></i>
@@ -1192,7 +1192,7 @@
 												<li><button
 														class="dropdown-item d-flex align-items-center small py-1 text-danger  btn-delete-sale"
 														type="button">
-														<i data-feather="trash-2" class="me-2"  width="14"
+														<i data-feather="trash-2" class="me-2" width="14"
 															height="14"></i> Delete
 													</button>
 												</li>
@@ -1204,7 +1204,7 @@
 													</button>
 												</li>
 												<li>
-													<a href="sales-receipt.html"
+													<button data-bs-toggle="modal" data-bs-target="#showpayment"
 														class="dropdown-item d-flex align-items-center small py-1">
 														<i data-feather="download" class="me-2" width="14"
 															height="14"></i>
@@ -1212,7 +1212,7 @@
 													</a>
 												</li>
 												<li>
-													<a href="sales-receipt.html"
+													<a href="purchase-order.html"
 														class="dropdown-item d-flex align-items-center small py-1">
 														<i data-feather="plus-circle" class="me-2" width="14"
 															height="14"></i>
@@ -1258,7 +1258,7 @@
 												<li><button
 														class="dropdown-item d-flex align-items-center small py-1 text-danger  btn-delete-sale"
 														type="button">
-														<i data-feather="trash-2" class="me-2"  width="14"
+														<i data-feather="trash-2" class="me-2" width="14"
 															height="14"></i> Delete
 													</button>
 												</li>
@@ -1270,15 +1270,15 @@
 													</button>
 												</li>
 												<li>
-													<a href="sales-receipt.html"
+													<button data-bs-toggle="modal" data-bs-target="#showpayment"
 														class="dropdown-item d-flex align-items-center small py-1">
 														<i data-feather="download" class="me-2" width="14"
 															height="14"></i>
 														Show Payment
-													</a>
+													</button>
 												</li>
 												<li>
-													<a href="sales-receipt.html"
+													<a href="purchase-order.html"
 														class="dropdown-item d-flex align-items-center small py-1">
 														<i data-feather="plus-circle" class="me-2" width="14"
 															height="14"></i>
@@ -1324,7 +1324,7 @@
 												<li><button
 														class="dropdown-item d-flex align-items-center small py-1 text-danger  btn-delete-sale"
 														type="button">
-														<i data-feather="trash-2" class="me-2"  width="14"
+														<i data-feather="trash-2" class="me-2" width="14"
 															height="14"></i> Delete
 													</button>
 												</li>
@@ -1336,7 +1336,7 @@
 													</button>
 												</li>
 												<li>
-													<a href="sales-receipt.html"
+													<button data-bs-toggle="modal" data-bs-target="#showpayment"
 														class="dropdown-item d-flex align-items-center small py-1">
 														<i data-feather="download" class="me-2" width="14"
 															height="14"></i>
@@ -1344,7 +1344,7 @@
 													</a>
 												</li>
 												<li>
-													<a href="sales-receipt.html"
+													<a href="purchase-order.html"
 														class="dropdown-item d-flex align-items-center small py-1">
 														<i data-feather="plus-circle" class="me-2" width="14"
 															height="14"></i>
@@ -1390,7 +1390,7 @@
 												<li><button
 														class="dropdown-item d-flex align-items-center small py-1 text-danger  btn-delete-sale"
 														type="button">
-														<i data-feather="trash-2" class="me-2"  width="14"
+														<i data-feather="trash-2" class="me-2" width="14"
 															height="14"></i> Delete
 													</button>
 												</li>
@@ -1402,7 +1402,7 @@
 													</button>
 												</li>
 												<li>
-													<a href="sales-receipt.html"
+													<button data-bs-toggle="modal" data-bs-target="#showpayment"
 														class="dropdown-item d-flex align-items-center small py-1">
 														<i data-feather="download" class="me-2" width="14"
 															height="14"></i>
@@ -1410,7 +1410,7 @@
 													</a>
 												</li>
 												<li>
-													<a href="sales-receipt.html"
+													<a href="purchase-order.html"
 														class="dropdown-item d-flex align-items-center small py-1">
 														<i data-feather="plus-circle" class="me-2" width="14"
 															height="14"></i>
@@ -1456,7 +1456,7 @@
 												<li><button
 														class="dropdown-item d-flex align-items-center small py-1 text-danger  btn-delete-sale"
 														type="button">
-														<i data-feather="trash-2" class="me-2"  width="14"
+														<i data-feather="trash-2" class="me-2" width="14"
 															height="14"></i> Delete
 													</button>
 												</li>
@@ -1468,7 +1468,7 @@
 													</button>
 												</li>
 												<li>
-													<a href="sales-receipt.html"
+													<button data-bs-toggle="modal" data-bs-target="#showpayment"
 														class="dropdown-item d-flex align-items-center small py-1">
 														<i data-feather="download" class="me-2" width="14"
 															height="14"></i>
@@ -1476,7 +1476,7 @@
 													</a>
 												</li>
 												<li>
-													<a href="sales-receipt.html"
+													<a href="purchase-order.html"
 														class="dropdown-item d-flex align-items-center small py-1">
 														<i data-feather="plus-circle" class="me-2" width="14"
 															height="14"></i>
@@ -1522,7 +1522,7 @@
 												<li><button
 														class="dropdown-item d-flex align-items-center small py-1 text-danger  btn-delete-sale"
 														type="button">
-														<i data-feather="trash-2" class="me-2"  width="14"
+														<i data-feather="trash-2" class="me-2" width="14"
 															height="14"></i> Delete
 													</button>
 												</li>
@@ -1534,7 +1534,7 @@
 													</button>
 												</li>
 												<li>
-													<a href="sales-receipt.html"
+													<button data-bs-toggle="modal" data-bs-target="#showpayment"
 														class="dropdown-item d-flex align-items-center small py-1">
 														<i data-feather="download" class="me-2" width="14"
 															height="14"></i>
@@ -1542,7 +1542,7 @@
 													</a>
 												</li>
 												<li>
-													<a href="sales-receipt.html"
+													<a href="purchase-order.html"
 														class="dropdown-item d-flex align-items-center small py-1">
 														<i data-feather="plus-circle" class="me-2" width="14"
 															height="14"></i>
@@ -1608,17 +1608,16 @@
 								aria-label="Close"></button>
 						</div>
 						<ul class="table-top-head d-flex gap-3 mt-2 me-5 mb-0 justify-content-end pe-4">
-									<!-- edit ke modal -->
-									<li><a href="#" data-bs-toggle="modal" data-bs-target="#edit-purchase" title="Edit"
-											id="linkToEdit"><i data-feather="edit"
-												class="action-edit sales-action"></i></a></li>
-									<li><a href="#" title="PDF"><img src="assets/img/icons/pdf.svg"
-												alt="pdf"></a></li>
+							<!-- edit ke modal -->
+							<li><a href="#" data-bs-toggle="modal" data-bs-target="#edit-purchase" title="Edit"
+									id="linkToEdit"><i data-feather="edit" class="action-edit sales-action"></i></a>
+							</li>
+							<li><a href="#" title="PDF"><img src="assets/img/icons/pdf.svg" alt="pdf"></a></li>
 
-									</li>
-									<li><a data-bs-toggle="tooltip" id="download-pdf" title="Print"><i data-feather="printer"
-												class="feather-rotate-ccw"></i></a></li>
-								</ul>
+							</li>
+							<li><a data-bs-toggle="tooltip" id="download-pdf" title="Print"><i data-feather="printer"
+										class="feather-rotate-ccw"></i></a></li>
+						</ul>
 						<!-- Body -->
 						<div class="mt-4 mb-3 px-3">
 							<div class="invoice-box" style="font-size:14px; line-height:22px; color:#555;">
@@ -1984,10 +1983,10 @@
 									</div>
 								</div>
 								<div class="modal-footer border-0 justify-content-end pe-3 pt-3">
-								<button type="button" class="btn btn-secondary add-cancel me-3"
-									data-bs-dismiss="modal">Cancel</button>
-								<button type="submit" class="btn btn-primary add-sale">Save Changes</button>
-							</div>
+									<button type="button" class="btn btn-secondary add-cancel me-3"
+										data-bs-dismiss="modal">Cancel</button>
+									<button type="submit" class="btn btn-primary add-sale">Save Changes</button>
+								</div>
 
 							</div>
 						</div>
@@ -1995,9 +1994,9 @@
 					</div>
 				</div>
 			</div>
-			
+
 		</div>
-		
+
 	</div>
 	<!-- /Edit Purchase -->
 
@@ -2114,6 +2113,69 @@
 	</div>
 	<!-- /Import Purchase -->
 
+	<!-- show payment Modal -->
+	<div class="modal fade" id="showpayment">
+		<div class="modal-dialog modal-dialog-centered stock-adjust-modal">
+			<div class="modal-content">
+				<div class="modal-header border-0">
+					<div class="page-title">
+						<h4>Show Payments-OUT</h4>
+					</div>
+					<button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<div class="row">
+						<div class="col-lg-12">
+							<div class="modal-body-table total-orders p-0">
+								<div class="table-responsive">
+									<table class="table datatable">
+										<thead class="thead-light">
+											<tr>
+												<th>#Payment OUT</th>
+												<th>Dated</th>
+												<th>Created</th>
+												<th>Amount</th>
+												<th>Method</th>
+												<th class="no-sort"></th>
+
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>IN-25113123131</td>
+												<td>24/12/2025</td>
+												<td>Admin</td>
+												<td>2.520.000</td>
+												<td>Bank Transfer</td>
+												<td>
+													<div class="edit-delete-action d-flex align-items-center">
+														<a class="me-3 p-2 border rounded d-flex align-items-center"
+															href="#" data-bs-toggle="modal"
+															data-bs-target="#editPaymentsModal">
+															<i data-feather="edit" class="feather-edit"></i>
+														</a>
+														<a class="p-2 border rounded d-flex align-items-center  btn-delete-sale"
+															href="javascript:void(0);">
+															<i data-feather="trash-2" class="feather-trash-2"></i>
+														</a>
+													</div>
+
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- show payment Modal -->
+
 	<!-- Payment Out Modal -->
 	<div class="modal fade" id="createpo">
 		<div class="modal-dialog modal-dialog-centered stock-adjust-modal">
@@ -2146,8 +2208,7 @@
 										<label class="form-label fw-bold">Payment Method</label>
 										<div class="form-check ms-3 align-items-center">
 											<input class="form-check-input" type="radio" name="radioPayment"
-												id="radioPayment1" checked
-												onclick="bankInfo.classList.add('d-none')">
+												id="radioPayment1" checked onclick="bankInfo.classList.add('d-none')">
 											<label class="form-check-label text-standard" for="radioPayment1">
 												Cash
 											</label>
@@ -2159,7 +2220,7 @@
 												Transfer
 											</label>
 										</div>
-										
+
 									</div>
 
 									<div id="bankInfo" class="d-none">

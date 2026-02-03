@@ -88,7 +88,7 @@
 						<div class="table-top d-flex align-items-center justify-content-between">
 							<!-- Search Input -->
 							<div class="search-set d-block d-md-flex">
-								<div class="search-input">
+								<div class="search-input d-none">
 									<a href="" class="btn btn-searchset"><i data-feather="search"
 											class="feather-search"></i></a>
 								</div>
@@ -115,27 +115,20 @@
 									</div>
 								</div>
 							</div>
-							<div class="filters d-flex justify-content-end">
-								<div class="dropdown w-100 me-2">
-									<button class="btn btn-outline-primary dropdown-toggle" type="button"
-										data-bs-toggle="dropdown" aria-expanded="false">
-										Account
-									</button>
-									<ul class="dropdown-menu">
-										<li><a class="dropdown-item" href="#">Zephyria</a></li>
-										<li><a class="dropdown-item" href="#">Linda</a></li>
-										<li><a class="dropdown-item" href="#">Eko</a></li>
-									</ul>
-								</div>
-								 <button 
-  type="button" 
-  class="btn btn-primary" 
-  >
-  Submit
-</button>
-<!-- onclick="window.location.href='add-arange-proces.html'" -->
-							</div>
+							<div class="filters d-flex justify-content-end gap-2">
 							
+								<select id="accountSelect" class="btn btn-outline-primary dropdown-toggle"
+										style="appearance: none; background-image: url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 16 16%22%3E%3Cpath fill=%22none%22 stroke=%22%23343a40%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22 stroke-width=%222%22 d=%22M2 5l6 6 6-6%22/%3E%3C/svg%3E'); background-repeat: no-repeat; background-position: right 0.75rem center; background-size: 16px 12px; padding-right: 2.25rem;">
+										<option value="" class="bg-light text-primary">Account</option>
+										<option value="zephyria" class="bg-light text-primary">Zephyria</option>
+										<option value="linda" class="bg-light text-primary">Linda</option>
+										<option value="eko" class="bg-light text-primary">Eko</option>
+									</select>
+								<button id="submitBtn" type="button" class="btn btn-primary" disabled>
+									Submit
+								</button>
+							</div>
+
 						</div>
 						<!-- /Filter -->
 						<div class="table-responsive">
@@ -159,189 +152,189 @@
 									</tr>
 								</thead>
 								<tbody>
-	<tr>
-		<td>1</td>
-		<td>01/12/25</td>
-		<td>Sale</td>
-		<td>Pelunasan Cetak Brosur (Invoice #001)</td>
-		<td>2500000</td>
-		<td><span class="badge bg-outline-success">Credit</span></td>
-		<td>18250000</td>
-	</tr>
-	<tr>
-		<td>2</td>
-		<td>03/12/25</td>
-		<td>Purchase</td>
-		<td>Pembelian Kertas Art Paper 230gr</td>
-		<td>4200000</td>
-		<td><span class="badge bg-outline-danger">Debit</span></td>
-		<td>14050000</td>
-	</tr>
-	<tr>
-		<td>3</td>
-		<td>05/12/25</td>
-		<td>Expense</td>
-		<td>Pembayaran Listrik Workshop</td>
-		<td>1200000</td>
-		<td><span class="badge bg-outline-danger">Debit</span></td>
-		<td>12850000</td>
-	</tr>
-	<tr>
-		<td>4</td>
-		<td>08/12/25</td>
-		<td>Sale</td>
-		<td>DP Cetak Banner Pilkada</td>
-		<td>5000000</td>
-		<td><span class="badge bg-outline-success">Credit</span></td>
-		<td>17850000</td>
-	</tr>
-	<tr>
-		<td>5</td>
-		<td>10/12/25</td>
-		<td>Sales Refund</td>
-		<td>Refund Salah Ukuran Cetak (Ref #002)</td>
-		<td>500000</td>
-		<td><span class="badge bg-outline-danger">Debit</span></td>
-		<td>17350000</td>
-	</tr>
-	<tr>
-		<td>6</td>
-		<td>12/12/25</td>
-		<td>Expense</td>
-		<td>Service Mesin Plotter Utama</td>
-		<td>850000</td>
-		<td><span class="badge bg-outline-danger">Debit</span></td>
-		<td>16500000</td>
-	</tr>
-	<tr>
-		<td>7</td>
-		<td>15/12/25</td>
-		<td>Purchase Refund</td>
-		<td>Retur Tinta Kadaluarsa</td>
-		<td>750000</td>
-		<td><span class="badge bg-outline-success">Credit</span></td>
-		<td>17250000</td>
-	</tr>
-	<tr>
-		<td>8</td>
-		<td>18/12/25</td>
-		<td>Sale</td>
-		<td>Cetak Kartu Nama 10 Box</td>
-		<td>450000</td>
-		<td><span class="badge bg-outline-success">Credit</span></td>
-		<td>17700000</td>
-	</tr>
-	<tr>
-		<td>9</td>
-		<td>20/12/25</td>
-		<td>Expense</td>
-		<td>Pembelian Alat Tulis Kantor (ATK)</td>
-		<td>150000</td>
-		<td><span class="badge bg-outline-danger">Debit</span></td>
-		<td>17550000</td>
-	</tr>
-	<tr>
-		<td>10</td>
-		<td>24/12/25</td>
-		<td>Purchase</td>
-		<td>Pembelian Tinta CMYK 4 Set</td>
-		<td>3200000</td>
-		<td><span class="badge bg-outline-danger">Debit</span></td>
-		<td>14350000</td>
-	</tr>
-	<tr>
-		<td>11</td>
-		<td>28/12/25</td>
-		<td>Sale</td>
-		<td>Pelunasan Order Banner Pilkada</td>
-		<td>7500000</td>
-		<td><span class="badge bg-outline-success">Credit</span></td>
-		<td>21850000</td>
-	</tr>
-	<tr>
-		<td>12</td>
-		<td>31/12/25</td>
-		<td>Expense</td>
-		<td>Gaji Karyawan Bagian Produksi</td>
-		<td>4500000</td>
-		<td><span class="badge bg-outline-danger">Debit</span></td>
-		<td>17350000</td>
-	</tr>
-	<tr>
-		<td>13</td>
-		<td>02/01/26</td>
-		<td>Sale</td>
-		<td>Cetak Undangan Pernikahan</td>
-		<td>1200000</td>
-		<td><span class="badge bg-outline-success">Credit</span></td>
-		<td>18550000</td>
-	</tr>
-	<tr>
-		<td>14</td>
-		<td>05/01/26</td>
-		<td>Purchase</td>
-		<td>Stok Kertas HVS & Map</td>
-		<td>2100000</td>
-		<td><span class="badge bg-outline-danger">Debit</span></td>
-		<td>16450000</td>
-	</tr>
-	<tr>
-		<td>15</td>
-		<td>08/01/26</td>
-		<td>Expense</td>
-		<td>Biaya Internet & Promosi Sosmed</td>
-		<td>600000</td>
-		<td><span class="badge bg-outline-danger">Debit</span></td>
-		<td>15850000</td>
-	</tr>
-	<tr>
-		<td>16</td>
-		<td>12/01/26</td>
-		<td>Sale</td>
-		<td>Jasa Desain Logo & Branding</td>
-		<td>1500000</td>
-		<td><span class="badge bg-outline-success">Credit</span></td>
-		<td>17350000</td>
-	</tr>
-	<tr>
-		<td>17</td>
-		<td>15/01/26</td>
-		<td>Expense</td>
-		<td>Perbaikan AC Ruang Desain</td>
-		<td>400000</td>
-		<td><span class="badge bg-outline-danger">Debit</span></td>
-		<td>16950000</td>
-	</tr>
-	<tr>
-		<td>18</td>
-		<td>19/01/26</td>
-		<td>Sale</td>
-		<td>Cetak Kaos Komunitas (20 pcs)</td>
-		<td>2000000</td>
-		<td><span class="badge bg-outline-success">Credit</span></td>
-		<td>18950000</td>
-	</tr>
-	<tr>
-		<td>19</td>
-		<td>22/01/26</td>
-		<td>Purchase Refund</td>
-		<td>Diskon Nota Pembelian Kertas</td>
-		<td>300000</td>
-		<td><span class="badge bg-outline-success">Credit</span></td>
-		<td>19250000</td>
-	</tr>
-	<tr>
-		<td>20</td>
-		<td>25/01/26</td>
-		<td>Expense</td>
-		<td>Pembelian Galon & Kopi Kantor</td>
-		<td>1200000</td>
-		<td><span class="badge bg-outline-danger">Debit</span></td>
-		<td>19130000</td>
-	</tr>
-</tbody>
+									<tr>
+										<td>1</td>
+										<td>01/12/25</td>
+										<td>Sale</td>
+										<td>Pelunasan Cetak Brosur (Invoice #001)</td>
+										<td>2500000</td>
+										<td><span class="badge bg-outline-success">Credit</span></td>
+										<td>18250000</td>
+									</tr>
+									<tr>
+										<td>2</td>
+										<td>03/12/25</td>
+										<td>Purchase</td>
+										<td>Pembelian Kertas Art Paper 230gr</td>
+										<td>4200000</td>
+										<td><span class="badge bg-outline-danger">Debit</span></td>
+										<td>14050000</td>
+									</tr>
+									<tr>
+										<td>3</td>
+										<td>05/12/25</td>
+										<td>Expense</td>
+										<td>Pembayaran Listrik Workshop</td>
+										<td>1200000</td>
+										<td><span class="badge bg-outline-danger">Debit</span></td>
+										<td>12850000</td>
+									</tr>
+									<tr>
+										<td>4</td>
+										<td>08/12/25</td>
+										<td>Sale</td>
+										<td>DP Cetak Banner Pilkada</td>
+										<td>5000000</td>
+										<td><span class="badge bg-outline-success">Credit</span></td>
+										<td>17850000</td>
+									</tr>
+									<tr>
+										<td>5</td>
+										<td>10/12/25</td>
+										<td>Sales Refund</td>
+										<td>Refund Salah Ukuran Cetak (Ref #002)</td>
+										<td>500000</td>
+										<td><span class="badge bg-outline-danger">Debit</span></td>
+										<td>17350000</td>
+									</tr>
+									<tr>
+										<td>6</td>
+										<td>12/12/25</td>
+										<td>Expense</td>
+										<td>Service Mesin Plotter Utama</td>
+										<td>850000</td>
+										<td><span class="badge bg-outline-danger">Debit</span></td>
+										<td>16500000</td>
+									</tr>
+									<tr>
+										<td>7</td>
+										<td>15/12/25</td>
+										<td>Purchase Refund</td>
+										<td>Retur Tinta Kadaluarsa</td>
+										<td>750000</td>
+										<td><span class="badge bg-outline-success">Credit</span></td>
+										<td>17250000</td>
+									</tr>
+									<tr>
+										<td>8</td>
+										<td>18/12/25</td>
+										<td>Sale</td>
+										<td>Cetak Kartu Nama 10 Box</td>
+										<td>450000</td>
+										<td><span class="badge bg-outline-success">Credit</span></td>
+										<td>17700000</td>
+									</tr>
+									<tr>
+										<td>9</td>
+										<td>20/12/25</td>
+										<td>Expense</td>
+										<td>Pembelian Alat Tulis Kantor (ATK)</td>
+										<td>150000</td>
+										<td><span class="badge bg-outline-danger">Debit</span></td>
+										<td>17550000</td>
+									</tr>
+									<tr>
+										<td>10</td>
+										<td>24/12/25</td>
+										<td>Purchase</td>
+										<td>Pembelian Tinta CMYK 4 Set</td>
+										<td>3200000</td>
+										<td><span class="badge bg-outline-danger">Debit</span></td>
+										<td>14350000</td>
+									</tr>
+									<tr>
+										<td>11</td>
+										<td>28/12/25</td>
+										<td>Sale</td>
+										<td>Pelunasan Order Banner Pilkada</td>
+										<td>7500000</td>
+										<td><span class="badge bg-outline-success">Credit</span></td>
+										<td>21850000</td>
+									</tr>
+									<tr>
+										<td>12</td>
+										<td>31/12/25</td>
+										<td>Expense</td>
+										<td>Gaji Karyawan Bagian Produksi</td>
+										<td>4500000</td>
+										<td><span class="badge bg-outline-danger">Debit</span></td>
+										<td>17350000</td>
+									</tr>
+									<tr>
+										<td>13</td>
+										<td>02/01/26</td>
+										<td>Sale</td>
+										<td>Cetak Undangan Pernikahan</td>
+										<td>1200000</td>
+										<td><span class="badge bg-outline-success">Credit</span></td>
+										<td>18550000</td>
+									</tr>
+									<tr>
+										<td>14</td>
+										<td>05/01/26</td>
+										<td>Purchase</td>
+										<td>Stok Kertas HVS & Map</td>
+										<td>2100000</td>
+										<td><span class="badge bg-outline-danger">Debit</span></td>
+										<td>16450000</td>
+									</tr>
+									<tr>
+										<td>15</td>
+										<td>08/01/26</td>
+										<td>Expense</td>
+										<td>Biaya Internet & Promosi Sosmed</td>
+										<td>600000</td>
+										<td><span class="badge bg-outline-danger">Debit</span></td>
+										<td>15850000</td>
+									</tr>
+									<tr>
+										<td>16</td>
+										<td>12/01/26</td>
+										<td>Sale</td>
+										<td>Jasa Desain Logo & Branding</td>
+										<td>1500000</td>
+										<td><span class="badge bg-outline-success">Credit</span></td>
+										<td>17350000</td>
+									</tr>
+									<tr>
+										<td>17</td>
+										<td>15/01/26</td>
+										<td>Expense</td>
+										<td>Perbaikan AC Ruang Desain</td>
+										<td>400000</td>
+										<td><span class="badge bg-outline-danger">Debit</span></td>
+										<td>16950000</td>
+									</tr>
+									<tr>
+										<td>18</td>
+										<td>19/01/26</td>
+										<td>Sale</td>
+										<td>Cetak Kaos Komunitas (20 pcs)</td>
+										<td>2000000</td>
+										<td><span class="badge bg-outline-success">Credit</span></td>
+										<td>18950000</td>
+									</tr>
+									<tr>
+										<td>19</td>
+										<td>22/01/26</td>
+										<td>Purchase Refund</td>
+										<td>Diskon Nota Pembelian Kertas</td>
+										<td>300000</td>
+										<td><span class="badge bg-outline-success">Credit</span></td>
+										<td>19250000</td>
+									</tr>
+									<tr>
+										<td>20</td>
+										<td>25/01/26</td>
+										<td>Expense</td>
+										<td>Pembelian Galon & Kopi Kantor</td>
+										<td>1200000</td>
+										<td><span class="badge bg-outline-danger">Debit</span></td>
+										<td>19130000</td>
+									</tr>
+								</tbody>
 
-									<!-- <tr>
+								<!-- <tr>
 										<td>#AS821</td>
 										<td>24 Dec 2024</td>
 										<td>Sale</td>
@@ -449,7 +442,7 @@
 										<td><span class="badge bg-outline-success">Paid</span></td>
 										<td>200000</td>
 									</tr> -->
-								
+
 								<tfoot>
 									<tr>
 										<td class="text-start fw-bold">Total</td>
@@ -512,6 +505,40 @@
 	<script src="assets/js/theme-script.js"></script>
 	<script src="assets/js/script.js"></script>
 
+	<script>
+		// Enable/Disable Submit Button Logic
+		const dateInput = document.getElementById('pemilihrentang-input');
+		const accountSelect = document.getElementById('accountSelect');
+		const submitBtn = document.getElementById('submitBtn');
+
+		function checkFormValidity() {
+			const hasDate = dateInput.value.trim() !== '';
+			const hasAccount = accountSelect.value !== '';
+
+			if (hasDate && hasAccount) {
+				submitBtn.disabled = false;
+			} else {
+				submitBtn.disabled = true;
+			}
+		}
+
+		// Listen to date input changes
+		if (dateInput) {
+			dateInput.addEventListener('change', checkFormValidity);
+		}
+
+		// Listen to account select changes
+		if (accountSelect) {
+			accountSelect.addEventListener('change', checkFormValidity);
+		}
+
+		// Submit button click handler
+		submitBtn.addEventListener('click', function () {
+			console.log('Submit button clicked');
+			console.log('Date:', dateInput.value);
+			console.log('Account:', accountSelect.value);
+		});
+	</script>
 
 </body>
 

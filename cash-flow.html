@@ -63,16 +63,16 @@
 					</div>
 					<ul class="table-top-head">
 						<li>
-							<a data-bs-toggle="tooltip" data-bs-placement="top" title="Pdf"><img src="assets/img/icons/pdf.svg"
-									alt="img" /></a>
+							<a data-bs-toggle="tooltip" data-bs-placement="top" title="Pdf"><img
+									src="assets/img/icons/pdf.svg" alt="img" /></a>
 						</li>
 						<li>
 							<a data-bs-toggle="tooltip" data-bs-placement="top" title="Print"><i data-feather="printer"
 									class="feather-rotate-ccw"></i></a>
 						</li>
 						<li>
-							<a data-bs-toggle="tooltip" data-bs-placement="top" title="Refresh"><i data-feather="rotate-ccw"
-									class="feather-rotate-ccw"></i></a>
+							<a data-bs-toggle="tooltip" data-bs-placement="top" title="Refresh"><i
+									data-feather="rotate-ccw" class="feather-rotate-ccw"></i></a>
 						</li>
 						<li>
 							<a data-bs-toggle="tooltip" data-bs-placement="top" title="Collapse" id="collapse-header"><i
@@ -88,14 +88,13 @@
 						<div class="table-top d-flex align-items-center justify-content-between">
 							<!-- Search Input -->
 							<div class="search-set d-block d-md-flex">
-								<div class="search-input">
-									<a href="" class="btn btn-searchset"><i data-feather="search" class="feather-search"></i></a>
-								</div>
+								
 								<!-- Date Range -->
 								<div class="my-2">
 									<div class="pemilihrentang-container ">
-										<input type="text" id="pemilihrentang-input" class="pemilihrentang-input form-control" readonly
-											placeholder="Date" style="height: fit-content !important;width: 100% !important;">
+										<input type="text" id="pemilihrentang-input"
+											class="pemilihrentang-input form-control" readonly placeholder="Date"
+											style="height: fit-content !important;width: 100% !important;">
 										<div id="pemilihrentang-panel" class="pemilihrentang-panel">
 											<div class="pemilihrentang-isi">
 												<div class="opsi-cepat">
@@ -115,8 +114,8 @@
 							</div>
 							<div class="filters d-flex justify-content-end">
 								<div class="dropdown w-100 me-2">
-									<button class="btn btn-outline-primary dropdown-toggle" type="button" data-bs-toggle="dropdown"
-										aria-expanded="false">
+									<button class="btn btn-outline-primary dropdown-toggle" type="button"
+										data-bs-toggle="dropdown" aria-expanded="false">
 										Payment Methode
 									</button>
 									<ul class="dropdown-menu">
@@ -128,67 +127,70 @@
 						</div>
 						<!-- /Filter -->
 						<div class="table-responsive">
-							<table class="table  datanew">
-								<thead>
-									<tr>
-										<th>DESCRIPTION</th>
-										<th>AMOUNT</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>CASH FLOWS FROM OPERATING ACTIVITIES</td>
-										<td></td>
-									</tr>
-									<tr>
-										<td>Cash Received from Customers</td>
-										<td>45.000.000</td>
-									</tr>
-									<tr>
-										<td>Cash Paid for Materials (Paper, Ink, etc.)</td>
-										<td>-18.000.000</td>
-									</tr>
-									<tr>
-										<td>Cash Paid for Operating Expenses (Electricity, Rent)</td>
-										<td>-5.000.000</td>
-									</tr>
-									<tr>
-										<td>Cash Paid for Wages/Salaries</td>
-										<td>-7.000.000</td>
-									</tr>
-									<tr>
-										<td>Net Cash Provided by Operating Activities</td>
-										<td>15.000.000</td>
-									</tr>
-									<tr>
-										<td>CASH FLOWS FROM OTHER  ACTIVITIES</td>
-										<td></td>
-									</tr>
-									<tr>
-										<td>Other Financing Activities</td>
-										<td>3.000.000</td>
-									</tr>
-									<tr>
-										<td>NET INCREASE IN CASH</td>
-										<td>8.000.000</td>
-									</tr>
-									<tr>
-										<td>CASH AT BEGINNING OF MONTH</td>
-										<td>7.000.000</td>
-									</tr>
-									<tr>
-										<td>CASH AT END OF MONTH</td>
-										<td>15.000.000</td>
-									</tr>
-								</tbody>
-								<tfoot>
-									<tr>
-										<td class="text-start fw-bold">Total</td>
-										<!-- gunakan class sum-target dan data-col-index agar reusable -->
-										<td class="text-start fw-bold">Total</td>
-									</tr>
-								</tfoot>
-							</table>
+							<div class="row">
+								<div class="col-md-12 border-0">
+									<table class="table">
+										<tbody>
+											<tr>
+												<td style="font-weight: bold;">DESCRIPTION
+												</td>
+												<td style="font-weight: bold;">AMOUNT</td>
+											</tr>
+											<tr>
+												<td colspan="2" style="font-weight: bold;">CASH FLOWS FROM OPERATING
+													ACTIVITIES</td>
+											</tr>
+											<tr>
+												<td>Cash Received from Customers</td>
+												<td>45.000.000</td>
+											</tr>
+											<tr>
+												<td>Cash Paid for Materials (Paper, Ink, etc.)</td>
+												<td>-18.000.000</td>
+											</tr>
+											<tr>
+												<td>Cash Paid for Operating Expenses (Electricity, Rent)</td>
+												<td>-5.000.000</td>
+											</tr>
+											<tr>
+												<td>Cash Paid for Wages/Salaries</td>
+												<td>-7.000.000</td>
+											</tr>
+											<tr style="font-weight: bold;">
+												<td>Net Cash Provided by Operating Activities</td>
+												<td>15.000.000</td>
+											</tr>
+											<tr>
+												<td></td>
+											</tr>
+											<tr>
+												<td colspan="2" style="font-weight: bold;">CASH FLOWS FROM OTHER
+													ACTIVITIES</td>
+											</tr>
+											<tr>
+												<td>Other Financing Activities</td>
+												<td>3.000.000</td>
+											</tr>
+											<tr>
+												<td></td>
+											</tr>
+											<tr style="font-weight: bold;">
+												<td>NET INCREASE IN CASH</td>
+												<td>8.000.000</td>
+											</tr>
+											<tr style="font-weight: bold;">
+												<td>CASH AT BEGINNING OF MONTH</td>
+												<td>7.000.000</td>
+											</tr>
+											<tr style="font-weight: bold;">
+												<td>CASH AT END OF MONTH</td>
+												<td>15.000.000</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+
+							</div>
 						</div>
 					</div>
 				</div>

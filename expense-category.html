@@ -11,6 +11,23 @@
 	<meta name="robots" content="noindex, nofollow">
 	<title>Dreams Pos Admin Template</title>
 
+	
+
+<style>
+	.status-text {
+    font-weight: 600;
+    margin-left: 4px;
+}
+
+.status-text.active {
+    color: #28a745;
+}
+
+.status-text.inactive {
+    color: #dc3545;
+}
+
+</style>
 	<!-- Favicon -->
 	<link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
 
@@ -424,14 +441,25 @@
 											<textarea class="form-control" rows="3"></textarea>
 										</div>
 									</div>
-									<div class="col-lg-12">
-										<div
-											class="status-toggle modal-status d-flex justify-content-between align-items-center">
-											<span class="status-label">Status</span>
-											<input type="checkbox" id="add-status" class="check" checked>
-											<label for="add-status" class="checktoggle"></label>
-										</div>
-									</div>
+								<div class="col-lg-12">
+    <div class="status-toggle modal-status d-flex justify-content-between align-items-center mb-3 status-item">
+        <span class="status-label">
+            Status :
+            <span class="status-text active">Active</span>
+        </span>
+
+        <div class="d-flex align-items-center">
+            <input type="checkbox" id="user5" class="check status-checkbox" checked>
+            <label for="user5" class="checktoggle"></label>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
 								</div>
 							</div>
 							<div class="modal-footer">
@@ -483,13 +511,25 @@
 									</div>
 								</div>
 								<div class="col-lg-12">
-									<div
-										class="status-toggle modal-status d-flex justify-content-between align-items-center">
-										<span class="status-label">Status</span>
-										<input type="checkbox" id="edit-status" class="check" checked>
-										<label for="edit-status" class="checktoggle"></label>
-									</div>
-								</div>
+    <div class="status-toggle modal-status d-flex justify-content-between align-items-center mb-3 status-item">
+        <span class="status-label">
+            Status :
+            <span class="status-text inactive">Inactive</span>
+        </span>
+
+        <div class="d-flex align-items-center">
+            <input type="checkbox" id="user6" class="check status-checkbox">
+            <label for="user6" class="checktoggle"></label>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
 								<!-- /Editor -->
 							</div>
 							<div class="modal-footer-btn">
@@ -538,7 +578,49 @@
 	<!-- Custom JS -->
 	<script src="assets/js/theme-script.js"></script>
 	<script src="assets/js/script.js"></script>
+	<!-- active ga aktif -->
+	<script>
+function initStatusToggle(root = document) {
+    root.querySelectorAll('.status-item').forEach(item => {
 
+        const checkbox = item.querySelector('.status-checkbox');
+        const text = item.querySelector('.status-text');
+
+        if (!checkbox || !text) return;
+
+        const update = () => {
+            if (checkbox.checked) {
+                text.textContent = 'Active';
+                text.classList.add('active');
+                text.classList.remove('inactive');
+            } else {
+                text.textContent = 'Inactive';
+                text.classList.add('inactive');
+                text.classList.remove('active');
+            }
+        };
+
+        checkbox.addEventListener('change', update);
+        update();
+    });
+}
+
+// init awal
+document.addEventListener('DOMContentLoaded', () => {
+    initStatusToggle();
+});
+
+// OPTIONAL: kalau modal lu muncul via JS (Bootstrap)
+document.addEventListener('shown.bs.modal', e => {
+    initStatusToggle(e.target);
+});
+</script>
+
+
+
+
+	<!-- active ga aktif -->
+	
 	<script>
 		let currentRowId = null;
 

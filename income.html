@@ -744,40 +744,40 @@
 										<input type="hidden" value="1.000.000" class="result-input" id="amount">
 									</div>
 								</div>
-								<div class="col-lg-12">
-									<div class="mb-3">
-										<div class="d-flex my-3 align-items-center">
-											<label class="form-label">Payment Method</label>
-											<div class="form-check ms-3 align-items-center">
-												<input class="form-check-input" type="radio" name="radioPayment"
-													id="radioPayment1" checked=""
-													onclick="formTransferAdd.classList.add('d-none')">
-												<label class="form-check-label text-standard" for="radioPayment1">
-													Cash
-												</label>
-											</div>
-											<div class="form-check ms-3 align-items-center">
-												<input class="form-check-input" type="radio" name="radioPayment"
-													id="radioPayment2"
-													onclick="formTransferAdd.classList.remove('d-none')">
-												<label class="form-check-label text-standard" for="radioPayment2">
-													Transfer
-												</label>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-lg-12">
-									<div class="mb-3">
-										<label class="form-label">Bank Account</label>
-										<select class="select">
-											<option>Choose</option>
-											<option>BCA - 109-2993242 (PT. Dulank Semesta Cida)</option>
-											<option selected>Bank Mandiri - 132009982282 (PT. Dulank Semesta Cida)
-											</option>
-										</select>
-									</div>
-								</div>
+								<div class="payment-wrapper">
+    <div class="mb-3 d-flex">
+        <label class="form-label fw-bold">Payment Method</label>
+
+        <div class="form-check ms-3">
+            <input class="form-check-input payment-radio"
+                   type="radio"
+                   name="radioPayment1"
+                   value="cash"
+                   checked>
+            <label class="form-check-label">Cash</label>
+        </div>
+
+        <div class="form-check ms-3">
+            <input class="form-check-input payment-radio"
+                   type="radio"
+                   name="radioPayment1"
+                   value="transfer">
+            <label class="form-check-label">Transfer</label>
+        </div>
+    </div>
+
+    <div class="bank-info d-none">
+        <div class="mb-3">
+            <label class="form-label fw-bold">Bank Account</label>
+            <select class="form-select">
+                <option>Cipta Kreasi PT / BRI / 1320009982282</option>
+                <option>Dulank Semesta Cida PT / BCA / 1092993242</option>
+            </select>
+        </div>
+    </div>
+</div>
+
+								
 								<!-- Editor -->
 								<div class="col-md-12">
 									<div class="edit-add card">
@@ -858,39 +858,39 @@
 										<input type="hidden" class="result-input" id="amount">
 									</div>
 								</div>
-								<div class="col-lg-12">
-									<div class="mb-3">
-										<div class="d-flex my-3 align-items-center">
-											<label class="form-label">Payment Method</label>
-											<div class="form-check ms-3 align-items-center">
-												<input class="form-check-input" type="radio" name="radioPayment"
-													id="radioPayment1" checked=""
-													onclick="formTransferAdd.classList.add('d-none')">
-												<label class="form-check-label text-standard" for="radioPayment1">
-													Cash
-												</label>
-											</div>
-											<div class="form-check ms-3 align-items-center">
-												<input class="form-check-input" type="radio" name="radioPayment"
-													id="radioPayment2"
-													onclick="formTransferAdd.classList.remove('d-none')">
-												<label class="form-check-label text-standard" for="radioPayment2">
-													Transfer
-												</label>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-lg-12">
-									<div class="mb-3">
-										<label class="form-label">Bank Account</label>
-										<select class="select">
-											<option>Choose</option>
-											<option>BCA - 109-2993242 (PT. Dulank Semesta Cida)</option>
-											<option>Bank Mandiri - 132009982282 (PT. Dulank Semesta Cida)</option>
-										</select>
-									</div>
-								</div>
+								<div class="payment-wrapper">
+    <div class="mb-3 d-flex">
+        <label class="form-label fw-bold">Payment Method</label>
+
+        <div class="form-check ms-3">
+            <input class="form-check-input payment-radio"
+                   type="radio"
+                   name="radioPayment1"
+                   value="cash"
+                   checked>
+            <label class="form-check-label">Cash</label>
+        </div>
+
+        <div class="form-check ms-3">
+            <input class="form-check-input payment-radio"
+                   type="radio"
+                   name="radioPayment1"
+                   value="transfer">
+            <label class="form-check-label">Transfer</label>
+        </div>
+    </div>
+
+    <div class="bank-info d-none">
+        <div class="mb-3">
+            <label class="form-label fw-bold">Bank Account</label>
+            <select class="form-select">
+                <option>Cipta Kreasi PT / BRI / 1320009982282</option>
+                <option>Dulank Semesta Cida PT / BCA / 1092993242</option>
+            </select>
+        </div>
+    </div>
+</div>
+
 								<!-- Editor -->
 								<div class="col-md-12">
 									<div class="edit-add card">
@@ -919,6 +919,23 @@
 			</div>
 		</div>
 	</div>
+	<!-- sc buat biar bisa ada 2 transfer dan cash -->
+<script>
+document.querySelectorAll('.payment-wrapper').forEach(wrapper => {
+    const radios = wrapper.querySelectorAll('.payment-radio');
+    const bankInfo = wrapper.querySelector('.bank-info');
+
+    radios.forEach(radio => {
+        radio.addEventListener('change', () => {
+            if (radio.value === 'transfer') {
+                bankInfo.classList.remove('d-none');
+            } else {
+                bankInfo.classList.add('d-none');
+            }
+        });
+    });
+});
+</script>
 
 
 	<!-- /modals -->

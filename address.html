@@ -177,101 +177,1470 @@
 												<table class="table datanew">
 													<thead>
 														<tr>
-															<th class="no-sort">
-																<label class="checkboxs">
-																	<input type="checkbox" id="select-all">
-																	<span class="checkmarks"></span>
-																</label>
-															</th>
-															<th>ID Pengguna</th>
-															<th>User</th>
-															<th>Nomor Telepon</th>
-															<th>Alamat Lengkap</th>
-															<th>Kecamatan</th>
-															<th>Kota</th>
-															<th>Provinsi</th>
-															<th>Kode Pos</th>
-															<th>Channel</th>
-															<th>Tanggal Ditambahkan</th>
+															<th>ID Address</th>
+															<th>ID Customer</th>
+															<th>Name</th>
+															<th>Contact</th>
+															<th>Province</th>
+															<th>City</th>
+															<th>District</th>
+															<th>Detail Address</th>
+															<th>Other Detail</th>
 															<th>Status</th>
+															<th>Date</th>
+															<th class="no-sort">Action</th>
 														</tr>
 													</thead>
 													<tbody>
 														<tr>
-															<td>
-																<label class="checkboxs">
-																	<input type="checkbox">
-																	<span class="checkmarks"></span>
-																</label>
-															</td>
-															<td>john.doe@email.com</td>
-															<td>Budi Santoso</td>
-															<td class="str-value">6281234567890</td>
-															<td>Jl. Melati No. 45, RT 01/RW 02</td>
-															<td>Lenteng Agung</td>
-															<td>Jakarta Selatan</td>
+															<td>ADR00000001</td>
+															<td>ID000001</td>
+															<td>Aditya Pratama</td>
+															<td>+6281234567890</td>
 															<td>DKI Jakarta</td>
-															<td class="str-value">12345</td>
-															<td>Webstore</td>
-															<td class="str-value">2025-08-28</td>
-															<td>Aktif</td>
+															<td>Jakarta Timur</td>
+															<td>Kramat Jati</td>
+															<td>Perumahan Jati Asri, Kel. Dukuh</td>
+															<td>Pagar hitam, depan masjid</td>
+															<td>Active</td>
+															<td>02/12/2025 8:30</td>
+															<td class="action-table-data">
+																<div class="edit-delete-action">
+																	<a class="me-2 p-2" href="#">
+																		<i data-feather="eye" class="feather-eye"></i>
+																	</a>
+																	<a class="me-2 p-2" href="#" data-bs-toggle="modal"
+																		data-bs-target="#edit-units">
+																		<i data-feather="edit" class="feather-edit"></i>
+																	</a>
+																	<a class="confirm-text p-2"
+																		href="javascript:void(0);">
+																		<i data-feather="trash-2"
+																			class="feather-trash-2"></i>
+																	</a>
+																</div>
+															</td>
 														</tr>
 														<tr>
-															<td>
-																<label class="checkboxs">
-																	<input type="checkbox">
-																	<span class="checkmarks"></span>
-																</label>
-															</td>
-															<td>jane.smith@email.com</td>
-															<td>Siti Aminah</td>
-															<td class="str-value">6287654321098</td>
-															<td>Komplek Griya Indah Blok C-10</td>
-															<td>Cicalengka</td>
-															<td>Bandung</td>
-															<td>Jawa Barat</td>
-															<td class="str-value">40123</td>
-															<td>POS</td>
-															<td class="str-value">2025-08-27</td>
-															<td>Aktif</td>
-														</tr>
-														<tr>
-															<td>
-																<label class="checkboxs">
-																	<input type="checkbox">
-																	<span class="checkmarks"></span>
-																</label>
-															</td>
-															<td>david.williams@email.com</td>
-															<td>Budi Santoso</td>
-															<td class="str-value">6281234567891</td>
-															<td>Jl. Anggrek No. 12, RT 05/RW 03</td>
-															<td>Menteng</td>
+															<td>ADR00000002</td>
+															<td>ID000001</td>
+															<td>Aditya Pratama</td>
+															<td>021-8091234</td>
+															<td>DKI Jakarta</td>
 															<td>Jakarta Pusat</td>
-															<td>DKI Jakarta</td>
-															<td class="str-value">10123</td>
-															<td>POS</td>
-															<td class="str-value">2025-08-26</td>
-															<td>Dinonaktifkan</td>
+															<td>Gambir</td>
+															<td>Gedung Menara Puas jl. 5, Kel. Cideng</td>
+															<td>Lobby Utama, Dekat Off</td>
+															<td>Active</td>
+															<td>05/12/2025 10:15</td>
+															<td class="action-table-data">
+																<div class="edit-delete-action">
+																	<a class="me-2 p-2" href="#">
+																		<i data-feather="eye" class="feather-eye"></i>
+																	</a>
+																	<a class="me-2 p-2" href="#" data-bs-toggle="modal"
+																		data-bs-target="#edit-units">
+																		<i data-feather="edit" class="feather-edit"></i>
+																	</a>
+																	<a class="confirm-text p-2"
+																		href="javascript:void(0);">
+																		<i data-feather="trash-2"
+																			class="feather-trash-2"></i>
+																	</a>
+																</div>
+															</td>
 														</tr>
 														<tr>
-															<td>
-																<label class="checkboxs">
-																	<input type="checkbox">
-																	<span class="checkmarks"></span>
-																</label>
+															<td>ADR00000003</td>
+															<td>ID000002</td>
+															<td>Siti Aminah</td>
+															<td>+6281398765432</td>
+															<td>Jawa Barat</td>
+															<td>Kota Depok</td>
+															<td>Cinere</td>
+															<td>Jl. Melati No. 12, Kl. Pangkalan Jati</td>
+															<td>Samping Toko Kelontong Madura</td>
+															<td>Active</td>
+															<td>04/12/2025 9:45</td>
+															<td class="action-table-data">
+																<div class="edit-delete-action">
+																	<a class="me-2 p-2" href="#">
+																		<i data-feather="eye" class="feather-eye"></i>
+																	</a>
+																	<a class="me-2 p-2" href="#" data-bs-toggle="modal"
+																		data-bs-target="#edit-units">
+																		<i data-feather="edit" class="feather-edit"></i>
+																	</a>
+																	<a class="confirm-text p-2"
+																		href="javascript:void(0);">
+																		<i data-feather="trash-2"
+																			class="feather-trash-2"></i>
+																	</a>
+																</div>
 															</td>
-															<td>sarah.jones@email.com</td>
-															<td>Fajar Pratama</td>
-															<td class="str-value">6281122334455</td>
-															<td>Perumahan Damai Sentosa No. 8</td>
-															<td>Krembangan</td>
-															<td>Surabaya</td>
+														</tr>
+														<tr>
+															<td>ADR00000004</td>
+															<td>ID000002</td>
+															<td>Siti Aminah</td>
+															<td>+6281398765432</td>
+															<td>Jawa Barat</td>
+															<td>Kota Depok</td>
+															<td>Limo</td>
+															<td>Kp. Baru, Desa Grogol</td>
+															<td>Rumah cat hijau dekat lapangan</td>
+															<td>Disable</td>
+															<td>06/12/2025 14:20</td>
+															<td class="action-table-data">
+																<div class="edit-delete-action">
+																	<a class="me-2 p-2" href="#">
+																		<i data-feather="eye" class="feather-eye"></i>
+																	</a>
+																	<a class="me-2 p-2" href="#" data-bs-toggle="modal"
+																		data-bs-target="#edit-units">
+																		<i data-feather="edit" class="feather-edit"></i>
+																	</a>
+																	<a class="confirm-text p-2"
+																		href="javascript:void(0);">
+																		<i data-feather="trash-2"
+																			class="feather-trash-2"></i>
+																	</a>
+																</div>
+															</td>
+														</tr>
+														<tr>
+															<td>ADR00000005</td>
+															<td>ID000003</td>
+															<td>Budi Santoso</td>
+															<td>+6285211223344</td>
 															<td>Jawa Timur</td>
-															<td class="str-value">60223</td>
-															<td>Webstore</td>
-															<td class="str-value">2025-08-25</td>
-															<td>Aktif</td>
+															<td>Kota Surabaya</td>
+															<td>Wonokromo</td>
+															<td>Perumahan Wonokriomo Indah, Kel. Darmo</td>
+															<td>Blok A-15</td>
+															<td>Active</td>
+															<td>07/12/2025 11:10</td>
+															<td class="action-table-data">
+																<div class="edit-delete-action">
+																	<a class="me-2 p-2" href="#">
+																		<i data-feather="eye" class="feather-eye"></i>
+																	</a>
+																	<a class="me-2 p-2" href="#" data-bs-toggle="modal"
+																		data-bs-target="#edit-units">
+																		<i data-feather="edit" class="feather-edit"></i>
+																	</a>
+																	<a class="confirm-text p-2"
+																		href="javascript:void(0);">
+																		<i data-feather="trash-2"
+																			class="feather-trash-2"></i>
+																	</a>
+																</div>
+															</td>
+														</tr>
+														<tr>
+															<td>ADR00000006</td>
+															<td>ID000003</td>
+															<td>Budi Santoso</td>
+															<td>031-5566778</td>
+															<td>Jawa Timur</td>
+															<td>Kota Surabaya</td>
+															<td>Gubeng</td>
+															<td>Ruko Gubeng Jaya Blok C, Kel. Airlanagga</td>
+															<td>Printing & Digital Lab</td>
+															<td>Active</td>
+															<td>10/12/2025 13:40</td>
+															<td class="action-table-data">
+																<div class="edit-delete-action">
+																	<a class="me-2 p-2" href="#">
+																		<i data-feather="eye" class="feather-eye"></i>
+																	</a>
+																	<a class="me-2 p-2" href="#" data-bs-toggle="modal"
+																		data-bs-target="#edit-units">
+																		<i data-feather="edit" class="feather-edit"></i>
+																	</a>
+																	<a class="confirm-text p-2"
+																		href="javascript:void(0);">
+																		<i data-feather="trash-2"
+																			class="feather-trash-2"></i>
+																	</a>
+																</div>
+															</td>
+														</tr>
+														<tr>
+															<td>ADR00000007</td>
+															<td>ID000004</td>
+															<td>Dewi Lestari</td>
+															<td>+6281155667788</td>
+															<td>Jawa Tengah</td>
+															<td>Kota Semarang</td>
+															<td>Candisari</td>
+															<td>Jl. Sultan Agung No. 45, Kel. Wonotinggal</td>
+															<td>-</td>
+															<td>Active</td>
+															<td>12/12/2025 15:30</td>
+															<td class="action-table-data">
+																<div class="edit-delete-action">
+																	<a class="me-2 p-2" href="#">
+																		<i data-feather="eye" class="feather-eye"></i>
+																	</a>
+																	<a class="me-2 p-2" href="#" data-bs-toggle="modal"
+																		data-bs-target="#edit-units">
+																		<i data-feather="edit" class="feather-edit"></i>
+																	</a>
+																	<a class="confirm-text p-2"
+																		href="javascript:void(0);">
+																		<i data-feather="trash-2"
+																			class="feather-trash-2"></i>
+																	</a>
+																</div>
+															</td>
+														</tr>
+														<tr>
+															<td>ADR00000008</td>
+															<td>ID000004</td>
+															<td>Dewi Lestari</td>
+															<td>+6281155667788</td>
+															<td>Jawa Tengah</td>
+															<td>Kab. Kendal</td>
+															<td>Boja</td>
+															<td>Ko. Sawah, Desa Metesih</td>
+															<td>Dekat Puskesmas Boja</td>
+															<td>Active</td>
+															<td>15/12/2025 09:45</td>
+															<td class="action-table-data">
+																<div class="edit-delete-action">
+																	<a class="me-2 p-2" href="#">
+																		<i data-feather="eye" class="feather-eye"></i>
+																	</a>
+																	<a class="me-2 p-2" href="#" data-bs-toggle="modal"
+																		data-bs-target="#edit-units">
+																		<i data-feather="edit" class="feather-edit"></i>
+																	</a>
+																	<a class="confirm-text p-2"
+																		href="javascript:void(0);">
+																		<i data-feather="trash-2"
+																			class="feather-trash-2"></i>
+																	</a>
+																</div>
+															</td>
+														</tr>
+														<tr>
+															<td>ADR00000009</td>
+															<td>ID000005</td>
+															<td>Eko Wahyudi</td>
+															<td>+6282199001122</td>
+															<td>Banten</td>
+															<td>Kota Tangerang</td>
+															<td>Cipondoh</td>
+															<td>Perumahan Poris Indah, Kel. Cipondoh Makmur</td>
+															<td>Samping Pos Satpam</td>
+															<td>Active</td>
+															<td>16/12/2025 16:50</td>
+															<td class="action-table-data">
+																<div class="edit-delete-action">
+																	<a class="me-2 p-2" href="#">
+																		<i data-feather="eye" class="feather-eye"></i>
+																	</a>
+																	<a class="me-2 p-2" href="#" data-bs-toggle="modal"
+																		data-bs-target="#edit-units">
+																		<i data-feather="edit" class="feather-edit"></i>
+																	</a>
+																	<a class="confirm-text p-2"
+																		href="javascript:void(0);">
+																		<i data-feather="trash-2"
+																			class="feather-trash-2"></i>
+																	</a>
+																</div>
+															</td>
+														</tr>
+														<tr>
+															<td>ADR00000010</td>
+															<td>ID000005</td>
+															<td>Eko Wahyudi</td>
+															<td>021-5544332</td>
+															<td>Banten</td>
+															<td>Kota Tangerang</td>
+															<td>Cikaup</td>
+															<td>Kawasan Industri Otopark, Desa Talagasari</td>
+															<td>Gudang Logistik B-2</td>
+															<td>Active</td>
+															<td>18/12/2025 10:25</td>
+															<td class="action-table-data">
+																<div class="edit-delete-action">
+																	<a class="me-2 p-2" href="#">
+																		<i data-feather="eye" class="feather-eye"></i>
+																	</a>
+																	<a class="me-2 p-2" href="#" data-bs-toggle="modal"
+																		data-bs-target="#edit-units">
+																		<i data-feather="edit" class="feather-edit"></i>
+																	</a>
+																	<a class="confirm-text p-2"
+																		href="javascript:void(0);">
+																		<i data-feather="trash-2"
+																			class="feather-trash-2"></i>
+																	</a>
+																</div>
+															</td>
+														</tr>
+														<tr>
+															<td>ADR00000011</td>
+															<td>ID000006</td>
+															<td>Fitri Handayani</td>
+															<td>+6281933445566</td>
+															<td>DI Yogyakarta</td>
+															<td>Kota Yogyakarta</td>
+															<td>Umbulharjo</td>
+															<td>Jl. Tanjunan No. 8, Kel. Tanjunan</td>
+															<td>Kost Putri Pelangi</td>
+															<td>Active</td>
+															<td>20/12/2025 11:15</td>
+															<td class="action-table-data">
+																<div class="edit-delete-action">
+																	<a class="me-2 p-2" href="#">
+																		<i data-feather="eye" class="feather-eye"></i>
+																	</a>
+																	<a class="me-2 p-2" href="#" data-bs-toggle="modal"
+																		data-bs-target="#edit-units">
+																		<i data-feather="edit" class="feather-edit"></i>
+																	</a>
+																	<a class="confirm-text p-2"
+																		href="javascript:void(0);">
+																		<i data-feather="trash-2"
+																			class="feather-trash-2"></i>
+																	</a>
+																</div>
+															</td>
+														</tr>
+														<tr>
+															<td>ADR00000012</td>
+															<td>ID000006</td>
+															<td>Fitri Handayani</td>
+															<td>+6281933445566</td>
+															<td>DI Yogyakarta</td>
+															<td>Kab. Sleman</td>
+															<td>Depok</td>
+															<td>JL. Laksda Adisucipto, Desa Papringan</td>
+															<td>Samping Stasiun Kereta</td>
+															<td>Disable</td>
+															<td>22/12/2025 13:55</td>
+															<td class="action-table-data">
+																<div class="edit-delete-action">
+																	<a class="me-2 p-2" href="#">
+																		<i data-feather="eye" class="feather-eye"></i>
+																	</a>
+																	<a class="me-2 p-2" href="#" data-bs-toggle="modal"
+																		data-bs-target="#edit-units">
+																		<i data-feather="edit" class="feather-edit"></i>
+																	</a>
+																	<a class="confirm-text p-2"
+																		href="javascript:void(0);">
+																		<i data-feather="trash-2"
+																			class="feather-trash-2"></i>
+																	</a>
+																</div>
+															</td>
+														</tr>
+														<tr>
+															<td>ADR00000013</td>
+															<td>ID000007</td>
+															<td>Guntur Saputra</td>
+															<td>+6285777889900</td>
+															<td>Jawa Barat</td>
+															<td>Kota Bandung</td>
+															<td>Coblong</td>
+															<td>Kp. Dago, Kel. Lebak Siliwangi</td>
+															<td>Belakang Terminal Dago</td>
+															<td>Active</td>
+															<td>23/12/2025 08:50</td>
+															<td class="action-table-data">
+																<div class="edit-delete-action">
+																	<a class="me-2 p-2" href="#">
+																		<i data-feather="eye" class="feather-eye"></i>
+																	</a>
+																	<a class="me-2 p-2" href="#" data-bs-toggle="modal"
+																		data-bs-target="#edit-units">
+																		<i data-feather="edit" class="feather-edit"></i>
+																	</a>
+																	<a class="confirm-text p-2"
+																		href="javascript:void(0);">
+																		<i data-feather="trash-2"
+																			class="feather-trash-2"></i>
+																	</a>
+																</div>
+															</td>
+														</tr>
+														<tr>
+															<td>ADR00000014</td>
+															<td>ID000007</td>
+															<td>Guntur Saputra</td>
+															<td>022-2501234</td>
+															<td>Jawa Barat</td>
+															<td>Kota Bandung</td>
+															<td>Sumur Bandung</td>
+															<td>Jl. Asia Afrika No. 10, Kel. Braga</td>
+															<td>Gedung Perkantoran</td>
+															<td>Disable</td>
+															<td>25/12/2025 13:10</td>
+															<td class="action-table-data">
+																<div class="edit-delete-action">
+																	<a class="me-2 p-2" href="#">
+																		<i data-feather="eye" class="feather-eye"></i>
+																	</a>
+																	<a class="me-2 p-2" href="#" data-bs-toggle="modal"
+																		data-bs-target="#edit-units">
+																		<i data-feather="edit" class="feather-edit"></i>
+																	</a>
+																	<a class="confirm-text p-2"
+																		href="javascript:void(0);">
+																		<i data-feather="trash-2"
+																			class="feather-trash-2"></i>
+																	</a>
+																</div>
+															</td>
+														</tr>
+														<tr>
+															<td>ADR00000015</td>
+															<td>ID000008</td>
+															<td>Hana Pertiwi</td>
+															<td>+6281288776655</td>
+															<td>Bali</td>
+															<td>Kota Denpasar</td>
+															<td>Denpasar Selatan</td>
+															<td>Perumahan Sanur Permai, Kel. Panjer</td>
+															<td>Gerbang Kayu</td>
+															<td>Active</td>
+															<td>26/12/2025 15:20</td>
+															<td class="action-table-data">
+																<div class="edit-delete-action">
+																	<a class="me-2 p-2" href="#">
+																		<i data-feather="eye" class="feather-eye"></i>
+																	</a>
+																	<a class="me-2 p-2" href="#" data-bs-toggle="modal"
+																		data-bs-target="#edit-units">
+																		<i data-feather="edit" class="feather-edit"></i>
+																	</a>
+																	<a class="confirm-text p-2"
+																		href="javascript:void(0);">
+																		<i data-feather="trash-2"
+																			class="feather-trash-2"></i>
+																	</a>
+																</div>
+															</td>
+														</tr>
+														<tr>
+															<td>ADR00000016</td>
+															<td>ID000008</td>
+															<td>Hana Pertiwi</td>
+															<td>+6281288776655</td>
+															<td>Bali</td>
+															<td>Kab. Badung</td>
+															<td>Kuta</td>
+															<td>Villa Sunset Blok B, Desa Ihebubeng</td>
+															<td>Area Kolam Renang</td>
+															<td>Active</td>
+															<td>28/12/2025 10:45</td>
+															<td class="action-table-data">
+																<div class="edit-delete-action">
+																	<a class="me-2 p-2" href="#">
+																		<i data-feather="eye" class="feather-eye"></i>
+																	</a>
+																	<a class="me-2 p-2" href="#" data-bs-toggle="modal"
+																		data-bs-target="#edit-units">
+																		<i data-feather="edit" class="feather-edit"></i>
+																	</a>
+																	<a class="confirm-text p-2"
+																		href="javascript:void(0);">
+																		<i data-feather="trash-2"
+																			class="feather-trash-2"></i>
+																	</a>
+																</div>
+															</td>
+														</tr>
+														<tr>
+															<td>ADR00000017</td>
+															<td>ID000009</td>
+															<td>Indra Kusuma</td>
+															<td>+6281311223399</td>
+															<td>Sumatera Utara</td>
+															<td>Kota Medan</td>
+															<td>Medan Petisah</td>
+															<td>Jl. Gajah Mada No. 3, Kel. Petisah Tengah</td>
+															<td>Kantor Pengacara Kusuma</td>
+															<td>Active</td>
+															<td>29/12/2025 12:30</td>
+															<td class="action-table-data">
+																<div class="edit-delete-action">
+																	<a class="me-2 p-2" href="#">
+																		<i data-feather="eye" class="feather-eye"></i>
+																	</a>
+																	<a class="me-2 p-2" href="#" data-bs-toggle="modal"
+																		data-bs-target="#edit-units">
+																		<i data-feather="edit" class="feather-edit"></i>
+																	</a>
+																	<a class="confirm-text p-2"
+																		href="javascript:void(0);">
+																		<i data-feather="trash-2"
+																			class="feather-trash-2"></i>
+																	</a>
+																</div>
+															</td>
+														</tr>
+														<tr>
+															<td>ADR00000018</td>
+															<td>ID000009</td>
+															<td>Indra Kusuma</td>
+															<td>061-4512345</td>
+															<td>Sumatera Utara</td>
+															<td>Kota Medan</td>
+															<td>Medan Deli</td>
+															<td>Kp. Mabar, Kel. Mabar</td>
+															<td>Samping Bengkel Motor</td>
+															<td>Active</td>
+															<td>02/01/2026 8:20</td>
+															<td class="action-table-data">
+																<div class="edit-delete-action">
+																	<a class="me-2 p-2" href="#">
+																		<i data-feather="eye" class="feather-eye"></i>
+																	</a>
+																	<a class="me-2 p-2" href="#" data-bs-toggle="modal"
+																		data-bs-target="#edit-units">
+																		<i data-feather="edit" class="feather-edit"></i>
+																	</a>
+																	<a class="confirm-text p-2"
+																		href="javascript:void(0);">
+																		<i data-feather="trash-2"
+																			class="feather-trash-2"></i>
+																	</a>
+																</div>
+															</td>
+														</tr>
+														<tr>
+															<td>ADR00000019</td>
+															<td>ID000010</td>
+															<td>Joko Widodo</td>
+															<td>+6281144556677</td>
+															<td>DKI Jakarta</td>
+															<td>Jakarta Selatan</td>
+															<td>Setialbudhi</td>
+															<td>Kompleks Cipete Raya No. 25, Kel. Karet Kuningan</td>
+															<td>Apartemen Waterpplace</td>
+															<td>Active</td>
+															<td>04/01/2026 11:55</td>
+															<td class="action-table-data">
+																<div class="edit-delete-action">
+																	<a class="me-2 p-2" href="#">
+																		<i data-feather="eye" class="feather-eye"></i>
+																	</a>
+																	<a class="me-2 p-2" href="#" data-bs-toggle="modal"
+																		data-bs-target="#edit-units">
+																		<i data-feather="edit" class="feather-edit"></i>
+																	</a>
+																	<a class="confirm-text p-2"
+																		href="javascript:void(0);">
+																		<i data-feather="trash-2"
+																			class="feather-trash-2"></i>
+																	</a>
+																</div>
+															</td>
+														</tr>
+														<tr>
+															<td>ADR00000020</td>
+															<td>ID000010</td>
+															<td>Joko Widodo</td>
+															<td>+6281144556677</td>
+															<td>DKI Jakarta</td>
+															<td>Jakarta Timur</td>
+															<td>Cakung</td>
+															<td>Pergudangan Bizpark, Kel. Penggilian</td>
+															<td>Gudang Offset 5</td>
+															<td>Active</td>
+															<td>05/01/2026 16:10</td>
+															<td class="action-table-data">
+																<div class="edit-delete-action">
+																	<a class="me-2 p-2" href="#">
+																		<i data-feather="eye" class="feather-eye"></i>
+																	</a>
+																	<a class="me-2 p-2" href="#" data-bs-toggle="modal"
+																		data-bs-target="#edit-units">
+																		<i data-feather="edit" class="feather-edit"></i>
+																	</a>
+																	<a class="confirm-text p-2"
+																		href="javascript:void(0);">
+																		<i data-feather="trash-2"
+																			class="feather-trash-2"></i>
+																	</a>
+																</div>
+															</td>
+														</tr>
+														<tr>
+															<td>ADR00000021</td>
+															<td>ID000011</td>
+															<td>Kusuma Wardhana</td>
+															<td>+6281166778899</td>
+															<td>Riau</td>
+															<td>Kota Pekanbaru</td>
+															<td>Sukajadi</td>
+															<td>Jl. Diponegoro No. 99, Kel. Sukajadi</td>
+															<td>Kantor Cabang</td>
+															<td>Active</td>
+															<td>07/01/2026 9:30</td>
+															<td class="action-table-data">
+																<div class="edit-delete-action">
+																	<a class="me-2 p-2" href="#">
+																		<i data-feather="eye" class="feather-eye"></i>
+																	</a>
+																	<a class="me-2 p-2" href="#" data-bs-toggle="modal"
+																		data-bs-target="#edit-units">
+																		<i data-feather="edit" class="feather-edit"></i>
+																	</a>
+																	<a class="confirm-text p-2"
+																		href="javascript:void(0);">
+																		<i data-feather="trash-2"
+																			class="feather-trash-2"></i>
+																	</a>
+																</div>
+															</td>
+														</tr>
+														<tr>
+															<td>ADR00000022</td>
+															<td>ID000011</td>
+															<td>Kusuma Wardhana</td>
+															<td>0761-1234567</td>
+															<td>Riau</td>
+															<td>Kab. Kampar</td>
+															<td>Bangkinang</td>
+															<td>KM 5, Jl. Pendidikan, Desa Sungai Putih</td>
+															<td>Pusat Distribusi</td>
+															<td>Active</td>
+															<td>08/01/2026 14:45</td>
+															<td class="action-table-data">
+																<div class="edit-delete-action">
+																	<a class="me-2 p-2" href="#">
+																		<i data-feather="eye" class="feather-eye"></i>
+																	</a>
+																	<a class="me-2 p-2" href="#" data-bs-toggle="modal"
+																		data-bs-target="#edit-units">
+																		<i data-feather="edit" class="feather-edit"></i>
+																	</a>
+																	<a class="confirm-text p-2"
+																		href="javascript:void(0);">
+																		<i data-feather="trash-2"
+																			class="feather-trash-2"></i>
+																	</a>
+																</div>
+															</td>
+														</tr>
+														<tr>
+															<td>ADR00000023</td>
+															<td>ID000012</td>
+															<td>Lina Setyawati</td>
+															<td>+6281155664422</td>
+															<td>Kalimantan Timur</td>
+															<td>Kota Samarinda</td>
+															<td>Samarinda Ulu</td>
+															<td>Perumahan Bukit Lestari, Kel. Jl. Merdeka</td>
+															<td>Rumah no. 7</td>
+															<td>Active</td>
+															<td>09/01/2026 10:20</td>
+															<td class="action-table-data">
+																<div class="edit-delete-action">
+																	<a class="me-2 p-2" href="#">
+																		<i data-feather="eye" class="feather-eye"></i>
+																	</a>
+																	<a class="me-2 p-2" href="#" data-bs-toggle="modal"
+																		data-bs-target="#edit-units">
+																		<i data-feather="edit" class="feather-edit"></i>
+																	</a>
+																	<a class="confirm-text p-2"
+																		href="javascript:void(0);">
+																		<i data-feather="trash-2"
+																			class="feather-trash-2"></i>
+																	</a>
+																</div>
+															</td>
+														</tr>
+														<tr>
+															<td>ADR00000024</td>
+															<td>ID000012</td>
+															<td>Lina Setyawati</td>
+															<td>+6281155664422</td>
+															<td>Kalimantan Tengah</td>
+															<td>Kota Palangkaraya</td>
+															<td>Pahandut</td>
+															<td>Jl. Pramuka No. 5, Kel. Pahandut</td>
+															<td>-</td>
+															<td>Active</td>
+															<td>10/01/2026 16:00</td>
+															<td class="action-table-data">
+																<div class="edit-delete-action">
+																	<a class="me-2 p-2" href="#">
+																		<i data-feather="eye" class="feather-eye"></i>
+																	</a>
+																	<a class="me-2 p-2" href="#" data-bs-toggle="modal"
+																		data-bs-target="#edit-units">
+																		<i data-feather="edit" class="feather-edit"></i>
+																	</a>
+																	<a class="confirm-text p-2"
+																		href="javascript:void(0);">
+																		<i data-feather="trash-2"
+																			class="feather-trash-2"></i>
+																	</a>
+																</div>
+															</td>
+														</tr>
+														<tr>
+															<td>ADR00000025</td>
+															<td>ID000013</td>
+															<td>Mega Susianti</td>
+															<td>+6281944556677</td>
+															<td>Sulawesi Utara</td>
+															<td>Kota Manado</td>
+															<td>Wenang</td>
+															<td>Jl. Sudirman No. 75, Kel. Wenang</td>
+															<td>Mall Pintar Ground Floor</td>
+															<td>Active</td>
+															<td>12/01/2026 8:45</td>
+															<td class="action-table-data">
+																<div class="edit-delete-action">
+																	<a class="me-2 p-2" href="#">
+																		<i data-feather="eye" class="feather-eye"></i>
+																	</a>
+																	<a class="me-2 p-2" href="#" data-bs-toggle="modal"
+																		data-bs-target="#edit-units">
+																		<i data-feather="edit" class="feather-edit"></i>
+																	</a>
+																	<a class="confirm-text p-2"
+																		href="javascript:void(0);">
+																		<i data-feather="trash-2"
+																			class="feather-trash-2"></i>
+																	</a>
+																</div>
+															</td>
+														</tr>
+														<tr>
+															<td>ADR00000026</td>
+															<td>ID000013</td>
+															<td>Mega Susianti</td>
+															<td>0431-2345678</td>
+															<td>Sulawesi Utara</td>
+															<td>Kab. Minahasa</td>
+															<td>Tondano</td>
+															<td>Jl. Raya Tondano KM 3, Desa Pilohon</td>
+															<td>Gudang Penyimpanan</td>
+															<td>Active</td>
+															<td>13/01/2026 13:30</td>
+															<td class="action-table-data">
+																<div class="edit-delete-action">
+																	<a class="me-2 p-2" href="#">
+																		<i data-feather="eye" class="feather-eye"></i>
+																	</a>
+																	<a class="me-2 p-2" href="#" data-bs-toggle="modal"
+																		data-bs-target="#edit-units">
+																		<i data-feather="edit" class="feather-edit"></i>
+																	</a>
+																	<a class="confirm-text p-2"
+																		href="javascript:void(0);">
+																		<i data-feather="trash-2"
+																			class="feather-trash-2"></i>
+																	</a>
+																</div>
+															</td>
+														</tr>
+														<tr>
+															<td>ADR00000027</td>
+															<td>ID000014</td>
+															<td>Nurul Azizah</td>
+															<td>+6281077778888</td>
+															<td>Lampung</td>
+															<td>Kota Bandar Lampung</td>
+															<td>Tanjung Senang</td>
+															<td>Jl. Imam Bonjol No. 120, Kel. Tanjung Senang</td>
+															<td>Dekat Stasiun Jaya</td>
+															<td>Active</td>
+															<td>14/01/2026 11:10</td>
+															<td class="action-table-data">
+																<div class="edit-delete-action">
+																	<a class="me-2 p-2" href="#">
+																		<i data-feather="eye" class="feather-eye"></i>
+																	</a>
+																	<a class="me-2 p-2" href="#" data-bs-toggle="modal"
+																		data-bs-target="#edit-units">
+																		<i data-feather="edit" class="feather-edit"></i>
+																	</a>
+																	<a class="confirm-text p-2"
+																		href="javascript:void(0);">
+																		<i data-feather="trash-2"
+																			class="feather-trash-2"></i>
+																	</a>
+																</div>
+															</td>
+														</tr>
+														<tr>
+															<td>ADR00000028</td>
+															<td>ID000014</td>
+															<td>Nurul Azizah</td>
+															<td>0721-789456</td>
+															<td>Lampung</td>
+															<td>Kab. Lampung Utara</td>
+															<td>Kotabumi</td>
+															<td>Jl. P. Diponegoro No. 45, Kel. Kotabumi</td>
+															<td>Ruko Mini</td>
+															<td>Disable</td>
+															<td>16/01/2026 14:25</td>
+															<td class="action-table-data">
+																<div class="edit-delete-action">
+																	<a class="me-2 p-2" href="#">
+																		<i data-feather="eye" class="feather-eye"></i>
+																	</a>
+																	<a class="me-2 p-2" href="#" data-bs-toggle="modal"
+																		data-bs-target="#edit-units">
+																		<i data-feather="edit" class="feather-edit"></i>
+																	</a>
+																	<a class="confirm-text p-2"
+																		href="javascript:void(0);">
+																		<i data-feather="trash-2"
+																			class="feather-trash-2"></i>
+																	</a>
+																</div>
+															</td>
+														</tr>
+														<tr>
+															<td>ADR00000029</td>
+															<td>ID000015</td>
+															<td>Oka Permana</td>
+															<td>+6281255553333</td>
+															<td>Bali</td>
+															<td>Kab. Gianyar</td>
+															<td>Ubud</td>
+															<td>Jl. Raya Ubud No. 50, Desa Ubud</td>
+															<td>Home Studio</td>
+															<td>Active</td>
+															<td>17/01/2026 10:00</td>
+															<td class="action-table-data">
+																<div class="edit-delete-action">
+																	<a class="me-2 p-2" href="#">
+																		<i data-feather="eye" class="feather-eye"></i>
+																	</a>
+																	<a class="me-2 p-2" href="#" data-bs-toggle="modal"
+																		data-bs-target="#edit-units">
+																		<i data-feather="edit" class="feather-edit"></i>
+																	</a>
+																	<a class="confirm-text p-2"
+																		href="javascript:void(0);">
+																		<i data-feather="trash-2"
+																			class="feather-trash-2"></i>
+																	</a>
+																</div>
+															</td>
+														</tr>
+														<tr>
+															<td>ADR00000030</td>
+															<td>ID000015</td>
+															<td>Oka Permana</td>
+															<td>0361-975311</td>
+															<td>Bali</td>
+															<td>Kab. Denpasar</td>
+															<td>Denpasar Utara</td>
+															<td>Jl. Cok Agung Tresna No. 5, Kel. Dangin Puri</td>
+															<td>Toko Kelontong</td>
+															<td>Active</td>
+															<td>18/01/2026 15:40</td>
+															<td class="action-table-data">
+																<div class="edit-delete-action">
+																	<a class="me-2 p-2" href="#">
+																		<i data-feather="eye" class="feather-eye"></i>
+																	</a>
+																	<a class="me-2 p-2" href="#" data-bs-toggle="modal"
+																		data-bs-target="#edit-units">
+																		<i data-feather="edit" class="feather-edit"></i>
+																	</a>
+																	<a class="confirm-text p-2"
+																		href="javascript:void(0);">
+																		<i data-feather="trash-2"
+																			class="feather-trash-2"></i>
+																	</a>
+																</div>
+															</td>
+														</tr>
+														<tr>
+															<td>ADR00000031</td>
+															<td>ID000016</td>
+															<td>Putra Hermawan</td>
+															<td>+6281266664444</td>
+															<td>Aceh</td>
+															<td>Kota Banda Aceh</td>
+															<td>Kuta Alam</td>
+															<td>Jl. Teuku Nyak Arief No. 88, Kel. Kuta Alam</td>
+															<td>Gedung Putih</td>
+															<td>Active</td>
+															<td>19/01/2026 12:15</td>
+															<td class="action-table-data">
+																<div class="edit-delete-action">
+																	<a class="me-2 p-2" href="#">
+																		<i data-feather="eye" class="feather-eye"></i>
+																	</a>
+																	<a class="me-2 p-2" href="#" data-bs-toggle="modal"
+																		data-bs-target="#edit-units">
+																		<i data-feather="edit" class="feather-edit"></i>
+																	</a>
+																	<a class="confirm-text p-2"
+																		href="javascript:void(0);">
+																		<i data-feather="trash-2"
+																			class="feather-trash-2"></i>
+																	</a>
+																</div>
+															</td>
+														</tr>
+														<tr>
+															<td>ADR00000032</td>
+															<td>ID000016</td>
+															<td>Putra Hermawan</td>
+															<td>0651-23456</td>
+															<td>Aceh</td>
+															<td>Kab. Aceh Besar</td>
+															<td>Gampong Jawa</td>
+															<td>Jl. Pendidikan No. 2, Gampong Jawa</td>
+															<td>Sarana Umum</td>
+															<td>Active</td>
+															<td>20/01/2026 9:50</td>
+															<td class="action-table-data">
+																<div class="edit-delete-action">
+																	<a class="me-2 p-2" href="#">
+																		<i data-feather="eye" class="feather-eye"></i>
+																	</a>
+																	<a class="me-2 p-2" href="#" data-bs-toggle="modal"
+																		data-bs-target="#edit-units">
+																		<i data-feather="edit" class="feather-edit"></i>
+																	</a>
+																	<a class="confirm-text p-2"
+																		href="javascript:void(0);">
+																		<i data-feather="trash-2"
+																			class="feather-trash-2"></i>
+																	</a>
+																</div>
+															</td>
+														</tr>
+														<tr>
+															<td>ADR00000033</td>
+															<td>ID000020</td>
+															<td>Wahyu Hidayat</td>
+															<td>+6281344445555</td>
+															<td>Jawa Timur</td>
+															<td>Kota Malang</td>
+															<td>Klojen</td>
+															<td>Jl. Ijen No. 55, Kel. Oro-oro Dowo</td>
+															<td>Gedung Bertingkat</td>
+															<td>Active</td>
+															<td>21/01/2026 14:30</td>
+															<td class="action-table-data">
+																<div class="edit-delete-action">
+																	<a class="me-2 p-2" href="#">
+																		<i data-feather="eye" class="feather-eye"></i>
+																	</a>
+																	<a class="me-2 p-2" href="#" data-bs-toggle="modal"
+																		data-bs-target="#edit-units">
+																		<i data-feather="edit" class="feather-edit"></i>
+																	</a>
+																	<a class="confirm-text p-2"
+																		href="javascript:void(0);">
+																		<i data-feather="trash-2"
+																			class="feather-trash-2"></i>
+																	</a>
+																</div>
+															</td>
+														</tr>
+														<tr>
+															<td>ADR00000034</td>
+															<td>ID000017</td>
+															<td>Ratna Juwita</td>
+															<td>+6281200998877</td>
+															<td>Lampung</td>
+															<td>Kab. Lampung Selatan</td>
+															<td>Natar</td>
+															<td>Kp. Natar Indah, Desa Natar</td>
+															<td>-</td>
+															<td>Disable</td>
+															<td>25/01/2026 13:30</td>
+															<td class="action-table-data">
+																<div class="edit-delete-action">
+																	<a class="me-2 p-2" href="#">
+																		<i data-feather="eye" class="feather-eye"></i>
+																	</a>
+																	<a class="me-2 p-2" href="#" data-bs-toggle="modal"
+																		data-bs-target="#edit-units">
+																		<i data-feather="edit" class="feather-edit"></i>
+																	</a>
+																	<a class="confirm-text p-2"
+																		href="javascript:void(0);">
+																		<i data-feather="trash-2"
+																			class="feather-trash-2"></i>
+																	</a>
+																</div>
+															</td>
+														</tr>
+														<tr>
+															<td>ADR00000035</td>
+															<td>ID000018</td>
+															<td>Surya Kencana</td>
+															<td>+6281355443322</td>
+															<td>Kalimantan Barat</td>
+															<td>Kota Pontianak</td>
+															<td>Pontianak Selatan</td>
+															<td>Perum Purnama Indah, Kel. Akcaya</td>
+															<td>Gerbang Kuning</td>
+															<td>Active</td>
+															<td>26/01/2026 16:40</td>
+															<td class="action-table-data">
+																<div class="edit-delete-action">
+																	<a class="me-2 p-2" href="#">
+																		<i data-feather="eye" class="feather-eye"></i>
+																	</a>
+																	<a class="me-2 p-2" href="#" data-bs-toggle="modal"
+																		data-bs-target="#edit-units">
+																		<i data-feather="edit" class="feather-edit"></i>
+																	</a>
+																	<a class="confirm-text p-2"
+																		href="javascript:void(0);">
+																		<i data-feather="trash-2"
+																			class="feather-trash-2"></i>
+																	</a>
+																</div>
+															</td>
+														</tr>
+														<tr>
+															<td>ADR00000036</td>
+															<td>ID000018</td>
+															<td>Surya Kencana</td>
+															<td>0561-732145</td>
+															<td>Kalimantan Barat</td>
+															<td>Kab. Ketapang</td>
+															<td>Sungai Raya</td>
+															<td>Kp. Arah, Desa Sungai Raya</td>
+															<td>Dekat Bandara Supadio</td>
+															<td>Active</td>
+															<td>28/01/2026 10:10</td>
+															<td class="action-table-data">
+																<div class="edit-delete-action">
+																	<a class="me-2 p-2" href="#">
+																		<i data-feather="eye" class="feather-eye"></i>
+																	</a>
+																	<a class="me-2 p-2" href="#" data-bs-toggle="modal"
+																		data-bs-target="#edit-units">
+																		<i data-feather="edit" class="feather-edit"></i>
+																	</a>
+																	<a class="confirm-text p-2"
+																		href="javascript:void(0);">
+																		<i data-feather="trash-2"
+																			class="feather-trash-2"></i>
+																	</a>
+																</div>
+															</td>
+														</tr>
+														<tr>
+															<td>ADR00000037</td>
+															<td>ID000019</td>
+															<td>Tri Utami</td>
+															<td>+6285288771122</td>
+															<td>NTB</td>
+															<td>Kota Mataram</td>
+															<td>Selaparang</td>
+															<td>Jl. Rembiga Utama, Kel. Rembiga</td>
+															<td>Warung Nasi Balap</td>
+															<td>Active</td>
+															<td>29/01/2026 12:20</td>
+															<td class="action-table-data">
+																<div class="edit-delete-action">
+																	<a class="me-2 p-2" href="#">
+																		<i data-feather="eye" class="feather-eye"></i>
+																	</a>
+																	<a class="me-2 p-2" href="#" data-bs-toggle="modal"
+																		data-bs-target="#edit-units">
+																		<i data-feather="edit" class="feather-edit"></i>
+																	</a>
+																	<a class="confirm-text p-2"
+																		href="javascript:void(0);">
+																		<i data-feather="trash-2"
+																			class="feather-trash-2"></i>
+																	</a>
+																</div>
+															</td>
+														</tr>
+														<tr>
+															<td>ADR00000038</td>
+															<td>ID000019</td>
+															<td>Tri Utami</td>
+															<td>+6285288771122</td>
+															<td>NTB</td>
+															<td>Kab. Lombok Barat</td>
+															<td>Batu Layar</td>
+															<td>Kp. Senggigi, Desa Batu Layar</td>
+															<td>Depan Hotel Senggigi</td>
+															<td>Active</td>
+															<td>31/01/2026 08:50</td>
+															<td class="action-table-data">
+																<div class="edit-delete-action">
+																	<a class="me-2 p-2" href="#">
+																		<i data-feather="eye" class="feather-eye"></i>
+																	</a>
+																	<a class="me-2 p-2" href="#" data-bs-toggle="modal"
+																		data-bs-target="#edit-units">
+																		<i data-feather="edit" class="feather-edit"></i>
+																	</a>
+																	<a class="confirm-text p-2"
+																		href="javascript:void(0);">
+																		<i data-feather="trash-2"
+																			class="feather-trash-2"></i>
+																	</a>
+																</div>
+															</td>
+														</tr>
+														<tr>
+															<td>ADR00000039</td>
+															<td>ID000020</td>
+															<td>Wahyu Hidayat</td>
+															<td>+6281223434488</td>
+															<td>Papua</td>
+															<td>Kota Jayapura</td>
+															<td>Jayapura Utara</td>
+															<td>Jl. Ahmad Yani, Kel. Gurabesi</td>
+															<td>Mall Jayapura</td>
+															<td>Active</td>
+															<td>01/02/2026 14:15</td>
+															<td class="action-table-data">
+																<div class="edit-delete-action">
+																	<a class="me-2 p-2" href="#">
+																		<i data-feather="eye" class="feather-eye"></i>
+																	</a>
+																	<a class="me-2 p-2" href="#" data-bs-toggle="modal"
+																		data-bs-target="#edit-units">
+																		<i data-feather="edit" class="feather-edit"></i>
+																	</a>
+																	<a class="confirm-text p-2"
+																		href="javascript:void(0);">
+																		<i data-feather="trash-2"
+																			class="feather-trash-2"></i>
+																	</a>
+																</div>
+															</td>
+														</tr>
+														<tr>
+															<td>ADR00000040</td>
+															<td>ID000020</td>
+															<td>Wahyu Hidayat</td>
+															<td>0967-532145</td>
+															<td>Papua</td>
+															<td>Kab. Jayapura</td>
+															<td>Sentani</td>
+															<td>Kp. Sentani Baru, Desa Haniak</td>
+															<td>-</td>
+															<td>Active</td>
+															<td>02/02/2026 11:30</td>
+															<td class="action-table-data">
+																<div class="edit-delete-action">
+																	<a class="me-2 p-2" href="#">
+																		<i data-feather="eye" class="feather-eye"></i>
+																	</a>
+																	<a class="me-2 p-2" href="#" data-bs-toggle="modal"
+																		data-bs-target="#edit-units">
+																		<i data-feather="edit" class="feather-edit"></i>
+																	</a>
+																	<a class="confirm-text p-2"
+																		href="javascript:void(0);">
+																		<i data-feather="trash-2"
+																			class="feather-trash-2"></i>
+																	</a>
+																</div>
+															</td>
+														</tr>
+														<tr>
+															<td>ADR00000041</td>
+															<td>ID000001</td>
+															<td>Aditya Pratama</td>
+															<td>+6281234567890</td>
+															<td>Banten</td>
+															<td>Kota Tangerang Selatan</td>
+															<td>Serpong</td>
+															<td>Cluster Northylife, Kel. Lengkong Gudang</td>
+															<td>Kode POS 15310</td>
+															<td>Active</td>
+															<td>03/02/2026 9:00</td>
+															<td class="action-table-data">
+																<div class="edit-delete-action">
+																	<a class="me-2 p-2" href="#">
+																		<i data-feather="eye" class="feather-eye"></i>
+																	</a>
+																	<a class="me-2 p-2" href="#" data-bs-toggle="modal"
+																		data-bs-target="#edit-units">
+																		<i data-feather="edit" class="feather-edit"></i>
+																	</a>
+																	<a class="confirm-text p-2"
+																		href="javascript:void(0);">
+																		<i data-feather="trash-2"
+																			class="feather-trash-2"></i>
+																	</a>
+																</div>
+															</td>
+														</tr>
+														<tr>
+															<td>ADR00000042</td>
+															<td>ID000003</td>
+															<td>Budi Santoso</td>
+															<td>+6285211223344</td>
+															<td>Jawa Timur</td>
+															<td>Kab. Sidoarjo</td>
+															<td>Waru</td>
+															<td>Perum Tropodo, Desa Tropodo</td>
+															<td>Belakang Pasar Waru</td>
+															<td>Active</td>
+															<td>03/02/2026 10:45</td>
+															<td class="action-table-data">
+																<div class="edit-delete-action">
+																	<a class="me-2 p-2" href="#">
+																		<i data-feather="eye" class="feather-eye"></i>
+																	</a>
+																	<a class="me-2 p-2" href="#" data-bs-toggle="modal"
+																		data-bs-target="#edit-units">
+																		<i data-feather="edit" class="feather-edit"></i>
+																	</a>
+																	<a class="confirm-text p-2"
+																		href="javascript:void(0);">
+																		<i data-feather="trash-2"
+																			class="feather-trash-2"></i>
+																	</a>
+																</div>
+															</td>
+														</tr>
+														<tr>
+															<td>ADR00000043</td>
+															<td>ID000005</td>
+															<td>Eko Wahyudi</td>
+															<td>+6282199001122</td>
+															<td>DKI Jakarta</td>
+															<td>Jakarta Barat</td>
+															<td>Kebon Jeruk</td>
+															<td>Apartemen Kedoya Lt. 10, Kel. Kedoya Selatan</td>
+															<td>Receptionist Lantai Dasar</td>
+															<td>Active</td>
+															<td>03/02/2026 11:30</td>
+															<td class="action-table-data">
+																<div class="edit-delete-action">
+																	<a class="me-2 p-2" href="#">
+																		<i data-feather="eye" class="feather-eye"></i>
+																	</a>
+																	<a class="me-2 p-2" href="#" data-bs-toggle="modal"
+																		data-bs-target="#edit-units">
+																		<i data-feather="edit" class="feather-edit"></i>
+																	</a>
+																	<a class="confirm-text p-2"
+																		href="javascript:void(0);">
+																		<i data-feather="trash-2"
+																			class="feather-trash-2"></i>
+																	</a>
+																</div>
+															</td>
+														</tr>
+														<tr>
+															<td>ADR00000044</td>
+															<td>ID000008</td>
+															<td>Hana Pertiwi</td>
+															<td>+6281288776655</td>
+															<td>Bali</td>
+															<td>Kab. Gianyar</td>
+															<td>Ubud</td>
+															<td>Villa Monkey Forest, Desa Ubud</td>
+															<td>Area Tua</td>
+															<td>Active</td>
+															<td>03/02/2026 13:20</td>
+															<td class="action-table-data">
+																<div class="edit-delete-action">
+																	<a class="me-2 p-2" href="#">
+																		<i data-feather="eye" class="feather-eye"></i>
+																	</a>
+																	<a class="me-2 p-2" href="#" data-bs-toggle="modal"
+																		data-bs-target="#edit-units">
+																		<i data-feather="edit" class="feather-edit"></i>
+																	</a>
+																	<a class="confirm-text p-2"
+																		href="javascript:void(0);">
+																		<i data-feather="trash-2"
+																			class="feather-trash-2"></i>
+																	</a>
+																</div>
+															</td>
+														</tr>
+														<tr>
+															<td>ADR00000045</td>
+															<td>ID000010</td>
+															<td>Joko Widodo</td>
+															<td>+6281144556677</td>
+															<td>Jawa Barat</td>
+															<td>Kab. Bogor</td>
+															<td>Citereup</td>
+															<td>Kp. Citereup Hilir, Desa Citereup</td>
+															<td>Samping Pabrik Semen</td>
+															<td>Active</td>
+															<td>03/02/2026 14:10</td>
+															<td class="action-table-data">
+																<div class="edit-delete-action">
+																	<a class="me-2 p-2" href="#">
+																		<i data-feather="eye" class="feather-eye"></i>
+																	</a>
+																	<a class="me-2 p-2" href="#" data-bs-toggle="modal"
+																		data-bs-target="#edit-units">
+																		<i data-feather="edit" class="feather-edit"></i>
+																	</a>
+																	<a class="confirm-text p-2"
+																		href="javascript:void(0);">
+																		<i data-feather="trash-2"
+																			class="feather-trash-2"></i>
+																	</a>
+																</div>
+															</td>
+														</tr>
+														<tr>
+															<td>ADR00000046</td>
+															<td>ID000012</td>
+															<td>Lukman Hakim</td>
+															<td>+6281233445511</td>
+															<td>Sumatera Barat</td>
+															<td>Kota Padang</td>
+															<td>Padang Barat</td>
+															<td>Jl. Damar No. 15, Kel. Olo</td>
+															<td>Optik Padang</td>
+															<td>Active</td>
+															<td>03/02/2026 15:00</td>
+															<td class="action-table-data">
+																<div class="edit-delete-action">
+																	<a class="me-2 p-2" href="#">
+																		<i data-feather="eye" class="feather-eye"></i>
+																	</a>
+																	<a class="me-2 p-2" href="#" data-bs-toggle="modal"
+																		data-bs-target="#edit-units">
+																		<i data-feather="edit" class="feather-edit"></i>
+																	</a>
+																	<a class="confirm-text p-2"
+																		href="javascript:void(0);">
+																		<i data-feather="trash-2"
+																			class="feather-trash-2"></i>
+																	</a>
+																</div>
+															</td>
+														</tr>
+														<tr>
+															<td>ADR00000047</td>
+															<td>ID000014</td>
+															<td>Nanang Kosim</td>
+															<td>+6281666554433</td>
+															<td>Sulawesi Utara</td>
+															<td>Kota Manado</td>
+															<td>Malalayang</td>
+															<td>Perumnas Malalayang Indah, Kel. Malalayang Satu</td>
+															<td>Samping Gereja</td>
+															<td>Active</td>
+															<td>03/02/2026 15:45</td>
+															<td class="action-table-data">
+																<div class="edit-delete-action">
+																	<a class="me-2 p-2" href="#">
+																		<i data-feather="eye" class="feather-eye"></i>
+																	</a>
+																	<a class="me-2 p-2" href="#" data-bs-toggle="modal"
+																		data-bs-target="#edit-units">
+																		<i data-feather="edit" class="feather-edit"></i>
+																	</a>
+																	<a class="confirm-text p-2"
+																		href="javascript:void(0);">
+																		<i data-feather="trash-2"
+																			class="feather-trash-2"></i>
+																	</a>
+																</div>
+															</td>
+														</tr>
+														<tr>
+															<td>ADR00000048</td>
+															<td>ID000016</td>
+															<td>Panji Asmoro</td>
+															<td>+6285711223300</td>
+															<td>Jawa Timur</td>
+															<td>Kota Surabaya</td>
+															<td>Rungkut</td>
+															<td>Rungkut Industri Raya, Kel. Kali Rungkut</td>
+															<td>PT Maja Jaya Al Akhira</td>
+															<td>Active</td>
+															<td>03/02/2026 16:15</td>
+															<td class="action-table-data">
+																<div class="edit-delete-action">
+																	<a class="me-2 p-2" href="#">
+																		<i data-feather="eye" class="feather-eye"></i>
+																	</a>
+																	<a class="me-2 p-2" href="#" data-bs-toggle="modal"
+																		data-bs-target="#edit-units">
+																		<i data-feather="edit" class="feather-edit"></i>
+																	</a>
+																	<a class="confirm-text p-2"
+																		href="javascript:void(0);">
+																		<i data-feather="trash-2"
+																			class="feather-trash-2"></i>
+																	</a>
+																</div>
+															</td>
+														</tr>
+														<tr>
+															<td>ADR00000049</td>
+															<td>ID000018</td>
+															<td>Surya Kencana</td>
+															<td>+6281355443322</td>
+															<td>Kalimantan Selatan</td>
+															<td>Kota Banjarmasih</td>
+															<td>Banjarmasin Tengah</td>
+															<td>Jl. Lambung Mangkurat, Kel. Kertak Baru Ulu</td>
+															<td>Gedung Keuangan Negara</td>
+															<td>Active</td>
+															<td>03/02/2026 16:45</td>
+															<td class="action-table-data">
+																<div class="edit-delete-action">
+																	<a class="me-2 p-2" href="#">
+																		<i data-feather="eye" class="feather-eye"></i>
+																	</a>
+																	<a class="me-2 p-2" href="#" data-bs-toggle="modal"
+																		data-bs-target="#edit-units">
+																		<i data-feather="edit" class="feather-edit"></i>
+																	</a>
+																	<a class="confirm-text p-2"
+																		href="javascript:void(0);">
+																		<i data-feather="trash-2"
+																			class="feather-trash-2"></i>
+																	</a>
+																</div>
+															</td>
+														</tr>
+														<tr>
+															<td>ADR00000050</td>
+															<td>ID000020</td>
+															<td>Wahyu Hidayat</td>
+															<td>+6281122334488</td>
+															<td>Papua Barat</td>
+															<td>Kota Sorong</td>
+															<td>Sorong Timur</td>
+															<td>Jl. Kilo 10, Kel. Kawuyuk</td>
+															<td>Dekat Bandara Sorong</td>
+															<td>Disable</td>
+															<td>03/02/2026 17:00</td>
+															<td class="action-table-data">
+																<div class="edit-delete-action">
+																	<a class="me-2 p-2" href="#">
+																		<i data-feather="eye" class="feather-eye"></i>
+																	</a>
+																	<a class="me-2 p-2" href="#" data-bs-toggle="modal"
+																		data-bs-target="#edit-units">
+																		<i data-feather="edit" class="feather-edit"></i>
+																	</a>
+																	<a class="confirm-text p-2"
+																		href="javascript:void(0);">
+																		<i data-feather="trash-2"
+																			class="feather-trash-2"></i>
+																	</a>
+																</div>
+															</td>
 														</tr>
 													</tbody>
 												</table>

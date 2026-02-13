@@ -12,26 +12,103 @@
 	<title>Dreams Pos Admin Template</title>
 
 	<!-- Favicon -->
-        <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
-		
-		<!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-		
-		<!-- animation CSS -->
-        <link rel="stylesheet" href="assets/css/animate.css">
+	<link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
 
-		<!-- Select2 CSS -->
-		<link rel="stylesheet" href="assets/plugins/select2/css/select2.min.css">
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
 
-		<!-- Datatable CSS -->
-		<link rel="stylesheet" href="assets/css/dataTables.bootstrap5.min.css">
-		
-        <!-- Fontawesome CSS -->
-		<link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css">
-		<link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css">
-		
-		<!-- Main CSS -->
-        <link rel="stylesheet" href="assets/css/style.css">
+	<!-- animation CSS -->
+	<link rel="stylesheet" href="assets/css/animate.css">
+
+	<!-- Select2 CSS -->
+	<link rel="stylesheet" href="assets/plugins/select2/css/select2.min.css">
+
+	<!-- Datatable CSS -->
+	<link rel="stylesheet" href="assets/css/dataTables.bootstrap5.min.css">
+
+	<!-- Fontawesome CSS -->
+	<link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css">
+	<link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css">
+
+	<!-- Main CSS -->
+	<link rel="stylesheet" href="assets/css/style.css">
+	<style>
+		@media print {
+			* {
+				color: black !important;
+			}
+
+			/* kecilkan semua font saat print */
+			html,
+			body {
+				font-size: 12px !important;
+				/* ubah angka ini bila ingin lebih kecil/lebih besar */
+				line-height: 1.2 !important;
+			}
+
+			/* fallback spesifik untuk elemen penting */
+			h1 {
+				font-size: 2.5rem !important;
+			}
+
+			h2 {
+				font-size: 1.5rem !important;
+			}
+
+			h3,
+			h4,
+			h5,
+			h6 {
+				font-size: 1.5rem !important;
+			}
+
+			.text-standard,
+			.table,
+			.order-section-title,
+			.page-title,
+			p,
+			span,
+			label {
+				font-size: 1.3rem !important;
+				/* skala turun lagi untuk konten */
+			}
+
+			td{
+				font-size: 1rem !important;
+			}
+
+			/* tetap pertahankan rules sebelumnya */
+			body {
+				background: #fff;
+				padding: 0.1in !important;
+			}
+
+			@page {
+				size: A4;
+				margin: 0.3in !important;
+
+				@bottom-right {
+					content: counter(page) "/" counter(pages);
+					margin-bottom: 15px;
+				}
+			}
+
+			#header-placeholder, .modal-header {
+				display: none !important;
+			}
+
+
+			.content,
+			.page-wrapper {
+				margin: 0 !important;
+				padding: 0 !important;
+			}
+
+			.no-print {
+				display: none;
+			}
+		}
+	</style>
 </head>
 
 <body>
@@ -47,127 +124,139 @@
 		<div id="sidebar-placeholder"></div>
 
 		<div class="page-wrapper mt-3">
-            <!-- Main content tulis disini -->
-			<div class="content mb-3">
-					<div class="pay-slip-box" id="pay-slip">
-						<div class="modal-dialog modal-dialog-centered stock-adjust-modal">
-							<div class="modal-content">
-								<div class="page-wrapper-new p-0">
-									<div class="contents">
-										<div class="modal-header border-0 custom-modal-header">
-											<div class="page-header mb-0 w-100">
-												<div class="add-item payslip-list d-flex justify-content-between">
-													<div class="page-title">
-														<h4>Payslip</h4>
-													</div>
-													<div class="page-btn d-flex align-items-center mt-3 mt-md-0">
-														<div class="d-block d-sm-flex align-items-center">
-															<a href="#" class="btn btn-added me-2"><i data-feather="mail" class="me-2"></i> Send Email</a>
-															<a href="#" class="btn btn-added downloader mt-3 mb-3 m-sm-0"><i data-feather="download" class="me-2"></i> Download</a>
-															<a href="#" class="btn btn-added printer ms-2"><i data-feather="printer" class="me-2"></i> Print Barcode</a>
-														</div>
-													</div>
-												</div>
-											</div>
+			<!-- Main content tulis disini -->
+			<div class="content mb-3 py-3">
+				<div class="pay-slip-box" id="pay-slip">
+					<div class="modal-dialog modal-dialog-centered stock-adjust-modal">
+						<div class="modal-content">
+							<!-- Header with buttons -->
+							<div class="d-flex justify-content-between align-items-center mb-4 modal-header">
+								<h4 class="mb-0">Payslip</h4>
+								<div class="d-flex gap-2">
+									<button type="button" class="btn btn-secondary"><i data-feather="download"
+											class="me-2"></i>Download</button>
+									<button type="button" class="btn btn-primary" id="download-pdf"><i
+											data-feather="printer" class="me-2"></i>Print</button>
+								</div>
+							</div>
+
+							<!-- Company Info Section -->
+							<div class="row mb-4">
+								<div class="col-6 d-flex align-items-center">
+									<div class="company-logo-section me-3">
+										<div class="logo-placeholder border border-dark rounded"
+											style="width: 100px; height: 70px; display: flex; align-items: center; justify-content: center;">
+											<small>Logo</small>
 										</div>
-										<div class="modal-body custom-modal-body">
-											<div class="card mb-0">
-												<div class="card-body border-0">
-													<div class="payslip-month d-flex">
-														<div class="slip-logo">
-															<img src="assets/img/logo-small.png" alt="Logo">
-														</div>
-														<div class="month-of-slip">
-															<h4>Payslip for the Month of Sep 2023</h4>
-														</div>
-													</div>
-			
-													<div class="emp-details d-flex">
-														<div class="emp-name-id">
-															<h6>Emp Name : <span>Herald james</span></h6>
-															<h6>Emp Id : <span>POS1234</span></h6>
-														</div>
-														<div class="emp-location-info">
-															<h6>Location : <span>USA</span></h6>
-															<h6>Pay Period : <span>Sep 2023</span></h6>
-														</div>
-													</div>
-													
-													<div class="row">
-														<div class="table-responsive">
-															<table class="w-100">
-																<thead>
-																	<tr class="paysilp-table-border">
-																		<th colspan="2">Earnings</th>
-																		<th colspan="2">Deduction</th>
-																		<thead>
-																			<tr class="paysilp-table-border">
-																				<th>Pay Type</th>
-																				<th>Amount</th>
-																				<th>Pay Type</th>
-																				<th>Amount</th>
-																			</tr>
-																		</thead>
-																	</tr>
-																</thead>
-																<tbody class="paysilp-table-borders">
-																	<tr>
-																		<td>Basic Salary</td>
-																		<td>$32,000</td>
-																		<td>PF</td>
-																		<td>0.00</td>
-																	</tr>
-																	<tr>
-																		<td>HRA Allowance</td>
-																		<td>0.00</td>
-																		<td>Professional  Tax</td>
-																		<td>0.00</td>
-																	</tr>
-																	<tr>
-																		<td>Conveyance</td>
-																		<td>0.00</td>
-																		<td>TDS</td>
-																		<td>0.00</td>
-																	</tr>
-																	<tr>
-																		<td>Medical Allowance</td>
-																		<td>0.00</td>
-																		<td>Loans & Others</td>
-																		<td>0.00</td>
-																	</tr>
-																	<tr>
-																		<td>Bonus</td>
-																		<td>0.00</td>
-																		<td>Bonus</td>
-																		<td>0.00</td>
-																	</tr>
-																	<tr class="payslip-border-bottom">
-																		<th>Total Earnings</th>
-																		<td>$32,000</td>
-																		<th>Total Earnings</th>
-																		<td>0.00</td>
-																	</tr>
-																</tbody>
-															</table>
-														</div>
-														<div class="emp-details d-flex justify-content-start">
-															<div class="emp-name-id pay-slip-salery">
-																<h6>Net Salary</h6>
-																<span>Inwords</span>
-															</div>
-															<div class="emp-location-info pay-slip-salery">
-																<h6>$32,000</h6>
-																<span>Thirty Two Thousand Only</span>
-															</div>
-														</div>
-														<div class="product-name-slip text-center">
-															<h4>DreamsPOS</h4>
-															<p>81, Randall Drive,Hornchurch <br>
-																RM126TA.</p>
-														</div>
-													</div>
-												</div>
-											</div>
+									</div>
+									<div>
+										<h5 class="mb-1">PT. Dulank Semesta Cida</h5>
+										<small>Jl. Arif rahman Hakim Kel. Nagasari</small><br>
+										<small>Karawang Barat - Karawang</small>
+									</div>
+								</div>
+								<div class="col-6 text-end">
+									<div class="mt-3">
+										<p class="mb-0">Payslip Periode</p>
+										<p class="mb-0 fw-bold">01/12/2025 - 07/12/2025</p>
+									</div>
+								</div>
+							</div>
+
+							<!-- Employee Information Section -->
+							<div class="row py-3 mb-3 bg-gray-200">
+								<div class="col-12">
+									<div class="row ms-1 mb-2">
+										<div class="col-md-3 col-6 fw-bold">Employee Name</div>
+										<div class="col-md-9 col-6 fw-bold">: Budi Setiadi</div>
+									</div>
+									<div class="row ms-1">
+										<div class="col-md-3 col-6 fw-bold">Department</div>
+										<div class="col-md-9 col-6 fw-bold">: Produksi</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- Salary Info -->
+							<div class="row mb-2">
+								<div class="col-6">
+									<div class="row ms-1">
+										<div class="col-md-4 col-6">Salary</div>
+										<div class="col-md-8 col-6">: 150.000</div>
+									</div>
+									<div class="row ms-1">
+										<div class="col-md-4 col-6">System</div>
+										<div class="col-md-8 col-6">: Daily</div>
+									</div>
+								</div>
+								<div class="col-6">
+									<div class="row ms-1">
+										<div class="col-md-4 col-6">Worked Day</div>
+										<div class="col-md-8 col-6">: 6 Day</div>
+									</div>
+									<div class="row ms-1">
+										<div class="col-md-4 col-6">Absent Day</div>
+										<div class="col-md-8 col-6">: 0 Day</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- Earnings and Deduction Table -->
+							<div class="table-responsive">
+								<table class="table">
+									<thead>
+
+										<tr>
+											<th class="border-bottom pb-2">Earnings</th>
+											<th class="text-end border-bottom pb-2">Amount</th>
+											<th class="border-bottom pb-2">Deduction</th>
+											<th class="text-end border-bottom pb-2">Amount</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>Regular Over Time</td>
+											<td class="text-end">150.000</td>
+											<td>Cash Advance</td>
+											<td class="text-end">300.000</td>
+										</tr>
+										<tr>
+											<td>Special Over Time</td>
+											<td class="text-end">0</td>
+											<td>Other Deduction</td>
+											<td class="text-end">0</td>
+										</tr>
+										<tr>
+											<td>Present Incentive</td>
+											<td class="text-end">300.000</td>
+											<td></td>
+											<td class="text-end"></td>
+										</tr>
+										<tr>
+											<td>Pengiriman</td>
+											<td class="text-end">0</td>
+											<td></td>
+											<td class="text-end"></td>
+										</tr>
+										<tr class="border-top border-bottom">
+											<th class="fw-bold">Total Earning</th>
+											<th class="text-end"></th>
+											<th class="fw-bold">Total Deduction</th>
+											<th class="text-end"></th>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+
+							<!-- Net Salary Section -->
+							<div class="row ms-md-3 ms-1 bg-gray-200 py-3">
+								<div class="col-md-6 offset-md-6">
+									<div class="row">
+										<div class="col-6 fw-bold text-dark">
+											Nett Salary
+										</div>
+										<div class="col-6 text-end fw-bold text-dark">
+											1.250.000
 										</div>
 									</div>
 								</div>
@@ -175,39 +264,63 @@
 						</div>
 					</div>
 				</div>
+			</div>
 		</div>
-	
+
 	</div>
 	<!-- /Main Wrapper -->
 	<!-- modals -->
-	
+
 	<!-- /modals -->
 	<!-- jQuery -->
-        <script src="assets/js/jquery-3.7.1.min.js"></script>
+	<script src="assets/js/jquery-3.7.1.min.js"></script>
 
-        <!-- Feather Icon JS -->
-		<script src="assets/js/feather.min.js"></script>
+	<!-- Feather Icon JS -->
+	<script src="assets/js/feather.min.js"></script>
 
-		<!-- Slimscroll JS -->
-		<script src="assets/js/jquery.slimscroll.min.js"></script>
+	<!-- Slimscroll JS -->
+	<script src="assets/js/jquery.slimscroll.min.js"></script>
 
-		<!-- Datatable JS -->
-		<script src="assets/js/jquery.dataTables.min.js"></script>
-		<script src="assets/js/dataTables.bootstrap5.min.js"></script>
-		
-		<!-- Bootstrap Core JS -->
-        <script src="assets/js/bootstrap.bundle.min.js"></script>
+	<!-- Datatable JS -->
+	<script src="assets/js/jquery.dataTables.min.js"></script>
+	<script src="assets/js/dataTables.bootstrap5.min.js"></script>
 
-		<!-- Select2 JS -->
-		<script src="assets/plugins/select2/js/select2.min.js"></script>
+	<!-- Bootstrap Core JS -->
+	<script src="assets/js/bootstrap.bundle.min.js"></script>
 
-		<!-- Sweetalert 2 -->
-		<script src="assets/plugins/sweetalert/sweetalert2.all.min.js"></script>
-		<script src="assets/plugins/sweetalert/sweetalerts.min.js"></script>
+	<!-- Select2 JS -->
+	<script src="assets/plugins/select2/js/select2.min.js"></script>
 
-		<!-- Custom JS --><script src="assets/js/theme-script.js"></script>	
-		<script src="assets/js/script.js"></script>
+	<!-- Sweetalert 2 -->
+	<script src="assets/plugins/sweetalert/sweetalert2.all.min.js"></script>
+	<script src="assets/plugins/sweetalert/sweetalerts.min.js"></script>
 
+	<!-- Custom JS -->
+	<script src="assets/js/theme-script.js"></script>
+	<script src="assets/js/script.js"></script>
+
+	<script>
+		document.getElementById('download-pdf').addEventListener('click', function (e) {
+			e.preventDefault();
+
+			window.print()
+		});
+
+		// sinkron awal + ubah judul ketika checkbox berubah
+		(function () {
+			const chk = document.getElementById('proformaCheck');
+			const title = document.getElementById('invoice-title');
+			if (!chk || !title) return;
+
+			// sync saat halaman dimuat
+			title.textContent = chk.checked ? 'Proforma Invoice' : 'Invoice';
+
+			// update saat checkbox berubah
+			chk.addEventListener('change', function () {
+				title.textContent = this.checked ? 'Proforma Invoice' : 'Invoice';
+			});
+		})();
+	</script>
 
 </body>
 

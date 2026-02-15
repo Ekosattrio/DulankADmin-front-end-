@@ -133,80 +133,89 @@
 						</div>
 						<!-- /Filter -->
 						<div class="table-responsive">
-							<table class="table  datanew">
+							<table class="table datanew">
 								<thead>
 									<tr>
-
-										<th>Reference</th>
-										<th>ID</th>
-										<th>Suplier</th>
-										<th>Total Amount</th>
-										<th>Paid</th>
-										<th>Due</th>
-										<th>Status</th>
+										<th>Supplier Name</th>
+										<th>Order Due</th>
+										<th>Amount Due</th>
+										<th>Days Due</th>
+										<th class="no-sort">Action</th>
 									</tr>
 								</thead>
 								<tbody>
 									<tr>
-
-										<td>INV/PO2011</td>
-										<td>12344</td>
-										<td class="productimgname">
-											<div class="view-product me-2">
-												<a href="javascript:void(0);">
-													<img src="assets/img/products/stock-img-01.png" alt="product">
-												</a>
+										<td>PT. Kertas Nusantara</td>
+										<td>3</td>
+										<td>15.750.000</td>
+										<td>52 Days</td>
+										<td class="action-table-data">
+											<div class="edit-delete-action">
+												<a class="me-2 p-2" data-bs-toggle="modal"
+													data-bs-target="#view-units"><i data-feather="eye"
+														class="action-eye"></i></a>
 											</div>
-											<a href="javascript:void(0);">ekos</a>
 										</td>
-										<td>1500000</td>
-										<td>1500000</td>
-										<td>0</td>
-										<td><span class="badge bg-outline-success">Received</span></td>
 									</tr>
 									<tr>
-
-										<td>INV/PO2011</td>
-										<td>12344</td>
-										<td class="productimgname">
-											<div class="view-product me-2">
-												<a href="javascript:void(0);">
-													<img src="assets/img/products/stock-img-01.png" alt="product">
-												</a>
+										<td>CV. Tinta Pelangi</td>
+										<td>1</td>
+										<td>4.200.000</td>
+										<td>45 Days</td>
+										<td class="action-table-data">
+											<div class="edit-delete-action">
+												<a class="me-2 p-2" data-bs-toggle="modal"
+													data-bs-target="#view-units"><i data-feather="eye"
+														class="action-eye"></i></a>
 											</div>
-											<a href="javascript:void(0);">ekos</a>
 										</td>
-										<td>1500000</td>
-										<td>1500000</td>
-										<td>0</td>
-										<td><span class="badge bg-outline-warning">Overdue</span></td>
 									</tr>
 									<tr>
-
-										<td>INV/PO2011</td>
-										<td>12344</td>
-										<td class="productimgname">
-											<div class="view-product me-2">
-												<a href="javascript:void(0);">
-													<img src="assets/img/products/stock-img-01.png" alt="product">
-												</a>
+										<td>Surya Offset Supplier</td>
+										<td>2</td>
+										<td>22.500.000</td>
+										<td>35 Days</td>
+										<td class="action-table-data">
+											<div class="edit-delete-action">
+												<a class="me-2 p-2" data-bs-toggle="modal"
+													data-bs-target="#view-units"><i data-feather="eye"
+														class="action-eye"></i></a>
 											</div>
-											<a href="javascript:void(0);">ekos</a>
 										</td>
-										<td>1500000</td>
-										<td>1500000</td>
-										<td>0</td>
-										<td><span class="badge bg-outline-danger">Unpaid</span></td>
+									</tr>
+									<tr>
+										<td>Master Laminating</td>
+										<td>1</td>
+										<td>1.850.000</td>
+										<td>25 Days</td>
+										<td class="action-table-data">
+											<div class="edit-delete-action">
+												<a class="me-2 p-2" data-bs-toggle="modal"
+													data-bs-target="#view-units"><i data-feather="eye"
+														class="action-eye"></i></a>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td>Global Sparepart & Tools</td>
+										<td>1</td>
+										<td>3.200.000</td>
+										<td>15 Days</td>
+										<td class="action-table-data">
+											<div class="edit-delete-action">
+												<a class="me-2 p-2" data-bs-toggle="modal"
+													data-bs-target="#view-units"><i data-feather="eye"
+														class="action-eye"></i></a>
+											</div>
+										</td>
 									</tr>
 								</tbody>
 								<tfoot>
 									<tr>
 										<td class="text-start fw-bold">Total</td>
-										<!-- gunakan class sum-target dan data-col-index agar reusable -->
-										<td colspan="2"></td>
-										<td id="amount-total" class="fw-bold sum-target" data-col-index="3">0</td>
-										<td id="amount-total" class="fw-bold sum-target" data-col-index="4">0</td>
-										<td id="amount-total" class="fw-bold sum-target" data-col-index="5">0</td>
+										<td class="fw-bold sum-target" data-col-index="1"></td>
+										<td class="fw-bold sum-target" data-col-index="2"></td>
+										<td></td>
 									</tr>
 								</tfoot>
 							</table>

@@ -12,32 +12,32 @@
 	<title>Dreams Pos Admin Template</title>
 
 	<!-- Favicon -->
-	<link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png" />
+	<link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
 
 	<!-- Bootstrap CSS -->
-	<link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
 
 	<!-- Datetimepicker CSS -->
-	<link rel="stylesheet" href="assets/css/bootstrap-datetimepicker.min.css" />
-
-	<!-- animation CSS -->
-	<link rel="stylesheet" href="assets/css/animate.css" />
-
-	<!-- Select2 CSS -->
-	<link rel="stylesheet" href="assets/plugins/select2/css/select2.min.css" />
-
-	<!-- Datatable CSS -->
-	<link rel="stylesheet" href="assets/css/dataTables.bootstrap5.min.css" />
+	<link rel="stylesheet" href="assets/css/bootstrap-datetimepicker.min.css">
 
 	<!-- Daterangepikcer CSS -->
-	<link rel="stylesheet" href="assets/plugins/daterangepicker/daterangepicker.css" />
+	<link rel="stylesheet" href="assets/plugins/daterangepicker/daterangepicker.css">
+
+	<!-- animation CSS -->
+	<link rel="stylesheet" href="assets/css/animate.css">
+
+	<!-- Select2 CSS -->
+	<link rel="stylesheet" href="assets/plugins/select2/css/select2.min.css">
+
+	<!-- Datatable CSS -->
+	<link rel="stylesheet" href="assets/css/dataTables.bootstrap5.min.css">
 
 	<!-- Fontawesome CSS -->
-	<link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css" />
-	<link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css" />
+	<link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css">
+	<link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css">
 
 	<!-- Main CSS -->
-	<link rel="stylesheet" href="assets/css/style.css" />
+	<link rel="stylesheet" href="assets/css/style.css">
 
 </head>
 
@@ -58,13 +58,13 @@
 			<div class="content">
 				<div class="page-header justify-content-between">
 					<div class="page-title">
-						<h4>Expenses</h4>
-						<h6>Manage your Expenses</h6>
+						<h4>Purchase Tax Report</h4>
+						<h6>Manage your Purchase Tax</h6>
 					</div>
 					<ul class="table-top-head">
 						<li>
 							<a data-bs-toggle="tooltip" data-bs-placement="top" title="Pdf"><img
-									src="assets/img/icons/pdf.svg" alt="img" /></a>
+									src="assets/img/icons/pdf.svg" alt="img"></a>
 						</li>
 						<li>
 							<a data-bs-toggle="tooltip" data-bs-placement="top" title="Print"><i data-feather="printer"
@@ -80,6 +80,7 @@
 						</li>
 					</ul>
 				</div>
+
 
 				<!-- /product list -->
 				<div class="card table-list-card">
@@ -119,102 +120,115 @@
 								<div class="dropdown w-100 me-2">
 									<button class="btn btn-outline-primary dropdown-toggle" type="button"
 										data-bs-toggle="dropdown" aria-expanded="false">
-										Category
+										Status
 									</button>
 									<ul class="dropdown-menu">
-										<li><a class="dropdown-item" href="#">Bahan Baku Percetakan</a></li>
-										<li><a class="dropdown-item" href="#">Gaji Karyawan & Operator</a></li>
-										<li><a class="dropdown-item" href="#">Sewa Gedung / Ruko</a></li>
-										<li><a class="dropdown-item" href="#">Utilitas (Listrik & Air)</a></li>
-										<li><a class="dropdown-item" href="#">Pemeliharaan Mesin</a></li>
-										<li><a class="dropdown-item" href="#">Pemasaran & Iklan Digital</a></li>
-										<li><a class="dropdown-item" href="#">Logistik & Pengiriman</a></li>
-										<li><a class="dropdown-item" href="#">Perlengkapan Kantor (ATK)</a></li>
-										<li><a class="dropdown-item" href="#">Biaya Keamanan & Kebersihan</a></li>
-										<li><a class="dropdown-item" href="#">Biaya Tak Terduga</a></li>
+										<li><a class="dropdown-item" href="#">Issued</a></li>
 									</ul>
 								</div>
 							</div>
 						</div>
-						
 						<!-- /Filter -->
 						<div class="table-responsive">
 							<table class="table datanew">
 								<thead>
 									<tr>
-										<th>Kategori</th>
-										<th>Total Expense</th>
-										<th>Amount</th>
-										<th>Percentage</th>
+										<th>No. Faktur</th>
+										<th>Customer Name</th>
+										<th>Other Tax Base / DPP</th>
+										<th>PPN 11% (Output)</th>
+										<th>Total</th>
+										<th>Status</th>
 									</tr>
 								</thead>
 								<tbody>
 									<tr>
-										<td>Bahan Baku Percetakan</td>
-										<td>18</td>
-										<td>45.500.000</td>
-										<td>38,41%</td>
+										<td class="str-value">001.26.0001</td>
+										<td>CV. Maju Jaya</td>
+										<td>12.500.000</td>
+										<td>1.375.000</td>
+										<td>13.875.000</td>
+										<td>Issued</td>
 									</tr>
 									<tr>
-										<td>Gaji Karyawan & Operator</td>
-										<td>1</td>
-										<td>32.000.000</td>
-										<td>27,02%</td>
+										<td class="str-value">001.26.0002</td>
+										<td>PT. Sinar Abadi</td>
+										<td>45.000.000</td>
+										<td>4.950.000</td>
+										<td>49.950.000</td>
+										<td>Issued</td>
 									</tr>
 									<tr>
-										<td>Sewa Gedung / Ruko</td>
-										<td>1</td>
-										<td>12.000.000</td>
-										<td>10,13%</td>
+										<td class="str-value">001.26.0003</td>
+										<td>Universitas Terbuka</td>
+										<td>18.200.000</td>
+										<td>2.002.000</td>
+										<td>20.202.000</td>
+										<td>Issued</td>
 									</tr>
 									<tr>
-										<td>Utilitas (Listrik & Air)</td>
-										<td>4</td>
-										<td>7.200.000</td>
-										<td>6,08%</td>
+										<td class="str-value">001.26.0004</td>
+										<td>Yayasan Pendidikan</td>
+										<td>7.500.000</td>
+										<td>825.000</td>
+										<td>8.325.000</td>
+										<td>Issued</td>
 									</tr>
 									<tr>
-										<td>Pemeliharaan Mesin</td>
-										<td>3</td>
+										<td class="str-value">001.26.0005</td>
+										<td>Resto Sedap Malam</td>
+										<td>3.400.000</td>
+										<td>374.000</td>
+										<td>3.774.000</td>
+										<td>Issued</td>
+									</tr>
+									<tr>
+										<td class="str-value">001.26.0006</td>
+										<td>Klinik Sehat</td>
+										<td>1.200.000</td>
+										<td>132.000</td>
+										<td>1.332.000</td>
+										<td>Issued</td>
+									</tr>
+									<tr>
+										<td class="str-value">001.26.0007</td>
+										<td>PT. Logistik Cepat</td>
+										<td>22.000.000</td>
+										<td>2.420.000</td>
+										<td>24.420.000</td>
+										<td>Issued</td>
+									</tr>
+									<tr>
+										<td class="str-value">001.26.0008</td>
+										<td>Toko Buku Pintar</td>
 										<td>5.800.000</td>
-										<td>4,89%</td>
+										<td>638.000</td>
+										<td>6.438.000</td>
+										<td>Issued</td>
 									</tr>
 									<tr>
-										<td>Pemasaran & Iklan Digital</td>
-										<td>6</td>
-										<td>4.500.000</td>
-										<td>3,80%</td>
+										<td class="str-value">001.26.0009</td>
+										<td>PT. Delta Property</td>
+										<td>15.000.000</td>
+										<td>1.650.000</td>
+										<td>16.650.000</td>
+										<td>Issued</td>
 									</tr>
 									<tr>
-										<td>Logistik & Pengiriman</td>
-										<td>25</td>
-										<td>3.750.000</td>
-										<td>3,17%</td>
-									</tr>
-									<tr>
-										<td>Perlengkapan Kantor (ATK)</td>
-										<td>12</td>
-										<td>2.850.000</td>
-										<td>2,41%</td>
-									</tr>
-									<tr>
-										<td>Biaya Keamanan & Kebersihan</td>
-										<td>2</td>
-										<td>2.500.000</td>
-										<td>2,11%</td>
-									</tr>
-									<tr>
-										<td>Biaya Tak Terduga</td>
-										<td>5</td>
-										<td>2.350.000</td>
-										<td>1,98%</td>
+										<td class="str-value">001.26.0010</td>
+										<td>Koperasi Mandiri</td>
+										<td>4.600.000</td>
+										<td>506.000</td>
+										<td>5.106.000</td>
+										<td>Issued</td>
 									</tr>
 								</tbody>
 								<tfoot>
 									<tr>
-										<td class="text-start fw-bold">Total</td>
-										<td class="fw-bold sum-target" data-col-index="1"></td>
-										<td class="fw-bold sum-target" data-col-index="2"></td>
+										<td colspan="2" class="text-start fw-bold">Total</td>
+										<td id="amount-total" class="fw-bold sum-target" data-col-index="2"></td>
+										<td id="amount-total" class="fw-bold sum-target" data-col-index="3"></td>
+										<td id="amount-total" class="fw-bold sum-target" data-col-index="4"></td>
 									</tr>
 								</tfoot>
 							</table>
@@ -230,7 +244,6 @@
 	<!-- modals -->
 
 	<!-- /modals -->
-
 	<!-- jQuery -->
 	<script src="assets/js/jquery-3.7.1.min.js"></script>
 
@@ -261,9 +274,6 @@
 	<!-- Sweetalert 2 -->
 	<script src="assets/plugins/sweetalert/sweetalert2.all.min.js"></script>
 	<script src="assets/plugins/sweetalert/sweetalerts.min.js"></script>
-
-	<!-- Separator -->
-	<script src="assets/js/easy-number-separator.js"></script>
 
 	<!-- Custom JS -->
 	<script src="assets/js/theme-script.js"></script>

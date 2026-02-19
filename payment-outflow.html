@@ -1,0 +1,1369 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0" />
+    <meta name="description" content="POS - Bootstrap Admin Template" />
+    <meta
+      name="keywords"
+      content="admin, estimates, bootstrap, business, corporate, creative, invoice, html5, responsive, Projects"
+    />
+    <meta name="author" content="Dreamguys - Bootstrap Admin Template" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Dreams Pos Admin Template</title>
+    <style>
+      /* Target spesifik ID modal add dan edit */
+      #add-units .table-responsive,
+      #edit-units .table-responsive {
+        overflow: visible !important;
+      }
+
+      /* Styling dropdown pencarian di dalam modal tersebut */
+      #add-units .product-search-results,
+      #edit-units .product-search-results {
+        position: absolute !important;
+        top: 100% !important;
+        left: 0;
+        right: 0;
+        z-index: 9999 !important;
+        /* Sangat tinggi agar melayang di atas footer modal */
+        background-color: #ffffff;
+        border: 1px solid #ccc;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        /* Shadow lebih tebal agar kontras */
+        max-height: 200px;
+        overflow-y: auto;
+        border-radius: 4px;
+        display: none;
+      }
+
+      /* Munculkan dropdown saat class .show ditambahkan */
+      #add-units .product-search-results.show,
+      #edit-units .product-search-results.show {
+        display: block !important;
+      }
+
+      /* Style isi hasil pencariannya */
+      .product-item-result {
+        padding: 10px 15px;
+        border-bottom: 1px solid #f0f0f0;
+        cursor: pointer;
+      }
+
+      .product-item-result:hover {
+        background-color: #f8f9fa;
+      }
+
+      /* Hilangkan stacking context pada baris agar z-index tembus */
+      #add-units tr.product-item,
+      #edit-units tr.product-item {
+        position: static !important;
+      }
+    </style>
+
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png" />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+
+    <!-- Datetimepicker CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap-datetimepicker.min.css" />
+
+    <!-- animation CSS -->
+    <link rel="stylesheet" href="assets/css/animate.css" />
+
+    <!-- Datetimepicker CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap-datetimepicker.min.css" />
+
+    <!-- Select2 CSS -->
+    <link rel="stylesheet" href="assets/plugins/select2/css/select2.min.css" />
+
+    <!-- Datatable CSS -->
+    <link rel="stylesheet" href="assets/css/dataTables.bootstrap5.min.css" />
+
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css" />
+    <link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css" />
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+
+  <body>
+    <div id="global-loader">
+      <div class="loader"></div>
+    </div>
+    <!-- Main Wrapper -->
+    <div class="main-wrapper">
+      <!-- header -->
+      <div id="header-placeholder"></div>
+      <!-- sidebar -->
+      <div id="sidebar-placeholder"></div>
+
+      <div class="page-wrapper mt-3">
+        <!-- Main content tulis disini -->
+        <div class="content">
+          <div class="page-header">
+            <div class="add-item d-flex">
+              <div class="page-title">
+                <h4>Payment Outflow</h4>
+                <h6>Manage your Payment Outflow report</h6>
+              </div>
+            </div>
+            <ul class="table-top-head">
+              <li>
+                <a data-bs-toggle="tooltip" data-bs-placement="top" title="Pdf"
+                  ><img src="assets/img/icons/pdf.svg" alt="img"
+                /></a>
+              </li>
+              <li>
+                <a data-bs-toggle="tooltip" data-bs-placement="top" title="Print"
+                  ><i data-feather="printer" class="feather-rotate-ccw"></i
+                ></a>
+              </li>
+              <li>
+                <a data-bs-toggle="tooltip" data-bs-placement="top" title="Refresh"
+                  ><i data-feather="rotate-ccw" class="feather-rotate-ccw"></i
+                ></a>
+              </li>
+              <li>
+                <a data-bs-toggle="tooltip" data-bs-placement="top" title="Collapse" id="collapse-header"
+                  ><i data-feather="chevron-up" class="feather-chevron-up"></i
+                ></a>
+              </li>
+            </ul>
+            <div class="page-btn">
+              <a href="#" class="btn btn-added" data-bs-toggle="modal" data-bs-target="#add-units">
+                <i data-feather="plus-circle" class="me-2"></i>Add Purchase Order
+              </a>
+            </div>
+          </div>
+
+          <!-- /product list -->
+          <div class="card">
+            <div class="card-body">
+              <!-- Filter -->
+              <div class="table-top d-flex align-items-center justify-content-between">
+                <!-- Search Input -->
+                <div class="search-set d-block d-md-flex">
+                  <div class="search-input">
+                    <a href="" class="btn btn-searchset"><i data-feather="search" class="feather-search"></i></a>
+                  </div>
+                  <!-- Date Range -->
+                  <div class="my-2">
+                    <div class="pemilihrentang-container">
+                      <input
+                        type="text"
+                        id="pemilihrentang-input"
+                        class="pemilihrentang-input form-control"
+                        readonly
+                        placeholder="Date"
+                        style="height: fit-content !important; width: 100% !important"
+                      />
+                      <div id="pemilihrentang-panel" class="pemilihrentang-panel">
+                        <div class="pemilihrentang-isi">
+                          <div class="opsi-cepat">
+                            <div data-range="kemarin">Kemarin</div>
+                            <div data-range="7hari">7 Hari Terakhir</div>
+                            <div data-range="bulanIni">Bulan Ini</div>
+                            <div data-range="bulanLalu">Bulan Lalu</div>
+                            <div data-range="tahunLalu">Tahun Lalu</div>
+                            <div data-range="kustom">Rentang Kustom</div>
+                          </div>
+                          <div class="kalender" id="kalender-view" style="display: none"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="filters d-flex justify-content-end">
+                  <div class="dropdown w-100 me-2">
+                    <button
+                      class="btn btn-outline-primary dropdown-toggle"
+                      type="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                      Status
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Sent</a></li>
+                      <li><a class="dropdown-item" href="#">Cancel</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <!-- /Filter -->
+              <div class="card" id="filter_inputs">
+                <div class="card-body pb-0">
+                  <div class="row">
+                    <div class="col-lg-3 col-sm-6 col-12">
+                      <div class="input-blocks">
+                        <i data-feather="calendar" class="info-img"></i>
+                        <div class="input-groupicon">
+                          <input type="text" class="datetimepicker" placeholder="From Date" />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 col-12">
+                      <div class="input-blocks">
+                        <i data-feather="calendar" class="info-img"></i>
+                        <div class="input-groupicon">
+                          <input type="text" class="datetimepicker" placeholder="Due Date" />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 col-12">
+                      <div class="input-blocks">
+                        <i data-feather="stop-circle" class="info-img"></i>
+                        <select class="select">
+                          <option>Choose Supplier</option>
+                          <option>Suppliers</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 col-12 ms-auto">
+                      <div class="input-blocks">
+                        <a class="btn btn-filters ms-auto"> <i data-feather="search" class="feather-search"></i> Search </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- /Filter -->
+              <div class="table-responsive">
+                <div class="table-responsive">
+                  <table class="table datanew">
+                    <thead>
+                      <tr>
+                        <th>Date</th>
+                        <th>Ref No</th>
+                        <th>Name</th>
+                        <th>Source</th>
+                        <th>Amount (IDR)</th>
+                        <th>Status</th>
+                        <th>Payment Method</th>
+                        <th>Note</th>
+                        <th>Date</th>
+                        <th>Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>01/02/2026</td>
+                        <td>PAY-001</td>
+                        <td>Seluruh Staff</td>
+                        <td>Payroll</td>
+                        <td>45.000.000</td>
+                        <td>Paid</td>
+                        <td>Transfer</td>
+                        <td>Gaji Bulanan Januari</td>
+                        <td>01/02/2026</td>
+                        <td class="action-table-data">
+                          <div class="edit-delete-action">
+                            <a class="me-2 p-2" href="purchase-order-detail.html"
+                              ><i data-feather="eye" class="action-eye"></i
+                            ></a>
+                            <a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#edit-units"
+                              ><i data-feather="edit" class="feather-edit"></i
+                            ></a>
+                            <a class="confirm-text p-2" href="javascript:void(0);"
+                              ><i data-feather="trash-2" class="feather-trash-2"></i
+                            ></a>
+                          </div>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td>02/02/2026</td>
+                        <td>ADV-010</td>
+                        <td>Ahmad (Admin)</td>
+                        <td>Cash Advance</td>
+                        <td>500.000</td>
+                        <td>Paid</td>
+                        <td>Cash</td>
+                        <td>Kas Bon Biaya Perjalanan</td>
+                        <td>02/02/2026</td>
+                        <td class="action-table-data">
+                          <div class="edit-delete-action">
+                            <a class="me-2 p-2" href="purchase-order-detail.html"
+                              ><i data-feather="eye" class="action-eye"></i
+                            ></a>
+                            <a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#edit-units"
+                              ><i data-feather="edit" class="feather-edit"></i
+                            ></a>
+                            <a class="confirm-text p-2" href="javascript:void(0);"
+                              ><i data-feather="trash-2" class="feather-trash-2"></i
+                            ></a>
+                          </div>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td>03/02/2026</td>
+                        <td>PUR-201</td>
+                        <td>PT. Maju Jaya</td>
+                        <td>Purchase</td>
+                        <td>12.500.000</td>
+                        <td>Paid</td>
+                        <td>Transfer</td>
+                        <td></td>
+                        <td>03/02/2026</td>
+                        <td class="action-table-data">
+                          <div class="edit-delete-action">
+                            <a class="me-2 p-2" href="purchase-order-detail.html"
+                              ><i data-feather="eye" class="action-eye"></i
+                            ></a>
+                            <a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#edit-units"
+                              ><i data-feather="edit" class="feather-edit"></i
+                            ></a>
+                            <a class="confirm-text p-2" href="javascript:void(0);"
+                              ><i data-feather="trash-2" class="feather-trash-2"></i
+                            ></a>
+                          </div>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td>04/02/2026</td>
+                        <td>EXP-101</td>
+                        <td>PLN Persero</td>
+                        <td>Expense</td>
+                        <td>1.450.000</td>
+                        <td>Paid</td>
+                        <td>Transfer</td>
+                        <td></td>
+                        <td>05/02/2026</td>
+                        <td class="action-table-data">
+                          <div class="edit-delete-action">
+                            <a class="me-2 p-2" href="purchase-order-detail.html"
+                              ><i data-feather="eye" class="action-eye"></i
+                            ></a>
+                            <a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#edit-units"
+                              ><i data-feather="edit" class="feather-edit"></i
+                            ></a>
+                            <a class="confirm-text p-2" href="javascript:void(0);"
+                              ><i data-feather="trash-2" class="feather-trash-2"></i
+                            ></a>
+                          </div>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td>05/02/2026</td>
+                        <td>SR-012</td>
+                        <td>Toko Berkah</td>
+                        <td>Sales Return</td>
+                        <td>250.000</td>
+                        <td>Paid</td>
+                        <td>Cash</td>
+                        <td></td>
+                        <td>05/02/2026</td>
+                        <td class="action-table-data">
+                          <div class="edit-delete-action">
+                            <a class="me-2 p-2" href="purchase-order-detail.html"
+                              ><i data-feather="eye" class="action-eye"></i
+                            ></a>
+                            <a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#edit-units"
+                              ><i data-feather="edit" class="feather-edit"></i
+                            ></a>
+                            <a class="confirm-text p-2" href="javascript:void(0);"
+                              ><i data-feather="trash-2" class="feather-trash-2"></i
+                            ></a>
+                          </div>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td>06/02/2026</td>
+                        <td>ADV-011</td>
+                        <td>Rian (Kurir)</td>
+                        <td>Cash Advance</td>
+                        <td>300.000</td>
+                        <td>Paid</td>
+                        <td>Cash</td>
+                        <td></td>
+                        <td>06/02/2026</td>
+                        <td class="action-table-data">
+                          <div class="edit-delete-action">
+                            <a class="me-2 p-2" href="purchase-order-detail.html"
+                              ><i data-feather="eye" class="action-eye"></i
+                            ></a>
+                            <a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#edit-units"
+                              ><i data-feather="edit" class="feather-edit"></i
+                            ></a>
+                            <a class="confirm-text p-2" href="javascript:void(0);"
+                              ><i data-feather="trash-2" class="feather-trash-2"></i
+                            ></a>
+                          </div>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td>07/02/2026</td>
+                        <td>PAY-002</td>
+                        <td>Andi</td>
+                        <td>Payroll</td>
+                        <td>1.500.000</td>
+                        <td>Paid</td>
+                        <td>Transfer</td>
+                        <td></td>
+                        <td>07/02/2026</td>
+                        <td class="action-table-data">
+                          <div class="edit-delete-action">
+                            <a class="me-2 p-2" href="purchase-order-detail.html"
+                              ><i data-feather="eye" class="action-eye"></i
+                            ></a>
+                            <a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#edit-units"
+                              ><i data-feather="edit" class="feather-edit"></i
+                            ></a>
+                            <a class="confirm-text p-2" href="javascript:void(0);"
+                              ><i data-feather="trash-2" class="feather-trash-2"></i
+                            ></a>
+                          </div>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td>08/02/2026</td>
+                        <td>PUR-203</td>
+                        <td>Distributor ABC</td>
+                        <td>Purchase</td>
+                        <td>850.000</td>
+                        <td>Paid</td>
+                        <td>Cash</td>
+                        <td></td>
+                        <td>08/02/2026</td>
+                        <td class="action-table-data">
+                          <div class="edit-delete-action">
+                            <a class="me-2 p-2" href="purchase-order-detail.html"
+                              ><i data-feather="eye" class="action-eye"></i
+                            ></a>
+                            <a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#edit-units"
+                              ><i data-feather="edit" class="feather-edit"></i
+                            ></a>
+                            <a class="confirm-text p-2" href="javascript:void(0);"
+                              ><i data-feather="trash-2" class="feather-trash-2"></i
+                            ></a>
+                          </div>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td>09/02/2026</td>
+                        <td>EXP-104</td>
+                        <td>Pemilik Ruko</td>
+                        <td>Expense</td>
+                        <td>5.000.000</td>
+                        <td>Paid</td>
+                        <td>Transfer</td>
+                        <td></td>
+                        <td>10/02/2026</td>
+                        <td class="action-table-data">
+                          <div class="edit-delete-action">
+                            <a class="me-2 p-2" href="purchase-order-detail.html"
+                              ><i data-feather="eye" class="action-eye"></i
+                            ></a>
+                            <a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#edit-units"
+                              ><i data-feather="edit" class="feather-edit"></i
+                            ></a>
+                            <a class="confirm-text p-2" href="javascript:void(0);"
+                              ><i data-feather="trash-2" class="feather-trash-2"></i
+                            ></a>
+                          </div>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td>10/02/2026</td>
+                        <td>ADV-012</td>
+                        <td>Siska (Marketing)</td>
+                        <td>Cash Advance</td>
+                        <td>2.500.000</td>
+                        <td>Paid</td>
+                        <td>Transfer</td>
+                        <td></td>
+                        <td>10/02/2026</td>
+                        <td class="action-table-data">
+                          <div class="edit-delete-action">
+                            <a class="me-2 p-2" href="purchase-order-detail.html"
+                              ><i data-feather="eye" class="action-eye"></i
+                            ></a>
+                            <a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#edit-units"
+                              ><i data-feather="edit" class="feather-edit"></i
+                            ></a>
+                            <a class="confirm-text p-2" href="javascript:void(0);"
+                              ><i data-feather="trash-2" class="feather-trash-2"></i
+                            ></a>
+                          </div>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td>11/02/2026</td>
+                        <td>EXP-105</td>
+                        <td>Toko ATK Jaya</td>
+                        <td>Expense</td>
+                        <td>430.000</td>
+                        <td>Paid</td>
+                        <td>Cash</td>
+                        <td>Kertas, Tinta & Map</td>
+                        <td>11/02/2026</td>
+                        <td class="action-table-data">
+                          <div class="edit-delete-action">
+                            <a class="me-2 p-2" href="purchase-order-detail.html"
+                              ><i data-feather="eye" class="action-eye"></i
+                            ></a>
+                            <a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#edit-units"
+                              ><i data-feather="edit" class="feather-edit"></i
+                            ></a>
+                            <a class="confirm-text p-2" href="javascript:void(0);"
+                              ><i data-feather="trash-2" class="feather-trash-2"></i
+                            ></a>
+                          </div>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td>12/02/2026</td>
+                        <td>SR-018</td>
+                        <td>Toko Laris</td>
+                        <td>Sales Return</td>
+                        <td>600.000</td>
+                        <td>Paid</td>
+                        <td>Transfer</td>
+                        <td>Refund Salah Kirim Warna</td>
+                        <td>12/02/2026</td>
+                        <td class="action-table-data">
+                          <div class="edit-delete-action">
+                            <a class="me-2 p-2" href="purchase-order-detail.html"
+                              ><i data-feather="eye" class="action-eye"></i
+                            ></a>
+                            <a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#edit-units"
+                              ><i data-feather="edit" class="feather-edit"></i
+                            ></a>
+                            <a class="confirm-text p-2" href="javascript:void(0);"
+                              ><i data-feather="trash-2" class="feather-trash-2"></i
+                            ></a>
+                          </div>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td>13/02/2026</td>
+                        <td>PUR-202</td>
+                        <td>CV. Utama</td>
+                        <td>Purchase</td>
+                        <td>7.500.000</td>
+                        <td>Paid</td>
+                        <td>Transfer</td>
+                        <td></td>
+                        <td>13/02/2026</td>
+                        <td class="action-table-data">
+                          <div class="edit-delete-action">
+                            <a class="me-2 p-2" href="purchase-order-detail.html"
+                              ><i data-feather="eye" class="action-eye"></i
+                            ></a>
+                            <a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#edit-units"
+                              ><i data-feather="edit" class="feather-edit"></i
+                            ></a>
+                            <a class="confirm-text p-2" href="javascript:void(0);"
+                              ><i data-feather="trash-2" class="feather-trash-2"></i
+                            ></a>
+                          </div>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td>14/02/2026</td>
+                        <td>PAY-003</td>
+                        <td>Seluruh Staff</td>
+                        <td>Payroll</td>
+                        <td>3.200.000</td>
+                        <td>Paid</td>
+                        <td>Transfer</td>
+                        <td></td>
+                        <td>15/02/2026</td>
+                        <td class="action-table-data">
+                          <div class="edit-delete-action">
+                            <a class="me-2 p-2" href="purchase-order-detail.html"
+                              ><i data-feather="eye" class="action-eye"></i
+                            ></a>
+                            <a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#edit-units"
+                              ><i data-feather="edit" class="feather-edit"></i
+                            ></a>
+                            <a class="confirm-text p-2" href="javascript:void(0);"
+                              ><i data-feather="trash-2" class="feather-trash-2"></i
+                            ></a>
+                          </div>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td>15/02/2026</td>
+                        <td>PUR-205</td>
+                        <td>Supplier Kayu</td>
+                        <td>Purchase</td>
+                        <td>4.200.000</td>
+                        <td>Unpaid</td>
+                        <td>-</td>
+                        <td></td>
+                        <td>25/02/2026</td>
+                        <td class="action-table-data">
+                          <div class="edit-delete-action">
+                            <a class="me-2 p-2" href="purchase-order-detail.html"
+                              ><i data-feather="eye" class="action-eye"></i
+                            ></a>
+                            <a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#edit-units"
+                              ><i data-feather="edit" class="feather-edit"></i
+                            ></a>
+                            <a class="confirm-text p-2" href="javascript:void(0);"
+                              ><i data-feather="trash-2" class="feather-trash-2"></i
+                            ></a>
+                          </div>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td>16/02/2026</td>
+                        <td>ADV-013</td>
+                        <td>Ahmad (Admin)</td>
+                        <td>Cash Advance</td>
+                        <td>200.000</td>
+                        <td>Paid</td>
+                        <td>Cash</td>
+                        <td></td>
+                        <td>16/02/2026</td>
+                        <td class="action-table-data">
+                          <div class="edit-delete-action">
+                            <a class="me-2 p-2" href="purchase-order-detail.html"
+                              ><i data-feather="eye" class="action-eye"></i
+                            ></a>
+                            <a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#edit-units"
+                              ><i data-feather="edit" class="feather-edit"></i
+                            ></a>
+                            <a class="confirm-text p-2" href="javascript:void(0);"
+                              ><i data-feather="trash-2" class="feather-trash-2"></i
+                            ></a>
+                          </div>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td>17/02/2026</td>
+                        <td>EXP-107</td>
+                        <td>Pertamina</td>
+                        <td>Expense</td>
+                        <td>120.000</td>
+                        <td>Paid</td>
+                        <td>Cash</td>
+                        <td></td>
+                        <td>17/02/2026</td>
+                        <td class="action-table-data">
+                          <div class="edit-delete-action">
+                            <a class="me-2 p-2" href="purchase-order-detail.html"
+                              ><i data-feather="eye" class="action-eye"></i
+                            ></a>
+                            <a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#edit-units"
+                              ><i data-feather="edit" class="feather-edit"></i
+                            ></a>
+                            <a class="confirm-text p-2" href="javascript:void(0);"
+                              ><i data-feather="trash-2" class="feather-trash-2"></i
+                            ></a>
+                          </div>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td>18/02/2026</td>
+                        <td>PAY-004</td>
+                        <td>Budi (Gudang)</td>
+                        <td>Payroll</td>
+                        <td>450.000</td>
+                        <td>Paid</td>
+                        <td>Cash</td>
+                        <td></td>
+                        <td>18/02/2026</td>
+                        <td class="action-table-data">
+                          <div class="edit-delete-action">
+                            <a class="me-2 p-2" href="purchase-order-detail.html"
+                              ><i data-feather="eye" class="action-eye"></i
+                            ></a>
+                            <a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#edit-units"
+                              ><i data-feather="edit" class="feather-edit"></i
+                            ></a>
+                            <a class="confirm-text p-2" href="javascript:void(0);"
+                              ><i data-feather="trash-2" class="feather-trash-2"></i
+                            ></a>
+                          </div>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td>18/02/2026</td>
+                        <td>PUR-206</td>
+                        <td>PT. Sumber Rejeki</td>
+                        <td>Purchase</td>
+                        <td>3.500.000</td>
+                        <td>Partial</td>
+                        <td>Transfer</td>
+                        <td>Pembelian Rak Gudang</td>
+                        <td>18/02/2026</td>
+                        <td class="action-table-data">
+                          <div class="edit-delete-action">
+                            <a class="me-2 p-2" href="purchase-order-detail.html"
+                              ><i data-feather="eye" class="action-eye"></i
+                            ></a>
+                            <a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#edit-units"
+                              ><i data-feather="edit" class="feather-edit"></i
+                            ></a>
+                            <a class="confirm-text p-2" href="javascript:void(0);"
+                              ><i data-feather="trash-2" class="feather-trash-2"></i
+                            ></a>
+                          </div>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td>18/02/2026</td>
+                        <td>EXP-109</td>
+                        <td>Laundry Bersih</td>
+                        <td>Expense</td>
+                        <td>150.000</td>
+                        <td>Paid</td>
+                        <td>Cash</td>
+                        <td>Cuci Gorden Kantor</td>
+                        <td>18/02/2026</td>
+                        <td class="action-table-data">
+                          <div class="edit-delete-action">
+                            <a class="me-2 p-2" href="purchase-order-detail.html"
+                              ><i data-feather="eye" class="action-eye"></i
+                            ></a>
+                            <a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#edit-units"
+                              ><i data-feather="edit" class="feather-edit"></i
+                            ></a>
+                            <a class="confirm-text p-2" href="javascript:void(0);"
+                              ><i data-feather="trash-2" class="feather-trash-2"></i
+                            ></a>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- /product list -->
+        </div>
+      </div>
+    </div>
+    <!-- /Main Wrapper -->
+    <!-- modals -->
+    <!-- Add Purchase -->
+    <div class="modal fade" id="add-units">
+      <div class="modal-dialog modal-xl modal-dialog-centered">
+        <div class="modal-content">
+          <div class="page-wrapper-new p-0">
+            <div class="content">
+              <div class="modal-header border-0 custom-modal-header">
+                <div class="page-title">
+                  <!-- <h4 class="mb-0">Add Purchase &nbsp;&nbsp; Return &nbsp;&nbsp; : &nbsp;&nbsp;
+									<strong>PRT-0001</strong>
+								</h4> -->
+                  <h4 class="mb-0">Add new Purchase Order</h4>
+                </div>
+                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+
+              <div class="modal-body custom-modal-body">
+                <form>
+                  <div class="row mb-4">
+                    <div class="col-md-7">
+                      <h5 class="fw-bold">PURCHASE ORDER</h5>
+                      <div class="row">
+                        <div class="col-3"><strong>To</strong></div>
+                        <div class="col-9">
+                          <p class="mb-0">PT Cipta Kreasi</p>
+                          <p class="small mb-0">
+                            Cyber 2 Tower, Lantai 29, Jalan HR Rasuna Said,<br />XS No.13, Jakarta Selatan, 12950
+                          </p>
+                          <p class="small mb-0">ciptakreasi@gmail.com</p>
+                          <p class="small mb-0">62819 0685 5554</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-md-5">
+                      <div class="row mb-2">
+                        <div class="col-5 text-start small">Created</div>
+                        <div class="col-7 small">: Sales Staff</div>
+                      </div>
+                      <div class="row mb-2">
+                        <div class="col-5 text-start small">PO</div>
+                        <div class="col-7 small">: PO2545852200</div>
+                      </div>
+                      <div class="row mb-2">
+                        <div class="col-5 text-start small">PO Date</div>
+                        <div class="col-7 small">: 25/12/2025</div>
+                      </div>
+                      <div class="row">
+                        <div class="col-5 text-start small">Vendor Reff</div>
+                        <div class="col-7 small">
+                          <input type="text" class="form-control form-control-sm" placeholder="" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- products table -->
+                  <div class="table-responsive mb-4">
+                    <table class="table table-bordered">
+                      <thead>
+                        <tr>
+                          <th style="width: 50px">No.</th>
+                          <th>Product Name</th>
+                          <th class="text-center" style="width: 80px">Qty</th>
+                          <th class="text-center" style="width: 80px">Unit</th>
+                          <th class="text-end" style="width: 120px">Unit Price</th>
+                          <th class="text-end" style="width: 140px">Sub Total</th>
+                        </tr>
+                      </thead>
+                      <tbody></tbody>
+                    </table>
+                    <div class="inline-block mb-4">
+                      <a href="javascript:void(0);" class="btnAddNewProduct mt-3 d-inline-block">
+                        <i data-feather="plus-circle" class="plus-down-add text-primary"></i>
+                        <span class="text-primary">add New blank</span>
+                      </a>
+                    </div>
+                  </div>
+
+                  <!-- PO Detail and totals -->
+                  <div class="row mb-4">
+                    <div class="col-md-6">
+                      <h6 class="fw-bold">PO Detail</h6>
+                      <div class="mb-2">
+                        <label class="form-label small">No. PR</label>
+                        <input type="text" class="form-control form-control-sm" readonly />
+                      </div>
+                      <div class="mb-2">
+                        <label class="form-label small">Delivery Date</label>
+                        <select class="form-select select">
+                          <option>25/12/2025</option>
+                        </select>
+                      </div>
+                      <div class="mb-2">
+                        <label class="form-label small">Term of Payment</label>
+                        <select class="form-select select">
+                          <option>30 Days</option>
+                        </select>
+                      </div>
+                      <div class="mb-2">
+                        <label class="form-label small">Delivery Address</label>
+                        <textarea class="form-control form-control-sm" rows="3"></textarea>
+                      </div>
+                    </div>
+
+                    <div class="col-6 mt-5">
+                      <div class="row align-items-center">
+                        <div class="col-6 text-end">
+                          <label class="form-label m-0">Sub Total</label>
+                        </div>
+                        <div class="col-6 text-end fw-bold"></div>
+                      </div>
+                      <div class="row align-items-center mt-3">
+                        <div class="col-6 text-end">
+                          <label class="form-label m-0">Tax</label>
+                        </div>
+                        <div class="col-6">
+                          <select class="form-select form-select-sm select">
+                            <option>Ppn 11% (11250)</option>
+                            <option>Ppn 11% (11250)</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="row align-items-center mt-3">
+                        <div class="col-6 text-end">
+                          <label class="form-label m-0">Total (IDR)</label>
+                        </div>
+                        <div class="col-6 text-end fw-bold"></div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Good Receive -->
+                  <h5 class="fw-bold">GOOD RECEIVE</h5>
+                  <div class="row g-3 mb-4">
+                    <div class="col-md-4">
+                      <label class="form-label small">Status Document</label>
+                      <select class="form-select select">
+                        <option>Sent</option>
+                        <option>Draft</option>
+                      </select>
+                    </div>
+                    <div class="col-md-4">
+                      <label class="form-label small">Goods Receive Status</label>
+                      <select class="form-select select">
+                        <option>Scheduled</option>
+                        <option>Complete</option>
+                        <option>Cancel</option>
+                      </select>
+                    </div>
+                    <div class="col-md-4">
+                      <label class="form-label small">Goods Receive Date</label>
+                      <input type="date" class="form-control" />
+                    </div>
+                  </div>
+
+                  <div class="d-flex justify-content-end gap-2 mt-3">
+                    <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-warning">Save Changes</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /Add Purchase -->
+
+    <!-- Edit Purchase -->
+    <div class="modal fade" id="edit-units">
+      <div class="modal-dialog modal-xl modal-dialog-centered">
+        <div class="modal-content">
+          <div class="page-wrapper-new p-0">
+            <div class="content">
+              <div class="modal-header border-0 custom-modal-header">
+                <div class="page-title">
+                  <h4 class="mb-0">Edit Purchase Order</h4>
+                </div>
+                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+
+              <div class="modal-body custom-modal-body">
+                <form>
+                  <div class="row mb-4">
+                    <div class="col-md-7">
+                      <h5 class="fw-bold">PURCHASE ORDER</h5>
+                      <div class="row">
+                        <div class="col-3"><strong>To</strong></div>
+                        <div class="col-9">
+                          <p class="mb-0">PT Cipta Kreasi</p>
+                          <p class="small mb-0">
+                            Cyber 2 Tower, Lantai 29, Jalan HR Rasuna Said,<br />XS No.13, Jakarta Selatan, 12950
+                          </p>
+                          <p class="small mb-0">ciptakreasi@gmail.com</p>
+                          <p class="small mb-0">62819 0685 5554</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-md-5">
+                      <div class="row mb-2">
+                        <div class="col-5 text-start small">Created</div>
+                        <div class="col-7 small">: Sales Staff</div>
+                      </div>
+                      <div class="row mb-2">
+                        <div class="col-5 text-start small">PO</div>
+                        <div class="col-7 small">: PO2545852200</div>
+                      </div>
+                      <div class="row mb-2">
+                        <div class="col-5 text-start small">PO Date</div>
+                        <div class="col-7 small">: 25/12/2025</div>
+                      </div>
+                      <div class="row">
+                        <div class="col-5 text-start small">Vendor Reff</div>
+                        <div class="col-7 small">
+                          <input type="text" class="form-control form-control-sm" placeholder="" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- products table -->
+                  <div class="table-responsive mb-4">
+                    <table class="table table-bordered">
+                      <thead>
+                        <tr>
+                          <th style="width: 50px">No.</th>
+                          <th>Product Name</th>
+                          <th class="text-center" style="width: 80px">Qty</th>
+                          <th class="text-center" style="width: 80px">Unit</th>
+                          <th class="text-end" style="width: 120px">Unit Price</th>
+                          <th class="text-end" style="width: 140px">Sub Total</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>1</td>
+                          <td><input type="text" class="form-control" value="Tinta Neotex 1Kg Cyan" /></td>
+                          <td class="text-center">
+                            <div class="product-search-container position-relative">
+                              <input
+                                type="text"
+                                class="form-control product-search-input fw-bold"
+                                placeholder="Cari Produk ketik minimal 3"
+                                autocomplete="off"
+                              />
+                              <div class="product-search-results dropdown-menu w-100 shadow-sm"></div>
+                            </div>
+                          </td>
+                          <td class="text-center">
+                            <select class="form-control select mt-1">
+                              <option selected>Kg</option>
+                              <option>Pcs</option>
+                              <option>Box</option>
+                              <option>Set</option>
+                            </select>
+                          </td>
+                          <td class="text-end"><input type="text" class="form-control" value="450.000" /></td>
+                          <td class="text-end">900.000</td>
+                          <td class="text-end fw-bold">
+                            <span class="amount-text">0</span>
+                            <a href="javascript:void(0);" class="delete-row text-danger ms-2"
+                              ><i data-feather="trash-2" style="width: 14px"></i
+                            ></a>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>2</td>
+                          <td><input type="text" class="form-control" value="Kertas Art Paper 150gr" /></td>
+                          <td class="text-center">
+                            <div class="product-search-container position-relative">
+                              <input
+                                type="text"
+                                class="form-control product-search-input fw-bold"
+                                placeholder="Cari Produk ketik minimal 3"
+                                autocomplete="off"
+                              />
+                              <div class="product-search-results dropdown-menu w-100 shadow-sm"></div>
+                            </div>
+                          </td>
+                          <td class="text-center">
+                            <select class="form-control select mt-1">
+                              <option selected>Ream</option>
+                              <option>Pcs</option>
+                              <option>Box</option>
+                              <option>Set</option>
+                            </select>
+                          </td>
+                          <td class="text-end"><input type="text" class="form-control" value="600.000" /></td>
+                          <td class="text-end">600.000</td>
+                          <td class="text-end fw-bold">
+                            <span class="amount-text">0</span>
+                            <a href="javascript:void(0);" class="delete-row text-danger ms-2"
+                              ><i data-feather="trash-2" style="width: 14px"></i
+                            ></a>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <div class="inline-block mb-4">
+                      <a href="javascript:void(0);" class="btnAddNewProduct mt-3 d-inline-block">
+                        <i data-feather="plus-circle" class="plus-down-add text-primary"></i>
+                        <span class="text-primary">add New blank</span>
+                      </a>
+                    </div>
+                  </div>
+
+                  <!-- PO Detail and totals -->
+                  <div class="row mb-4">
+                    <div class="col-md-6">
+                      <h6 class="fw-bold">PO Detail</h6>
+                      <div class="mb-2">
+                        <label class="form-label small">No. PR</label>
+                        <input type="text" class="form-control form-control-sm" value="PR-2512000001" readonly />
+                      </div>
+                      <div class="mb-2">
+                        <label class="form-label small">Delivery Date</label>
+                        <select class="form-select select">
+                          <option>25/12/2025</option>
+                        </select>
+                      </div>
+                      <div class="mb-2">
+                        <label class="form-label small">Term of Payment</label>
+                        <select class="form-select select">
+                          <option>30 Days</option>
+                        </select>
+                      </div>
+                      <div class="mb-2">
+                        <label class="form-label small">Delivery Address</label>
+                        <textarea class="form-control form-control-sm" rows="3">
+Jl. Arif Rahman Hakim Niaga Kel. Nagasari Kec. Karawang Barat Kab. Karawang</textarea
+                        >
+                      </div>
+                    </div>
+
+                    <div class="col-6 mt-5">
+                      <div class="row align-items-center">
+                        <div class="col-6 text-end">
+                          <label class="form-label m-0">Sub Total</label>
+                        </div>
+                        <div class="col-6 text-end fw-bold">900000</div>
+                      </div>
+                      <div class="row align-items-center mt-3">
+                        <div class="col-6 text-end">
+                          <label class="form-label m-0">Tax</label>
+                        </div>
+                        <div class="col-6">
+                          <select class="form-select form-select-sm select">
+                            <option>Ppn 11% (11250)</option>
+                            <option>Ppn 11% (11250)</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="row align-items-center mt-3">
+                        <div class="col-6 text-end">
+                          <label class="form-label m-0">Total (IDR)</label>
+                        </div>
+                        <div class="col-6 text-end fw-bold">1125000</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Good Receive -->
+                  <h5 class="fw-bold">GOOD RECEIVE</h5>
+                  <div class="row g-3 mb-4">
+                    <div class="col-md-4">
+                      <label class="form-label small">Status Document</label>
+                      <select class="form-select select">
+                        <option>Sent</option>
+                        <option>Draft</option>
+                      </select>
+                    </div>
+                    <div class="col-md-4">
+                      <label class="form-label small">Goods Receive Status</label>
+                      <select class="form-select select">
+                        <option>Scheduled</option>
+                        <option>Complete</option>
+                        <option>Cancel</option>
+                      </select>
+                    </div>
+                    <div class="col-md-4">
+                      <label class="form-label small">Goods Receive Date</label>
+                      <input type="date" class="form-control" />
+                    </div>
+                  </div>
+
+                  <div class="d-flex justify-content-end gap-2 mt-3">
+                    <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-warning">Save Changes</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /Edit Purchase -->
+
+    <!-- /modals -->
+    <!-- jQuery -->
+    <!-- jQuery -->
+    <script src="assets/js/jquery-3.7.1.min.js"></script>
+
+    <!-- Feather Icon JS -->
+    <script src="assets/js/feather.min.js"></script>
+
+    <!-- Slimscroll JS -->
+    <script src="assets/js/jquery.slimscroll.min.js"></script>
+
+    <!-- Datatable JS -->
+    <script src="assets/js/jquery.dataTables.min.js"></script>
+    <script src="assets/js/dataTables.bootstrap5.min.js"></script>
+
+    <!-- Bootstrap Core JS -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Datetimepicker JS -->
+    <script src="assets/js/moment.min.js"></script>
+    <script src="assets/js/bootstrap-datetimepicker.min.js"></script>
+
+    <!-- Select2 JS -->
+    <script src="assets/plugins/select2/js/select2.min.js"></script>
+
+    <!-- Datetimepicker JS -->
+    <script src="assets/js/moment.min.js"></script>
+    <script src="assets/js/bootstrap-datetimepicker.min.js"></script>
+
+    <!-- Sweetalert 2 -->
+    <script src="assets/plugins/sweetalert/sweetalert2.all.min.js"></script>
+    <script src="assets/plugins/sweetalert/sweetalerts.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="assets/js/theme-script.js"></script>
+    <script src="assets/js/script.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // 1. DATA MASTER PRODUK
+        const masterProducts = [
+          { name: "Tinta Neotex 1Kg Cyan", price: "450.000" },
+          { name: "Kertas Art Paper 150gr", price: "600.000" },
+          { name: "Sticker Vinyl Putih", price: "120.000" },
+        ];
+
+        const clean = (num) => (!num ? 0 : parseInt(String(num).replace(/[^\d]/g, "")) || 0);
+        const format = (num) =>
+          !num || num === 0
+            ? "0"
+            : String(num)
+                .replace(/\D/g, "")
+                .replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+
+        function recalc(row) {
+          const qtyEl = row.querySelector(".quntity-input");
+          const priceEl = row.querySelector(".price-input");
+          const amountEl = row.querySelector(".amount-text");
+
+          if (!qtyEl || !priceEl || !amountEl) return;
+
+          const qty = parseInt(qtyEl.value || "0") || 0;
+          const price = clean(priceEl.value || "0");
+          amountEl.innerText = format(qty * price);
+        }
+
+        function generateTableTR(rowCount) {
+          return `
+        <tr class="product-item">
+            <td>${rowCount}</td>
+            <td>
+                <div class="product-search-container position-relative">
+                    <input type="text" class="form-control product-search-input fw-bold" placeholder="Cari Produk..." autocomplete="off">
+                    <div class="product-search-results dropdown-menu w-100 shadow-sm" style="display:none; position:absolute; z-index:9999;"></div>
+                </div>
+            </td>
+            <td class="text-center">
+                <div class="product-quantity" style="width: 100% !important;">
+                    <span class="quantity-btn plus-btn" style="cursor:pointer;"><i data-feather="plus-circle"></i></span>
+                    <input type="text" class="quntity-input" value="1" style="width:40px; text-align:center; border:1px solid #ddd; border-radius:4px;">
+                    <span class="quantity-btn minus-btn" style="cursor:pointer;"><i data-feather="minus-circle"></i></span>
+                </div>
+            </td>
+            <td class="text-center">
+                <select class="form-control select mt-1">
+                    <option selected>Pcs</option><option>Kg</option><option>Box</option><option>Set</option>
+                </select>
+            </td>
+            <td class="text-end">
+                <input type="text" class="form-control text-end price-input" value="0">
+            </td>
+            <td class="text-end fw-bold">
+                <span class="amount-text">0</span>
+                <a href="javascript:void(0);" class="delete-row text-danger ms-2"><i data-feather="trash-2" style="width:14px;"></i></a>
+            </td>
+        </tr>`;
+        }
+
+        // HANDLER CLICK UTAMA
+        document.addEventListener("click", function (ev) {
+          const target = ev.target;
+
+          // 1. Tombol Add New
+          const btnAdd = target.closest(".btnAddNewProduct");
+          if (btnAdd) {
+            ev.preventDefault();
+            const tbody = btnAdd.closest(".table-responsive").querySelector("tbody");
+            if (tbody) {
+              const rowCount = tbody.querySelectorAll("tr").length + 1;
+              tbody.insertAdjacentHTML("beforeend", generateTableTR(rowCount));
+              if (window.feather) feather.replace();
+            }
+            return;
+          }
+
+          // 2. PILIH HASIL SEARCH (DIPERBAIKI)
+          const resItem = target.closest(".product-item-result");
+          if (resItem) {
+            const row = resItem.closest("tr");
+            const resBox = resItem.closest(".product-search-results");
+
+            // Set values
+            row.querySelector(".product-search-input").value = resItem.dataset.name;
+            row.querySelector(".price-input").value = resItem.dataset.price;
+
+            // Tutup Dropdown
+            resBox.classList.remove("show");
+            resBox.style.display = "none";
+
+            recalc(row);
+            return;
+          }
+
+          // 3. Delete Row
+          const btnDel = target.closest(".delete-row");
+          if (btnDel) {
+            btnDel.closest("tr").remove();
+            return;
+          }
+
+          // 4. Plus Minus
+          const qtyBtn = target.closest(".plus-btn, .minus-btn");
+          if (qtyBtn) {
+            const row = qtyBtn.closest("tr");
+            const input = row.querySelector(".quntity-input");
+            let val = parseInt(input.value) || 1;
+            input.value = qtyBtn.classList.contains("plus-btn") ? val + 1 : val > 1 ? val - 1 : 1;
+            recalc(row);
+            return;
+          }
+
+          // 5. Klik Luar Dropdown (DIPERBAIKI)
+          if (!target.closest(".product-search-container")) {
+            document.querySelectorAll(".product-search-results").forEach((box) => {
+              box.classList.remove("show");
+              box.style.display = "none";
+            });
+          }
+        });
+
+        // HANDLER INPUT
+        document.addEventListener("input", function (e) {
+          const target = e.target;
+          const row = target.closest("tr");
+          if (!row) return;
+
+          if (target.classList.contains("product-search-input")) {
+            const resBox = target.nextElementSibling;
+            const val = target.value.toLowerCase();
+            if (val.length >= 3) {
+              const matched = masterProducts.filter((p) => p.name.toLowerCase().includes(val));
+              resBox.innerHTML =
+                matched
+                  .map(
+                    (p) => `
+                    <div class="product-item-result p-2" data-name="${p.name}" data-price="${p.price}" style="cursor:pointer; border-bottom:1px solid #eee;">
+                        <strong>${p.name}</strong><br><small>Rp ${p.price}</small>
+                    </div>
+                `,
+                  )
+                  .join("") || '<div class="p-2 text-muted">No result</div>';
+
+              resBox.classList.add("show");
+              resBox.style.display = "block";
+            } else {
+              resBox.classList.remove("show");
+              resBox.style.display = "none";
+            }
+          }
+
+          if (target.classList.contains("price-input")) {
+            target.value = format(target.value);
+            recalc(row);
+          }
+          if (target.classList.contains("quntity-input")) {
+            target.value = target.value.replace(/\D/g, "");
+            recalc(row);
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

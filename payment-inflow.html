@@ -11,55 +11,7 @@
     <meta name="author" content="Dreamguys - Bootstrap Admin Template" />
     <meta name="robots" content="noindex, nofollow" />
     <title>Dreams Pos Admin Template</title>
-    <style>
-      /* Target spesifik ID modal add dan edit */
-      #add-units .table-responsive,
-      #edit-units .table-responsive {
-        overflow: visible !important;
-      }
-
-      /* Styling dropdown pencarian di dalam modal tersebut */
-      #add-units .product-search-results,
-      #edit-units .product-search-results {
-        position: absolute !important;
-        top: 100% !important;
-        left: 0;
-        right: 0;
-        z-index: 9999 !important;
-        /* Sangat tinggi agar melayang di atas footer modal */
-        background-color: #ffffff;
-        border: 1px solid #ccc;
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-        /* Shadow lebih tebal agar kontras */
-        max-height: 200px;
-        overflow-y: auto;
-        border-radius: 4px;
-        display: none;
-      }
-
-      /* Munculkan dropdown saat class .show ditambahkan */
-      #add-units .product-search-results.show,
-      #edit-units .product-search-results.show {
-        display: block !important;
-      }
-
-      /* Style isi hasil pencariannya */
-      .product-item-result {
-        padding: 10px 15px;
-        border-bottom: 1px solid #f0f0f0;
-        cursor: pointer;
-      }
-
-      .product-item-result:hover {
-        background-color: #f8f9fa;
-      }
-
-      /* Hilangkan stacking context pada baris agar z-index tembus */
-      #add-units tr.product-item,
-      #edit-units tr.product-item {
-        position: static !important;
-      }
-    </style>
+    
 
     <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png" />
 
@@ -87,6 +39,12 @@
 
     <!-- Main CSS -->
     <link rel="stylesheet" href="assets/css/style.css" />
+    <style>
+		.table-transaction .dataTables_wrapper .dataTables_paginate,
+		.table-transaction .dataTables_info {
+			display: none;
+		}
+	</style>
   </head>
 
   <body>
@@ -815,7 +773,7 @@
                         <div class="row">
                           <div class="col-lg-12">
                             <div class="mb-3">
-                              <select class="form-select">
+                              <select class="form-select select">
                                 <option>Cipta Kreasi PT / BRI / 1320009982282</option>
                                 <option>Dulank Semesta Cida PT / BCA / 1092993242</option>
                               </select>
@@ -1133,12 +1091,12 @@
 
                       <div class="col-lg-8 d-flex align-items-center justify-content-start">
                         <div class="form-check">
-                          <input class="form-check-input payment-radio" type="radio" name="radioPayment1" value="cash" checked />
+                          <input class="form-check-input payment-radio" type="radio" name="radioPayment2" value="cash" checked />
                           <label class="form-check-label">Cash</label>
                         </div>
 
                         <div class="form-check ms-3">
-                          <input class="form-check-input payment-radio" type="radio" name="radioPayment1" value="transfer" />
+                          <input class="form-check-input payment-radio" type="radio" name="radioPayment2" value="transfer" />
                           <label class="form-check-label">Transfer</label>
                         </div>
                       </div>
@@ -1148,7 +1106,7 @@
                       <div class="row">
                         <div class="col-lg-12">
                           <div class="mb-3">
-                            <select class="form-select">
+                            <select class="form-select select">
                               <option>Cipta Kreasi PT / BRI / 1320009982282</option>
                               <option>Dulank Semesta Cida PT / BCA / 1092993242</option>
                             </select>
@@ -1239,6 +1197,9 @@
     <!-- Sweetalert 2 -->
     <script src="assets/plugins/sweetalert/sweetalert2.all.min.js"></script>
     <script src="assets/plugins/sweetalert/sweetalerts.min.js"></script>
+
+    <!-- Separator -->
+	<script src="assets/js/easy-number-separator.js"></script>
 
     <!-- Custom JS -->
     <script src="assets/js/theme-script.js"></script>

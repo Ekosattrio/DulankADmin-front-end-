@@ -767,7 +767,7 @@
 																<label class="form-label mt-2">Bank / Wallet</label>
 															</div>
 															<div class="col-md-6">
-																<input type="text" class="form-control" value="BCA">
+																<input type="text" class="form-control" value="">
 															</div>
 														</div>
 														<div class="row d-flex mb-3">
@@ -775,7 +775,7 @@
 																<label class="form-label mt-2">Account Name</label>
 															</div>
 															<div class="col-md-6">
-																<input type="text" class="form-control" value="Manan">
+																<input type="text" class="form-control" value="">
 															</div>
 														</div>
 														<div class="row d-flex mb-3">
@@ -784,7 +784,7 @@
 															</div>
 															<div class="col-md-6">
 																<input type="text" class="form-control"
-																	value="123-456-7890">
+																	value="">
 															</div>
 														</div>
 														<div class="row d-flex mb-3">
@@ -805,21 +805,21 @@
 
 									<div class="col-lg-12">
 										<div class="text-primary text-end">Max Payment <span
-												id="maxPayment">5.250.000</span></div>
+												class="max-payment">5.250.000</span></div>
 										<div class="mb-3 row align-items-center">
 											<div class="col-md-4">
 												<label class="form-label">Payment Amount</label>
 											</div>
 											<div class="col-md-8">
-												<input type="text" class="form-control number-separator" id="paymentAmountInput"
+												<input type="text" class="form-control number-separator payment-amount-input"
 													inputmode="numeric" pattern="[0-9]*">
-												<input type="hidden" class="result-input" id="amount">
+												<input type="hidden" class="result-input amount">
 											</div>
 										</div>
 									</div>
 
 									<div class="table-responsive table-transaction">
-										<table class="table datanew" id="transactionDetailTable">
+										<table class="table datanew transaction-detail-table">
 											<thead>
 												<th>No Reff</th>
 												<th>Source</th>
@@ -888,6 +888,211 @@
 		</div>
 	</div>
 	<!-- /Add Payment Outflow -->
+
+	<!-- Edit Payment Outflow -->
+	<div class="modal fade" id="edit-units">
+		<div class="modal-dialog modal-dialog-centered custom-modal-two">
+			<div class="modal-content">
+				<div class="page-wrapper-new p-0">
+					<div class="content">
+						<div class="modal-header border-0 custom-modal-header">
+							<div class="page-title">
+								<h4>Edit Payment Outflow</h4>
+							</div>
+
+							<button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+						</div>
+						<div class="modal-body custom-modal-body">
+							<div class="row">
+								<div class="col-lg-12">
+									<div class="mb-3 row align-items-center">
+										<div class="col-md-4">
+											<label class="form-label">Name</label>
+										</div>
+										<div class="col-md-8">
+
+											<input disabled type="text" class="form-control" placeholder="Enter name" value="Budi Santoso">
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-12">
+									<div class="mb-3 row align-items-center">
+										<div class="col-md-4">
+											<label class="form-label">Payment Date</label>
+										</div>
+										<div class="col-md-8">
+											<div class="input-blocks date-group mt-0">
+												<i data-feather="calendar" class="info-img"></i>
+												<div class="input-groupicon">
+													<input type="text" class="datetimepicker" placeholder="Choose Date" value="27/02/2026">
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<div class="payment-wrapper">
+										<div class="mb-3 row">
+											<div class="col-md-4">
+												<label class="form-label fw-bold">Payment Method</label>
+											</div>
+
+											<div class="col-md-8">
+												<div class="d-flex mb-3">
+													<div class="form-check">
+														<input class="form-check-input payment-radio" type="radio"
+															name="radioPayment2"
+															onclick="bankInfoEdit.classList.add('d-none')" value="cash"
+															checked>
+														<label class="form-check-label">Cash</label>
+													</div>
+
+													<div class="form-check ms-3">
+														<input class="form-check-input payment-radio" type="radio"
+															name="radioPayment2"
+															onclick="bankInfoEdit.classList.remove('d-none')"
+															value="transfer">
+														<label class="form-check-label">Transfer</label>
+													</div>
+												</div>
+
+												<div class="bank-info d-none" id="bankInfoEdit">
+													<div class="mb-3">
+														<label class="form-label fw-bold">From Bank Account</label>
+														<select class="form-select select">
+															<option>Cipta Kreasi PT / BRI / 1320009982282</option>
+															<option>Dulank Semesta Cida PT / BCA / 1092993242</option>
+														</select>
+													</div>
+													<div>
+														<label class="form-label fw-bold">To Bank Account</label>
+														<div class="row mb-3 d-flex">
+															<div class="col-md-6">
+																<label class="form-label mt-2">Bank / Wallet</label>
+															</div>
+															<div class="col-md-6">
+																<input type="text" class="form-control" value="BCA">
+															</div>
+														</div>
+														<div class="row d-flex mb-3">
+															<div class="col-md-6">
+																<label class="form-label mt-2">Account Name</label>
+															</div>
+															<div class="col-md-6">
+																<input type="text" class="form-control" value="Manan">
+															</div>
+														</div>
+														<div class="row d-flex mb-3">
+															<div class="col-md-6">
+																<label class="form-label mt-2">Account Number</label>
+															</div>
+															<div class="col-md-6">
+																<input type="text" class="form-control"
+																	value="123-456-7890">
+															</div>
+														</div>
+														<div class="row d-flex mb-3">
+															<div class="col-md-6">
+																<label class="form-label mt-2">Reference</label>
+															</div>
+															<div class="col-md-6">
+																<input type="text" class="form-control" value="EXP-101">
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+
+
+									</div>
+
+									<div class="col-lg-12">
+										<div class="text-primary text-end">Max Payment <span
+												class="max-payment">5.250.000</span></div>
+										<div class="mb-3 row align-items-center">
+											<div class="col-md-4">
+												<label class="form-label">Payment Amount</label>
+											</div>
+											<div class="col-md-8">
+												<input type="text" class="form-control number-separator payment-amount-input"
+													inputmode="numeric" pattern="[0-9]*" value="1450000">
+												<input type="hidden" class="result-input amount" value="1450000">
+											</div>
+										</div>
+									</div>
+
+									<div class="table-responsive table-transaction">
+										<table class="table datanew transaction-detail-table">
+											<thead>
+												<th>No Reff</th>
+												<th>Source</th>
+												<th>Amount</th>
+												<th>Status</th>
+											</thead>
+											<tbody>
+												<tr>
+													<td>INC-00002</td>
+													<td>Purchase</td>
+													<td>3.250.000</td>
+													<td>
+														<span class="badge bg-soft-success">Paid</span>
+													</td>
+												</tr>
+												<tr>
+													<td>INV-00524</td>
+													<td>Purchase</td>
+													<td>1.250.000</td>
+													<td>
+														<span class="badge bg-soft-success">Paid</span>
+													</td>
+												</tr>
+												<tr>
+													<td>INV-00789</td>
+													<td>Purchase</td>
+													<td>750.000</td>
+													<td>
+														<span class="badge bg-soft-danger">Partial</span>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+
+									<!-- Editor -->
+									<div class="col-md-12">
+										<div class="row align-items-center">
+											<div class="col-md-4">
+												<label class="form-label">Description</label>
+											</div>
+											<div class="col-md-8">
+												<div class="card-body-list input-blocks mb-0">
+													<div class="flex-grow-1 term-content text-start">
+														<div class="product-desc p-2 border rounded"
+															contenteditable="true"
+															data-placeholder="Enter note here....."></div>
+													</div>
+												</div>
+											</div>
+
+										</div>
+									</div>
+									<!-- /Editor -->
+								</div>
+								<div class="modal-footer-btn">
+									<a href="javascript:void(0);" class="btn btn-cancel me-2"
+										data-bs-dismiss="modal">Cancel</a>
+									<a href="income.html" class="btn btn-submit">Submit</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- /Edit Payment Outflow -->
 
 	<!-- View Payment Outflow -->
 	<div class="modal fade" id="view-units">
@@ -1061,19 +1266,6 @@
 	<script src="assets/js/script.js"></script>
 	<script>
 		(function () {
-			var modal = document.getElementById('add-units');
-			if (!modal) {
-				return;
-			}
-
-			var table = modal.querySelector('#transactionDetailTable tbody');
-			var maxPaymentEl = modal.querySelector('#maxPayment');
-			var paymentInput = modal.querySelector('#paymentAmountInput');
-
-			if (!table || !maxPaymentEl || !paymentInput) {
-				return;
-			}
-
 			function parseNumber(value) {
 				var normalized = String(value || '').replace(/[^\d]/g, '');
 				return normalized ? parseInt(normalized, 10) : 0;
@@ -1083,83 +1275,96 @@
 				return Number(value || 0).toLocaleString('id-ID');
 			}
 
-			function getRowAmount(row) {
-				var amountCell = row.cells[2];
-				return amountCell ? parseNumber(amountCell.textContent) : 0;
-			}
+			function initializePaymentOutflowModal(modal) {
+				var tableBody = modal.querySelector('.transaction-detail-table tbody');
+				var maxPaymentEl = modal.querySelector('.max-payment');
+				var paymentInput = modal.querySelector('.payment-amount-input');
 
-			function setStatus(row, status) {
-				var statusCell = row.cells[3];
-				if (!statusCell) {
+				if (!tableBody || !maxPaymentEl || !paymentInput) {
 					return;
 				}
 
-				var badge = statusCell.querySelector('.badge');
-				if (!badge) {
-					badge = document.createElement('span');
-					badge.className = 'badge';
-					statusCell.innerHTML = '';
-					statusCell.appendChild(badge);
+				function getRowAmount(row) {
+					var amountCell = row.cells[2];
+					return amountCell ? parseNumber(amountCell.textContent) : 0;
 				}
 
-				if (status === 'Paid') {
-					badge.className = 'badge bg-soft-success';
-				} else {
-					badge.className = 'badge bg-soft-danger';
-				}
-
-				badge.textContent = status;
-			}
-
-			function getTotalAmount() {
-				var rows = table.querySelectorAll('tr');
-				var total = 0;
-				rows.forEach(function (row) {
-					total += getRowAmount(row);
-				});
-				return total;
-			}
-
-			function updateStatuses() {
-				var rows = Array.from(table.querySelectorAll('tr'));
-				var totalAmount = getTotalAmount();
-				var paymentAmount = parseNumber(paymentInput.value);
-
-				if (paymentAmount > totalAmount) {
-					paymentAmount = totalAmount;
-					paymentInput.value = formatNumber(totalAmount);
-				}
-
-				var remainingDiff = Math.max(0, totalAmount - paymentAmount);
-
-				rows.forEach(function (row) {
-					setStatus(row, 'Paid');
-				});
-
-				for (var i = rows.length - 1; i >= 0; i -= 1) {
-					var rowAmount = getRowAmount(rows[i]);
-					if (remainingDiff <= 0) {
-						break;
+				function setStatus(row, status) {
+					var statusCell = row.cells[3];
+					if (!statusCell) {
+						return;
 					}
 
-					if (remainingDiff >= rowAmount) {
-						setStatus(rows[i], 'Partial');
-						remainingDiff -= rowAmount;
+					var badge = statusCell.querySelector('.badge');
+					if (!badge) {
+						badge = document.createElement('span');
+						badge.className = 'badge';
+						statusCell.innerHTML = '';
+						statusCell.appendChild(badge);
+					}
+
+					if (status === 'Paid') {
+						badge.className = 'badge bg-soft-success';
 					} else {
-						setStatus(rows[i], 'Partial');
-						remainingDiff = 0;
+						badge.className = 'badge bg-soft-danger';
+					}
+
+					badge.textContent = status;
+				}
+
+				function getTotalAmount() {
+					var rows = tableBody.querySelectorAll('tr');
+					var total = 0;
+					rows.forEach(function (row) {
+						total += getRowAmount(row);
+					});
+					return total;
+				}
+
+				function updateStatuses() {
+					var rows = Array.from(tableBody.querySelectorAll('tr'));
+					var totalAmount = getTotalAmount();
+					var paymentAmount = parseNumber(paymentInput.value);
+
+					if (paymentAmount > totalAmount) {
+						paymentAmount = totalAmount;
+						paymentInput.value = formatNumber(totalAmount);
+					}
+
+					var remainingDiff = Math.max(0, totalAmount - paymentAmount);
+
+					rows.forEach(function (row) {
+						setStatus(row, 'Paid');
+					});
+
+					for (var i = rows.length - 1; i >= 0; i -= 1) {
+						var rowAmount = getRowAmount(rows[i]);
+						if (remainingDiff <= 0) {
+							break;
+						}
+
+						if (remainingDiff >= rowAmount) {
+							setStatus(rows[i], 'Partial');
+							remainingDiff -= rowAmount;
+						} else {
+							setStatus(rows[i], 'Partial');
+							remainingDiff = 0;
+						}
 					}
 				}
+
+				function initialize() {
+					var totalAmount = getTotalAmount();
+					maxPaymentEl.textContent = formatNumber(totalAmount);
+					updateStatuses();
+				}
+
+				paymentInput.addEventListener('input', updateStatuses);
+				initialize();
 			}
 
-			function initialize() {
-				var totalAmount = getTotalAmount();
-				maxPaymentEl.textContent = formatNumber(totalAmount);
-				updateStatuses();
-			}
-
-			paymentInput.addEventListener('input', updateStatuses);
-			initialize();
+			var modals = document.querySelectorAll('#add-units, #edit-units');
+			modals.forEach(initializePaymentOutflowModal);
 		})();
 	</script>
 

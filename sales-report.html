@@ -1,394 +1,578 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0" />
+    <meta name="description" content="POS - Bootstrap Admin Template" />
+    <meta
+      name="keywords"
+      content="admin, estimates, bootstrap, business, corporate, creative, invoice, html5, responsive, Projects"
+    />
+    <meta name="author" content="Dreamguys - Bootstrap Admin Template" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Dreams Pos Admin Template</title>
 
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
-	<meta name="description" content="POS - Bootstrap Admin Template">
-	<meta name="keywords"
-		content="admin, estimates, bootstrap, business, corporate, creative, invoice, html5, responsive, Projects">
-	<meta name="author" content="Dreamguys - Bootstrap Admin Template">
-	<meta name="robots" content="noindex, nofollow">
-	<title>Dreams Pos Admin Template</title>
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png" />
 
-	<!-- Favicon -->
-	<link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
 
-	<!-- Bootstrap CSS -->
-	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <!-- animation CSS -->
+    <link rel="stylesheet" href="assets/css/animate.css" />
 
-	<!-- animation CSS -->
-	<link rel="stylesheet" href="assets/css/animate.css">
+    <!-- Select2 CSS -->
+    <link rel="stylesheet" href="assets/plugins/select2/css/select2.min.css" />
 
-	<!-- Select2 CSS -->
-	<link rel="stylesheet" href="assets/plugins/select2/css/select2.min.css">
+    <!-- Datatable CSS -->
+    <link rel="stylesheet" href="assets/css/dataTables.bootstrap5.min.css" />
 
-	<!-- Datatable CSS -->
-	<link rel="stylesheet" href="assets/css/dataTables.bootstrap5.min.css">
+    <!-- Datetimepicker CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap-datetimepicker.min.css" />
 
-	<!-- Datetimepicker CSS -->
-	<link rel="stylesheet" href="assets/css/bootstrap-datetimepicker.min.css">
+    <!-- Summernote CSS -->
+    <link rel="stylesheet" href="assets/plugins/summernote/summernote-bs4.min.css" />
 
-	<!-- Summernote CSS -->
-	<link rel="stylesheet" href="assets/plugins/summernote/summernote-bs4.min.css">
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css" />
+    <link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css" />
 
-	<!-- Fontawesome CSS -->
-	<link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css">
-	<link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css">
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
 
-	<!-- Main CSS -->
-	<link rel="stylesheet" href="assets/css/style.css">
+  <body>
+    <div id="global-loader">
+      <div class="loader"></div>
+    </div>
+    <!-- Main Wrapper -->
+    <div class="main-wrapper">
+      <!-- header -->
+      <div id="header-placeholder"></div>
+      <!-- sidebar -->
+      <div id="sidebar-placeholder"></div>
 
+      <div class="page-wrapper mt-3">
+        <!-- Main content tulis disini -->
+        <div class="content">
+          <div class="page-header">
+            <div class="add-item d-flex">
+              <div class="page-title">
+                <h4>Sales Report</h4>
+                <h6>Manage Your Sales Report</h6>
+              </div>
+            </div>
+            <ul class="table-top-head">
+              <li>
+                <a data-bs-toggle="tooltip" data-bs-placement="top" title="Pdf"
+                  ><img src="assets/img/icons/pdf.svg" alt="img"
+                /></a>
+              </li>
+              <li>
+                <a data-bs-toggle="tooltip" data-bs-placement="top" title="Print"
+                  ><i data-feather="printer" class="feather-rotate-ccw"></i
+                ></a>
+              </li>
+              <li>
+                <a data-bs-toggle="tooltip" data-bs-placement="top" title="Refresh"
+                  ><i data-feather="rotate-ccw" class="feather-rotate-ccw"></i
+                ></a>
+              </li>
+              <li>
+                <a data-bs-toggle="tooltip" data-bs-placement="top" title="Collapse" id="collapse-header"
+                  ><i data-feather="chevron-up" class="feather-chevron-up"></i
+                ></a>
+              </li>
+            </ul>
+          </div>
+          <div class="row mt-5">
+            <div class="col-xl-3 col-sm-6 col-12 d-flex">
+              <div class="dash-widget w-100">
+                <div class="dash-widgetimg">
+                  <span><img src="assets/img/icons/dash1.svg" alt="img" /></span>
+                </div>
+                <div class="dash-widgetcontent">
+                  <h6>Total Purchase Due</h6>
+                  <h5>Rp<span class="counters" data-count="307144">307144</span></h5>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-sm-6 col-12 d-flex">
+              <div class="dash-widget dash1 w-100">
+                <div class="dash-widgetimg">
+                  <span><img src="assets/img/icons/dash2.svg" alt="img" /></span>
+                </div>
+                <div class="dash-widgetcontent">
+                  <h6>Total Sales Due</h6>
+                  <h5>Rp<span class="counters" data-count="4385">4385</span></h5>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-sm-6 col-12 d-flex">
+              <div class="dash-widget dash2 w-100">
+                <div class="dash-widgetimg">
+                  <span><img src="assets/img/icons/dash3.svg" alt="img" /></span>
+                </div>
+                <div class="dash-widgetcontent">
+                  <h6>Total Sale Amount</h6>
+                  <h5>Rp<span class="counters" data-count="385656">385656</span></h5>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-sm-6 col-12 d-flex">
+              <div class="dash-widget dash3 w-100">
+                <div class="dash-widgetimg">
+                  <span><img src="assets/img/icons/dash4.svg" alt="img" /></span>
+                </div>
+                <div class="dash-widgetcontent">
+                  <h6>Total Expense Amount</h6>
+                  <h5>Rp<span class="counters" data-count="4000">4000</span></h5>
+                </div>
+              </div>
+            </div>
+          </div>
 
-</head>
+          <!-- /product list -->
+          <div class="card table-list-card">
+            <div class="card-body">
+              <!-- Filter -->
+              <div class="table-top d-flex align-items-center justify-content-between">
+                <!-- Search Input -->
+                <div class="search-set d-block d-md-flex">
+                  <div class="search-input">
+                    <a href="" class="btn btn-searchset"><i data-feather="search" class="feather-search"></i></a>
+                  </div>
+                  <!-- Date Range -->
+                  <div class="my-2">
+                    <div class="pemilihrentang-container">
+                      <input
+                        type="text"
+                        id="pemilihrentang-input"
+                        class="pemilihrentang-input form-control"
+                        readonly
+                        placeholder="Date"
+                        style="height: fit-content !important; width: 100% !important"
+                      />
+                      <div id="pemilihrentang-panel" class="pemilihrentang-panel">
+                        <div class="pemilihrentang-isi">
+                          <div class="opsi-cepat">
+                            <div data-range="kemarin">Kemarin</div>
+                            <div data-range="7hari">7 Hari Terakhir</div>
+                            <div data-range="bulanIni">Bulan Ini</div>
+                            <div data-range="bulanLalu">Bulan Lalu</div>
+                            <div data-range="tahunLalu">Tahun Lalu</div>
+                            <div data-range="kustom">Rentang Kustom</div>
+                          </div>
+                          <div class="kalender" id="kalender-view" style="display: none"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="filters d-flex justify-content-end">
+                  <div class="dropdown w-100 me-2">
+                    <button
+                      class="btn btn-outline-primary dropdown-toggle"
+                      type="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                      Sales Report
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">POS</a></li>
+                      <li><a class="dropdown-item" href="#">Sales Staff</a></li>
+                      <li><a class="dropdown-item" href="#">Website</a></li>
+                      <li><a class="dropdown-item" href="#">Quotation</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <!-- /Filter -->
+              <div class="table-responsive">
+                <table class="table datanew">
+                  <thead>
+                    <tr>
+                      <th>Product Category</th>
+                      <th>Sold Qty</th>
+                      <th>Unit</th>
+                      <th>Total Sales</th>
+                      <th>Total Sales Due</th>
+                      <th>Total Sales Amount</th>
+                      <th>Percentage</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Cetak Offset</td>
+                      <td>10</td>
+                      <td>Lembar</td>
+                      <td>30.000.000</td>
+                      <td>5.000.000</td>
+                      <td>25.000.000</td>
+                      <td>20.00%</td>
+                      <td class="action-table-data">
+                        <div class="edit-delete-action">
+                          <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#view-units">
+                            <i data-feather="eye" class="feather-eye"></i>
+                          </a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Print Outdoor</td>
+                      <td>1</td>
+                      <td>Meter</td>
+                      <td>25.000.000</td>
+                      <td>2.500.000</td>
+                      <td>22.500.000</td>
+                      <td>16.67%</td>
+                      <td class="action-table-data">
+                        <div class="edit-delete-action">
+                          <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#view-units">
+                            <i data-feather="eye" class="feather-eye"></i>
+                          </a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Print Indoor</td>
+                      <td>500</td>
+                      <td>Meter</td>
+                      <td>18.000.000</td>
+                      <td>1.000.000</td>
+                      <td>17.000.000</td>
+                      <td>12.00%</td>
+                      <td class="action-table-data">
+                        <div class="edit-delete-action">
+                          <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#view-units">
+                            <i data-feather="eye" class="feather-eye"></i>
+                          </a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Sablon Manual</td>
+                      <td>400</td>
+                      <td>Pcs</td>
+                      <td>20.000.000</td>
+                      <td>4.000.000</td>
+                      <td>16.000.000</td>
+                      <td>13.33%</td>
+                      <td class="action-table-data">
+                        <div class="edit-delete-action">
+                          <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#view-units">
+                            <i data-feather="eye" class="feather-eye"></i>
+                          </a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Digital Printing A3+</td>
+                      <td>2</td>
+                      <td>Lembar</td>
+                      <td>12.000.000</td>
+                      <td>500.000</td>
+                      <td>11.500.000</td>
+                      <td>8.00%</td>
+                      <td class="action-table-data">
+                        <div class="edit-delete-action">
+                          <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#view-units">
+                            <i data-feather="eye" class="feather-eye"></i>
+                          </a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Cutting Sticker</td>
+                      <td>300</td>
+                      <td>Meter</td>
+                      <td>9.000.000</td>
+                      <td>1.500.000</td>
+                      <td>7.500.000</td>
+                      <td>6.00%</td>
+                      <td class="action-table-data">
+                        <div class="edit-delete-action">
+                          <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#view-units">
+                            <i data-feather="eye" class="feather-eye"></i>
+                          </a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Sablon DTF</td>
+                      <td>250</td>
+                      <td>Pcs</td>
+                      <td>15.000.000</td>
+                      <td>3.000.000</td>
+                      <td>12.000.000</td>
+                      <td>10.00%</td>
+                      <td class="action-table-data">
+                        <div class="edit-delete-action">
+                          <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#view-units">
+                            <i data-feather="eye" class="feather-eye"></i>
+                          </a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Finishing</td>
+                      <td>300</td>
+                      <td>Buku</td>
+                      <td>7.500.000</td>
+                      <td>1.000.000</td>
+                      <td>6.500.000</td>
+                      <td>5.00%</td>
+                      <td class="action-table-data">
+                        <div class="edit-delete-action">
+                          <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#view-units">
+                            <i data-feather="eye" class="feather-eye"></i>
+                          </a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Merchandise & Souvenir</td>
+                      <td>500</td>
+                      <td>Pcs</td>
+                      <td>10.000.000</td>
+                      <td>2.000.000</td>
+                      <td>8.000.000</td>
+                      <td>6.67%</td>
+                      <td class="action-table-data">
+                        <div class="edit-delete-action">
+                          <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#view-units">
+                            <i data-feather="eye" class="feather-eye"></i>
+                          </a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Cetak Dokumen</td>
+                      <td>7</td>
+                      <td>Lembar</td>
+                      <td>3.500.000</td>
+                      <td>-</td>
+                      <td>3.500.000</td>
+                      <td>2.33%</td>
+                      <td class="action-table-data">
+                        <div class="edit-delete-action">
+                          <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#view-units">
+                            <i data-feather="eye" class="feather-eye"></i>
+                          </a>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                  <tfoot>
+                    <tr style="font-weight: bold; background-color: #f8f9fa">
+                      <td>TOTAL</td>
+                      <td></td>
+                      <td></td>
+                      <td>150.000.000</td>
+                      <td>20.500.000</td>
+                      <td>129.500.000</td>
+                      <td>100%</td>
+                      <td class="action-table-data">
+                        <div class="edit-delete-action">
+                          <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#view-units">
+                            <i data-feather="eye" class="feather-eye"></i>
+                          </a>
+                        </div>
+                      </td>
+                    </tr>
+                  </tfoot>
+                </table>
+              </div>
+            </div>
+          </div>
+          <!-- /product list -->
+        </div>
+      </div>
+    </div>
+    <!-- /Main Wrapper -->
+    <!-- modals -->
+    <!-- detail -->
+    <div class="modal fade" id="view-units">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="page-wrapper-new p-0">
+            <div class="content">
+              <div class="modal-header border-0 custom-modal-header">
+                <div class="page-title">
+                  <h4>Detail Report Product</h4>
+                </div>
+                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
 
-<body>
-	<div id="global-loader">
-		<div class="loader"> </div>
-	</div>
-	<!-- Main Wrapper -->
-	<div class="main-wrapper">
+              <div class="modal-body custom-modal-body">
+                <div class="row mb-4 align-items-start">
+                  <div class="col-sm-8">
+                    <div class="row mb-2">
+                      <div class="col-4">Product Category</div>
+                      <div class="col-8 fw-bold">: Print Outdoor</div>
+                    </div>
+                    <div class="row mb-2">
+                      <div class="col-4">Periode</div>
+                      <div class="col-8 fw-bold">: Januari 2025 - Februari 2025</div>
+                    </div>
+                  </div>
 
-		<!-- header -->
-		<div id="header-placeholder"></div>
-		<!-- sidebar -->
-		<div id="sidebar-placeholder"></div>
+                  <div class="col-sm-4">
+                    <ul class="nav justify-content-end list-unstyled">
+                      <li class="me-2">
+                        <a data-bs-toggle="tooltip" data-bs-placement="top" title="Pdf">
+                          <img src="assets/img/icons/pdf.svg" alt="img" />
+                        </a>
+                      </li>
+                      <li class="ms-4">
+                        <a data-bs-toggle="tooltip" data-bs-placement="top" title="Print">
+                          <i data-feather="printer" class="feather-rotate-ccw"></i>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
 
-		<div class="page-wrapper mt-3">
-			<!-- Main content tulis disini -->
-			<div class="content">
-				<div class="page-header">
-					<div class="add-item d-flex">
-						<div class="page-title">
-							<h4>Sales Report</h4>
-							<h6>Manage Your Sales Report</h6>
-						</div>
-					</div>
-					<ul class="table-top-head">
-						<li>
-							<a data-bs-toggle="tooltip" data-bs-placement="top" title="Pdf"><img
-									src="assets/img/icons/pdf.svg" alt="img"></a>
-						</li>
-						<li>
-							<a data-bs-toggle="tooltip" data-bs-placement="top" title="Print"><i data-feather="printer"
-									class="feather-rotate-ccw"></i></a>
-						</li>
-						<li>
-							<a data-bs-toggle="tooltip" data-bs-placement="top" title="Refresh"><i
-									data-feather="rotate-ccw" class="feather-rotate-ccw"></i></a>
-						</li>
-						<li>
-							<a data-bs-toggle="tooltip" data-bs-placement="top" title="Collapse" id="collapse-header"><i
-									data-feather="chevron-up" class="feather-chevron-up"></i></a>
-						</li>
-					</ul>
-				</div>
-				<div class="row mt-5">
-					<div class="col-xl-3 col-sm-6 col-12 d-flex">
-						<div class="dash-widget w-100">
-							<div class="dash-widgetimg">
-								<span><img src="assets/img/icons/dash1.svg" alt="img"></span>
-							</div>
-							<div class="dash-widgetcontent">
-								<h6>Total Purchase Due</h6>
-								<h5>Rp<span class="counters" data-count="307144">307144</span></h5>
-							</div>
-						</div>
-					</div>
-					<div class="col-xl-3 col-sm-6 col-12 d-flex">
-						<div class="dash-widget dash1 w-100">
-							<div class="dash-widgetimg">
-								<span><img src="assets/img/icons/dash2.svg" alt="img"></span>
-							</div>
-							<div class="dash-widgetcontent">
-								<h6>Total Sales Due</h6>
-								<h5>Rp<span class="counters" data-count="4385">4385</span></h5>
-							</div>
-						</div>
-					</div>
-					<div class="col-xl-3 col-sm-6 col-12 d-flex">
-						<div class="dash-widget dash2 w-100">
-							<div class="dash-widgetimg">
-								<span><img src="assets/img/icons/dash3.svg" alt="img"></span>
-							</div>
-							<div class="dash-widgetcontent">
-								<h6>Total Sale Amount</h6>
-								<h5>Rp<span class="counters" data-count="385656">385656</span></h5>
-							</div>
-						</div>
-					</div>
-					<div class="col-xl-3 col-sm-6 col-12 d-flex">
-						<div class="dash-widget dash3 w-100">
-							<div class="dash-widgetimg">
-								<span><img src="assets/img/icons/dash4.svg" alt="img"></span>
-							</div>
-							<div class="dash-widgetcontent">
-								<h6>Total Expense Amount</h6>
-								<h5>Rp<span class="counters" data-count="4000">4000</span></h5>
-							</div>
-						</div>
-					</div>
-				</div>
+                <div class="table-responsive">
+                  <table class="table table-borderless">
+                    <thead>
+                      <tr class="border-bottom">
+                        <th>Product</th>
+                        <th class="text-center">Sold Qty</th>
+                        <th>Unit</th>
+                        <th class="text-end">Total Revenue</th>
+                        <th class="text-end">Percentage</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Flexy Frontlit 280gsm</td>
+                        <td class="text-center">450</td>
+                        <td>Meter</td>
+                        <td class="text-end">9.000.000</td>
+                        <td class="text-end">15.69%</td>
+                      </tr>
+                      <tr>
+                        <td>Flexy Korea 440gsm</td>
+                        <td class="text-center">120</td>
+                        <td>Meter</td>
+                        <td class="text-end">6.000.000</td>
+                        <td class="text-end">10.46%</td>
+                      </tr>
+                      <tr>
+                        <td>Flexy Jerman 510gsm</td>
+                        <td class="text-center">85</td>
+                        <td>Meter</td>
+                        <td class="text-end">6.800.000</td>
+                        <td class="text-end">11.86%</td>
+                      </tr>
+                      <tr>
+                        <td>Sticker Vinyl Outdoor</td>
+                        <td class="text-center">200</td>
+                        <td>Meter</td>
+                        <td class="text-end">14.000.000</td>
+                        <td class="text-end">24.41%</td>
+                      </tr>
+                      <tr>
+                        <td>Sticker One Way Vision</td>
+                        <td class="text-center">50</td>
+                        <td>Meter</td>
+                        <td class="text-end">4.500.000</td>
+                        <td class="text-end">7.85%</td>
+                      </tr>
+                      <tr>
+                        <td>Backlit Film Outdoor</td>
+                        <td class="text-center">30</td>
+                        <td>Meter</td>
+                        <td class="text-end">3.600.000</td>
+                        <td class="text-end">6.28%</td>
+                      </tr>
+                      <tr>
+                        <td>Kain Banner / Pongee</td>
+                        <td class="text-center">150</td>
+                        <td>Meter</td>
+                        <td class="text-end">4.500.000</td>
+                        <td class="text-end">7.85%</td>
+                      </tr>
+                      <tr>
+                        <td>Flexy Backlit China</td>
+                        <td class="text-center">60</td>
+                        <td>Meter</td>
+                        <td class="text-end">3.900.000</td>
+                        <td class="text-end">6.80%</td>
+                      </tr>
+                      <tr>
+                        <td>Sticker Transparan Outdoor</td>
+                        <td class="text-center">40</td>
+                        <td>Meter</td>
+                        <td class="text-end">2.800.000</td>
+                        <td class="text-end">4.88%</td>
+                      </tr>
+                      <tr>
+                        <td>Mesh Banner (Berlubang)</td>
+                        <td class="text-center">25</td>
+                        <td>Meter</td>
+                        <td class="text-end">2.250.000</td>
+                        <td class="text-end">3.92%</td>
+                      </tr>
+                    </tbody>
+                    <tfoot>
+                      <tr class="border-top fw-bold">
+                        <td colspan="3">TOTAL</td>
+                        <td class="text-end">57.350.000</td>
+                        <td class="text-end">100%</td>
+                      </tr>
+                    </tfoot>
+                  </table>
+                </div>
+              </div>
 
-				<!-- /product list -->
-				<div class="card table-list-card">
-					<div class="card-body">
-						<!-- Filter -->
-						<div class="table-top d-flex align-items-center justify-content-between">
-							<!-- Search Input -->
-							<div class="search-set d-block d-md-flex">
-								<div class="search-input">
-									<a href="" class="btn btn-searchset"><i data-feather="search"
-											class="feather-search"></i></a>
-								</div>
-								<!-- Date Range -->
-								<div class="my-2">
-									<div class="pemilihrentang-container ">
-										<input type="text" id="pemilihrentang-input"
-											class="pemilihrentang-input form-control" readonly placeholder="Date"
-											style="height: fit-content !important;width: 100% !important;">
-										<div id="pemilihrentang-panel" class="pemilihrentang-panel">
-											<div class="pemilihrentang-isi">
-												<div class="opsi-cepat">
-													<div data-range="kemarin">Kemarin</div>
-													<div data-range="7hari">7 Hari Terakhir</div>
-													<div data-range="bulanIni">Bulan Ini</div>
-													<div data-range="bulanLalu">Bulan Lalu</div>
-													<div data-range="tahunLalu">Tahun Lalu</div>
-													<div data-range="kustom">Rentang Kustom</div>
-												</div>
-												<div class="kalender" id="kalender-view" style="display:none;">
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="filters d-flex justify-content-end">
-								<div class="dropdown w-100 me-2">
-									<button class="btn btn-outline-primary dropdown-toggle" type="button"
-										data-bs-toggle="dropdown" aria-expanded="false">
-										Sales Channel
-									</button>
-									<ul class="dropdown-menu">
-										<li><a class="dropdown-item" href="#">POS</a></li>
-										<li><a class="dropdown-item" href="#">Sales Staff</a></li>
-										<li><a class="dropdown-item" href="#">Website</a></li>
-										<li><a class="dropdown-item" href="#">Quotation</a></li>
-									</ul>
-								</div>
-							</div>
-						</div>
-						<!-- /Filter -->
-						<div class="table-responsive ">
-							<table class="table  datanew">
-								<thead>
-									<tr>
-										<th>Date</th>
-										<th>No Sales</th>
-										<th>Customer Name</th>
-										<th>Total (before Tax)</th>
-										<th>Sales Channel</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>01/01/2026</td>
-										<td class="str-value">2601000001</td>
-										<td>Budi Santoso</td>
-										<td>40.860.000</td>
-										<td>POS</td>
-									</tr>
-									<tr>
-										<td>03/01/2026</td>
-										<td class="str-value">2601000002</td>
-										<td>PT Maju Jaya</td>
-										<td>741.150.000</td>
-										<td>POS</td>
-									</tr>
-									<tr>
-										<td>05/01/2026</td>
-										<td class="str-value">2601000003</td>
-										<td>Siti Aminah</td>
-										<td>615.000</td>
-										<td>Sales Staff</td>
-									</tr>
-									<tr>
-										<td>07/01/2026</td>
-										<td class="str-value">2601000004</td>
-										<td>Toko Berkah</td>
-										<td>11.875.000</td>
-										<td>POS</td>
-									</tr>
-									<tr>
-										<td>09/01/2026</td>
-										<td class="str-value">2601000005</td>
-										<td>CV Creative Design</td>
-										<td>48.056.890</td>
-										<td>POS</td>
-									</tr>
-									<tr>
-										<td>11/01/2026</td>
-										<td class="str-value">2601000006</td>
-										<td>Ahmad Fauzi</td>
-										<td>52.847.652</td>
-										<td>Sales Staff</td>
-									</tr>
-									<tr>
-										<td>13/01/2026</td>
-										<td class="str-value">2601000007</td>
-										<td>Yayasan Pendidikan</td>
-										<td>123.744.530</td>
-										<td>POS</td>
-									</tr>
-									<tr>
-										<td>15/01/2026</td>
-										<td class="str-value">2601000008</td>
-										<td>Resto Sedap Malam</td>
-										<td>94.866.798</td>
-										<td>Sales Staff</td>
-									</tr>
-									<tr>
-										<td>17/01/2026</td>
-										<td class="str-value">2601000009</td>
-										<td>PT Global Tech</td>
-										<td>48.131.688</td>
-										<td>Website</td>
-									</tr>
-									<tr>
-										<td>19/01/2026</td>
-										<td class="str-value">2601000010</td>
-										<td>Indah Lestari</td>
-										<td>618.570.000</td>
-										<td>Quotation</td>
-									</tr>
-									<tr>
-										<td>21/01/2026</td>
-										<td class="str-value">2601000011</td>
-										<td>PT Sinar Terang</td>
-										<td>118.400.904</td>
-										<td>POS</td>
-									</tr>
-									<tr>
-										<td>23/01/2026</td>
-										<td class="str-value">2601000012</td>
-										<td>Klinik Sehat</td>
-										<td>8.824.550</td>
-										<td>Sales Staff</td>
-									</tr>
-									<tr>
-										<td>25/01/2026</td>
-										<td class="str-value">2601000013</td>
-										<td>Bpk. Ridwan</td>
-										<td>46.671.282</td>
-										<td>Quotation</td>
-									</tr>
-									<tr>
-										<td>27/01/2026</td>
-										<td class="str-value">2601000014</td>
-										<td>Coffee Shop 88</td>
-										<td>176.040.745</td>
-										<td>Quotation</td>
-									</tr>
-									<tr>
-										<td>29/01/2026</td>
-										<td class="str-value">2601000015</td>
-										<td>PT Indo Food</td>
-										<td>110.766.000</td>
-										<td>Quotation</td>
-									</tr>
-									<tr>
-										<td>31/01/2026</td>
-										<td class="str-value">2601000016</td>
-										<td>Sekolah Harapan</td>
-										<td>40.007.205</td>
-										<td>Quotation</td>
-									</tr>
-									<tr>
-										<td>02/02/2026</td>
-										<td class="str-value">2602000017</td>
-										<td>Diana Putri</td>
-										<td>8.090.770</td>
-										<td>Sales Staff</td>
-									</tr>
-									<tr>
-										<td>04/02/2026</td>
-										<td class="str-value">2602000018</td>
-										<td>Event Organizer X</td>
-										<td>139.272.696</td>
-										<td>POS</td>
-									</tr>
-									<tr>
-										<td>06/02/2026</td>
-										<td class="str-value">2602000019</td>
-										<td>PT Astra V</td>
-										<td>3.458.580</td>
-										<td>POS</td>
-									</tr>
-									<tr>
-										<td>08/02/2026</td>
-										<td class="str-value">2602000020</td>
-										<td>Toko Elektronik</td>
-										<td>23.968.590</td>
-										<td>POS</td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
-					</div>
-				</div>
-				<!-- /product list -->
-			</div>
-		</div>
+              <div class="modal-footer border-0 justify-content-end">
+                <button type="button" class="btn btn-dark px-5" data-bs-dismiss="modal">Cancel</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- detail -->
+    <!-- /modals -->
+    <!-- jQuery -->
+    <script src="assets/js/jquery-3.7.1.min.js"></script>
 
-	</div>
-	<!-- /Main Wrapper -->
-	<!-- modals -->
+    <!-- Feather Icon JS -->
+    <script src="assets/js/feather.min.js"></script>
 
-	<!-- /modals -->
-	<!-- jQuery -->
-	<script src="assets/js/jquery-3.7.1.min.js"></script>
+    <!-- Slimscroll JS -->
+    <script src="assets/js/jquery.slimscroll.min.js"></script>
 
-	<!-- Feather Icon JS -->
-	<script src="assets/js/feather.min.js"></script>
+    <!-- Datatable JS -->
+    <script src="assets/js/jquery.dataTables.min.js"></script>
+    <script src="assets/js/dataTables.bootstrap5.min.js"></script>
 
-	<!-- Slimscroll JS -->
-	<script src="assets/js/jquery.slimscroll.min.js"></script>
+    <!-- Datetimepicker JS -->
+    <script src="assets/js/moment.min.js"></script>
+    <script src="assets/js/bootstrap-datetimepicker.min.js"></script>
 
-	<!-- Datatable JS -->
-	<script src="assets/js/jquery.dataTables.min.js"></script>
-	<script src="assets/js/dataTables.bootstrap5.min.js"></script>
+    <!-- Bootstrap Core JS -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
 
-	<!-- Datetimepicker JS -->
-	<script src="assets/js/moment.min.js"></script>
-	<script src="assets/js/bootstrap-datetimepicker.min.js"></script>
+    <!-- Summernote JS -->
+    <script src="assets/plugins/summernote/summernote-bs4.min.js"></script>
 
-	<!-- Bootstrap Core JS -->
-	<script src="assets/js/bootstrap.bundle.min.js"></script>
+    <!-- Select2 JS -->
+    <script src="assets/plugins/select2/js/select2.min.js"></script>
 
-	<!-- Summernote JS -->
-	<script src="assets/plugins/summernote/summernote-bs4.min.js"></script>
+    <!-- Sweetalert 2 -->
+    <script src="assets/plugins/sweetalert/sweetalert2.all.min.js"></script>
+    <script src="assets/plugins/sweetalert/sweetalerts.min.js"></script>
 
-	<!-- Select2 JS -->
-	<script src="assets/plugins/select2/js/select2.min.js"></script>
-
-	<!-- Sweetalert 2 -->
-	<script src="assets/plugins/sweetalert/sweetalert2.all.min.js"></script>
-	<script src="assets/plugins/sweetalert/sweetalerts.min.js"></script>
-
-	<!-- Custom JS -->
-	<script src="assets/js/theme-script.js"></script>
-	<script src="assets/js/script.js"></script>
-
-
-
-
-
-
-
-
-
-
-</body>
-
+    <!-- Custom JS -->
+    <script src="assets/js/theme-script.js"></script>
+    <script src="assets/js/script.js"></script>
+  </body>
 </html>

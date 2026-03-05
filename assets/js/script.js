@@ -34,7 +34,6 @@ $(document).ready(function () {
 function start() {
   // Variables declarations
   var $wrapper = $(".main-wrapper");
-  var $slimScrolls = $(".slimscroll");
   var $pageWrapper = $(".page-wrapper");
   feather.replace();
 
@@ -425,25 +424,34 @@ function start() {
   }
 
   // Sidebar Slimscroll
-  if ($slimScrolls.length > 0) {
-    $slimScrolls.slimScroll({
-      height: "auto",
-      width: "100%",
-      position: "right",
-      size: "7px",
-      color: "#ccc",
-      wheelStep: 10,
-      touchScrollStep: 100,
-    });
-    var wHeight = $(window).height() - 60;
-    $slimScrolls.height(wHeight);
-    $(".sidebar .slimScrollDiv").height(wHeight);
-    $(window).resize(function () {
-      var rHeight = $(window).height() - 60;
-      $slimScrolls.height(rHeight);
-      $(".sidebar .slimScrollDiv").height(rHeight);
-    });
-  }
+  // if ($slimScrolls.length > 0) {
+  //   $slimScrolls.slimScroll({
+  //     height: "auto",
+  //     width: "100%",
+  //     position: "right",
+  //     size: "7px",
+  //     color: "#ccc",
+  //     wheelStep: 10,
+  //     touchScrollStep: 100,
+  //   });var $slimScrolls = $(".slimscroll");
+
+  //   function setSidebarHeight() {
+  //     var scrollPos = $slimScrolls.data("savedScroll") || 0;
+  //     $slimScrolls.data("savedScroll", $slimScrolls.scrollTop());
+  //     var h = $(window).height() - 60;
+  //     $slimScrolls.height(h);
+  //     $(".sidebar .slimScrollDiv").height(h);
+
+  //     $slimScrolls.scrollTop(scrollPos); // balikin posisi scroll
+  //   }
+
+  //   setSidebarHeight();
+
+  //   $(window).on("resize", function () {
+  //     setSidebarHeight();
+  //   });
+  // }
+
   $(document).ready(function () {
     // Sidebar Toggle
     $(".sidebar-menu a").on("click", function (e) {

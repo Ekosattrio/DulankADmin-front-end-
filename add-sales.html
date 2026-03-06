@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+	<meta name="description" content="POS - Bootstrap Admin Template">
+	<meta name="keywords"
+		content="admin, estimates, bootstrap, business, corporate, creative, invoice, html5, responsive, Projects">
+	<meta name="author" content="Dreamguys - Bootstrap Admin Template">
+	<meta name="robots" content="noindex, nofollow">
+	<title>Dreams Pos Admin Template</title>
+
+	<link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
+	<!-- Summernote CSS -->
+	<link rel="stylesheet" href="assets/plugins/summernote/summernote-bs4.min.css">
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+
+	<!-- animation CSS -->
+	<link rel="stylesheet" href="assets/css/animate.css">
+
+	<!-- Select2 CSS -->
+	<link rel="stylesheet" href="assets/plugins/select2/css/select2.min.css">
+
+
+	<!-- Datetimepicker CSS -->
+	<link rel="stylesheet" href="assets/css/bootstrap-datetimepicker.min.css">
+
+	<!-- Datatable CSS -->
+	<link rel="stylesheet" href="assets/css/dataTables.bootstrap5.min.css">
+
+	<!-- Bootstrap Tagsinput CSS -->
+	<link rel="stylesheet" href="assets/plugins/bootstrap-tagsinput/bootstrap-tagsinput.css">
+
+	<!-- Fontawesome CSS -->
+	<link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css">
+	<link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css">
+
+	<!-- Main CSS -->
+	<link rel="stylesheet" href="assets/css/style.css">
+
+	<style>
+		/* Custom Select Styles */
+		.select-wrapper {
+			position: relative;
+			width: 100%;
+		}
+
+		.select-display {
+			padding: 10px 15px;
+			border: 1px solid #ddd;
+			border-radius: 4px;
+			background: #fff;
+			cursor: pointer;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			min-height: 40px;
+			font-size: 14px;
+		}
+
+		.select-display:hover {
+			border-color: #ccc;
+		}
+
+		.select-options {
+			position: absolute;
+			top: 100%;
+			left: 0;
+			right: 0;
+			background: #fff;
+			border: 1px solid #ddd;
+			border-top: none;
+			border-radius: 0 0 4px 4px;
+			box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+			z-index: 1000;
+			display: none;
+			max-height: 200px;
+			overflow-y: auto;
+		}
+
+		.select-option {
+			padding: 10px 15px;
+			cursor: pointer;
+			border-bottom: 1px solid #f0f0f0;
+			white-space: normal;
+			font-size: 14px;
+		}
+
+		.select-option:hover {
+			background: #2563eb;
+			color: #fff;
+		}
+
+		.select-option:last-child {
+			border-bottom: none;
+		}
+
+		.select-arrow {
+			width: 0;
+			height: 0;
+			border-left: 5px solid transparent;
+			border-right: 5px solid transparent;
+			border-top: 5px solid #666;
+			transition: transform 0.2s;
+			margin-left: 10px;
+		}
+
+		.select-wrapper.open .select-arrow {
+			transform: rotate(180deg);
+		}
+
+		.select-wrapper.open .select-options {
+			display: block;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="global-loader">
+		<div class="loader"> </div>
+	</div>
+	<!-- Main Wrapper -->
+	<div class="main-wrapper">
+
+		<!-- header -->
+		<div id="header-placeholder"></div>
+		<!-- sidebar -->
+		<div id="sidebar-placeholder"></div>
+
+		<div class="page-wrapper mt-1">
+			<!-- Main content tulis disini -->
+			<div class="content my-4">
+
+				<div class="page-header">
+					<div class="add-item d-flex">
+						<div class="page-title">
+							<h4>Add sales</h4>
+
+						</div>
+					</div>
+					<ul class="table-top-head">
+						<li>
+							<div class="page-btn">
+								<a href="sales.html" class="btn btn-secondary"><i data-feather="arrow-left"
+										class="me-2"></i>Back to
+									sales List</a>
+							</div>
+						</li>
+						<li>
+							<a data-bs-toggle="tooltip" data-bs-placement="top" title="Collapse" id="collapse-header"><i
+									data-feather="chevron-up" class="feather-chevron-up"></i></a>
+						</li>
+					</ul>
+				</div>
+				<div class="card border-0 shadow">
+					<div class="card-body py-4">
+						<div class="content">
+
+							<div>
+
+								<!-- Address -->
+								<div class="pb-2 border-bottom border-2 mb-4" id="shipping-section">
+									<div class="row" id="add-method">
+										<div class="col-md-6">
+											<div class="mt-3">
+												<div class="mb-3">
+													<div class="add-newplus">
+														<h4 class="fs-6 text-dark mt-2">Customer:</h4>
+														<a href="#" data-bs-toggle="modal" data-bs-target="#add-customer"><i
+																data-feather="plus-circle"
+																class="plus-down-add"></i><span>Add
+																New</span></a>
+													</div>
+													<div class="input-groupicon select-code">
+														<div class="search-container">
+															<input type="text" class="form-control customer-input"
+																placeholder="Search Customer"
+																data-target="data-customer">
+															<div class="search-results" onchange="console.log('masuk')"
+																id="customer-add">
+															</div>
+														</div>
+													</div>
+												</div>
+
+												<div class="mb-3" id="data-customer">
+													<strong class="name"></strong><br>
+													<small class="email"></small><br>
+													<small class="phone"></small><br>
+													<small class="address"></small>
+												</div>
+											</div>
+										</div>
+										<div class="col-md-6">
+											<div class="mt-1 ms-4">
+												<div class="">
+													<div class="d-flex mt-3 align-items-center">
+														<h4 class="fs-6 text-dark">Shiping Method:</h4>
+														<div class="form-check ms-3 align-items-center">
+															<input class="form-check-input" type="radio"
+																name="radioShipping" id="radioShipping1" checked
+																onclick="displayShipping(this, true)">
+															<label class="form-check-label text-standard"
+																for="radioShipping1">
+																Shipping
+															</label>
+														</div>
+														<div class="form-check ms-3 align-items-center">
+															<input class="form-check-input" type="radio"
+																name="radioShipping" id="radioShipping2"
+																onclick="displayShipping(this, false)">
+															<label class="form-check-label text-standard"
+																for="radioShipping2">
+																Pickup
+															</label>
+														</div>
+													</div>
+												</div>
+												<div class="shipping-method">
+													<div class="shipping-address">
+														<div class="align-items-center">
+															<span class="fw-semibold text-dark">Ahmad Dhani</span>
+															<span class="text-secondary ms-2">(+62) 852053769
+															</span>
+															<span
+																class="badge my-bg-primary text-white align-middle ms-2">Office</span>
+															<!-- <span class="badge bg-white border border-danger text-danger ms-2 py-1 px-2">Utama</span> -->
+														</div>
+														<div class="text-standard text-dark small mt-1">
+															Toko Kelontong Depan Desa Teluk Jambe, <br>
+															515 Sarah Shore Suite 828, Port Kennethstad (Depan
+															Stasiun) <br>
+															KAB. KARAWANG - TELUK JAMBE TIMUR, JAWA BARAT, ID 41360
+														</div>
+													</div>
+													<button
+														class="btn my-btn-outline-primary float-end mb-2 shipping-change-address">Ubah
+														Alamat</button>
+												</div>
+												<div class="pickup-method" class="d-none">
+													<div id="pickup-method-address">
+														<span class="fw-semibold text-dark">Dulank Pickup 2 <span
+																class="text-dark">(081906855554)</span></span>
+														<div
+															class="mt-1 mb-2 text-color text-standard pickup-list-value">
+															Toko Kelontong Depan Desa Teluk Jambe<br />
+															515 Sarah Shore Suite 828, Port Kennethstad, Iowa,
+															TH,<br />
+															KAB. KARAWANG - TELUK JAMBE TIMUR, JAWA BARAT, ID 41360
+														</div>
+													</div>
+													<button
+														class="btn my-btn-outline-primary float-end mb-2 pickup-change-address">Pilih
+														Alamat Pickup</button>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<div class="row">
+										<div class="col-4 d-flex align-items-center">
+											<label for="" class="fw-bold text-dark">PO</label>
+											<input type="text" class="ms-4 form-control form-control-sm"
+												placeholder="Invoice No" value="2507000021">
+										</div>
+									</div>
+								</div>
+
+
+								<div id="productContainer" class="card p-2"
+									style="background-color: rgba(254, 159, 67, 0.08);">
+									<div class="product-item">
+										<div class="row align-items-start gx-3 mb-2 position-relative">
+
+											<div class="col-md-4">
+												<label class="form-label">Product Name</label>
+												<div class="product-search-container position-relative">
+													<input type="text" class="form-control mb-2 product-search-input"
+														placeholder="Ketik minimal 3 huruf..." autocomplete="off">
+
+													<div class="product-search-results dropdown-menu w-100 shadow-sm">
+													</div>
+												</div>
+
+												<em class="text-muted">Description:</em>
+												<div class="description-edit custom-textarea" contenteditable="true"
+													placeholder="Enter description here...">-</div>
+											</div>
+
+											<div class="col-md-2">
+												<label class="form-label">Qty</label>
+												<div class="product-quantity" style="width: 100% !important;">
+													<span class="quantity-btn">
+														<i data-feather="plus-circle" class="plus-circle"></i>
+													</span>
+
+													<input type="text" class="quntity-input" value="2">
+
+													<span class="quantity-btn">
+														<i data-feather="minus-circle" class="minus-circle"></i>
+													</span>
+												</div>
+											</div>
+
+											<div class="col-md-2">
+												<label class="form-label">Unit</label>
+												<select class="form-control select mt-1">
+													<option selected>Ream</option>
+													<option>Pcs</option>
+													<option>Box</option>
+													<option>Set</option>
+												</select>
+											</div>
+
+											<div class="col-md-2">
+												<label class="form-label">Price (IDR)</label>
+												<input type="text" class="form-control text-end price-input"
+													value="450.000">
+											</div>
+
+											<div class="col-md-2">
+												<label class="form-label">Amount (IDR)</label>
+												<input type="text" id="amountInput1"
+													class="form-control text-end amount-input" value="900.000" disabled>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="inline-block mb-4">
+									<a href="javascript:void(0);" class="btnAddNewProduct mt-3 d-inline-block">
+										<i data-feather="plus-circle" style="color: primari;"
+											class="plus-down-add text-primary"></i>
+										<span class="text-primary">add New blank</span>
+									</a>
+								</div>
+
+
+								<!-- Voucher input & Detail Total -->
+								<div class="mt-2">
+									<div class="row gx-5">
+										<div class="col-lg-7 voucher-container">
+											<div class="row align-items-center mb-3">
+												<div class="col-md-4">
+													<label class="form-label fw-semibold mb-0">Voucher</label>
+												</div>
+												<div class="col-md-8">
+													<div class="input-group">
+														<input type="text" class="form-control voucher-input" value="DUILANK12">
+														<button class="btn btn-warning text-white fw-semibold" type="button"
+															onclick="applyVoucher(event, this)">Apply</button>
+													</div>
+													<div class="alert alert-success py-1 px-2 small mt-2 mb-0 d-none voucher-alert">
+														Voucher berhasil diterapkan
+													</div>
+												</div>
+											</div>
+
+											<div class="row align-items-center mb-3">
+												<div class="col-md-4">
+													<label class="form-label fw-semibold mb-0">Shipping Costs</label>
+												</div>
+												<div class="col-md-8">
+													<input type="text" id="shippingInput" class="form-control shipping-cost-input"
+														value="125.000">
+												</div>
+											</div>
+
+											<div class="row align-items-center mb-3">
+												<div class="col-md-4">
+													<label class="form-label fw-semibold mb-0">Discount</label>
+												</div>
+												<div class="col-md-8">
+													<input type="text" class="form-control" value="">
+												</div>
+											</div>
+
+											<div class="border p-3 mb-3">
+												<div class="row align-items-center mb-3">
+													<div class="col-md-4">
+														<label class="form-label fw-semibold mb-0">Tax</label>
+													</div>
+													<div class="col-md-8">
+														<select class="form-select select" id="taxSelect" onchange="toggleTransactionCode()">
+															<option>Without Tax (Default)</option>
+															<option>Ppn 11% (125.000)</option>
+														</select>
+													</div>
+												</div>
+												<div class="row align-items-center d-none" id="transaction-code">
+													<div class="col-md-4">
+														<label class="form-label fw-semibold mb-0">Transaction Code</label>
+													</div>
+													<div class="col-md-8">
+														<select class="form-select select">
+															<option selected>Select Transaction Code</option>
+														</select>
+													</div>
+												</div>
+											</div>
+
+											<div class="row align-items-center">
+												<div class="col-md-4">
+													<label class="form-label fw-semibold mb-0">Notes</label>
+												</div>
+												<div class="col-md-8">
+													<input type="text" class="form-control">
+												</div>
+											</div>
+										</div>
+
+										<div class="col-lg-5 mt-4 mt-lg-0">
+											<div class="d-flex justify-content-between align-items-center mb-3 text-muted">
+												<span>Sub Total</span>
+												<span class="text-end">900.000</span>
+											</div>
+											<div class="d-flex justify-content-between align-items-center mb-3 text-muted">
+												<span>Voucher</span>
+												<span class="text-end">0</span>
+											</div>
+											<div class="d-flex justify-content-between align-items-center mb-3 text-muted">
+												<span>Shipping Cost</span>
+												<span class="text-end">125.000</span>
+											</div>
+											<div class="d-flex justify-content-between align-items-center mb-3 text-muted">
+												<span>Discount</span>
+												<span class="text-end">0</span>
+											</div>
+											<div class="d-flex justify-content-between align-items-center mb-3 text-muted">
+												<span>Total Before Tax</span>
+												<span class="text-end">1.025.000</span>
+											</div>
+											<div class="d-flex justify-content-between align-items-center mb-3 text-muted">
+												<span>Tax</span>
+												<span class="text-end">100.000</span>
+											</div>
+											<div class="d-flex justify-content-between align-items-center mt-4 fw-bold fs-6">
+												<span>Grand Total</span>
+												<span class="text-end grand-total-display" id="grandTotal">925.000</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+				<div class="modal-footer my-5 justify-content-end">
+
+					<div>
+						<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+							Cancel
+						</button>
+						<button class="btn btn-warning">
+							Save Changes
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<!-- /Main Wrapper -->
+	<!-- modals -->
+	<!-- Add Customers -->
+	<div class="modal fade" id="add-customer">
+		<div class="modal-dialog modal-dialog-centered custom-modal-two">
+			<div class="modal-content">
+				<div class="page-wrapper-new p-0">
+					<div class="content">
+						<div class="modal-header border-0 custom-modal-header">
+							<div class="page-title">
+								<h4>Add Customer</h4>
+							</div>
+							<button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+						</div>
+
+						<!-- <div class="mb-3">
+											<label class="form-label">Address</label>
+											<div class="alamat-container position-relative">
+												<div
+													class="input-group position-relative d-inline-flex align-items-center">
+													<input
+														class="form-control form-control-lg text-standard alamat-input"
+														placeholder="Provinsi, Kota, Kecamatan">
+													<span
+														class="clear-address d-none position-absolute bg-secondary text-white rounded-circle d-flex align-items-center"
+														style="width: 18px;height: 18px;font-size: 8px;right: 10px;cursor: pointer;z-index: 100;">
+														<i class="bi bi-x-lg m-auto"></i>
+													</span>
+													<span class="search-icon position-absolute"
+														style="width: 16px;height: 16px;font-size: 12px;right: 10px;z-index: 99;">
+														<i class="bi bi-search"></i>
+													</span>
+												</div>
+
+												<div class="alamat-dropdown-wrapper"
+													style="display:none; position:absolute; width:100%; background:#fff; box-shadow:0 2px 8px rgba(0,0,0,0.08); border-radius:8px;">
+													<ul class="nav nav-tabs alamat-tabs">
+														<li class="nav-item"><button
+																class="btn text-standard active tab-provinsi"
+																type="button">Provinsi</button></li>
+														<li class="nav-item"><button class="btn text-standard tab-kota"
+																type="button">Kota</button></li>
+														<li class="nav-item"><button
+																class="btn text-standard tab-kecamatan"
+																type="button">Kecamatan</button></li>
+													</ul>
+													<div class="tab-content p-2 alamatTabContent">
+														<ul class="list-unstyled mb-0 provinsi-list"></ul>
+														<ul class="list-unstyled mb-0 kota-list" style="display:none;">
+														</ul>
+														<ul class="list-unstyled mb-0 kecamatan-list"
+															style="display:none;"></ul>
+													</div>
+													<div class="alamat-search-result p-2" style="display:none;">
+														<ul class="list-unstyled mb-0 alamat-search-list"></ul>
+													</div>
+												</div>
+											</div>
+
+										</div> -->
+						<div class="modal-body custom-modal-body">
+							<form action="customers.html">
+								<div class="row">
+									<div class="col-lg-12 pe-0 mb-2">
+										<div class="mb-3">
+											<label class="form-label">Customer ID</label>
+											<input type="text" class="form-control" disabled value="ID000052">
+										</div>
+									</div>
+									<div class="col-lg-12 pe-0 mb-2">
+										<label class="form-label">Customer Type</label>
+										<select class="select">
+											<option>Reguler</option>
+											<option>Standard</option>
+											<option>Premium</option>
+										</select>
+									</div>
+									<div class="col-lg-12 pe-0 mb-2 ">
+										<div class="mb-3">
+											<label class="form-label">Customer Name</label>
+											<input type="text" class="form-control">
+										</div>
+									</div>
+									<div class="col-lg-12 pe-0 mb-2">
+										<div class="mb-3">
+											<label class="form-label">Email</label>
+											<input type="email" class="form-control">
+										</div>
+									</div>
+									<div class="col-lg-12 pe-0 mb-2">
+										<div class="mb-3">
+											<label class="form-label">Contact Number</label>
+											<input type="text" class="form-control">
+										</div>
+									</div>
+								</div>
+						</div>
+
+						<div class="modal-footer-btn me-3 mb-2">
+							<button type="button" class="btn btn-cancel me-2" data-bs-dismiss="modal">Cancel</button>
+							<button type="submit" class="btn btn-submit">Submit</button>
+						</div>
+						<br>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- /Add Customer -->
+	<!-- /modals -->
+	<!-- jQuery -->
+	<script src="assets/js/jquery-3.7.1.min.js"></script>
+
+	<!-- Feather Icon JS -->
+	<script src="assets/js/feather.min.js"></script>
+
+	<!-- Slimscroll JS -->
+	<script src="assets/js/jquery.slimscroll.min.js"></script>
+
+	<!-- Datatable JS -->
+	<script src="assets/js/jquery.dataTables.min.js"></script>
+	<script src="assets/js/dataTables.bootstrap5.min.js"></script>
+
+	<!-- Bootstrap Core JS -->
+	<script src="assets/js/bootstrap.bundle.min.js"></script>
+
+
+	<!-- Datetimepicker JS -->
+	<script src="assets/js/moment.min.js"></script>
+	<script src="assets/js/bootstrap-datetimepicker.min.js"></script>
+
+	<!-- Summernote JS -->
+	<script src="assets/plugins/summernote/summernote-bs4.min.js"></script>
+
+	<!-- Select2 JS -->
+	<script src="assets/plugins/select2/js/select2.min.js"></script>
+
+	<!-- Bootstrap Tagsinput JS -->
+	<script src="assets/plugins/bootstrap-tagsinput/bootstrap-tagsinput.js"></script>
+
+	<!-- Sweetalert 2 -->
+	<script src="assets/plugins/sweetalert/sweetalert2.all.min.js"></script>
+	<script src="assets/plugins/sweetalert/sweetalerts.min.js"></script>
+
+	<!-- Separator -->
+	<script src="assets/js/easy-number-separator.js"></script>
+
+	<!-- Live Search -->
+	<script src="assets/js/liveSearch.js"></script>
+
+	<!-- Custom JS -->
+	<script src="assets/js/theme-script.js"></script>
+	<script src="assets/js/script.js"></script>
+	<script src="assets/js/shipping-pickup.js"></script>
+	<script>
+
+		$(document).ready(function () {
+			$('#summernote-create').summernote({
+				placeholder: 'Type description...',
+				height: 150
+			});
+
+			$('#summernote-edit').summernote({
+				placeholder: 'Edit description...',
+				height: 150
+			});
+		});
+	</script>
+	<!-- add new blank baru -->
+	<script>
+		function applyVoucher(e, btn) {
+			try {
+				if (e) e.preventDefault();
+
+				function formatRupiah(num) {
+					return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+				}
+
+				function parseRupiah(str) {
+					return parseInt(str.replace(/[^\d]/g, "")) || 0;
+				}
+
+				// Cari container voucher terdekat dari tombol yang diklik
+				const container = btn.closest('.voucher-container');
+				// Cari modal terdekat agar bisa hitung total di modal yang benar saja
+				const modal = btn.closest('.card-body');
+
+				const voucherInput = container.querySelector(".voucher-input");
+				const alertBox = container.querySelector(".voucher-alert");
+
+				// Cari shipping & grandTotal di dalam modal yang aktif
+				const shippingInput = modal.querySelector(".shipping-cost-input") || document.getElementById("shippingInput");
+				const grandTotalEl = modal.querySelector(".grand-total-display") || document.getElementById("grandTotal");
+
+				let code = voucherInput.value.trim().toUpperCase();
+
+				// Hitung subtotal hanya dari input di modal yang aktif
+				let amountInputs = modal.querySelectorAll(".amount-input");
+				let subtotal = 0;
+				amountInputs.forEach(inp => {
+					subtotal += parseRupiah(inp.value);
+				});
+
+				let shipping = parseRupiah(shippingInput.value);
+				let discount = 0;
+
+				// Logic Voucher
+				if (code.includes("DUILANK12")) {
+					alertBox.classList.remove("d-none");
+					discount = subtotal * 0.10; // Diskon 10%
+					voucherInput.value = "DUILANK12 - 10%";
+				} else if (code.includes("PROMO20")) { // Contoh voucher kedua
+					alertBox.classList.remove("d-none");
+					discount = subtotal * 0.20; // Diskon 20%
+					voucherInput.value = "PROMO20 - 20%";
+				} else {
+					alertBox.classList.add("d-none");
+				}
+
+				let grandTotal = subtotal + shipping - discount;
+				grandTotalEl.textContent = formatRupiah(Math.round(grandTotal));
+
+			} catch (err) {
+				console.error("Error in applyVoucher:", err);
+			}
+		}
+	</script>
+	<script>
+		function toggleTransactionCode() {
+			const taxSelect = document.getElementById("taxSelect");
+			const transactionCodeRow = document.getElementById("transaction-code");
+			if (!taxSelect || !transactionCodeRow) return;
+			const selected = (taxSelect.value || "").toLowerCase();
+			console.log(selected)
+			const isPpn11 = selected.includes("11%");
+			transactionCodeRow.classList.toggle("d-none", !isPpn11);
+		}
+
+	</script>
+	<!-- product search -->
+	<script>
+		document.addEventListener("DOMContentLoaded", function () {
+			// 1. DATA MASTER PRODUK
+			const masterProducts = [
+				{ name: "Brosur Full Color A4", price: "450.000", desc: "Art paper 150gr, Cetak 2 Sisi" },
+				{ name: "Kartu Nama Matte", price: "75.000", desc: "Art Carton 260gr, Box isi 100" },
+				{ name: "Spanduk Banner Flexi", price: "25.000", desc: "Bahan 280gr, Cetak High Res" }
+			];
+
+			let productIndex = 1000; // Counter unik untuk ID dinamis
+
+			// ---- UTILITAS ----
+			function clean(num) {
+				if (!num) return 0;
+				return parseInt(String(num).replace(/[^\d]/g, "")) || 0;
+			}
+
+			function format(num) {
+				if (!num || num === 0) return "0";
+				return String(num).replace(/\D/g, "").replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+			}
+
+			// ---- FUNGSI RECALC (Hanya mencari elemen di dalam modal yang aktif) ----
+			function recalc(item) {
+				const row = item.closest(".product-item");
+				const qtyEl = row.querySelector(".quntity-input");
+				const priceEl = row.querySelector(".price-input");
+				const amountEl = row.querySelector(".amount-input");
+
+				const qty = parseInt(qtyEl.value || "0") || 0;
+				const price = clean(priceEl.value || "0");
+
+				amountEl.value = format(qty * price);
+
+				// Update Grand Total modal terkait
+				const activeModal = row.closest('.card-body');
+				const btnApply = activeModal.querySelector('button[onclick*="applyVoucher"]');
+				if (btnApply && typeof applyVoucher === "function") {
+					applyVoucher(null, btnApply);
+				}
+			}
+
+			// ---- TEMPLATE PRODUK ----
+			function generateTemplate(index) {
+				return `
+        <div class="product-item mb-2 mt-2">
+            <div class="row align-items-start gx-3">
+                <div class="col-md-4">
+                    <label class="form-label">Product Name</label>
+                    <div class="product-search-container position-relative">
+                        <input type="text" class="form-control mb-2 product-search-input" placeholder="Cari produk..." autocomplete="off">
+                        <div class="product-search-results dropdown-menu w-100 shadow-sm"></div>
+                    </div>
+                    <em class="text-muted">Description:</em>
+                    <div class="description-edit custom-textarea" contenteditable="true" placeholder="Enter description here...">-</div>
+                </div>
+                <div class="col-md-2">
+                    <label class="form-label">Qty</label>
+                    <div class="product-quantity" style="width:100% !important;">
+                        <span class="quantity-btn plus-btn"><i data-feather="plus-circle"></i></span>
+                        <input type="text" class="quntity-input text-center" value="1" style="max-width:60px;">
+                        <span class="quantity-btn minus-btn"><i data-feather="minus-circle"></i></span>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <label class="form-label">Unit</label>
+                    <select class="form-control mt-1">
+                        <option>Pcs</option><option>Ream</option><option>Box</option>
+                    </select>
+                </div>
+                <div class="col-md-2">
+                    <label class="form-label">Price (IDR)</label>
+                    <input type="text" class="form-control text-end price-input">
+                </div>
+                <div class="col-md-2">
+                    <label class="form-label">Amount (IDR)</label>
+                    <input type="text" class="form-control text-end amount-input" disabled>
+                </div>
+                <div class="justify-content-end d-flex mb-3"> 
+                    <a href="javascript:void(0);" class="delete-section-btn text-primary mt-3 d-inline-block"> 
+                        <i data-feather="minus-circle" style="width: 15px; margin-right: 10px;"></i>
+                        <span>Delete Product</span> 
+                    </a> 
+                </div>
+            </div>
+        </div>`;
+			}
+
+			// ---- EVENT DELEGATION: INPUT (Autocomplete & Recalc) ----
+			document.addEventListener("input", function (e) {
+				const target = e.target;
+				const activeModal = target.closest('.card-body');
+				if (!activeModal) return; // Jika input bukan di dalam modal, abaikan
+
+				const row = target.closest(".product-item");
+
+				// A. Autocomplete Pencarian
+				if (target.classList.contains("product-search-input")) {
+					const resultsBox = target.nextElementSibling; // .product-search-results
+					const keyword = target.value.toLowerCase();
+
+					if (keyword.length >= 3) {
+						const matched = masterProducts.filter(p => p.name.toLowerCase().includes(keyword));
+						if (matched.length > 0) {
+							resultsBox.innerHTML = matched.map(p => `
+                        <div class="product-item-result p-2" data-name="${p.name}" data-price="${p.price}" data-desc="${p.desc}" style="cursor:pointer; border-bottom:1px solid #eee;">
+                            <strong>${p.name}</strong><br><small class="text-muted">Harga: ${p.price}</small>
+                        </div>
+                    `).join("");
+							resultsBox.classList.add("show");
+						} else {
+							resultsBox.innerHTML = '<div class="p-2 text-muted">Produk tidak ditemukan</div>';
+							resultsBox.classList.add("show");
+						}
+					} else {
+						resultsBox.classList.remove("show");
+					}
+				}
+
+				// B. Format & Recalc
+				if (target.classList.contains("price-input")) {
+					target.value = format(target.value.replace(/\D/g, ""));
+					recalc(row);
+				}
+				if (target.classList.contains("quntity-input")) {
+					target.value = target.value.replace(/\D/g, "");
+					recalc(row);
+				}
+			});
+
+			// ---- EVENT DELEGATION: KLIK ----
+			document.addEventListener("click", function (e) {
+				const target = e.target;
+				const activeModal = target.closest('.card-body');
+
+				// 1. Pilih Produk dari Search
+				const resultItem = target.closest(".product-item-result");
+				if (resultItem && activeModal) {
+					const row = resultItem.closest(".product-item");
+					row.querySelector(".product-search-input").value = resultItem.dataset.name;
+					row.querySelector(".price-input").value = resultItem.dataset.price;
+					row.querySelector(".description-edit").innerText = resultItem.dataset.desc;
+					resultItem.closest(".product-search-results").classList.remove("show");
+					recalc(row);
+					return;
+				}
+
+				// 2. Add New Product (Mencari ID di dalam modal aktif)
+				if (target.closest("#btnAddNewProduct") && activeModal) {
+					e.preventDefault();
+					const container = activeModal.querySelector("#productContainer");
+					const div = document.createElement("div");
+					div.innerHTML = generateTemplate(productIndex++);
+					container.appendChild(div.firstElementChild);
+					if (window.feather) feather.replace();
+					return;
+				}
+
+				// 3. Delete Product
+				if (target.closest(".delete-section-btn") && activeModal) {
+					const row = target.closest(".product-item");
+					row.remove();
+					// Trigger recalculate grand total modal ini
+					const btnApply = activeModal.querySelector('button[onclick*="applyVoucher"]');
+					if (btnApply && typeof applyVoucher === "function") applyVoucher(null, btnApply);
+					return;
+				}
+
+				// 4. Quantity Plus/Minus
+				const qtyBtn = target.closest(".plus-btn, .minus-btn");
+				if (qtyBtn && activeModal) {
+					const row = qtyBtn.closest(".product-item");
+					const input = row.querySelector(".quntity-input");
+					let val = parseInt(input.value) || 1;
+					input.value = qtyBtn.classList.contains("plus-btn") ? val + 1 : (val > 1 ? val - 1 : 1);
+					recalc(row);
+					return;
+				}
+
+				// 5. Tutup dropdown jika klik luar
+				if (!target.closest(".product-search-container")) {
+					document.querySelectorAll(".product-search-results").forEach(el => el.classList.remove("show"));
+				}
+			});
+		});
+	</script>
+
+
+	<script>
+		document.addEventListener("DOMContentLoaded", function () {
+			let productIndex = 1000;
+
+			// DATA MASTER PRODUK
+			const masterProducts = [
+				{ name: "Brosur Full Color A4", price: "450.000", desc: "Art paper 150gr, Cetak 2 Sisi" },
+				{ name: "Kartu Nama Matte", price: "75.000", desc: "Art Carton 260gr, Box isi 100" },
+				{ name: "Spanduk Banner Flexi", price: "25.000", desc: "Bahan 280gr, Cetak High Res" }
+			];
+
+			function clean(num) {
+				if (!num) return 0;
+				return parseInt(String(num).replace(/[^\d]/g, "")) || 0;
+			}
+
+			function format(num) {
+				if (!num || num === 0) return "0";
+				return String(num).replace(/\D/g, "").replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+			}
+
+			function recalc(row) {
+				const qtyEl = row.querySelector(".quntity-input");
+				const priceEl = row.querySelector(".price-input");
+				const amountEl = row.querySelector(".amount-input");
+
+				const qty = parseInt(qtyEl.value || "0") || 0;
+				const price = clean(priceEl.value || "0");
+
+				amountEl.value = format(qty * price);
+
+				const activeModal = row.closest('.card-body');
+				const btnApply = activeModal.querySelector('button[onclick*="applyVoucher"]');
+				if (btnApply && typeof applyVoucher === "function") {
+					applyVoucher(null, btnApply);
+				}
+			}
+
+			function generateTemplate(index) {
+				return `
+        <div class="product-item mb-2 mt-2">
+            <div class="row align-items-start gx-3">
+                <div class="col-md-4">
+                    <label class="form-label">Product Name</label>
+                    <div class="product-search-container position-relative">
+                        <input type="text" class="form-control mb-2 product-search-input" placeholder="Cari produk..." autocomplete="off">
+                        <div class="product-search-results dropdown-menu w-100 shadow-sm"></div>
+                    </div>
+                    <em class="text-muted">Description:</em>
+                    <div class="description-edit custom-textarea" contenteditable="true" placeholder="Enter description here...">-</div>
+                </div>
+                <div class="col-md-2">
+                    <label class="form-label">Qty</label>
+                    <div class="product-quantity" style="width:100% !important;">
+                        <span class="quantity-btn plus-btn"><i data-feather="plus-circle"></i></span>
+                        <input type="text" class="quntity-input text-center" value="1" style="max-width:60px;">
+                        <span class="quantity-btn minus-btn"><i data-feather="minus-circle"></i></span>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <label class="form-label">Unit</label>
+                    <select class="form-control mt-1">
+                        <option>Pcs</option><option>Ream</option><option>Box</option>
+                    </select>
+                </div>
+                <div class="col-md-2">
+                    <label class="form-label">Price (IDR)</label>
+                    <input type="text" class="form-control text-end price-input">
+                </div>
+                <div class="col-md-2">
+                    <label class="form-label">Amount (IDR)</label>
+                    <input type="text" class="form-control text-end amount-input" disabled>
+                </div>
+                <div class="justify-content-end d-flex mb-3"> 
+                    <a href="javascript:void(0);" class="delete-section-btn text-primary mt-3 d-inline-block"> 
+                        <i data-feather="minus-circle" style="width: 15px; margin-right: 10px;"></i>
+                        <span>Delete Product</span> 
+                    </a> 
+                </div>
+            </div>
+        </div>`;
+			}
+
+			// PENCARIAN PRODUK (INPUT)
+			document.addEventListener("input", function (e) {
+				const target = e.target;
+				const row = target.closest(".product-item");
+
+				if (target.classList.contains("product-search-input")) {
+					const resultsBox = target.nextElementSibling;
+					const keyword = target.value.toLowerCase();
+					if (keyword.length >= 3) {
+						const matched = masterProducts.filter(p => p.name.toLowerCase().includes(keyword));
+						resultsBox.innerHTML = matched.map(p => `
+                    <div class="product-item-result p-2" data-name="${p.name}" data-price="${p.price}" data-desc="${p.desc}" style="cursor:pointer; border-bottom:1px solid #eee;">
+                        <strong>${p.name}</strong><br><small>Harga: ${p.price}</small>
+                    </div>
+                `).join("") || '<div class="p-2 text-muted">Tidak ditemukan</div>';
+						resultsBox.classList.add("show");
+					} else {
+						resultsBox.classList.remove("show");
+					}
+				}
+
+				if (target.classList.contains("price-input")) {
+					target.value = format(target.value);
+					if (row) recalc(row);
+				}
+				if (target.classList.contains("quntity-input")) {
+					target.value = target.value.replace(/\D/g, "");
+					if (row) recalc(row);
+				}
+			});
+
+			// CLICK HANDLER (DENGAN CLASS BUKAN ID)
+			document.addEventListener("click", function (ev) {
+				const target = ev.target;
+
+				// 1. ADD NEW PRODUCT (MENGGUNAKAN CLASS)
+				const btnAdd = target.closest(".btnAddNewProduct");
+				if (btnAdd) {
+					ev.preventDefault();
+					ev.stopPropagation(); // Stop bubbling
+
+					const activeModal = btnAdd.closest('.card-body');
+					const container = activeModal.querySelector("#productContainer");
+
+					if (container) {
+						const div = document.createElement("div");
+						div.innerHTML = generateTemplate(productIndex++);
+						container.appendChild(div.firstElementChild);
+						if (window.feather) feather.replace();
+					}
+					return;
+				}
+
+				// 2. PILIH PRODUK HASIL SEARCH
+				const resItem = target.closest(".product-item-result");
+				if (resItem) {
+					const row = resItem.closest(".product-item");
+					row.querySelector(".product-search-input").value = resItem.dataset.name;
+					row.querySelector(".price-input").value = resItem.dataset.price;
+					row.querySelector(".description-edit").innerText = resItem.dataset.desc;
+					resItem.parentElement.classList.remove("show");
+					recalc(row);
+					return;
+				}
+
+				// 3. DELETE & PLUS MINUS
+				if (target.closest(".delete-section-btn")) {
+					const row = target.closest(".product-item");
+					const modal = target.closest(".card-body");
+					row.remove();
+					const btn = modal.querySelector('button[onclick*="applyVoucher"]');
+					if (btn && typeof applyVoucher === "function") applyVoucher(null, btn);
+					return;
+				}
+
+				const qtyBtn = target.closest(".plus-btn, .minus-btn");
+				if (qtyBtn) {
+					const row = qtyBtn.closest(".product-item");
+					const input = row.querySelector(".quntity-input");
+					let val = parseInt(input.value) || 1;
+					input.value = qtyBtn.classList.contains("plus-btn") ? val + 1 : (val > 1 ? val - 1 : 1);
+					recalc(row);
+					return;
+				}
+
+				if (!target.closest(".product-search-container")) {
+					document.querySelectorAll(".product-search-results").forEach(el => el.classList.remove("show"));
+				}
+			});
+		});
+	</script>
+
+
+</body>
+
+</html>

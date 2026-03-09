@@ -130,4 +130,33 @@
     .no-print {
         display: none;
     }
+
+    .table-top-head,
+    .table-top,
+    .dataTables_filter,
+    .dataTables_length,
+    .dataTables_info,
+    .dataTables_paginate,
+    .modal,
+    .modal-backdrop,
+    th:last-child,
+    td.action-table-data,
+    .dash-widgetimg,
+    [data-feather],
+    .feather {
+        display: none !important;
+    }
+
+    .main-wrapper,
+    .page-wrapper,
+    .content,
+    .card,
+    .card-body {
+        margin: 0 !important;
+        padding: 0 !important;
+        box-shadow: none !important;
+        border: 0 !important;
+        background: #fff !important;
+    }
+
 }

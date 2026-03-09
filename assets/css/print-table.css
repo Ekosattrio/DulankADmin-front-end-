@@ -1,0 +1,82 @@
+@media print {
+    .btn-added,
+    .table-top-head,
+    .table-top,
+    .dataTables_filter,
+    .dataTables_length,
+    .dataTables_info,
+    .dataTables_paginate,
+    .modal,
+    .modal-backdrop,
+    th:last-child,
+    td.action-table-data,
+    .dash-widgetimg,
+    [data-feather],
+    .feather {
+        display: none !important;
+    }
+
+    .main-wrapper,
+    .page-wrapper,
+    .content,
+    .card,
+    .card-body {
+        margin: 0 !important;
+        padding: 0 !important;
+        box-shadow: none !important;
+        border: 0 !important;
+        background: #fff !important;
+    }
+
+    .page-header {
+        display: block !important;
+        margin-bottom: 14px !important;
+    }
+
+    .page-header .page-title h4 {
+        font-size: 18pt !important;
+        margin-bottom: 4px !important;
+        color: #000 !important;
+    }
+
+    .page-header .page-title h6 {
+        font-size: 11pt !important;
+        color: #000 !important;
+    }
+
+    .row,
+    .col-3 {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+
+    .dash-widget,
+    .dash-widget.dash1,
+    .dash-widget.dash2,
+    .dash-widget.dash3 {
+        min-height: auto !important;
+        padding: 4px 0 !important;
+        border: 0 !important;
+        border-radius: 0 !important;
+        background: #fff !important;
+    }
+
+    .dash-widgetcontent h6,
+    .dash-widgetcontent h5 {
+        color: #000 !important;
+    }
+
+    .table-responsive {
+        overflow: visible !important;
+    }
+
+    table.dataTable thead .sorting:before,
+    table.dataTable thead .sorting:after,
+    table.dataTable thead .sorting_asc:before,
+    table.dataTable thead .sorting_asc:after,
+    table.dataTable thead .sorting_desc:before,
+    table.dataTable thead .sorting_desc:after {
+        display: none !important;
+    }
+
+}

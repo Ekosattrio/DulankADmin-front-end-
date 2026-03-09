@@ -38,7 +38,8 @@
 
 	<!-- Main CSS -->
 	<link rel="stylesheet" href="assets/css/style.css">
-
+	<link rel="stylesheet" href="assets/css/print.css">
+	<link rel="stylesheet" href="assets/css/print-table.css">
 
 </head>
 
@@ -70,7 +71,7 @@
 									src="assets/img/icons/pdf.svg" alt="img"></a>
 						</li>
 						<li>
-							<a data-bs-toggle="tooltip" data-bs-placement="top" title="Print"><i data-feather="printer"
+							<a data-bs-toggle="tooltip" data-bs-placement="top" id="print" title="Print"><i data-feather="printer"
 									class="feather-rotate-ccw"></i></a>
 						</li>
 						<li>
@@ -142,6 +143,7 @@
 										<th>Category</th>
 										<th>Product</th>
 										<th>Sold</th>
+										<th>Unit</th>
 										<th>Total</th>
 									</tr>
 								</thead>
@@ -151,6 +153,7 @@
 										<td>Packaging</td>
 										<td>Sticker Label</td>
 										<td>15.000</td>
+										<td>pcs</td>
 										<td>750.000.000</td>
 									</tr>
 									<tr>
@@ -158,6 +161,7 @@
 										<td>Marketing</td>
 										<td>Brosur A4</td>
 										<td>13.800</td>
+										<td>lembar</td>
 										<td>680.000.000</td>
 									</tr>
 									<tr>
@@ -165,6 +169,7 @@
 										<td>Publishing</td>
 										<td>Buku Modul A5</td>
 										<td>12.600</td>
+										<td>box</td>
 										<td>610.000.000</td>
 									</tr>
 									<tr>
@@ -172,6 +177,7 @@
 										<td>Marketing</td>
 										<td>Katalog Produk</td>
 										<td>11.400</td>
+										<td>lembar</td>
 										<td>540.000.000</td>
 									</tr>
 									<tr>
@@ -179,6 +185,7 @@
 										<td>Stationery</td>
 										<td>ID Card Panitia</td>
 										<td>10.200</td>
+										<td>pcs</td>
 										<td>470.000.000</td>
 									</tr>
 									<tr>
@@ -186,6 +193,7 @@
 										<td>Stationery</td>
 										<td>Kartu Nama</td>
 										<td>9.000</td>
+										<td>pcs</td>
 										<td>400.000.000</td>
 									</tr>
 									<tr>
@@ -193,6 +201,7 @@
 										<td>Outdoor Media</td>
 										<td>Spanduk Flexi</td>
 										<td>7.800</td>
+										<td>meter</td>
 										<td>330.000.000</td>
 									</tr>
 									<tr>
@@ -200,6 +209,7 @@
 										<td>Packaging</td>
 										<td>Dus Kemasan</td>
 										<td>6.600</td>
+										<td>box</td>
 										<td>260.000.000</td>
 									</tr>
 									<tr>
@@ -207,6 +217,7 @@
 										<td>Outdoor Media</td>
 										<td>Banner Roll-Up</td>
 										<td>5.400</td>
+										<td>meter</td>
 										<td>190.000.000</td>
 									</tr>
 									<tr>
@@ -214,6 +225,7 @@
 										<td>Packaging</td>
 										<td>Paper Bag Custom</td>
 										<td>4.200</td>
+										<td>pcs</td>
 										<td>120.000.000</td>
 									</tr>
 								</tbody>
@@ -221,7 +233,8 @@
 									<tr>
 										<td colspan="3" class="text-start fw-bold">Total</td>
 										<td id="amount-total" class="fw-bold sum-target" data-col-index="3"></td>
-										<td id="amount-total" class="fw-bold sum-target" data-col-index="4"></td>
+										<td></td>
+										<td id="amount-total" class="fw-bold sum-target" data-col-index="5"></td>
 									</tr>
 								</tfoot>
 							</table>
@@ -270,6 +283,13 @@
 	<!-- Custom JS -->
 	<script src="assets/js/theme-script.js"></script>
 	<script src="assets/js/script.js"></script>
+	<script>
+    document.getElementById('print').addEventListener('click', function (e) {
+      e.preventDefault();
+
+      window.print()
+    });
+  </script>
 
 
 

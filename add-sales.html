@@ -168,8 +168,8 @@
 												<div class="mb-3">
 													<div class="add-newplus">
 														<h4 class="fs-6 text-dark mt-2">Customer:</h4>
-														<a href="#" data-bs-toggle="modal" data-bs-target="#add-customer"><i
-																data-feather="plus-circle"
+														<a href="#" data-bs-toggle="modal"
+															data-bs-target="#add-customer"><i data-feather="plus-circle"
 																class="plus-down-add"></i><span>Add
 																New</span></a>
 													</div>
@@ -348,11 +348,14 @@
 												</div>
 												<div class="col-md-8">
 													<div class="input-group">
-														<input type="text" class="form-control voucher-input" value="DUILANK12">
-														<button class="btn btn-warning text-white fw-semibold" type="button"
+														<input type="text" class="form-control voucher-input"
+															value="DUILANK12">
+														<button class="btn btn-warning text-white fw-semibold"
+															type="button"
 															onclick="applyVoucher(event, this)">Apply</button>
 													</div>
-													<div class="alert alert-success py-1 px-2 small mt-2 mb-0 d-none voucher-alert">
+													<div
+														class="alert alert-success py-1 px-2 small mt-2 mb-0 d-none voucher-alert">
 														Voucher berhasil diterapkan
 													</div>
 												</div>
@@ -363,8 +366,8 @@
 													<label class="form-label fw-semibold mb-0">Shipping Costs</label>
 												</div>
 												<div class="col-md-8">
-													<input type="text" id="shippingInput" class="form-control shipping-cost-input"
-														value="125.000">
+													<input type="text" id="shippingInput"
+														class="form-control shipping-cost-input" value="125.000">
 												</div>
 											</div>
 
@@ -383,7 +386,8 @@
 														<label class="form-label fw-semibold mb-0">Tax</label>
 													</div>
 													<div class="col-md-8">
-														<select class="form-select select" id="taxSelect" onchange="toggleTransactionCode()">
+														<select class="form-select select" id="taxSelect"
+															onchange="toggleTransactionCode()">
 															<option>Without Tax (Default)</option>
 															<option>Ppn 11% (125.000)</option>
 														</select>
@@ -391,11 +395,22 @@
 												</div>
 												<div class="row align-items-center d-none" id="transaction-code">
 													<div class="col-md-4">
-														<label class="form-label fw-semibold mb-0">Transaction Code</label>
+														<label class="form-label fw-semibold mb-0">Transaction
+															Code</label>
 													</div>
 													<div class="col-md-8">
 														<select class="form-select select">
 															<option selected>Select Transaction Code</option>
+															<option>01 - To Other party VAT Collector</option>
+															<option>02 - To Government Intitution as VAT Colletor</option>
+															<option>03 - To VAT Collector other than Governmnent Institution</option>
+															<option>04 - Other Tax Base</option>
+															<option>05 - Certain Value Tax Base</option>
+															<option>06 - To Tourist for VAT Refund for Tourist</option>
+															<option>07 - Vat Uncollected</option>
+															<option>08 - VAT Exempted</option>
+															<option>09 - Sale of unrekated to business asset</option>
+															<option>10 - Other delivery of good/services</option>
 														</select>
 													</div>
 												</div>
@@ -412,33 +427,41 @@
 										</div>
 
 										<div class="col-lg-5 mt-4 mt-lg-0">
-											<div class="d-flex justify-content-between align-items-center mb-3 text-muted">
+											<div
+												class="d-flex justify-content-between align-items-center mb-3 text-muted">
 												<span>Sub Total</span>
 												<span class="text-end">900.000</span>
 											</div>
-											<div class="d-flex justify-content-between align-items-center mb-3 text-muted">
+											<div
+												class="d-flex justify-content-between align-items-center mb-3 text-muted">
 												<span>Voucher</span>
 												<span class="text-end">0</span>
 											</div>
-											<div class="d-flex justify-content-between align-items-center mb-3 text-muted">
+											<div
+												class="d-flex justify-content-between align-items-center mb-3 text-muted">
 												<span>Shipping Cost</span>
 												<span class="text-end">125.000</span>
 											</div>
-											<div class="d-flex justify-content-between align-items-center mb-3 text-muted">
+											<div
+												class="d-flex justify-content-between align-items-center mb-3 text-muted">
 												<span>Discount</span>
 												<span class="text-end">0</span>
 											</div>
-											<div class="d-flex justify-content-between align-items-center mb-3 text-muted">
+											<div
+												class="d-flex justify-content-between align-items-center mb-3 text-muted">
 												<span>Total Before Tax</span>
 												<span class="text-end">1.025.000</span>
 											</div>
-											<div class="d-flex justify-content-between align-items-center mb-3 text-muted">
+											<div
+												class="d-flex justify-content-between align-items-center mb-3 text-muted">
 												<span>Tax</span>
 												<span class="text-end">100.000</span>
 											</div>
-											<div class="d-flex justify-content-between align-items-center mt-4 fw-bold fs-6">
+											<div
+												class="d-flex justify-content-between align-items-center mt-4 fw-bold fs-6">
 												<span>Grand Total</span>
-												<span class="text-end grand-total-display" id="grandTotal">925.000</span>
+												<span class="text-end grand-total-display"
+													id="grandTotal">925.000</span>
 											</div>
 										</div>
 									</div>

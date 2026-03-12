@@ -1,238 +1,386 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0" />
+    <meta name="description" content="POS - Bootstrap Admin Template" />
+    <meta
+      name="keywords"
+      content="admin, estimates, bootstrap, business, corporate, creative, invoice, html5, responsive, Projects"
+    />
+    <meta name="author" content="Dreamguys - Bootstrap Admin Template" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Dreams Pos Admin Template</title>
 
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
-	<meta name="description" content="POS - Bootstrap Admin Template">
-	<meta name="keywords"
-		content="admin, estimates, bootstrap, business, corporate, creative, invoice, html5, responsive, Projects">
-	<meta name="author" content="Dreamguys - Bootstrap Admin Template">
-	<meta name="robots" content="noindex, nofollow">
-	<title>Dreams Pos Admin Template</title>
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png" />
 
-	<!-- Favicon -->
-	<link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
 
-	<!-- Bootstrap CSS -->
-	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <!-- Datetimepicker CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap-datetimepicker.min.css" />
 
-	<!-- Datetimepicker CSS -->
-	<link rel="stylesheet" href="assets/css/bootstrap-datetimepicker.min.css">
+    <!-- Daterangepikcer CSS -->
+    <link rel="stylesheet" href="assets/plugins/daterangepicker/daterangepicker.css" />
 
-	<!-- Daterangepikcer CSS -->
-	<link rel="stylesheet" href="assets/plugins/daterangepicker/daterangepicker.css">
+    <!-- animation CSS -->
+    <link rel="stylesheet" href="assets/css/animate.css" />
 
-	<!-- animation CSS -->
-	<link rel="stylesheet" href="assets/css/animate.css">
+    <!-- Select2 CSS -->
+    <link rel="stylesheet" href="assets/plugins/select2/css/select2.min.css" />
 
-	<!-- Select2 CSS -->
-	<link rel="stylesheet" href="assets/plugins/select2/css/select2.min.css">
+    <!-- Datatable CSS -->
+    <link rel="stylesheet" href="assets/css/dataTables.bootstrap5.min.css" />
 
-	<!-- Datatable CSS -->
-	<link rel="stylesheet" href="assets/css/dataTables.bootstrap5.min.css">
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css" />
+    <link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css" />
 
-	<!-- Fontawesome CSS -->
-	<link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css">
-	<link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css">
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
 
-	<!-- Main CSS -->
-	<link rel="stylesheet" href="assets/css/style.css">
+  <body>
+    <div id="global-loader">
+      <div class="loader"></div>
+    </div>
+    <!-- Main Wrapper -->
+    <div class="main-wrapper">
+      <!-- header -->
+      <div id="header-placeholder"></div>
+      <!-- sidebar -->
+      <div id="sidebar-placeholder"></div>
 
-</head>
+      <div class="page-wrapper mt-3">
+        <!-- Main content tulis disini -->
+        <div class="content">
+          <div class="page-header justify-content-between">
+            <div class="page-title">
+              <h4>Sales Tax</h4>
+              <h6>Manage your Sales Tax</h6>
+            </div>
+            <ul class="table-top-head">
+              <li>
+                <a data-bs-toggle="tooltip" data-bs-placement="top" title="Pdf"
+                  ><img src="assets/img/icons/pdf.svg" alt="img"
+                /></a>
+              </li>
+              <li>
+                <a data-bs-toggle="tooltip" data-bs-placement="top" title="Print"
+                  ><i data-feather="printer" class="feather-rotate-ccw"></i
+                ></a>
+              </li>
+              <li>
+                <a data-bs-toggle="tooltip" data-bs-placement="top" title="Refresh"
+                  ><i data-feather="rotate-ccw" class="feather-rotate-ccw"></i
+                ></a>
+              </li>
+              <li>
+                <a data-bs-toggle="tooltip" data-bs-placement="top" title="Collapse" id="collapse-header"
+                  ><i data-feather="chevron-up" class="feather-chevron-up"></i
+                ></a>
+              </li>
+            </ul>
+          </div>
 
-<body>
-	<div id="global-loader">
-		<div class="loader"> </div>
-	</div>
-	<!-- Main Wrapper -->
-	<div class="main-wrapper">
+          <!-- /product list -->
+          <div class="card table-list-card">
+            <div class="card-body">
+              <!-- Filter -->
+              <div class="table-top d-flex align-items-center justify-content-between">
+                <!-- Search Input -->
+                <div class="search-set d-block d-md-flex">
+                  <div class="search-input">
+                    <a href="" class="btn btn-searchset"><i data-feather="search" class="feather-search"></i></a>
+                  </div>
+                  <!-- Date Range -->
+                  <div class="my-2">
+                    <div class="pemilihrentang-container">
+                      <input
+                        type="text"
+                        id="pemilihrentang-input"
+                        class="pemilihrentang-input form-control"
+                        readonly
+                        placeholder="Date"
+                        style="height: fit-content !important; width: 100% !important"
+                      />
+                      <div id="pemilihrentang-panel" class="pemilihrentang-panel">
+                        <div class="pemilihrentang-isi">
+                          <div class="opsi-cepat">
+                            <div data-range="kemarin">Kemarin</div>
+                            <div data-range="7hari">7 Hari Terakhir</div>
+                            <div data-range="bulanIni">Bulan Ini</div>
+                            <div data-range="bulanLalu">Bulan Lalu</div>
+                            <div data-range="tahunLalu">Tahun Lalu</div>
+                            <div data-range="kustom">Rentang Kustom</div>
+                          </div>
+                          <div class="kalender" id="kalender-view" style="display: none"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="filters d-flex justify-content-end">
+                  <div class="dropdown w-100 me-2">
+                    <button
+                      class="btn btn-outline-primary dropdown-toggle"
+                      type="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                      Credited
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Yes</a></li>
+                      <li><a class="dropdown-item" href="#">No</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <!-- /Filter -->
+              <div class="table-responsive">
+                <table class="table datanew">
+                  <thead>
+                    <tr>
+                      <th>No. Purchase</th>
+                      <th>Date e-tax Invoice</th>
+                      <th>Supplier Faktur No.</th>
+                      <th>Supplier Name</th>
+                      <th>Other Tax Base / DPP</th>
+                      <th>VAT - Input Tax</th>
+                      <th>Credited</th>
+                      <th class="no-sort">Action</th>
+                    </tr>
+                  </thead>
 
-		<!-- header -->
-		<div id="header-placeholder"></div>
-		<!-- sidebar -->
-		<div id="sidebar-placeholder"></div>
+                  <tbody>
+                    <tr>
+                      <td>PO-001</td>
+                      <td>02-02-2026</td>
+                      <td>INV-KN-2026-01</td>
+                      <td>PT. Kertas Nusantara</td>
+                      <td>35.000.000</td>
+                      <td>3.850.000</td>
+                      <td>Yes</td>
+                      <td class="action-table-data">
+                        <div class="edit-delete-action data-row">
+                          <a class="me-2 p-2 mb-0" data-bs-toggle="modal" data-bs-target="#edit-input-tax">
+                            <i data-feather="edit" class="feather-edit"></i>
+                          </a>
+                        </div>
+                      </td>
+                    </tr>
 
-		<div class="page-wrapper mt-3">
-			<!-- Main content tulis disini -->
-			<div class="content">
-				<div class="page-header justify-content-between">
-					<div class="page-title">
-						<h4>Sales Tax</h4>
-						<h6>Manage your Sales Tax</h6>
-					</div>
-					<ul class="table-top-head">
-						<li>
-							<a data-bs-toggle="tooltip" data-bs-placement="top" title="Pdf"><img
-									src="assets/img/icons/pdf.svg" alt="img"></a>
-						</li>
-						<li>
-							<a data-bs-toggle="tooltip" data-bs-placement="top" title="Print"><i data-feather="printer"
-									class="feather-rotate-ccw"></i></a>
-						</li>
-						<li>
-							<a data-bs-toggle="tooltip" data-bs-placement="top" title="Refresh"><i
-									data-feather="rotate-ccw" class="feather-rotate-ccw"></i></a>
-						</li>
-						<li>
-							<a data-bs-toggle="tooltip" data-bs-placement="top" title="Collapse" id="collapse-header"><i
-									data-feather="chevron-up" class="feather-chevron-up"></i></a>
-						</li>
-					</ul>
-				</div>
+                    <tr>
+                      <td>PO-002</td>
+                      <td>03-02-2026</td>
+                      <td>FKT-TP-2026-05</td>
+                      <td>CV. Tinta Pelangi</td>
+                      <td>12.000.000</td>
+                      <td>1.320.000</td>
+                      <td>Yes</td>
+                      <td class="action-table-data">
+                        <div class="edit-delete-action data-row">
+                          <a class="me-2 p-2 mb-0" data-bs-toggle="modal" data-bs-target="#edit-input-tax">
+                            <i data-feather="edit" class="feather-edit"></i>
+                          </a>
+                        </div>
+                      </td>
+                    </tr>
 
+                    <tr>
+                      <td>PO-003</td>
+                      <td>04-02-2026</td>
+                      <td>GS-SERV-882</td>
+                      <td>Global Sparepart</td>
+                      <td>4.500.000</td>
+                      <td>495.000</td>
+                      <td>Yes</td>
+                      <td class="action-table-data">
+                        <div class="edit-delete-action data-row">
+                          <a class="me-2 p-2 mb-0" data-bs-toggle="modal" data-bs-target="#edit-input-tax">
+                            <i data-feather="edit" class="feather-edit"></i>
+                          </a>
+                        </div>
+                      </td>
+                    </tr>
 
-				<!-- /product list -->
-				<div class="card table-list-card">
-					<div class="card-body">
-						<!-- Filter -->
-						<div class="table-top d-flex align-items-center justify-content-between">
-							<!-- Search Input -->
-							<div class="search-set d-block d-md-flex">
-								<div class="search-input">
-									<a href="" class="btn btn-searchset"><i data-feather="search"
-											class="feather-search"></i></a>
-								</div>
-								<!-- Date Range -->
-								<div class="my-2">
-									<div class="pemilihrentang-container ">
-										<input type="text" id="pemilihrentang-input"
-											class="pemilihrentang-input form-control" readonly placeholder="Date"
-											style="height: fit-content !important;width: 100% !important;">
-										<div id="pemilihrentang-panel" class="pemilihrentang-panel">
-											<div class="pemilihrentang-isi">
-												<div class="opsi-cepat">
-													<div data-range="kemarin">Kemarin</div>
-													<div data-range="7hari">7 Hari Terakhir</div>
-													<div data-range="bulanIni">Bulan Ini</div>
-													<div data-range="bulanLalu">Bulan Lalu</div>
-													<div data-range="tahunLalu">Tahun Lalu</div>
-													<div data-range="kustom">Rentang Kustom</div>
-												</div>
-												<div class="kalender" id="kalender-view" style="display:none;">
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="filters d-flex justify-content-end">
-								<div class="dropdown w-100 me-2">
-									<button class="btn btn-outline-primary dropdown-toggle" type="button"
-										data-bs-toggle="dropdown" aria-expanded="false">
-										Credited
-									</button>
-									<ul class="dropdown-menu">
-										<li><a class="dropdown-item" href="#">Yes</a></li>
-										<li><a class="dropdown-item" href="#">No</a></li>
-									</ul>
-								</div>
-							</div>
-						</div>
-						<!-- /Filter -->
-						<div class="table-responsive">
-							<table class="table datanew">
-								<thead>
-									<tr>
-										<th>Supplier Faktur No.</th>
-										<th>Supplier Name</th>
-										<th>Other Tax Base / DPP</th>
-										<th>PPN 11% (Masukan)</th>
-										<th>Credited</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>INV-KN-2026-01</td>
-										<td>PT. Kertas Nusantara</td>
-										<td>35.000.000</td>
-										<td>3.850.000</td>
-										<td>Yes</td>
-									</tr>
-									<tr>
-										<td>FKT-TP-2026-05</td>
-										<td>CV. Tinta Pelangi</td>
-										<td>12.000.000</td>
-										<td>1.320.000</td>
-										<td>Yes</td>
-									</tr>
-									<tr>
-										<td>GS-SERV-882</td>
-										<td>Global Sparepart</td>
-										<td>4.500.000</td>
-										<td>495.000</td>
-										<td>Yes</td>
-									</tr>
-									<tr>
-										<td>MM-LAM-102</td>
-										<td>Master Laminating</td>
-										<td>2.800.000</td>
-										<td>308.000</td>
-										<td>Yes</td>
-									</tr>
-									<tr>
-										<td>SURYA-OFF-03</td>
-										<td>Surya Offset Supplier</td>
-										<td>15.000.000</td>
-										<td>1.650.000</td>
-										<td>Yes</td>
-									</tr>
-								</tbody>
-								<tfoot>
-									<tr>
-										<td colspan="2" class="text-start fw-bold">Total</td>
-										<td id="amount-total" class="fw-bold sum-target" data-col-index="2"></td>
-										<td id="amount-total" class="fw-bold sum-target" data-col-index="3"></td>
-									</tr>
-								</tfoot>
-							</table>
-						</div </div>
-					</div>
-					<!-- /product list -->
-				</div>
-			</div>
+                    <tr>
+                      <td>PO-004</td>
+                      <td>05-02-2026</td>
+                      <td>MM-LAM-102</td>
+                      <td>Master Laminating</td>
+                      <td>2.800.000</td>
+                      <td>308.000</td>
+                      <td>Yes</td>
+                      <td class="action-table-data">
+                        <div class="edit-delete-action data-row">
+                          <a class="me-2 p-2 mb-0" data-bs-toggle="modal" data-bs-target="#edit-input-tax">
+                            <i data-feather="edit" class="feather-edit"></i>
+                          </a>
+                        </div>
+                      </td>
+                    </tr>
 
-		</div>
-		<!-- /Main Wrapper -->
-		<!-- modals -->
+                    <tr>
+                      <td>PO-005</td>
+                      <td>06-02-2026</td>
+                      <td>SURYA-OFF-03</td>
+                      <td>Surya Offset Supplier</td>
+                      <td>15.000.000</td>
+                      <td>1.650.000</td>
+                      <td>Yes</td>
+                      <td class="action-table-data">
+                        <div class="edit-delete-action data-row">
+                          <a class="me-2 p-2 mb-0" data-bs-toggle="modal" data-bs-target="#edit-input-tax">
+                            <i data-feather="edit" class="feather-edit"></i>
+                          </a>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
 
-		<!-- /modals -->
-		<!-- jQuery -->
-		<script src="assets/js/jquery-3.7.1.min.js"></script>
+                  <tfoot>
+                    <tr>
+                      <td colspan="4" class="text-start fw-bold">Total</td>
+                      <td id="amount-total" class="fw-bold sum-target" data-col-index="4"></td>
+                      <td id="amount-total" class="fw-bold sum-target" data-col-index="5"></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                  </tfoot>
+                </table>
+              </div>
+            </div>
+            <!-- /product list -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /Main Wrapper -->
+    <!-- modals -->
+    <div class="modal fade" id="edit-input-tax">
+      <div class="modal-dialog modal-dialog-centered custom-modal-two">
+        <div class="modal-content">
+          <div class="page-wrapper-new p-0">
+            <div class="content">
+              ```
+              <div class="modal-header border-0 custom-modal-header">
+                <div class="page-title">
+                  <h4>Edit Input Tax</h4>
+                </div>
 
-		<!-- Feather Icon JS -->
-		<script src="assets/js/feather.min.js"></script>
+                <button type="button" class="close" data-bs-dismiss="modal">
+                  <span>&times;</span>
+                </button>
+              </div>
 
-		<!-- Slimscroll JS -->
-		<script src="assets/js/jquery.slimscroll.min.js"></script>
+              <div class="modal-body custom-modal-body">
+                <form>
+                  <div class="row">
+                    <div class="row mb-2">
+                      <div class="col-lg-4">
+                        <label>No. Purchase</label>
+                      </div>
+                      <div class="col-lg-8 fw-bold">PO-001</div>
+                    </div>
 
-		<!-- Datatable JS -->
-		<script src="assets/js/jquery.dataTables.min.js"></script>
-		<script src="assets/js/dataTables.bootstrap5.min.js"></script>
+                    <div class="row mb-2">
+                      <div class="col-lg-4">
+                        <label>Supplier Faktur No.</label>
+                      </div>
+                      <div class="col-lg-8 fw-bold">INV-KN-2026-01</div>
+                    </div>
 
-		<!-- Bootstrap Core JS -->
-		<script src="assets/js/bootstrap.bundle.min.js"></script>
+                    <div class="row mb-2">
+                      <div class="col-lg-4">
+                        <label>Supplier Name</label>
+                      </div>
+                      <div class="col-lg-8 fw-bold">PT. Kertas Nusantara</div>
+                    </div>
 
-		<!-- Datetimepicker JS -->
-		<script src="assets/js/moment.min.js"></script>
-		<script src="assets/js/bootstrap-datetimepicker.min.js"></script>
+                    <div class="row mb-2">
+                      <div class="col-lg-4">
+                        <label>Other Tax Base / DPP</label>
+                      </div>
+                      <div class="col-lg-8 fw-bold">35.000.000</div>
+                    </div>
 
-		<!-- Daterangepikcer JS -->
-		<script src="assets/js/moment.min.js"></script>
-		<script src="assets/plugins/daterangepicker/daterangepicker.js"></script>
+                    <div class="row mb-3">
+                      <div class="col-lg-4">
+                        <label>VAT - Input Tax</label>
+                      </div>
+                      <div class="col-lg-8 fw-bold">3.850.000</div>
+                    </div>
 
-		<!-- Select2 JS -->
-		<script src="assets/plugins/select2/js/select2.min.js"></script>
+                    <div class="col-lg-12">
+                      <div class="input-blocks">
+                        <label>Date e-tax Invoice</label>
+                        <div class="input-groupicon calender-input">
+                          <input type="text" class="datetimepicker form-control" value="19-12-2025" />
+                        </div>
+                      </div>
+                    </div>
 
-		<!-- Sweetalert 2 -->
-		<script src="assets/plugins/sweetalert/sweetalert2.all.min.js"></script>
-		<script src="assets/plugins/sweetalert/sweetalerts.min.js"></script>
+                    <div class="col-lg-12">
+                      <div class="input-blocks">
+                        <label>Credited</label>
+                        <select class="select">
+                          <option selected>Yes</option>
+                          <option>No</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
 
-		<!-- Custom JS -->
-		<script src="assets/js/theme-script.js"></script>
-		<script src="assets/js/script.js"></script>
+                  <div class="modal-footer-btn">
+                    <button type="button" class="btn btn-cancel me-2" data-bs-dismiss="modal">Cancel</button>
 
+                    <button type="submit" class="btn btn-submit">Save Changes</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        ```
+      </div>
+    </div>
 
-</body>
+    <!-- /modals -->
+    <!-- jQuery -->
+    <script src="assets/js/jquery-3.7.1.min.js"></script>
 
+    <!-- Feather Icon JS -->
+    <script src="assets/js/feather.min.js"></script>
+
+    <!-- Slimscroll JS -->
+    <script src="assets/js/jquery.slimscroll.min.js"></script>
+
+    <!-- Datatable JS -->
+    <script src="assets/js/jquery.dataTables.min.js"></script>
+    <script src="assets/js/dataTables.bootstrap5.min.js"></script>
+
+    <!-- Bootstrap Core JS -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Datetimepicker JS -->
+    <script src="assets/js/moment.min.js"></script>
+    <script src="assets/js/bootstrap-datetimepicker.min.js"></script>
+
+    <!-- Daterangepikcer JS -->
+    <script src="assets/plugins/daterangepicker/daterangepicker.js"></script>
+
+    <!-- Select2 JS -->
+    <script src="assets/plugins/select2/js/select2.min.js"></script>
+
+    <!-- Sweetalert 2 -->
+    <script src="assets/plugins/sweetalert/sweetalert2.all.min.js"></script>
+    <script src="assets/plugins/sweetalert/sweetalerts.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="assets/js/theme-script.js"></script>
+    <script src="assets/js/script.js"></script>
+  </body>
 </html>

@@ -72,8 +72,13 @@ $(document).ready(function () {
         const $container = $(this).closest('.col-md-12').find('.dynamic-items-container');
 
         const newItemHTML = this.parentElement.querySelector('template').innerHTML
+        const $newItem = $(newItemHTML);
 
-        $container.append(newItemHTML);
+        $container.append($newItem);
+
+        if (window.initNumberSeparatorFor) {
+            window.initNumberSeparatorFor($newItem[0]);
+        }
     });
 
     // Handler untuk Remove Item button (generic untuk berbagai tipe)

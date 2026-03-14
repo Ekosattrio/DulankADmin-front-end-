@@ -2635,41 +2635,49 @@ $(function () {
   // ------------------------------------------------------------------------------------------
 });
 
-document.querySelectorAll(".number-separator").forEach((input) => {
-  input.addEventListener("keypress", function (event) {
-    if (event.key === ".") {
-      let old_val = input.value;
-      input.value = old_val + ",";
-    }
-  });
-  input.addEventListener("input", function () {
-    const originalValue = input.value;
+function initNumberSeparatorFor(root) {
+  const scope = root || document;
+  const inputs = scope.querySelectorAll(".number-separator");
 
-    // delete zero first
-    let cleanedValue = originalValue.replace(/^[0]*/, "");
-    // delete comma first
-    cleanedValue = cleanedValue.replace(/^[,]*/, "");
-    // Keep only letters and numbers
-    cleanedValue = cleanedValue.replace(/[^0-9\s.,]/g, "");
-    // delete comma for quantity input
-    if (input.classList.contains("quantity-input") || input.classList.contains("price-input")) {
-      cleanedValue = cleanedValue.replace(/,/g, "");
-    }
+  inputs.forEach((input) => {
+    if (input.dataset.separatorInitialized === "1") return;
+    input.dataset.separatorInitialized = "1";
 
-    // Update the input field
-    input.value = cleanedValue;
-  });
-});
+    input.addEventListener("keypress", function (event) {
+      if (event.key === ".") {
+        let old_val = input.value;
+        input.value = old_val + ",";
+      }
+    });
+    input.addEventListener("input", function () {
+      const originalValue = input.value;
 
-const input_number = document.querySelectorAll(".number-separator");
-input_number.forEach((input) => {
-  easyNumberSeparator({
-    selector: input,
-    separator: ".",
-    decimalSeparator: ",",
-    resultInput: input.parentElement.querySelector(".result-input"),
+      // delete zero first
+      let cleanedValue = originalValue.replace(/^[0]*/, "");
+      // delete comma first
+      cleanedValue = cleanedValue.replace(/^[,]*/, "");
+      // Keep only letters and numbers
+      cleanedValue = cleanedValue.replace(/[^0-9\s.,]/g, "");
+      // delete comma for quantity input
+      if (input.classList.contains("quantity-input") || input.classList.contains("price-input")) {
+        cleanedValue = cleanedValue.replace(/,/g, "");
+      }
+
+      // Update the input field
+      input.value = cleanedValue;
+    });
+
+    easyNumberSeparator({
+      selector: input,
+      separator: ".",
+      decimalSeparator: ",",
+      resultInput: input.parentElement.querySelector(".result-input"),
+    });
   });
-});
+}
+
+initNumberSeparatorFor(document);
+window.initNumberSeparatorFor = initNumberSeparatorFor;
 // Toggle freeze days input based on action type
 $(document).ready(function () {
   $("#action-type").select2();

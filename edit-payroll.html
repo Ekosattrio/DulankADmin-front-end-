@@ -144,7 +144,7 @@
 									<h6><span><i data-feather="info" class="feather-edit"></i></span>Over Time</h6>
 								</div>
 								<div class="row align-items-center">
-									<div class="col-md-6">
+									<div class="col-md-3">
 										<div class="mb-3">
 											<label class="form-label">Regular Over Time</label>
 										</div>
@@ -162,6 +162,15 @@
 										<div class="mb-3">
 											<label class="form-label">Over Time Rate</label>
 											<input type="text" class="form-control number-separator" inputmode="numeric"
+												pattern="[0-9]*" value="10">
+											<input type="hidden" class="result-input" id="regular-over-time-hours"
+												value="10">
+										</div>
+									</div>
+									<div class="col-md-3">
+										<div class="mb-3">
+											<label class="form-label">Amount</label>
+											<input type="text" class="form-control number-separator" inputmode="numeric"
 												pattern="[0-9]*" value="15000" disabled>
 											<input type="hidden" class="result-input" id="regular-over-time-rate"
 												value="15000">
@@ -170,8 +179,8 @@
 
 
 								</div>
-								<div class="row">
-									<div class="col-md-6">
+								<div class="row align-items-center">
+									<div class="col-md-3">
 										<div class="mb-3">
 											<label class="form-label">Special Over Time</label>
 										</div>
@@ -181,7 +190,8 @@
 											<label class="form-label">Over Time Hours</label>
 											<input type="text" class="form-control number-separator" inputmode="numeric"
 												pattern="[0-9]*" value="0">
-											<input type="hidden" class="result-input" id="special-over-time-hours" value="0">
+											<input type="hidden" class="result-input" id="special-over-time-hours"
+												value="0">
 										</div>
 									</div>
 									<div class="col-md-3">
@@ -189,9 +199,20 @@
 											<label class="form-label">Over Time Rate</label>
 											<input type="text" class="form-control number-separator" inputmode="numeric"
 												pattern="[0-9]*" value="0">
-											<input type="hidden" class="result-input" id="special-over-time-rate" value="0">
+											<input type="hidden" class="result-input" id="special-over-time-rate"
+												value="0">
 										</div>
 									</div>
+									<div class="col-md-3">
+										<div class="mb-3">
+											<label class="form-label">Amount</label>
+											<input type="text" class="form-control number-separator" inputmode="numeric"
+												pattern="[0-9]*" value="0">
+											<input type="hidden" class="result-input" id="special-over-time-rate"
+												value="0">
+										</div>
+									</div>
+									
 
 								</div>
 							</div>
@@ -237,9 +258,31 @@
 												</span>
 											</label>
 											<div class="col-md-6">
-												<input type="text" class="form-control number-separator"
-													inputmode="numeric" pattern="[0-9]*">
-												<input type="hidden" class="result-input">
+												<div class="row">
+													<div class="col-md-4">
+														<label class="form-label">Qty</label>
+														<input type="text"
+															class="form-control number-separator qty-input"
+															inputmode="numeric" pattern="[0-9]*">
+														<input type="hidden" class="result-input">
+													</div>
+
+													<div class="col-md-4">
+														<label class="form-label">Rate</label>
+														<input type="text"
+															class="form-control number-separator rate-input"
+															inputmode="numeric" pattern="[0-9]*">
+														<input type="hidden" class="result-input">
+													</div>
+
+													<div class="col-md-4">
+														<label class="form-label">Amount</label>
+														<input type="text"
+															class="form-control number-separator amount-input"
+															inputmode="numeric" pattern="[0-9]*">
+														<input type="hidden" class="result-input">
+													</div>
+												</div>
 											</div>
 										</div>
 									</template>
@@ -261,9 +304,29 @@
 											</span>
 										</label>
 										<div class="col-md-6">
-											<input type="text" class="form-control number-separator" inputmode="numeric"
-												pattern="[0-9]*" value="20000">
-											<input type="hidden" class="result-input" value="20000">
+											<div class="row">
+												<div class="col-md-4">
+													<label class="form-label">Qty</label>
+													<input type="text" class="form-control number-separator qty-input"
+														inputmode="numeric" pattern="[0-9]*" value="30">
+													<input type="hidden" class="result-input" value="30">
+												</div>
+
+												<div class="col-md-4">
+													<label class="form-label">Rate</label>
+													<input type="text" class="form-control number-separator rate-input"
+														inputmode="numeric" pattern="[0-9]*" value="30000">
+													<input type="hidden" class="result-input" value="30000">
+												</div>
+
+												<div class="col-md-4">
+													<label class="form-label">Amount</label>
+													<input type="text"
+														class="form-control number-separator amount-input"
+														inputmode="numeric" pattern="[0-9]*" value="900000">
+													<input type="hidden" class="result-input" value="900000">
+												</div>
+											</div>
 										</div>
 									</div>
 
@@ -319,9 +382,31 @@
 												</span>
 											</label>
 											<div class="col-md-6">
-												<input type="text" class="form-control number-separator"
-													inputmode="numeric" pattern="[0-9]*">
-												<input type="hidden" class="result-input">
+												<div class="row">
+													<div class="col-md-4">
+														<label class="form-label">Qty</label>
+														<input type="text"
+															class="form-control number-separator qty-input"
+															inputmode="numeric" pattern="[0-9]*">
+														<input type="hidden" class="result-input">
+													</div>
+
+													<div class="col-md-4">
+														<label class="form-label">Rate</label>
+														<input type="text"
+															class="form-control number-separator rate-input"
+															inputmode="numeric" pattern="[0-9]*">
+														<input type="hidden" class="result-input">
+													</div>
+
+													<div class="col-md-4">
+														<label class="form-label">Amount</label>
+														<input type="text"
+															class="form-control number-separator amount-input"
+															inputmode="numeric" pattern="[0-9]*">
+														<input type="hidden" class="result-input">
+													</div>
+												</div>
 											</div>
 										</div>
 									</template>
@@ -343,9 +428,29 @@
 											</span>
 										</label>
 										<div class="col-md-6">
-											<input type="text" class="form-control number-separator" inputmode="numeric"
-												pattern="[0-9]*">
-											<input type="hidden" class="result-input">
+											<div class="row">
+												<div class="col-md-4">
+													<label class="form-label">Qty</label>
+													<input type="text" class="form-control number-separator qty-input"
+														inputmode="numeric" pattern="[0-9]*" value="30">
+													<input type="hidden" class="result-input" value="30">
+												</div>
+
+												<div class="col-md-4">
+													<label class="form-label">Rate</label>
+													<input type="text" class="form-control number-separator rate-input"
+														inputmode="numeric" pattern="[0-9]*" value="30000">
+													<input type="hidden" class="result-input" value="30000">
+												</div>
+
+												<div class="col-md-4">
+													<label class="form-label">Amount</label>
+													<input type="text"
+														class="form-control number-separator amount-input"
+														inputmode="numeric" pattern="[0-9]*" value="900000">
+													<input type="hidden" class="result-input" value="900000">
+												</div>
+											</div>
 										</div>
 									</div>
 

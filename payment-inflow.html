@@ -1,691 +1,154 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0" />
-    <meta name="description" content="POS - Bootstrap Admin Template" />
-    <meta
-      name="keywords"
-      content="admin, estimates, bootstrap, business, corporate, creative, invoice, html5, responsive, Projects"
-    />
-    <meta name="author" content="Dreamguys - Bootstrap Admin Template" />
-    <meta name="robots" content="noindex, nofollow" />
-    <title>Dreams Pos Admin Template</title>
-    
 
-    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png" />
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0" />
+  <meta name="description" content="POS - Bootstrap Admin Template" />
+  <meta name="keywords"
+    content="admin, estimates, bootstrap, business, corporate, creative, invoice, html5, responsive, Projects" />
+  <meta name="author" content="Dreamguys - Bootstrap Admin Template" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Dreams Pos Admin Template</title>
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
 
-    <!-- Datetimepicker CSS -->
-    <link rel="stylesheet" href="assets/css/bootstrap-datetimepicker.min.css" />
+  <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png" />
 
-    <!-- animation CSS -->
-    <link rel="stylesheet" href="assets/css/animate.css" />
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
 
-    <!-- Datetimepicker CSS -->
-    <link rel="stylesheet" href="assets/css/bootstrap-datetimepicker.min.css" />
+  <!-- Datetimepicker CSS -->
+  <link rel="stylesheet" href="assets/css/bootstrap-datetimepicker.min.css" />
 
-    <!-- Select2 CSS -->
-    <link rel="stylesheet" href="assets/plugins/select2/css/select2.min.css" />
+  <!-- animation CSS -->
+  <link rel="stylesheet" href="assets/css/animate.css" />
 
-    <!-- Datatable CSS -->
-    <link rel="stylesheet" href="assets/css/dataTables.bootstrap5.min.css" />
+  <!-- Datetimepicker CSS -->
+  <link rel="stylesheet" href="assets/css/bootstrap-datetimepicker.min.css" />
 
-    <!-- Fontawesome CSS -->
-    <link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css" />
-    <link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css" />
+  <!-- Select2 CSS -->
+  <link rel="stylesheet" href="assets/plugins/select2/css/select2.min.css" />
 
-    <!-- Main CSS -->
-    <link rel="stylesheet" href="assets/css/style.css" />
-    <style>
-		.table-transaction .dataTables_wrapper .dataTables_paginate,
-		.table-transaction .dataTables_info {
-			display: none;
-		}
-	</style>
-  </head>
+  <!-- Datatable CSS -->
+  <link rel="stylesheet" href="assets/css/dataTables.bootstrap5.min.css" />
 
-  <body>
-    <div id="global-loader">
-      <div class="loader"></div>
-    </div>
-    <!-- Main Wrapper -->
-    <div class="main-wrapper">
-      <!-- header -->
-      <div id="header-placeholder"></div>
-      <!-- sidebar -->
-      <div id="sidebar-placeholder"></div>
+  <!-- Fontawesome CSS -->
+  <link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css" />
+  <link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css" />
 
-      <div class="page-wrapper mt-3">
-        <!-- Main content tulis disini -->
-        <div class="content">
-          <div class="page-header">
-            <div class="add-item d-flex">
-              <div class="page-title">
-                <h4>Payment Inflow</h4>
-                <h6>Manage your Payment Inflow report</h6>
-              </div>
-            </div>
-            <ul class="table-top-head">
-              <li>
-                <a data-bs-toggle="tooltip" data-bs-placement="top" title="Pdf"
-                  ><img src="assets/img/icons/pdf.svg" alt="img"
-                /></a>
-              </li>
-              <li>
-                <a data-bs-toggle="tooltip" data-bs-placement="top" title="Print"
-                  ><i data-feather="printer" class="feather-rotate-ccw"></i
-                ></a>
-              </li>
-              <li>
-                <a data-bs-toggle="tooltip" data-bs-placement="top" title="Refresh"
-                  ><i data-feather="rotate-ccw" class="feather-rotate-ccw"></i
-                ></a>
-              </li>
-              <li>
-                <a data-bs-toggle="tooltip" data-bs-placement="top" title="Collapse" id="collapse-header"
-                  ><i data-feather="chevron-up" class="feather-chevron-up"></i
-                ></a>
-              </li>
-            </ul>
-            <div class="page-btn">
-              <a href="#" class="btn btn-added" data-bs-toggle="modal" data-bs-target="#add-units">
-                <i data-feather="plus-circle" class="me-2"></i>Add Payment Inflow
-              </a>
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body>
+  <div id="global-loader">
+    <div class="loader"></div>
+  </div>
+  <!-- Main Wrapper -->
+  <div class="main-wrapper">
+    <!-- header -->
+    <div id="header-placeholder"></div>
+    <!-- sidebar -->
+    <div id="sidebar-placeholder"></div>
+
+    <div class="page-wrapper mt-3">
+      <!-- Main content tulis disini -->
+      <div class="content">
+        <div class="page-header">
+          <div class="add-item d-flex">
+            <div class="page-title">
+              <h4>Payment Inflow</h4>
+              <h6>Manage your Payment Inflow report</h6>
             </div>
           </div>
+          <ul class="table-top-head">
+            <li>
+              <a data-bs-toggle="tooltip" data-bs-placement="top" title="Pdf"><img src="assets/img/icons/pdf.svg"
+                  alt="img" /></a>
+            </li>
+            <li>
+              <a data-bs-toggle="tooltip" data-bs-placement="top" title="Print"><i data-feather="printer"
+                  class="feather-rotate-ccw"></i></a>
+            </li>
+            <li>
+              <a data-bs-toggle="tooltip" data-bs-placement="top" title="Refresh"><i data-feather="rotate-ccw"
+                  class="feather-rotate-ccw"></i></a>
+            </li>
+            <li>
+              <a data-bs-toggle="tooltip" data-bs-placement="top" title="Collapse" id="collapse-header"><i
+                  data-feather="chevron-up" class="feather-chevron-up"></i></a>
+            </li>
+          </ul>
+          <div class="page-btn">
+            <a href="#" class="btn btn-added" data-bs-toggle="modal" data-bs-target="#add-units">
+              <i data-feather="plus-circle" class="me-2"></i>Add Payment Inflow
+            </a>
+          </div>
+        </div>
 
-          <!-- /product list -->
-          <div class="card">
-            <div class="card-body">
-              <!-- Filter -->
-              <div class="table-top d-flex align-items-center justify-content-between">
-                <!-- Search Input -->
-                <div class="search-set d-block d-md-flex">
-                  <div class="search-input">
-                    <a href="" class="btn btn-searchset"><i data-feather="search" class="feather-search"></i></a>
-                  </div>
-                  <!-- Date Range -->
-                  <div class="my-2">
-                    <div class="pemilihrentang-container">
-                      <input
-                        type="text"
-                        id="pemilihrentang-input"
-                        class="pemilihrentang-input form-control"
-                        readonly
-                        placeholder="Date"
-                        style="height: fit-content !important; width: 100% !important"
-                      />
-                      <div id="pemilihrentang-panel" class="pemilihrentang-panel">
-                        <div class="pemilihrentang-isi">
-                          <div class="opsi-cepat">
-                            <div data-range="kemarin">Kemarin</div>
-                            <div data-range="7hari">7 Hari Terakhir</div>
-                            <div data-range="bulanIni">Bulan Ini</div>
-                            <div data-range="bulanLalu">Bulan Lalu</div>
-                            <div data-range="tahunLalu">Tahun Lalu</div>
-                            <div data-range="kustom">Rentang Kustom</div>
-                          </div>
-                          <div class="kalender" id="kalender-view" style="display: none"></div>
+        <!-- Balance Summary -->
+        <div class="card balance-summary-card mb-4">
+          <div class="card-body">
+            <div class="balance-summary-header">
+              <h5 class="mb-0">Balance Summary</h5>
+              <button class="balance-summary-toggle" type="button" data-bs-toggle="collapse"
+                data-bs-target="#balanceSummaryCollapse" aria-expanded="false" aria-controls="balanceSummaryCollapse">
+                <i data-feather="chevron-down"></i>
+              </button>
+            </div>
+            <div id="balanceSummaryCollapse" class="collapse mt-3">
+              <div class="balance-summary-filter">
+                <label for="balanceSummaryDate">Date</label>
+                <div class="my-2">
+                  <div class="pemilihrentang-container">
+                    <input type="text" id="pemilihrentang-input" class="pemilihrentang-input form-control" readonly
+                      placeholder="Date" style="height: fit-content !important; width: 100% !important" />
+                    <div id="pemilihrentang-panel" class="pemilihrentang-panel">
+                      <div class="pemilihrentang-isi">
+                        <div class="opsi-cepat">
+                          <div data-range="kemarin">Kemarin</div>
+                          <div data-range="7hari">7 Hari Terakhir</div>
+                          <div data-range="bulanIni">Bulan Ini</div>
+                          <div data-range="bulanLalu">Bulan Lalu</div>
+                          <div data-range="tahunLalu">Tahun Lalu</div>
+                          <div data-range="kustom">Rentang Kustom</div>
                         </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="filters d-flex justify-content-end">
-                  <div class="dropdown w-100 me-2">
-                    <button
-                      class="btn btn-outline-primary dropdown-toggle"
-                      type="button"
-                      data-bs-toggle="dropdown"
-                      aria-expanded="false"
-                    >
-                      Status
-                    </button>
-                    <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="#">Sent</a></li>
-                      <li><a class="dropdown-item" href="#">Cancel</a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <!-- /Filter -->
-              <div class="card" id="filter_inputs">
-                <div class="card-body pb-0">
-                  <div class="row">
-                    <div class="col-lg-3 col-sm-6 col-12">
-                      <div class="input-blocks">
-                        <i data-feather="calendar" class="info-img"></i>
-                        <div class="input-groupicon">
-                          <input type="text" class="datetimepicker" placeholder="From Date" />
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6 col-12">
-                      <div class="input-blocks">
-                        <i data-feather="calendar" class="info-img"></i>
-                        <div class="input-groupicon">
-                          <input type="text" class="datetimepicker" placeholder="Due Date" />
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6 col-12">
-                      <div class="input-blocks">
-                        <i data-feather="stop-circle" class="info-img"></i>
-                        <select class="select">
-                          <option>Choose Supplier</option>
-                          <option>Suppliers</option>
-                        </select>
-                      </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6 col-12 ms-auto">
-                      <div class="input-blocks">
-                        <a class="btn btn-filters ms-auto"> <i data-feather="search" class="feather-search"></i> Search </a>
+                        <div class="kalender" id="kalender-view" style="display: none"></div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-              <!-- /Filter -->
-              <div class="table-responsive">
+              <div class="balance-summary-body">
                 <div class="table-responsive">
-                  <table class="table datanew">
+                  <table class="table balance-summary-table mb-0">
                     <thead>
                       <tr>
-                        <th>Date</th>
-                        <th>Ref No</th>
-                        <th>Name</th>
-                        <th>Source</th>
-                        <th>Amount</th>
-                        <th>Due Date</th>
-                        <th>Status</th>
-                        <th>Payment Method</th>
-                        <th>Note</th>
-                        <th class="no-sort">Action</th>
+                        <th>Bank Account</th>
+                        <th>Account Name</th>
+                        <th>Amount Balance</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
-                        <td>01/02/2026</td>
-                        <td>INV-001</td>
-                        <td>Toko Berkah</td>
-                        <td>Sales</td>
-                        <td>2.500.000</td>
-                        <td>01/02/2026</td>
-                        <td>Paid</td>
-                        <td>Transfer</td>
-                        <td>Pelunasan Penjualan</td>
-                        <td class="action-table-data">
-                          <div class="edit-delete-action">
-                            <a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#view-units"
-                              ><i data-feather="eye" class="action-eye"></i
-                            ></a>
-                            <a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#edit-units"
-                              ><i data-feather="edit" class="feather-edit"></i
-                            ></a>
-                            <a class="confirm-text p-2" href="javascript:void(0);"
-                              ><i data-feather="trash-2" class="feather-trash-2"></i
-                            ></a>
-                          </div>
-                        </td>
+                        <td>Cash Box</td>
+                        <td>Cash Box</td>
+                        <td>1.350.500</td>
                       </tr>
                       <tr>
-                        <td>02/02/2026</td>
-                        <td>RET-882</td>
-                        <td>PT. Maju Jaya</td>
-                        <td>Purchase Return</td>
-                        <td>1.200.000</td>
-                        <td>02/02/2026</td>
-                        <td>Paid</td>
-                        <td>Transfer</td>
-                        <td>Refund Barang Cacat</td>
-                        <td class="action-table-data">
-                          <div class="edit-delete-action">
-                            <a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#view-units"
-                              ><i data-feather="eye" class="action-eye"></i
-                            ></a>
-                            <a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#edit-units"
-                              ><i data-feather="edit" class="feather-edit"></i
-                            ></a>
-                            <a class="confirm-text p-2" href="javascript:void(0);"
-                              ><i data-feather="trash-2" class="feather-trash-2"></i
-                            ></a>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>03/02/2026</td>
-                        <td>INC-005</td>
                         <td>Bank Mandiri</td>
-                        <td>Income</td>
-                        <td>45.000</td>
-                        <td>03/02/2026</td>
-                        <td>Paid</td>
-                        <td>Transfer</td>
-                        <td>Bunga Tabungan</td>
-                        <td class="action-table-data">
-                          <div class="edit-delete-action">
-                            <a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#view-units"
-                              ><i data-feather="eye" class="action-eye"></i
-                            ></a>
-                            <a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#edit-units"
-                              ><i data-feather="edit" class="feather-edit"></i
-                            ></a>
-                            <a class="confirm-text p-2" href="javascript:void(0);"
-                              ><i data-feather="trash-2" class="feather-trash-2"></i
-                            ></a>
-                          </div>
-                        </td>
+                        <td>PT. Dulank Semesta Cida</td>
+                        <td>0</td>
                       </tr>
                       <tr>
-                        <td>04/02/2026</td>
-                        <td>INV-002</td>
-                        <td>Ibu Siti</td>
-                        <td>Sales</td>
-                        <td>1.000.000</td>
-                        <td>04/02/2026</td>
-                        <td>Partial</td>
-                        <td>Cash</td>
-                        <td>DP Proyek Dekorasi</td>
-                        <td class="action-table-data">
-                          <div class="edit-delete-action">
-                            <a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#view-units"
-                              ><i data-feather="eye" class="action-eye"></i
-                            ></a>
-                            <a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#edit-units"
-                              ><i data-feather="edit" class="feather-edit"></i
-                            ></a>
-                            <a class="confirm-text p-2" href="javascript:void(0);"
-                              ><i data-feather="trash-2" class="feather-trash-2"></i
-                            ></a>
-                          </div>
-                        </td>
+                        <td>Bank BCA</td>
+                        <td>PT. Dulank Semesta Cida</td>
+                        <td>-750.000</td>
                       </tr>
                       <tr>
-                        <td>05/02/2026</td>
-                        <td>INV-003</td>
-                        <td>Toko Laris</td>
-                        <td>Sales</td>
-                        <td>3.500.000</td>
-                        <td>20/02/2026</td>
-                        <td>Unpaid</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td class="action-table-data">
-                          <div class="edit-delete-action">
-                            <a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#view-units"
-                              ><i data-feather="eye" class="action-eye"></i
-                            ></a>
-                            <a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#edit-units"
-                              ><i data-feather="edit" class="feather-edit"></i
-                            ></a>
-                            <a class="confirm-text p-2" href="javascript:void(0);"
-                              ><i data-feather="trash-2" class="feather-trash-2"></i
-                            ></a>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>06/02/2026</td>
-                        <td>RET-885</td>
-                        <td>CV. Utama</td>
-                        <td>Purchase Return</td>
-                        <td>500.000</td>
-                        <td>06/02/2026</td>
-                        <td>Paid</td>
-                        <td>Transfer</td>
-                        <td>Refund Pembatalan Order</td>
-                        <td class="action-table-data">
-                          <div class="edit-delete-action">
-                            <a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#view-units"
-                              ><i data-feather="eye" class="action-eye"></i
-                            ></a>
-                            <a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#edit-units"
-                              ><i data-feather="edit" class="feather-edit"></i
-                            ></a>
-                            <a class="confirm-text p-2" href="javascript:void(0);"
-                              ><i data-feather="trash-2" class="feather-trash-2"></i
-                            ></a>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>07/02/2026</td>
-                        <td>INC-009</td>
-                        <td>Bapak Budi</td>
-                        <td>Income</td>
-                        <td>2.000.000</td>
-                        <td>07/02/2026</td>
-                        <td>Paid</td>
-                        <td>Cash</td>
-                        <td>Jasa Konsultasi</td>
-                        <td class="action-table-data">
-                          <div class="edit-delete-action">
-                            <a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#view-units"
-                              ><i data-feather="eye" class="action-eye"></i
-                            ></a>
-                            <a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#edit-units"
-                              ><i data-feather="edit" class="feather-edit"></i
-                            ></a>
-                            <a class="confirm-text p-2" href="javascript:void(0);"
-                              ><i data-feather="trash-2" class="feather-trash-2"></i
-                            ></a>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>08/02/2026</td>
-                        <td>INV-002</td>
-                        <td>Ibu Siti</td>
-                        <td>Sales</td>
-                        <td>1.500.000</td>
-                        <td>08/02/2026</td>
-                        <td>Paid</td>
-                        <td>Cash</td>
-                        <td>Pelunasan Proyek</td>
-                        <td class="action-table-data">
-                          <div class="edit-delete-action">
-                            <a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#view-units"
-                              ><i data-feather="eye" class="action-eye"></i
-                            ></a>
-                            <a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#edit-units"
-                              ><i data-feather="edit" class="feather-edit"></i
-                            ></a>
-                            <a class="confirm-text p-2" href="javascript:void(0);"
-                              ><i data-feather="trash-2" class="feather-trash-2"></i
-                            ></a>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>09/02/2026</td>
-                        <td>INV-004</td>
-                        <td>PT. Sumber Rejeki</td>
-                        <td>Sales</td>
-                        <td>7.200.000</td>
-                        <td>01/03/2026</td>
-                        <td>Unpaid</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td class="action-table-data">
-                          <div class="edit-delete-action">
-                            <a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#view-units"
-                              ><i data-feather="eye" class="action-eye"></i
-                            ></a>
-                            <a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#edit-units"
-                              ><i data-feather="edit" class="feather-edit"></i
-                            ></a>
-                            <a class="confirm-text p-2" href="javascript:void(0);"
-                              ><i data-feather="trash-2" class="feather-trash-2"></i
-                            ></a>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>10/02/2026</td>
-                        <td>INC-012</td>
-                        <td>PT. Logistik</td>
-                        <td>Income</td>
-                        <td>350.000</td>
-                        <td>10/02/2026</td>
-                        <td>Paid</td>
-                        <td>Transfer</td>
-                        <td>Klaim Asuransi Pengiriman</td>
-                        <td class="action-table-data">
-                          <div class="edit-delete-action">
-                            <a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#view-units"
-                              ><i data-feather="eye" class="action-eye"></i
-                            ></a>
-                            <a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#edit-units"
-                              ><i data-feather="edit" class="feather-edit"></i
-                            ></a>
-                            <a class="confirm-text p-2" href="javascript:void(0);"
-                              ><i data-feather="trash-2" class="feather-trash-2"></i
-                            ></a>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>11/02/2026</td>
-                        <td>INV-005</td>
-                        <td>Toko Berkah</td>
-                        <td>Sales</td>
-                        <td>1.800.000</td>
-                        <td>11/02/2026</td>
-                        <td>Paid</td>
-                        <td>Transfer</td>
-                        <td>Pembayaran Invoice #005</td>
-                        <td class="action-table-data">
-                          <div class="edit-delete-action">
-                            <a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#view-units"
-                              ><i data-feather="eye" class="action-eye"></i
-                            ></a>
-                            <a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#edit-units"
-                              ><i data-feather="edit" class="feather-edit"></i
-                            ></a>
-                            <a class="confirm-text p-2" href="javascript:void(0);"
-                              ><i data-feather="trash-2" class="feather-trash-2"></i
-                            ></a>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>12/02/2026</td>
-                        <td>RET-890</td>
-                        <td>Distributor ABC</td>
-                        <td>Purchase Return</td>
+                        <td>Qris Mandiri</td>
+                        <td>Percetakan Dulank</td>
                         <td>250.000</td>
-                        <td>12/02/2026</td>
-                        <td>Paid</td>
-                        <td>Transfer</td>
-                        <td>Refund Selisih Harga</td>
-                        <td class="action-table-data">
-                          <div class="edit-delete-action">
-                            <a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#view-units"
-                              ><i data-feather="eye" class="action-eye"></i
-                            ></a>
-                            <a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#edit-units"
-                              ><i data-feather="edit" class="feather-edit"></i
-                            ></a>
-                            <a class="confirm-text p-2" href="javascript:void(0);"
-                              ><i data-feather="trash-2" class="feather-trash-2"></i
-                            ></a>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>13/02/2026</td>
-                        <td>INC-015</td>
-                        <td>Bapak Budi</td>
-                        <td>Income</td>
-                        <td>150.000</td>
-                        <td>13/02/2026</td>
-                        <td>Paid</td>
-                        <td>Cash</td>
-                        <td>Sewa Alat Kantor</td>
-                        <td class="action-table-data">
-                          <div class="edit-delete-action">
-                            <a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#view-units"
-                              ><i data-feather="eye" class="action-eye"></i
-                            ></a>
-                            <a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#edit-units"
-                              ><i data-feather="edit" class="feather-edit"></i
-                            ></a>
-                            <a class="confirm-text p-2" href="javascript:void(0);"
-                              ><i data-feather="trash-2" class="feather-trash-2"></i
-                            ></a>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>14/02/2026</td>
-                        <td>INV-006</td>
-                        <td>Toko Laris</td>
-                        <td>Sales</td>
-                        <td>5.500.000</td>
-                        <td>14/02/2026</td>
-                        <td>Partial</td>
-                        <td>Transfer</td>
-                        <td></td>
-                        <td class="action-table-data">
-                          <div class="edit-delete-action">
-                            <a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#view-units"
-                              ><i data-feather="eye" class="action-eye"></i
-                            ></a>
-                            <a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#edit-units"
-                              ><i data-feather="edit" class="feather-edit"></i
-                            ></a>
-                            <a class="confirm-text p-2" href="javascript:void(0);"
-                              ><i data-feather="trash-2" class="feather-trash-2"></i
-                            ></a>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>15/02/2026</td>
-                        <td>INV-007</td>
-                        <td>PT. Maju Jaya</td>
-                        <td>Sales</td>
-                        <td>900.000</td>
-                        <td>15/02/2026</td>
-                        <td>Paid</td>
-                        <td>Transfer</td>
-                        <td></td>
-                        <td class="action-table-data">
-                          <div class="edit-delete-action">
-                            <a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#view-units"
-                              ><i data-feather="eye" class="action-eye"></i
-                            ></a>
-                            <a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#edit-units"
-                              ><i data-feather="edit" class="feather-edit"></i
-                            ></a>
-                            <a class="confirm-text p-2" href="javascript:void(0);"
-                              ><i data-feather="trash-2" class="feather-trash-2"></i
-                            ></a>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>16/02/2026</td>
-                        <td>RET-895</td>
-                        <td>Supplier Kayu</td>
-                        <td>Purchase Return</td>
-                        <td>100.000</td>
-                        <td>16/02/2026</td>
-                        <td>Paid</td>
-                        <td>Cash</td>
-                        <td></td>
-                        <td class="action-table-data">
-                          <div class="edit-delete-action">
-                            <a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#view-units"
-                              ><i data-feather="eye" class="action-eye"></i
-                            ></a>
-                            <a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#edit-units"
-                              ><i data-feather="edit" class="feather-edit"></i
-                            ></a>
-                            <a class="confirm-text p-2" href="javascript:void(0);"
-                              ><i data-feather="trash-2" class="feather-trash-2"></i
-                            ></a>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>17/02/2026</td>
-                        <td>INC-020</td>
-                        <td>Toko Berkah</td>
-                        <td>Income</td>
-                        <td>450.000</td>
-                        <td>17/02/2026</td>
-                        <td>Paid</td>
-                        <td>Transfer</td>
-                        <td>Komisi Penjualan Agen</td>
-                        <td class="action-table-data">
-                          <div class="edit-delete-action">
-                            <a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#view-units"
-                              ><i data-feather="eye" class="action-eye"></i
-                            ></a>
-                            <a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#edit-units"
-                              ><i data-feather="edit" class="feather-edit"></i
-                            ></a>
-                            <a class="confirm-text p-2" href="javascript:void(0);"
-                              ><i data-feather="trash-2" class="feather-trash-2"></i
-                            ></a>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>18/02/2026</td>
-                        <td>INV-008</td>
-                        <td>Ibu Siti</td>
-                        <td>Sales</td>
-                        <td>300.000</td>
-                        <td>18/02/2026</td>
-                        <td>Paid</td>
-                        <td>Cash</td>
-                        <td>Pembelian Retail</td>
-                        <td class="action-table-data">
-                          <div class="edit-delete-action">
-                            <a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#view-units"
-                              ><i data-feather="eye" class="action-eye"></i
-                            ></a>
-                            <a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#edit-units"
-                              ><i data-feather="edit" class="feather-edit"></i
-                            ></a>
-                            <a class="confirm-text p-2" href="javascript:void(0);"
-                              ><i data-feather="trash-2" class="feather-trash-2"></i
-                            ></a>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>18/02/2026</td>
-                        <td>INV-009</td>
-                        <td>PT. Sumber Rejeki</td>
-                        <td>Sales</td>
-                        <td>2.700.000</td>
-                        <td>28/02/2026</td>
-                        <td>Unpaid</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td class="action-table-data">
-                          <div class="edit-delete-action">
-                            <a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#view-units"
-                              ><i data-feather="eye" class="action-eye"></i
-                            ></a>
-                            <a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#edit-units"
-                              ><i data-feather="edit" class="feather-edit"></i
-                            ></a>
-                            <a class="confirm-text p-2" href="javascript:void(0);"
-                              ><i data-feather="trash-2" class="feather-trash-2"></i
-                            ></a>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>18/02/2026</td>
-                        <td>INC-022</td>
-                        <td>Bank Mandiri</td>
-                        <td>Income</td>
-                        <td>75.000</td>
-                        <td>18/02/2026</td>
-                        <td>Paid</td>
-                        <td>Transfer</td>
-                        <td>Cashback Transaksi</td>
-                        <td class="action-table-data">
-                          <div class="edit-delete-action">
-                            <a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#view-units"
-                              ><i data-feather="eye" class="action-eye"></i
-                            ></a>
-                            <a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#edit-units"
-                              ><i data-feather="edit" class="feather-edit"></i
-                            ></a>
-                            <a class="confirm-text p-2" href="javascript:void(0);"
-                              ><i data-feather="trash-2" class="feather-trash-2"></i
-                            ></a>
-                          </div>
-                        </td>
                       </tr>
                     </tbody>
                   </table>
@@ -693,396 +156,576 @@
               </div>
             </div>
           </div>
-          <!-- /product list -->
         </div>
-      </div>
-    </div>
-    <!-- /Main Wrapper -->
-    <!-- modals -->
-    <!-- Add Purchase -->
-
-    <!-- /Add Purchase -->
-
-    <div class="modal fade" id="add-units">
-      <div class="modal-dialog modal-dialog-centered custom-modal-two">
-        <div class="modal-content">
-          <div class="page-wrapper-new p-0">
-            <div class="content">
-              <div class="modal-header border-0 custom-modal-header">
-                <div class="page-title">
-                  <h4>Add Payment Outflow</h4>
+        <!-- /Balance Summary -->
+        <!-- /product list -->
+        <div class="card">
+          <div class="card-body">
+            <!-- Filter -->
+            <div class="table-top d-flex align-items-center justify-content-between">
+              <!-- Search Input -->
+              <div class="search-set d-block d-md-flex">
+                <div class="search-input">
+                  <a href="" class="btn btn-searchset"><i data-feather="search" class="feather-search"></i></a>
                 </div>
-
-                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body custom-modal-body">
-                <div class="row">
-                  <div class="col-lg-12">
-                    <div class="mb-3 row align-items-center">
-                      <div class="col-md-4">
-                        <label class="form-label">Name</label>
-                      </div>
-                      <div class="col-md-8">
-                        <input type="text" class="form-control" placeholder="Enter name" value="" />
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-lg-12">
-                    <div class="mb-3 row align-items-center">
-                      <div class="col-md-4">
-                        <label class="form-label">Payment Date</label>
-                      </div>
-                      <div class="col-md-8">
-                        <div class="input-blocks date-group mt-0">
-                          <i data-feather="calendar" class="info-img"></i>
-                          <div class="input-groupicon">
-                            <input type="text" class="datetimepicker" placeholder="Choose Date" />
-                          </div>
+                <!-- Date Range -->
+                <div class="my-2">
+                  <div class="pemilihrentang-container">
+                    <input type="text" id="pemilihrentang-input" class="pemilihrentang-input form-control" readonly
+                      placeholder="Date" style="height: fit-content !important; width: 100% !important" />
+                    <div id="pemilihrentang-panel" class="pemilihrentang-panel">
+                      <div class="pemilihrentang-isi">
+                        <div class="opsi-cepat">
+                          <div data-range="kemarin">Kemarin</div>
+                          <div data-range="7hari">7 Hari Terakhir</div>
+                          <div data-range="bulanIni">Bulan Ini</div>
+                          <div data-range="bulanLalu">Bulan Lalu</div>
+                          <div data-range="tahunLalu">Tahun Lalu</div>
+                          <div data-range="kustom">Rentang Kustom</div>
                         </div>
+                        <div class="kalender" id="kalender-view" style="display: none"></div>
                       </div>
                     </div>
-
-                    <div class="payment-wrapper">
-                      <div class="mb-3 d-flex">
-                        <div class="col-lg-4">
-                          <label class="form-label fw-bold">Payment Method</label>
-                        </div>
-
-                        <div class="col-lg-8 d-flex align-items-center justify-content-start">
-                          <div class="form-check">
-                            <input
-                              class="form-check-input payment-radio"
-                              type="radio"
-                              name="radioPayment1"
-                              value="cash"
-                              checked
-                            />
-                            <label class="form-check-label">Cash</label>
-                          </div>
-
-                          <div class="form-check ms-3">
-                            <input class="form-check-input payment-radio" type="radio" name="radioPayment1" value="transfer" />
-                            <label class="form-check-label">Transfer</label>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div class="bank-info d-none">
-                        <div class="row">
-                          <div class="col-lg-12">
-                            <div class="mb-3">
-                              <select class="form-select select">
-                                <option>Cipta Kreasi PT / BRI / 1320009982282</option>
-                                <option>Dulank Semesta Cida PT / BCA / 1092993242</option>
-                              </select>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="col-lg-12">
-                      <div class="text-primary text-end">Max Payment <span id="maxPayment"></span></div>
-                      <div class="mb-3 row align-items-center">
-                        <div class="col-md-4">
-                          <label class="form-label">Payment Amount</label>
-                        </div>
-                        <div class="col-md-8">
-                          <input
-                            type="text"
-                            class="form-control number-separator"
-                            id="paymentAmountInput"
-                            inputmode="numeric"
-                            pattern="[0-9]*"
-                          />
-                          <input type="hidden" class="result-input" id="amount" />
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="table-responsive table-transaction">
-                      <table class="table datanew" id="transactionDetailTable">
-                        <thead>
-                          <th>No Reff</th>
-                          <th>Source</th>
-                          <th>Amount</th>
-                          <th>Status</th>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <td>INC-00002</td>
-                            <td>Purchase</td>
-                            <td>750000</td>
-                            <td>
-                              <span class="badge bg-soft-success">Paid</span>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>INV-00524</td>
-                            <td>Purchase</td>
-                            <td>1.250.000</td>
-                            <td>
-                              <span class="badge bg-soft-success">Paid</span>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>INV-00789</td>
-                            <td>Purchase</td>
-                            <td>250000</td>
-                            <td>
-                              <span class="badge bg-soft-danger">Partial</span>
-                            </td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                    <br />
-
-                    <!-- Editor -->
-                    <div class="col-md-12">
-                      <div class="row align-items-center">
-                        <div class="col-lg-4">
-                          <label class="form-label">Description</label>
-                        </div>
-                        <div class="col-lg-8">
-                          <div class="card-body-list input-blocks mb-0">
-                            <div class="flex-grow-1 term-content text-start">
-                              <div
-                                class="product-desc p-2 border rounded"
-                                contenteditable="true"
-                                data-placeholder="Enter note here....."
-                              ></div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <!-- /Editor -->
-                  </div>
-                  <div class="modal-footer-btn">
-                    <a href="javascript:void(0);" class="btn btn-cancel me-2" data-bs-dismiss="modal">Cancel</a>
-                    <a href="income.html" class="btn btn-submit">Submit</a>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- view payment -->
-    <div class="modal fade" id="view-units">
-      <div class="modal-dialog modal-dialog-centered custom-modal-two">
-        <div class="modal-content">
-          <div class="page-wrapper-new p-0">
-            <div class="content">
-              <div class="modal-header border-0 custom-modal-header">
-                <div class="page-title">
-                  <h4>View Payment Inflow</h4>
-                </div>
-
-                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body custom-modal-body">
-                <div class="mb-4">
-                  <h5 class="mb-3">Transaction Detail</h5>
-                  <div class="row mb-3">
-                    <div class="col-2"><strong>Name</strong></div>
-                    <div class="col-1"><strong>:</strong></div>
-                    <div class="col-9"><strong>Toko Kertas Indojaya</strong></div>
-                  </div>
-                  <div class="row">
-                    <div class="col-lg-6 mb-3">
-                      <div class="table-responsive">
-                        <table class="table mb-0">
-                          <tbody>
-                            <tr>
-                              <td>Date</td>
-                              <td>25/02/2026</td>
-                            </tr>
-                            <tr>
-                              <td>No Reff</td>
-                              <td>INC-00002</td>
-                            </tr>
-                            <tr>
-                              <td>Source</td>
-                              <td>Purchase Return</td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                    </div>
-                    <div class="col-lg-6 mb-3">
-                      <div class="table-responsive">
-                        <table class="table mb-0">
-                          <tbody>
-                            <tr>
-                              <td>Due Date</td>
-                              <td>25/02/2026</td>
-                            </tr>
-                            <tr>
-                              <td>Amount</td>
-                              <td>1.250.000</td>
-                            </tr>
-                            <tr>
-                              <td>Status</td>
-                              <td>
-                                <span class="badge bg-soft-danger">Partial</span>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-2">Note</div>
-                    <div class="col-1">:</div>
-                    <div class="col-9">-</div>
-                  </div>
-                </div>
-
-                <div class="mb-4">
-                  <div class="d-flex justify-content-between align-items-center mb-3">
-                    <h5 class="mb-0">Payment Outflow</h5>
-                    <h5 class="mb-0 text-orange">Due Amount : 250.000</h5>
-                  </div>
-
-                  <div class="row mb-2">
-                    <div class="col-md-4">Payment</div>
-                    <div class="col-md-8">600.000</div>
-                  </div>
-                  <div class="row mb-2">
-                    <div class="col-md-4">Date Payment</div>
-                    <div class="col-md-8">25/02/2026, 15:45</div>
-                  </div>
-                  <div class="row mb-2">
-                    <div class="col-md-4">Payment Method</div>
-                    <div class="col-md-8">
-                      <div>From : Mandiri / 132000998282 / PT Dulank Semesta</div>
-                      <div>To : Mandiri / 132000998282 / Indojaya Kertas</div>
-                    </div>
-                  </div>
-                  <div class="row mb-3">
-                    <div class="col-md-4">Created Payment</div>
-                    <div class="col-md-8">Sales Staff : 26/02/2026, 15:45</div>
-                  </div>
-
-                  <hr />
-
-                  <div class="row mb-2">
-                    <div class="col-md-4">Payment</div>
-                    <div class="col-md-8">400.000</div>
-                  </div>
-                  <div class="row mb-2">
-                    <div class="col-md-4">Date Payment</div>
-                    <div class="col-md-8">25/02/2026, 15:45</div>
-                  </div>
-                  <div class="row mb-2">
-                    <div class="col-md-4">Payment Method</div>
-                    <div class="col-md-8">Cash</div>
-                  </div>
-                  <div class="row mb-3">
-                    <div class="col-md-4">Created Payment</div>
-                    <div class="col-md-8">Sales Staff : 26/02/2026, 15:45</div>
-                  </div>
-                  <hr />
-                </div>
-                <div class="modal-footer-btn">
-                  <a href="javascript:void(0);" class="btn btn-cancel me-2" data-bs-dismiss="modal">Cancel</a>
-                </div>
+            <!-- /Filter -->
+            <div class="table-responsive">
+              <div class="table-responsive">
+                <table class="table datanew">
+                  <thead>
+                    <tr>
+                      <th>Date</th>
+                      <th>Ref No</th>
+                      <th>Name</th>
+                      <th>Source</th>
+                      <th>Amount</th>
+                      <th>Due Date</th>
+                      <th>Status</th>
+                      <th>Payment Method</th>
+                      <th>Note</th>
+                      <th class="no-sort">Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>01/02/2026</td>
+                      <td>INV-001</td>
+                      <td>Toko Berkah</td>
+                      <td>Sales</td>
+                      <td>2.500.000</td>
+                      <td>01/02/2026</td>
+                      <td>Paid</td>
+                      <td>Transfer</td>
+                      <td>Pelunasan Penjualan</td>
+                      <td class="action-table-data">
+                        <div class="edit-delete-action">
+                          <a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#view-units"><i data-feather="eye"
+                              class="action-eye"></i></a>
+                          <a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#edit-units"><i
+                              data-feather="dollar-sign" class="feather-edit"></i></a>
+                          <a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#edit-units"><i data-feather="edit"
+                              class="feather-edit"></i></a>
+                          <a class="confirm-text p-2" href="javascript:void(0);"><i data-feather="trash-2"
+                              class="feather-trash-2"></i></a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>02/02/2026</td>
+                      <td>RET-882</td>
+                      <td>PT. Maju Jaya</td>
+                      <td>Purchase Return</td>
+                      <td>1.200.000</td>
+                      <td>02/02/2026</td>
+                      <td>Paid</td>
+                      <td>Transfer</td>
+                      <td>Refund Barang Cacat</td>
+                      <td class="action-table-data">
+                        <div class="edit-delete-action">
+                          <a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#view-units"><i data-feather="eye"
+                              class="action-eye"></i></a>
+                          <a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#edit-units"><i
+                              data-feather="dollar-sign" class="feather-edit"></i></a>
+                          <a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#edit-units"><i data-feather="edit"
+                              class="feather-edit"></i></a>
+                          <a class="confirm-text p-2" href="javascript:void(0);"><i data-feather="trash-2"
+                              class="feather-trash-2"></i></a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>03/02/2026</td>
+                      <td>INC-005</td>
+                      <td>Bank Mandiri</td>
+                      <td>Income</td>
+                      <td>45.000</td>
+                      <td>03/02/2026</td>
+                      <td>Paid</td>
+                      <td>Transfer</td>
+                      <td>Bunga Tabungan</td>
+                      <td class="action-table-data">
+                        <div class="edit-delete-action">
+                          <a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#view-units"><i data-feather="eye"
+                              class="action-eye"></i></a>
+                          <a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#edit-units"><i
+                              data-feather="dollar-sign" class="feather-edit"></i></a>
+                          <a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#edit-units"><i data-feather="edit"
+                              class="feather-edit"></i></a>
+                          <a class="confirm-text p-2" href="javascript:void(0);"><i data-feather="trash-2"
+                              class="feather-trash-2"></i></a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>04/02/2026</td>
+                      <td>INV-002</td>
+                      <td>Ibu Siti</td>
+                      <td>Sales</td>
+                      <td>1.000.000</td>
+                      <td>04/02/2026</td>
+                      <td>Partial</td>
+                      <td>Cash</td>
+                      <td>DP Proyek Dekorasi</td>
+                      <td class="action-table-data">
+                        <div class="edit-delete-action">
+                          <a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#view-units"><i data-feather="eye"
+                              class="action-eye"></i></a>
+                          <a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#edit-units"><i
+                              data-feather="dollar-sign" class="feather-edit"></i></a>
+                          <a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#edit-units"><i data-feather="edit"
+                              class="feather-edit"></i></a>
+                          <a class="confirm-text p-2" href="javascript:void(0);"><i data-feather="trash-2"
+                              class="feather-trash-2"></i></a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>05/02/2026</td>
+                      <td>INV-003</td>
+                      <td>Toko Laris</td>
+                      <td>Sales</td>
+                      <td>3.500.000</td>
+                      <td>20/02/2026</td>
+                      <td>Unpaid</td>
+                      <td>-</td>
+                      <td>-</td>
+                      <td class="action-table-data">
+                        <div class="edit-delete-action">
+                          <a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#view-units"><i data-feather="eye"
+                              class="action-eye"></i></a>
+                          <a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#edit-units"><i
+                              data-feather="dollar-sign" class="feather-edit"></i></a>
+                          <a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#edit-units"><i data-feather="edit"
+                              class="feather-edit"></i></a>
+                          <a class="confirm-text p-2" href="javascript:void(0);"><i data-feather="trash-2"
+                              class="feather-trash-2"></i></a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>06/02/2026</td>
+                      <td>RET-885</td>
+                      <td>CV. Utama</td>
+                      <td>Purchase Return</td>
+                      <td>500.000</td>
+                      <td>06/02/2026</td>
+                      <td>Paid</td>
+                      <td>Transfer</td>
+                      <td>Refund Pembatalan Order</td>
+                      <td class="action-table-data">
+                        <div class="edit-delete-action">
+                          <a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#view-units"><i data-feather="eye"
+                              class="action-eye"></i></a>
+                          <a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#edit-units"><i
+                              data-feather="dollar-sign" class="feather-edit"></i></a>
+                          <a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#edit-units"><i data-feather="edit"
+                              class="feather-edit"></i></a>
+                          <a class="confirm-text p-2" href="javascript:void(0);"><i data-feather="trash-2"
+                              class="feather-trash-2"></i></a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>07/02/2026</td>
+                      <td>INC-009</td>
+                      <td>Bapak Budi</td>
+                      <td>Income</td>
+                      <td>2.000.000</td>
+                      <td>07/02/2026</td>
+                      <td>Paid</td>
+                      <td>Cash</td>
+                      <td>Jasa Konsultasi</td>
+                      <td class="action-table-data">
+                        <div class="edit-delete-action">
+                          <a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#view-units"><i data-feather="eye"
+                              class="action-eye"></i></a>
+                          <a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#edit-units"><i
+                              data-feather="dollar-sign" class="feather-edit"></i></a>
+                          <a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#edit-units"><i data-feather="edit"
+                              class="feather-edit"></i></a>
+                          <a class="confirm-text p-2" href="javascript:void(0);"><i data-feather="trash-2"
+                              class="feather-trash-2"></i></a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>08/02/2026</td>
+                      <td>INV-002</td>
+                      <td>Ibu Siti</td>
+                      <td>Sales</td>
+                      <td>1.500.000</td>
+                      <td>08/02/2026</td>
+                      <td>Paid</td>
+                      <td>Cash</td>
+                      <td>Pelunasan Proyek</td>
+                      <td class="action-table-data">
+                        <div class="edit-delete-action">
+                          <a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#view-units"><i data-feather="eye"
+                              class="action-eye"></i></a>
+                          <a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#edit-units"><i
+                              data-feather="dollar-sign" class="feather-edit"></i></a>
+                          <a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#edit-units"><i data-feather="edit"
+                              class="feather-edit"></i></a>
+                          <a class="confirm-text p-2" href="javascript:void(0);"><i data-feather="trash-2"
+                              class="feather-trash-2"></i></a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>09/02/2026</td>
+                      <td>INV-004</td>
+                      <td>PT. Sumber Rejeki</td>
+                      <td>Sales</td>
+                      <td>7.200.000</td>
+                      <td>01/03/2026</td>
+                      <td>Unpaid</td>
+                      <td>-</td>
+                      <td>-</td>
+                      <td class="action-table-data">
+                        <div class="edit-delete-action">
+                          <a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#view-units"><i data-feather="eye"
+                              class="action-eye"></i></a>
+                          <a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#edit-units"><i
+                              data-feather="dollar-sign" class="feather-edit"></i></a>
+                          <a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#edit-units"><i data-feather="edit"
+                              class="feather-edit"></i></a>
+                          <a class="confirm-text p-2" href="javascript:void(0);"><i data-feather="trash-2"
+                              class="feather-trash-2"></i></a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>10/02/2026</td>
+                      <td>INC-012</td>
+                      <td>PT. Logistik</td>
+                      <td>Income</td>
+                      <td>350.000</td>
+                      <td>10/02/2026</td>
+                      <td>Paid</td>
+                      <td>Transfer</td>
+                      <td>Klaim Asuransi Pengiriman</td>
+                      <td class="action-table-data">
+                        <div class="edit-delete-action">
+                          <a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#view-units"><i data-feather="eye"
+                              class="action-eye"></i></a>
+                          <a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#edit-units"><i
+                              data-feather="dollar-sign" class="feather-edit"></i></a>
+                          <a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#edit-units"><i data-feather="edit"
+                              class="feather-edit"></i></a>
+                          <a class="confirm-text p-2" href="javascript:void(0);"><i data-feather="trash-2"
+                              class="feather-trash-2"></i></a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>11/02/2026</td>
+                      <td>INV-005</td>
+                      <td>Toko Berkah</td>
+                      <td>Sales</td>
+                      <td>1.800.000</td>
+                      <td>11/02/2026</td>
+                      <td>Paid</td>
+                      <td>Transfer</td>
+                      <td>Pembayaran Invoice #005</td>
+                      <td class="action-table-data">
+                        <div class="edit-delete-action">
+                          <a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#view-units"><i data-feather="eye"
+                              class="action-eye"></i></a>
+                          <a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#edit-units"><i
+                              data-feather="dollar-sign" class="feather-edit"></i></a>
+                          <a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#edit-units"><i data-feather="edit"
+                              class="feather-edit"></i></a>
+                          <a class="confirm-text p-2" href="javascript:void(0);"><i data-feather="trash-2"
+                              class="feather-trash-2"></i></a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>12/02/2026</td>
+                      <td>RET-890</td>
+                      <td>Distributor ABC</td>
+                      <td>Purchase Return</td>
+                      <td>250.000</td>
+                      <td>12/02/2026</td>
+                      <td>Paid</td>
+                      <td>Transfer</td>
+                      <td>Refund Selisih Harga</td>
+                      <td class="action-table-data">
+                        <div class="edit-delete-action">
+                          <a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#view-units"><i data-feather="eye"
+                              class="action-eye"></i></a>
+                          <a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#edit-units"><i
+                              data-feather="dollar-sign" class="feather-edit"></i></a>
+                          <a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#edit-units"><i data-feather="edit"
+                              class="feather-edit"></i></a>
+                          <a class="confirm-text p-2" href="javascript:void(0);"><i data-feather="trash-2"
+                              class="feather-trash-2"></i></a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>13/02/2026</td>
+                      <td>INC-015</td>
+                      <td>Bapak Budi</td>
+                      <td>Income</td>
+                      <td>150.000</td>
+                      <td>13/02/2026</td>
+                      <td>Paid</td>
+                      <td>Cash</td>
+                      <td>Sewa Alat Kantor</td>
+                      <td class="action-table-data">
+                        <div class="edit-delete-action">
+                          <a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#view-units"><i data-feather="eye"
+                              class="action-eye"></i></a>
+                          <a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#edit-units"><i
+                              data-feather="dollar-sign" class="feather-edit"></i></a>
+                          <a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#edit-units"><i data-feather="edit"
+                              class="feather-edit"></i></a>
+                          <a class="confirm-text p-2" href="javascript:void(0);"><i data-feather="trash-2"
+                              class="feather-trash-2"></i></a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>14/02/2026</td>
+                      <td>INV-006</td>
+                      <td>Toko Laris</td>
+                      <td>Sales</td>
+                      <td>5.500.000</td>
+                      <td>14/02/2026</td>
+                      <td>Partial</td>
+                      <td>Transfer</td>
+                      <td></td>
+                      <td class="action-table-data">
+                        <div class="edit-delete-action">
+                          <a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#view-units"><i data-feather="eye"
+                              class="action-eye"></i></a>
+                          <a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#edit-units"><i
+                              data-feather="dollar-sign" class="feather-edit"></i></a>
+                          <a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#edit-units"><i data-feather="edit"
+                              class="feather-edit"></i></a>
+                          <a class="confirm-text p-2" href="javascript:void(0);"><i data-feather="trash-2"
+                              class="feather-trash-2"></i></a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>15/02/2026</td>
+                      <td>INV-007</td>
+                      <td>PT. Maju Jaya</td>
+                      <td>Sales</td>
+                      <td>900.000</td>
+                      <td>15/02/2026</td>
+                      <td>Paid</td>
+                      <td>Transfer</td>
+                      <td></td>
+                      <td class="action-table-data">
+                        <div class="edit-delete-action">
+                          <a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#view-units"><i data-feather="eye"
+                              class="action-eye"></i></a>
+                          <a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#edit-units"><i
+                              data-feather="dollar-sign" class="feather-edit"></i></a>
+                          <a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#edit-units"><i data-feather="edit"
+                              class="feather-edit"></i></a>
+                          <a class="confirm-text p-2" href="javascript:void(0);"><i data-feather="trash-2"
+                              class="feather-trash-2"></i></a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>16/02/2026</td>
+                      <td>RET-895</td>
+                      <td>Supplier Kayu</td>
+                      <td>Purchase Return</td>
+                      <td>100.000</td>
+                      <td>16/02/2026</td>
+                      <td>Paid</td>
+                      <td>Cash</td>
+                      <td></td>
+                      <td class="action-table-data">
+                        <div class="edit-delete-action">
+                          <a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#view-units"><i data-feather="eye"
+                              class="action-eye"></i></a>
+                          <a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#edit-units"><i
+                              data-feather="dollar-sign" class="feather-edit"></i></a>
+                          <a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#edit-units"><i data-feather="edit"
+                              class="feather-edit"></i></a>
+                          <a class="confirm-text p-2" href="javascript:void(0);"><i data-feather="trash-2"
+                              class="feather-trash-2"></i></a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>17/02/2026</td>
+                      <td>INC-020</td>
+                      <td>Toko Berkah</td>
+                      <td>Income</td>
+                      <td>450.000</td>
+                      <td>17/02/2026</td>
+                      <td>Paid</td>
+                      <td>Transfer</td>
+                      <td>Komisi Penjualan Agen</td>
+                      <td class="action-table-data">
+                        <div class="edit-delete-action">
+                          <a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#view-units"><i data-feather="eye"
+                              class="action-eye"></i></a>
+                          <a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#edit-units"><i
+                              data-feather="dollar-sign" class="feather-edit"></i></a>
+                          <a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#edit-units"><i data-feather="edit"
+                              class="feather-edit"></i></a>
+                          <a class="confirm-text p-2" href="javascript:void(0);"><i data-feather="trash-2"
+                              class="feather-trash-2"></i></a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>18/02/2026</td>
+                      <td>INV-008</td>
+                      <td>Ibu Siti</td>
+                      <td>Sales</td>
+                      <td>300.000</td>
+                      <td>18/02/2026</td>
+                      <td>Paid</td>
+                      <td>Cash</td>
+                      <td>Pembelian Retail</td>
+                      <td class="action-table-data">
+                        <div class="edit-delete-action">
+                          <a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#view-units"><i data-feather="eye"
+                              class="action-eye"></i></a>
+                          <a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#edit-units"><i
+                              data-feather="dollar-sign" class="feather-edit"></i></a>
+                          <a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#edit-units"><i data-feather="edit"
+                              class="feather-edit"></i></a>
+                          <a class="confirm-text p-2" href="javascript:void(0);"><i data-feather="trash-2"
+                              class="feather-trash-2"></i></a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>18/02/2026</td>
+                      <td>INV-009</td>
+                      <td>PT. Sumber Rejeki</td>
+                      <td>Sales</td>
+                      <td>2.700.000</td>
+                      <td>28/02/2026</td>
+                      <td>Unpaid</td>
+                      <td>-</td>
+                      <td>-</td>
+                      <td class="action-table-data">
+                        <div class="edit-delete-action">
+                          <a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#view-units"><i data-feather="eye"
+                              class="action-eye"></i></a>
+                          <a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#edit-units"><i
+                              data-feather="dollar-sign" class="feather-edit"></i></a>
+                          <a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#edit-units"><i data-feather="edit"
+                              class="feather-edit"></i></a>
+                          <a class="confirm-text p-2" href="javascript:void(0);"><i data-feather="trash-2"
+                              class="feather-trash-2"></i></a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>18/02/2026</td>
+                      <td>INC-022</td>
+                      <td>Bank Mandiri</td>
+                      <td>Income</td>
+                      <td>75.000</td>
+                      <td>18/02/2026</td>
+                      <td>Paid</td>
+                      <td>Transfer</td>
+                      <td>Cashback Transaksi</td>
+                      <td class="action-table-data">
+                        <div class="edit-delete-action">
+                          <a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#view-units"><i data-feather="eye"
+                              class="action-eye"></i></a>
+                          <a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#edit-units"><i
+                              data-feather="dollar-sign" class="feather-edit"></i></a>
+                          <a class="me-2 p-2" data-bs-toggle="modal" data-bs-target="#edit-units"><i data-feather="edit"
+                              class="feather-edit"></i></a>
+                          <a class="confirm-text p-2" href="javascript:void(0);"><i data-feather="trash-2"
+                              class="feather-trash-2"></i></a>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
             </div>
           </div>
         </div>
+        <!-- /product list -->
       </div>
     </div>
-    <!-- view payment -->
+  </div>
+  <!-- /Main Wrapper -->
+  <!-- modals -->
+  <!-- Add Purchase -->
 
-    <!-- edit units -->
-    <div class="modal fade" id="edit-units">
-      <div class="modal-dialog modal-dialog-centered custom-modal-two">
-        <div class="modal-content">
-          <div class="page-wrapper-new p-0">
-            <div class="content">
-              <div class="modal-header border-0 custom-modal-header">
-                <div class="page-title">
-                  <h4>Edit Payment Inflow</h4>
-                </div>
-                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
+  <!-- /Add Purchase -->
+
+  <div class="modal fade" id="add-units">
+    <div class="modal-dialog modal-dialog-centered custom-modal-two">
+      <div class="modal-content">
+        <div class="page-wrapper-new p-0">
+          <div class="content">
+            <div class="modal-header border-0 custom-modal-header">
+              <div class="page-title">
+                <h4>Add Payment Outflow</h4>
               </div>
 
-              <div class="modal-body custom-modal-body">
-                <div class="row">
-                  <div class="row align-items-center">
-                    <div class="col-lg-4">
-                      <label class="form-label">No Reff</label>
-                    </div>
-                    <div class="col-lg-8">
-                      <div class="mb-3">
-                        <div class="input-blocks date-group mt-0">
-                          <div class="input-groupicon">
-                            <input type="text" disabled value="INC-00002" />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="row align-items-center">
-                    <div class="col-lg-4">
-                      <label class="form-label">Source</label>
-                    </div>
-                    <div class="col-lg-8">
-                      <div class="mb-3">
-                        <div class="input-blocks date-group mt-0">
-                          <div class="input-groupicon">
-                            <input disabled type="text" value="Purchase Return" />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="row align-items-center">
-                    <div class="col-lg-4">
+              <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body custom-modal-body">
+              <div class="row">
+                <div class="col-lg-12">
+                  <div class="mb-3 row align-items-center">
+                    <div class="col-md-4">
                       <label class="form-label">Name</label>
                     </div>
-                    <div class="col-lg-8">
-                      <div class="mb-3">
-                        <div class="input-blocks date-group mt-0">
-                          <div class="input-groupicon">
-                            <input type="text" disabled value="PT Cipta Kreasi" />
-                          </div>
+                    <div class="col-md-8">
+                      <input type="text" class="form-control" placeholder="Enter name" value="" />
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-12">
+                  <div class="mb-3 row align-items-center">
+                    <div class="col-md-4">
+                      <label class="form-label">Payment Date</label>
+                    </div>
+                    <div class="col-md-8">
+                      <div class="input-blocks date-group mt-0">
+                        <i data-feather="calendar" class="info-img"></i>
+                        <div class="input-groupicon">
+                          <input type="text" class="datetimepicker" placeholder="Choose Date" />
                         </div>
                       </div>
                     </div>
                   </div>
 
-                  <div class="row align-items-center">
-                    <div class="col-4">
-                      <label class="form-label">Amount</label>
-                    </div>
-                    <div class="col-lg-8">
-                      <div class="mb-3">
-                        <input
-                          type="text"
-                          class="form-control number-separator"
-                          inputmode="numeric"
-                          pattern="[0-9]*"
-                          value="250.000"
-                          disabled
-                        />
-                        <input type="hidden" disabled value="250.000" class="result-input" id="amount" />
-                      </div>
-                    </div>
-                  </div>
                   <div class="payment-wrapper">
                     <div class="mb-3 d-flex">
                       <div class="col-lg-4">
@@ -1091,12 +734,14 @@
 
                       <div class="col-lg-8 d-flex align-items-center justify-content-start">
                         <div class="form-check">
-                          <input class="form-check-input payment-radio" type="radio" name="radioPayment2" value="cash" checked />
+                          <input class="form-check-input payment-radio" type="radio" name="radioPayment1" value="cash"
+                            checked />
                           <label class="form-check-label">Cash</label>
                         </div>
 
                         <div class="form-check ms-3">
-                          <input class="form-check-input payment-radio" type="radio" name="radioPayment2" value="transfer" />
+                          <input class="form-check-input payment-radio" type="radio" name="radioPayment1"
+                            value="transfer" />
                           <label class="form-check-label">Transfer</label>
                         </div>
                       </div>
@@ -1115,23 +760,58 @@
                       </div>
                     </div>
                   </div>
-                  <div class="row align-items-center mb-3">
-                    <div class="col-4">
-                      <label class="form-label">Payment Amount</label>
-                    </div>
-                    <div class="col-lg-8">
-                      <div class="">
-                        <input
-                          type="text"
-                          class="form-control number-separator"
-                          inputmode="numeric"
-                          pattern="[0-9]*"
-                          value="250.000"
-                        />
+
+                  <div class="col-lg-12">
+                    <div class="text-primary text-end">Max Payment <span id="maxPayment"></span></div>
+                    <div class="mb-3 row align-items-center">
+                      <div class="col-md-4">
+                        <label class="form-label">Payment Amount</label>
                       </div>
-                      <div class="text-primary text-start">Due Payment <span></span></div>
+                      <div class="col-md-8">
+                        <input type="text" class="form-control number-separator" id="paymentAmountInput"
+                          inputmode="numeric" pattern="[0-9]*" />
+                        <input type="hidden" class="result-input" id="amount" />
+                      </div>
                     </div>
                   </div>
+
+                  <div class="table-responsive table-transaction">
+                    <table class="table datanew" id="transactionDetailTable">
+                      <thead>
+                        <th>No Reff</th>
+                        <th>Source</th>
+                        <th>Amount</th>
+                        <th>Status</th>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>INC-00002</td>
+                          <td>Purchase</td>
+                          <td>750000</td>
+                          <td>
+                            <span class="badge bg-soft-success">Paid</span>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>INV-00524</td>
+                          <td>Purchase</td>
+                          <td>1.250.000</td>
+                          <td>
+                            <span class="badge bg-soft-success">Paid</span>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>INV-00789</td>
+                          <td>Purchase</td>
+                          <td>250000</td>
+                          <td>
+                            <span class="badge bg-soft-danger">Partial</span>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <br />
 
                   <!-- Editor -->
                   <div class="col-md-12">
@@ -1142,11 +822,8 @@
                       <div class="col-lg-8">
                         <div class="card-body-list input-blocks mb-0">
                           <div class="flex-grow-1 term-content text-start">
-                            <div
-                              class="product-desc p-2 border rounded"
-                              contenteditable="true"
-                              data-placeholder="Enter note here....."
-                            ></div>
+                            <div class="product-desc p-2 border rounded" contenteditable="true"
+                              data-placeholder="Enter note here....."></div>
                           </div>
                         </div>
                       </div>
@@ -1164,164 +841,482 @@
         </div>
       </div>
     </div>
-    <!-- edit units -->
-    <!-- /modals -->
-    <!-- jQuery -->
-    <!-- jQuery -->
-    <script src="assets/js/jquery-3.7.1.min.js"></script>
+  </div>
 
-    <!-- Feather Icon JS -->
-    <script src="assets/js/feather.min.js"></script>
+  <!-- view payment -->
+  <div class="modal fade" id="view-units">
+    <div class="modal-dialog modal-dialog-centered custom-modal-two">
+      <div class="modal-content">
+        <div class="page-wrapper-new p-0">
+          <div class="content">
+            <div class="modal-header border-0 custom-modal-header">
+              <div class="page-title">
+                <h4>View Payment Inflow</h4>
+              </div>
 
-    <!-- Slimscroll JS -->
-    <script src="assets/js/jquery.slimscroll.min.js"></script>
+              <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body custom-modal-body">
+              <div class="mb-4">
+                <h5 class="mb-3">Transaction Detail</h5>
+                <div class="row mb-3">
+                  <div class="col-2"><strong>Name</strong></div>
+                  <div class="col-1"><strong>:</strong></div>
+                  <div class="col-9"><strong>Toko Kertas Indojaya</strong></div>
+                </div>
+                <div class="row">
+                  <div class="col-lg-6 mb-3">
+                    <div class="table-responsive">
+                      <table class="table mb-0">
+                        <tbody>
+                          <tr>
+                            <td>Date</td>
+                            <td>25/02/2026</td>
+                          </tr>
+                          <tr>
+                            <td>No Reff</td>
+                            <td>INC-00002</td>
+                          </tr>
+                          <tr>
+                            <td>Source</td>
+                            <td>Purchase Return</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                  <div class="col-lg-6 mb-3">
+                    <div class="table-responsive">
+                      <table class="table mb-0">
+                        <tbody>
+                          <tr>
+                            <td>Due Date</td>
+                            <td>25/02/2026</td>
+                          </tr>
+                          <tr>
+                            <td>Amount</td>
+                            <td>1.250.000</td>
+                          </tr>
+                          <tr>
+                            <td>Status</td>
+                            <td>
+                              <span class="badge bg-soft-danger">Partial</span>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-2">Note</div>
+                  <div class="col-1">:</div>
+                  <div class="col-9">-</div>
+                </div>
+              </div>
 
-    <!-- Datatable JS -->
-    <script src="assets/js/jquery.dataTables.min.js"></script>
-    <script src="assets/js/dataTables.bootstrap5.min.js"></script>
+              <div class="mb-4">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                  <h5 class="mb-0">Payment Outflow</h5>
+                  <h5 class="mb-0 text-orange">Due Amount : 250.000</h5>
+                </div>
 
-    <!-- Bootstrap Core JS -->
-    <script src="assets/js/bootstrap.bundle.min.js"></script>
+                <div class="row mb-2">
+                  <div class="col-md-4">Payment</div>
+                  <div class="col-md-8">600.000</div>
+                </div>
+                <div class="row mb-2">
+                  <div class="col-md-4">Date Payment</div>
+                  <div class="col-md-8">25/02/2026, 15:45</div>
+                </div>
+                <div class="row mb-2">
+                  <div class="col-md-4">Payment Method</div>
+                  <div class="col-md-8">
+                    <div>From : Mandiri / 132000998282 / PT Dulank Semesta</div>
+                    <div>To : Mandiri / 132000998282 / Indojaya Kertas</div>
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <div class="col-md-4">Created Payment</div>
+                  <div class="col-md-8">Sales Staff : 26/02/2026, 15:45</div>
+                </div>
 
-    <!-- Datetimepicker JS -->
-    <script src="assets/js/moment.min.js"></script>
-    <script src="assets/js/bootstrap-datetimepicker.min.js"></script>
+                <hr />
 
-    <!-- Select2 JS -->
-    <script src="assets/plugins/select2/js/select2.min.js"></script>
+                <div class="row mb-2">
+                  <div class="col-md-4">Payment</div>
+                  <div class="col-md-8">400.000</div>
+                </div>
+                <div class="row mb-2">
+                  <div class="col-md-4">Date Payment</div>
+                  <div class="col-md-8">25/02/2026, 15:45</div>
+                </div>
+                <div class="row mb-2">
+                  <div class="col-md-4">Payment Method</div>
+                  <div class="col-md-8">Cash</div>
+                </div>
+                <div class="row mb-3">
+                  <div class="col-md-4">Created Payment</div>
+                  <div class="col-md-8">Sales Staff : 26/02/2026, 15:45</div>
+                </div>
+                <hr />
+              </div>
+              <div class="modal-footer-btn">
+                <a href="javascript:void(0);" class="btn btn-cancel me-2" data-bs-dismiss="modal">Cancel</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- view payment -->
 
-    <!-- Datetimepicker JS -->
-    <script src="assets/js/moment.min.js"></script>
-    <script src="assets/js/bootstrap-datetimepicker.min.js"></script>
+  <!-- Edit Payment Inflow -->
+	<div class="modal fade" id="edit-units">
+		<div class="modal-dialog modal-dialog-centered custom-modal-two">
+			<div class="modal-content">
+				<div class="page-wrapper-new p-0">
+					<div class="content">
+						<div class="modal-header border-0 custom-modal-header">
+							<div class="page-title">
+								<h4>Edit Payment Inflow</h4>
+							</div>
 
-    <!-- Sweetalert 2 -->
-    <script src="assets/plugins/sweetalert/sweetalert2.all.min.js"></script>
-    <script src="assets/plugins/sweetalert/sweetalerts.min.js"></script>
+							<button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+						</div>
+						<div class="modal-body custom-modal-body">
+							<div class="row">
+								<div class="col-lg-12">
+									<div class="mb-3 row align-items-center">
+										<div class="col-md-4">
+											<label class="form-label">No Reff</label>
+										</div>
+										<div class="col-md-8">
 
-    <!-- Separator -->
-	<script src="assets/js/easy-number-separator.js"></script>
+											<input disabled type="text" class="form-control" placeholder="Enter name"
+												value="INC-00002">
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-12">
+									<div class="mb-3 row align-items-center">
+										<div class="col-md-4">
+											<label class="form-label">Name</label>
+										</div>
+										<div class="col-md-8">
 
-    <!-- Custom JS -->
-    <script src="assets/js/theme-script.js"></script>
-    <script src="assets/js/script.js"></script>
-    <script>
-      document.querySelectorAll(".payment-wrapper").forEach((wrapper) => {
-        const radios = wrapper.querySelectorAll(".payment-radio");
-        const bankInfo = wrapper.querySelector(".bank-info");
+											<input disabled type="text" class="form-control" placeholder="Enter name"
+												value="Budi Santoso">
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-12">
+									<div class="mb-3 row align-items-center">
+										<div class="col-md-4">
+											<label class="form-label">Payment Date</label>
+										</div>
+										<div class="col-md-8">
+											<div class="input-blocks date-group mt-0">
+												<i data-feather="calendar" class="info-img"></i>
+												<div class="input-groupicon">
+													<input type="text" class="datetimepicker" placeholder="Choose Date"
+														value="27/02/2026">
+												</div>
+											</div>
+										</div>
+									</div>
 
-        radios.forEach((radio) => {
-          radio.addEventListener("change", () => {
-            if (radio.value === "transfer") {
-              bankInfo.classList.remove("d-none");
-            } else {
-              bankInfo.classList.add("d-none");
-            }
-          });
+									<div class="payment-wrapper">
+										<div class="mb-3 row">
+											<div class="col-md-4">
+												<label class="form-label fw-bold">Payment Method</label>
+											</div>
+
+											<div class="col-md-8">
+												<div class="d-flex mb-3">
+													<div class="form-check">
+														<input class="form-check-input payment-radio" type="radio"
+															name="radioPayment2"
+															onclick="bankInfoEdit.classList.add('d-none')" value="cash"
+															checked>
+														<label class="form-check-label">Cash</label>
+													</div>
+
+													<div class="form-check ms-3">
+														<input class="form-check-input payment-radio" type="radio"
+															name="radioPayment2"
+															onclick="bankInfoEdit.classList.remove('d-none')"
+															value="transfer">
+														<label class="form-check-label">Transfer</label>
+													</div>
+												</div>
+
+												<div class="bank-info d-none" id="bankInfoEdit">
+													<div class="mb-3">
+														<label class="form-label fw-bold">From Bank Account</label>
+														<select class="form-select select">
+															<option>Cipta Kreasi PT / BRI / 1320009982282</option>
+															<option>Dulank Semesta Cida PT / BCA / 1092993242</option>
+														</select>
+													</div>
+													<div>
+														<label class="form-label fw-bold">To Bank Account</label>
+														<div class="row mb-3 d-flex">
+															<div class="col-md-6">
+																<label class="form-label mt-2">Bank / Wallet</label>
+															</div>
+															<div class="col-md-6">
+																<input type="text" class="form-control" value="BCA">
+															</div>
+														</div>
+														<div class="row d-flex mb-3">
+															<div class="col-md-6">
+																<label class="form-label mt-2">Account Name</label>
+															</div>
+															<div class="col-md-6">
+																<input type="text" class="form-control" value="Manan">
+															</div>
+														</div>
+														<div class="row d-flex mb-3">
+															<div class="col-md-6">
+																<label class="form-label mt-2">Account Number</label>
+															</div>
+															<div class="col-md-6">
+																<input type="text" class="form-control"
+																	value="123-456-7890">
+															</div>
+														</div>
+														<div class="row d-flex mb-3">
+															<div class="col-md-6">
+																<label class="form-label mt-2">Reference</label>
+															</div>
+															<div class="col-md-6">
+																<input type="text" class="form-control" value="EXP-101">
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+
+
+									</div>
+
+									<div class="col-lg-12">
+										<div class="text-primary text-end">Max Payment <span
+												class="max-payment">5.250.000</span></div>
+										<div class="mb-3 row align-items-center">
+											<div class="col-md-4">
+												<label class="form-label">Payment Amount</label>
+											</div>
+											<div class="col-md-8">
+												<input type="text"
+													class="form-control number-separator payment-amount-input"
+													inputmode="numeric" pattern="[0-9]*" value="1450000">
+												<input type="hidden" class="result-input amount" value="1450000">
+											</div>
+										</div>
+									</div>
+
+									
+
+									<!-- Editor -->
+									<div class="col-md-12">
+										<div class="row align-items-center">
+											<div class="col-md-4">
+												<label class="form-label">Description</label>
+											</div>
+											<div class="col-md-8">
+												<div class="card-body-list input-blocks mb-0">
+													<div class="flex-grow-1 term-content text-start">
+														<div class="product-desc p-2 border rounded"
+															contenteditable="true"
+															data-placeholder="Enter note here....."></div>
+													</div>
+												</div>
+											</div>
+
+										</div>
+									</div>
+									<!-- /Editor -->
+								</div>
+								<div class="modal-footer-btn">
+									<a href="javascript:void(0);" class="btn btn-cancel me-2"
+										data-bs-dismiss="modal">Cancel</a>
+									<a href="income.html" class="btn btn-submit">Submit</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- /Edit Payment Outflow -->
+
+  <!-- /modals -->
+  <!-- jQuery -->
+  <!-- jQuery -->
+  <script src="assets/js/jquery-3.7.1.min.js"></script>
+
+  <!-- Feather Icon JS -->
+  <script src="assets/js/feather.min.js"></script>
+
+  <!-- Slimscroll JS -->
+  <script src="assets/js/jquery.slimscroll.min.js"></script>
+
+  <!-- Datatable JS -->
+  <script src="assets/js/jquery.dataTables.min.js"></script>
+  <script src="assets/js/dataTables.bootstrap5.min.js"></script>
+
+  <!-- Bootstrap Core JS -->
+  <script src="assets/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Datetimepicker JS -->
+  <script src="assets/js/moment.min.js"></script>
+  <script src="assets/js/bootstrap-datetimepicker.min.js"></script>
+
+  <!-- Select2 JS -->
+  <script src="assets/plugins/select2/js/select2.min.js"></script>
+
+  <!-- Datetimepicker JS -->
+  <script src="assets/js/moment.min.js"></script>
+  <script src="assets/js/bootstrap-datetimepicker.min.js"></script>
+
+  <!-- Sweetalert 2 -->
+  <script src="assets/plugins/sweetalert/sweetalert2.all.min.js"></script>
+  <script src="assets/plugins/sweetalert/sweetalerts.min.js"></script>
+
+  <!-- Separator -->
+  <script src="assets/js/easy-number-separator.js"></script>
+
+  <!-- Custom JS -->
+  <script src="assets/js/theme-script.js"></script>
+  <script src="assets/js/script.js"></script>
+  <script>
+    document.querySelectorAll(".payment-wrapper").forEach((wrapper) => {
+      const radios = wrapper.querySelectorAll(".payment-radio");
+      const bankInfo = wrapper.querySelector(".bank-info");
+
+      radios.forEach((radio) => {
+        radio.addEventListener("change", () => {
+          if (radio.value === "transfer") {
+            bankInfo.classList.remove("d-none");
+          } else {
+            bankInfo.classList.add("d-none");
+          }
         });
       });
-    </script>
-    <script>
-      (function () {
-        var modal = document.getElementById("add-units");
-        if (!modal) {
+    });
+  </script>
+  <script>
+    (function () {
+      var modal = document.getElementById("add-units");
+      if (!modal) {
+        return;
+      }
+
+      var table = modal.querySelector("#transactionDetailTable tbody");
+      var maxPaymentEl = modal.querySelector("#maxPayment");
+      var paymentInput = modal.querySelector("#paymentAmountInput");
+
+      if (!table || !maxPaymentEl || !paymentInput) {
+        return;
+      }
+
+      function parseNumber(value) {
+        var normalized = String(value || "").replace(/[^\d]/g, "");
+        return normalized ? parseInt(normalized, 10) : 0;
+      }
+
+      function formatNumber(value) {
+        return Number(value || 0).toLocaleString("id-ID");
+      }
+
+      function getRowAmount(row) {
+        var amountCell = row.cells[2];
+        return amountCell ? parseNumber(amountCell.textContent) : 0;
+      }
+
+      function setStatus(row, status) {
+        var statusCell = row.cells[3];
+        if (!statusCell) {
           return;
         }
 
-        var table = modal.querySelector("#transactionDetailTable tbody");
-        var maxPaymentEl = modal.querySelector("#maxPayment");
-        var paymentInput = modal.querySelector("#paymentAmountInput");
-
-        if (!table || !maxPaymentEl || !paymentInput) {
-          return;
+        var badge = statusCell.querySelector(".badge");
+        if (!badge) {
+          badge = document.createElement("span");
+          badge.className = "badge";
+          statusCell.innerHTML = "";
+          statusCell.appendChild(badge);
         }
 
-        function parseNumber(value) {
-          var normalized = String(value || "").replace(/[^\d]/g, "");
-          return normalized ? parseInt(normalized, 10) : 0;
+        if (status === "Paid") {
+          badge.className = "badge bg-soft-success";
+        } else {
+          badge.className = "badge bg-soft-danger";
         }
 
-        function formatNumber(value) {
-          return Number(value || 0).toLocaleString("id-ID");
+        badge.textContent = status;
+      }
+
+      function getTotalAmount() {
+        var rows = table.querySelectorAll("tr");
+        var total = 0;
+        rows.forEach(function (row) {
+          total += getRowAmount(row);
+        });
+        return total;
+      }
+
+      function updateStatuses() {
+        var rows = Array.from(table.querySelectorAll("tr"));
+        var totalAmount = getTotalAmount();
+        var paymentAmount = parseNumber(paymentInput.value);
+
+        if (paymentAmount > totalAmount) {
+          paymentAmount = totalAmount;
+          paymentInput.value = formatNumber(totalAmount);
         }
 
-        function getRowAmount(row) {
-          var amountCell = row.cells[2];
-          return amountCell ? parseNumber(amountCell.textContent) : 0;
-        }
+        var remainingDiff = Math.max(0, totalAmount - paymentAmount);
 
-        function setStatus(row, status) {
-          var statusCell = row.cells[3];
-          if (!statusCell) {
-            return;
+        rows.forEach(function (row) {
+          setStatus(row, "Paid");
+        });
+
+        for (var i = rows.length - 1; i >= 0; i -= 1) {
+          var rowAmount = getRowAmount(rows[i]);
+          if (remainingDiff <= 0) {
+            break;
           }
 
-          var badge = statusCell.querySelector(".badge");
-          if (!badge) {
-            badge = document.createElement("span");
-            badge.className = "badge";
-            statusCell.innerHTML = "";
-            statusCell.appendChild(badge);
-          }
-
-          if (status === "Paid") {
-            badge.className = "badge bg-soft-success";
+          if (remainingDiff >= rowAmount) {
+            setStatus(rows[i], "Partial");
+            remainingDiff -= rowAmount;
           } else {
-            badge.className = "badge bg-soft-danger";
-          }
-
-          badge.textContent = status;
-        }
-
-        function getTotalAmount() {
-          var rows = table.querySelectorAll("tr");
-          var total = 0;
-          rows.forEach(function (row) {
-            total += getRowAmount(row);
-          });
-          return total;
-        }
-
-        function updateStatuses() {
-          var rows = Array.from(table.querySelectorAll("tr"));
-          var totalAmount = getTotalAmount();
-          var paymentAmount = parseNumber(paymentInput.value);
-
-          if (paymentAmount > totalAmount) {
-            paymentAmount = totalAmount;
-            paymentInput.value = formatNumber(totalAmount);
-          }
-
-          var remainingDiff = Math.max(0, totalAmount - paymentAmount);
-
-          rows.forEach(function (row) {
-            setStatus(row, "Paid");
-          });
-
-          for (var i = rows.length - 1; i >= 0; i -= 1) {
-            var rowAmount = getRowAmount(rows[i]);
-            if (remainingDiff <= 0) {
-              break;
-            }
-
-            if (remainingDiff >= rowAmount) {
-              setStatus(rows[i], "Partial");
-              remainingDiff -= rowAmount;
-            } else {
-              setStatus(rows[i], "Partial");
-              remainingDiff = 0;
-            }
+            setStatus(rows[i], "Partial");
+            remainingDiff = 0;
           }
         }
+      }
 
-        function initialize() {
-          var totalAmount = getTotalAmount();
-          maxPaymentEl.textContent = formatNumber(totalAmount);
-          updateStatuses();
-        }
+      function initialize() {
+        var totalAmount = getTotalAmount();
+        maxPaymentEl.textContent = formatNumber(totalAmount);
+        updateStatuses();
+      }
 
-        paymentInput.addEventListener("input", updateStatuses);
-        initialize();
-      })();
-    </script>
-  </body>
+      paymentInput.addEventListener("input", updateStatuses);
+      initialize();
+    })();
+  </script>
+</body>
+
 </html>

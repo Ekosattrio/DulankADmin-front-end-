@@ -35,31 +35,74 @@
     <link rel="stylesheet" href="assets/css/style.css" />
 
     <style>
+      /* --- HEADER & BASIC STYLING --- */
       .permission-table .group-header {
         background-color: #f8f9fa;
+        transition: background-color 0.2s ease;
       }
+      .permission-table .group-header:hover {
+        background-color: #e9ecef; /* Efek hover halus di baris induk */
+      }
+
+      /* --- TEXT & CHECKBOX STYLING --- */
+      .permission-table .checkboxs span.ms-2 {
+        color: #495057 !important; /* Warna abu-abu gelap elegan */
+        font-weight: 500;
+        transition: color 0.2s ease;
+      }
+      .permission-table .checkboxs:hover span.ms-2 {
+        color: #fd7e14 !important
+        ; /* Warna teks jadi biru pas di-hover */
+      }
+      .permission-table .checkboxs {
+        margin-bottom: 0;
+        cursor: pointer;
+      }
+      .permission-table input[type="checkbox"] {
+        border: 1px solid #adb5bd;
+        transition: all 0.2s ease;
+      }
+      .select-all-group {
+        border: 1px solid #adb5bd;
+      }
+
+      /* --- ICON & BUTTON --- */
       .permission-table .toggle-btn {
         cursor: pointer;
         width: 20px;
         display: inline-block;
       }
       .permission-table .transition-icon {
-        transition: transform 0.2s ease;
+        /* Animasi panah dibikin super smooth pakai cubic-bezier */
+        transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
       }
+
+      /* --- CHILD ROW SPACING --- */
       .permission-table .child-row td:first-child {
         padding-left: 45px !important;
+        color: #6c757d; /* Warna teks anak dibuat sedikit lebih redup dari induk */
       }
-      .permission-table .checkboxs {
-        margin-bottom: 0;
-      }
+
+      /* --- SEARCH BOX --- */
       .search-box {
         max-width: 300px;
       }
-      .permission-table input[type="checkbox"] {
-        border: 1px solid #6c757d;
+
+      /* --- 🌟 EFEK ANIMASI MULUS (FADE & DROP) 🌟 --- */
+      @keyframes fadeSlideIn {
+        0% {
+          opacity: 0;
+          transform: translateY(-8px); /* Posisi awal sedikit ke atas */
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0); /* Turun ke posisi normal */
+        }
       }
-      .select-all-group {
-        border: 1px solid #6c757d;
+
+      /* Animasi ini otomatis kepanggil tiap kali JS ngubah display jadi table-row */
+      .permission-table .child-row td {
+        animation: fadeSlideIn 0.3s ease-out forwards;
       }
     </style>
   </head>
@@ -119,205 +162,1702 @@
                       <th class="text-center" style="width: 15%">Admin</th>
                       <th class="text-center" style="width: 15%">Designer</th>
                     </tr>
+                    <tr>
+                      <th style="width: 40%"></th>
+                      <th class="text-center" style="width: 15%">
+                        <label class="checkboxs mb-0 d-inline-flex align-items-center">
+                          <input type="checkbox" class="select-all-global" data-col="0" />
+                          <span class="checkmarks"></span><span class="ms-2" style="font-size: 12px">Select All</span>
+                        </label>
+                      </th>
+                      <th class="text-center" style="width: 15%">
+                        <label class="checkboxs mb-0 d-inline-flex align-items-center">
+                          <input type="checkbox" class="select-all-global" data-col="1" />
+                          <span class="checkmarks"></span><span class="ms-2" style="font-size: 12px">Select All</span>
+                        </label>
+                      </th>
+                      <th class="text-center" style="width: 15%">
+                        <label class="checkboxs mb-0 d-inline-flex align-items-center">
+                          <input type="checkbox" class="select-all-global" data-col="2" />
+                          <span class="checkmarks"></span><span class="ms-2" style="font-size: 12px">Select All</span>
+                        </label>
+                      </th>
+                      <th class="text-center" style="width: 15%">
+                        <label class="checkboxs mb-0 d-inline-flex align-items-center">
+                          <input type="checkbox" class="select-all-global" data-col="3" />
+                          <span class="checkmarks"></span><span class="ms-2" style="font-size: 12px">Select All</span>
+                        </label>
+                      </th>
+                    </tr>
                   </thead>
                   <tbody id="permissions-table-body">
-                    <tr class="group-header" data-group="dashboard">
-                      <td colspan="5">
+                    <tr class="group-header bg-light" data-group="dashboard">
+                      <td>
                         <div class="d-flex align-items-center gap-3">
-                          <div class="col-2">
-                            <div class="d-flex align-items-center gap-3">
-                              <span class="toggle-btn" data-target="dashboard">
-                                <i class="fas fa-chevron-right transition-icon"></i>
-                              </span>
-                              <strong>Dashboard</strong>
-                            </div>
-                          </div>
-
-                          <div class="col-2">
-                            <label class="checkboxs mb-0">
-                              <input type="checkbox" class="select-all-group" data-group="dashboard" />
-                              <span class="checkmarks"></span>
-                              <span class="ms-2">Select All</span>
-                            </label>
-                          </div>
+                          <span class="toggle-btn" data-target="dashboard" style="cursor: pointer">
+                            <i class="fas fa-chevron-right transition-icon"></i>
+                          </span>
+                          <strong class="toggle-btn" data-target="dashboard" style="cursor: pointer">Dashboard</strong>
                         </div>
                       </td>
+                      <td class="text-center"></td>
+                      <td class="text-center"></td>
+                      <td class="text-center"></td>
+                      <td class="text-center"></td>
                     </tr>
-                    <tr class="child-row" data-parent="dashboard">
-                      <td>Dashboard Admin</td>
+                    <tr class="child-row" data-parent="dashboard" style="display: none">
+                      <td>Super Admin</td>
                       <td class="text-center">
-                        <input type="checkbox" class="form-check-input child-cb" data-group="dashboard" />
+                        <input type="checkbox" class="form-check-input child-cb" data-group="dashboard" data-col="0" />
                       </td>
                       <td class="text-center">
-                        <input type="checkbox" class="form-check-input child-cb" data-group="dashboard" />
+                        <input type="checkbox" class="form-check-input child-cb" data-group="dashboard" data-col="1" />
                       </td>
                       <td class="text-center">
-                        <input type="checkbox" class="form-check-input child-cb" data-group="dashboard" />
+                        <input type="checkbox" class="form-check-input child-cb" data-group="dashboard" data-col="2" />
                       </td>
                       <td class="text-center">
-                        <input type="checkbox" class="form-check-input child-cb" data-group="dashboard" />
+                        <input type="checkbox" class="form-check-input child-cb" data-group="dashboard" data-col="3" />
                       </td>
                     </tr>
-                    <tr class="child-row" data-parent="dashboard">
+                    <tr class="child-row" data-parent="dashboard" style="display: none">
                       <td>Sales Dashboard</td>
                       <td class="text-center">
-                        <input type="checkbox" class="form-check-input child-cb" data-group="dashboard" />
+                        <input type="checkbox" class="form-check-input child-cb" data-group="dashboard" data-col="0" />
                       </td>
                       <td class="text-center">
-                        <input type="checkbox" class="form-check-input child-cb" data-group="dashboard" />
+                        <input type="checkbox" class="form-check-input child-cb" data-group="dashboard" data-col="1" />
                       </td>
                       <td class="text-center">
-                        <input type="checkbox" class="form-check-input child-cb" data-group="dashboard" />
+                        <input type="checkbox" class="form-check-input child-cb" data-group="dashboard" data-col="2" />
                       </td>
                       <td class="text-center">
-                        <input type="checkbox" class="form-check-input child-cb" data-group="dashboard" />
+                        <input type="checkbox" class="form-check-input child-cb" data-group="dashboard" data-col="3" />
+                      </td>
+                    </tr>
+                    <tr class="child-row" data-parent="dashboard" style="display: none">
+                      <td>Kalkulator Dashboard</td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="dashboard" data-col="0" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="dashboard" data-col="1" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="dashboard" data-col="2" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="dashboard" data-col="3" />
+                      </td>
+                    </tr>
+                    <tr class="child-row" data-parent="dashboard" style="display: none">
+                      <td>Analytics Dashboard</td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="dashboard" data-col="0" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="dashboard" data-col="1" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="dashboard" data-col="2" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="dashboard" data-col="3" />
                       </td>
                     </tr>
 
-                    <tr class="group-header" data-group="orders">
-                      <td colspan="5">
-                        <div class="row">
-                          <div class="d-flex align-items-center gap-3">
-                            <div class="col-2">
-                              <div class="d-flex align-items-center gap-3">
-                                <span class="toggle-btn" data-target="orders">
-                                  <i class="fas fa-chevron-right transition-icon"></i>
-                                </span>
-                                <strong>Orders</strong>
-                              </div>
-                            </div>
-
-                            <div class="col-2">
-                              <label class="checkboxs mb-0">
-                                <input type="checkbox" class="select-all-group" data-group="orders" />
-                                <span class="checkmarks"></span>
-                                <span class="ms-2">Select All</span>
-                              </label>
-                            </div>
-                          </div>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr class="child-row" data-parent="orders" style="display: none">
-                      <td>Order List</td>
-                      <td class="text-center"><input type="checkbox" class="form-check-input child-cb" data-group="orders" /></td>
-                      <td class="text-center"><input type="checkbox" class="form-check-input child-cb" data-group="orders" /></td>
-                      <td class="text-center"><input type="checkbox" class="form-check-input child-cb" data-group="orders" /></td>
-                      <td class="text-center"><input type="checkbox" class="form-check-input child-cb" data-group="orders" /></td>
-                    </tr>
-                    <tr class="child-row" data-parent="orders" style="display: none">
-                      <td>Order Details</td>
-                      <td class="text-center"><input type="checkbox" class="form-check-input child-cb" data-group="orders" /></td>
-                      <td class="text-center"><input type="checkbox" class="form-check-input child-cb" data-group="orders" /></td>
-                      <td class="text-center"><input type="checkbox" class="form-check-input child-cb" data-group="orders" /></td>
-                      <td class="text-center"><input type="checkbox" class="form-check-input child-cb" data-group="orders" /></td>
-                    </tr>
-
-                    <tr class="group-header" data-group="products">
-                      <td colspan="5">
-                        <div class="row">
-                          <div class="d-flex align-items-center gap-3">
-                            <div class="col-2">
-                              <div class="d-flex align-items-center gap-3">
-                                <span class="toggle-btn" data-target="products">
-                                  <i class="fas fa-chevron-right transition-icon"></i>
-                                </span>
-                                <strong>Products</strong>
-                              </div>
-                            </div>
-
-                            <div class="col-2">
-                              <label class="checkboxs mb-0">
-                                <input type="checkbox" class="select-all-group" data-group="products" />
-                                <span class="checkmarks"></span>
-                                <span class="ms-2">Select All</span>
-                              </label>
-                            </div>
-                          </div>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr class="child-row" data-parent="products" style="display: none">
-                      <td>Product List</td>
-                      <td class="text-center">
-                        <input type="checkbox" class="form-check-input child-cb" data-group="products" />
-                      </td>
-                      <td class="text-center">
-                        <input type="checkbox" class="form-check-input child-cb" data-group="products" />
-                      </td>
-                      <td class="text-center">
-                        <input type="checkbox" class="form-check-input child-cb" data-group="products" />
-                      </td>
-                      <td class="text-center">
-                        <input type="checkbox" class="form-check-input child-cb" data-group="products" />
-                      </td>
-                    </tr>
-                    <tr class="child-row" data-parent="products" style="display: none">
-                      <td>Add Product</td>
-                      <td class="text-center">
-                        <input type="checkbox" class="form-check-input child-cb" data-group="products" />
-                      </td>
-                      <td class="text-center">
-                        <input type="checkbox" class="form-check-input child-cb" data-group="products" />
-                      </td>
-                      <td class="text-center">
-                        <input type="checkbox" class="form-check-input child-cb" data-group="products" />
-                      </td>
-                      <td class="text-center">
-                        <input type="checkbox" class="form-check-input child-cb" data-group="products" />
-                      </td>
-                    </tr>
-                    <tr class="child-row" data-parent="products" style="display: none">
-                      <td>Categories</td>
-                      <td class="text-center">
-                        <input type="checkbox" class="form-check-input child-cb" data-group="products" />
-                      </td>
-                      <td class="text-center">
-                        <input type="checkbox" class="form-check-input child-cb" data-group="products" />
-                      </td>
-                      <td class="text-center">
-                        <input type="checkbox" class="form-check-input child-cb" data-group="products" />
-                      </td>
-                      <td class="text-center">
-                        <input type="checkbox" class="form-check-input child-cb" data-group="products" />
-                      </td>
-                    </tr>
-
-                    <tr class="group-header" data-group="users">
-                      <td colspan="5">
+                    <tr class="group-header bg-light" data-group="orders">
+                      <td>
                         <div class="d-flex align-items-center gap-3">
-                          <div class="col-2">
-                            <div class="d-flex align-items-center gap-3">
-                              <span class="toggle-btn" data-target="users">
-                                <i class="fas fa-chevron-right transition-icon"></i>
-                              </span>
-                              <strong>Users </strong>
-                            </div>
-                          </div>
-
-                          <div class="col-2">
-                            <label class="checkboxs mb-0">
-                              <input type="checkbox" class="select-all-group" data-group="users" />
-                              <span class="checkmarks"></span>
-                              <span class="ms-2">Select All</span>
-                            </label>
-                          </div>
+                          <span class="toggle-btn" data-target="orders" style="cursor: pointer"
+                            ><i class="fas fa-chevron-right transition-icon"></i
+                          ></span>
+                          <strong class="toggle-btn" data-target="orders" style="cursor: pointer">Orders</strong>
                         </div>
                       </td>
+                      <td class="text-center"></td>
+                      <td class="text-center"></td>
+                      <td class="text-center"></td>
+                      <td class="text-center"></td>
                     </tr>
-                    <tr class="child-row" data-parent="users" style="display: none">
-                      <td>User List</td>
-                      <td class="text-center"><input type="checkbox" class="form-check-input child-cb" data-group="users" /></td>
-                      <td class="text-center"><input type="checkbox" class="form-check-input child-cb" data-group="users" /></td>
-                      <td class="text-center"><input type="checkbox" class="form-check-input child-cb" data-group="users" /></td>
-                      <td class="text-center"><input type="checkbox" class="form-check-input child-cb" data-group="users" /></td>
+                    <tr class="child-row" data-parent="orders" style="display: none">
+                      <td>Workflow</td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="orders" data-col="0" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="orders" data-col="1" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="orders" data-col="2" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="orders" data-col="3" />
+                      </td>
                     </tr>
-                    <tr class="child-row" data-parent="users" style="display: none">
-                      <td>Roles</td>
-                      <td class="text-center"><input type="checkbox" class="form-check-input child-cb" data-group="users" /></td>
-                      <td class="text-center"><input type="checkbox" class="form-check-input child-cb" data-group="users" /></td>
-                      <td class="text-center"><input type="checkbox" class="form-check-input child-cb" data-group="users" /></td>
-                      <td class="text-center"><input type="checkbox" class="form-check-input child-cb" data-group="users" /></td>
+                    <tr class="child-row" data-parent="orders" style="display: none">
+                      <td>Flow Category</td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="orders" data-col="0" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="orders" data-col="1" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="orders" data-col="2" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="orders" data-col="3" />
+                      </td>
+                    </tr>
+                    <tr class="child-row" data-parent="orders" style="display: none">
+                      <td>Flow Name</td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="orders" data-col="0" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="orders" data-col="1" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="orders" data-col="2" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="orders" data-col="3" />
+                      </td>
+                    </tr>
+                    <tr class="child-row" data-parent="orders" style="display: none">
+                      <td>Flow Arrange</td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="orders" data-col="0" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="orders" data-col="1" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="orders" data-col="2" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="orders" data-col="3" />
+                      </td>
+                    </tr>
+                    <tr class="child-row" data-parent="orders" style="display: none">
+                      <td>Orders</td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="orders" data-col="0" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="orders" data-col="1" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="orders" data-col="2" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="orders" data-col="3" />
+                      </td>
+                    </tr>
+                    <tr class="child-row" data-parent="orders" style="display: none">
+                      <td>Job Orders</td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="orders" data-col="0" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="orders" data-col="1" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="orders" data-col="2" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="orders" data-col="3" />
+                      </td>
+                    </tr>
+                    <tr class="child-row" data-parent="orders" style="display: none">
+                      <td>Job Task</td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="orders" data-col="0" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="orders" data-col="1" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="orders" data-col="2" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="orders" data-col="3" />
+                      </td>
+                    </tr>
+                    <tr class="child-row" data-parent="orders" style="display: none">
+                      <td>My Incentive</td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="orders" data-col="0" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="orders" data-col="1" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="orders" data-col="2" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="orders" data-col="3" />
+                      </td>
+                    </tr>
+
+                    <tr class="group-header bg-light" data-group="webstore">
+                      <td>
+                        <div class="d-flex align-items-center gap-3">
+                          <span class="toggle-btn" data-target="webstore" style="cursor: pointer"
+                            ><i class="fas fa-chevron-right transition-icon"></i
+                          ></span>
+                          <strong class="toggle-btn" data-target="webstore" style="cursor: pointer">Webstore</strong>
+                        </div>
+                      </td>
+                      <td class="text-center"></td>
+                      <td class="text-center"></td>
+                      <td class="text-center"></td>
+                      <td class="text-center"></td>
+                    </tr>
+                    <tr class="child-row" data-parent="webstore" style="display: none">
+                      <td>Customers</td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="webstore" data-col="0" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="webstore" data-col="1" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="webstore" data-col="2" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="webstore" data-col="3" />
+                      </td>
+                    </tr>
+                    <tr class="child-row" data-parent="webstore" style="display: none">
+                      <td>Cart</td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="webstore" data-col="0" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="webstore" data-col="1" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="webstore" data-col="2" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="webstore" data-col="3" />
+                      </td>
+                    </tr>
+                    <tr class="child-row" data-parent="webstore" style="display: none">
+                      <td>Checkout</td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="webstore" data-col="0" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="webstore" data-col="1" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="webstore" data-col="2" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="webstore" data-col="3" />
+                      </td>
+                    </tr>
+                    <tr class="child-row" data-parent="webstore" style="display: none">
+                      <td>Wishlist</td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="webstore" data-col="0" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="webstore" data-col="1" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="webstore" data-col="2" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="webstore" data-col="3" />
+                      </td>
+                    </tr>
+                    <tr class="child-row" data-parent="webstore" style="display: none">
+                      <td>Reviews</td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="webstore" data-col="0" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="webstore" data-col="1" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="webstore" data-col="2" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="webstore" data-col="3" />
+                      </td>
+                    </tr>
+                    <tr class="child-row" data-parent="webstore" style="display: none">
+                      <td>Support Ticket</td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="webstore" data-col="0" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="webstore" data-col="1" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="webstore" data-col="2" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="webstore" data-col="3" />
+                      </td>
+                    </tr>
+                    <tr class="child-row" data-parent="webstore" style="display: none">
+                      <td>Contact Form</td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="webstore" data-col="0" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="webstore" data-col="1" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="webstore" data-col="2" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="webstore" data-col="3" />
+                      </td>
+                    </tr>
+                    <tr class="child-row" data-parent="webstore" style="display: none">
+                      <td>CALCULATOR APPS</td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="webstore" data-col="0" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="webstore" data-col="1" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="webstore" data-col="2" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="webstore" data-col="3" />
+                      </td>
+                    </tr>
+                    <tr class="child-row" data-parent="webstore" style="display: none">
+                      <td>All Printing Shop</td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="webstore" data-col="0" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="webstore" data-col="1" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="webstore" data-col="2" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="webstore" data-col="3" />
+                      </td>
+                    </tr>
+                    <tr class="child-row" data-parent="webstore" style="display: none">
+                      <td>All Machine</td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="webstore" data-col="0" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="webstore" data-col="1" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="webstore" data-col="2" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="webstore" data-col="3" />
+                      </td>
+                    </tr>
+                    <tr class="child-row" data-parent="webstore" style="display: none">
+                      <td>All Paper Shop</td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="webstore" data-col="0" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="webstore" data-col="1" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="webstore" data-col="2" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="webstore" data-col="3" />
+                      </td>
+                    </tr>
+                    <tr class="child-row" data-parent="webstore" style="display: none">
+                      <td>All Papers</td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="webstore" data-col="0" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="webstore" data-col="1" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="webstore" data-col="2" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="webstore" data-col="3" />
+                      </td>
+                    </tr>
+
+                    <tr class="group-header bg-light" data-group="inventory">
+                      <td>
+                        <div class="d-flex align-items-center gap-3">
+                          <span class="toggle-btn" data-target="inventory" style="cursor: pointer"
+                            ><i class="fas fa-chevron-right transition-icon"></i
+                          ></span>
+                          <strong class="toggle-btn" data-target="inventory" style="cursor: pointer">Inventory</strong>
+                        </div>
+                      </td>
+                      <td class="text-center"></td>
+                      <td class="text-center"></td>
+                      <td class="text-center"></td>
+                      <td class="text-center"></td>
+                    </tr>
+                    <tr class="child-row" data-parent="inventory" style="display: none">
+                      <td>Products</td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="inventory" data-col="0" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="inventory" data-col="1" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="inventory" data-col="2" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="inventory" data-col="3" />
+                      </td>
+                    </tr>
+                    <tr class="child-row" data-parent="inventory" style="display: none">
+                      <td>Create Product</td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="inventory" data-col="0" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="inventory" data-col="1" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="inventory" data-col="2" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="inventory" data-col="3" />
+                      </td>
+                    </tr>
+                    <tr class="child-row" data-parent="inventory" style="display: none">
+                      <td>Category</td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="inventory" data-col="0" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="inventory" data-col="1" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="inventory" data-col="2" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="inventory" data-col="3" />
+                      </td>
+                    </tr>
+                    <tr class="child-row" data-parent="inventory" style="display: none">
+                      <td>Sub Category</td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="inventory" data-col="0" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="inventory" data-col="1" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="inventory" data-col="2" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="inventory" data-col="3" />
+                      </td>
+                    </tr>
+                    <tr class="child-row" data-parent="inventory" style="display: none">
+                      <td>Unit</td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="inventory" data-col="0" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="inventory" data-col="1" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="inventory" data-col="2" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="inventory" data-col="3" />
+                      </td>
+                    </tr>
+                    <tr class="child-row" data-parent="inventory" style="display: none">
+                      <td>Variant</td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="inventory" data-col="0" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="inventory" data-col="1" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="inventory" data-col="2" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="inventory" data-col="3" />
+                      </td>
+                    </tr>
+                    <tr class="child-row" data-parent="inventory" style="display: none">
+                      <td>All Papers</td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="inventory" data-col="0" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="inventory" data-col="1" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="inventory" data-col="2" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="inventory" data-col="3" />
+                      </td>
+                    </tr>
+                    <tr class="child-row" data-parent="inventory" style="display: none">
+                      <td>All Machine</td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="inventory" data-col="0" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="inventory" data-col="1" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="inventory" data-col="2" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="inventory" data-col="3" />
+                      </td>
+                    </tr>
+                    <tr class="child-row" data-parent="inventory" style="display: none">
+                      <td>Components</td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="inventory" data-col="0" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="inventory" data-col="1" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="inventory" data-col="2" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="inventory" data-col="3" />
+                      </td>
+                    </tr>
+
+                    <tr class="group-header bg-light" data-group="sales">
+                      <td>
+                        <div class="d-flex align-items-center gap-3">
+                          <span class="toggle-btn" data-target="sales" style="cursor: pointer"
+                            ><i class="fas fa-chevron-right transition-icon"></i
+                          ></span>
+                          <strong class="toggle-btn" data-target="sales" style="cursor: pointer">Sales</strong>
+                        </div>
+                      </td>
+                      <td class="text-center"></td>
+                      <td class="text-center"></td>
+                      <td class="text-center"></td>
+                      <td class="text-center"></td>
+                    </tr>
+                    <tr class="child-row" data-parent="sales" style="display: none">
+                      <td>Sales</td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="sales" data-col="0" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="sales" data-col="1" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="sales" data-col="2" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="sales" data-col="3" />
+                      </td>
+                    </tr>
+                    <tr class="child-row" data-parent="sales" style="display: none">
+                      <td>Invoice</td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="sales" data-col="0" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="sales" data-col="1" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="sales" data-col="2" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="sales" data-col="3" />
+                      </td>
+                    </tr>
+                    <tr class="child-row" data-parent="sales" style="display: none">
+                      <td>Delivery Note</td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="sales" data-col="0" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="sales" data-col="1" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="sales" data-col="2" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="sales" data-col="3" />
+                      </td>
+                    </tr>
+                    <tr class="child-row" data-parent="sales" style="display: none">
+                      <td>Sales Return</td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="sales" data-col="0" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="sales" data-col="1" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="sales" data-col="2" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="sales" data-col="3" />
+                      </td>
+                    </tr>
+                    <tr class="child-row" data-parent="sales" style="display: none">
+                      <td>Quotation</td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="sales" data-col="0" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="sales" data-col="1" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="sales" data-col="2" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="sales" data-col="3" />
+                      </td>
+                    </tr>
+                    <tr class="child-row" data-parent="sales" style="display: none">
+                      <td>Request For Quotation</td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="sales" data-col="0" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="sales" data-col="1" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="sales" data-col="2" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="sales" data-col="3" />
+                      </td>
+                    </tr>
+                    <tr class="child-row" data-parent="sales" style="display: none">
+                      <td>POS</td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="sales" data-col="0" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="sales" data-col="1" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="sales" data-col="2" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="sales" data-col="3" />
+                      </td>
+                    </tr>
+
+                    <tr class="group-header bg-light" data-group="purchases">
+                      <td>
+                        <div class="d-flex align-items-center gap-3">
+                          <span class="toggle-btn" data-target="purchases" style="cursor: pointer"
+                            ><i class="fas fa-chevron-right transition-icon"></i
+                          ></span>
+                          <strong class="toggle-btn" data-target="purchases" style="cursor: pointer">Purchases</strong>
+                        </div>
+                      </td>
+                      <td class="text-center"></td>
+                      <td class="text-center"></td>
+                      <td class="text-center"></td>
+                      <td class="text-center"></td>
+                    </tr>
+                    <tr class="child-row" data-parent="purchases" style="display: none">
+                      <td>Purchase</td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="purchases" data-col="0" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="purchases" data-col="1" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="purchases" data-col="2" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="purchases" data-col="3" />
+                      </td>
+                    </tr>
+                    <tr class="child-row" data-parent="purchases" style="display: none">
+                      <td>Purchase Order</td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="purchases" data-col="0" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="purchases" data-col="1" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="purchases" data-col="2" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="purchases" data-col="3" />
+                      </td>
+                    </tr>
+                    <tr class="child-row" data-parent="purchases" style="display: none">
+                      <td>Purchase Return</td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="purchases" data-col="0" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="purchases" data-col="1" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="purchases" data-col="2" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="purchases" data-col="3" />
+                      </td>
+                    </tr>
+                    <tr class="child-row" data-parent="purchases" style="display: none">
+                      <td>Purchase Item</td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="purchases" data-col="0" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="purchases" data-col="1" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="purchases" data-col="2" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="purchases" data-col="3" />
+                      </td>
+                    </tr>
+                    <tr class="child-row" data-parent="purchases" style="display: none">
+                      <td>Purchase Category</td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="purchases" data-col="0" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="purchases" data-col="1" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="purchases" data-col="2" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="purchases" data-col="3" />
+                      </td>
+                    </tr>
+
+                    <tr class="group-header bg-light" data-group="payment">
+                      <td>
+                        <div class="d-flex align-items-center gap-3">
+                          <span class="toggle-btn" data-target="payment" style="cursor: pointer"
+                            ><i class="fas fa-chevron-right transition-icon"></i
+                          ></span>
+                          <strong class="toggle-btn" data-target="payment" style="cursor: pointer">Payment</strong>
+                        </div>
+                      </td>
+                      <td class="text-center"></td>
+                      <td class="text-center"></td>
+                      <td class="text-center"></td>
+                      <td class="text-center"></td>
+                    </tr>
+                    <tr class="child-row" data-parent="payment" style="display: none">
+                      <td>Payment-IN</td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="payment" data-col="0" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="payment" data-col="1" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="payment" data-col="2" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="payment" data-col="3" />
+                      </td>
+                    </tr>
+                    <tr class="child-row" data-parent="payment" style="display: none">
+                      <td>Payment-OUT</td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="payment" data-col="0" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="payment" data-col="1" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="payment" data-col="2" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="payment" data-col="3" />
+                      </td>
+                    </tr>
+
+                    <tr class="group-header bg-light" data-group="promo">
+                      <td>
+                        <div class="d-flex align-items-center gap-3">
+                          <span class="toggle-btn" data-target="promo" style="cursor: pointer"
+                            ><i class="fas fa-chevron-right transition-icon"></i
+                          ></span>
+                          <strong class="toggle-btn" data-target="promo" style="cursor: pointer">Promo</strong>
+                        </div>
+                      </td>
+                      <td class="text-center"></td>
+                      <td class="text-center"></td>
+                      <td class="text-center"></td>
+                      <td class="text-center"></td>
+                    </tr>
+                    <tr class="child-row" data-parent="promo" style="display: none">
+                      <td>Voucher</td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="promo" data-col="0" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="promo" data-col="1" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="promo" data-col="2" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="promo" data-col="3" />
+                      </td>
+                    </tr>
+                    <tr class="child-row" data-parent="promo" style="display: none">
+                      <td>Discount</td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="promo" data-col="0" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="promo" data-col="1" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="promo" data-col="2" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="promo" data-col="3" />
+                      </td>
+                    </tr>
+
+                    <tr class="group-header bg-light" data-group="finance-account">
+                      <td>
+                        <div class="d-flex align-items-center gap-3">
+                          <span class="toggle-btn" data-target="finance-account" style="cursor: pointer"
+                            ><i class="fas fa-chevron-right transition-icon"></i
+                          ></span>
+                          <strong class="toggle-btn" data-target="finance-account" style="cursor: pointer"
+                            >Finance & Account</strong
+                          >
+                        </div>
+                      </td>
+                      <td class="text-center"></td>
+                      <td class="text-center"></td>
+                      <td class="text-center"></td>
+                      <td class="text-center"></td>
+                    </tr>
+                    <tr class="child-row" data-parent="finance-account" style="display: none">
+                      <td>Expense</td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="finance-account" data-col="0" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="finance-account" data-col="1" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="finance-account" data-col="2" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="finance-account" data-col="3" />
+                      </td>
+                    </tr>
+                    <tr class="child-row" data-parent="finance-account" style="display: none">
+                      <td>Income</td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="finance-account" data-col="0" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="finance-account" data-col="1" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="finance-account" data-col="2" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="finance-account" data-col="3" />
+                      </td>
+                    </tr>
+                    <tr class="child-row" data-parent="finance-account" style="display: none">
+                      <td>Bank Account</td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="finance-account" data-col="0" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="finance-account" data-col="1" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="finance-account" data-col="2" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="finance-account" data-col="3" />
+                      </td>
+                    </tr>
+                    <tr class="child-row" data-parent="finance-account" style="display: none">
+                      <td>Money Transfer</td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="finance-account" data-col="0" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="finance-account" data-col="1" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="finance-account" data-col="2" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="finance-account" data-col="3" />
+                      </td>
+                    </tr>
+                    <tr class="child-row" data-parent="finance-account" style="display: none">
+                      <td>Balance Sheet</td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="finance-account" data-col="0" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="finance-account" data-col="1" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="finance-account" data-col="2" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="finance-account" data-col="3" />
+                      </td>
+                    </tr>
+                    <tr class="child-row" data-parent="finance-account" style="display: none">
+                      <td>Cash Flow</td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="finance-account" data-col="0" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="finance-account" data-col="1" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="finance-account" data-col="2" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="finance-account" data-col="3" />
+                      </td>
+                    </tr>
+                    <tr class="child-row" data-parent="finance-account" style="display: none">
+                      <td>Account Statement</td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="finance-account" data-col="0" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="finance-account" data-col="1" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="finance-account" data-col="2" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="finance-account" data-col="3" />
+                      </td>
+                    </tr>
+                    <tr class="child-row" data-parent="finance-account" style="display: none">
+                      <td>Cash Advance</td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="finance-account" data-col="0" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="finance-account" data-col="1" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="finance-account" data-col="2" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="finance-account" data-col="3" />
+                      </td>
+                    </tr>
+                    <tr class="child-row" data-parent="finance-account" style="display: none">
+                      <td>Incentive</td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="finance-account" data-col="0" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="finance-account" data-col="1" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="finance-account" data-col="2" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="finance-account" data-col="3" />
+                      </td>
+                    </tr>
+                    <tr class="child-row" data-parent="finance-account" style="display: none">
+                      <td>Tax</td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="finance-account" data-col="0" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="finance-account" data-col="1" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="finance-account" data-col="2" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="finance-account" data-col="3" />
+                      </td>
+                    </tr>
+
+                    <tr class="group-header bg-light" data-group="peoples">
+                      <td>
+                        <div class="d-flex align-items-center gap-3">
+                          <span class="toggle-btn" data-target="peoples" style="cursor: pointer"
+                            ><i class="fas fa-chevron-right transition-icon"></i
+                          ></span>
+                          <strong class="toggle-btn" data-target="peoples" style="cursor: pointer">Peoples</strong>
+                        </div>
+                      </td>
+                      <td class="text-center"></td>
+                      <td class="text-center"></td>
+                      <td class="text-center"></td>
+                      <td class="text-center"></td>
+                    </tr>
+                    <tr class="child-row" data-parent="peoples" style="display: none">
+                      <td>Customers</td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="peoples" data-col="0" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="peoples" data-col="1" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="peoples" data-col="2" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="peoples" data-col="3" />
+                      </td>
+                    </tr>
+                    <tr class="child-row" data-parent="peoples" style="display: none">
+                      <td>Customer Types</td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="peoples" data-col="0" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="peoples" data-col="1" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="peoples" data-col="2" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="peoples" data-col="3" />
+                      </td>
+                    </tr>
+                    <tr class="child-row" data-parent="peoples" style="display: none">
+                      <td>Address</td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="peoples" data-col="0" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="peoples" data-col="1" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="peoples" data-col="2" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="peoples" data-col="3" />
+                      </td>
+                    </tr>
+                    <tr class="child-row" data-parent="peoples" style="display: none">
+                      <td>Supplier</td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="peoples" data-col="0" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="peoples" data-col="1" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="peoples" data-col="2" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="peoples" data-col="3" />
+                      </td>
+                    </tr>
+                    <tr class="child-row" data-parent="peoples" style="display: none">
+                      <td>Branch Store</td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="peoples" data-col="0" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="peoples" data-col="1" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="peoples" data-col="2" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="peoples" data-col="3" />
+                      </td>
+                    </tr>
+
+                    <tr class="group-header bg-light" data-group="hrm">
+                      <td>
+                        <div class="d-flex align-items-center gap-3">
+                          <span class="toggle-btn" data-target="hrm" style="cursor: pointer"
+                            ><i class="fas fa-chevron-right transition-icon"></i
+                          ></span>
+                          <strong class="toggle-btn" data-target="hrm" style="cursor: pointer">HRM</strong>
+                        </div>
+                      </td>
+                      <td class="text-center"></td>
+                      <td class="text-center"></td>
+                      <td class="text-center"></td>
+                      <td class="text-center"></td>
+                    </tr>
+                    <tr class="child-row" data-parent="hrm" style="display: none">
+                      <td>Employees</td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="hrm" data-col="0" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="hrm" data-col="1" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="hrm" data-col="2" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="hrm" data-col="3" />
+                      </td>
+                    </tr>
+                    <tr class="child-row" data-parent="hrm" style="display: none">
+                      <td>Department</td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="hrm" data-col="0" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="hrm" data-col="1" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="hrm" data-col="2" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="hrm" data-col="3" />
+                      </td>
+                    </tr>
+                    <tr class="child-row" data-parent="hrm" style="display: none">
+                      <td>Payroll</td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="hrm" data-col="0" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="hrm" data-col="1" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="hrm" data-col="2" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="hrm" data-col="3" />
+                      </td>
+                    </tr>
+
+                    <tr class="group-header bg-light" data-group="report">
+                      <td>
+                        <div class="d-flex align-items-center gap-3">
+                          <span class="toggle-btn" data-target="report" style="cursor: pointer"
+                            ><i class="fas fa-chevron-right transition-icon"></i
+                          ></span>
+                          <strong class="toggle-btn" data-target="report" style="cursor: pointer">Report</strong>
+                        </div>
+                      </td>
+                      <td class="text-center"></td>
+                      <td class="text-center"></td>
+                      <td class="text-center"></td>
+                      <td class="text-center"></td>
+                    </tr>
+                    <tr class="child-row" data-parent="report" style="display: none">
+                      <td>Sales Report</td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="report" data-col="0" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="report" data-col="1" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="report" data-col="2" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="report" data-col="3" />
+                      </td>
+                    </tr>
+                    <tr class="child-row" data-parent="report" style="display: none">
+                      <td>Purchase Report</td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="report" data-col="0" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="report" data-col="1" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="report" data-col="2" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="report" data-col="3" />
+                      </td>
+                    </tr>
+                    <tr class="child-row" data-parent="report" style="display: none">
+                      <td>Invoice Report</td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="report" data-col="0" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="report" data-col="1" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="report" data-col="2" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="report" data-col="3" />
+                      </td>
+                    </tr>
+                    <tr class="child-row" data-parent="report" style="display: none">
+                      <td>Supplier Report</td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="report" data-col="0" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="report" data-col="1" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="report" data-col="2" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="report" data-col="3" />
+                      </td>
+                    </tr>
+                    <tr class="child-row" data-parent="report" style="display: none">
+                      <td>Customers Report</td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="report" data-col="0" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="report" data-col="1" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="report" data-col="2" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="report" data-col="3" />
+                      </td>
+                    </tr>
+                    <tr class="child-row" data-parent="report" style="display: none">
+                      <td>Product Report</td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="report" data-col="0" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="report" data-col="1" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="report" data-col="2" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="report" data-col="3" />
+                      </td>
+                    </tr>
+                    <tr class="child-row" data-parent="report" style="display: none">
+                      <td>Expense Report</td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="report" data-col="0" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="report" data-col="1" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="report" data-col="2" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="report" data-col="3" />
+                      </td>
+                    </tr>
+                    <tr class="child-row" data-parent="report" style="display: none">
+                      <td>Income Report</td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="report" data-col="0" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="report" data-col="1" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="report" data-col="2" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="report" data-col="3" />
+                      </td>
+                    </tr>
+                    <tr class="child-row" data-parent="report" style="display: none">
+                      <td>Tax Report</td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="report" data-col="0" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="report" data-col="1" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="report" data-col="2" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="report" data-col="3" />
+                      </td>
+                    </tr>
+                    <tr class="child-row" data-parent="report" style="display: none">
+                      <td>Profit & Loss</td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="report" data-col="0" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="report" data-col="1" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="report" data-col="2" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="report" data-col="3" />
+                      </td>
+                    </tr>
+                    <tr class="child-row" data-parent="report" style="display: none">
+                      <td>Annual Report</td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="report" data-col="0" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="report" data-col="1" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="report" data-col="2" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="report" data-col="3" />
+                      </td>
+                    </tr>
+
+                    <tr class="group-header bg-light" data-group="content">
+                      <td>
+                        <div class="d-flex align-items-center gap-3">
+                          <span class="toggle-btn" data-target="content" style="cursor: pointer"
+                            ><i class="fas fa-chevron-right transition-icon"></i
+                          ></span>
+                          <strong class="toggle-btn" data-target="content" style="cursor: pointer">Content</strong>
+                        </div>
+                      </td>
+                      <td class="text-center"></td>
+                      <td class="text-center"></td>
+                      <td class="text-center"></td>
+                      <td class="text-center"></td>
+                    </tr>
+                    <tr class="child-row" data-parent="content" style="display: none">
+                      <td>All Blog</td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="content" data-col="0" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="content" data-col="1" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="content" data-col="2" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="content" data-col="3" />
+                      </td>
+                    </tr>
+                    <tr class="child-row" data-parent="content" style="display: none">
+                      <td>Blog Tag</td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="content" data-col="0" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="content" data-col="1" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="content" data-col="2" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="content" data-col="3" />
+                      </td>
+                    </tr>
+                    <tr class="child-row" data-parent="content" style="display: none">
+                      <td>Blog Category</td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="content" data-col="0" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="content" data-col="1" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="content" data-col="2" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="content" data-col="3" />
+                      </td>
+                    </tr>
+                    <tr class="child-row" data-parent="content" style="display: none">
+                      <td>Blog Comment</td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="content" data-col="0" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="content" data-col="1" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="content" data-col="2" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="content" data-col="3" />
+                      </td>
+                    </tr>
+                    <tr class="child-row" data-parent="content" style="display: none">
+                      <td>FAQ</td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="content" data-col="0" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="content" data-col="1" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="content" data-col="2" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="content" data-col="3" />
+                      </td>
+                    </tr>
+                    <tr class="child-row" data-parent="content" style="display: none">
+                      <td>Our Client</td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="content" data-col="0" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="content" data-col="1" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="content" data-col="2" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="content" data-col="3" />
+                      </td>
+                    </tr>
+                    <tr class="child-row" data-parent="content" style="display: none">
+                      <td>Download Files</td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="content" data-col="0" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="content" data-col="1" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="content" data-col="2" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="content" data-col="3" />
+                      </td>
+                    </tr>
+                    <tr class="child-row" data-parent="content" style="display: none">
+                      <td>Footer</td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="content" data-col="0" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="content" data-col="1" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="content" data-col="2" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="content" data-col="3" />
+                      </td>
+                    </tr>
+                    <tr class="child-row" data-parent="content" style="display: none">
+                      <td>Banner</td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="content" data-col="0" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="content" data-col="1" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="content" data-col="2" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="content" data-col="3" />
+                      </td>
+                    </tr>
+
+                    <tr class="group-header bg-light" data-group="user-management">
+                      <td>
+                        <div class="d-flex align-items-center gap-3">
+                          <span class="toggle-btn" data-target="user-management" style="cursor: pointer"
+                            ><i class="fas fa-chevron-right transition-icon"></i
+                          ></span>
+                          <strong class="toggle-btn" data-target="user-management" style="cursor: pointer"
+                            >User Management</strong
+                          >
+                        </div>
+                      </td>
+                      <td class="text-center"></td>
+                      <td class="text-center"></td>
+                      <td class="text-center"></td>
+                      <td class="text-center"></td>
+                    </tr>
+                    <tr class="child-row" data-parent="user-management" style="display: none">
+                      <td>User</td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="user-management" data-col="0" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="user-management" data-col="1" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="user-management" data-col="2" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="user-management" data-col="3" />
+                      </td>
+                    </tr>
+                    <tr class="child-row" data-parent="user-management" style="display: none">
+                      <td>Role</td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="user-management" data-col="0" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="user-management" data-col="1" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="user-management" data-col="2" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="user-management" data-col="3" />
+                      </td>
+                    </tr>
+                    <tr class="child-row" data-parent="user-management" style="display: none">
+                      <td>Permissions</td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="user-management" data-col="0" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="user-management" data-col="1" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="user-management" data-col="2" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="user-management" data-col="3" />
+                      </td>
+                    </tr>
+                    <tr class="child-row" data-parent="user-management" style="display: none">
+                      <td>Delete Account Request</td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="user-management" data-col="0" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="user-management" data-col="1" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="user-management" data-col="2" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="user-management" data-col="3" />
+                      </td>
+                    </tr>
+
+                    <tr class="group-header bg-light" data-group="setting">
+                      <td>
+                        <div class="d-flex align-items-center gap-3">
+                          <span class="toggle-btn" data-target="setting" style="cursor: pointer"
+                            ><i class="fas fa-chevron-right transition-icon"></i
+                          ></span>
+                          <strong class="toggle-btn" data-target="setting" style="cursor: pointer">Setting</strong>
+                        </div>
+                      </td>
+                      <td class="text-center"></td>
+                      <td class="text-center"></td>
+                      <td class="text-center"></td>
+                      <td class="text-center"></td>
+                    </tr>
+                    <tr class="child-row" data-parent="setting" style="display: none">
+                      <td>Webstore Setting</td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="setting" data-col="0" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="setting" data-col="1" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="setting" data-col="2" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="setting" data-col="3" />
+                      </td>
+                    </tr>
+                    <tr class="child-row" data-parent="setting" style="display: none">
+                      <td>Locations</td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="setting" data-col="0" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="setting" data-col="1" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="setting" data-col="2" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="setting" data-col="3" />
+                      </td>
+                    </tr>
+                    <tr class="child-row" data-parent="setting" style="display: none">
+                      <td>App Setting</td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="setting" data-col="0" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="setting" data-col="1" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="setting" data-col="2" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="setting" data-col="3" />
+                      </td>
+                    </tr>
+                    <tr class="child-row" data-parent="setting" style="display: none">
+                      <td>System Setting</td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="setting" data-col="0" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="setting" data-col="1" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="setting" data-col="2" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="setting" data-col="3" />
+                      </td>
+                    </tr>
+                    <tr class="child-row" data-parent="setting" style="display: none">
+                      <td>Prefixes</td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="setting" data-col="0" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="setting" data-col="1" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="setting" data-col="2" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="setting" data-col="3" />
+                      </td>
                     </tr>
                   </tbody>
                 </table>
@@ -360,177 +1900,176 @@
     <!-- Custom JS -->
     <script src="assets/js/theme-script.js"></script>
     <script src="assets/js/script.js"></script>
+  </body>
+  <script>
+    $(document).ready(function () {
+      // Initialize Feather Icons
+      if (typeof feather !== "undefined") {
+        feather.replace();
+      }
 
-    <script>
-      $(document).ready(function () {
-        // Initialize Feather Icons
-        if (typeof feather !== "undefined") {
-          feather.replace();
+      const $table = $("#permissionTable");
+      const $tableBody = $("#permissions-table-body");
+
+      // Toggle Accordion (Expand/Collapse)
+      $tableBody.on("click", ".toggle-btn", function (e) {
+        e.stopPropagation();
+        const group = $(this).closest("tr").data("group") || $(this).data("target");
+        const $icon = $(this).closest("tr").find(".transition-icon");
+        const $childRows = $tableBody.find(`.child-row[data-parent="${group}"]`);
+        const isOpen = $icon.hasClass("fa-chevron-down");
+
+        // Tutup semua dulu (Sistem Accordion)
+        if (!isOpen) {
+          $(".child-row").css("display", "none");
+          $(".transition-icon").removeClass("fa-chevron-down").addClass("fa-chevron-right");
         }
 
-        const $tableBody = $("#permissions-table-body");
-
-        // Toggle Accordion (Expand/Collapse)
-        $tableBody.on("click", ".toggle-btn", function (e) {
-          e.stopPropagation();
-          const group = $(this).data("target");
-          const $icon = $(this).find(".transition-icon");
-          const $childRows = $tableBody.find(`.child-row[data-parent="${group}"]`);
-          const isOpen = $icon.hasClass("fa-chevron-down");
-
-          if (isOpen) {
-            $childRows.slideUp(200);
-            $icon.removeClass("fa-chevron-down").addClass("fa-chevron-right");
-          } else {
-            $childRows.slideDown(200);
-            $icon.removeClass("fa-chevron-right").addClass("fa-chevron-down");
-          }
-        });
-
-        // Select All in Group
-        $tableBody.on("change", ".select-all-group", function () {
-          const group = $(this).data("group");
-          const isChecked = $(this).is(":checked");
-          $tableBody.find(`.child-cb[data-group="${group}"]`).prop("checked", isChecked);
-        });
-
-        // Update "Select All" when individual checkbox changes
-        $tableBody.on("change", ".child-cb", function () {
-          const group = $(this).data("group");
-          const $allCheckboxes = $tableBody.find(`.child-cb[data-group="${group}"]`);
-          const $checkedBoxes = $allCheckboxes.filter(":checked");
-          const $selectAll = $tableBody.find(`.select-all-group[data-group="${group}"]`);
-
-          if ($checkedBoxes.length === $allCheckboxes.length) {
-            $selectAll.prop("checked", true).prop("indeterminate", false);
-          } else if ($checkedBoxes.length > 0) {
-            $selectAll.prop("checked", false).prop("indeterminate", true);
-          } else {
-            $selectAll.prop("checked", false).prop("indeterminate", false);
-          }
-        });
-
-        // Search Functionality
-        $("#permissionSearch").on("keyup", function () {
-          const searchTerm = $(this).val().toLowerCase().trim();
-
-          if (searchTerm === "") {
-            // Reset: show all groups, restore original collapse state
-            $(".group-header").show();
-            $(".child-row").each(function () {
-              const group = $(this).data("parent");
-              const $icon = $(`.toggle-btn[data-target="${group}"]`).find(".transition-icon");
-              if ($icon.hasClass("fa-chevron-down")) {
-                $(this).show();
-              } else {
-                $(this).hide();
-              }
-            });
-            return;
-          }
-
-          // Search logic
-          $(".group-header").each(function () {
-            const group = $(this).data("group");
-            const $childRows = $(`.child-row[data-parent="${group}"]`);
-            let hasMatch = false;
-
-            // Check group header text
-            const groupText = $(this).find("strong").text().toLowerCase();
-            if (groupText.includes(searchTerm)) {
-              hasMatch = true;
-              $childRows.show();
-            } else {
-              // Check each child row
-              $childRows.each(function () {
-                const childText = $(this).find("td:first").text().toLowerCase();
-                if (childText.includes(searchTerm)) {
-                  hasMatch = true;
-                  $(this).show();
-                } else {
-                  $(this).hide();
-                }
-              });
-            }
-
-            // Show/hide group header based on match
-            if (hasMatch) {
-              $(this).show();
-              // Expand the group icon
-              const $icon = $(`.toggle-btn[data-target="${group}"]`).find(".transition-icon");
-              $icon.removeClass("fa-chevron-right").addClass("fa-chevron-down");
-            } else {
-              $(this).hide();
-            }
-          });
-        });
-
-        // Save Permissions
-        $("#savePermissions").on("click", function () {
-          const permissions = {};
-
-          $(".child-row").each(function () {
-            const group = $(this).data("parent");
-            const pageName = $(this).find("td:first").text().trim();
-            const checkboxes = $(this).find(".child-cb");
-
-            if (!permissions[group]) {
-              permissions[group] = [];
-            }
-
-            permissions[group].push({
-              page: pageName,
-              view: checkboxes.eq(0).is(":checked"),
-              create: checkboxes.eq(1).is(":checked"),
-              edit: checkboxes.eq(2).is(":checked"),
-              delete: checkboxes.eq(3).is(":checked"),
-            });
-          });
-
-          console.log("Permissions to save:", permissions);
-
-          // Show success message
-          if (typeof Swal !== "undefined") {
-            Swal.fire({
-              icon: "success",
-              title: "Saved!",
-              text: "Permissions have been saved successfully.",
-              confirmButtonColor: "#3085d6",
-            });
-          } else {
-            alert("Permissions saved successfully!");
-          }
-        });
-
-        // Reset Permissions
-        $("#resetPermissions").on("click", function () {
-          if (typeof Swal !== "undefined") {
-            Swal.fire({
-              title: "Are you sure?",
-              text: "This will reset all permissions!",
-              icon: "warning",
-              showCancelButton: true,
-              confirmButtonColor: "#3085d6",
-              cancelButtonColor: "#d33",
-              confirmButtonText: "Yes, reset it!",
-            }).then((result) => {
-              if (result.isConfirmed) {
-                resetAllPermissions();
-                Swal.fire("Reset!", "All permissions have been reset.", "success");
-              }
-            });
-          } else {
-            if (confirm("Are you sure you want to reset all permissions?")) {
-              resetAllPermissions();
-            }
-          }
-        });
-
-        function resetAllPermissions() {
-          $(".child-cb").prop("checked", false);
-          $(".select-all-group").prop("checked", false).prop("indeterminate", false);
+        if (isOpen) {
+          $childRows.css("display", "none");
+          $icon.removeClass("fa-chevron-down").addClass("fa-chevron-right");
+        } else {
+          $childRows.css("display", "table-row");
+          $icon.removeClass("fa-chevron-right").addClass("fa-chevron-down");
         }
       });
-    </script>
-  </body>
+
+      // 1. GLOBAL SELECT ALL (Yang di bawah THEAD, centang dari atas sampai bawah)
+      $table.on("change", ".select-all-global", function () {
+        const col = $(this).data("col");
+        const isChecked = $(this).is(":checked");
+
+        // Centang SEMUA baris anak di kolom vertikal tersebut
+        $tableBody.find(`.child-cb[data-col="${col}"]`).prop("checked", isChecked);
+      });
+
+      // 2. INDIVIDUAL CHECKBOX (Update status Global Select All)
+      $tableBody.on("change", ".child-cb", function () {
+        const col = $(this).data("col");
+        updateGlobalSelectAll(col);
+      });
+
+      // Fungsi untuk update status Global Select All di THEAD
+      function updateGlobalSelectAll(col) {
+        const $allChildCheckboxes = $tableBody.find(`.child-cb[data-col="${col}"]`);
+        const $checkedChildBoxes = $allChildCheckboxes.filter(":checked");
+        const $globalSelectAll = $table.find(`.select-all-global[data-col="${col}"]`);
+
+        if ($checkedChildBoxes.length === $allChildCheckboxes.length && $allChildCheckboxes.length > 0) {
+          $globalSelectAll.prop("checked", true).prop("indeterminate", false);
+        } else if ($checkedChildBoxes.length > 0) {
+          $globalSelectAll.prop("checked", false).prop("indeterminate", true);
+        } else {
+          $globalSelectAll.prop("checked", false).prop("indeterminate", false);
+        }
+      }
+
+      // Search Functionality
+      $("#permissionSearch").on("keyup", function () {
+        const searchTerm = $(this).val().toLowerCase().trim();
+
+        if (searchTerm === "") {
+          $(".group-header").css("display", "table-row");
+          $(".child-row").css("display", "none");
+          $(".transition-icon").removeClass("fa-chevron-down").addClass("fa-chevron-right");
+          return;
+        }
+
+        $(".group-header").each(function () {
+          const group = $(this).data("group");
+          const $childRows = $(`.child-row[data-parent="${group}"]`);
+          let hasMatch = false;
+
+          const groupText = $(this).find("strong").text().toLowerCase();
+          if (groupText.includes(searchTerm)) {
+            hasMatch = true;
+            $childRows.css("display", "table-row");
+          } else {
+            $childRows.each(function () {
+              const childText = $(this).find("td:first").text().toLowerCase();
+              if (childText.includes(searchTerm)) {
+                hasMatch = true;
+                $(this).css("display", "table-row");
+              } else {
+                $(this).css("display", "none");
+              }
+            });
+          }
+
+          if (hasMatch) {
+            $(this).css("display", "table-row");
+            const $icon = $(this).find(".transition-icon");
+            $icon.removeClass("fa-chevron-right").addClass("fa-chevron-down");
+          } else {
+            $(this).css("display", "none");
+          }
+        });
+      });
+
+      // Save Permissions
+      $("#savePermissions").on("click", function () {
+        const permissions = {};
+
+        $(".child-row").each(function () {
+          const group = $(this).data("parent");
+          const pageName = $(this).find("td:first").text().trim();
+
+          if (!permissions[group]) {
+            permissions[group] = [];
+          }
+
+          // Simpan data bedasarkan data-col
+          permissions[group].push({
+            page: pageName,
+            owner: $(this).find('.child-cb[data-col="0"]').is(":checked"),
+            super_admin: $(this).find('.child-cb[data-col="1"]').is(":checked"),
+            admin: $(this).find('.child-cb[data-col="2"]').is(":checked"),
+            designer: $(this).find('.child-cb[data-col="3"]').is(":checked"),
+          });
+        });
+
+        console.log("Permissions to save:", permissions);
+
+        if (typeof Swal !== "undefined") {
+          Swal.fire({
+            icon: "success",
+            title: "Saved!",
+            text: "Permissions have been saved successfully.",
+            confirmButtonColor: "#3085d6",
+          });
+        } else {
+          alert("Permissions saved successfully!");
+        }
+      });
+
+      // Reset Permissions
+      $("#resetPermissions").on("click", function () {
+        if (typeof Swal !== "undefined") {
+          Swal.fire({
+            title: "Are you sure?",
+            text: "This will reset all permissions!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, reset it!",
+          }).then((result) => {
+            if (result.isConfirmed) {
+              resetAllPermissions();
+              Swal.fire("Reset!", "All permissions have been reset.", "success");
+            }
+          });
+        } else {
+          if (confirm("Are you sure you want to reset all permissions?")) {
+            resetAllPermissions();
+          }
+        }
+      });
+
+      function resetAllPermissions() {
+        $(".child-cb").prop("checked", false);
+        $(".select-all-global").prop("checked", false).prop("indeterminate", false);
+      }
+    });
+  </script>
 </html>

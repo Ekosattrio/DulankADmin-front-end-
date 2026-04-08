@@ -1,224 +1,314 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
-    <meta name="description" content="POS - Bootstrap Admin Template">
-    <meta name="keywords"
-        content="admin, estimates, bootstrap, business, corporate, creative, invoice, html5, responsive, Projects">
-    <meta name="author" content="Dreamguys - Bootstrap Admin Template">
-    <meta name="robots" content="noindex, nofollow">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0" />
+    <meta name="description" content="POS - Bootstrap Admin Template" />
+    <meta
+      name="keywords"
+      content="admin, estimates, bootstrap, business, corporate, creative, invoice, html5, responsive, Projects"
+    />
+    <meta name="author" content="Dreamguys - Bootstrap Admin Template" />
+    <meta name="robots" content="noindex, nofollow" />
     <title>Dreams Pos Admin Template</title>
 
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png" />
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
 
     <!-- animation CSS -->
-    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet" href="assets/css/animate.css" />
 
     <!-- Select2 CSS -->
-    <link rel="stylesheet" href="assets/plugins/select2/css/select2.min.css">
+    <link rel="stylesheet" href="assets/plugins/select2/css/select2.min.css" />
 
     <!-- Datetimepicker CSS -->
-    <link rel="stylesheet" href="assets/css/bootstrap-datetimepicker.min.css">
-
-    <!-- Datatable CSS -->
-    <link rel="stylesheet" href="assets/css/dataTables.bootstrap5.min.css">
+    <link rel="stylesheet" href="assets/css/bootstrap-datetimepicker.min.css" />
 
     <!-- Fontawesome CSS -->
-    <link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css">
-    <link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css" />
+    <link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css" />
 
     <!-- Main CSS -->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css" />
 
-</head>
+    <style>
+      .permission-table .group-header {
+        background-color: #f8f9fa;
+      }
+      .permission-table .toggle-btn {
+        cursor: pointer;
+        width: 20px;
+        display: inline-block;
+      }
+      .permission-table .transition-icon {
+        transition: transform 0.2s ease;
+      }
+      .permission-table .child-row td:first-child {
+        padding-left: 45px !important;
+      }
+      .permission-table .checkboxs {
+        margin-bottom: 0;
+      }
+      .search-box {
+        max-width: 300px;
+      }
+      .permission-table input[type="checkbox"] {
+        border: 1px solid #6c757d;
+      }
+      .select-all-group {
+        border: 1px solid #6c757d;
+      }
+    </style>
+  </head>
 
-<body>
+  <body>
     <div id="global-loader">
-        <div class="loader"> </div>
+      <div class="loader"></div>
     </div>
+
     <!-- Main Wrapper -->
     <div class="main-wrapper">
+      <!-- header -->
+      <div id="header-placeholder"></div>
+      <!-- sidebar -->
+      <div id="sidebar-placeholder"></div>
 
-        <!-- header -->
-        <div id="header-placeholder"></div>
-        <!-- sidebar -->
-        <div id="sidebar-placeholder"></div>
-
-        <div class="page-wrapper mt-3">
-            <!-- Main content tulis disini -->
-            <div class="content">
-                <div class="page-header">
-                    <div class="add-item d-flex">
-                        <div class="page-title">
-                            <h4>Permission</h4>
-                            <h6>Manage your Permissions</h6>
-                        </div>
-                    </div>
-                    <ul class="table-top-head">
-                        <li>
-                            <a data-bs-toggle="tooltip" data-bs-placement="top" title="Pdf"><img
-                                    src="assets/img/icons/pdf.svg" alt="img"></a>
-                        </li>
-                        <li>
-                            <a data-bs-toggle="tooltip" data-bs-placement="top" title="Print"><i data-feather="printer"
-                                    class="feather-rotate-ccw"></i></a>
-                        </li>
-                        <li>
-                            <a data-bs-toggle="tooltip" data-bs-placement="top" title="Refresh"><i
-                                    data-feather="rotate-ccw" class="feather-rotate-ccw"></i></a>
-                        </li>
-                        <li>
-                            <a data-bs-toggle="tooltip" data-bs-placement="top" title="Collapse" id="collapse-header"><i
-                                    data-feather="chevron-up" class="feather-chevron-up"></i></a>
-                        </li>
-                    </ul>
-                </div>
-                <!-- /product list -->
-                <div class="card table-list-card">
-                    <div class="card-body">
-                        <!-- Filter -->
-                        <div class="table-top d-flex align-items-center justify-content-between">
-                            <!-- Search Input -->
-                            <div class="search-set d-block d-md-flex">
-                                <div class="search-input">
-                                    <a href="" class="btn btn-searchset"><i data-feather="search"
-                                            class="feather-search"></i></a>
-                                </div>
-                                <!-- Date Range -->
-                                <div class="my-2">
-                                    <div class="pemilihrentang-container ">
-                                        <input type="text" id="pemilihrentang-input"
-                                            class="pemilihrentang-input form-control" readonly placeholder="Date"
-                                            style="height: fit-content !important;width: 100% !important;">
-                                        <div id="pemilihrentang-panel" class="pemilihrentang-panel">
-                                            <div class="pemilihrentang-isi">
-                                                <div class="opsi-cepat">
-                                                    <div data-range="kemarin">Kemarin</div>
-                                                    <div data-range="7hari">7 Hari Terakhir</div>
-                                                    <div data-range="bulanIni">Bulan Ini</div>
-                                                    <div data-range="bulanLalu">Bulan Lalu</div>
-                                                    <div data-range="tahunLalu">Tahun Lalu</div>
-                                                    <div data-range="kustom">Rentang Kustom</div>
-                                                </div>
-                                                <div class="kalender" id="kalender-view" style="display:none;">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- /Filter -->
-                        <div class="table-responsive">
-                            <table class="table  datanew">
-                                <thead>
-                                    <tr>
-                                        <th>Pages</th>
-                                        <th>Owner</th>
-                                        <th>Super Admin</th>
-                                        <th>Admin</th>
-                                        <th>Designer</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>Sales Dashboard</td>
-                                        <td>
-                                            <label class="checkboxs">
-                                                <input type="checkbox">
-                                                <span class="checkmarks"></span>
-                                            </label>
-                                        </td>
-                                        <td>
-                                            <label class="checkboxs">
-                                                <input type="checkbox">
-                                                <span class="checkmarks"></span>
-                                            </label>
-                                        </td>
-                                        <td>
-                                            <label class="checkboxs">
-                                                <input type="checkbox">
-                                                <span class="checkmarks"></span>
-                                            </label>
-                                        </td>
-                                        <td>
-                                            <label class="checkboxs">
-                                                <input type="checkbox">
-                                                <span class="checkmarks"></span>
-                                            </label>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Kalkulator Dashboard</td>
-                                        <td>
-                                            <label class="checkboxs">
-                                                <input type="checkbox">
-                                                <span class="checkmarks"></span>
-                                            </label>
-                                        </td>
-                                        <td>
-                                            <label class="checkboxs">
-                                                <input type="checkbox">
-                                                <span class="checkmarks"></span>
-                                            </label>
-                                        </td>
-                                        <td>
-                                            <label class="checkboxs">
-                                                <input type="checkbox">
-                                                <span class="checkmarks"></span>
-                                            </label>
-                                        </td>
-                                        <td>
-                                            <label class="checkboxs">
-                                                <input type="checkbox">
-                                                <span class="checkmarks"></span>
-                                            </label>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Analytics Dashboard</td>
-                                        <td>
-                                            <label class="checkboxs">
-                                                <input type="checkbox">
-                                                <span class="checkmarks"></span>
-                                            </label>
-                                        </td>
-                                        <td>
-                                            <label class="checkboxs">
-                                                <input type="checkbox">
-                                                <span class="checkmarks"></span>
-                                            </label>
-                                        </td>
-                                        <td>
-                                            <label class="checkboxs">
-                                                <input type="checkbox">
-                                                <span class="checkmarks"></span>
-                                            </label>
-                                        </td>
-                                        <td>
-                                            <label class="checkboxs">
-                                                <input type="checkbox">
-                                                <span class="checkmarks"></span>
-                                            </label>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-                <!-- /product list -->
+      <div class="page-wrapper mt-3">
+        <div class="content">
+          <div class="page-header">
+            <div class="add-item d-flex">
+              <div class="page-title">
+                <h4>Permission</h4>
+                <h6>Manage your Permissions</h6>
+              </div>
             </div>
-        </div>
+            <ul class="table-top-head">
+              <li>
+                <a data-bs-toggle="tooltip" data-bs-placement="top" title="Refresh" onclick="location.reload()">
+                  <i data-feather="rotate-ccw" class="feather-rotate-ccw"></i>
+                </a>
+              </li>
+              <li>
+                <a data-bs-toggle="tooltip" data-bs-placement="top" title="Collapse" id="collapse-header">
+                  <i data-feather="chevron-up" class="feather-chevron-up"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
 
+          <div class="card table-list-card">
+            <div class="card-body">
+              <!-- Search Box -->
+              <div class="table-top d-flex align-items-center justify-content-between">
+                <div class="search-box">
+                  <input type="text" id="permissionSearch" class="form-control" placeholder="Search permissions..." />
+                </div>
+              </div>
+
+              <!-- Permission Table -->
+              <div class="table-responsive">
+                <table id="permissionTable" class="table permission-table">
+                  <thead>
+                    <tr>
+                      <th style="width: 40%">Pages</th>
+                      <th class="text-center" style="width: 15%"></th>
+                      <th class="text-center" style="width: 15%"></th>
+                      <th class="text-center" style="width: 15%"></th>
+                      <th class="text-center" style="width: 15%"></th>
+                    </tr>
+                  </thead>
+                  <tbody id="permissions-table-body">
+                    <tr class="group-header" data-group="dashboard">
+                      <td colspan="5">
+                        <div class="d-flex align-items-center justify-content-between">
+                          <div class="d-flex align-items-center gap-3">
+                            <span class="toggle-btn" data-target="dashboard">
+                              <i class="fas fa-chevron-down transition-icon"></i>
+                            </span>
+                            <strong>Dashboard</strong>
+                          </div>
+                          <label class="checkboxs mb-0">
+                            <input type="checkbox" class="select-all-group" data-group="dashboard" />
+                            <span class="checkmarks"></span>
+                            <span class="ms-2">Select All</span>
+                          </label>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr class="child-row" data-parent="dashboard">
+                      <td>Dashboard Admin</td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="dashboard" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="dashboard" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="dashboard" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="dashboard" />
+                      </td>
+                    </tr>
+                    <tr class="child-row" data-parent="dashboard">
+                      <td>Sales Dashboard</td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="dashboard" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="dashboard" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="dashboard" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="dashboard" />
+                      </td>
+                    </tr>
+
+                    <tr class="group-header" data-group="orders">
+                      <td colspan="5">
+                        <div class="d-flex align-items-center justify-content-between">
+                          <div class="d-flex align-items-center gap-3">
+                            <span class="toggle-btn" data-target="orders">
+                              <i class="fas fa-chevron-right transition-icon"></i>
+                            </span>
+                            <strong>Orders</strong>
+                          </div>
+                          <label class="checkboxs mb-0">
+                            <input type="checkbox" class="select-all-group" data-group="orders" />
+                            <span class="checkmarks"></span>
+                            <span class="ms-2">Select All</span>
+                          </label>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr class="child-row" data-parent="orders" style="display: none">
+                      <td>Order List</td>
+                      <td class="text-center"><input type="checkbox" class="form-check-input child-cb" data-group="orders" /></td>
+                      <td class="text-center"><input type="checkbox" class="form-check-input child-cb" data-group="orders" /></td>
+                      <td class="text-center"><input type="checkbox" class="form-check-input child-cb" data-group="orders" /></td>
+                      <td class="text-center"><input type="checkbox" class="form-check-input child-cb" data-group="orders" /></td>
+                    </tr>
+                    <tr class="child-row" data-parent="orders" style="display: none">
+                      <td>Order Details</td>
+                      <td class="text-center"><input type="checkbox" class="form-check-input child-cb" data-group="orders" /></td>
+                      <td class="text-center"><input type="checkbox" class="form-check-input child-cb" data-group="orders" /></td>
+                      <td class="text-center"><input type="checkbox" class="form-check-input child-cb" data-group="orders" /></td>
+                      <td class="text-center"><input type="checkbox" class="form-check-input child-cb" data-group="orders" /></td>
+                    </tr>
+
+                    <tr class="group-header" data-group="products">
+                      <td colspan="5">
+                        <div class="d-flex align-items-center justify-content-between">
+                          <div class="d-flex align-items-center gap-3">
+                            <span class="toggle-btn" data-target="products">
+                              <i class="fas fa-chevron-right transition-icon"></i>
+                            </span>
+                            <strong>Products</strong>
+                          </div>
+                          <label class="checkboxs mb-0">
+                            <input type="checkbox" class="select-all-group" data-group="products" />
+                            <span class="checkmarks"></span>
+                            <span class="ms-2">Select All</span>
+                          </label>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr class="child-row" data-parent="products" style="display: none">
+                      <td>Product List</td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="products" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="products" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="products" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="products" />
+                      </td>
+                    </tr>
+                    <tr class="child-row" data-parent="products" style="display: none">
+                      <td>Add Product</td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="products" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="products" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="products" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="products" />
+                      </td>
+                    </tr>
+                    <tr class="child-row" data-parent="products" style="display: none">
+                      <td>Categories</td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="products" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="products" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="products" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" class="form-check-input child-cb" data-group="products" />
+                      </td>
+                    </tr>
+
+                    <tr class="group-header" data-group="users">
+                      <td colspan="5">
+                        <div class="d-flex align-items-center justify-content-between">
+                          <div class="d-flex align-items-center gap-3">
+                            <span class="toggle-btn" data-target="users">
+                              <i class="fas fa-chevron-right transition-icon"></i>
+                            </span>
+                            <strong>Users</strong>
+                          </div>
+                          <label class="checkboxs mb-0">
+                            <input type="checkbox" class="select-all-group" data-group="users" />
+                            <span class="checkmarks"></span>
+                            <span class="ms-2">Select All</span>
+                          </label>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr class="child-row" data-parent="users" style="display: none">
+                      <td>User List</td>
+                      <td class="text-center"><input type="checkbox" class="form-check-input child-cb" data-group="users" /></td>
+                      <td class="text-center"><input type="checkbox" class="form-check-input child-cb" data-group="users" /></td>
+                      <td class="text-center"><input type="checkbox" class="form-check-input child-cb" data-group="users" /></td>
+                      <td class="text-center"><input type="checkbox" class="form-check-input child-cb" data-group="users" /></td>
+                    </tr>
+                    <tr class="child-row" data-parent="users" style="display: none">
+                      <td>Roles</td>
+                      <td class="text-center"><input type="checkbox" class="form-check-input child-cb" data-group="users" /></td>
+                      <td class="text-center"><input type="checkbox" class="form-check-input child-cb" data-group="users" /></td>
+                      <td class="text-center"><input type="checkbox" class="form-check-input child-cb" data-group="users" /></td>
+                      <td class="text-center"><input type="checkbox" class="form-check-input child-cb" data-group="users" /></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <!-- Save Button -->
+              <div class="mt-3 mb-3 d-flex justify-content-end me-4">
+                <button type="button" class="btn btn-primary" id="savePermissions">Save Permissions</button>
+                <button type="button" class="btn btn-secondary ms-2" id="resetPermissions">Reset</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <!-- /Main Wrapper -->
 
     <!-- jQuery -->
     <script src="assets/js/jquery-3.7.1.min.js"></script>
@@ -229,13 +319,8 @@
     <!-- Slimscroll JS -->
     <script src="assets/js/jquery.slimscroll.min.js"></script>
 
-    <!-- Datatable JS -->
-    <script src="assets/js/jquery.dataTables.min.js"></script>
-    <script src="assets/js/dataTables.bootstrap5.min.js"></script>
-
     <!-- Bootstrap Core JS -->
     <script src="assets/js/bootstrap.bundle.min.js"></script>
-
 
     <!-- Datetimepicker JS -->
     <script src="assets/js/moment.min.js"></script>
@@ -252,7 +337,176 @@
     <script src="assets/js/theme-script.js"></script>
     <script src="assets/js/script.js"></script>
 
+    <script>
+      $(document).ready(function () {
+        // Initialize Feather Icons
+        if (typeof feather !== "undefined") {
+          feather.replace();
+        }
 
-</body>
+        const $tableBody = $("#permissions-table-body");
 
+        // Toggle Accordion (Expand/Collapse)
+        $tableBody.on("click", ".toggle-btn", function (e) {
+          e.stopPropagation();
+          const group = $(this).data("target");
+          const $icon = $(this).find(".transition-icon");
+          const $childRows = $tableBody.find(`.child-row[data-parent="${group}"]`);
+          const isOpen = $icon.hasClass("fa-chevron-down");
+
+          if (isOpen) {
+            $childRows.slideUp(200);
+            $icon.removeClass("fa-chevron-down").addClass("fa-chevron-right");
+          } else {
+            $childRows.slideDown(200);
+            $icon.removeClass("fa-chevron-right").addClass("fa-chevron-down");
+          }
+        });
+
+        // Select All in Group
+        $tableBody.on("change", ".select-all-group", function () {
+          const group = $(this).data("group");
+          const isChecked = $(this).is(":checked");
+          $tableBody.find(`.child-cb[data-group="${group}"]`).prop("checked", isChecked);
+        });
+
+        // Update "Select All" when individual checkbox changes
+        $tableBody.on("change", ".child-cb", function () {
+          const group = $(this).data("group");
+          const $allCheckboxes = $tableBody.find(`.child-cb[data-group="${group}"]`);
+          const $checkedBoxes = $allCheckboxes.filter(":checked");
+          const $selectAll = $tableBody.find(`.select-all-group[data-group="${group}"]`);
+
+          if ($checkedBoxes.length === $allCheckboxes.length) {
+            $selectAll.prop("checked", true).prop("indeterminate", false);
+          } else if ($checkedBoxes.length > 0) {
+            $selectAll.prop("checked", false).prop("indeterminate", true);
+          } else {
+            $selectAll.prop("checked", false).prop("indeterminate", false);
+          }
+        });
+
+        // Search Functionality
+        $("#permissionSearch").on("keyup", function () {
+          const searchTerm = $(this).val().toLowerCase().trim();
+
+          if (searchTerm === "") {
+            // Reset: show all groups, restore original collapse state
+            $(".group-header").show();
+            $(".child-row").each(function () {
+              const group = $(this).data("parent");
+              const $icon = $(`.toggle-btn[data-target="${group}"]`).find(".transition-icon");
+              if ($icon.hasClass("fa-chevron-down")) {
+                $(this).show();
+              } else {
+                $(this).hide();
+              }
+            });
+            return;
+          }
+
+          // Search logic
+          $(".group-header").each(function () {
+            const group = $(this).data("group");
+            const $childRows = $(`.child-row[data-parent="${group}"]`);
+            let hasMatch = false;
+
+            // Check group header text
+            const groupText = $(this).find("strong").text().toLowerCase();
+            if (groupText.includes(searchTerm)) {
+              hasMatch = true;
+              $childRows.show();
+            } else {
+              // Check each child row
+              $childRows.each(function () {
+                const childText = $(this).find("td:first").text().toLowerCase();
+                if (childText.includes(searchTerm)) {
+                  hasMatch = true;
+                  $(this).show();
+                } else {
+                  $(this).hide();
+                }
+              });
+            }
+
+            // Show/hide group header based on match
+            if (hasMatch) {
+              $(this).show();
+              // Expand the group icon
+              const $icon = $(`.toggle-btn[data-target="${group}"]`).find(".transition-icon");
+              $icon.removeClass("fa-chevron-right").addClass("fa-chevron-down");
+            } else {
+              $(this).hide();
+            }
+          });
+        });
+
+        // Save Permissions
+        $("#savePermissions").on("click", function () {
+          const permissions = {};
+
+          $(".child-row").each(function () {
+            const group = $(this).data("parent");
+            const pageName = $(this).find("td:first").text().trim();
+            const checkboxes = $(this).find(".child-cb");
+
+            if (!permissions[group]) {
+              permissions[group] = [];
+            }
+
+            permissions[group].push({
+              page: pageName,
+              view: checkboxes.eq(0).is(":checked"),
+              create: checkboxes.eq(1).is(":checked"),
+              edit: checkboxes.eq(2).is(":checked"),
+              delete: checkboxes.eq(3).is(":checked"),
+            });
+          });
+
+          console.log("Permissions to save:", permissions);
+
+          // Show success message
+          if (typeof Swal !== "undefined") {
+            Swal.fire({
+              icon: "success",
+              title: "Saved!",
+              text: "Permissions have been saved successfully.",
+              confirmButtonColor: "#3085d6",
+            });
+          } else {
+            alert("Permissions saved successfully!");
+          }
+        });
+
+        // Reset Permissions
+        $("#resetPermissions").on("click", function () {
+          if (typeof Swal !== "undefined") {
+            Swal.fire({
+              title: "Are you sure?",
+              text: "This will reset all permissions!",
+              icon: "warning",
+              showCancelButton: true,
+              confirmButtonColor: "#3085d6",
+              cancelButtonColor: "#d33",
+              confirmButtonText: "Yes, reset it!",
+            }).then((result) => {
+              if (result.isConfirmed) {
+                resetAllPermissions();
+                Swal.fire("Reset!", "All permissions have been reset.", "success");
+              }
+            });
+          } else {
+            if (confirm("Are you sure you want to reset all permissions?")) {
+              resetAllPermissions();
+            }
+          }
+        });
+
+        function resetAllPermissions() {
+          $(".child-cb").prop("checked", false);
+          $(".select-all-group").prop("checked", false).prop("indeterminate", false);
+        }
+      });
+    </script>
+  </body>
 </html>

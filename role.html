@@ -114,27 +114,32 @@
                   <thead>
                     <tr>
                       <th style="width: 40%">Pages</th>
-                      <th class="text-center" style="width: 15%"></th>
-                      <th class="text-center" style="width: 15%"></th>
-                      <th class="text-center" style="width: 15%"></th>
-                      <th class="text-center" style="width: 15%"></th>
+                      <th class="text-center" style="width: 15%">Owner</th>
+                      <th class="text-center" style="width: 15%">Super Admin</th>
+                      <th class="text-center" style="width: 15%">Admin</th>
+                      <th class="text-center" style="width: 15%">Designer</th>
                     </tr>
                   </thead>
                   <tbody id="permissions-table-body">
                     <tr class="group-header" data-group="dashboard">
                       <td colspan="5">
-                        <div class="d-flex align-items-center justify-content-between">
-                          <div class="d-flex align-items-center gap-3">
-                            <span class="toggle-btn" data-target="dashboard">
-                              <i class="fas fa-chevron-down transition-icon"></i>
-                            </span>
-                            <strong>Dashboard</strong>
+                        <div class="d-flex align-items-center gap-3">
+                          <div class="col-2">
+                            <div class="d-flex align-items-center gap-3">
+                              <span class="toggle-btn" data-target="dashboard">
+                                <i class="fas fa-chevron-right transition-icon"></i>
+                              </span>
+                              <strong>Dashboard</strong>
+                            </div>
                           </div>
-                          <label class="checkboxs mb-0">
-                            <input type="checkbox" class="select-all-group" data-group="dashboard" />
-                            <span class="checkmarks"></span>
-                            <span class="ms-2">Select All</span>
-                          </label>
+
+                          <div class="col-2">
+                            <label class="checkboxs mb-0">
+                              <input type="checkbox" class="select-all-group" data-group="dashboard" />
+                              <span class="checkmarks"></span>
+                              <span class="ms-2">Select All</span>
+                            </label>
+                          </div>
                         </div>
                       </td>
                     </tr>
@@ -171,18 +176,25 @@
 
                     <tr class="group-header" data-group="orders">
                       <td colspan="5">
-                        <div class="d-flex align-items-center justify-content-between">
+                        <div class="row">
                           <div class="d-flex align-items-center gap-3">
-                            <span class="toggle-btn" data-target="orders">
-                              <i class="fas fa-chevron-right transition-icon"></i>
-                            </span>
-                            <strong>Orders</strong>
+                            <div class="col-2">
+                              <div class="d-flex align-items-center gap-3">
+                                <span class="toggle-btn" data-target="orders">
+                                  <i class="fas fa-chevron-right transition-icon"></i>
+                                </span>
+                                <strong>Orders</strong>
+                              </div>
+                            </div>
+
+                            <div class="col-2">
+                              <label class="checkboxs mb-0">
+                                <input type="checkbox" class="select-all-group" data-group="orders" />
+                                <span class="checkmarks"></span>
+                                <span class="ms-2">Select All</span>
+                              </label>
+                            </div>
                           </div>
-                          <label class="checkboxs mb-0">
-                            <input type="checkbox" class="select-all-group" data-group="orders" />
-                            <span class="checkmarks"></span>
-                            <span class="ms-2">Select All</span>
-                          </label>
                         </div>
                       </td>
                     </tr>
@@ -203,18 +215,25 @@
 
                     <tr class="group-header" data-group="products">
                       <td colspan="5">
-                        <div class="d-flex align-items-center justify-content-between">
+                        <div class="row">
                           <div class="d-flex align-items-center gap-3">
-                            <span class="toggle-btn" data-target="products">
-                              <i class="fas fa-chevron-right transition-icon"></i>
-                            </span>
-                            <strong>Products</strong>
+                            <div class="col-2">
+                              <div class="d-flex align-items-center gap-3">
+                                <span class="toggle-btn" data-target="products">
+                                  <i class="fas fa-chevron-right transition-icon"></i>
+                                </span>
+                                <strong>Products</strong>
+                              </div>
+                            </div>
+
+                            <div class="col-2">
+                              <label class="checkboxs mb-0">
+                                <input type="checkbox" class="select-all-group" data-group="products" />
+                                <span class="checkmarks"></span>
+                                <span class="ms-2">Select All</span>
+                              </label>
+                            </div>
                           </div>
-                          <label class="checkboxs mb-0">
-                            <input type="checkbox" class="select-all-group" data-group="products" />
-                            <span class="checkmarks"></span>
-                            <span class="ms-2">Select All</span>
-                          </label>
                         </div>
                       </td>
                     </tr>
@@ -266,18 +285,23 @@
 
                     <tr class="group-header" data-group="users">
                       <td colspan="5">
-                        <div class="d-flex align-items-center justify-content-between">
-                          <div class="d-flex align-items-center gap-3">
-                            <span class="toggle-btn" data-target="users">
-                              <i class="fas fa-chevron-right transition-icon"></i>
-                            </span>
-                            <strong>Users</strong>
+                        <div class="d-flex align-items-center gap-3">
+                          <div class="col-2">
+                            <div class="d-flex align-items-center gap-3">
+                              <span class="toggle-btn" data-target="users">
+                                <i class="fas fa-chevron-right transition-icon"></i>
+                              </span>
+                              <strong>Users </strong>
+                            </div>
                           </div>
-                          <label class="checkboxs mb-0">
-                            <input type="checkbox" class="select-all-group" data-group="users" />
-                            <span class="checkmarks"></span>
-                            <span class="ms-2">Select All</span>
-                          </label>
+
+                          <div class="col-2">
+                            <label class="checkboxs mb-0">
+                              <input type="checkbox" class="select-all-group" data-group="users" />
+                              <span class="checkmarks"></span>
+                              <span class="ms-2">Select All</span>
+                            </label>
+                          </div>
                         </div>
                       </td>
                     </tr>

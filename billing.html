@@ -1,378 +1,369 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0" />
+    <meta name="description" content="POS - Bootstrap Admin Template" />
+    <meta
+      name="keywords"
+      content="admin, estimates, bootstrap, business, corporate, creative, invoice, html5, responsive, Projects"
+    />
+    <meta name="author" content="Dreamguys - Bootstrap Admin Template" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Dreams Pos Admin Template</title>
 
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
-	<meta name="description" content="POS - Bootstrap Admin Template">
-	<meta name="keywords"
-		content="admin, estimates, bootstrap, business, corporate, creative, invoice, html5, responsive, Projects">
-	<meta name="author" content="Dreamguys - Bootstrap Admin Template">
-	<meta name="robots" content="noindex, nofollow">
-	<title>Dreams Pos Admin Template</title>
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png" />
 
-	<!-- Favicon -->
-	<link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
 
-	<!-- Bootstrap CSS -->
-	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <!-- animation CSS -->
+    <link rel="stylesheet" href="assets/css/animate.css" />
 
-	<!-- animation CSS -->
-	<link rel="stylesheet" href="assets/css/animate.css">
+    <!-- Datatable CSS -->
+    <link rel="stylesheet" href="assets/css/dataTables.bootstrap5.min.css" />
 
-	<!-- Datatable CSS -->
-	<link rel="stylesheet" href="assets/css/dataTables.bootstrap5.min.css">
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css" />
+    <link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css" />
 
-	<!-- Fontawesome CSS -->
-	<link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css">
-	<link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css">
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
 
-	<!-- Main CSS -->
-	<link rel="stylesheet" href="assets/css/style.css">
+  <body>
+    <div id="global-loader">
+      <div class="loader"></div>
+    </div>
+    <!-- Main Wrapper -->
+    <div class="main-wrapper">
+      <!-- header -->
+      <div id="header-placeholder"></div>
+      <!-- sidebar -->
+      <div id="sidebar-placeholder"></div>
 
-</head>
+      <div class="page-wrapper">
+        <!-- Main content tulis disini -->
+        <div class="content container-fluid">
+          <div class="page-header mt-5">
+            <div class="add-item d-flex">
+              <div class="page-title">
+                <h4>Billing List</h4>
+                <h6>Manage Billing</h6>
+              </div>
+            </div>
+          </div>
+          <div class="row mt-5">
+            <div class="col-xl-3 col-sm-6 col-12 d-flex">
+              <div class="dash-widget w-100">
+                <div class="dash-widgetimg">
+                  <span><img src="assets/img/icons/dash1.svg" alt="img" /></span>
+                </div>
+                <div class="dash-widgetcontent">
+                  <h6>Total Transaction</h6>
+                  <h5><span class="counters" data-count="307144">307144</span></h5>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-sm-6 col-12 d-flex">
+              <div class="dash-widget dash1 w-100">
+                <div class="dash-widgetimg">
+                  <span><img src="assets/img/icons/dash2.svg" alt="img" /></span>
+                </div>
+                <div class="dash-widgetcontent">
+                  <h6>Total Success</h6>
+                  <h5><span class="counters" data-count="4385">4385</span></h5>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-sm-6 col-12 d-flex">
+              <div class="dash-widget dash2 w-100">
+                <div class="dash-widgetimg">
+                  <span><img src="assets/img/icons/dash3.svg" alt="img" /></span>
+                </div>
+                <div class="dash-widgetcontent">
+                  <h6>Total Failed</h6>
+                  <h5><span class="counters" data-count="385656">385656</span></h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- data table -->
+          <div class="card table-list-card">
+            <div class="card-body">
+              <!-- Filter -->
+              <div class="table-top d-flex align-items-center justify-content-between">
+                <!-- Search Input -->
+                <div class="search-set d-block d-md-flex">
+                  <div class="search-input">
+                    <a href="" class="btn btn-searchset"><i data-feather="search" class="feather-search"></i></a>
+                  </div>
+                  <!-- Date Range -->
+                  <div class="my-2">
+                    <div class="pemilihrentang-container">
+                      <input
+                        type="text"
+                        id="pemilihrentang-input"
+                        class="pemilihrentang-input form-control"
+                        readonly
+                        placeholder="Date"
+                        style="height: fit-content !important; width: 100% !important"
+                      />
+                      <div id="pemilihrentang-panel" class="pemilihrentang-panel">
+                        <div class="pemilihrentang-isi">
+                          <div class="opsi-cepat">
+                            <div data-range="kemarin">Kemarin</div>
+                            <div data-range="7hari">7 Hari Terakhir</div>
+                            <div data-range="bulanIni">Bulan Ini</div>
+                            <div data-range="bulanLalu">Bulan Lalu</div>
+                            <div data-range="tahunLalu">Tahun Lalu</div>
+                            <div data-range="kustom">Rentang Kustom</div>
+                          </div>
+                          <div class="kalender" id="kalender-view" style="display: none"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="filters d-flex justify-content-end">
+                  <div class="dropdown w-100 me-2">
+                    <button
+                      class="btn btn-outline-primary dropdown-toggle"
+                      type="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                      Metode
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Kartu Kredit</a></li>
+                      <li><a class="dropdown-item" href="#">E Wallet</a></li>
+                      <li><a class="dropdown-item" href="#">Virtual Account</a></li>
+                    </ul>
+                  </div>
+                  <div class="dropdown w-100 me-2">
+                    <button
+                      class="btn btn-outline-primary dropdown-toggle"
+                      type="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                      Status
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Success</a></li>
+                      <li><a class="dropdown-item" href="#">Failed</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <!-- /Filter -->
+              <div class="table-responsive product-list">
+                <table class="table datanew">
+                  <thead>
+                    <tr>
+                      <th>ID Billing</th>
+                      <th>ID Transaksi</th>
+                      <th>ID Pengguna</th>
+                      <th>Tanggal Billing</th>
+                      <th>Jumlah Tagihan</th>
+                      <th>Diskon</th>
+                      <th>Pajak</th>
+                      <th>Biaya Pengiriman</th>
+                      <th>Total Pembayaran</th>
+                      <th>Status Pembayaran</th>
+                      <th>Metode Pembayaran</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>B-001</td>
+                      <td>T-101</td>
+                      <td>john.doe@email.com</td>
+                      <td class="str-value">2025-08-28</td>
+                      <td>530.000</td>
+                      <td>53.000</td>
+                      <td>20.000</td>
+                      <td>20.000</td>
+                      <td>517.000</td>
+                      <td>Berhasil</td>
+                      <td>Kartu Kredit</td>
+                    </tr>
+                    <tr>
+                      <td>B-002</td>
+                      <td>T-102</td>
+                      <td>jane.smith@email.com</td>
+                      <td class="str-value">2025-08-28</td>
+                      <td>155.000</td>
+                      <td>0</td>
+                      <td>15.500</td>
+                      <td>15.000</td>
+                      <td>185.500</td>
+                      <td>Berhasil</td>
+                      <td>Transfer Bank</td>
+                    </tr>
+                    <tr>
+                      <td>B-003</td>
+                      <td>T-103</td>
+                      <td>david.williams@email.com</td>
+                      <td class="str-value">2025-08-27</td>
+                      <td>230.000</td>
+                      <td>0</td>
+                      <td>23.000</td>
+                      <td>18.000</td>
+                      <td>271.000</td>
+                      <td>Berhasil</td>
+                      <td>E-Wallet</td>
+                    </tr>
+                    <tr>
+                      <td>B-004</td>
+                      <td>T-104</td>
+                      <td>sarah.jones@email.com</td>
+                      <td class="str-value">2025-08-26</td>
+                      <td>1.200.000</td>
+                      <td>240.000</td>
+                      <td>120.000</td>
+                      <td>0</td>
+                      <td>1.080.000</td>
+                      <td>Gagal</td>
+                      <td>Kartu Kredit</td>
+                    </tr>
+                    <tr>
+                      <td>B-005</td>
+                      <td>T-105</td>
+                      <td>michael.brown@email.com</td>
+                      <td class="str-value">2025-08-25</td>
+                      <td>275.000</td>
+                      <td>0</td>
+                      <td>27.500</td>
+                      <td>25.000</td>
+                      <td>327.500</td>
+                      <td>Berhasil</td>
+                      <td>Virtual Account</td>
+                    </tr>
+                    <tr>
+                      <td>B-006</td>
+                      <td>T-106</td>
+                      <td>emma.white@email.com</td>
+                      <td class="str-value">2025-08-24</td>
+                      <td>850.000</td>
+                      <td>85.000</td>
+                      <td>85.000</td>
+                      <td>0</td>
+                      <td>850.000</td>
+                      <td>Berhasil</td>
+                      <td>Kartu Kredit</td>
+                    </tr>
+                    <tr>
+                      <td>B-007</td>
+                      <td>T-107</td>
+                      <td>alex.green@email.com</td>
+                      <td class="str-value">2025-08-24</td>
+                      <td>420.000</td>
+                      <td>0</td>
+                      <td>42.000</td>
+                      <td>30.000</td>
+                      <td>492.000</td>
+                      <td>Berhasil</td>
+                      <td>E-Wallet</td>
+                    </tr>
+                    <tr>
+                      <td>B-008</td>
+                      <td>T-108</td>
+                      <td>olivia.black@email.com</td>
+                      <td class="str-value">2025-08-23</td>
+                      <td>180.000</td>
+                      <td>18.000</td>
+                      <td>18.000</td>
+                      <td>15.000</td>
+                      <td>195.000</td>
+                      <td>Gagal</td>
+                      <td>Transfer Bank</td>
+                    </tr>
+                    <tr>
+                      <td>B-009</td>
+                      <td>T-109</td>
+                      <td>william.king@email.com</td>
+                      <td class="str-value">2025-08-22</td>
+                      <td>650.000</td>
+                      <td>0</td>
+                      <td>65.000</td>
+                      <td>22.000</td>
+                      <td>737.000</td>
+                      <td>Berhasil</td>
+                      <td>Virtual Account</td>
+                    </tr>
+                    <tr>
+                      <td>B-010</td>
+                      <td>T-110</td>
+                      <td>sophia.adams@email.com</td>
+                      <td class="str-value">2025-08-21</td>
+                      <td>310.000</td>
+                      <td>31.000</td>
+                      <td>31.000</td>
+                      <td>19.000</td>
+                      <td>329.000</td>
+                      <td>Berhasil</td>
+                      <td>E-Wallet</td>
+                    </tr>
+                  </tbody>
+                  <tfoot>
+                    <tr>
+                      <td class="text-star fw-bold">Total</td>
+                      <td colspan="3"></td>
+                      <td id="amount-total" class="fw-bold sum-target" data-col-index="5">0</td>
+                      <td id="amount-total" class="fw-bold sum-target" data-col-index="6">0</td>
+                      <td id="amount-total" class="fw-bold sum-target" data-col-index="7">0</td>
+                      <td id="amount-total" class="fw-bold sum-target" data-col-index="8">0</td>
+                      <td id="amount-total" class="fw-bold sum-target" data-col-index="9">0</td>
+                    </tr>
+                  </tfoot>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-<body>
-	<div id="global-loader">
-		<div class="loader"> </div>
-	</div>
-	<!-- Main Wrapper -->
-	<div class="main-wrapper">
+    <!-- /Main Wrapper -->
 
-		<!-- header -->
-		<div id="header-placeholder"></div>
-		<!-- sidebar -->
-		<div id="sidebar-placeholder"></div>
+    <script src="assets/js/jquery-3.7.1.min.js"></script>
 
-		<div class="page-wrapper">
-			<!-- Main content tulis disini -->
-			<div class="content container-fluid">
-				<div class="page-header mt-5">
-					<div class="add-item d-flex">
-						<div class="page-title">
-							<h4>Billing List</h4>
-							<h6>Manage Billing</h6>
-						</div>
-					</div>
+    <!-- Feather Icon JS -->
+    <script src="assets/js/feather.min.js"></script>
 
+    <!-- Slimscroll JS -->
+    <script src="assets/js/jquery.slimscroll.min.js"></script>
 
+    <!-- Datatable JS -->
+    <script src="assets/js/jquery.dataTables.min.js"></script>
+    <script src="assets/js/dataTables.bootstrap5.min.js"></script>
 
-				</div>
-				<div class="row mt-5">
-					<div class="col-xl-3 col-sm-6 col-12 d-flex">
-						<div class="dash-widget w-100">
-							<div class="dash-widgetimg">
-								<span><img src="assets/img/icons/dash1.svg" alt="img"></span>
-							</div>
-							<div class="dash-widgetcontent">
-								<h6>Total Transaction</h6>
-								<h5><span class="counters" data-count="307144">307144</span></h5>
-							</div>
-						</div>
-					</div>
-					<div class="col-xl-3 col-sm-6 col-12 d-flex">
-						<div class="dash-widget dash1 w-100">
-							<div class="dash-widgetimg">
-								<span><img src="assets/img/icons/dash2.svg" alt="img"></span>
-							</div>
-							<div class="dash-widgetcontent">
-								<h6>Total Success</h6>
-								<h5><span class="counters" data-count="4385">4385</span></h5>
-							</div>
-						</div>
-					</div>
-					<div class="col-xl-3 col-sm-6 col-12 d-flex">
-						<div class="dash-widget dash2 w-100">
-							<div class="dash-widgetimg">
-								<span><img src="assets/img/icons/dash3.svg" alt="img"></span>
-							</div>
-							<div class="dash-widgetcontent">
-								<h6>Total Failed</h6>
-								<h5><span class="counters" data-count="385656">385656</span></h5>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!-- data table -->
-				<div class="card table-list-card">
-					<div class="card-body">
-						<!-- Filter -->
-						<div class="table-top d-flex align-items-center justify-content-between">
-							<!-- Search Input -->
-							<div class="search-set d-block d-md-flex">
-								<div class="search-input">
-									<a href="" class="btn btn-searchset"><i data-feather="search"
-											class="feather-search"></i></a>
-								</div>
-								<!-- Date Range -->
-								<div class="my-2">
-									<div class="pemilihrentang-container ">
-										<input type="text" id="pemilihrentang-input"
-											class="pemilihrentang-input form-control" readonly placeholder="Date"
-											style="height: fit-content !important;width: 100% !important;">
-										<div id="pemilihrentang-panel" class="pemilihrentang-panel">
-											<div class="pemilihrentang-isi">
-												<div class="opsi-cepat">
-													<div data-range="kemarin">Kemarin</div>
-													<div data-range="7hari">7 Hari Terakhir</div>
-													<div data-range="bulanIni">Bulan Ini</div>
-													<div data-range="bulanLalu">Bulan Lalu</div>
-													<div data-range="tahunLalu">Tahun Lalu</div>
-													<div data-range="kustom">Rentang Kustom</div>
-												</div>
-												<div class="kalender" id="kalender-view" style="display:none;">
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="filters d-flex justify-content-end">
-								<div class="dropdown w-100 me-2">
-									<button class="btn btn-outline-primary dropdown-toggle" type="button"
-										data-bs-toggle="dropdown" aria-expanded="false">
-										Metode
-									</button>
-									<ul class="dropdown-menu">
-										<li><a class="dropdown-item" href="#">Kartu Kredit</a></li>
-										<li><a class="dropdown-item" href="#">E Wallet</a></li>
-										<li><a class="dropdown-item" href="#">Virtual Account</a></li>
-									</ul>
-								</div>
-								<div class="dropdown w-100 me-2">
-									<button class="btn btn-outline-primary dropdown-toggle" type="button"
-										data-bs-toggle="dropdown" aria-expanded="false">
-										Status
-									</button>
-									<ul class="dropdown-menu">
-										<li><a class="dropdown-item" href="#">Success</a></li>
-										<li><a class="dropdown-item" href="#">Failed</a></li>
-									</ul>
-								</div>
-							</div>
-						</div>
-						<!-- /Filter -->
-						<div class="table-responsive product-list">
-							<table class="table datanew">
-								<thead>
-									<tr>
+    <!-- Bootstrap Core JS -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
 
-										<th>ID Billing</th>
-										<th>ID Transaksi</th>
-										<th>ID Pengguna</th>
-										<th>Tanggal Billing</th>
-										<th>Jumlah Tagihan</th>
-										<th>Diskon</th>
-										<th>Pajak</th>
-										<th>Biaya Pengiriman</th>
-										<th>Total Pembayaran</th>
-										<th>Status Pembayaran</th>
-										<th>Metode Pembayaran</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
+    <!-- Summernote JS -->
+    <script src="assets/plugins/summernote/summernote-bs4.min.js"></script>
 
-										<td>B-001</td>
-										<td>T-101</td>
-										<td>john.doe@email.com</td>
-										<td class="str-value">2025-08-28</td>
-										<td>530.000</td>
-										<td>53.000</td>
-										<td>20.000</td>
-										<td>20.000</td>
-										<td>517.000</td>
-										<td>Berhasil</td>
-										<td>Kartu Kredit</td>
-									</tr>
-									<tr>
+    <!-- Select2 JS -->
+    <script src="assets/plugins/select2/js/select2.min.js"></script>
 
-										<td>B-002</td>
-										<td>T-102</td>
-										<td>jane.smith@email.com</td>
-										<td class="str-value">2025-08-28</td>
-										<td>155.000</td>
-										<td>0</td>
-										<td>15.500</td>
-										<td>15.000</td>
-										<td>185.500</td>
-										<td>Berhasil</td>
-										<td>Transfer Bank</td>
-									</tr>
-									<tr>
+    <!-- Datetimepicker JS -->
+    <script src="assets/js/moment.min.js"></script>
+    <script src="assets/js/bootstrap-datetimepicker.min.js"></script>
 
-										<td>B-003</td>
-										<td>T-103</td>
-										<td>david.williams@email.com</td>
-										<td class="str-value">2025-08-27</td>
-										<td>230.000</td>
-										<td>0</td>
-										<td>23.000</td>
-										<td>18.000</td>
-										<td>271.000</td>
-										<td>Berhasil</td>
-										<td>E-Wallet</td>
-									</tr>
-									<tr>
+    <!-- Bootstrap Tagsinput JS -->
+    <script src="assets/plugins/bootstrap-tagsinput/bootstrap-tagsinput.js"></script>
 
-										<td>B-004</td>
-										<td>T-104</td>
-										<td>sarah.jones@email.com</td>
-										<td class="str-value">2025-08-26</td>
-										<td>1.200.000</td>
-										<td>240.000</td>
-										<td>120.000</td>
-										<td>0</td>
-										<td>1.080.000</td>
-										<td>Gagal</td>
-										<td>Kartu Kredit</td>
-									</tr>
-									<tr>
+    <!-- Sweetalert 2 -->
+    <script src="assets/plugins/sweetalert/sweetalert2.all.min.js"></script>
+    <script src="assets/plugins/sweetalert/sweetalerts.min.js"></script>
 
-										<td>B-005</td>
-										<td>T-105</td>
-										<td>michael.brown@email.com</td>
-										<td class="str-value">2025-08-25</td>
-										<td>275.000</td>
-										<td>0</td>
-										<td>27.500</td>
-										<td>25.000</td>
-										<td>327.500</td>
-										<td>Berhasil</td>
-										<td>Virtual Account</td>
-									</tr>
-									<tr>
+    <!-- Custom JS -->
 
-										<td>B-006</td>
-										<td>T-106</td>
-										<td>emma.white@email.com</td>
-										<td class="str-value">2025-08-24</td>
-										<td>850.000</td>
-										<td>85.000</td>
-										<td>85.000</td>
-										<td>0</td>
-										<td>850.000</td>
-										<td>Berhasil</td>
-										<td>Kartu Kredit</td>
-									</tr>
-									<tr>
-
-										<td>B-007</td>
-										<td>T-107</td>
-										<td>alex.green@email.com</td>
-										<td class="str-value">2025-08-24</td>
-										<td>420.000</td>
-										<td>0</td>
-										<td>42.000</td>
-										<td>30.000</td>
-										<td>492.000</td>
-										<td>Berhasil</td>
-										<td>E-Wallet</td>
-									</tr>
-									<tr>
-
-										<td>B-008</td>
-										<td>T-108</td>
-										<td>olivia.black@email.com</td>
-										<td class="str-value">2025-08-23</td>
-										<td>180.000</td>
-										<td>18.000</td>
-										<td>18.000</td>
-										<td>15.000</td>
-										<td>195.000</td>
-										<td>Gagal</td>
-										<td>Transfer Bank</td>
-									</tr>
-									<tr>
-
-										<td>B-009</td>
-										<td>T-109</td>
-										<td>william.king@email.com</td>
-										<td class="str-value">2025-08-22</td>
-										<td>650.000</td>
-										<td>0</td>
-										<td>65.000</td>
-										<td>22.000</td>
-										<td>737.000</td>
-										<td>Berhasil</td>
-										<td>Virtual Account</td>
-									</tr>
-									<tr>
-
-										<td>B-010</td>
-										<td>T-110</td>
-										<td>sophia.adams@email.com</td>
-										<td class="str-value">2025-08-21</td>
-										<td>310.000</td>
-										<td>31.000</td>
-										<td>31.000</td>
-										<td>19.000</td>
-										<td>329.000</td>
-										<td>Berhasil</td>
-										<td>E-Wallet</td>
-									</tr>
-								</tbody>
-								<tfoot>
-									<tr>
-										<td class="text-star fw-bold">Total</td>
-										<td colspan="3"></td>
-										<td id="amount-total" class="fw-bold sum-target" data-col-index="5">0</td>
-										<td id="amount-total" class="fw-bold sum-target" data-col-index="6">0</td>
-										<td id="amount-total" class="fw-bold sum-target" data-col-index="7">0</td>
-										<td id="amount-total" class="fw-bold sum-target" data-col-index="8">0</td>
-										<td id="amount-total" class="fw-bold sum-target" data-col-index="9">0</td>
-									</tr>
-								</tfoot>
-							</table>
-						</div>
-					</div>
-				</div>
-
-			</div>
-		</div>
-
-	</div>
-
-	<!-- /Main Wrapper -->
-
-	<script src="assets/js/jquery-3.7.1.min.js"></script>
-
-	<!-- Feather Icon JS -->
-	<script src="assets/js/feather.min.js"></script>
-
-	<!-- Slimscroll JS -->
-	<script src="assets/js/jquery.slimscroll.min.js"></script>
-
-	<!-- Datatable JS -->
-	<script src="assets/js/jquery.dataTables.min.js"></script>
-	<script src="assets/js/dataTables.bootstrap5.min.js"></script>
-
-	<!-- Bootstrap Core JS -->
-	<script src="assets/js/bootstrap.bundle.min.js"></script>
-
-	<!-- Summernote JS -->
-	<script src="assets/plugins/summernote/summernote-bs4.min.js"></script>
-
-	<!-- Select2 JS -->
-	<script src="assets/plugins/select2/js/select2.min.js"></script>
-
-	<!-- Datetimepicker JS -->
-	<script src="assets/js/moment.min.js"></script>
-	<script src="assets/js/bootstrap-datetimepicker.min.js"></script>
-
-	<!-- Bootstrap Tagsinput JS -->
-	<script src="assets/plugins/bootstrap-tagsinput/bootstrap-tagsinput.js"></script>
-
-	<!-- Sweetalert 2 -->
-	<script src="assets/plugins/sweetalert/sweetalert2.all.min.js"></script>
-	<script src="assets/plugins/sweetalert/sweetalerts.min.js"></script>
-
-	<!-- Custom JS -->
-
-	<script src="assets/js/theme-script.js"></script>
-	<script src="assets/js/script.js"></script>
-
-
-</body>
-
+    <script src="assets/js/theme-script.js"></script>
+    <script src="assets/js/script.js"></script>
+  </body>
 </html>

@@ -1,464 +1,434 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0" />
+    <meta name="description" content="POS - Bootstrap Admin Template" />
+    <meta
+      name="keywords"
+      content="admin, estimates, bootstrap, business, corporate, creative, invoice, html5, responsive, Projects"
+    />
+    <meta name="author" content="Dreamguys - Bootstrap Admin Template" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Kacetak System</title>
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/kacetak.jpeg" />
 
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
-	<meta name="description" content="POS - Bootstrap Admin Template">
-	<meta name="keywords"
-		content="admin, estimates, bootstrap, business, corporate, creative, invoice, html5, responsive, Projects">
-	<meta name="author" content="Dreamguys - Bootstrap Admin Template">
-	<meta name="robots" content="noindex, nofollow">
-	<title>Category list</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
 
-	<!-- Favicon -->
-	<link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
+    <!-- animation CSS -->
+    <link rel="stylesheet" href="assets/css/animate.css" />
 
-	<!-- Bootstrap CSS -->
-	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <!-- Select2 CSS -->
+    <link rel="stylesheet" href="assets/plugins/select2/css/select2.min.css" />
 
-	<!-- animation CSS -->
-	<link rel="stylesheet" href="assets/css/animate.css">
+    <!-- Datatable CSS -->
+    <link rel="stylesheet" href="assets/css/dataTables.bootstrap5.min.css" />
 
-	<!-- Select2 CSS -->
-	<link rel="stylesheet" href="assets/plugins/select2/css/select2.min.css">
+    <!-- Datetimepicker CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap-datetimepicker.min.css" />
 
-	<!-- Datatable CSS -->
-	<link rel="stylesheet" href="assets/css/dataTables.bootstrap5.min.css">
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css" />
+    <link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css" />
 
-	<!-- Datetimepicker CSS -->
-	<link rel="stylesheet" href="assets/css/bootstrap-datetimepicker.min.css">
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
 
-	<!-- Fontawesome CSS -->
-	<link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css">
-	<link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css">
+  <body>
+    <div id="global-loader">
+      <div class="loader"></div>
+    </div>
+    <!-- Main Wrapper -->
+    <div class="main-wrapper">
+      <!-- header -->
+      <div id="header-placeholder"></div>
+      <!-- sidebar -->
+      <div id="sidebar-placeholder"></div>
 
-	<!-- Main CSS -->
-	<link rel="stylesheet" href="assets/css/style.css">
+      <div class="page-wrapper mt-5">
+        <!-- Main content tulis disini -->
+        <div class="content">
+          <div class="page-header">
+            <div class="add-item d-flex">
+              <div class="page-title">
+                <h4>Category</h4>
+                <h6>Manage your categories</h6>
+              </div>
+            </div>
+            <ul class="table-top-head">
+              <li>
+                <a data-bs-toggle="tooltip" data-bs-placement="top" title="Pdf"
+                  ><img src="assets/img/icons/pdf.svg" alt="img"
+                /></a>
+              </li>
+              <li>
+                <a data-bs-toggle="tooltip" data-bs-placement="top" title="Print"
+                  ><i data-feather="printer" class="feather-rotate-ccw"></i
+                ></a>
+              </li>
+              <li>
+                <a data-bs-toggle="tooltip" data-bs-placement="top" title="Refresh"
+                  ><i data-feather="rotate-ccw" class="feather-rotate-ccw"></i
+                ></a>
+              </li>
+              <li>
+                <a data-bs-toggle="tooltip" data-bs-placement="top" title="Collapse" id="collapse-header"
+                  ><i data-feather="chevron-up" class="feather-chevron-up"></i
+                ></a>
+              </li>
+            </ul>
+            <div class="page-btn">
+              <a href="#" class="btn btn-added" data-bs-toggle="modal" data-bs-target="#add-category"
+                ><i data-feather="plus-circle" class="me-2"></i>Add New Category</a
+              >
+            </div>
+          </div>
+          <!-- /product list -->
+          <div class="card table-list-card">
+            <div class="card-body">
+              <!-- Filter -->
+              <div class="table-top d-flex align-items-center justify-content-between">
+                <!-- Search Input -->
+                <div class="search-set d-block d-md-flex">
+                  <div class="search-input">
+                    <a href="" class="btn btn-searchset"><i data-feather="search" class="feather-search"></i></a>
+                  </div>
+                  <!-- Date Range -->
+                  <div class="my-2">
+                    <div class="pemilihrentang-container">
+                      <input
+                        type="text"
+                        id="pemilihrentang-input"
+                        class="pemilihrentang-input form-control"
+                        readonly
+                        placeholder="Date"
+                        style="height: fit-content !important; width: 100% !important"
+                      />
+                      <div id="pemilihrentang-panel" class="pemilihrentang-panel">
+                        <div class="pemilihrentang-isi">
+                          <div class="opsi-cepat">
+                            <div data-range="kemarin">Kemarin</div>
+                            <div data-range="7hari">7 Hari Terakhir</div>
+                            <div data-range="bulanIni">Bulan Ini</div>
+                            <div data-range="bulanLalu">Bulan Lalu</div>
+                            <div data-range="tahunLalu">Tahun Lalu</div>
+                            <div data-range="kustom">Rentang Kustom</div>
+                          </div>
+                          <div class="kalender" id="kalender-view" style="display: none"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="filters d-flex justify-content-end">
+                  <div class="dropdown w-100">
+                    <button
+                      class="btn btn-outline-primary dropdown-toggle"
+                      type="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                      Status
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Active</a></li>
+                      <li><a class="dropdown-item" href="#">Deactive</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <!-- /Filter -->
+              <div class="table-responsive">
+                <table class="table datanew">
+                  <thead>
+                    <tr>
+                      <th>Product Category</th>
+                      <th>Created</th>
+                      <th>Status</th>
+                      <th class="no-sort">Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Jasa Cetak Offset</td>
+                      <td>Admin, 02/03/2026, 14:00</td>
+                      <td><span class="badge bg-outline-success">Active</span></td>
+                      <td class="action-table-data">
+                        <div class="edit-delete-action">
+                          <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#edit-category">
+                            <i data-feather="edit" class="feather-edit"></i>
+                          </a>
+                          <a class="confirm-text p-2" href="javascript:void(0);">
+                            <i data-feather="trash-2" class="feather-trash-2"></i>
+                          </a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Print Outdoor (Spanduk/Baliho)</td>
+                      <td>Admin, 02/03/2026, 14:05</td>
+                      <td><span class="badge bg-outline-success">Active</span></td>
+                      <td class="action-table-data">
+                        <div class="edit-delete-action">
+                          <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#edit-category">
+                            <i data-feather="edit" class="feather-edit"></i>
+                          </a>
+                          <a class="confirm-text p-2" href="javascript:void(0);">
+                            <i data-feather="trash-2" class="feather-trash-2"></i>
+                          </a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Print Indoor (Poster/X-Banner)</td>
+                      <td>Admin, 02/03/2026, 14:10</td>
+                      <td><span class="badge bg-outline-success">Active</span></td>
+                      <td class="action-table-data">
+                        <div class="edit-delete-action">
+                          <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#edit-category">
+                            <i data-feather="edit" class="feather-edit"></i>
+                          </a>
+                          <a class="confirm-text p-2" href="javascript:void(0);">
+                            <i data-feather="trash-2" class="feather-trash-2"></i>
+                          </a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Sablon Manual (Kaos/Plastik)</td>
+                      <td>Admin, 02/03/2026, 14:15</td>
+                      <td><span class="badge bg-outline-success">Active</span></td>
+                      <td class="action-table-data">
+                        <div class="edit-delete-action">
+                          <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#edit-category">
+                            <i data-feather="edit" class="feather-edit"></i>
+                          </a>
+                          <a class="confirm-text p-2" href="javascript:void(0);">
+                            <i data-feather="trash-2" class="feather-trash-2"></i>
+                          </a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Digital Printing A3+</td>
+                      <td>Admin, 02/03/2026, 14:20</td>
+                      <td><span class="badge bg-outline-success">Active</span></td>
+                      <td class="action-table-data">
+                        <div class="edit-delete-action">
+                          <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#edit-category">
+                            <i data-feather="edit" class="feather-edit"></i>
+                          </a>
+                          <a class="confirm-text p-2" href="javascript:void(0);">
+                            <i data-feather="trash-2" class="feather-trash-2"></i>
+                          </a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Cutting Sticker</td>
+                      <td>Admin, 02/03/2026, 14:25</td>
+                      <td><span class="badge bg-outline-success">Active</span></td>
+                      <td class="action-table-data">
+                        <div class="edit-delete-action">
+                          <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#edit-category">
+                            <i data-feather="edit" class="feather-edit"></i>
+                          </a>
+                          <a class="confirm-text p-2" href="javascript:void(0);">
+                            <i data-feather="trash-2" class="feather-trash-2"></i>
+                          </a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Sablon DTF (Digital Transfer Film)</td>
+                      <td>Admin, 02/03/2026, 14:30</td>
+                      <td><span class="badge bg-outline-danger">Disable</span></td>
+                      <td class="action-table-data">
+                        <div class="edit-delete-action">
+                          <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#edit-category">
+                            <i data-feather="edit" class="feather-edit"></i>
+                          </a>
+                          <a class="confirm-text p-2" href="javascript:void(0);">
+                            <i data-feather="trash-2" class="feather-trash-2"></i>
+                          </a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Finishing (Laminating/Jilid)</td>
+                      <td>Admin, 02/03/2026, 14:35</td>
+                      <td><span class="badge bg-outline-success">Active</span></td>
+                      <td class="action-table-data">
+                        <div class="edit-delete-action">
+                          <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#edit-category">
+                            <i data-feather="edit" class="feather-edit"></i>
+                          </a>
+                          <a class="confirm-text p-2" href="javascript:void(0);">
+                            <i data-feather="trash-2" class="feather-trash-2"></i>
+                          </a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Merchandise & Souvenir (UV Print)</td>
+                      <td>Admin, 02/03/2026, 14:40</td>
+                      <td><span class="badge bg-outline-success">Active</span></td>
+                      <td class="action-table-data">
+                        <div class="edit-delete-action">
+                          <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#edit-category">
+                            <i data-feather="edit" class="feather-edit"></i>
+                          </a>
+                          <a class="confirm-text p-2" href="javascript:void(0);">
+                            <i data-feather="trash-2" class="feather-trash-2"></i>
+                          </a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Cetak Nota NCR</td>
+                      <td>Admin, 02/03/2026, 14:45</td>
+                      <td><span class="badge bg-outline-success">Active</span></td>
+                      <td class="action-table-data">
+                        <div class="edit-delete-action">
+                          <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#edit-category">
+                            <i data-feather="edit" class="feather-edit"></i>
+                          </a>
+                          <a class="confirm-text p-2" href="javascript:void(0);">
+                            <i data-feather="trash-2" class="feather-trash-2"></i>
+                          </a>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <!-- /product list -->
+        </div>
+      </div>
+    </div>
+    <!-- /Main Wrapper -->
+    <!-- modals -->
+    <!-- Add Category -->
+    <div class="modal fade" id="add-category">
+      <div class="modal-dialog modal-dialog-centered custom-modal-two">
+        <div class="modal-content">
+          <div class="page-wrapper-new p-0">
+            <div class="content">
+              <div class="modal-header border-0 custom-modal-header">
+                <div class="page-title">
+                  <h4>Create Category</h4>
+                </div>
+                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body custom-modal-body">
+                <form action="category-list.html">
+                  <div class="mb-3">
+                    <label class="form-label">Category</label>
+                    <input type="text" class="form-control" />
+                  </div>
+                  <div class="mb-3">
+                    <label class="form-label">Category Slug</label>
+                    <input type="text" class="form-control" />
+                  </div>
+                  <div class="mb-0">
+                    <div class="status-toggle modal-status d-flex justify-content-between align-items-center">
+                      <span class="status-label">Status</span>
+                      <input type="checkbox" id="user2" class="check" checked="" />
+                      <label for="user2" class="checktoggle"></label>
+                    </div>
+                  </div>
+                  <div class="modal-footer-btn">
+                    <button type="button" class="btn btn-cancel me-2" data-bs-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-submit">Create Category</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /Add Category -->
 
-</head>
+    <!-- Edit Category -->
+    <div class="modal fade" id="edit-category">
+      <div class="modal-dialog modal-dialog-centered custom-modal-two">
+        <div class="modal-content">
+          <div class="page-wrapper-new p-0">
+            <div class="content">
+              <div class="modal-header border-0 custom-modal-header">
+                <div class="page-title">
+                  <h4>Edit Category</h4>
+                </div>
+                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body custom-modal-body">
+                <form action="category-list.html">
+                  <div class="mb-3">
+                    <label class="form-label">Category</label>
+                    <input type="text" class="form-control" value="Laptop" />
+                  </div>
+                  <div class="mb-3">
+                    <label class="form-label">Category Slug</label>
+                    <input type="text" class="form-control" value="laptop" />
+                  </div>
+                  <div class="mb-0">
+                    <div class="status-toggle modal-status d-flex justify-content-between align-items-center">
+                      <span class="status-label">Status</span>
+                      <input type="checkbox" id="user3" class="check" checked="" />
+                      <label for="user3" class="checktoggle"></label>
+                    </div>
+                  </div>
+                  <div class="modal-footer-btn">
+                    <button type="button" class="btn btn-cancel me-2" data-bs-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-submit">Save Changes</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /Edit Category -->
+    <!-- modals -->
+    <!-- jQuery -->
+    <script src="assets/js/jquery-3.7.1.min.js"></script>
 
-<body>
-	<div id="global-loader">
-		<div class="loader"> </div>
-	</div>
-	<!-- Main Wrapper -->
-	<div class="main-wrapper">
+    <!-- Feather Icon JS -->
+    <script src="assets/js/feather.min.js"></script>
 
-		<!-- header -->
-		<div id="header-placeholder"></div>
-		<!-- sidebar -->
-		<div id="sidebar-placeholder"></div>
+    <!-- Slimscroll JS -->
+    <script src="assets/js/jquery.slimscroll.min.js"></script>
 
-		<div class="page-wrapper mt-5">
-			<!-- Main content tulis disini -->
-			<div class="content">
-				<div class="page-header">
-					<div class="add-item d-flex">
-						<div class="page-title">
-							<h4>Category</h4>
-							<h6>Manage your categories</h6>
-						</div>
-					</div>
-					<ul class="table-top-head">
-						<li>
-							<a data-bs-toggle="tooltip" data-bs-placement="top" title="Pdf"><img
-									src="assets/img/icons/pdf.svg" alt="img"></a>
-						</li>
-						<li>
-							<a data-bs-toggle="tooltip" data-bs-placement="top" title="Print"><i data-feather="printer"
-									class="feather-rotate-ccw"></i></a>
-						</li>
-						<li>
-							<a data-bs-toggle="tooltip" data-bs-placement="top" title="Refresh"><i
-									data-feather="rotate-ccw" class="feather-rotate-ccw"></i></a>
-						</li>
-						<li>
-							<a data-bs-toggle="tooltip" data-bs-placement="top" title="Collapse" id="collapse-header"><i
-									data-feather="chevron-up" class="feather-chevron-up"></i></a>
-						</li>
-					</ul>
-					<div class="page-btn">
-						<a href="#" class="btn btn-added" data-bs-toggle="modal" data-bs-target="#add-category"><i
-								data-feather="plus-circle" class="me-2"></i>Add New Category</a>
-					</div>
-				</div>
-				<!-- /product list -->
-				<div class="card table-list-card">
-					<div class="card-body">
-						<!-- Filter -->
-						<div class="table-top d-flex align-items-center justify-content-between">
-							<!-- Search Input -->
-							<div class="search-set d-block d-md-flex">
-								<div class="search-input">
-									<a href="" class="btn btn-searchset"><i data-feather="search"
-											class="feather-search"></i></a>
-								</div>
-								<!-- Date Range -->
-								<div class="my-2">
-									<div class="pemilihrentang-container ">
-										<input type="text" id="pemilihrentang-input"
-											class="pemilihrentang-input form-control" readonly placeholder="Date"
-											style="height: fit-content !important;width: 100% !important;">
-										<div id="pemilihrentang-panel" class="pemilihrentang-panel">
-											<div class="pemilihrentang-isi">
-												<div class="opsi-cepat">
-													<div data-range="kemarin">Kemarin</div>
-													<div data-range="7hari">7 Hari Terakhir</div>
-													<div data-range="bulanIni">Bulan Ini</div>
-													<div data-range="bulanLalu">Bulan Lalu</div>
-													<div data-range="tahunLalu">Tahun Lalu</div>
-													<div data-range="kustom">Rentang Kustom</div>
-												</div>
-												<div class="kalender" id="kalender-view" style="display:none;">
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="filters d-flex justify-content-end">
-								<div class="dropdown w-100">
-									<button class="btn btn-outline-primary dropdown-toggle" type="button"
-										data-bs-toggle="dropdown" aria-expanded="false">
-										Status
-									</button>
-									<ul class="dropdown-menu">
-										<li><a class="dropdown-item" href="#">Active</a></li>
-										<li><a class="dropdown-item" href="#">Deactive</a></li>
-									</ul>
-								</div>
-							</div>
-						</div>
-						<!-- /Filter -->
-						<div class="table-responsive">
-							<table class="table  datanew">
-								<thead>
-									<tr>
+    <!-- Datatable JS -->
+    <script src="assets/js/jquery.dataTables.min.js"></script>
+    <script src="assets/js/dataTables.bootstrap5.min.js"></script>
 
-										<th>Product Category</th>
-										<th>Created</th>
-										<th>Status</th>
-										<th class="no-sort">Action</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
+    <!-- Bootstrap Core JS -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
 
-										<td>Jasa Cetak Offset</td>
-										<td>Admin, 02/03/2026, 14:00</td>
-										<td><span class="badge bg-outline-success">Active</span></td>
-										<td class="action-table-data">
-											<div class="edit-delete-action">
-												<a class="me-2 p-2" href="#" data-bs-toggle="modal"
-													data-bs-target="#edit-category">
-													<i data-feather="edit" class="feather-edit"></i>
-												</a>
-												<a class="confirm-text p-2" href="javascript:void(0);">
-													<i data-feather="trash-2" class="feather-trash-2"></i>
-												</a>
-											</div>
+    <!-- Select2 JS -->
+    <script src="assets/plugins/select2/js/select2.min.js"></script>
 
-										</td>
-									</tr>
-									<tr>
+    <!-- Datetimepicker JS -->
+    <script src="assets/js/moment.min.js"></script>
+    <script src="assets/js/bootstrap-datetimepicker.min.js"></script>
 
-										<td>Print Outdoor (Spanduk/Baliho)</td>
-										<td>Admin, 02/03/2026, 14:05</td>
-										<td><span class="badge bg-outline-success">Active</span></td>
-										<td class="action-table-data">
-											<div class="edit-delete-action">
-												<a class="me-2 p-2" href="#" data-bs-toggle="modal"
-													data-bs-target="#edit-category">
-													<i data-feather="edit" class="feather-edit"></i>
-												</a>
-												<a class="confirm-text p-2" href="javascript:void(0);">
-													<i data-feather="trash-2" class="feather-trash-2"></i>
-												</a>
-											</div>
+    <!-- Sweetalert 2 -->
+    <script src="assets/plugins/sweetalert/sweetalert2.all.min.js"></script>
+    <script src="assets/plugins/sweetalert/sweetalerts.min.js"></script>
 
-										</td>
-									</tr>
-									<tr>
-
-										<td>Print Indoor (Poster/X-Banner)</td>
-										<td>Admin, 02/03/2026, 14:10</td>
-										<td><span class="badge bg-outline-success">Active</span></td>
-										<td class="action-table-data">
-											<div class="edit-delete-action">
-												<a class="me-2 p-2" href="#" data-bs-toggle="modal"
-													data-bs-target="#edit-category">
-													<i data-feather="edit" class="feather-edit"></i>
-												</a>
-												<a class="confirm-text p-2" href="javascript:void(0);">
-													<i data-feather="trash-2" class="feather-trash-2"></i>
-												</a>
-											</div>
-
-										</td>
-									</tr>
-									<tr>
-
-										<td>Sablon Manual (Kaos/Plastik)</td>
-										<td>Admin, 02/03/2026, 14:15</td>
-										<td><span class="badge bg-outline-success">Active</span></td>
-										<td class="action-table-data">
-											<div class="edit-delete-action">
-												<a class="me-2 p-2" href="#" data-bs-toggle="modal"
-													data-bs-target="#edit-category">
-													<i data-feather="edit" class="feather-edit"></i>
-												</a>
-												<a class="confirm-text p-2" href="javascript:void(0);">
-													<i data-feather="trash-2" class="feather-trash-2"></i>
-												</a>
-											</div>
-
-										</td>
-									</tr>
-									<tr>
-
-										<td>Digital Printing A3+</td>
-										<td>Admin, 02/03/2026, 14:20</td>
-										<td><span class="badge bg-outline-success">Active</span></td>
-										<td class="action-table-data">
-											<div class="edit-delete-action">
-												<a class="me-2 p-2" href="#" data-bs-toggle="modal"
-													data-bs-target="#edit-category">
-													<i data-feather="edit" class="feather-edit"></i>
-												</a>
-												<a class="confirm-text p-2" href="javascript:void(0);">
-													<i data-feather="trash-2" class="feather-trash-2"></i>
-												</a>
-											</div>
-
-										</td>
-									</tr>
-									<tr>
-
-										<td>Cutting Sticker</td>
-										<td>Admin, 02/03/2026, 14:25</td>
-										<td><span class="badge bg-outline-success">Active</span></td>
-										<td class="action-table-data">
-											<div class="edit-delete-action">
-												<a class="me-2 p-2" href="#" data-bs-toggle="modal"
-													data-bs-target="#edit-category">
-													<i data-feather="edit" class="feather-edit"></i>
-												</a>
-												<a class="confirm-text p-2" href="javascript:void(0);">
-													<i data-feather="trash-2" class="feather-trash-2"></i>
-												</a>
-											</div>
-
-										</td>
-									</tr>
-									<tr>
-
-										<td>Sablon DTF (Digital Transfer Film)</td>
-										<td>Admin, 02/03/2026, 14:30</td>
-										<td><span class="badge bg-outline-danger">Disable</span></td>
-										<td class="action-table-data">
-											<div class="edit-delete-action">
-												<a class="me-2 p-2" href="#" data-bs-toggle="modal"
-													data-bs-target="#edit-category">
-													<i data-feather="edit" class="feather-edit"></i>
-												</a>
-												<a class="confirm-text p-2" href="javascript:void(0);">
-													<i data-feather="trash-2" class="feather-trash-2"></i>
-												</a>
-											</div>
-
-										</td>
-									</tr>
-									<tr>
-
-										<td>Finishing (Laminating/Jilid)</td>
-										<td>Admin, 02/03/2026, 14:35</td>
-										<td><span class="badge bg-outline-success">Active</span></td>
-										<td class="action-table-data">
-											<div class="edit-delete-action">
-												<a class="me-2 p-2" href="#" data-bs-toggle="modal"
-													data-bs-target="#edit-category">
-													<i data-feather="edit" class="feather-edit"></i>
-												</a>
-												<a class="confirm-text p-2" href="javascript:void(0);">
-													<i data-feather="trash-2" class="feather-trash-2"></i>
-												</a>
-											</div>
-
-										</td>
-									</tr>
-									<tr>
-
-										<td>Merchandise & Souvenir (UV Print)</td>
-										<td>Admin, 02/03/2026, 14:40</td>
-										<td><span class="badge bg-outline-success">Active</span></td>
-										<td class="action-table-data">
-											<div class="edit-delete-action">
-												<a class="me-2 p-2" href="#" data-bs-toggle="modal"
-													data-bs-target="#edit-category">
-													<i data-feather="edit" class="feather-edit"></i>
-												</a>
-												<a class="confirm-text p-2" href="javascript:void(0);">
-													<i data-feather="trash-2" class="feather-trash-2"></i>
-												</a>
-											</div>
-
-										</td>
-									</tr>
-									<tr>
-
-										<td>Cetak Nota NCR</td>
-										<td>Admin, 02/03/2026, 14:45</td>
-										<td><span class="badge bg-outline-success">Active</span></td>
-										<td class="action-table-data">
-											<div class="edit-delete-action">
-												<a class="me-2 p-2" href="#" data-bs-toggle="modal"
-													data-bs-target="#edit-category">
-													<i data-feather="edit" class="feather-edit"></i>
-												</a>
-												<a class="confirm-text p-2" href="javascript:void(0);">
-													<i data-feather="trash-2" class="feather-trash-2"></i>
-												</a>
-											</div>
-
-										</td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
-					</div>
-				</div>
-				<!-- /product list -->
-			</div>
-		</div>
-
-	</div>
-	<!-- /Main Wrapper -->
-	<!-- modals -->
-	<!-- Add Category -->
-	<div class="modal fade" id="add-category">
-		<div class="modal-dialog modal-dialog-centered custom-modal-two">
-			<div class="modal-content">
-				<div class="page-wrapper-new p-0">
-					<div class="content">
-						<div class="modal-header border-0 custom-modal-header">
-							<div class="page-title">
-								<h4>Create Category</h4>
-							</div>
-							<button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-								<span aria-hidden="true">&times;</span>
-							</button>
-						</div>
-						<div class="modal-body custom-modal-body">
-							<form action="category-list.html">
-								<div class="mb-3">
-									<label class="form-label">Category</label>
-									<input type="text" class="form-control">
-								</div>
-								<div class="mb-3">
-									<label class="form-label">Category Slug</label>
-									<input type="text" class="form-control">
-								</div>
-								<div class="mb-0">
-									<div
-										class="status-toggle modal-status d-flex justify-content-between align-items-center">
-										<span class="status-label">Status</span>
-										<input type="checkbox" id="user2" class="check" checked="">
-										<label for="user2" class="checktoggle"></label>
-									</div>
-								</div>
-								<div class="modal-footer-btn">
-									<button type="button" class="btn btn-cancel me-2"
-										data-bs-dismiss="modal">Cancel</button>
-									<button type="submit" class="btn btn-submit">Create Category</button>
-								</div>
-							</form>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- /Add Category -->
-
-	<!-- Edit Category -->
-	<div class="modal fade" id="edit-category">
-		<div class="modal-dialog modal-dialog-centered custom-modal-two">
-			<div class="modal-content">
-				<div class="page-wrapper-new p-0">
-					<div class="content">
-						<div class="modal-header border-0 custom-modal-header">
-							<div class="page-title">
-								<h4>Edit Category</h4>
-							</div>
-							<button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-								<span aria-hidden="true">&times;</span>
-							</button>
-						</div>
-						<div class="modal-body custom-modal-body">
-							<form action="category-list.html">
-								<div class="mb-3">
-									<label class="form-label">Category</label>
-									<input type="text" class="form-control" value="Laptop">
-								</div>
-								<div class="mb-3">
-									<label class="form-label">Category Slug</label>
-									<input type="text" class="form-control" value="laptop">
-								</div>
-								<div class="mb-0">
-									<div
-										class="status-toggle modal-status d-flex justify-content-between align-items-center">
-										<span class="status-label">Status</span>
-										<input type="checkbox" id="user3" class="check" checked="">
-										<label for="user3" class="checktoggle"></label>
-									</div>
-								</div>
-								<div class="modal-footer-btn">
-									<button type="button" class="btn btn-cancel me-2"
-										data-bs-dismiss="modal">Cancel</button>
-									<button type="submit" class="btn btn-submit">Save Changes</button>
-								</div>
-							</form>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- /Edit Category -->
-	<!-- modals -->
-	<!-- jQuery -->
-	<script src="assets/js/jquery-3.7.1.min.js"></script>
-
-	<!-- Feather Icon JS -->
-	<script src="assets/js/feather.min.js"></script>
-
-	<!-- Slimscroll JS -->
-	<script src="assets/js/jquery.slimscroll.min.js"></script>
-
-	<!-- Datatable JS -->
-	<script src="assets/js/jquery.dataTables.min.js"></script>
-	<script src="assets/js/dataTables.bootstrap5.min.js"></script>
-
-	<!-- Bootstrap Core JS -->
-	<script src="assets/js/bootstrap.bundle.min.js"></script>
-
-	<!-- Select2 JS -->
-	<script src="assets/plugins/select2/js/select2.min.js"></script>
-
-	<!-- Datetimepicker JS -->
-	<script src="assets/js/moment.min.js"></script>
-	<script src="assets/js/bootstrap-datetimepicker.min.js"></script>
-
-	<!-- Sweetalert 2 -->
-	<script src="assets/plugins/sweetalert/sweetalert2.all.min.js"></script>
-	<script src="assets/plugins/sweetalert/sweetalerts.min.js"></script>
-
-	<!-- Custom JS -->
-	<script src="assets/js/theme-script.js"></script>
-	<script src="assets/js/script.js"></script>
-
-
-</body>
-
+    <!-- Custom JS -->
+    <script src="assets/js/theme-script.js"></script>
+    <script src="assets/js/script.js"></script>
+  </body>
 </html>

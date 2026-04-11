@@ -1,554 +1,571 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
-    <meta name="description" content="POS - Bootstrap Admin Template">
-    <meta name="keywords"
-        content="admin, estimates, bootstrap, business, corporate, creative, invoice, html5, responsive, Projects">
-    <meta name="author" content="Dreamguys - Bootstrap Admin Template">
-    <meta name="robots" content="noindex, nofollow">
-    <title>Dreams Pos Admin Template</title>
-
-    <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0" />
+    <meta name="description" content="POS - Bootstrap Admin Template" />
+    <meta
+      name="keywords"
+      content="admin, estimates, bootstrap, business, corporate, creative, invoice, html5, responsive, Projects"
+    />
+    <meta name="author" content="Dreamguys - Bootstrap Admin Template" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Kacetak System</title>
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/kacetak.jpeg" />
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
 
     <!-- animation CSS -->
-    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet" href="assets/css/animate.css" />
 
     <!-- Select2 CSS -->
-    <link rel="stylesheet" href="assets/plugins/select2/css/select2.min.css">
+    <link rel="stylesheet" href="assets/plugins/select2/css/select2.min.css" />
 
     <!-- Datetimepicker CSS -->
-    <link rel="stylesheet" href="assets/css/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" href="assets/css/bootstrap-datetimepicker.min.css" />
 
     <!-- Mobile CSS-->
-    <link rel="stylesheet" href="assets/plugins/intltelinput/css/intlTelInput.css">
-    <link rel="stylesheet" href="assets/plugins/intltelinput/css/demo.css">
+    <link rel="stylesheet" href="assets/plugins/intltelinput/css/intlTelInput.css" />
+    <link rel="stylesheet" href="assets/plugins/intltelinput/css/demo.css" />
 
     <!-- Datatable CSS -->
-    <link rel="stylesheet" href="assets/css/dataTables.bootstrap5.min.css">
+    <link rel="stylesheet" href="assets/css/dataTables.bootstrap5.min.css" />
 
     <!-- Fontawesome CSS -->
-    <link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css">
-    <link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css" />
+    <link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css" />
 
     <!-- Main CSS -->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
 
-
-</head>
-
-<body>
+  <body>
     <div id="global-loader">
-        <div class="loader"> </div>
+      <div class="loader"></div>
     </div>
     <!-- Main Wrapper -->
     <div class="main-wrapper">
+      <!-- header -->
+      <div id="header-placeholder"></div>
+      <!-- sidebar -->
+      <div id="sidebar-placeholder"></div>
 
-        <!-- header -->
-        <div id="header-placeholder"></div>
-        <!-- sidebar -->
-        <div id="sidebar-placeholder"></div>
-
-        <div class="page-wrapper mt-3">
-            <!-- Main content tulis disini -->
-            <div class="content">
-                <div class="page-header">
-                    <div class="add-item d-flex">
-                        <div class="page-title">
-                            <h4>Mesin Pond List</h4>
-                            <h6>Manage your Mesin Pond</h6>
-                        </div>
-                    </div>
-                    <ul class="table-top-head">
-                        <li>
-                            <a data-bs-toggle="tooltip" data-bs-placement="top" title="Pdf"><img
-                                    src="assets/img/icons/pdf.svg" alt="img"></a>
-                        </li>
-                        <li>
-                            <a data-bs-toggle="tooltip" data-bs-placement="top" title="Print"><i data-feather="printer"
-                                    class="feather-rotate-ccw"></i></a>
-                        </li>
-                        <li>
-                            <a data-bs-toggle="tooltip" data-bs-placement="top" title="Refresh"><i
-                                    data-feather="rotate-ccw" class="feather-rotate-ccw"></i></a>
-                        </li>
-                        <li>
-                            <a data-bs-toggle="tooltip" data-bs-placement="top" title="Collapse" id="collapse-header"><i
-                                    data-feather="chevron-up" class="feather-chevron-up"></i></a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="row mt-5">
-                    <div class="col-xl-3 col-sm-6 col-12 d-flex">
-                        <div class="dash-widget w-100">
-                            <div class="dash-widgetimg">
-                                <span><img src="assets/img/icons/dash1.svg" alt="img"></span>
-                            </div>
-                            <div class="dash-widgetcontent">
-                                <h6>Total Mesin Pond</h6>
-                                <h5><span class="counters" data-count="307144">307144</span></h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-sm-6 col-12 d-flex">
-                        <div class="dash-widget dash1 w-100">
-                            <div class="dash-widgetimg">
-                                <span><img src="assets/img/icons/dash2.svg" alt="img"></span>
-                            </div>
-                            <div class="dash-widgetcontent">
-                                <h6>Total Percetakan</h6>
-                                <h5><span class="counters" data-count="4385">4385</span></h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-sm-6 col-12 d-flex">
-                        <div class="dash-widget dash2 w-100">
-                            <div class="dash-widgetimg">
-                                <span><img src="assets/img/icons/dash3.svg" alt="img"></span>
-                            </div>
-                            <div class="dash-widgetcontent">
-                                <h6>Total Publish</h6>
-                                <h5><span class="counters" data-count="3000">3000</span></h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-sm-6 col-12 d-flex">
-                        <div class="dash-widget dash3 w-100">
-                            <div class="dash-widgetimg">
-                                <span><img src="assets/img/icons/dash4.svg" alt="img"></span>
-                            </div>
-                            <div class="dash-widgetcontent">
-                                <h6>Total Private</h6>
-                                <h5><span class="counters" data-count="1385">1385</span></h5>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- /product list -->
-                <div class="card table-list-card">
-                    <div class="card-body">
-                        <!-- Filter -->
-                        <div class="table-top d-flex align-items-center justify-content-between">
-                            <!-- Search Input -->
-                            <div class="search-set d-block d-md-flex">
-                                <div class="search-input">
-                                    <a href="" class="btn btn-searchset"><i data-feather="search"
-                                            class="feather-search"></i></a>
-                                </div>
-                                <!-- Date Range -->
-                                <div class="my-2">
-                                    <div class="pemilihrentang-container ">
-                                        <input type="text" id="pemilihrentang-input"
-                                            class="pemilihrentang-input form-control" readonly placeholder="Date"
-                                            style="height: fit-content !important;width: 100% !important;">
-                                        <div id="pemilihrentang-panel" class="pemilihrentang-panel">
-                                            <div class="pemilihrentang-isi">
-                                                <div class="opsi-cepat">
-                                                    <div data-range="kemarin">Kemarin</div>
-                                                    <div data-range="7hari">7 Hari Terakhir</div>
-                                                    <div data-range="bulanIni">Bulan Ini</div>
-                                                    <div data-range="bulanLalu">Bulan Lalu</div>
-                                                    <div data-range="tahunLalu">Tahun Lalu</div>
-                                                    <div data-range="kustom">Rentang Kustom</div>
-                                                </div>
-                                                <div class="kalender" id="kalender-view" style="display:none;">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="filters d-flex justify-content-end">
-                                <div class="dropdown w-100 me-2">
-                                    <button class="btn btn-outline-primary dropdown-toggle" type="button"
-                                        data-bs-toggle="dropdown" aria-expanded="false">
-                                        Status
-                                    </button>
-                                    <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="#">Publish</a></li>
-                                        <li><a class="dropdown-item" href="#">Private</a></li>
-                                        <li><a class="dropdown-item" href="#">Active</a></li>
-                                        <li><a class="dropdown-item" href="#">Deactive</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- /Filter -->
-                        <div class="table-responsive mb-5">
-                            <table class="table datanew">
-                                <thead>
-                                    <tr>
-
-                                        <th>Sumber</th>
-                                        <th>Nama</th>
-                                        <th>Ukuran</th>
-                                        <th>Standard</th>
-                                        <th>Setengah Putus</th>
-                                        <th>Update</th>
-                                        <th>Status</th>
-                                        <th class="no-sort">Action</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-
-                                        <td>
-                                            <div class="userimgname cust-imgname">
-                                                <a href="javascript:void(0);" class="product-img">
-                                                    <img src="assets/img/users/user-23.jpg" alt="percetakan">
-                                                </a>
-                                                <div>
-                                                    <a href="javascript:void(0);">Percetakan Cahaya Abadi</a>
-                                                    <span class="d-block">Jakarta Barat, Jakarta</span>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td>PYQ 65</td>
-                                        <td>650x900<br>Milimeter</td>
-                                        <td>Harga: Rp50<br>Minim: Rp50.000</td>
-                                        <td>Harga: Rp100<br>Minim: Rp100.000</td>
-                                        <td>01/10/24 10:30</td>
-                                        <td>
-                                            <span class="badge bg-success">Publish</span><br>
-                                            <span class="badge bg-info">Active</span>
-                                        </td>
-                                        <td class="action-table-data">
-                                            <div class="edit-delete-action">
-                                                <a class="me-2 p-2" href="#" data-bs-toggle="modal"
-                                                    data-bs-target="#edit-units"><i data-feather="edit"></i></a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-
-                                        <td>
-                                            <div class="userimgname cust-imgname">
-                                                <a href="javascript:void(0);" class="product-img">
-                                                    <img src="assets/img/users/user-24.jpg" alt="percetakan">
-                                                </a>
-                                                <div>
-                                                    <a href="javascript:void(0);">Sinar Digital Printing</a>
-                                                    <span class="d-block">Surabaya, Jawa Timur</span>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td>ML 1300</td>
-                                        <td>1300x950<br>Milimeter</td>
-                                        <td>Harga: Rp85<br>Minim: Rp75.000</td>
-                                        <td>Harga: Rp160<br>Minim: Rp150.000</td>
-                                        <td>28/09/24 15:45</td>
-                                        <td>
-                                            <span class="badge bg-success">Publish</span><br>
-                                            <span class="badge bg-info">Active</span>
-                                        </td>
-                                        <td class="action-table-data">
-                                            <div class="edit-delete-action">
-                                                <a class="me-2 p-2" href="#" data-bs-toggle="modal"
-                                                    data-bs-target="#edit-units"><i data-feather="edit"></i></a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-
-                                        <td>
-                                            <div class="userimgname cust-imgname">
-                                                <a href="javascript:void(0);" class="product-img">
-                                                    <img src="assets/img/users/user-25.jpg" alt="percetakan">
-                                                </a>
-                                                <div>
-                                                    <a href="javascript:void(0);">Media Grafis Jaya</a>
-                                                    <span class="d-block">Bandung, Jawa Barat</span>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td>TYMK 750</td>
-                                        <td>750x520<br>Milimeter</td>
-                                        <td>Harga: Rp40<br>Minim: Rp45.000</td>
-                                        <td>Harga: Rp80<br>Minim: Rp90.000</td>
-                                        <td>30/09/24 08:00</td>
-                                        <td>
-                                            <span class="badge bg-danger">Private</span><br>
-                                            <span class="badge bg-info">Active</span>
-                                        </td>
-                                        <td class="action-table-data">
-                                            <div class="edit-delete-action">
-                                                <a class="me-2 p-2" href="#" data-bs-toggle="modal"
-                                                    data-bs-target="#edit-units"><i data-feather="edit"></i></a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-
-                                        <td>
-                                            <div class="userimgname cust-imgname">
-                                                <a href="javascript:void(0);" class="product-img">
-                                                    <img src="assets/img/users/user-26.jpg" alt="percetakan">
-                                                </a>
-                                                <div>
-                                                    <a href="javascript:void(0);">Global Print Solution</a>
-                                                    <span class="d-block">Semarang, Jawa Tengah</span>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td>YP-K 1080</td>
-                                        <td>1080x780<br>Milimeter</td>
-                                        <td>Harga: Rp65<br>Minim: Rp60.000</td>
-                                        <td>Harga: Rp125<br>Minim: Rp120.000</td>
-                                        <td>01/10/24 11:20</td>
-                                        <td>
-                                            <span class="badge bg-success">Publish</span><br>
-                                            <span class="badge bg-info">Active</span>
-                                        </td>
-                                        <td class="action-table-data">
-                                            <div class="edit-delete-action">
-                                                <a class="me-2 p-2" href="#" data-bs-toggle="modal"
-                                                    data-bs-target="#edit-units"><i data-feather="edit"></i></a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-
-                                        <td>
-                                            <div class="userimgname cust-imgname">
-                                                <a href="javascript:void(0);" class="product-img">
-                                                    <img src="assets/img/users/user-27.jpg" alt="percetakan">
-                                                </a>
-                                                <div>
-                                                    <a href="javascript:void(0);">Prima Offset Printing</a>
-                                                    <span class="d-block">Medan, Sumatera Utara</span>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td>PYQ 203C</td>
-                                        <td>2030x1500<br>Milimeter</td>
-                                        <td>Harga: Rp110<br>Minim: Rp120.000</td>
-                                        <td>Harga: Rp210<br>Minim: Rp240.000</td>
-                                        <td>25/09/24 13:00</td>
-                                        <td>
-                                            <span class="badge bg-success">Publish</span><br>
-                                            <span class="badge bg-warning">Deactive</span>
-                                        </td>
-                                        <td class="action-table-data">
-                                            <div class="edit-delete-action">
-                                                <a class="me-2 p-2" href="#" data-bs-toggle="modal"
-                                                    data-bs-target="#edit-units"><i data-feather="edit"></i></a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-
-                                        <td>
-                                            <div class="userimgname cust-imgname">
-                                                <a href="javascript:void(0);" class="product-img">
-                                                    <img src="assets/img/users/user-28.jpg" alt="percetakan">
-                                                </a>
-                                                <div>
-                                                    <a href="javascript:void(0);">Percetakan Express Cepat</a>
-                                                    <span class="d-block">Makassar, Sulawesi Selatan</span>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td>ML 750</td>
-                                        <td>750x520<br>Milimeter</td>
-                                        <td>Harga: Rp45<br>Minim: Rp40.000</td>
-                                        <td>Harga: Rp95<br>Minim: Rp80.000</td>
-                                        <td>22/09/24 17:00</td>
-                                        <td>
-                                            <span class="badge bg-danger">Private</span><br>
-                                            <span class="badge bg-warning">Deactive</span>
-                                        </td>
-                                        <td class="action-table-data">
-                                            <div class="edit-delete-action">
-                                                <a class="me-2 p-2" href="#" data-bs-toggle="modal"
-                                                    data-bs-target="#edit-units"><i data-feather="edit"></i></a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-
-                                        <td>
-                                            <div class="userimgname cust-imgname">
-                                                <a href="javascript:void(0);" class="product-img">
-                                                    <img src="assets/img/users/user-29.jpg" alt="percetakan">
-                                                </a>
-                                                <div>
-                                                    <a href="javascript:void(0);">Karya Utama Printing</a>
-                                                    <span class="d-block">Yogyakarta, DI Yogyakarta</span>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td>YP-K 920</td>
-                                        <td>920x660<br>Milimeter</td>
-                                        <td>Harga: Rp55<br>Minim: Rp55.000</td>
-                                        <td>Harga: Rp110<br>Minim: Rp110.000</td>
-                                        <td>29/09/24 20:10</td>
-                                        <td>
-                                            <span class="badge bg-success">Publish</span><br>
-                                            <span class="badge bg-info">Active</span>
-                                        </td>
-                                        <td class="action-table-data">
-                                            <div class="edit-delete-action">
-                                                <a class="me-2 p-2" href="#" data-bs-toggle="modal"
-                                                    data-bs-target="#edit-units"><i data-feather="edit"></i></a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-
-                                        <td>
-                                            <div class="userimgname cust-imgname">
-                                                <a href="javascript:void(0);" class="product-img">
-                                                    <img src="assets/img/users/user-30.jpg" alt="percetakan">
-                                                </a>
-                                                <div>
-                                                    <a href="javascript:void(0);">Percetakan Kilat</a>
-                                                    <span class="d-block">Palembang, Sumatera Selatan</span>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td>TYMK 1000</td>
-                                        <td>1000x700<br>Milimeter</td>
-                                        <td>Harga: Rp60<br>Minim: Rp58.000</td>
-                                        <td>Harga: Rp115<br>Minim: Rp116.000</td>
-                                        <td>18/09/24 09:40</td>
-                                        <td>
-                                            <span class="badge bg-success">Publish</span><br>
-                                            <span class="badge bg-info">Active</span>
-                                        </td>
-                                        <td class="action-table-data">
-                                            <div class="edit-delete-action">
-                                                <a class="me-2 p-2" href="#" data-bs-toggle="modal"
-                                                    data-bs-target="#edit-units"><i data-feather="edit"></i></a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-
-                                        <td>
-                                            <div class="userimgname cust-imgname">
-                                                <a href="javascript:void(0);" class="product-img">
-                                                    <img src="assets/img/users/user-31.jpg" alt="percetakan">
-                                                </a>
-                                                <div>
-                                                    <a href="javascript:void(0);">Bandung Offset Cemerlang</a>
-                                                    <span class="d-block">Bandung, Jawa Barat</span>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td>PYQ 1040</td>
-                                        <td>1040x720<br>Milimeter</td>
-                                        <td>Harga: Rp70<br>Minim: Rp65.000</td>
-                                        <td>Harga: Rp130<br>Minim: Rp130.000</td>
-                                        <td>01/10/24 16:50</td>
-                                        <td>
-                                            <span class="badge bg-danger">Private</span><br>
-                                            <span class="badge bg-info">Active</span>
-                                        </td>
-                                        <td class="action-table-data">
-                                            <div class="edit-delete-action">
-                                                <a class="me-2 p-2" href="#" data-bs-toggle="modal"
-                                                    data-bs-target="#edit-units"><i data-feather="edit"></i></a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-
-                                        <td>
-                                            <div class="userimgname cust-imgname">
-                                                <a href="javascript:void(0);" class="product-img">
-                                                    <img src="assets/img/users/user-31.jpg" alt="percetakan">
-                                                </a>
-                                                <div>
-                                                    <a href="javascript:void(0);">Percetakan Utama Selindo</a>
-                                                    <span class="d-block">Jakarta Timur, Jakarta</span>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td>ML 1100</td>
-                                        <td>1100x800<br>Milimeter</td>
-                                        <td>Harga: Rp75<br>Minim: Rp70.000</td>
-                                        <td>Harga: Rp145<br>Minim: Rp140.000</td>
-                                        <td>26/09/24 14:00</td>
-                                        <td>
-                                            <span class="badge bg-success">Publish</span><br>
-                                            <span class="badge bg-info">Active</span>
-                                        </td>
-                                        <td class="action-table-data">
-                                            <div class="edit-delete-action">
-                                                <a class="me-2 p-2" href="#" data-bs-toggle="modal"
-                                                    data-bs-target="#edit-units"><i data-feather="edit"></i></a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-                <!-- /product list -->
+      <div class="page-wrapper mt-3">
+        <!-- Main content tulis disini -->
+        <div class="content">
+          <div class="page-header">
+            <div class="add-item d-flex">
+              <div class="page-title">
+                <h4>Mesin Pond List</h4>
+                <h6>Manage your Mesin Pond</h6>
+              </div>
             </div>
+            <ul class="table-top-head">
+              <li>
+                <a data-bs-toggle="tooltip" data-bs-placement="top" title="Pdf"
+                  ><img src="assets/img/icons/pdf.svg" alt="img"
+                /></a>
+              </li>
+              <li>
+                <a data-bs-toggle="tooltip" data-bs-placement="top" title="Print"
+                  ><i data-feather="printer" class="feather-rotate-ccw"></i
+                ></a>
+              </li>
+              <li>
+                <a data-bs-toggle="tooltip" data-bs-placement="top" title="Refresh"
+                  ><i data-feather="rotate-ccw" class="feather-rotate-ccw"></i
+                ></a>
+              </li>
+              <li>
+                <a data-bs-toggle="tooltip" data-bs-placement="top" title="Collapse" id="collapse-header"
+                  ><i data-feather="chevron-up" class="feather-chevron-up"></i
+                ></a>
+              </li>
+            </ul>
+          </div>
+          <div class="row mt-5">
+            <div class="col-xl-3 col-sm-6 col-12 d-flex">
+              <div class="dash-widget w-100">
+                <div class="dash-widgetimg">
+                  <span><img src="assets/img/icons/dash1.svg" alt="img" /></span>
+                </div>
+                <div class="dash-widgetcontent">
+                  <h6>Total Mesin Pond</h6>
+                  <h5><span class="counters" data-count="307144">307144</span></h5>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-sm-6 col-12 d-flex">
+              <div class="dash-widget dash1 w-100">
+                <div class="dash-widgetimg">
+                  <span><img src="assets/img/icons/dash2.svg" alt="img" /></span>
+                </div>
+                <div class="dash-widgetcontent">
+                  <h6>Total Percetakan</h6>
+                  <h5><span class="counters" data-count="4385">4385</span></h5>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-sm-6 col-12 d-flex">
+              <div class="dash-widget dash2 w-100">
+                <div class="dash-widgetimg">
+                  <span><img src="assets/img/icons/dash3.svg" alt="img" /></span>
+                </div>
+                <div class="dash-widgetcontent">
+                  <h6>Total Publish</h6>
+                  <h5><span class="counters" data-count="3000">3000</span></h5>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-sm-6 col-12 d-flex">
+              <div class="dash-widget dash3 w-100">
+                <div class="dash-widgetimg">
+                  <span><img src="assets/img/icons/dash4.svg" alt="img" /></span>
+                </div>
+                <div class="dash-widgetcontent">
+                  <h6>Total Private</h6>
+                  <h5><span class="counters" data-count="1385">1385</span></h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- /product list -->
+          <div class="card table-list-card">
+            <div class="card-body">
+              <!-- Filter -->
+              <div class="table-top d-flex align-items-center justify-content-between">
+                <!-- Search Input -->
+                <div class="search-set d-block d-md-flex">
+                  <div class="search-input">
+                    <a href="" class="btn btn-searchset"><i data-feather="search" class="feather-search"></i></a>
+                  </div>
+                  <!-- Date Range -->
+                  <div class="my-2">
+                    <div class="pemilihrentang-container">
+                      <input
+                        type="text"
+                        id="pemilihrentang-input"
+                        class="pemilihrentang-input form-control"
+                        readonly
+                        placeholder="Date"
+                        style="height: fit-content !important; width: 100% !important"
+                      />
+                      <div id="pemilihrentang-panel" class="pemilihrentang-panel">
+                        <div class="pemilihrentang-isi">
+                          <div class="opsi-cepat">
+                            <div data-range="kemarin">Kemarin</div>
+                            <div data-range="7hari">7 Hari Terakhir</div>
+                            <div data-range="bulanIni">Bulan Ini</div>
+                            <div data-range="bulanLalu">Bulan Lalu</div>
+                            <div data-range="tahunLalu">Tahun Lalu</div>
+                            <div data-range="kustom">Rentang Kustom</div>
+                          </div>
+                          <div class="kalender" id="kalender-view" style="display: none"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="filters d-flex justify-content-end">
+                  <div class="dropdown w-100 me-2">
+                    <button
+                      class="btn btn-outline-primary dropdown-toggle"
+                      type="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                      Status
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Publish</a></li>
+                      <li><a class="dropdown-item" href="#">Private</a></li>
+                      <li><a class="dropdown-item" href="#">Active</a></li>
+                      <li><a class="dropdown-item" href="#">Deactive</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <!-- /Filter -->
+              <div class="table-responsive mb-5">
+                <table class="table datanew">
+                  <thead>
+                    <tr>
+                      <th>Sumber</th>
+                      <th>Nama</th>
+                      <th>Ukuran</th>
+                      <th>Standard</th>
+                      <th>Setengah Putus</th>
+                      <th>Update</th>
+                      <th>Status</th>
+                      <th class="no-sort">Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <div class="userimgname cust-imgname">
+                          <a href="javascript:void(0);" class="product-img">
+                            <img src="assets/img/users/user-23.jpg" alt="percetakan" />
+                          </a>
+                          <div>
+                            <a href="javascript:void(0);">Percetakan Cahaya Abadi</a>
+                            <span class="d-block">Jakarta Barat, Jakarta</span>
+                          </div>
+                        </div>
+                      </td>
+                      <td>PYQ 65</td>
+                      <td>650x900<br />Milimeter</td>
+                      <td>Harga: Rp50<br />Minim: Rp50.000</td>
+                      <td>Harga: Rp100<br />Minim: Rp100.000</td>
+                      <td>01/10/24 10:30</td>
+                      <td>
+                        <span class="badge bg-success">Publish</span><br />
+                        <span class="badge bg-info">Active</span>
+                      </td>
+                      <td class="action-table-data">
+                        <div class="edit-delete-action">
+                          <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#edit-units"
+                            ><i data-feather="edit"></i
+                          ></a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="userimgname cust-imgname">
+                          <a href="javascript:void(0);" class="product-img">
+                            <img src="assets/img/users/user-24.jpg" alt="percetakan" />
+                          </a>
+                          <div>
+                            <a href="javascript:void(0);">Sinar Digital Printing</a>
+                            <span class="d-block">Surabaya, Jawa Timur</span>
+                          </div>
+                        </div>
+                      </td>
+                      <td>ML 1300</td>
+                      <td>1300x950<br />Milimeter</td>
+                      <td>Harga: Rp85<br />Minim: Rp75.000</td>
+                      <td>Harga: Rp160<br />Minim: Rp150.000</td>
+                      <td>28/09/24 15:45</td>
+                      <td>
+                        <span class="badge bg-success">Publish</span><br />
+                        <span class="badge bg-info">Active</span>
+                      </td>
+                      <td class="action-table-data">
+                        <div class="edit-delete-action">
+                          <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#edit-units"
+                            ><i data-feather="edit"></i
+                          ></a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="userimgname cust-imgname">
+                          <a href="javascript:void(0);" class="product-img">
+                            <img src="assets/img/users/user-25.jpg" alt="percetakan" />
+                          </a>
+                          <div>
+                            <a href="javascript:void(0);">Media Grafis Jaya</a>
+                            <span class="d-block">Bandung, Jawa Barat</span>
+                          </div>
+                        </div>
+                      </td>
+                      <td>TYMK 750</td>
+                      <td>750x520<br />Milimeter</td>
+                      <td>Harga: Rp40<br />Minim: Rp45.000</td>
+                      <td>Harga: Rp80<br />Minim: Rp90.000</td>
+                      <td>30/09/24 08:00</td>
+                      <td>
+                        <span class="badge bg-danger">Private</span><br />
+                        <span class="badge bg-info">Active</span>
+                      </td>
+                      <td class="action-table-data">
+                        <div class="edit-delete-action">
+                          <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#edit-units"
+                            ><i data-feather="edit"></i
+                          ></a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="userimgname cust-imgname">
+                          <a href="javascript:void(0);" class="product-img">
+                            <img src="assets/img/users/user-26.jpg" alt="percetakan" />
+                          </a>
+                          <div>
+                            <a href="javascript:void(0);">Global Print Solution</a>
+                            <span class="d-block">Semarang, Jawa Tengah</span>
+                          </div>
+                        </div>
+                      </td>
+                      <td>YP-K 1080</td>
+                      <td>1080x780<br />Milimeter</td>
+                      <td>Harga: Rp65<br />Minim: Rp60.000</td>
+                      <td>Harga: Rp125<br />Minim: Rp120.000</td>
+                      <td>01/10/24 11:20</td>
+                      <td>
+                        <span class="badge bg-success">Publish</span><br />
+                        <span class="badge bg-info">Active</span>
+                      </td>
+                      <td class="action-table-data">
+                        <div class="edit-delete-action">
+                          <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#edit-units"
+                            ><i data-feather="edit"></i
+                          ></a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="userimgname cust-imgname">
+                          <a href="javascript:void(0);" class="product-img">
+                            <img src="assets/img/users/user-27.jpg" alt="percetakan" />
+                          </a>
+                          <div>
+                            <a href="javascript:void(0);">Prima Offset Printing</a>
+                            <span class="d-block">Medan, Sumatera Utara</span>
+                          </div>
+                        </div>
+                      </td>
+                      <td>PYQ 203C</td>
+                      <td>2030x1500<br />Milimeter</td>
+                      <td>Harga: Rp110<br />Minim: Rp120.000</td>
+                      <td>Harga: Rp210<br />Minim: Rp240.000</td>
+                      <td>25/09/24 13:00</td>
+                      <td>
+                        <span class="badge bg-success">Publish</span><br />
+                        <span class="badge bg-warning">Deactive</span>
+                      </td>
+                      <td class="action-table-data">
+                        <div class="edit-delete-action">
+                          <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#edit-units"
+                            ><i data-feather="edit"></i
+                          ></a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="userimgname cust-imgname">
+                          <a href="javascript:void(0);" class="product-img">
+                            <img src="assets/img/users/user-28.jpg" alt="percetakan" />
+                          </a>
+                          <div>
+                            <a href="javascript:void(0);">Percetakan Express Cepat</a>
+                            <span class="d-block">Makassar, Sulawesi Selatan</span>
+                          </div>
+                        </div>
+                      </td>
+                      <td>ML 750</td>
+                      <td>750x520<br />Milimeter</td>
+                      <td>Harga: Rp45<br />Minim: Rp40.000</td>
+                      <td>Harga: Rp95<br />Minim: Rp80.000</td>
+                      <td>22/09/24 17:00</td>
+                      <td>
+                        <span class="badge bg-danger">Private</span><br />
+                        <span class="badge bg-warning">Deactive</span>
+                      </td>
+                      <td class="action-table-data">
+                        <div class="edit-delete-action">
+                          <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#edit-units"
+                            ><i data-feather="edit"></i
+                          ></a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="userimgname cust-imgname">
+                          <a href="javascript:void(0);" class="product-img">
+                            <img src="assets/img/users/user-29.jpg" alt="percetakan" />
+                          </a>
+                          <div>
+                            <a href="javascript:void(0);">Karya Utama Printing</a>
+                            <span class="d-block">Yogyakarta, DI Yogyakarta</span>
+                          </div>
+                        </div>
+                      </td>
+                      <td>YP-K 920</td>
+                      <td>920x660<br />Milimeter</td>
+                      <td>Harga: Rp55<br />Minim: Rp55.000</td>
+                      <td>Harga: Rp110<br />Minim: Rp110.000</td>
+                      <td>29/09/24 20:10</td>
+                      <td>
+                        <span class="badge bg-success">Publish</span><br />
+                        <span class="badge bg-info">Active</span>
+                      </td>
+                      <td class="action-table-data">
+                        <div class="edit-delete-action">
+                          <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#edit-units"
+                            ><i data-feather="edit"></i
+                          ></a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="userimgname cust-imgname">
+                          <a href="javascript:void(0);" class="product-img">
+                            <img src="assets/img/users/user-30.jpg" alt="percetakan" />
+                          </a>
+                          <div>
+                            <a href="javascript:void(0);">Percetakan Kilat</a>
+                            <span class="d-block">Palembang, Sumatera Selatan</span>
+                          </div>
+                        </div>
+                      </td>
+                      <td>TYMK 1000</td>
+                      <td>1000x700<br />Milimeter</td>
+                      <td>Harga: Rp60<br />Minim: Rp58.000</td>
+                      <td>Harga: Rp115<br />Minim: Rp116.000</td>
+                      <td>18/09/24 09:40</td>
+                      <td>
+                        <span class="badge bg-success">Publish</span><br />
+                        <span class="badge bg-info">Active</span>
+                      </td>
+                      <td class="action-table-data">
+                        <div class="edit-delete-action">
+                          <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#edit-units"
+                            ><i data-feather="edit"></i
+                          ></a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="userimgname cust-imgname">
+                          <a href="javascript:void(0);" class="product-img">
+                            <img src="assets/img/users/user-31.jpg" alt="percetakan" />
+                          </a>
+                          <div>
+                            <a href="javascript:void(0);">Bandung Offset Cemerlang</a>
+                            <span class="d-block">Bandung, Jawa Barat</span>
+                          </div>
+                        </div>
+                      </td>
+                      <td>PYQ 1040</td>
+                      <td>1040x720<br />Milimeter</td>
+                      <td>Harga: Rp70<br />Minim: Rp65.000</td>
+                      <td>Harga: Rp130<br />Minim: Rp130.000</td>
+                      <td>01/10/24 16:50</td>
+                      <td>
+                        <span class="badge bg-danger">Private</span><br />
+                        <span class="badge bg-info">Active</span>
+                      </td>
+                      <td class="action-table-data">
+                        <div class="edit-delete-action">
+                          <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#edit-units"
+                            ><i data-feather="edit"></i
+                          ></a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="userimgname cust-imgname">
+                          <a href="javascript:void(0);" class="product-img">
+                            <img src="assets/img/users/user-31.jpg" alt="percetakan" />
+                          </a>
+                          <div>
+                            <a href="javascript:void(0);">Percetakan Utama Selindo</a>
+                            <span class="d-block">Jakarta Timur, Jakarta</span>
+                          </div>
+                        </div>
+                      </td>
+                      <td>ML 1100</td>
+                      <td>1100x800<br />Milimeter</td>
+                      <td>Harga: Rp75<br />Minim: Rp70.000</td>
+                      <td>Harga: Rp145<br />Minim: Rp140.000</td>
+                      <td>26/09/24 14:00</td>
+                      <td>
+                        <span class="badge bg-success">Publish</span><br />
+                        <span class="badge bg-info">Active</span>
+                      </td>
+                      <td class="action-table-data">
+                        <div class="edit-delete-action">
+                          <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#edit-units"
+                            ><i data-feather="edit"></i
+                          ></a>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <!-- /product list -->
         </div>
-
+      </div>
     </div>
     <!-- /Main Wrapper -->
     <!-- Modal: Warning / Ban / Freeze Percetakan -->
     <div class="modal fade" id="edit-units" tabindex="-1" aria-labelledby="editUnitsLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="editUnitsLabel">Manage mesin pond</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <form id="manage-pond-form">
-                    <div class="modal-body">
-                        <p class="mb-3">Pilih tindakan yang akan dilakukan terhadap mesin pond ini. Anda bisa mengirim
-                            peringatan, mem-ban, atau membekukan sementara akun.</p>
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="editUnitsLabel">Manage mesin pond</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <form id="manage-pond-form">
+            <div class="modal-body">
+              <p class="mb-3">
+                Pilih tindakan yang akan dilakukan terhadap mesin pond ini. Anda bisa mengirim peringatan, mem-ban, atau
+                membekukan sementara akun.
+              </p>
 
-                        <div class="mb-3">
-                            <label for="action-type" class="form-label">Tindakan</label>
-                            <select id="action-type" name="action_type" class="select" required>
-                                <option value="warning">Peringatan</option>
-                                <option value="ban">Ban Permanen</option>
-                                <option value="freeze">Bekukan Sementara</option>
-                            </select>
-                        </div>
+              <div class="mb-3">
+                <label for="action-type" class="form-label">Tindakan</label>
+                <select id="action-type" name="action_type" class="select" required>
+                  <option value="warning">Peringatan</option>
+                  <option value="ban">Ban Permanen</option>
+                  <option value="freeze">Bekukan Sementara</option>
+                </select>
+              </div>
 
-                        <div class="mb-3" id="freeze-days-group" style="display:none;">
-                            <label for="freeze-days" class="form-label">Durasi Bekukan (hari)</label>
-                            <input type="text" class="form-control number-separator" name="freeze_days" min="1"
-                                placeholder="Masukkan jumlah hari">
-                            <input type="hidden" class="result-input" id="freeze-days">
-                        </div>
+              <div class="mb-3" id="freeze-days-group" style="display: none">
+                <label for="freeze-days" class="form-label">Durasi Bekukan (hari)</label>
+                <input
+                  type="text"
+                  class="form-control number-separator"
+                  name="freeze_days"
+                  min="1"
+                  placeholder="Masukkan jumlah hari"
+                />
+                <input type="hidden" class="result-input" id="freeze-days" />
+              </div>
 
-                        <div class="mb-3">
-                            <label for="notify-users" class="form-label">Notifikasi</label>
-                            <select id="notify-users" name="notify_users" class="select">
-                                <option value="no">Jangan kirim notifikasi</option>
-                                <option value="whatsapp">Kirim notifikasi ke WhatsApp</option>
-                                <option value="email">Kirim notifikasi via Email</option>
-                            </select>
-                        </div>
+              <div class="mb-3">
+                <label for="notify-users" class="form-label">Notifikasi</label>
+                <select id="notify-users" name="notify_users" class="select">
+                  <option value="no">Jangan kirim notifikasi</option>
+                  <option value="whatsapp">Kirim notifikasi ke WhatsApp</option>
+                  <option value="email">Kirim notifikasi via Email</option>
+                </select>
+              </div>
 
-                        <div class="mb-3">
-                            <label for="message" class="form-label">Pesan</label>
-                            <textarea id="message" name="message" class="form-control" rows="4"
-                                placeholder="Tulis pesan/peringatan untuk percetakan..." required></textarea>
-                        </div>
-
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-                        <button type="submit" class="btn btn-primary">Kirim</button>
-                    </div>
-                </form>
+              <div class="mb-3">
+                <label for="message" class="form-label">Pesan</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  class="form-control"
+                  rows="4"
+                  placeholder="Tulis pesan/peringatan untuk percetakan..."
+                  required
+                ></textarea>
+              </div>
             </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+              <button type="submit" class="btn btn-primary">Kirim</button>
+            </div>
+          </form>
         </div>
+      </div>
     </div>
     <!-- jQuery -->
     <script src="assets/js/jquery-3.7.1.min.js"></script>
@@ -586,8 +603,5 @@
     <!-- Custom JS -->
     <script src="assets/js/theme-script.js"></script>
     <script src="assets/js/script.js"></script>
-
-
-</body>
-
+  </body>
 </html>

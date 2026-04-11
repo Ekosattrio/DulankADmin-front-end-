@@ -1,1241 +1,1205 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0" />
+    <meta name="description" content="POS - Bootstrap Admin Template" />
+    <meta
+      name="keywords"
+      content="admin, estimates, bootstrap, business, corporate, creative, invoice, html5, responsive, Projects"
+    />
+    <meta name="author" content="Dreamguys - Bootstrap Admin Template" />
+    <meta name="robots" content="noindex, nofollow" />
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
-    <meta name="description" content="POS - Bootstrap Admin Template">
-    <meta name="keywords"
-        content="admin, estimates, bootstrap, business, corporate, creative, invoice, html5, responsive, Projects">
-    <meta name="author" content="Dreamguys - Bootstrap Admin Template">
-    <meta name="robots" content="noindex, nofollow">
-    <title>Dreams Pos Admin Template</title>
-
-    <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
+    <title>Kacetak System</title>
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/kacetak.jpeg" />
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
 
     <!-- animation CSS -->
-    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet" href="assets/css/animate.css" />
 
     <!-- Select2 CSS -->
-    <link rel="stylesheet" href="assets/plugins/select2/css/select2.min.css">
+    <link rel="stylesheet" href="assets/plugins/select2/css/select2.min.css" />
 
     <!-- Datatable CSS -->
-    <link rel="stylesheet" href="assets/css/dataTables.bootstrap5.min.css">
+    <link rel="stylesheet" href="assets/css/dataTables.bootstrap5.min.css" />
 
     <!-- Datetimepicker CSS -->
-    <link rel="stylesheet" href="assets/css/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" href="assets/css/bootstrap-datetimepicker.min.css" />
 
     <!-- Summernote CSS -->
-    <link rel="stylesheet" href="assets/plugins/summernote/summernote-bs4.min.css">
+    <link rel="stylesheet" href="assets/plugins/summernote/summernote-bs4.min.css" />
 
     <!-- Fontawesome CSS -->
-    <link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css">
-    <link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css" />
+    <link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css" />
 
     <!-- Main CSS -->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css" />
     <style>
-        .product-desc[contenteditable="true"]:empty:before {
-            content: attr(data-placeholder);
-            color: #aaa;
-            pointer-events: none;
+      .product-desc[contenteditable="true"]:empty:before {
+        content: attr(data-placeholder);
+        color: #aaa;
+        pointer-events: none;
+      }
+
+      .product-desc {
+        outline: none;
+        white-space: pre-wrap;
+      }
+
+      .line {
+        width: 200px;
+        border-bottom: 1px solid #000;
+      }
+
+      .signature input {
+        border: none !important;
+        field-sizing: content;
+      }
+
+      @page {
+        size: A4;
+        margin: 0.3in !important;
+      }
+
+      @media print {
+        body {
+          visibility: hidden;
         }
 
+        html,
+        body {
+          font-size: 12px !important;
+          /* ubah angka ini bila ingin lebih kecil/lebih besar */
+          line-height: 1.2 !important;
+        }
 
-        .product-desc {
-            outline: none;
-            white-space: pre-wrap;
+        /* fallback spesifik untuk elemen penting */
+        h1 {
+          font-size: 1.25rem !important;
+        }
+
+        h2 {
+          font-size: 1.1rem !important;
+        }
+
+        h3,
+        h4,
+        h5,
+        h6 {
+          font-size: 1rem !important;
+        }
+
+        .text-standard,
+        .order-table,
+        .table,
+        .order-section-title,
+        .page-title,
+        p,
+        span,
+        label {
+          font-size: 0.85rem !important;
+          /* skala turun lagi untuk konten */
+        }
+
+        #section-to-print {
+          width: 100vw;
+          visibility: visible;
+          padding: 0 !important;
+          margin: 0 !important;
         }
 
         .line {
-            width: 200px;
-            border-bottom: 1px solid #000
+          width: 90%;
+          margin: 0 auto;
         }
 
-        .signature input {
-            border: none !important;
-            field-sizing: content;
+        .modal-xl {
+          position: absolute;
+          top: 0;
+          width: 100vw !important;
+          align-items: self-start;
+          padding: 0 !important;
+          margin: 0 !important;
         }
 
-        @page {
-            size: A4;
-            margin: 0.3in !important;
-
+        .modal-header {
+          display: none;
         }
 
-        @media print {
-            body {
-                visibility: hidden;
-            }
-
-            html,
-            body {
-                font-size: 12px !important;
-                /* ubah angka ini bila ingin lebih kecil/lebih besar */
-                line-height: 1.2 !important;
-            }
-
-            /* fallback spesifik untuk elemen penting */
-            h1 {
-                font-size: 1.25rem !important;
-            }
-
-            h2 {
-                font-size: 1.1rem !important;
-            }
-
-            h3,
-            h4,
-            h5,
-            h6 {
-                font-size: 1rem !important;
-            }
-
-            .text-standard,
-            .order-table,
-            .table,
-            .order-section-title,
-            .page-title,
-            p,
-            span,
-            label {
-                font-size: 0.85rem !important;
-                /* skala turun lagi untuk konten */
-            }
-
-            #section-to-print {
-                width: 100vw;
-                visibility: visible;
-                padding: 0 !important;
-                margin: 0 !important;
-            }
-
-            .line {
-                width: 90%;
-                margin: 0 auto;
-            }
-
-            .modal-xl {
-                position: absolute;
-                top: 0;
-                width: 100vw !important;
-                align-items: self-start;
-                padding: 0 !important;
-                margin: 0 !important;
-            }
-
-            .modal-header {
-                display: none;
-            }
-
-
-            .dataTables_paginate,
-            .dataTables_length,
-            .dataTables_info {
-                display: none;
-            }
+        .dataTables_paginate,
+        .dataTables_length,
+        .dataTables_info {
+          display: none;
         }
+      }
     </style>
+  </head>
 
-</head>
-
-<body>
+  <body>
     <div id="global-loader">
-        <div class="loader"> </div>
+      <div class="loader"></div>
     </div>
     <!-- Main Wrapper -->
     <div class="main-wrapper">
+      <!-- header -->
+      <div id="header-placeholder"></div>
+      <!-- sidebar -->
+      <div id="sidebar-placeholder"></div>
 
-        <!-- header -->
-        <div id="header-placeholder"></div>
-        <!-- sidebar -->
-        <div id="sidebar-placeholder"></div>
-
-        <div class="page-wrapper mt-3">
-            <!-- Main content tulis disini -->
-            <div class="content">
-                <div class="page-header">
-                    <div class="add-item d-flex">
-                        <div class="page-title">
-                            <h4>Delivery Note</h4>
-                            <h6>Manage Your Delivery Note</h6>
-                        </div>
-                    </div>
-                    <ul class="table-top-head">
-                        <li>
-                            <a data-bs-toggle="tooltip" data-bs-placement="top" title="Pdf"><img
-                                    src="assets/img/icons/pdf.svg" alt="img"></a>
-                        </li>
-                        <li>
-                            <a data-bs-toggle="tooltip" data-bs-placement="top" title="Print"><i data-feather="printer"
-                                    class="feather-rotate-ccw"></i></a>
-                        </li>
-                        <li>
-                            <a data-bs-toggle="tooltip" data-bs-placement="top" title="Refresh"><i
-                                    data-feather="rotate-ccw" class="feather-rotate-ccw"></i></a>
-                        </li>
-                        <li>
-                            <a data-bs-toggle="tooltip" data-bs-placement="top" title="Collapse" id="collapse-header"><i
-                                    data-feather="chevron-up" class="feather-chevron-up"></i></a>
-                        </li>
-                    </ul>
-                    <div class="page-btn">
-                        <a href="javascript:void(0);" class="btn btn-added" data-bs-toggle="modal"
-                            data-bs-target="#tambah"><i data-feather="plus-circle" class="me-2"></i>Add New
-                            Delivery Note</a>
-                    </div>
-
-                </div>
-
-
-                <!-- /product list -->
-                <div class="card table-list-card">
-                    <div class="card-body">
-                        <!-- Filter -->
-                        <div class="table-top d-flex align-items-center justify-content-between">
-                            <!-- Search Input -->
-                            <div class="search-set d-block d-md-flex">
-                                <div class="search-input">
-                                    <a href="" class="btn btn-searchset"><i data-feather="search"
-                                            class="feather-search"></i></a>
-                                </div>
-                                <!-- Date Range -->
-                                <div class="my-2">
-                                    <div class="pemilihrentang-container ">
-                                        <input type="text" id="pemilihrentang-input"
-                                            class="pemilihrentang-input form-control" readonly placeholder="Date"
-                                            style="height: fit-content !important;width: 100% !important;">
-                                        <div id="pemilihrentang-panel" class="pemilihrentang-panel">
-                                            <div class="pemilihrentang-isi">
-                                                <div class="opsi-cepat">
-                                                    <div data-range="kemarin">Kemarin</div>
-                                                    <div data-range="7hari">7 Hari Terakhir</div>
-                                                    <div data-range="bulanIni">Bulan Ini</div>
-                                                    <div data-range="bulanLalu">Bulan Lalu</div>
-                                                    <div data-range="tahunLalu">Tahun Lalu</div>
-                                                    <div data-range="kustom">Rentang Kustom</div>
-                                                </div>
-                                                <div class="kalender" id="kalender-view" style="display:none;">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="filters d-flex justify-content-end">
-                                <div class="dropdown w-100 me-2">
-                                    <button class="btn btn-outline-primary dropdown-toggle" type="button"
-                                        data-bs-toggle="dropdown" aria-expanded="false">
-                                        Status
-                                    </button>
-                                    <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="#">Complete</a></li>
-                                        <li><a class="dropdown-item" href="#">Pending</a></li>
-                                        <li><a class="dropdown-item" href="#">Ordered</a></li>
-                                        <li><a class="dropdown-item" href="#">Received</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- /Filter -->
-                        <div class="table-responsive">
-                            <table class="table datanew">
-                                <thead>
-                                    <tr>
-
-                                        <th>No. DN</th>
-                                        <th>Date</th>
-                                        <th>Customer</th>
-                                        <th>No Sales</th>
-                                        <th>Shipping Address</th>
-                                        <th>Status</th>
-                                        <th>Date Status</th>
-                                        <th class="no-sort">Action</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-
-                                        <td>DN0001</td>
-                                        <td>01/10/2025</td>
-                                        <td>PT Makmur Abadi</td>
-                                        <td>2511000001</td>
-                                        <td>Jl. Damai No. 4, Kec. Kramat Jati, Jakarta Timur, DKI Jakarta</td>
-                                        <td><span class="badge bg-soft-success">Complete</span></td>
-                                        <td>02/10/2025</td>
-                                        <td class="action-table-data">
-                                            <div class="edit-delete-action data-row">
-                                                <a class="me-2 p-2 mb-0" href="delivery-note-detail.html"><i data-feather="eye"
-                                                        class="action-eye"></i></a>
-                                                <a class="me-2 p-2 mb-0" data-bs-toggle="modal"
-                                                    data-bs-target="#edit-units"><i data-feather="edit"
-                                                        class="feather-edit"></i></a>
-                                                <a class="me-2 confirm-text p-2 mb-0" href="javascript:void(0);"><i
-                                                        data-feather="trash-2" class="feather-trash-2"></i></a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-
-                                        <td>DN0002</td>
-                                        <td>03/10/2025</td>
-                                        <td>Toko Buku Cerdas</td>
-                                        <td>2511000002</td>
-                                        <td>Ruko Indah Blok A, Kec. Cinere, Kota Depok, Jawa Barat</td>
-                                        <td><span class="badge bg-soft-success">Complete</span></td>
-                                        <td>04/10/2025</td>
-                                        <td class="action-table-data">
-                                            <div class="edit-delete-action data-row">
-                                                <a class="me-2 p-2 mb-0" href="delivery-note-detail.html"><i data-feather="eye"
-                                                        class="action-eye"></i></a>
-                                                <a class="me-2 p-2 mb-0" data-bs-toggle="modal"
-                                                    data-bs-target="#edit-units"><i data-feather="edit"
-                                                        class="feather-edit"></i></a>
-                                                <a class="me-2 confirm-text p-2 mb-0" href="javascript:void(0);"><i
-                                                        data-feather="trash-2" class="feather-trash-2"></i></a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-
-                                        <td>DN0003</td>
-                                        <td>05/10/2025</td>
-                                        <td>CV Jaya Sentosa</td>
-                                        <td>2511000004</td>
-                                        <td>Kawasan Industri Lippo Cikarang, Kec. Cikarang Selatan, Kab. Bekasi, Jawa
-                                            Barat</td>
-                                        <td><span class="badge bg-soft-success">Complete</span></td>
-                                        <td>07/10/2025</td>
-                                        <td class="action-table-data">
-                                            <div class="edit-delete-action data-row">
-                                                <a class="me-2 p-2 mb-0" href="delivery-note-detail.html"><i data-feather="eye"
-                                                        class="action-eye"></i></a>
-                                                <a class="me-2 p-2 mb-0" data-bs-toggle="modal"
-                                                    data-bs-target="#edit-units"><i data-feather="edit"
-                                                        class="feather-edit"></i></a>
-                                                <a class="me-2 confirm-text p-2 mb-0" href="javascript:void(0);"><i
-                                                        data-feather="trash-2" class="feather-trash-2"></i></a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-
-                                        <td>DN0004</td>
-                                        <td>08/10/2025</td>
-                                        <td>PT Global Solusi</td>
-                                        <td>2510000006</td>
-                                        <td>Gedung Sentra Lt. 15, Kec. Setiabudi, Jakarta Selatan, DKI Jakarta</td>
-                                        <td><span class="badge bg-soft-danger">Failed</span></td>
-                                        <td>10/10/2025</td>
-                                        <td class="action-table-data">
-                                            <div class="edit-delete-action data-row">
-                                                <a class="me-2 p-2 mb-0" href="delivery-note-detail.html"><i data-feather="eye"
-                                                        class="action-eye"></i></a>
-                                                <a class="me-2 p-2 mb-0" data-bs-toggle="modal"
-                                                    data-bs-target="#edit-units"><i data-feather="edit"
-                                                        class="feather-edit"></i></a>
-                                                <a class="me-2 confirm-text p-2 mb-0" href="javascript:void(0);"><i
-                                                        data-feather="trash-2" class="feather-trash-2"></i></a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-
-                                        <td>DN0005</td>
-                                        <td>10/11/2025</td>
-                                        <td>Klinik Sehat</td>
-                                        <td>2510000007</td>
-                                        <td>Jl. Merdeka No. 20, Kec. Bogor Tengah, Kota Bogor, Jawa Barat</td>
-                                        <td><span class="badge bg-soft-success">Complete</span></td>
-                                        <td>10/12/2025</td>
-                                        <td class="action-table-data">
-                                            <div class="edit-delete-action data-row">
-                                                <a class="me-2 p-2 mb-0" href="delivery-note-detail.html"><i data-feather="eye"
-                                                        class="action-eye"></i></a>
-                                                <a class="me-2 p-2 mb-0" data-bs-toggle="modal"
-                                                    data-bs-target="#edit-units"><i data-feather="edit"
-                                                        class="feather-edit"></i></a>
-                                                <a class="me-2 confirm-text p-2 mb-0" href="javascript:void(0);"><i
-                                                        data-feather="trash-2" class="feather-trash-2"></i></a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-
-                                        <td>DN0006</td>
-                                        <td>14/10/2025</td>
-                                        <td>Yayasan Lentera</td>
-                                        <td>2509000009</td>
-                                        <td>Perumahan Hijau Blok C, Kec. Bantul, Kab. Bantul, DI Yogyakarta</td>
-                                        <td><span class="badge bg-soft-danger">Failed</span></td>
-                                        <td>16/10/2025</td>
-                                        <td class="action-table-data">
-                                            <div class="edit-delete-action data-row">
-                                                <a class="me-2 p-2 mb-0" href="delivery-note-detail.html"><i data-feather="eye"
-                                                        class="action-eye"></i></a>
-                                                <a class="me-2 p-2 mb-0" data-bs-toggle="modal"
-                                                    data-bs-target="#edit-units"><i data-feather="edit"
-                                                        class="feather-edit"></i></a>
-                                                <a class="me-2 confirm-text p-2 mb-0" href="javascript:void(0);"><i
-                                                        data-feather="trash-2" class="feather-trash-2"></i></a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-
-                                        <td>DN0007</td>
-                                        <td>17/10/2025</td>
-                                        <td>PT Dirgantara</td>
-                                        <td>2508000011</td>
-                                        <td>Jl. Gatot Subroto Kav. 1, Kec. Klojen, Kota Malang, Jawa Timur</td>
-                                        <td><span class="badge bg-soft-success">Complete</span></td>
-                                        <td>18/10/2025</td>
-                                        <td class="action-table-data">
-                                            <div class="edit-delete-action data-row">
-                                                <a class="me-2 p-2 mb-0" href="delivery-note-detail.html"><i data-feather="eye"
-                                                        class="action-eye"></i></a>
-                                                <a class="me-2 p-2 mb-0" data-bs-toggle="modal"
-                                                    data-bs-target="#edit-units"><i data-feather="edit"
-                                                        class="feather-edit"></i></a>
-                                                <a class="me-2 confirm-text p-2 mb-0" href="javascript:void(0);"><i
-                                                        data-feather="trash-2" class="feather-trash-2"></i></a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-
-                                        <td>DN0008</td>
-                                        <td>20/10/2025</td>
-                                        <td>Toko Perlengkapan</td>
-                                        <td>2508000013</td>
-                                        <td>Pasar Baru Blok E, Kec. Semarang Utara, Kota Semarang, Jawa Tengah</td>
-                                        <td><span class="badge bg-soft-success">Complete</span></td>
-                                        <td>21/10/2025</td>
-                                        <td class="action-table-data">
-                                            <div class="edit-delete-action data-row">
-                                                <a class="me-2 p-2 mb-0" href="delivery-note-detail.html"><i data-feather="eye"
-                                                        class="action-eye"></i></a>
-                                                <a class="me-2 p-2 mb-0" data-bs-toggle="modal"
-                                                    data-bs-target="#edit-units"><i data-feather="edit"
-                                                        class="feather-edit"></i></a>
-                                                <a class="me-2 confirm-text p-2 mb-0" href="javascript:void(0);"><i
-                                                        data-feather="trash-2" class="feather-trash-2"></i></a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-
-                                        <td>DN0009</td>
-                                        <td>23/10/2025</td>
-                                        <td>PT Angkasa Raya</td>
-                                        <td>2507000014</td>
-                                        <td>Komplek Pergudangan No. 5, Kec. Benda, Kota Tangerang, Banten</td>
-                                        <td><span class="badge bg-soft-success">Complete</span></td>
-                                        <td>24/10/2025</td>
-                                        <td class="action-table-data">
-                                            <div class="edit-delete-action data-row">
-                                                <a class="me-2 p-2 mb-0" href="delivery-note-detail.html"><i data-feather="eye"
-                                                        class="action-eye"></i></a>
-                                                <a class="me-2 p-2 mb-0" data-bs-toggle="modal"
-                                                    data-bs-target="#edit-units"><i data-feather="edit"
-                                                        class="feather-edit"></i></a>
-                                                <a class="me-2 confirm-text p-2 mb-0" href="javascript:void(0);"><i
-                                                        data-feather="trash-2" class="feather-trash-2"></i></a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-
-                                        <td>DN0010</td>
-                                        <td>26/10/2025</td>
-                                        <td>Universitas Bintang</td>
-                                        <td>2506000016</td>
-                                        <td>Kampus Utama Jl. Pendidikan, Kec. Depok, Kota Sleman, DI Yogyakarta</td>
-                                        <td><span class="badge bg-soft-success">Complete</span></td>
-                                        <td>28/10/2025</td>
-                                        <td class="action-table-data">
-                                            <div class="edit-delete-action data-row">
-                                                <a class="me-2 p-2 mb-0" href="delivery-note-detail.html"><i data-feather="eye"
-                                                        class="action-eye"></i></a>
-                                                <a class="me-2 p-2 mb-0" data-bs-toggle="modal"
-                                                    data-bs-target="#edit-units"><i data-feather="edit"
-                                                        class="feather-edit"></i></a>
-                                                <a class="me-2 confirm-text p-2 mb-0" href="javascript:void(0);"><i
-                                                        data-feather="trash-2" class="feather-trash-2"></i></a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-
-                                        <td>DN0011</td>
-                                        <td>29/10/2025</td>
-                                        <td>Toko Elektronik Maju</td>
-                                        <td>2505000018</td>
-                                        <td>Jl. Sudirman No. 8, Kec. Medan Petisah, Kota Medan, Sumatera Utara</td>
-                                        <td><span class="badge bg-soft-danger">Failed</span></td>
-                                        <td>31/10/2025</td>
-                                        <td class="action-table-data">
-                                            <div class="edit-delete-action data-row">
-                                                <a class="me-2 p-2 mb-0" href="delivery-note-detail.html"><i data-feather="eye"
-                                                        class="action-eye"></i></a>
-                                                <a class="me-2 p-2 mb-0" data-bs-toggle="modal"
-                                                    data-bs-target="#edit-units"><i data-feather="edit"
-                                                        class="feather-edit"></i></a>
-                                                <a class="me-2 confirm-text p-2 mb-0" href="javascript:void(0);"><i
-                                                        data-feather="trash-2" class="feather-trash-2"></i></a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-
-                                        <td>DN0012</td>
-                                        <td>01/11/2025</td>
-                                        <td>PT Cipta Kreasi</td>
-                                        <td>2505000019</td>
-                                        <td>Komplek Rukan 27, Kec. Kebon Jeruk, Jakarta Barat, DKI Jakarta</td>
-                                        <td><span class="badge bg-soft-success">Complete</span></td>
-                                        <td>02/11/2025</td>
-                                        <td class="action-table-data">
-                                            <div class="edit-delete-action data-row">
-                                                <a class="me-2 p-2 mb-0" href="delivery-note-detail.html"><i data-feather="eye"
-                                                        class="action-eye"></i></a>
-                                                <a class="me-2 p-2 mb-0" data-bs-toggle="modal"
-                                                    data-bs-target="#edit-units"><i data-feather="edit"
-                                                        class="feather-edit"></i></a>
-                                                <a class="me-2 confirm-text p-2 mb-0" href="javascript:void(0);"><i
-                                                        data-feather="trash-2" class="feather-trash-2"></i></a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-
-                                        <td>DN0013</td>
-                                        <td>04/11/2025</td>
-                                        <td>PT Makmur Abadi</td>
-                                        <td>2511000001</td>
-                                        <td>Jl. Damai No. 4, Kec. Kramat Jati, Jakarta Timur, DKI Jakarta</td>
-                                        <td><span class="badge bg-soft-success">Complete</span></td>
-                                        <td>06/11/2025</td>
-                                        <td class="action-table-data">
-                                            <div class="edit-delete-action data-row">
-                                                <a class="me-2 p-2 mb-0" href="delivery-note-detail.html"><i data-feather="eye"
-                                                        class="action-eye"></i></a>
-                                                <a class="me-2 p-2 mb-0" data-bs-toggle="modal"
-                                                    data-bs-target="#edit-units"><i data-feather="edit"
-                                                        class="feather-edit"></i></a>
-                                                <a class="me-2 confirm-text p-2 mb-0" href="javascript:void(0);"><i
-                                                        data-feather="trash-2" class="feather-trash-2"></i></a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-
-                                        <td>DN0014</td>
-                                        <td>07/11/2025</td>
-                                        <td>Toko Buku Cerdas</td>
-                                        <td>2511000002</td>
-                                        <td>Ruko Indah Blok A, Kec. Cinere, Kota Depok, Jawa Barat</td>
-                                        <td><span class="badge bg-soft-danger">Failed</span></td>
-                                        <td>08/11/2025</td>
-                                        <td class="action-table-data">
-                                            <div class="edit-delete-action data-row">
-                                                <a class="me-2 p-2 mb-0" href="delivery-note-detail.html"><i data-feather="eye"
-                                                        class="action-eye"></i></a>
-                                                <a class="me-2 p-2 mb-0" data-bs-toggle="modal"
-                                                    data-bs-target="#edit-units"><i data-feather="edit"
-                                                        class="feather-edit"></i></a>
-                                                <a class="me-2 confirm-text p-2 mb-0" href="javascript:void(0);"><i
-                                                        data-feather="trash-2" class="feather-trash-2"></i></a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-
-                                        <td>DN0015</td>
-                                        <td>11/10/2025</td>
-                                        <td>CV Jaya Sentosa</td>
-                                        <td>2511000004</td>
-                                        <td>Kawasan Industri Lippo Cikarang, Kec. Cikarang Selatan, Kab. Bekasi, Jawa
-                                            Barat</td>
-                                        <td><span class="badge bg-soft-success">Complete</span></td>
-                                        <td>11/11/2025</td>
-                                        <td class="action-table-data">
-                                            <div class="edit-delete-action data-row">
-                                                <a class="me-2 p-2 mb-0" href="delivery-note-detail.html"><i data-feather="eye"
-                                                        class="action-eye"></i></a>
-                                                <a class="me-2 p-2 mb-0" data-bs-toggle="modal"
-                                                    data-bs-target="#edit-units"><i data-feather="edit"
-                                                        class="feather-edit"></i></a>
-                                                <a class="me-2 confirm-text p-2 mb-0" href="javascript:void(0);"><i
-                                                        data-feather="trash-2" class="feather-trash-2"></i></a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-
-                                        <td>DN0016</td>
-                                        <td>13/11/2025</td>
-                                        <td>PT Global Solusi</td>
-                                        <td>2510000006</td>
-                                        <td>Gedung Sentra Lt. 15, Kec. Setiabudi, Jakarta Selatan, DKI Jakarta</td>
-                                        <td><span class="badge bg-soft-success">Complete</span></td>
-                                        <td>15/11/2025</td>
-                                        <td class="action-table-data">
-                                            <div class="edit-delete-action data-row">
-                                                <a class="me-2 p-2 mb-0" href="delivery-note-detail.html"><i data-feather="eye"
-                                                        class="action-eye"></i></a>
-                                                <a class="me-2 p-2 mb-0" data-bs-toggle="modal"
-                                                    data-bs-target="#edit-units"><i data-feather="edit"
-                                                        class="feather-edit"></i></a>
-                                                <a class="me-2 confirm-text p-2 mb-0" href="javascript:void(0);"><i
-                                                        data-feather="trash-2" class="feather-trash-2"></i></a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-
-                                        <td>DN0017</td>
-                                        <td>16/11/2025</td>
-                                        <td>Klinik Sehat</td>
-                                        <td>2510000007</td>
-                                        <td>Jl. Merdeka No. 20, Kec. Bogor Tengah, Kota Bogor, Jawa Barat</td>
-                                        <td><span class="badge bg-soft-success">Complete</span></td>
-                                        <td>17/11/2025</td>
-                                        <td class="action-table-data">
-                                            <div class="edit-delete-action data-row">
-                                                <a class="me-2 p-2 mb-0" href="delivery-note-detail.html"><i data-feather="eye"
-                                                        class="action-eye"></i></a>
-                                                <a class="me-2 p-2 mb-0" data-bs-toggle="modal"
-                                                    data-bs-target="#edit-units"><i data-feather="edit"
-                                                        class="feather-edit"></i></a>
-                                                <a class="me-2 confirm-text p-2 mb-0" href="javascript:void(0);"><i
-                                                        data-feather="trash-2" class="feather-trash-2"></i></a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-
-                                        <td>DN0018</td>
-                                        <td>19/11/2025</td>
-                                        <td>Yayasan Lentera</td>
-                                        <td>2509000009</td>
-                                        <td>Perumahan Hijau Blok C, Kec. Bantul, Kab. Bantul, DI Yogyakarta</td>
-                                        <td><span class="badge bg-soft-success">Complete</span></td>
-                                        <td>20/11/2025</td>
-                                        <td class="action-table-data">
-                                            <div class="edit-delete-action data-row">
-                                                <a class="me-2 p-2 mb-0" href="delivery-note-detail.html"><i data-feather="eye"
-                                                        class="action-eye"></i></a>
-                                                <a class="me-2 p-2 mb-0" data-bs-toggle="modal"
-                                                    data-bs-target="#edit-units"><i data-feather="edit"
-                                                        class="feather-edit"></i></a>
-                                                <a class="me-2 confirm-text p-2 mb-0" href="javascript:void(0);"><i
-                                                        data-feather="trash-2" class="feather-trash-2"></i></a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-
-                                        <td>DN0019</td>
-                                        <td>22/11/2025</td>
-                                        <td>PT Dirgantara</td>
-                                        <td>2508000011</td>
-                                        <td>Jl. Gatot Subroto Kav. 1, Kec. Klojen, Kota Malang, Jawa Timur</td>
-                                        <td><span class="badge bg-soft-danger">Failed</span></td>
-                                        <td>24/11/2025</td>
-                                        <td class="action-table-data">
-                                            <div class="edit-delete-action data-row">
-                                                <a class="me-2 p-2 mb-0" href="delivery-note-detail.html"><i data-feather="eye"
-                                                        class="action-eye"></i></a>
-                                                <a class="me-2 p-2 mb-0" data-bs-toggle="modal"
-                                                    data-bs-target="#edit-units"><i data-feather="edit"
-                                                        class="feather-edit"></i></a>
-                                                <a class="me-2 confirm-text p-2 mb-0" href="javascript:void(0);"><i
-                                                        data-feather="trash-2" class="feather-trash-2"></i></a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-
-                                        <td>DN0020</td>
-                                        <td>25/11/2025</td>
-                                        <td>Toko Perlengkapan</td>
-                                        <td>2508000013</td>
-                                        <td>Pasar Baru Blok E, Kec. Semarang Utara, Kota Semarang, Jawa Tengah</td>
-                                        <td><span class="badge bg-soft-success">Complete</span></td>
-                                        <td>27/11/2025</td>
-                                        <td class="action-table-data">
-                                            <div class="edit-delete-action data-row">
-                                                <a class="me-2 p-2 mb-0" href="delivery-note-detail.html"><i data-feather="eye"
-                                                        class="action-eye"></i></a>
-                                                <a class="me-2 p-2 mb-0" data-bs-toggle="modal"
-                                                    data-bs-target="#edit-units"><i data-feather="edit"
-                                                        class="feather-edit"></i></a>
-                                                <a class="me-2 confirm-text p-2 mb-0" href="javascript:void(0);"><i
-                                                        data-feather="trash-2" class="feather-trash-2"></i></a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-                <!-- /product list -->
+      <div class="page-wrapper mt-3">
+        <!-- Main content tulis disini -->
+        <div class="content">
+          <div class="page-header">
+            <div class="add-item d-flex">
+              <div class="page-title">
+                <h4>Delivery Note</h4>
+                <h6>Manage Your Delivery Note</h6>
+              </div>
             </div>
-        </div>
+            <ul class="table-top-head">
+              <li>
+                <a data-bs-toggle="tooltip" data-bs-placement="top" title="Pdf"
+                  ><img src="assets/img/icons/pdf.svg" alt="img"
+                /></a>
+              </li>
+              <li>
+                <a data-bs-toggle="tooltip" data-bs-placement="top" title="Print"
+                  ><i data-feather="printer" class="feather-rotate-ccw"></i
+                ></a>
+              </li>
+              <li>
+                <a data-bs-toggle="tooltip" data-bs-placement="top" title="Refresh"
+                  ><i data-feather="rotate-ccw" class="feather-rotate-ccw"></i
+                ></a>
+              </li>
+              <li>
+                <a data-bs-toggle="tooltip" data-bs-placement="top" title="Collapse" id="collapse-header"
+                  ><i data-feather="chevron-up" class="feather-chevron-up"></i
+                ></a>
+              </li>
+            </ul>
+            <div class="page-btn">
+              <a href="javascript:void(0);" class="btn btn-added" data-bs-toggle="modal" data-bs-target="#tambah"
+                ><i data-feather="plus-circle" class="me-2"></i>Add New Delivery Note</a
+              >
+            </div>
+          </div>
 
+          <!-- /product list -->
+          <div class="card table-list-card">
+            <div class="card-body">
+              <!-- Filter -->
+              <div class="table-top d-flex align-items-center justify-content-between">
+                <!-- Search Input -->
+                <div class="search-set d-block d-md-flex">
+                  <div class="search-input">
+                    <a href="" class="btn btn-searchset"><i data-feather="search" class="feather-search"></i></a>
+                  </div>
+                  <!-- Date Range -->
+                  <div class="my-2">
+                    <div class="pemilihrentang-container">
+                      <input
+                        type="text"
+                        id="pemilihrentang-input"
+                        class="pemilihrentang-input form-control"
+                        readonly
+                        placeholder="Date"
+                        style="height: fit-content !important; width: 100% !important"
+                      />
+                      <div id="pemilihrentang-panel" class="pemilihrentang-panel">
+                        <div class="pemilihrentang-isi">
+                          <div class="opsi-cepat">
+                            <div data-range="kemarin">Kemarin</div>
+                            <div data-range="7hari">7 Hari Terakhir</div>
+                            <div data-range="bulanIni">Bulan Ini</div>
+                            <div data-range="bulanLalu">Bulan Lalu</div>
+                            <div data-range="tahunLalu">Tahun Lalu</div>
+                            <div data-range="kustom">Rentang Kustom</div>
+                          </div>
+                          <div class="kalender" id="kalender-view" style="display: none"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="filters d-flex justify-content-end">
+                  <div class="dropdown w-100 me-2">
+                    <button
+                      class="btn btn-outline-primary dropdown-toggle"
+                      type="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                      Status
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Complete</a></li>
+                      <li><a class="dropdown-item" href="#">Pending</a></li>
+                      <li><a class="dropdown-item" href="#">Ordered</a></li>
+                      <li><a class="dropdown-item" href="#">Received</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <!-- /Filter -->
+              <div class="table-responsive">
+                <table class="table datanew">
+                  <thead>
+                    <tr>
+                      <th>No. DN</th>
+                      <th>Date</th>
+                      <th>Customer</th>
+                      <th>No Sales</th>
+                      <th>Shipping Address</th>
+                      <th>Status</th>
+                      <th>Date Status</th>
+                      <th class="no-sort">Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>DN0001</td>
+                      <td>01/10/2025</td>
+                      <td>PT Makmur Abadi</td>
+                      <td>2511000001</td>
+                      <td>Jl. Damai No. 4, Kec. Kramat Jati, Jakarta Timur, DKI Jakarta</td>
+                      <td><span class="badge bg-soft-success">Complete</span></td>
+                      <td>02/10/2025</td>
+                      <td class="action-table-data">
+                        <div class="edit-delete-action data-row">
+                          <a class="me-2 p-2 mb-0" href="delivery-note-detail.html"
+                            ><i data-feather="eye" class="action-eye"></i
+                          ></a>
+                          <a class="me-2 p-2 mb-0" data-bs-toggle="modal" data-bs-target="#edit-units"
+                            ><i data-feather="edit" class="feather-edit"></i
+                          ></a>
+                          <a class="me-2 confirm-text p-2 mb-0" href="javascript:void(0);"
+                            ><i data-feather="trash-2" class="feather-trash-2"></i
+                          ></a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>DN0002</td>
+                      <td>03/10/2025</td>
+                      <td>Toko Buku Cerdas</td>
+                      <td>2511000002</td>
+                      <td>Ruko Indah Blok A, Kec. Cinere, Kota Depok, Jawa Barat</td>
+                      <td><span class="badge bg-soft-success">Complete</span></td>
+                      <td>04/10/2025</td>
+                      <td class="action-table-data">
+                        <div class="edit-delete-action data-row">
+                          <a class="me-2 p-2 mb-0" href="delivery-note-detail.html"
+                            ><i data-feather="eye" class="action-eye"></i
+                          ></a>
+                          <a class="me-2 p-2 mb-0" data-bs-toggle="modal" data-bs-target="#edit-units"
+                            ><i data-feather="edit" class="feather-edit"></i
+                          ></a>
+                          <a class="me-2 confirm-text p-2 mb-0" href="javascript:void(0);"
+                            ><i data-feather="trash-2" class="feather-trash-2"></i
+                          ></a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>DN0003</td>
+                      <td>05/10/2025</td>
+                      <td>CV Jaya Sentosa</td>
+                      <td>2511000004</td>
+                      <td>Kawasan Industri Lippo Cikarang, Kec. Cikarang Selatan, Kab. Bekasi, Jawa Barat</td>
+                      <td><span class="badge bg-soft-success">Complete</span></td>
+                      <td>07/10/2025</td>
+                      <td class="action-table-data">
+                        <div class="edit-delete-action data-row">
+                          <a class="me-2 p-2 mb-0" href="delivery-note-detail.html"
+                            ><i data-feather="eye" class="action-eye"></i
+                          ></a>
+                          <a class="me-2 p-2 mb-0" data-bs-toggle="modal" data-bs-target="#edit-units"
+                            ><i data-feather="edit" class="feather-edit"></i
+                          ></a>
+                          <a class="me-2 confirm-text p-2 mb-0" href="javascript:void(0);"
+                            ><i data-feather="trash-2" class="feather-trash-2"></i
+                          ></a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>DN0004</td>
+                      <td>08/10/2025</td>
+                      <td>PT Global Solusi</td>
+                      <td>2510000006</td>
+                      <td>Gedung Sentra Lt. 15, Kec. Setiabudi, Jakarta Selatan, DKI Jakarta</td>
+                      <td><span class="badge bg-soft-danger">Failed</span></td>
+                      <td>10/10/2025</td>
+                      <td class="action-table-data">
+                        <div class="edit-delete-action data-row">
+                          <a class="me-2 p-2 mb-0" href="delivery-note-detail.html"
+                            ><i data-feather="eye" class="action-eye"></i
+                          ></a>
+                          <a class="me-2 p-2 mb-0" data-bs-toggle="modal" data-bs-target="#edit-units"
+                            ><i data-feather="edit" class="feather-edit"></i
+                          ></a>
+                          <a class="me-2 confirm-text p-2 mb-0" href="javascript:void(0);"
+                            ><i data-feather="trash-2" class="feather-trash-2"></i
+                          ></a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>DN0005</td>
+                      <td>10/11/2025</td>
+                      <td>Klinik Sehat</td>
+                      <td>2510000007</td>
+                      <td>Jl. Merdeka No. 20, Kec. Bogor Tengah, Kota Bogor, Jawa Barat</td>
+                      <td><span class="badge bg-soft-success">Complete</span></td>
+                      <td>10/12/2025</td>
+                      <td class="action-table-data">
+                        <div class="edit-delete-action data-row">
+                          <a class="me-2 p-2 mb-0" href="delivery-note-detail.html"
+                            ><i data-feather="eye" class="action-eye"></i
+                          ></a>
+                          <a class="me-2 p-2 mb-0" data-bs-toggle="modal" data-bs-target="#edit-units"
+                            ><i data-feather="edit" class="feather-edit"></i
+                          ></a>
+                          <a class="me-2 confirm-text p-2 mb-0" href="javascript:void(0);"
+                            ><i data-feather="trash-2" class="feather-trash-2"></i
+                          ></a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>DN0006</td>
+                      <td>14/10/2025</td>
+                      <td>Yayasan Lentera</td>
+                      <td>2509000009</td>
+                      <td>Perumahan Hijau Blok C, Kec. Bantul, Kab. Bantul, DI Yogyakarta</td>
+                      <td><span class="badge bg-soft-danger">Failed</span></td>
+                      <td>16/10/2025</td>
+                      <td class="action-table-data">
+                        <div class="edit-delete-action data-row">
+                          <a class="me-2 p-2 mb-0" href="delivery-note-detail.html"
+                            ><i data-feather="eye" class="action-eye"></i
+                          ></a>
+                          <a class="me-2 p-2 mb-0" data-bs-toggle="modal" data-bs-target="#edit-units"
+                            ><i data-feather="edit" class="feather-edit"></i
+                          ></a>
+                          <a class="me-2 confirm-text p-2 mb-0" href="javascript:void(0);"
+                            ><i data-feather="trash-2" class="feather-trash-2"></i
+                          ></a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>DN0007</td>
+                      <td>17/10/2025</td>
+                      <td>PT Dirgantara</td>
+                      <td>2508000011</td>
+                      <td>Jl. Gatot Subroto Kav. 1, Kec. Klojen, Kota Malang, Jawa Timur</td>
+                      <td><span class="badge bg-soft-success">Complete</span></td>
+                      <td>18/10/2025</td>
+                      <td class="action-table-data">
+                        <div class="edit-delete-action data-row">
+                          <a class="me-2 p-2 mb-0" href="delivery-note-detail.html"
+                            ><i data-feather="eye" class="action-eye"></i
+                          ></a>
+                          <a class="me-2 p-2 mb-0" data-bs-toggle="modal" data-bs-target="#edit-units"
+                            ><i data-feather="edit" class="feather-edit"></i
+                          ></a>
+                          <a class="me-2 confirm-text p-2 mb-0" href="javascript:void(0);"
+                            ><i data-feather="trash-2" class="feather-trash-2"></i
+                          ></a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>DN0008</td>
+                      <td>20/10/2025</td>
+                      <td>Toko Perlengkapan</td>
+                      <td>2508000013</td>
+                      <td>Pasar Baru Blok E, Kec. Semarang Utara, Kota Semarang, Jawa Tengah</td>
+                      <td><span class="badge bg-soft-success">Complete</span></td>
+                      <td>21/10/2025</td>
+                      <td class="action-table-data">
+                        <div class="edit-delete-action data-row">
+                          <a class="me-2 p-2 mb-0" href="delivery-note-detail.html"
+                            ><i data-feather="eye" class="action-eye"></i
+                          ></a>
+                          <a class="me-2 p-2 mb-0" data-bs-toggle="modal" data-bs-target="#edit-units"
+                            ><i data-feather="edit" class="feather-edit"></i
+                          ></a>
+                          <a class="me-2 confirm-text p-2 mb-0" href="javascript:void(0);"
+                            ><i data-feather="trash-2" class="feather-trash-2"></i
+                          ></a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>DN0009</td>
+                      <td>23/10/2025</td>
+                      <td>PT Angkasa Raya</td>
+                      <td>2507000014</td>
+                      <td>Komplek Pergudangan No. 5, Kec. Benda, Kota Tangerang, Banten</td>
+                      <td><span class="badge bg-soft-success">Complete</span></td>
+                      <td>24/10/2025</td>
+                      <td class="action-table-data">
+                        <div class="edit-delete-action data-row">
+                          <a class="me-2 p-2 mb-0" href="delivery-note-detail.html"
+                            ><i data-feather="eye" class="action-eye"></i
+                          ></a>
+                          <a class="me-2 p-2 mb-0" data-bs-toggle="modal" data-bs-target="#edit-units"
+                            ><i data-feather="edit" class="feather-edit"></i
+                          ></a>
+                          <a class="me-2 confirm-text p-2 mb-0" href="javascript:void(0);"
+                            ><i data-feather="trash-2" class="feather-trash-2"></i
+                          ></a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>DN0010</td>
+                      <td>26/10/2025</td>
+                      <td>Universitas Bintang</td>
+                      <td>2506000016</td>
+                      <td>Kampus Utama Jl. Pendidikan, Kec. Depok, Kota Sleman, DI Yogyakarta</td>
+                      <td><span class="badge bg-soft-success">Complete</span></td>
+                      <td>28/10/2025</td>
+                      <td class="action-table-data">
+                        <div class="edit-delete-action data-row">
+                          <a class="me-2 p-2 mb-0" href="delivery-note-detail.html"
+                            ><i data-feather="eye" class="action-eye"></i
+                          ></a>
+                          <a class="me-2 p-2 mb-0" data-bs-toggle="modal" data-bs-target="#edit-units"
+                            ><i data-feather="edit" class="feather-edit"></i
+                          ></a>
+                          <a class="me-2 confirm-text p-2 mb-0" href="javascript:void(0);"
+                            ><i data-feather="trash-2" class="feather-trash-2"></i
+                          ></a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>DN0011</td>
+                      <td>29/10/2025</td>
+                      <td>Toko Elektronik Maju</td>
+                      <td>2505000018</td>
+                      <td>Jl. Sudirman No. 8, Kec. Medan Petisah, Kota Medan, Sumatera Utara</td>
+                      <td><span class="badge bg-soft-danger">Failed</span></td>
+                      <td>31/10/2025</td>
+                      <td class="action-table-data">
+                        <div class="edit-delete-action data-row">
+                          <a class="me-2 p-2 mb-0" href="delivery-note-detail.html"
+                            ><i data-feather="eye" class="action-eye"></i
+                          ></a>
+                          <a class="me-2 p-2 mb-0" data-bs-toggle="modal" data-bs-target="#edit-units"
+                            ><i data-feather="edit" class="feather-edit"></i
+                          ></a>
+                          <a class="me-2 confirm-text p-2 mb-0" href="javascript:void(0);"
+                            ><i data-feather="trash-2" class="feather-trash-2"></i
+                          ></a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>DN0012</td>
+                      <td>01/11/2025</td>
+                      <td>PT Cipta Kreasi</td>
+                      <td>2505000019</td>
+                      <td>Komplek Rukan 27, Kec. Kebon Jeruk, Jakarta Barat, DKI Jakarta</td>
+                      <td><span class="badge bg-soft-success">Complete</span></td>
+                      <td>02/11/2025</td>
+                      <td class="action-table-data">
+                        <div class="edit-delete-action data-row">
+                          <a class="me-2 p-2 mb-0" href="delivery-note-detail.html"
+                            ><i data-feather="eye" class="action-eye"></i
+                          ></a>
+                          <a class="me-2 p-2 mb-0" data-bs-toggle="modal" data-bs-target="#edit-units"
+                            ><i data-feather="edit" class="feather-edit"></i
+                          ></a>
+                          <a class="me-2 confirm-text p-2 mb-0" href="javascript:void(0);"
+                            ><i data-feather="trash-2" class="feather-trash-2"></i
+                          ></a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>DN0013</td>
+                      <td>04/11/2025</td>
+                      <td>PT Makmur Abadi</td>
+                      <td>2511000001</td>
+                      <td>Jl. Damai No. 4, Kec. Kramat Jati, Jakarta Timur, DKI Jakarta</td>
+                      <td><span class="badge bg-soft-success">Complete</span></td>
+                      <td>06/11/2025</td>
+                      <td class="action-table-data">
+                        <div class="edit-delete-action data-row">
+                          <a class="me-2 p-2 mb-0" href="delivery-note-detail.html"
+                            ><i data-feather="eye" class="action-eye"></i
+                          ></a>
+                          <a class="me-2 p-2 mb-0" data-bs-toggle="modal" data-bs-target="#edit-units"
+                            ><i data-feather="edit" class="feather-edit"></i
+                          ></a>
+                          <a class="me-2 confirm-text p-2 mb-0" href="javascript:void(0);"
+                            ><i data-feather="trash-2" class="feather-trash-2"></i
+                          ></a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>DN0014</td>
+                      <td>07/11/2025</td>
+                      <td>Toko Buku Cerdas</td>
+                      <td>2511000002</td>
+                      <td>Ruko Indah Blok A, Kec. Cinere, Kota Depok, Jawa Barat</td>
+                      <td><span class="badge bg-soft-danger">Failed</span></td>
+                      <td>08/11/2025</td>
+                      <td class="action-table-data">
+                        <div class="edit-delete-action data-row">
+                          <a class="me-2 p-2 mb-0" href="delivery-note-detail.html"
+                            ><i data-feather="eye" class="action-eye"></i
+                          ></a>
+                          <a class="me-2 p-2 mb-0" data-bs-toggle="modal" data-bs-target="#edit-units"
+                            ><i data-feather="edit" class="feather-edit"></i
+                          ></a>
+                          <a class="me-2 confirm-text p-2 mb-0" href="javascript:void(0);"
+                            ><i data-feather="trash-2" class="feather-trash-2"></i
+                          ></a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>DN0015</td>
+                      <td>11/10/2025</td>
+                      <td>CV Jaya Sentosa</td>
+                      <td>2511000004</td>
+                      <td>Kawasan Industri Lippo Cikarang, Kec. Cikarang Selatan, Kab. Bekasi, Jawa Barat</td>
+                      <td><span class="badge bg-soft-success">Complete</span></td>
+                      <td>11/11/2025</td>
+                      <td class="action-table-data">
+                        <div class="edit-delete-action data-row">
+                          <a class="me-2 p-2 mb-0" href="delivery-note-detail.html"
+                            ><i data-feather="eye" class="action-eye"></i
+                          ></a>
+                          <a class="me-2 p-2 mb-0" data-bs-toggle="modal" data-bs-target="#edit-units"
+                            ><i data-feather="edit" class="feather-edit"></i
+                          ></a>
+                          <a class="me-2 confirm-text p-2 mb-0" href="javascript:void(0);"
+                            ><i data-feather="trash-2" class="feather-trash-2"></i
+                          ></a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>DN0016</td>
+                      <td>13/11/2025</td>
+                      <td>PT Global Solusi</td>
+                      <td>2510000006</td>
+                      <td>Gedung Sentra Lt. 15, Kec. Setiabudi, Jakarta Selatan, DKI Jakarta</td>
+                      <td><span class="badge bg-soft-success">Complete</span></td>
+                      <td>15/11/2025</td>
+                      <td class="action-table-data">
+                        <div class="edit-delete-action data-row">
+                          <a class="me-2 p-2 mb-0" href="delivery-note-detail.html"
+                            ><i data-feather="eye" class="action-eye"></i
+                          ></a>
+                          <a class="me-2 p-2 mb-0" data-bs-toggle="modal" data-bs-target="#edit-units"
+                            ><i data-feather="edit" class="feather-edit"></i
+                          ></a>
+                          <a class="me-2 confirm-text p-2 mb-0" href="javascript:void(0);"
+                            ><i data-feather="trash-2" class="feather-trash-2"></i
+                          ></a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>DN0017</td>
+                      <td>16/11/2025</td>
+                      <td>Klinik Sehat</td>
+                      <td>2510000007</td>
+                      <td>Jl. Merdeka No. 20, Kec. Bogor Tengah, Kota Bogor, Jawa Barat</td>
+                      <td><span class="badge bg-soft-success">Complete</span></td>
+                      <td>17/11/2025</td>
+                      <td class="action-table-data">
+                        <div class="edit-delete-action data-row">
+                          <a class="me-2 p-2 mb-0" href="delivery-note-detail.html"
+                            ><i data-feather="eye" class="action-eye"></i
+                          ></a>
+                          <a class="me-2 p-2 mb-0" data-bs-toggle="modal" data-bs-target="#edit-units"
+                            ><i data-feather="edit" class="feather-edit"></i
+                          ></a>
+                          <a class="me-2 confirm-text p-2 mb-0" href="javascript:void(0);"
+                            ><i data-feather="trash-2" class="feather-trash-2"></i
+                          ></a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>DN0018</td>
+                      <td>19/11/2025</td>
+                      <td>Yayasan Lentera</td>
+                      <td>2509000009</td>
+                      <td>Perumahan Hijau Blok C, Kec. Bantul, Kab. Bantul, DI Yogyakarta</td>
+                      <td><span class="badge bg-soft-success">Complete</span></td>
+                      <td>20/11/2025</td>
+                      <td class="action-table-data">
+                        <div class="edit-delete-action data-row">
+                          <a class="me-2 p-2 mb-0" href="delivery-note-detail.html"
+                            ><i data-feather="eye" class="action-eye"></i
+                          ></a>
+                          <a class="me-2 p-2 mb-0" data-bs-toggle="modal" data-bs-target="#edit-units"
+                            ><i data-feather="edit" class="feather-edit"></i
+                          ></a>
+                          <a class="me-2 confirm-text p-2 mb-0" href="javascript:void(0);"
+                            ><i data-feather="trash-2" class="feather-trash-2"></i
+                          ></a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>DN0019</td>
+                      <td>22/11/2025</td>
+                      <td>PT Dirgantara</td>
+                      <td>2508000011</td>
+                      <td>Jl. Gatot Subroto Kav. 1, Kec. Klojen, Kota Malang, Jawa Timur</td>
+                      <td><span class="badge bg-soft-danger">Failed</span></td>
+                      <td>24/11/2025</td>
+                      <td class="action-table-data">
+                        <div class="edit-delete-action data-row">
+                          <a class="me-2 p-2 mb-0" href="delivery-note-detail.html"
+                            ><i data-feather="eye" class="action-eye"></i
+                          ></a>
+                          <a class="me-2 p-2 mb-0" data-bs-toggle="modal" data-bs-target="#edit-units"
+                            ><i data-feather="edit" class="feather-edit"></i
+                          ></a>
+                          <a class="me-2 confirm-text p-2 mb-0" href="javascript:void(0);"
+                            ><i data-feather="trash-2" class="feather-trash-2"></i
+                          ></a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>DN0020</td>
+                      <td>25/11/2025</td>
+                      <td>Toko Perlengkapan</td>
+                      <td>2508000013</td>
+                      <td>Pasar Baru Blok E, Kec. Semarang Utara, Kota Semarang, Jawa Tengah</td>
+                      <td><span class="badge bg-soft-success">Complete</span></td>
+                      <td>27/11/2025</td>
+                      <td class="action-table-data">
+                        <div class="edit-delete-action data-row">
+                          <a class="me-2 p-2 mb-0" href="delivery-note-detail.html"
+                            ><i data-feather="eye" class="action-eye"></i
+                          ></a>
+                          <a class="me-2 p-2 mb-0" data-bs-toggle="modal" data-bs-target="#edit-units"
+                            ><i data-feather="edit" class="feather-edit"></i
+                          ></a>
+                          <a class="me-2 confirm-text p-2 mb-0" href="javascript:void(0);"
+                            ><i data-feather="trash-2" class="feather-trash-2"></i
+                          ></a>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <!-- /product list -->
+        </div>
+      </div>
     </div>
     <!-- /Main Wrapper -->
     <!-- modals -->
-
 
     <!-- modal lihat -->
     <!-- TRIGGER -->
     <!-- template add new -->
     <template id="product-row-template">
-        <tr class="product-row">
-            <td class="product-no"></td>
-            <td style="width: 450px;">
-                <div class="product-desc empty" contenteditable="true" data-placeholder="Enter item description"></div>
-            </td>
-            <td><input type="number" class="form-control product-qty"></td>
-            <td style="width: 150px;"><select class="form-select product-unit">
-                    <option value="Ream">Ream</option>
-                    <option value="Pieces">Pieces</option>
-                </select></td>
-            <td><input type="text" class="form-control"></td>
-            <td><input type="text" class="form-control"></td>
-            <td><a class="text-danger btn-delete-product"><i data-feather="trash-2"></i></a></td>
-        </tr>
+      <tr class="product-row">
+        <td class="product-no"></td>
+        <td style="width: 450px">
+          <div class="product-desc empty" contenteditable="true" data-placeholder="Enter item description"></div>
+        </td>
+        <td><input type="number" class="form-control product-qty" /></td>
+        <td style="width: 150px">
+          <select class="form-select product-unit">
+            <option value="Ream">Ream</option>
+            <option value="Pieces">Pieces</option>
+          </select>
+        </td>
+        <td><input type="text" class="form-control" /></td>
+        <td><input type="text" class="form-control" /></td>
+        <td>
+          <a class="text-danger btn-delete-product"><i data-feather="trash-2"></i></a>
+        </td>
+      </tr>
     </template>
-
-
 
     <!-- template add new -->
     <!-- MODAL DELIVERY NOTE -->
     <div class="modal fade" id="lihat" tabindex="-1">
-        <div class="modal-dialog modal-xl modal-dialog-centered modal-print">
-            <div class="modal-content">
+      <div class="modal-dialog modal-xl modal-dialog-centered modal-print">
+        <div class="modal-content">
+          <div class="modal-header border-0">
+            <h5 class="modal-title">Detail Delivery Note</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
 
-                <div class="modal-header border-0">
-                    <h5 class="modal-title">Detail Delivery Note</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          <div class="modal-body" id="section-to-print">
+            <!-- HEADER -->
+            <div class="d-flex justify-content-between mb-4">
+              <div class="col-7">
+                <div class="d-flex justify-content-start">
+                  <div class="border p-4 d-flex align-items-center justify-content-center" style="height: 110px; width: 180px">
+                    <h5 class="mb-0">Logo</h5>
+                  </div>
                 </div>
+              </div>
 
-                <div class="modal-body" id="section-to-print">
-
-                    <!-- HEADER -->
-                    <div class="d-flex  justify-content-between mb-4">
-                        <div class="col-7">
-                            <div class="d-flex justify-content-start">
-                                <div class="border p-4 d-flex align-items-center justify-content-center"
-                                    style="height:110px; width: 180px;">
-                                    <h5 class="mb-0">Logo</h5>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-5">
-                            <h4 class="fw-bold">PT. DULANK SEMESTA CIDA</h4>
-                            <small>
-                                Jl. Arif Rahman Hakim Niaga Kel. Nagasari Karawang Barat - Karawang<br>
-                                Email : ptdulanksemestacida@gmail.com<br>
-                                Website : www.percetakan-dulank.com<br>
-                                WhatsApp : 0877 8813 1400
-                            </small>
-                        </div>
-                    </div>
-
-                    <h5 class="fw-bold text-start mb-3">DELIVERY NOTE</h5>
-                    <div class="d-flex justify-content-between">
-                        <div class="col-7">
-                            <div class="mb-2 fw-semibold text-standard">Ship To:</div>
-                            <div class="text-standard">
-                                PT. Exabytes Network Indonesia<br>
-                                Cyber 2 Tower, Lantai 29,<br>
-                                Jalan HR Rasuna Said,<br>
-                                XS No. 13, Jakarta Selatan, 12950.
-                            </div>
-                        </div>
-
-                        <div class="col-5">
-
-                            <div class="row">
-                                <span class="col-6 text-standard fw-semibold">DN No</span>
-                                <span class="col-6 text-standard">00539</span>
-                            </div>
-                            <div class="row">
-                                <span class="col-6 text-standard fw-semibold">Dn Date</span>
-                                <span class="col-6 text-standard">12/12/2025</span>
-                            </div>
-                            <div class="row">
-                                <span class="col-6 text-standard fw-semibold">PO</span>
-                                <span class="col-6 text-standard">PO - 2512000009</span>
-                            </div>
-                            <div class="row">
-                                <span class="col-6 text-standard fw-semibold">Shipping BY</span>
-                                <span class="col-6 text-standard">Car</span>
-                            </div>
-                            <div class="row">
-                                <span class="col-6 text-standard fw-semibold">Reference</span>
-                                <span class="col-6 text-standard">Mr. Aman</span>
-                            </div>
-
-                        </div>
-
-
-                    </div>
-
-                    <!-- TABLE ITEM -->
-                    <div class="table-responsive mt-4 mb-4">
-                        <table class="table datanew">
-                            <thead>
-                                <tr>
-                                    <th>No</th>
-                                    <th style="width: 450px;">Item Description</th>
-                                    <th>Qty</th>
-                                    <th style="width: 150px;">Unit</th>
-                                    <th>Packing Qty</th>
-                                    <th>Weight (Kg)</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td class="text-start">
-                                        Brosur Full Color<br>
-                                        Brosur PPDB SMAN 1 Bandung
-                                    </td>
-                                    <td>2</td>
-                                    <td>Ream</td>
-                                    <td>2 Pax</td>
-                                    <td>6 Kg</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-
-                    <!-- SIGNATURE SECTION -->
-                    <div class="row text-center mt-5 signature">
-
-                        <div class="col-3 d-flex flex-column align-items-center">
-                            <p class="fw-bold">Receive By</p>
-                            <div style="height:70px"></div>
-                            <div class="line"></div>
-                            <small>Your Name, Sign and Stamp</small>
-                        </div>
-
-                        <div class="col-3 d-flex flex-column align-items-center">
-                            <p class="fw-bold">Security / Check</p>
-                            <div style="height:70px"></div>
-                            <div class="line"></div>
-                            <small>Your Name, Sign and Stamp</small>
-                        </div>
-
-                        <div class="col-3 d-flex flex-column align-items-center">
-                            <p class="fw-bold">Driver</p>
-                            <div style="height:70px"></div>
-                            <div class="line"></div>
-                            <small>Nurdin</small>
-                        </div>
-
-                        <div class="col-3 d-flex flex-column align-items-center">
-                            <p class="fw-bold">Issued By</p>
-                            <div style="height:70px"></div>
-                            <div class="line"></div>
-                            <small>Nurdin</small>
-                        </div>
-
-                    </div>
-
-
-
-                </div>
-
-                <!-- FOOTER BUTTON -->
-                <div class="modal-footer justify-content-between">
-                    <div>
-                        <button class="btn btn-warning text-white" id="download-pdf">
-                            <i data-feather="printer"></i> Print
-                        </button>
-                        <button class="btn btn-dark">
-                            <i data-feather="download"></i> Download
-                        </button>
-                    </div>
-
-
-                </div>
-
+              <div class="col-5">
+                <h4 class="fw-bold">PT. DULANK SEMESTA CIDA</h4>
+                <small>
+                  Jl. Arif Rahman Hakim Niaga Kel. Nagasari Karawang Barat - Karawang<br />
+                  Email : ptdulanksemestacida@gmail.com<br />
+                  Website : www.percetakan-dulank.com<br />
+                  WhatsApp : 0877 8813 1400
+                </small>
+              </div>
             </div>
+
+            <h5 class="fw-bold text-start mb-3">DELIVERY NOTE</h5>
+            <div class="d-flex justify-content-between">
+              <div class="col-7">
+                <div class="mb-2 fw-semibold text-standard">Ship To:</div>
+                <div class="text-standard">
+                  PT. Exabytes Network Indonesia<br />
+                  Cyber 2 Tower, Lantai 29,<br />
+                  Jalan HR Rasuna Said,<br />
+                  XS No. 13, Jakarta Selatan, 12950.
+                </div>
+              </div>
+
+              <div class="col-5">
+                <div class="row">
+                  <span class="col-6 text-standard fw-semibold">DN No</span>
+                  <span class="col-6 text-standard">00539</span>
+                </div>
+                <div class="row">
+                  <span class="col-6 text-standard fw-semibold">Dn Date</span>
+                  <span class="col-6 text-standard">12/12/2025</span>
+                </div>
+                <div class="row">
+                  <span class="col-6 text-standard fw-semibold">PO</span>
+                  <span class="col-6 text-standard">PO - 2512000009</span>
+                </div>
+                <div class="row">
+                  <span class="col-6 text-standard fw-semibold">Shipping BY</span>
+                  <span class="col-6 text-standard">Car</span>
+                </div>
+                <div class="row">
+                  <span class="col-6 text-standard fw-semibold">Reference</span>
+                  <span class="col-6 text-standard">Mr. Aman</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- TABLE ITEM -->
+            <div class="table-responsive mt-4 mb-4">
+              <table class="table datanew">
+                <thead>
+                  <tr>
+                    <th>No</th>
+                    <th style="width: 450px">Item Description</th>
+                    <th>Qty</th>
+                    <th style="width: 150px">Unit</th>
+                    <th>Packing Qty</th>
+                    <th>Weight (Kg)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td class="text-start">
+                      Brosur Full Color<br />
+                      Brosur PPDB SMAN 1 Bandung
+                    </td>
+                    <td>2</td>
+                    <td>Ream</td>
+                    <td>2 Pax</td>
+                    <td>6 Kg</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- SIGNATURE SECTION -->
+            <div class="row text-center mt-5 signature">
+              <div class="col-3 d-flex flex-column align-items-center">
+                <p class="fw-bold">Receive By</p>
+                <div style="height: 70px"></div>
+                <div class="line"></div>
+                <small>Your Name, Sign and Stamp</small>
+              </div>
+
+              <div class="col-3 d-flex flex-column align-items-center">
+                <p class="fw-bold">Security / Check</p>
+                <div style="height: 70px"></div>
+                <div class="line"></div>
+                <small>Your Name, Sign and Stamp</small>
+              </div>
+
+              <div class="col-3 d-flex flex-column align-items-center">
+                <p class="fw-bold">Driver</p>
+                <div style="height: 70px"></div>
+                <div class="line"></div>
+                <small>Nurdin</small>
+              </div>
+
+              <div class="col-3 d-flex flex-column align-items-center">
+                <p class="fw-bold">Issued By</p>
+                <div style="height: 70px"></div>
+                <div class="line"></div>
+                <small>Nurdin</small>
+              </div>
+            </div>
+          </div>
+
+          <!-- FOOTER BUTTON -->
+          <div class="modal-footer justify-content-between">
+            <div>
+              <button class="btn btn-warning text-white" id="download-pdf"><i data-feather="printer"></i> Print</button>
+              <button class="btn btn-dark"><i data-feather="download"></i> Download</button>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
 
     <!-- modal lihat -->
 
     <div class="modal fade" id="edit-units" tabindex="-1">
-        <div class="modal-dialog modal-xl modal-dialog-centered">
-            <div class="modal-content">
+      <div class="modal-dialog modal-xl modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header border-0">
+            <h5 class="modal-title">Edit Delivery Note</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
 
-                <div class="modal-header border-0">
-                    <h5 class="modal-title">Edit Delivery Note</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          <div class="modal-body">
+            <!-- HEADER -->
+            <div class="d-flex justify-content-between mb-4">
+              <div class="col-7">
+                <div class="d-flex justify-content-start">
+                  <div class="border p-4 d-flex align-items-center justify-content-center" style="height: 110px; width: 180px">
+                    <h5 class="mb-0">Logo</h5>
+                  </div>
                 </div>
+              </div>
 
-                <div class="modal-body">
-
-                    <!-- HEADER -->
-                    <div class="d-flex  justify-content-between mb-4">
-                        <div class="col-7">
-                            <div class="d-flex justify-content-start">
-                                <div class="border p-4 d-flex align-items-center justify-content-center"
-                                    style="height:110px; width: 180px;">
-                                    <h5 class="mb-0">Logo</h5>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-5">
-                            <h4 class="fw-bold">PT. DULANK SEMESTA CIDA</h4>
-                            <small>
-                                Jl. Arif Rahman Hakim Niaga Kel. Nagasari Karawang Barat - Karawang<br>
-                                Email : ptdulanksemestacida@gmail.com<br>
-                                Website : www.percetakan-dulank.com<br>
-                                WhatsApp : 0877 8813 1400
-                            </small>
-                        </div>
-                    </div>
-
-                    <h5 class="fw-bold text-start mb-3">DELIVERY NOTE</h5>
-                    <div class="d-flex justify-content-between">
-                        <div class="col-7">
-                            <div class="mb-2 fw-semibold text-standard">Ship To:</div>
-                            <div class="text-standard">
-                                PT. Exabytes Network Indonesia<br>
-                                Cyber 2 Tower, Lantai 29,<br>
-                                Jalan HR Rasuna Said,<br>
-                                XS No. 13, Jakarta Selatan, 12950.
-                            </div>
-                        </div>
-
-                        <div class="col-5">
-
-                            <div class="row my-3">
-                                <span class="col-6 text-standard fw-semibold">DN No</span>
-                                <span class="col-6 text-standard">00539</span>
-                            </div>
-                            <div class="row my-3">
-                                <span class="col-6 text-standard fw-semibold">Dn Date</span>
-                                <span class="col-6 text-standard">12/12/2025</span>
-                            </div>
-                            <div class="row my-3 align-items-center">
-                                <span class="col-6 text-standard fw-semibold">PO</span>
-                                <span class="col-6 text-standard">
-                                    <input type="text" class="form-control form-control-sm" value="PO - 12120009">
-                                </span>
-                            </div>
-                            <div class="row my-3 align-items-center">
-                                <span class="col-6 text-standard fw-semibold">Shipping BY</span>
-                                <span class="col-6 text-standard">
-                                    <input type="text" class="form-control form-control-sm" value="Car">
-                                </span>
-                            </div>
-                            <div class="row my-3 align-items-center">
-                                <span class="col-6 text-standard fw-semibold">Reference</span>
-                                <span class="col-6 text-standard">
-                                    <input type="text" class="form-control form-control-sm" value="Mr. Aman">
-                                </span>
-                            </div>
-
-                        </div>
-
-
-                    </div>
-
-                    <!-- TABLE ITEM -->
-                    <div class="table-responsive mt-2 mt-4 mb-4">
-                        <table class="table" id="product-table">
-                            <thead>
-                                <tr>
-                                    <th>No</th>
-                                    <th style="width: 450px;">Item Description</th>
-                                    <th>Qty</th>
-                                    <th style="width: 150px;">Unit</th>
-                                    <th>Packing Qty</th>
-                                    <th>Weight (Kg)</th>
-                                    <th style="width: 50px;">Action</th>
-                                </tr>
-                            </thead>
-                            <tbody id="product-body-edit">
-                                <tr>
-                                    <td>1</td>
-                                    <td class="text-start">
-                                        Brosur Full Color<br>
-                                        Brosur PPDB SMAN 1 Bandung
-                                    </td>
-                                    <td> <input type="number" class="form-control product-qty text-end" value="0"
-                                            min="0">
-                                    </td>
-                                    <td width="120px">
-                                        <select class="form-select">
-                                            <option value="" disabled>Select Unit</option>
-                                            <option value="Ream">Ream</option>
-                                            <option value="Pieces">Pieces</option>
-                                        </select>
-                                    </td>
-                                    <td><input type="text" class="form-control" value="2 Pax"></td>
-                                    <td><input type="text" class="form-control" value="6 Kg"></td>
-                                    <td><a href="javascript:void(0);" class="text-danger btn-delete-product">
-                                            <i data-feather="trash-2"></i>
-                                        </a></td>
-                                </tr>
-                            </tbody>
-                        </table>
-
-                        <a href="javascript:void(0);" id="btn-add-product" class="mt-2 text-primary ms-2">
-                            <i data-feather="plus-circle" class="plus-down-add"></i>
-                            <span>add New</span>
-                        </a>
-                    </div>
-
-                    <!-- SIGNATURE SECTION -->
-                    <div class="row text-center mt-5 signature">
-
-                        <div class=" col-md-3 d-flex flex-column align-items-center">
-                            <p class="fw-bold">Receive By</p>
-                            <div style="height:70px"></div>
-                            <div class="line"></div>
-                            <input type="text" placeholder="Your Name, Sign and Stamp">
-                        </div>
-
-                        <div class="col-md-3 d-flex flex-column align-items-center">
-                            <p class="fw-bold">Security / Check</p>
-                            <div style="height:70px"></div>
-                            <div class="line"></div>
-                            <input type="text" placeholder="Your Name, Sign and Stamp">
-
-                        </div>
-
-                        <div class="col-md-3 d-flex flex-column align-items-center">
-                            <p class="fw-bold">Driver</p>
-                            <div style="height:70px"></div>
-                            <div class="line"></div>
-                            <input type="text" value="Nurdin" placeholder="Your Name, Sign and Stamp">
-                        </div>
-
-                        <div class="col-md-3 d-flex flex-column align-items-center">
-                            <p class="fw-bold">Issued By</p>
-                            <div style="height:70px"></div>
-                            <div class="line"></div>
-                            <input type="text" value="Nurdin" placeholder="Your Name, Sign and Stamp">
-                        </div>
-
-                    </div>
-
-
-
-                </div>
-
-                <!-- FOOTER BUTTON -->
-                <div class="modal-footer justify-content-end">
-
-                    <div>
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-                            Cancel
-                        </button>
-                        <button class="btn btn-warning">
-                            Save Changes
-                        </button>
-                    </div>
-                </div>
-
+              <div class="col-5">
+                <h4 class="fw-bold">PT. DULANK SEMESTA CIDA</h4>
+                <small>
+                  Jl. Arif Rahman Hakim Niaga Kel. Nagasari Karawang Barat - Karawang<br />
+                  Email : ptdulanksemestacida@gmail.com<br />
+                  Website : www.percetakan-dulank.com<br />
+                  WhatsApp : 0877 8813 1400
+                </small>
+              </div>
             </div>
+
+            <h5 class="fw-bold text-start mb-3">DELIVERY NOTE</h5>
+            <div class="d-flex justify-content-between">
+              <div class="col-7">
+                <div class="mb-2 fw-semibold text-standard">Ship To:</div>
+                <div class="text-standard">
+                  PT. Exabytes Network Indonesia<br />
+                  Cyber 2 Tower, Lantai 29,<br />
+                  Jalan HR Rasuna Said,<br />
+                  XS No. 13, Jakarta Selatan, 12950.
+                </div>
+              </div>
+
+              <div class="col-5">
+                <div class="row my-3">
+                  <span class="col-6 text-standard fw-semibold">DN No</span>
+                  <span class="col-6 text-standard">00539</span>
+                </div>
+                <div class="row my-3">
+                  <span class="col-6 text-standard fw-semibold">Dn Date</span>
+                  <span class="col-6 text-standard">12/12/2025</span>
+                </div>
+                <div class="row my-3 align-items-center">
+                  <span class="col-6 text-standard fw-semibold">PO</span>
+                  <span class="col-6 text-standard">
+                    <input type="text" class="form-control form-control-sm" value="PO - 12120009" />
+                  </span>
+                </div>
+                <div class="row my-3 align-items-center">
+                  <span class="col-6 text-standard fw-semibold">Shipping BY</span>
+                  <span class="col-6 text-standard">
+                    <input type="text" class="form-control form-control-sm" value="Car" />
+                  </span>
+                </div>
+                <div class="row my-3 align-items-center">
+                  <span class="col-6 text-standard fw-semibold">Reference</span>
+                  <span class="col-6 text-standard">
+                    <input type="text" class="form-control form-control-sm" value="Mr. Aman" />
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <!-- TABLE ITEM -->
+            <div class="table-responsive mt-2 mt-4 mb-4">
+              <table class="table" id="product-table">
+                <thead>
+                  <tr>
+                    <th>No</th>
+                    <th style="width: 450px">Item Description</th>
+                    <th>Qty</th>
+                    <th style="width: 150px">Unit</th>
+                    <th>Packing Qty</th>
+                    <th>Weight (Kg)</th>
+                    <th style="width: 50px">Action</th>
+                  </tr>
+                </thead>
+                <tbody id="product-body-edit">
+                  <tr>
+                    <td>1</td>
+                    <td class="text-start">
+                      Brosur Full Color<br />
+                      Brosur PPDB SMAN 1 Bandung
+                    </td>
+                    <td><input type="number" class="form-control product-qty text-end" value="0" min="0" /></td>
+                    <td width="120px">
+                      <select class="form-select">
+                        <option value="" disabled>Select Unit</option>
+                        <option value="Ream">Ream</option>
+                        <option value="Pieces">Pieces</option>
+                      </select>
+                    </td>
+                    <td><input type="text" class="form-control" value="2 Pax" /></td>
+                    <td><input type="text" class="form-control" value="6 Kg" /></td>
+                    <td>
+                      <a href="javascript:void(0);" class="text-danger btn-delete-product">
+                        <i data-feather="trash-2"></i>
+                      </a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <a href="javascript:void(0);" id="btn-add-product" class="mt-2 text-primary ms-2">
+                <i data-feather="plus-circle" class="plus-down-add"></i>
+                <span>add New</span>
+              </a>
+            </div>
+
+            <!-- SIGNATURE SECTION -->
+            <div class="row text-center mt-5 signature">
+              <div class="col-md-3 d-flex flex-column align-items-center">
+                <p class="fw-bold">Receive By</p>
+                <div style="height: 70px"></div>
+                <div class="line"></div>
+                <input type="text" placeholder="Your Name, Sign and Stamp" />
+              </div>
+
+              <div class="col-md-3 d-flex flex-column align-items-center">
+                <p class="fw-bold">Security / Check</p>
+                <div style="height: 70px"></div>
+                <div class="line"></div>
+                <input type="text" placeholder="Your Name, Sign and Stamp" />
+              </div>
+
+              <div class="col-md-3 d-flex flex-column align-items-center">
+                <p class="fw-bold">Driver</p>
+                <div style="height: 70px"></div>
+                <div class="line"></div>
+                <input type="text" value="Nurdin" placeholder="Your Name, Sign and Stamp" />
+              </div>
+
+              <div class="col-md-3 d-flex flex-column align-items-center">
+                <p class="fw-bold">Issued By</p>
+                <div style="height: 70px"></div>
+                <div class="line"></div>
+                <input type="text" value="Nurdin" placeholder="Your Name, Sign and Stamp" />
+              </div>
+            </div>
+          </div>
+
+          <!-- FOOTER BUTTON -->
+          <div class="modal-footer justify-content-end">
+            <div>
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+              <button class="btn btn-warning">Save Changes</button>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
 
     <div class="modal fade" id="tambah" tabindex="-1">
-        <div class="modal-dialog modal-xl modal-dialog-centered">
-            <div class="modal-content">
+      <div class="modal-dialog modal-xl modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header border-0">
+            <h5 class="modal-title">Add New Delivery Note</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
 
-                <div class="modal-header border-0">
-                    <h5 class="modal-title">Add New Delivery Note</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          <div class="modal-body">
+            <!-- HEADER -->
+            <div class="d-flex justify-content-between mb-4">
+              <div class="col-7">
+                <div class="d-flex justify-content-start">
+                  <div class="border p-4 d-flex align-items-center justify-content-center" style="height: 110px; width: 180px">
+                    <h5 class="mb-0">Logo</h5>
+                  </div>
                 </div>
+              </div>
 
-                <div class="modal-body">
-
-                    <!-- HEADER -->
-                    <div class="d-flex  justify-content-between mb-4">
-                        <div class="col-7">
-                            <div class="d-flex justify-content-start">
-                                <div class="border p-4 d-flex align-items-center justify-content-center"
-                                    style="height:110px; width: 180px;">
-                                    <h5 class="mb-0">Logo</h5>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-5">
-                            <h4 class="fw-bold">PT. DULANK SEMESTA CIDA</h4>
-                            <small>
-                                Jl. Arif Rahman Hakim Niaga Kel. Nagasari Karawang Barat - Karawang<br>
-                                Email : ptdulanksemestacida@gmail.com<br>
-                                Website : www.percetakan-dulank.com<br>
-                                WhatsApp : 0877 8813 1400
-                            </small>
-                        </div>
-                    </div>
-
-                    <h5 class="fw-bold text-start mb-3">DELIVERY NOTE</h5>
-                    <div class="row">
-                        <div class="col-6">
-                            <div class="mb-3">
-											<div class="add-newplus">
-												<h4 class="fs-6 text-dark mt-2">Customer:</h4>
-												<a href="customers.html" data-bs-target="#add-units-category"><i
-														data-feather="plus-circle" class="plus-down-add"></i><span>Add
-														New</span></a>
-											</div>
-											<div class="input-groupicon select-code my-3">
-												<div class="search-container">
-													<input type="text" class="form-control customer-input"
-														placeholder="Search Customer" data-target="data-customer">
-													<div class="search-results" onchange="console.log('masuk')"
-														id="customer-add"></div>
-												</div>
-											</div>
-										</div>
-                        </div>
-                    </div>
-                    <div class="d-flex justify-content-between">
-                        <div class="col-7">
-                            <div class="mb-2 fw-semibold text-standard">Ship To:</div>
-                            <div class="text-standard">
-                                PT. Exabytes Network Indonesia<br>
-                                Cyber 2 Tower, Lantai 29,<br>
-                                Jalan HR Rasuna Said,<br>
-                                XS No. 13, Jakarta Selatan, 12950.
-                            </div>
-                        </div>
-
-                        <div class="col-5">
-
-                            <div class="row my-3">
-                                <span class="col-6 text-standard fw-semibold">DN No</span>
-                                <span class="col-6 text-standard">00539</span>
-                            </div>
-                            <div class="row my-3">
-                                <span class="col-6 text-standard fw-semibold">Dn Date</span>
-                                <span class="col-6 text-standard">12/12/2025</span>
-                            </div>
-                            <div class="row align-items-center my-3">
-                                <span class="col-6 text-standard fw-semibold">PO</span>
-                                <span class="col-6 text-standard">
-                                    <input type="text" class="form-control form-control-sm" value="PO - 12120009">
-                                </span>
-                            </div>
-                            <div class="row align-items-center my-3">
-                                <span class="col-6 text-standard fw-semibold">Shipping BY</span>
-                                <span class="col-6 text-standard">
-                                    <input type="text" class="form-control form-control-sm" value="">
-                                </span>
-                            </div>
-                            <div class="row align-items-center my-3">
-                                <span class="col-6 text-standard fw-semibold">Reference</span>
-                                <span class="col-6 text-standard">
-                                    <input type="text" class="form-control form-control-sm" value="">
-                                </span>
-                            </div>
-
-                        </div>
-
-
-                    </div>
-
-                    <!-- TABLE ITEM -->
-                    <div class="table-responsive mt-2 mt-4 mb-4">
-                        <table class="table" id="product-tambah">
-                            <thead>
-                                <tr>
-                                    <th>No</th>
-                                    <th>Item Description</th>
-                                    <th>Qty</th>
-                                    <th>Unit</th>
-                                    <th>Packing Qty</th>
-                                    <th>Weight (Kg)</th>
-                                    <th style="width: 50px;">Action</th>
-                                </tr>
-                            </thead>
-                            <tbody id="product-body-add">
-
-                            </tbody>
-                        </table>
-
-                        <a href="javascript:void(0);" id="btn-tambahin-product" class="mt-2 text-primary ms-2">
-                            <i data-feather="plus-circle" class="plus-down-add"></i>
-                            <span>add New</span>
-                        </a>
-                    </div>
-
-                    <!-- SIGNATURE SECTION -->
-                    <div class="row text-center mt-5 signature">
-
-                        <div class=" col-md-3 d-flex flex-column align-items-center">
-                            <p class="fw-bold">Receive By</p>
-                            <div style="height:70px"></div>
-                            <div class="line"></div>
-                            <input type="text" placeholder="Your Name, Sign and Stamp">
-                        </div>
-
-                        <div class="col-md-3 d-flex flex-column align-items-center">
-                            <p class="fw-bold">Security / Check</p>
-                            <div style="height:70px"></div>
-                            <div class="line"></div>
-                            <input type="text" placeholder="Your Name, Sign and Stamp">
-
-                        </div>
-
-                        <div class="col-md-3 d-flex flex-column align-items-center">
-                            <p class="fw-bold">Driver</p>
-                            <div style="height:70px"></div>
-                            <div class="line"></div>
-                            <input type="text" placeholder="Nurdin">
-                        </div>
-
-                        <div class="col-md-3 d-flex flex-column align-items-center">
-                            <p class="fw-bold">Issued By</p>
-                            <div style="height:70px"></div>
-                            <div class="line"></div>
-                            <input type="text" placeholder="Nurdin">
-                        </div>
-
-                    </div>
-
-
-
-                </div>
-
-                <!-- FOOTER BUTTON -->
-                <div class="modal-footer justify-content-end">
-
-                    <div>
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-                            Cancel
-                        </button>
-                        <button class="btn btn-warning">
-                            Save Changes
-                        </button>
-                    </div>
-                </div>
-
+              <div class="col-5">
+                <h4 class="fw-bold">PT. DULANK SEMESTA CIDA</h4>
+                <small>
+                  Jl. Arif Rahman Hakim Niaga Kel. Nagasari Karawang Barat - Karawang<br />
+                  Email : ptdulanksemestacida@gmail.com<br />
+                  Website : www.percetakan-dulank.com<br />
+                  WhatsApp : 0877 8813 1400
+                </small>
+              </div>
             </div>
-        </div>
-    </div>
 
+            <h5 class="fw-bold text-start mb-3">DELIVERY NOTE</h5>
+            <div class="row">
+              <div class="col-6">
+                <div class="mb-3">
+                  <div class="add-newplus">
+                    <h4 class="fs-6 text-dark mt-2">Customer:</h4>
+                    <a href="customers.html" data-bs-target="#add-units-category"
+                      ><i data-feather="plus-circle" class="plus-down-add"></i><span>Add New</span></a
+                    >
+                  </div>
+                  <div class="input-groupicon select-code my-3">
+                    <div class="search-container">
+                      <input
+                        type="text"
+                        class="form-control customer-input"
+                        placeholder="Search Customer"
+                        data-target="data-customer"
+                      />
+                      <div class="search-results" onchange="console.log('masuk')" id="customer-add"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="d-flex justify-content-between">
+              <div class="col-7">
+                <div class="mb-2 fw-semibold text-standard">Ship To:</div>
+                <div class="text-standard">
+                  PT. Exabytes Network Indonesia<br />
+                  Cyber 2 Tower, Lantai 29,<br />
+                  Jalan HR Rasuna Said,<br />
+                  XS No. 13, Jakarta Selatan, 12950.
+                </div>
+              </div>
+
+              <div class="col-5">
+                <div class="row my-3">
+                  <span class="col-6 text-standard fw-semibold">DN No</span>
+                  <span class="col-6 text-standard">00539</span>
+                </div>
+                <div class="row my-3">
+                  <span class="col-6 text-standard fw-semibold">Dn Date</span>
+                  <span class="col-6 text-standard">12/12/2025</span>
+                </div>
+                <div class="row align-items-center my-3">
+                  <span class="col-6 text-standard fw-semibold">PO</span>
+                  <span class="col-6 text-standard">
+                    <input type="text" class="form-control form-control-sm" value="PO - 12120009" />
+                  </span>
+                </div>
+                <div class="row align-items-center my-3">
+                  <span class="col-6 text-standard fw-semibold">Shipping BY</span>
+                  <span class="col-6 text-standard">
+                    <input type="text" class="form-control form-control-sm" value="" />
+                  </span>
+                </div>
+                <div class="row align-items-center my-3">
+                  <span class="col-6 text-standard fw-semibold">Reference</span>
+                  <span class="col-6 text-standard">
+                    <input type="text" class="form-control form-control-sm" value="" />
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <!-- TABLE ITEM -->
+            <div class="table-responsive mt-2 mt-4 mb-4">
+              <table class="table" id="product-tambah">
+                <thead>
+                  <tr>
+                    <th>No</th>
+                    <th>Item Description</th>
+                    <th>Qty</th>
+                    <th>Unit</th>
+                    <th>Packing Qty</th>
+                    <th>Weight (Kg)</th>
+                    <th style="width: 50px">Action</th>
+                  </tr>
+                </thead>
+                <tbody id="product-body-add"></tbody>
+              </table>
+
+              <a href="javascript:void(0);" id="btn-tambahin-product" class="mt-2 text-primary ms-2">
+                <i data-feather="plus-circle" class="plus-down-add"></i>
+                <span>add New</span>
+              </a>
+            </div>
+
+            <!-- SIGNATURE SECTION -->
+            <div class="row text-center mt-5 signature">
+              <div class="col-md-3 d-flex flex-column align-items-center">
+                <p class="fw-bold">Receive By</p>
+                <div style="height: 70px"></div>
+                <div class="line"></div>
+                <input type="text" placeholder="Your Name, Sign and Stamp" />
+              </div>
+
+              <div class="col-md-3 d-flex flex-column align-items-center">
+                <p class="fw-bold">Security / Check</p>
+                <div style="height: 70px"></div>
+                <div class="line"></div>
+                <input type="text" placeholder="Your Name, Sign and Stamp" />
+              </div>
+
+              <div class="col-md-3 d-flex flex-column align-items-center">
+                <p class="fw-bold">Driver</p>
+                <div style="height: 70px"></div>
+                <div class="line"></div>
+                <input type="text" placeholder="Nurdin" />
+              </div>
+
+              <div class="col-md-3 d-flex flex-column align-items-center">
+                <p class="fw-bold">Issued By</p>
+                <div style="height: 70px"></div>
+                <div class="line"></div>
+                <input type="text" placeholder="Nurdin" />
+              </div>
+            </div>
+          </div>
+
+          <!-- FOOTER BUTTON -->
+          <div class="modal-footer justify-content-end">
+            <div>
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+              <button class="btn btn-warning">Save Changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- /modals -->
     <!-- jQuery -->
@@ -1279,111 +1243,100 @@
     <script src="assets/js/script.js"></script>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
+      document.addEventListener("DOMContentLoaded", function () {
+        // ===================== GLOBAL PLACEHOLDER HANDLER =====================
+        function initPlaceholder(el) {
+          function toggle() {
+            // Menggunakan getAttribute("data-placeholder") untuk mendukung IE/Edge
+            // dan memastikan kompatibilitas dengan CSS yang kamu buat.
+            el.classList.toggle("empty", el.textContent.trim() === "");
+          }
+          toggle();
+          el.addEventListener("input", toggle);
+          el.addEventListener("blur", toggle);
+        }
 
-            // ===================== GLOBAL PLACEHOLDER HANDLER =====================
-            function initPlaceholder(el) {
-                function toggle() {
-                    // Menggunakan getAttribute("data-placeholder") untuk mendukung IE/Edge
-                    // dan memastikan kompatibilitas dengan CSS yang kamu buat.
-                    el.classList.toggle("empty", el.textContent.trim() === "");
-                }
-                toggle();
-                el.addEventListener("input", toggle);
-                el.addEventListener("blur", toggle);
-            }
+        // ===================== FUNGSI GENERIK (dipakai edit & tambah) =====================
+        function initProductTable(btnId, bodyId, templateId) {
+          const btnAdd = document.getElementById(btnId);
+          const tbody = document.getElementById(bodyId);
+          const template = document.getElementById(templateId);
 
-            // ===================== FUNGSI GENERIK (dipakai edit & tambah) =====================
-            function initProductTable(btnId, bodyId, templateId) {
+          if (!btnAdd || !tbody || !template) return;
 
-                const btnAdd = document.getElementById(btnId);
-                const tbody = document.getElementById(bodyId);
-                const template = document.getElementById(templateId);
+          // Tambahkan pengecekan ini untuk memastikan ID/Elemen benar
+          console.log(`Inisialisasi: Tombol(${btnId}) = ${!!btnAdd}, Body(${bodyId}) = ${!!tbody}`);
 
-                if (!btnAdd || !tbody || !template) return;
-
-                // Tambahkan pengecekan ini untuk memastikan ID/Elemen benar
-                console.log(`Inisialisasi: Tombol(${btnId}) = ${!!btnAdd}, Body(${bodyId}) = ${!!tbody}`);
-
-                function updateNumbers() {
-                    const rows = tbody.querySelectorAll("tr");
-                    rows.forEach((row, i) => {
-                        const noCell = row.querySelector(".product-no");
-                        if (noCell) noCell.textContent = i + 1;
-                    });
-                }
-
-                // ===== DELETE (event delegation)
-                tbody.addEventListener("click", e => {
-                    const btn = e.target.closest(".btn-delete-product");
-                    if (!btn) return;
-
-                    e.preventDefault(); // Mencegah perilaku default link
-                    btn.closest("tr").remove();
-                    updateNumbers();
-
-                    if (window.feather) feather.replace();
-                });
-
-                // ===== ADD NEW ROW
-                btnAdd.addEventListener("click", function () {
-                    const clone = template.content.cloneNode(true);
-                    const row = clone.querySelector("tr");
-
-                    // aktifkan placeholder untuk contenteditable
-                    row.querySelectorAll("[contenteditable]").forEach(initPlaceholder);
-
-                    tbody.appendChild(row);
-                    updateNumbers();
-
-                    // refresh icons
-                    if (window.feather) feather.replace();
-
-                    const codeInput = row.querySelector(".product-code");
-                    if (codeInput) codeInput.focus();
-                });
-
-                // ===== Inisialisasi:
-                // 1. init placeholder untuk row default/yang sudah ada
-                tbody.querySelectorAll("[contenteditable]").forEach(initPlaceholder);
-
-                // 2. Update penomoran awal (Penting untuk Edit yang ada hardcoded row)
-                updateNumbers();
-
-                // 3. initial feather
-                if (window.feather) feather.replace();
-            }
-
-            // ===================== INISIALISASI UNTUK KEDUA MODAL =====================
-            // INISIALISASI UNTUK MODAL EDIT (#edit-units)
-            initProductTable(
-                "btn-add-product",         // ID Tombol Add di modal Edit
-                "product-body-edit",       // ID <tbody> di modal Edit
-                "product-row-template"     // ID <template>
-            );
-
-            // INISIALISASI UNTUK MODAL TAMBAH (#tambah)
-            initProductTable(
-                "btn-tambahin-product",    // ID Tombol Add di modal Tambah
-                "product-body-add",        // <--- PERBAIKAN DI SINI: Menggunakan ID yang BENAR (product-body-add)
-                "product-row-template"     // ID <template>
-            );
-
-            document.getElementById('download-pdf').addEventListener('click', function (e) {
-                e.preventDefault();
-
-                window.print()
+          function updateNumbers() {
+            const rows = tbody.querySelectorAll("tr");
+            rows.forEach((row, i) => {
+              const noCell = row.querySelector(".product-no");
+              if (noCell) noCell.textContent = i + 1;
             });
+          }
 
+          // ===== DELETE (event delegation)
+          tbody.addEventListener("click", (e) => {
+            const btn = e.target.closest(".btn-delete-product");
+            if (!btn) return;
+
+            e.preventDefault(); // Mencegah perilaku default link
+            btn.closest("tr").remove();
+            updateNumbers();
+
+            if (window.feather) feather.replace();
+          });
+
+          // ===== ADD NEW ROW
+          btnAdd.addEventListener("click", function () {
+            const clone = template.content.cloneNode(true);
+            const row = clone.querySelector("tr");
+
+            // aktifkan placeholder untuk contenteditable
+            row.querySelectorAll("[contenteditable]").forEach(initPlaceholder);
+
+            tbody.appendChild(row);
+            updateNumbers();
+
+            // refresh icons
+            if (window.feather) feather.replace();
+
+            const codeInput = row.querySelector(".product-code");
+            if (codeInput) codeInput.focus();
+          });
+
+          // ===== Inisialisasi:
+          // 1. init placeholder untuk row default/yang sudah ada
+          tbody.querySelectorAll("[contenteditable]").forEach(initPlaceholder);
+
+          // 2. Update penomoran awal (Penting untuk Edit yang ada hardcoded row)
+          updateNumbers();
+
+          // 3. initial feather
+          if (window.feather) feather.replace();
+        }
+
+        // ===================== INISIALISASI UNTUK KEDUA MODAL =====================
+        // INISIALISASI UNTUK MODAL EDIT (#edit-units)
+        initProductTable(
+          "btn-add-product", // ID Tombol Add di modal Edit
+          "product-body-edit", // ID <tbody> di modal Edit
+          "product-row-template", // ID <template>
+        );
+
+        // INISIALISASI UNTUK MODAL TAMBAH (#tambah)
+        initProductTable(
+          "btn-tambahin-product", // ID Tombol Add di modal Tambah
+          "product-body-add", // <--- PERBAIKAN DI SINI: Menggunakan ID yang BENAR (product-body-add)
+          "product-row-template", // ID <template>
+        );
+
+        document.getElementById("download-pdf").addEventListener("click", function (e) {
+          e.preventDefault();
+
+          window.print();
         });
+      });
     </script>
-
-
-
-
-
-
-
-</body>
-
+  </body>
 </html>

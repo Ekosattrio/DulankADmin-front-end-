@@ -1,130 +1,134 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0" />
+    <meta name="description" content="POS - Bootstrap Admin Template" />
+    <meta
+      name="keywords"
+      content="admin, estimates, bootstrap, business, corporate, creative, invoice, html5, responsive, Projects"
+    />
+    <meta name="author" content="Dreamguys - Bootstrap Admin Template" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Kacetak System</title>
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/kacetak.jpeg" />
 
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
-	<meta name="description" content="POS - Bootstrap Admin Template">
-	<meta name="keywords"
-		content="admin, estimates, bootstrap, business, corporate, creative, invoice, html5, responsive, Projects">
-	<meta name="author" content="Dreamguys - Bootstrap Admin Template">
-	<meta name="robots" content="noindex, nofollow">
-	<title>Dreams Pos Admin Template</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
 
-	<!-- Favicon -->
-	<link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
+    <!-- Datetimepicker CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap-datetimepicker.min.css" />
 
-	<!-- Bootstrap CSS -->
-	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <!-- animation CSS -->
+    <link rel="stylesheet" href="assets/css/animate.css" />
 
-	<!-- Datetimepicker CSS -->
-	<link rel="stylesheet" href="assets/css/bootstrap-datetimepicker.min.css">
+    <!-- Select2 CSS -->
+    <link rel="stylesheet" href="assets/plugins/select2/css/select2.min.css" />
 
-	<!-- animation CSS -->
-	<link rel="stylesheet" href="assets/css/animate.css">
+    <!-- Summernote CSS -->
+    <link rel="stylesheet" href="assets/plugins/summernote/summernote-bs4.min.css" />
 
-	<!-- Select2 CSS -->
-	<link rel="stylesheet" href="assets/plugins/select2/css/select2.min.css">
+    <!-- Datatable CSS -->
+    <link rel="stylesheet" href="assets/css/dataTables.bootstrap5.min.css" />
 
-	<!-- Summernote CSS -->
-	<link rel="stylesheet" href="assets/plugins/summernote/summernote-bs4.min.css">
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css" />
+    <link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css" />
 
-	<!-- Datatable CSS -->
-	<link rel="stylesheet" href="assets/css/dataTables.bootstrap5.min.css">
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
 
-	<!-- Fontawesome CSS -->
-	<link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css">
-	<link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css">
+  <body>
+    <div id="global-loader">
+      <div class="loader"></div>
+    </div>
+    <!-- Main Wrapper -->
+    <div class="main-wrapper">
+      <!-- header -->
+      <div id="header-placeholder"></div>
+      <!-- sidebar -->
+      <div id="sidebar-placeholder"></div>
 
-	<!-- Main CSS -->
-	<link rel="stylesheet" href="assets/css/style.css">
+      <div class="page-wrapper mt-3">
+        <!-- Main content tulis disini -->
+        <div class="content">
+          <div class="page-header transfer">
+            <div class="add-item d-flex">
+              <div class="page-title">
+                <h4>Money Transfer</h4>
+                <h6>Manage Money Transfer List</h6>
+              </div>
+            </div>
+            <ul class="table-top-head">
+              <li>
+                <a data-bs-toggle="tooltip" data-bs-placement="top" title="Pdf"
+                  ><img src="assets/img/icons/pdf.svg" alt="img"
+                /></a>
+              </li>
+              <li>
+                <a data-bs-toggle="tooltip" data-bs-placement="top" title="print"
+                  ><img src="assets/img/icons/printer.svg" alt="img"
+                /></a>
+              </li>
+              <li>
+                <a data-bs-toggle="tooltip" data-bs-placement="top" title="Refresh"
+                  ><i data-feather="rotate-ccw" class="feather-rotate-ccw"></i
+                ></a>
+              </li>
+              <li>
+                <a data-bs-toggle="tooltip" data-bs-placement="top" title="Collapse" id="collapse-header"
+                  ><i data-feather="chevron-up" class="feather-chevron-up"></i
+                ></a>
+              </li>
+            </ul>
+            <div class="d-flex purchase-pg-btn">
+              <div class="page-btn">
+                <a href="#" class="btn btn-added" data-bs-toggle="modal" data-bs-target="#view-units"
+                  ><i data-feather="plus-circle" class="me-2"></i>Add New Transfer</a
+                >
+              </div>
+            </div>
+          </div>
 
-</head>
-
-<body>
-	<div id="global-loader">
-		<div class="loader"> </div>
-	</div>
-	<!-- Main Wrapper -->
-	<div class="main-wrapper">
-
-		<!-- header -->
-		<div id="header-placeholder"></div>
-		<!-- sidebar -->
-		<div id="sidebar-placeholder"></div>
-
-		<div class="page-wrapper mt-3">
-			<!-- Main content tulis disini -->
-			<div class="content">
-				<div class="page-header transfer">
-					<div class="add-item d-flex">
-						<div class="page-title">
-							<h4>Money Transfer</h4>
-							<h6> Manage Money Transfer List</h6>
-						</div>
-					</div>
-					<ul class="table-top-head">
-						<li>
-							<a data-bs-toggle="tooltip" data-bs-placement="top" title="Pdf"><img
-									src="assets/img/icons/pdf.svg" alt="img"></a>
-						</li>
-						<li>
-							<a data-bs-toggle="tooltip" data-bs-placement="top" title="print"><img
-									src="assets/img/icons/printer.svg" alt="img"></a>
-						</li>
-						<li>
-							<a data-bs-toggle="tooltip" data-bs-placement="top" title="Refresh"><i
-									data-feather="rotate-ccw" class="feather-rotate-ccw"></i></a>
-						</li>
-						<li>
-							<a data-bs-toggle="tooltip" data-bs-placement="top" title="Collapse" id="collapse-header"><i
-									data-feather="chevron-up" class="feather-chevron-up"></i></a>
-						</li>
-					</ul>
-					<div class="d-flex purchase-pg-btn">
-						<div class="page-btn">
-							<a href="#" class="btn btn-added" data-bs-toggle="modal" data-bs-target="#view-units"><i
-									data-feather="plus-circle" class="me-2"></i>Add New Transfer</a>
-						</div>
-					</div>
-
-				</div>
-
-				<!-- /product list -->
-				<div class="card table-list-card">
-					<div class="card-body">
-						<!-- Filter -->
-						<div class="table-top d-flex align-items-center justify-content-between">
-							<!-- Search Input -->
-							<div class="search-set d-block d-md-flex">
-								<div class="search-input">
-									<a href="" class="btn btn-searchset"><i data-feather="search"
-											class="feather-search"></i></a>
-								</div>
-								<!-- Date Range -->
-								<div class="my-2">
-									<div class="pemilihrentang-container ">
-										<input type="text" id="pemilihrentang-input"
-											class="pemilihrentang-input form-control" readonly placeholder="Date"
-											style="height: fit-content !important;width: 100% !important;">
-										<div id="pemilihrentang-panel" class="pemilihrentang-panel">
-											<div class="pemilihrentang-isi">
-												<div class="opsi-cepat">
-													<div data-range="kemarin">Kemarin</div>
-													<div data-range="7hari">7 Hari Terakhir</div>
-													<div data-range="bulanIni">Bulan Ini</div>
-													<div data-range="bulanLalu">Bulan Lalu</div>
-													<div data-range="tahunLalu">Tahun Lalu</div>
-													<div data-range="kustom">Rentang Kustom</div>
-												</div>
-												<div class="kalender" id="kalender-view" style="display:none;">
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<!-- <div class="filters d-flex justify-content-end">
+          <!-- /product list -->
+          <div class="card table-list-card">
+            <div class="card-body">
+              <!-- Filter -->
+              <div class="table-top d-flex align-items-center justify-content-between">
+                <!-- Search Input -->
+                <div class="search-set d-block d-md-flex">
+                  <div class="search-input">
+                    <a href="" class="btn btn-searchset"><i data-feather="search" class="feather-search"></i></a>
+                  </div>
+                  <!-- Date Range -->
+                  <div class="my-2">
+                    <div class="pemilihrentang-container">
+                      <input
+                        type="text"
+                        id="pemilihrentang-input"
+                        class="pemilihrentang-input form-control"
+                        readonly
+                        placeholder="Date"
+                        style="height: fit-content !important; width: 100% !important"
+                      />
+                      <div id="pemilihrentang-panel" class="pemilihrentang-panel">
+                        <div class="pemilihrentang-isi">
+                          <div class="opsi-cepat">
+                            <div data-range="kemarin">Kemarin</div>
+                            <div data-range="7hari">7 Hari Terakhir</div>
+                            <div data-range="bulanIni">Bulan Ini</div>
+                            <div data-range="bulanLalu">Bulan Lalu</div>
+                            <div data-range="tahunLalu">Tahun Lalu</div>
+                            <div data-range="kustom">Rentang Kustom</div>
+                          </div>
+                          <div class="kalender" id="kalender-view" style="display: none"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- <div class="filters d-flex justify-content-end">
 								<div class="dropdown w-100 me-2">
 									<button class="btn btn-outline-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
 										Status
@@ -146,771 +150,747 @@
 									</ul>
 								</div>
 							</div> -->
-						</div>
-						<!-- /Filter -->
-						<div class="table-responsive">
-							<table class="table  datanew">
-								<thead>
-									<tr>
+              </div>
+              <!-- /Filter -->
+              <div class="table-responsive">
+                <table class="table datanew">
+                  <thead>
+                    <tr>
+                      <th>Date</th>
+                      <th>No Transfer</th>
+                      <!-- <th>Reference</th> -->
+                      <th>From Account</th>
+                      <th>To Account</th>
+                      <th>Amount</th>
+                      <th>Description</th>
+                      <th>Created By</th>
+                      <th class="no-sort">Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>19/11/2025 10:49</td>
+                      <td>TF00001</td>
+                      <td>Cash Account Cash Account - 1001</td>
+                      <td>Bank BNI 0876543210123 - PT Dulank Semesta Cida</td>
+                      <td>269061</td>
+                      <td>Gaji Bulanan Cecep Sudirman</td>
+                      <td>Admin</td>
+                      <td class="action-table-data">
+                        <div class="edit-delete-action">
+                          <a class="me-2 p-2 mb-0" data-bs-toggle="modal" data-bs-target="#view-units">
+                            <i data-feather="eye" class="action-eye"></i>
+                          </a>
+                          <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#edit-transfer"
+                            ><i data-feather="edit"></i
+                          ></a>
+                          <a class="confirm-text p-2" href="javascript:void(0);"><i data-feather="trash-2"></i></a>
+                        </div>
+                      </td>
+                    </tr>
 
-										<th>Date</th>
-										<th>No Transfer</th>
-										<!-- <th>Reference</th> -->
-										<th>From Account</th>
-										<th>To Account</th>
-										<th>Amount</th>
-										<th>Description</th>
-										<th>Created By</th>
-										<th class="no-sort">Action</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>19/11/2025 10:49</td>
-										<td>TF00001</td>
-										<td>Cash Account Cash Account - 1001</td>
-										<td>Bank BNI 0876543210123 - PT Dulank Semesta Cida</td>
-										<td>269061</td>
-										<td>Gaji Bulanan Cecep Sudirman</td>
-										<td>Admin</td>
-										<td class="action-table-data">
-											<div class="edit-delete-action">
-												<a class="me-2 p-2 mb-0" data-bs-toggle="modal"
-													data-bs-target="#view-units">
-													<i data-feather="eye" class="action-eye"></i>
-												</a>
-												<a class="me-2 p-2" href="#" data-bs-toggle="modal"
-													data-bs-target="#edit-transfer"><i data-feather="edit"></i></a>
-												<a class="confirm-text p-2" href="javascript:void(0);"><i
-														data-feather="trash-2"></i></a>
-											</div>
-										</td>
-									</tr>
+                    <tr>
+                      <td>27/11/2025 12:50</td>
+                      <td>TF00002</td>
+                      <td>Bank BCA 4567891230 - Cecep Sudirman</td>
+                      <td>Cash Account Cash Account - 1001</td>
+                      <td>1772418</td>
+                      <td>Pembayaran Invoice Supplier PT Kertas Jaya</td>
+                      <td>Admin</td>
+                      <td class="action-table-data">
+                        <div class="edit-delete-action">
+                          <a class="me-2 p-2 mb-0" data-bs-toggle="modal" data-bs-target="#view-units">
+                            <i data-feather="eye" class="action-eye"></i>
+                          </a>
+                          <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#edit-transfer"
+                            ><i data-feather="edit"></i
+                          ></a>
+                          <a class="confirm-text p-2" href="javascript:void(0);"><i data-feather="trash-2"></i></a>
+                        </div>
+                      </td>
+                    </tr>
 
-									<tr>
-										<td>27/11/2025 12:50</td>
-										<td>TF00002</td>
-										<td>Bank BCA 4567891230 - Cecep Sudirman</td>
-										<td>Cash Account Cash Account - 1001</td>
-										<td>1772418</td>
-										<td>Pembayaran Invoice Supplier PT Kertas Jaya</td>
-										<td>Admin</td>
-										<td class="action-table-data">
-											<div class="edit-delete-action">
-												<a class="me-2 p-2 mb-0" data-bs-toggle="modal"
-													data-bs-target="#view-units">
-													<i data-feather="eye" class="action-eye"></i>
-												</a>
-												<a class="me-2 p-2" href="#" data-bs-toggle="modal"
-													data-bs-target="#edit-transfer"><i data-feather="edit"></i></a>
-												<a class="confirm-text p-2" href="javascript:void(0);"><i
-														data-feather="trash-2"></i></a>
-											</div>
-										</td>
-									</tr>
+                    <tr>
+                      <td>05/12/2025 13:19</td>
+                      <td>TF00003</td>
+                      <td>Bank Mandiri 1230009876543 - PT Dulank Semesta Cida</td>
+                      <td>Cash Account Cash Account - 1001</td>
+                      <td>3084398</td>
+                      <td>Biaya Kurir dan Pengiriman</td>
+                      <td>Staff</td>
+                      <td class="action-table-data">
+                        <div class="edit-delete-action">
+                          <a class="me-2 p-2 mb-0" data-bs-toggle="modal" data-bs-target="#view-units">
+                            <i data-feather="eye" class="action-eye"></i>
+                          </a>
+                          <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#edit-transfer"
+                            ><i data-feather="edit"></i
+                          ></a>
+                          <a class="confirm-text p-2" href="javascript:void(0);"><i data-feather="trash-2"></i></a>
+                        </div>
+                      </td>
+                    </tr>
 
-									<tr>
-										<td>05/12/2025 13:19</td>
-										<td>TF00003</td>
-										<td>Bank Mandiri 1230009876543 - PT Dulank Semesta Cida</td>
-										<td>Cash Account Cash Account - 1001</td>
-										<td>3084398</td>
-										<td>Biaya Kurir dan Pengiriman</td>
-										<td>Staff</td>
-										<td class="action-table-data">
-											<div class="edit-delete-action">
-												<a class="me-2 p-2 mb-0" data-bs-toggle="modal"
-													data-bs-target="#view-units">
-													<i data-feather="eye" class="action-eye"></i>
-												</a>
-												<a class="me-2 p-2" href="#" data-bs-toggle="modal"
-													data-bs-target="#edit-transfer"><i data-feather="edit"></i></a>
-												<a class="confirm-text p-2" href="javascript:void(0);"><i
-														data-feather="trash-2"></i></a>
-											</div>
-										</td>
-									</tr>
+                    <tr>
+                      <td>29/12/2025 16:47</td>
+                      <td>TF00004</td>
+                      <td>Bank BRI 1020304050607 - Cecep Sudirman</td>
+                      <td>Cash Account Cash Account - 1001</td>
+                      <td>2192170</td>
+                      <td>Pengembalian Dana Konsumen (Refund)</td>
+                      <td>Admin</td>
+                      <td class="action-table-data">
+                        <div class="edit-delete-action">
+                          <a class="me-2 p-2 mb-0" data-bs-toggle="modal" data-bs-target="#view-units">
+                            <i data-feather="eye" class="action-eye"></i>
+                          </a>
+                          <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#edit-transfer"
+                            ><i data-feather="edit"></i
+                          ></a>
+                          <a class="confirm-text p-2" href="javascript:void(0);"><i data-feather="trash-2"></i></a>
+                        </div>
+                      </td>
+                    </tr>
 
-									<tr>
-										<td>29/12/2025 16:47</td>
-										<td>TF00004</td>
-										<td>Bank BRI 1020304050607 - Cecep Sudirman</td>
-										<td>Cash Account Cash Account - 1001</td>
-										<td>2192170</td>
-										<td>Pengembalian Dana Konsumen (Refund)</td>
-										<td>Admin</td>
-										<td class="action-table-data">
-											<div class="edit-delete-action">
-												<a class="me-2 p-2 mb-0" data-bs-toggle="modal"
-													data-bs-target="#view-units">
-													<i data-feather="eye" class="action-eye"></i>
-												</a>
-												<a class="me-2 p-2" href="#" data-bs-toggle="modal"
-													data-bs-target="#edit-transfer"><i data-feather="edit"></i></a>
-												<a class="confirm-text p-2" href="javascript:void(0);"><i
-														data-feather="trash-2"></i></a>
-											</div>
-										</td>
-									</tr>
+                    <tr>
+                      <td>29/12/2025 08:45</td>
+                      <td>TF00005</td>
+                      <td>Bank BCA 4567891230 - Cecep Sudirman</td>
+                      <td>Cash Account Cash Account - 1001</td>
+                      <td>4165048</td>
+                      <td>Biaya Pemasaran Digital</td>
+                      <td>Admin</td>
+                      <td class="action-table-data">
+                        <div class="edit-delete-action">
+                          <a class="me-2 p-2 mb-0" data-bs-toggle="modal" data-bs-target="#view-units">
+                            <i data-feather="eye" class="action-eye"></i>
+                          </a>
+                          <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#edit-transfer"
+                            ><i data-feather="edit"></i
+                          ></a>
+                          <a class="confirm-text p-2" href="javascript:void(0);"><i data-feather="trash-2"></i></a>
+                        </div>
+                      </td>
+                    </tr>
 
-									<tr>
-										<td>29/12/2025 08:45</td>
-										<td>TF00005</td>
-										<td>Bank BCA 4567891230 - Cecep Sudirman</td>
-										<td>Cash Account Cash Account - 1001</td>
-										<td>4165048</td>
-										<td>Biaya Pemasaran Digital</td>
-										<td>Admin</td>
-										<td class="action-table-data">
-											<div class="edit-delete-action">
-												<a class="me-2 p-2 mb-0" data-bs-toggle="modal"
-													data-bs-target="#view-units">
-													<i data-feather="eye" class="action-eye"></i>
-												</a>
-												<a class="me-2 p-2" href="#" data-bs-toggle="modal"
-													data-bs-target="#edit-transfer"><i data-feather="edit"></i></a>
-												<a class="confirm-text p-2" href="javascript:void(0);"><i
-														data-feather="trash-2"></i></a>
-											</div>
-										</td>
-									</tr>
+                    <tr>
+                      <td>28/12/2025 13:04</td>
+                      <td>TF00006</td>
+                      <td>Bank BNI 0876543210123 - PT Dulank Semesta Cida</td>
+                      <td>Cash Account Cash Account - 1001</td>
+                      <td>3614738</td>
+                      <td>Biaya Pemasaran Digital</td>
+                      <td>Admin</td>
+                      <td class="action-table-data">
+                        <div class="edit-delete-action">
+                          <a class="me-2 p-2 mb-0" data-bs-toggle="modal" data-bs-target="#view-units">
+                            <i data-feather="eye" class="action-eye"></i>
+                          </a>
+                          <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#edit-transfer"
+                            ><i data-feather="edit"></i
+                          ></a>
+                          <a class="confirm-text p-2" href="javascript:void(0);"><i data-feather="trash-2"></i></a>
+                        </div>
+                      </td>
+                    </tr>
 
-									<tr>
-										<td>28/12/2025 13:04</td>
-										<td>TF00006</td>
-										<td>Bank BNI 0876543210123 - PT Dulank Semesta Cida</td>
-										<td>Cash Account Cash Account - 1001</td>
-										<td>3614738</td>
-										<td>Biaya Pemasaran Digital</td>
-										<td>Admin</td>
-										<td class="action-table-data">
-											<div class="edit-delete-action">
-												<a class="me-2 p-2 mb-0" data-bs-toggle="modal"
-													data-bs-target="#view-units">
-													<i data-feather="eye" class="action-eye"></i>
-												</a>
-												<a class="me-2 p-2" href="#" data-bs-toggle="modal"
-													data-bs-target="#edit-transfer"><i data-feather="edit"></i></a>
-												<a class="confirm-text p-2" href="javascript:void(0);"><i
-														data-feather="trash-2"></i></a>
-											</div>
-										</td>
-									</tr>
+                    <tr>
+                      <td>18/11/2025 09:30</td>
+                      <td>TF00007</td>
+                      <td>Bank BCA 4567891230 - Cecep Sudirman</td>
+                      <td>Bank Mandiri 1230009876543 - PT Dulank Semesta Cida</td>
+                      <td>2028268</td>
+                      <td>Transfer Kas Operasional Harian</td>
+                      <td>Admin</td>
+                      <td class="action-table-data">
+                        <div class="edit-delete-action">
+                          <a class="me-2 p-2 mb-0" data-bs-toggle="modal" data-bs-target="#view-units">
+                            <i data-feather="eye" class="action-eye"></i>
+                          </a>
+                          <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#edit-transfer"
+                            ><i data-feather="edit"></i
+                          ></a>
+                          <a class="confirm-text p-2" href="javascript:void(0);"><i data-feather="trash-2"></i></a>
+                        </div>
+                      </td>
+                    </tr>
 
-									<tr>
-										<td>18/11/2025 09:30</td>
-										<td>TF00007</td>
-										<td>Bank BCA 4567891230 - Cecep Sudirman</td>
-										<td>Bank Mandiri 1230009876543 - PT Dulank Semesta Cida</td>
-										<td>2028268</td>
-										<td>Transfer Kas Operasional Harian</td>
-										<td>Admin</td>
-										<td class="action-table-data">
-											<div class="edit-delete-action">
-												<a class="me-2 p-2 mb-0" data-bs-toggle="modal"
-													data-bs-target="#view-units">
-													<i data-feather="eye" class="action-eye"></i>
-												</a>
-												<a class="me-2 p-2" href="#" data-bs-toggle="modal"
-													data-bs-target="#edit-transfer"><i data-feather="edit"></i></a>
-												<a class="confirm-text p-2" href="javascript:void(0);"><i
-														data-feather="trash-2"></i></a>
-											</div>
-										</td>
-									</tr>
+                    <tr>
+                      <td>11/10/2025 15:45</td>
+                      <td>TF00008</td>
+                      <td>Bank BNI 0876543210123 - PT Dulank Semesta Cida</td>
+                      <td>Bank BCA 4567891230 - Cecep Sudirman</td>
+                      <td>2063427</td>
+                      <td>Pengembalian Dana Konsumen (Refund)</td>
+                      <td>Admin</td>
+                      <td class="action-table-data">
+                        <div class="edit-delete-action">
+                          <a class="me-2 p-2 mb-0" data-bs-toggle="modal" data-bs-target="#view-units">
+                            <i data-feather="eye" class="action-eye"></i>
+                          </a>
+                          <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#edit-transfer"
+                            ><i data-feather="edit"></i
+                          ></a>
+                          <a class="confirm-text p-2" href="javascript:void(0);"><i data-feather="trash-2"></i></a>
+                        </div>
+                      </td>
+                    </tr>
 
-									<tr>
-										<td>11/10/2025 15:45</td>
-										<td>TF00008</td>
-										<td>Bank BNI 0876543210123 - PT Dulank Semesta Cida</td>
-										<td>Bank BCA 4567891230 - Cecep Sudirman</td>
-										<td>2063427</td>
-										<td>Pengembalian Dana Konsumen (Refund)</td>
-										<td>Admin</td>
-										<td class="action-table-data">
-											<div class="edit-delete-action">
-												<a class="me-2 p-2 mb-0" data-bs-toggle="modal"
-													data-bs-target="#view-units">
-													<i data-feather="eye" class="action-eye"></i>
-												</a>
-												<a class="me-2 p-2" href="#" data-bs-toggle="modal"
-													data-bs-target="#edit-transfer"><i data-feather="edit"></i></a>
-												<a class="confirm-text p-2" href="javascript:void(0);"><i
-														data-feather="trash-2"></i></a>
-											</div>
-										</td>
-									</tr>
+                    <tr>
+                      <td>29/11/2025 09:53</td>
+                      <td>TF00009</td>
+                      <td>Cash Account Cash Account - 1001</td>
+                      <td>Bank BNI 0876543210123 - PT Dulank Semesta Cida</td>
+                      <td>4480925</td>
+                      <td>Gaji Bulanan Cecep Sudirman</td>
+                      <td>Staff</td>
+                      <td class="action-table-data">
+                        <div class="edit-delete-action">
+                          <a class="me-2 p-2 mb-0" data-bs-toggle="modal" data-bs-target="#view-units">
+                            <i data-feather="eye" class="action-eye"></i>
+                          </a>
+                          <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#edit-transfer"
+                            ><i data-feather="edit"></i
+                          ></a>
+                          <a class="confirm-text p-2" href="javascript:void(0);"><i data-feather="trash-2"></i></a>
+                        </div>
+                      </td>
+                    </tr>
 
-									<tr>
-										<td>29/11/2025 09:53</td>
-										<td>TF00009</td>
-										<td>Cash Account Cash Account - 1001</td>
-										<td>Bank BNI 0876543210123 - PT Dulank Semesta Cida</td>
-										<td>4480925</td>
-										<td>Gaji Bulanan Cecep Sudirman</td>
-										<td>Staff</td>
-										<td class="action-table-data">
-											<div class="edit-delete-action">
-												<a class="me-2 p-2 mb-0" data-bs-toggle="modal"
-													data-bs-target="#view-units">
-													<i data-feather="eye" class="action-eye"></i>
-												</a>
-												<a class="me-2 p-2" href="#" data-bs-toggle="modal"
-													data-bs-target="#edit-transfer"><i data-feather="edit"></i></a>
-												<a class="confirm-text p-2" href="javascript:void(0);"><i
-														data-feather="trash-2"></i></a>
-											</div>
-										</td>
-									</tr>
+                    <tr>
+                      <td>01/12/2025 11:40</td>
+                      <td>TF00010</td>
+                      <td>Bank BNI 0876543210123 - PT Dulank Semesta Cida</td>
+                      <td>Bank BRI 1020304050607 - Cecep Sudirman</td>
+                      <td>3385598</td>
+                      <td>Gaji Bulanan Cecep Sudirman</td>
+                      <td>Admin</td>
+                      <td class="action-table-data">
+                        <div class="edit-delete-action">
+                          <a class="me-2 p-2 mb-0" data-bs-toggle="modal" data-bs-target="#view-units">
+                            <i data-feather="eye" class="action-eye"></i>
+                          </a>
+                          <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#edit-transfer"
+                            ><i data-feather="edit"></i
+                          ></a>
+                          <a class="confirm-text p-2" href="javascript:void(0);"><i data-feather="trash-2"></i></a>
+                        </div>
+                      </td>
+                    </tr>
 
-									<tr>
-										<td>01/12/2025 11:40</td>
-										<td>TF00010</td>
-										<td>Bank BNI 0876543210123 - PT Dulank Semesta Cida</td>
-										<td>Bank BRI 1020304050607 - Cecep Sudirman</td>
-										<td>3385598</td>
-										<td>Gaji Bulanan Cecep Sudirman</td>
-										<td>Admin</td>
-										<td class="action-table-data">
-											<div class="edit-delete-action">
-												<a class="me-2 p-2 mb-0" data-bs-toggle="modal"
-													data-bs-target="#view-units">
-													<i data-feather="eye" class="action-eye"></i>
-												</a>
-												<a class="me-2 p-2" href="#" data-bs-toggle="modal"
-													data-bs-target="#edit-transfer"><i data-feather="edit"></i></a>
-												<a class="confirm-text p-2" href="javascript:void(0);"><i
-														data-feather="trash-2"></i></a>
-											</div>
-										</td>
-									</tr>
+                    <tr>
+                      <td>06/11/2025 13:03</td>
+                      <td>TF00011</td>
+                      <td>Cash Account Cash Account - 1001</td>
+                      <td>Bank BCA 4567891230 - Cecep Sudirman</td>
+                      <td>4396015</td>
+                      <td>Internal Transfer Antar Rekening Perusahaan</td>
+                      <td>Admin</td>
+                      <td class="action-table-data">
+                        <div class="edit-delete-action">
+                          <a class="me-2 p-2 mb-0" data-bs-toggle="modal" data-bs-target="#view-units">
+                            <i data-feather="eye" class="action-eye"></i>
+                          </a>
+                          <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#edit-transfer"
+                            ><i data-feather="edit"></i
+                          ></a>
+                          <a class="confirm-text p-2" href="javascript:void(0);"><i data-feather="trash-2"></i></a>
+                        </div>
+                      </td>
+                    </tr>
 
-									<tr>
-										<td>06/11/2025 13:03</td>
-										<td>TF00011</td>
-										<td>Cash Account Cash Account - 1001</td>
-										<td>Bank BCA 4567891230 - Cecep Sudirman</td>
-										<td>4396015</td>
-										<td>Internal Transfer Antar Rekening Perusahaan</td>
-										<td>Admin</td>
-										<td class="action-table-data">
-											<div class="edit-delete-action">
-												<a class="me-2 p-2 mb-0" data-bs-toggle="modal"
-													data-bs-target="#view-units">
-													<i data-feather="eye" class="action-eye"></i>
-												</a>
-												<a class="me-2 p-2" href="#" data-bs-toggle="modal"
-													data-bs-target="#edit-transfer"><i data-feather="edit"></i></a>
-												<a class="confirm-text p-2" href="javascript:void(0);"><i
-														data-feather="trash-2"></i></a>
-											</div>
-										</td>
-									</tr>
+                    <tr>
+                      <td>26/12/2025 13:56</td>
+                      <td>TF00012</td>
+                      <td>Cash Account Cash Account - 1001</td>
+                      <td>Bank BNI 0876543210123 - PT Dulank Semesta Cida</td>
+                      <td>1198458</td>
+                      <td>Internal Transfer Antar Rekening Perusahaan</td>
+                      <td>Admin</td>
+                      <td class="action-table-data">
+                        <div class="edit-delete-action">
+                          <a class="me-2 p-2 mb-0" data-bs-toggle="modal" data-bs-target="#view-units">
+                            <i data-feather="eye" class="action-eye"></i>
+                          </a>
+                          <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#edit-transfer"
+                            ><i data-feather="edit"></i
+                          ></a>
+                          <a class="confirm-text p-2" href="javascript:void(0);"><i data-feather="trash-2"></i></a>
+                        </div>
+                      </td>
+                    </tr>
 
-									<tr>
-										<td>26/12/2025 13:56</td>
-										<td>TF00012</td>
-										<td>Cash Account Cash Account - 1001</td>
-										<td>Bank BNI 0876543210123 - PT Dulank Semesta Cida</td>
-										<td>1198458</td>
-										<td>Internal Transfer Antar Rekening Perusahaan</td>
-										<td>Admin</td>
-										<td class="action-table-data">
-											<div class="edit-delete-action">
-												<a class="me-2 p-2 mb-0" data-bs-toggle="modal"
-													data-bs-target="#view-units">
-													<i data-feather="eye" class="action-eye"></i>
-												</a>
-												<a class="me-2 p-2" href="#" data-bs-toggle="modal"
-													data-bs-target="#edit-transfer"><i data-feather="edit"></i></a>
-												<a class="confirm-text p-2" href="javascript:void(0);"><i
-														data-feather="trash-2"></i></a>
-											</div>
-										</td>
-									</tr>
+                    <tr>
+                      <td>23/11/2025 08:08</td>
+                      <td>TF00013</td>
+                      <td>Bank BNI 0876543210123 - PT Dulank Semesta Cida</td>
+                      <td>Bank BCA 4567891230 - Cecep Sudirman</td>
+                      <td>3605219</td>
+                      <td>Biaya Kurir dan Pengiriman</td>
+                      <td>Staff</td>
+                      <td class="action-table-data">
+                        <div class="edit-delete-action">
+                          <a class="me-2 p-2 mb-0" data-bs-toggle="modal" data-bs-target="#view-units">
+                            <i data-feather="eye" class="action-eye"></i>
+                          </a>
+                          <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#edit-transfer"
+                            ><i data-feather="edit"></i
+                          ></a>
+                          <a class="confirm-text p-2" href="javascript:void(0);"><i data-feather="trash-2"></i></a>
+                        </div>
+                      </td>
+                    </tr>
 
-									<tr>
-										<td>23/11/2025 08:08</td>
-										<td>TF00013</td>
-										<td>Bank BNI 0876543210123 - PT Dulank Semesta Cida</td>
-										<td>Bank BCA 4567891230 - Cecep Sudirman</td>
-										<td>3605219</td>
-										<td>Biaya Kurir dan Pengiriman</td>
-										<td>Staff</td>
-										<td class="action-table-data">
-											<div class="edit-delete-action">
-												<a class="me-2 p-2 mb-0" data-bs-toggle="modal"
-													data-bs-target="#view-units">
-													<i data-feather="eye" class="action-eye"></i>
-												</a>
-												<a class="me-2 p-2" href="#" data-bs-toggle="modal"
-													data-bs-target="#edit-transfer"><i data-feather="edit"></i></a>
-												<a class="confirm-text p-2" href="javascript:void(0);"><i
-														data-feather="trash-2"></i></a>
-											</div>
-										</td>
-									</tr>
+                    <tr>
+                      <td>15/11/2025 11:43</td>
+                      <td>TF00014</td>
+                      <td>Cash Account Cash Account - 1001</td>
+                      <td>Bank BRI 1020304050607 - Cecep Sudirman</td>
+                      <td>468543</td>
+                      <td>Gaji Bulanan Cecep Sudirman</td>
+                      <td>Admin</td>
+                      <td class="action-table-data">
+                        <div class="edit-delete-action">
+                          <a class="me-2 p-2 mb-0" data-bs-toggle="modal" data-bs-target="#view-units">
+                            <i data-feather="eye" class="action-eye"></i>
+                          </a>
+                          <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#edit-transfer"
+                            ><i data-feather="edit"></i
+                          ></a>
+                          <a class="confirm-text p-2" href="javascript:void(0);"><i data-feather="trash-2"></i></a>
+                        </div>
+                      </td>
+                    </tr>
 
-									<tr>
-										<td>15/11/2025 11:43</td>
-										<td>TF00014</td>
-										<td>Cash Account Cash Account - 1001</td>
-										<td>Bank BRI 1020304050607 - Cecep Sudirman</td>
-										<td>468543</td>
-										<td>Gaji Bulanan Cecep Sudirman</td>
-										<td>Admin</td>
-										<td class="action-table-data">
-											<div class="edit-delete-action">
-												<a class="me-2 p-2 mb-0" data-bs-toggle="modal"
-													data-bs-target="#view-units">
-													<i data-feather="eye" class="action-eye"></i>
-												</a>
-												<a class="me-2 p-2" href="#" data-bs-toggle="modal"
-													data-bs-target="#edit-transfer"><i data-feather="edit"></i></a>
-												<a class="confirm-text p-2" href="javascript:void(0);"><i
-														data-feather="trash-2"></i></a>
-											</div>
-										</td>
-									</tr>
+                    <tr>
+                      <td>04/11/2025 15:34</td>
+                      <td>TF00015</td>
+                      <td>Bank BCA 4567891230 - Cecep Sudirman</td>
+                      <td>Cash Account Cash Account - 1001</td>
+                      <td>1866910</td>
+                      <td>Pembayaran Invoice Supplier PT Kertas Jaya</td>
+                      <td>Admin</td>
+                      <td class="action-table-data">
+                        <div class="edit-delete-action">
+                          <a class="me-2 p-2 mb-0" data-bs-toggle="modal" data-bs-target="#view-units">
+                            <i data-feather="eye" class="action-eye"></i>
+                          </a>
+                          <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#edit-transfer"
+                            ><i data-feather="edit"></i
+                          ></a>
+                          <a class="confirm-text p-2" href="javascript:void(0);"><i data-feather="trash-2"></i></a>
+                        </div>
+                      </td>
+                    </tr>
 
-									<tr>
-										<td>04/11/2025 15:34</td>
-										<td>TF00015</td>
-										<td>Bank BCA 4567891230 - Cecep Sudirman</td>
-										<td>Cash Account Cash Account - 1001</td>
-										<td>1866910</td>
-										<td>Pembayaran Invoice Supplier PT Kertas Jaya</td>
-										<td>Admin</td>
-										<td class="action-table-data">
-											<div class="edit-delete-action">
-												<a class="me-2 p-2 mb-0" data-bs-toggle="modal"
-													data-bs-target="#view-units">
-													<i data-feather="eye" class="action-eye"></i>
-												</a>
-												<a class="me-2 p-2" href="#" data-bs-toggle="modal"
-													data-bs-target="#edit-transfer"><i data-feather="edit"></i></a>
-												<a class="confirm-text p-2" href="javascript:void(0);"><i
-														data-feather="trash-2"></i></a>
-											</div>
-										</td>
-									</tr>
+                    <tr>
+                      <td>06/12/2025 11:21</td>
+                      <td>TF00016</td>
+                      <td>Bank BNI 0876543210123 - PT Dulank Semesta Cida</td>
+                      <td>Bank BCA 4567891230 - Cecep Sudirman</td>
+                      <td>2968726</td>
+                      <td>Pengeluaran ATK Kantor</td>
+                      <td>Admin</td>
+                      <td class="action-table-data">
+                        <div class="edit-delete-action">
+                          <a class="me-2 p-2 mb-0" data-bs-toggle="modal" data-bs-target="#view-units">
+                            <i data-feather="eye" class="action-eye"></i>
+                          </a>
+                          <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#edit-transfer"
+                            ><i data-feather="edit"></i
+                          ></a>
+                          <a class="confirm-text p-2" href="javascript:void(0);"><i data-feather="trash-2"></i></a>
+                        </div>
+                      </td>
+                    </tr>
 
-									<tr>
-										<td>06/12/2025 11:21</td>
-										<td>TF00016</td>
-										<td>Bank BNI 0876543210123 - PT Dulank Semesta Cida</td>
-										<td>Bank BCA 4567891230 - Cecep Sudirman</td>
-										<td>2968726</td>
-										<td>Pengeluaran ATK Kantor</td>
-										<td>Admin</td>
-										<td class="action-table-data">
-											<div class="edit-delete-action">
-												<a class="me-2 p-2 mb-0" data-bs-toggle="modal"
-													data-bs-target="#view-units">
-													<i data-feather="eye" class="action-eye"></i>
-												</a>
-												<a class="me-2 p-2" href="#" data-bs-toggle="modal"
-													data-bs-target="#edit-transfer"><i data-feather="edit"></i></a>
-												<a class="confirm-text p-2" href="javascript:void(0);"><i
-														data-feather="trash-2"></i></a>
-											</div>
-										</td>
-									</tr>
+                    <tr>
+                      <td>16/11/2025 10:29</td>
+                      <td>TF00017</td>
+                      <td>Bank BNI 0876543210123 - PT Dulank Semesta Cida</td>
+                      <td>Bank BCA 4567891230 - Cecep Sudirman</td>
+                      <td>4339501</td>
+                      <td>Pengeluaran ATK Kantor</td>
+                      <td>Staff</td>
+                      <td class="action-table-data">
+                        <div class="edit-delete-action">
+                          <a class="me-2 p-2 mb-0" data-bs-toggle="modal" data-bs-target="#view-units">
+                            <i data-feather="eye" class="action-eye"></i>
+                          </a>
+                          <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#edit-transfer"
+                            ><i data-feather="edit"></i
+                          ></a>
+                          <a class="confirm-text p-2" href="javascript:void(0);"><i data-feather="trash-2"></i></a>
+                        </div>
+                      </td>
+                    </tr>
 
-									<tr>
-										<td>16/11/2025 10:29</td>
-										<td>TF00017</td>
-										<td>Bank BNI 0876543210123 - PT Dulank Semesta Cida</td>
-										<td>Bank BCA 4567891230 - Cecep Sudirman</td>
-										<td>4339501</td>
-										<td>Pengeluaran ATK Kantor</td>
-										<td>Staff</td>
-										<td class="action-table-data">
-											<div class="edit-delete-action">
-												<a class="me-2 p-2 mb-0" data-bs-toggle="modal"
-													data-bs-target="#view-units">
-													<i data-feather="eye" class="action-eye"></i>
-												</a>
-												<a class="me-2 p-2" href="#" data-bs-toggle="modal"
-													data-bs-target="#edit-transfer"><i data-feather="edit"></i></a>
-												<a class="confirm-text p-2" href="javascript:void(0);"><i
-														data-feather="trash-2"></i></a>
-											</div>
-										</td>
-									</tr>
+                    <tr>
+                      <td>05/12/2025 13:59</td>
+                      <td>TF00018</td>
+                      <td>Cash Account Cash Account - 1001</td>
+                      <td>Bank Mandiri 1230009876543 - PT Dulank Semesta Cida</td>
+                      <td>1048552</td>
+                      <td>Biaya Pemasaran Digital</td>
+                      <td>Admin</td>
+                      <td class="action-table-data">
+                        <div class="edit-delete-action">
+                          <a class="me-2 p-2 mb-0" data-bs-toggle="modal" data-bs-target="#view-units">
+                            <i data-feather="eye" class="action-eye"></i>
+                          </a>
+                          <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#edit-transfer"
+                            ><i data-feather="edit"></i
+                          ></a>
+                          <a class="confirm-text p-2" href="javascript:void(0);"><i data-feather="trash-2"></i></a>
+                        </div>
+                      </td>
+                    </tr>
 
-									<tr>
-										<td>05/12/2025 13:59</td>
-										<td>TF00018</td>
-										<td>Cash Account Cash Account - 1001</td>
-										<td>Bank Mandiri 1230009876543 - PT Dulank Semesta Cida</td>
-										<td>1048552</td>
-										<td>Biaya Pemasaran Digital</td>
-										<td>Admin</td>
-										<td class="action-table-data">
-											<div class="edit-delete-action">
-												<a class="me-2 p-2 mb-0" data-bs-toggle="modal"
-													data-bs-target="#view-units">
-													<i data-feather="eye" class="action-eye"></i>
-												</a>
-												<a class="me-2 p-2" href="#" data-bs-toggle="modal"
-													data-bs-target="#edit-transfer"><i data-feather="edit"></i></a>
-												<a class="confirm-text p-2" href="javascript:void(0);"><i
-														data-feather="trash-2"></i></a>
-											</div>
-										</td>
-									</tr>
+                    <tr>
+                      <td>21/11/2025 08:54</td>
+                      <td>TF00019</td>
+                      <td>Bank BNI 0876543210123 - PT Dulank Semesta Cida</td>
+                      <td>Bank Mandiri 1230009876543 - PT Dulank Semesta Cida</td>
+                      <td>1395966</td>
+                      <td>Transfer Kas Operasional Harian</td>
+                      <td>Admin</td>
+                      <td class="action-table-data">
+                        <div class="edit-delete-action">
+                          <a class="me-2 p-2 mb-0" data-bs-toggle="modal" data-bs-target="#view-units">
+                            <i data-feather="eye" class="action-eye"></i>
+                          </a>
+                          <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#edit-transfer"
+                            ><i data-feather="edit"></i
+                          ></a>
+                          <a class="confirm-text p-2" href="javascript:void(0);"><i data-feather="trash-2"></i></a>
+                        </div>
+                      </td>
+                    </tr>
 
-									<tr>
-										<td>21/11/2025 08:54</td>
-										<td>TF00019</td>
-										<td>Bank BNI 0876543210123 - PT Dulank Semesta Cida</td>
-										<td>Bank Mandiri 1230009876543 - PT Dulank Semesta Cida</td>
-										<td>1395966</td>
-										<td>Transfer Kas Operasional Harian</td>
-										<td>Admin</td>
-										<td class="action-table-data">
-											<div class="edit-delete-action">
-												<a class="me-2 p-2 mb-0" data-bs-toggle="modal"
-													data-bs-target="#view-units">
-													<i data-feather="eye" class="action-eye"></i>
-												</a>
-												<a class="me-2 p-2" href="#" data-bs-toggle="modal"
-													data-bs-target="#edit-transfer"><i data-feather="edit"></i></a>
-												<a class="confirm-text p-2" href="javascript:void(0);"><i
-														data-feather="trash-2"></i></a>
-											</div>
-										</td>
-									</tr>
+                    <tr>
+                      <td>16/12/2025 09:03</td>
+                      <td>TF00020</td>
+                      <td>Bank BNI 0876543210123 - PT Dulank Semesta Cida</td>
+                      <td>Bank Mandiri 1230009876543 - PT Dulank Semesta Cida</td>
+                      <td>3369549</td>
+                      <td>Pengembalian Dana Konsumen (Refund)</td>
+                      <td>Admin</td>
+                      <td class="action-table-data">
+                        <div class="edit-delete-action">
+                          <a class="me-2 p-2 mb-0" data-bs-toggle="modal" data-bs-target="#view-units">
+                            <i data-feather="eye" class="action-eye"></i>
+                          </a>
+                          <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#edit-transfer"
+                            ><i data-feather="edit"></i
+                          ></a>
+                          <a class="confirm-text p-2" href="javascript:void(0);"><i data-feather="trash-2"></i></a>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
 
-									<tr>
-										<td>16/12/2025 09:03</td>
-										<td>TF00020</td>
-										<td>Bank BNI 0876543210123 - PT Dulank Semesta Cida</td>
-										<td>Bank Mandiri 1230009876543 - PT Dulank Semesta Cida</td>
-										<td>3369549</td>
-										<td>Pengembalian Dana Konsumen (Refund)</td>
-										<td>Admin</td>
-										<td class="action-table-data">
-											<div class="edit-delete-action">
-												<a class="me-2 p-2 mb-0" data-bs-toggle="modal"
-													data-bs-target="#view-units">
-													<i data-feather="eye" class="action-eye"></i>
-												</a>
-												<a class="me-2 p-2" href="#" data-bs-toggle="modal"
-													data-bs-target="#edit-transfer"><i data-feather="edit"></i></a>
-												<a class="confirm-text p-2" href="javascript:void(0);"><i
-														data-feather="trash-2"></i></a>
-											</div>
-										</td>
-									</tr>
-								</tbody>
+                  <tfoot>
+                    <tr>
+                      <td class="text-start fw-bold">Total</td>
+                      <!-- gunakan class sum-target dan data-col-index agar reusable -->
+                      <td colspan="3"></td>
+                      <td id="amount-total" class="fw-bold sum-target" data-col-index="4">0</td>
+                    </tr>
+                  </tfoot>
+                </table>
+              </div>
+            </div>
+          </div>
+          <!-- /product list -->
+        </div>
+      </div>
+    </div>
+    <!-- /Main Wrapper -->
+    <!-- modals -->
+    <!-- add moeney transfer -->
+    <div class="modal fade" id="edit-transfer">
+      <div class="modal-dialog modal-dialog-centered custom-modal-two">
+        <div class="modal-content">
+          <div class="page-wrapper-new p-0">
+            <div class="content">
+              <div class="modal-header border-0 custom-modal-header">
+                <div class="page-title">
+                  <h4>Edit Income Category</h4>
+                </div>
+                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body custom-modal-body">
+                <form action="tax-rates.html">
+                  <div class="row">
+                    <div class="col-lg-12">
+                      <div class="mb-3 position-relative">
+                        <label class="form-label">From Account<span class="text-danger ms-1">*</span></label>
+                        <select class="select">
+                          <option value="s-1">Selection-1</option>
+                          <option value="s-2">Selection-2</option>
+                          <option value="s-3">Selection-3</option>
+                          <option value="s-4">Selection-4</option>
+                          <option value="s-5">Selection-5</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-lg-12">
+                      <div class="mb-3">
+                        <label class="form-label">To Account <span> *</span></label>
+                        <select class="select">
+                          <option value="s-1">Selection-1</option>
+                          <option value="s-2">Selection-2</option>
+                          <option value="s-3">Selection-3</option>
+                          <option value="s-4">Selection-4</option>
+                          <option value="s-5">Selection-5</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-lg-12">
+                      <div class="mb-3">
+                        <label class="form-label">Amount<span> *</span></label>
+                        <input
+                          type="text"
+                          class="form-control number-separator"
+                          value="370000"
+                          inputmode="numeric"
+                          pattern="[0-9]*"
+                        />
+                        <input type="hidden" class="result-input" id="amount-edit" value="370000" />
+                      </div>
+                    </div>
+                    <!-- Editor -->
+                    <div class="col-md-12">
+                      <div class="edit-add card">
+                        <div class="edit-add">
+                          <label class="form-label">Description</label>
+                        </div>
+                        <div class="card-body-list input-blocks mb-0">
+                          <div class="flex-grow-1 term-content text-start">
+                            <div
+                              class="product-desc p-2 border rounded"
+                              contenteditable="true"
+                              data-placeholder="Enter note here....."
+                            >
+                              Pembayaran lunas cetak brosur 1000 pcs.
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /Editor -->
+                  </div>
+                  <div class="modal-footer-btn">
+                    <button type="button" class="btn btn-cancel me-2" data-bs-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-submit">Submit</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- add moeney transfer -->
+    <!-- edit money transfer -->
+    <div class="modal fade" id="add-units">
+      <div class="modal-dialog modal-dialog-centered custom-modal-two">
+        <div class="modal-content">
+          <div class="page-wrapper-new p-0">
+            <div class="content">
+              <div class="modal-header border-0 custom-modal-header">
+                <div class="page-title">
+                  <h4>Edit Income Category</h4>
+                </div>
+                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body custom-modal-body">
+                <form action="tax-rates.html">
+                  <div class="row">
+                    <div class="col-lg-12">
+                      <div class="mb-3 position-relative">
+                        <label class="form-label">From Account<span class="text-danger ms-1">*</span></label>
+                        <select class="select">
+                          <option value="s-1">Selection-1</option>
+                          <option value="s-2">Selection-2</option>
+                          <option value="s-3">Selection-3</option>
+                          <option value="s-4">Selection-4</option>
+                          <option value="s-5">Selection-5</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-lg-12">
+                      <div class="mb-3">
+                        <label class="form-label">To Account <span> *</span></label>
+                        <select class="select">
+                          <option value="s-1">Selection-1</option>
+                          <option value="s-2">Selection-2</option>
+                          <option value="s-3">Selection-3</option>
+                          <option value="s-4">Selection-4</option>
+                          <option value="s-5">Selection-5</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-lg-12">
+                      <div class="mb-3">
+                        <label class="form-label">Amount<span> *</span></label>
+                        <input type="text" class="form-control number-separator" inputmode="numeric" pattern="[0-9]*" />
+                        <input type="hidden" class="result-input" id="amount" />
+                      </div>
+                    </div>
+                    <!-- Editor -->
+                    <div class="col-md-12">
+                      <div class="edit-add card">
+                        <div class="edit-add">
+                          <label class="form-label">Description</label>
+                        </div>
+                        <div class="card-body-list input-blocks mb-0">
+                          <div class="flex-grow-1 term-content text-start">
+                            <div
+                              class="product-desc p-2 border rounded"
+                              contenteditable="true"
+                              data-placeholder="Enter note here....."
+                            ></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="modal-footer-btn">
+                    <button type="button" class="btn btn-cancel me-2" data-bs-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-submit">Submit</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- edit money transfer -->
 
+    <!-- view money transfer -->
+    <div class="modal fade" id="view-units">
+      <div class="modal-dialog modal-dialog-centered custom-modal-two">
+        <div class="modal-content">
+          <div class="page-wrapper-new p-0">
+            <div class="content">
+              <div class="modal-header border-0 custom-modal-header">
+                <div class="page-title">
+                  <h4>View Transfer</h4>
+                </div>
+                <button type="button" class="close" data-bs-dismiss="modal">
+                  <span>&times;</span>
+                </button>
+              </div>
 
-								<tfoot>
-									<tr>
-										<td class="text-start fw-bold">Total</td>
-										<!-- gunakan class sum-target dan data-col-index agar reusable -->
-										<td colspan="3"></td>
-										<td id="amount-total" class="fw-bold sum-target" data-col-index="4">0</td>
-									</tr>
-								</tfoot>
-							</table>
-						</div>
+              <div class="modal-body custom-modal-body">
+                <div class="row my-2">
+                  <div class="col-6 fw-bold">Date</div>
+                  <div class="col-6" id="v-date"></div>
+                </div>
 
-					</div>
-				</div>
-				<!-- /product list -->
-			</div>
-		</div>
+                <div class="row my-2">
+                  <div class="col-6 fw-bold">No Transfer</div>
+                  <div class="col-6" id="v-no"></div>
+                </div>
 
-	</div>
-	<!-- /Main Wrapper -->
-	<!-- modals -->
-	<!-- add moeney transfer -->
-	<div class="modal fade" id="edit-transfer">
-		<div class="modal-dialog modal-dialog-centered custom-modal-two">
-			<div class="modal-content">
-				<div class="page-wrapper-new p-0">
-					<div class="content">
-						<div class="modal-header border-0 custom-modal-header">
-							<div class="page-title">
-								<h4>Edit Income Category</h4>
-							</div>
-							<button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-								<span aria-hidden="true">&times;</span>
-							</button>
-						</div>
-						<div class="modal-body custom-modal-body">
-							<form action="tax-rates.html">
-								<div class="row">
-									<div class="col-lg-12">
-										<div class="mb-3 position-relative">
-											<label class="form-label">From Account<span
-													class="text-danger ms-1">*</span></label>
-											<select class="select">
-												<option value="s-1">Selection-1</option>
-												<option value="s-2">Selection-2</option>
-												<option value="s-3">Selection-3</option>
-												<option value="s-4">Selection-4</option>
-												<option value="s-5">Selection-5</option>
-											</select>
-										</div>
-									</div>
-									<div class="col-lg-12">
-										<div class="mb-3">
-											<label class="form-label">To Account <span> *</span></label>
-											<select class="select">
-												<option value="s-1">Selection-1</option>
-												<option value="s-2">Selection-2</option>
-												<option value="s-3">Selection-3</option>
-												<option value="s-4">Selection-4</option>
-												<option value="s-5">Selection-5</option>
-											</select>
-										</div>
-									</div>
-									<div class="col-lg-12">
-										<div class="mb-3">
-											<label class="form-label">Amount<span> *</span></label>
-											<input type="text" class="form-control number-separator" value="370000"
-												inputmode="numeric" pattern="[0-9]*">
-											<input type="hidden" class="result-input" id="amount-edit" value="370000">
-										</div>
-									</div>
-									<!-- Editor -->
-								<div class="col-md-12">
-									<div class="edit-add card">
-										<div class="edit-add">
-											<label class="form-label">Description</label>
-										</div>
-										<div class="card-body-list input-blocks mb-0">
-											<div class="flex-grow-1 term-content text-start">
-												<div class="product-desc p-2 border rounded" contenteditable="true"
-													data-placeholder="Enter note here.....">Pembayaran lunas cetak
-													brosur 1000 pcs.</div>
-											</div>
-										</div>
+                <div class="row my-2">
+                  <div class="col-6 fw-bold">From Account</div>
+                  <div class="col-6" id="v-from"></div>
+                </div>
 
-									</div>
-								</div>
-								<!-- /Editor -->
-								</div>
-								<div class="modal-footer-btn">
-									<button type="button" class="btn btn-cancel me-2"
-										data-bs-dismiss="modal">Cancel</button>
-									<button type="submit" class="btn btn-submit">Submit</button>
-								</div>
-							</form>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- add moeney transfer -->
-	<!-- edit money transfer -->
-	<div class="modal fade" id="add-units">
-		<div class="modal-dialog modal-dialog-centered custom-modal-two">
-			<div class="modal-content">
-				<div class="page-wrapper-new p-0">
-					<div class="content">
-						<div class="modal-header border-0 custom-modal-header">
-							<div class="page-title">
-								<h4>Edit Income Category</h4>
-							</div>
-							<button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-								<span aria-hidden="true">&times;</span>
-							</button>
-						</div>
-						<div class="modal-body custom-modal-body">
-							<form action="tax-rates.html">
-								<div class="row">
-									<div class="col-lg-12">
-										<div class="mb-3 position-relative">
-											<label class="form-label">From Account<span
-													class="text-danger ms-1">*</span></label>
-											<select class="select">
-												<option value="s-1">Selection-1</option>
-												<option value="s-2">Selection-2</option>
-												<option value="s-3">Selection-3</option>
-												<option value="s-4">Selection-4</option>
-												<option value="s-5">Selection-5</option>
-											</select>
-										</div>
-									</div>
-									<div class="col-lg-12">
-										<div class="mb-3">
-											<label class="form-label">To Account <span> *</span></label>
-											<select class="select">
-												<option value="s-1">Selection-1</option>
-												<option value="s-2">Selection-2</option>
-												<option value="s-3">Selection-3</option>
-												<option value="s-4">Selection-4</option>
-												<option value="s-5">Selection-5</option>
-											</select>
-										</div>
-									</div>
-									<div class="col-lg-12">
-										<div class="mb-3">
-											<label class="form-label">Amount<span> *</span></label>
-											<input type="text" class="form-control number-separator" inputmode="numeric"
-												pattern="[0-9]*">
-											<input type="hidden" class="result-input" id="amount">
-										</div>
-									</div>
-										<!-- Editor -->
-								<div class="col-md-12">
-									<div class="edit-add card">
-										<div class="edit-add">
-											<label class="form-label">Description</label>
-										</div>
-										<div class="card-body-list input-blocks mb-0">
-											<div class="flex-grow-1 term-content text-start">
-												<div class="product-desc p-2 border rounded" contenteditable="true"
-													data-placeholder="Enter note here....."></div>
-											</div>
-										</div>
+                <div class="row my-2">
+                  <div class="col-6 fw-bold">To Account</div>
+                  <div class="col-6" id="v-to"></div>
+                </div>
 
-									</div>
-								</div>
-								</div>
-								<div class="modal-footer-btn">
-									<button type="button" class="btn btn-cancel me-2"
-										data-bs-dismiss="modal">Cancel</button>
-									<button type="submit" class="btn btn-submit">Submit</button>
-								</div>
-							</form>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- edit money transfer -->
+                <div class="row my-2">
+                  <div class="col-6 fw-bold">Amount</div>
+                  <div class="col-6" id="v-amount"></div>
+                </div>
 
-	<!-- view money transfer -->
-	 	<div class="modal fade" id="view-units">
-	<div class="modal-dialog modal-dialog-centered custom-modal-two">
-		<div class="modal-content">
-			<div class="page-wrapper-new p-0">
-				<div class="content">
-					<div class="modal-header border-0 custom-modal-header">
-						<div class="page-title">
-							<h4>View Transfer</h4>
-						</div>
-						<button type="button" class="close" data-bs-dismiss="modal">
-							<span>&times;</span>
-						</button>
-					</div>
+                <div class="row my-2">
+                  <div class="col-6 fw-bold">Description</div>
+                  <div class="col-6" id="v-desc"></div>
+                </div>
 
-					<div class="modal-body custom-modal-body">
-						<div class="row my-2">
-							<div class="col-6 fw-bold">Date</div>
-							<div class="col-6" id="v-date"></div>
-						</div>
+                <div class="row my-2">
+                  <div class="col-6 fw-bold">Created By</div>
+                  <div class="col-6" id="v-created"></div>
+                </div>
 
-						<div class="row my-2">
-							<div class="col-6 fw-bold">No Transfer</div>
-							<div class="col-6" id="v-no"></div>
-						</div>
+                <div class="modal-footer-btn mt-3">
+                  <a class="btn btn-cancel" data-bs-dismiss="modal">Close</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-						<div class="row my-2">
-							<div class="col-6 fw-bold">From Account</div>
-							<div class="col-6" id="v-from"></div>
-						</div>
+    <!-- view money transfer -->
+    <!-- /modals -->
 
-						<div class="row my-2">
-							<div class="col-6 fw-bold">To Account</div>
-							<div class="col-6" id="v-to"></div>
-						</div>
+    <!-- js ambil data -->
+    <script>
+      document.querySelectorAll('[data-bs-target="#view-units"]').forEach((btn) => {
+        btn.addEventListener("click", function () {
+          const row = this.closest("tr");
+          const cells = row.querySelectorAll("td");
 
-						<div class="row my-2">
-							<div class="col-6 fw-bold">Amount</div>
-							<div class="col-6" id="v-amount"></div>
-						</div>
+          document.getElementById("v-date").innerText = cells[0].innerText;
+          document.getElementById("v-no").innerText = cells[1].innerText;
+          document.getElementById("v-from").innerText = cells[2].innerText;
+          document.getElementById("v-to").innerText = cells[3].innerText;
+          document.getElementById("v-amount").innerText = cells[4].innerText;
+          document.getElementById("v-desc").innerText = cells[5].innerText;
+          document.getElementById("v-created").innerText = cells[6].innerText;
+        });
+      });
+    </script>
 
-						<div class="row my-2">
-							<div class="col-6 fw-bold">Description</div>
-							<div class="col-6" id="v-desc"></div>
-						</div>
+    <!-- js ambil data -->
+    <!-- jQuery -->
+    <script src="assets/js/jquery-3.7.1.min.js"></script>
 
-						<div class="row my-2">
-							<div class="col-6 fw-bold">Created By</div>
-							<div class="col-6" id="v-created"></div>
-						</div>
+    <!-- Feather Icon JS -->
+    <script src="assets/js/feather.min.js"></script>
 
-						<div class="modal-footer-btn mt-3">
-							<a class="btn btn-cancel" data-bs-dismiss="modal">Close</a>
-						</div>
-					</div>
+    <!-- Slimscroll JS -->
+    <script src="assets/js/jquery.slimscroll.min.js"></script>
 
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
+    <!-- Datatable JS -->
+    <script src="assets/js/jquery.dataTables.min.js"></script>
+    <script src="assets/js/dataTables.bootstrap5.min.js"></script>
 
-	<!-- view money transfer -->
-	<!-- /modals -->
+    <!-- Bootstrap Core JS -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
 
-	<!-- js ambil data -->
-	 <script>
-document.querySelectorAll('[data-bs-target="#view-units"]').forEach(btn => {
-	btn.addEventListener('click', function () {
-		const row = this.closest('tr');
-		const cells = row.querySelectorAll('td');
+    <!-- Datetimepicker JS -->
+    <script src="assets/js/moment.min.js"></script>
+    <script src="assets/js/bootstrap-datetimepicker.min.js"></script>
 
-		document.getElementById('v-date').innerText    = cells[0].innerText;
-		document.getElementById('v-no').innerText      = cells[1].innerText;
-		document.getElementById('v-from').innerText    = cells[2].innerText;
-		document.getElementById('v-to').innerText      = cells[3].innerText;
-		document.getElementById('v-amount').innerText  = cells[4].innerText;
-		document.getElementById('v-desc').innerText    = cells[5].innerText;
-		document.getElementById('v-created').innerText = cells[6].innerText;
-	});
-});
-</script>
+    <!-- Summernote JS -->
+    <script src="assets/plugins/summernote/summernote-bs4.min.js"></script>
 
-	<!-- js ambil data -->
-	<!-- jQuery -->
-	<script src="assets/js/jquery-3.7.1.min.js"></script>
+    <!-- Select2 JS -->
+    <script src="assets/plugins/select2/js/select2.min.js"></script>
 
-	<!-- Feather Icon JS -->
-	<script src="assets/js/feather.min.js"></script>
+    <!-- Sweetalert 2 -->
+    <script src="assets/plugins/sweetalert/sweetalert2.all.min.js"></script>
+    <script src="assets/plugins/sweetalert/sweetalerts.min.js"></script>
 
-	<!-- Slimscroll JS -->
-	<script src="assets/js/jquery.slimscroll.min.js"></script>
+    <!-- Separator -->
+    <script src="assets/js/easy-number-separator.js"></script>
 
-	<!-- Datatable JS -->
-	<script src="assets/js/jquery.dataTables.min.js"></script>
-	<script src="assets/js/dataTables.bootstrap5.min.js"></script>
-
-	<!-- Bootstrap Core JS -->
-	<script src="assets/js/bootstrap.bundle.min.js"></script>
-
-	<!-- Datetimepicker JS -->
-	<script src="assets/js/moment.min.js"></script>
-	<script src="assets/js/bootstrap-datetimepicker.min.js"></script>
-
-	<!-- Summernote JS -->
-	<script src="assets/plugins/summernote/summernote-bs4.min.js"></script>
-
-	<!-- Select2 JS -->
-	<script src="assets/plugins/select2/js/select2.min.js"></script>
-
-	<!-- Sweetalert 2 -->
-	<script src="assets/plugins/sweetalert/sweetalert2.all.min.js"></script>
-	<script src="assets/plugins/sweetalert/sweetalerts.min.js"></script>
-
-	<!-- Separator -->
-	<script src="assets/js/easy-number-separator.js"></script>
-
-	<!-- Custom JS -->
-	<script src="assets/js/theme-script.js"></script>
-	<script src="assets/js/script.js"></script>
-
-
-
-</body>
-
+    <!-- Custom JS -->
+    <script src="assets/js/theme-script.js"></script>
+    <script src="assets/js/script.js"></script>
+  </body>
 </html>

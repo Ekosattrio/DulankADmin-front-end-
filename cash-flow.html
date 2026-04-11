@@ -1,245 +1,245 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0" />
+    <meta name="description" content="POS - Bootstrap Admin Template" />
+    <meta
+      name="keywords"
+      content="admin, estimates, bootstrap, business, corporate, creative, invoice, html5, responsive, Projects"
+    />
+    <meta name="author" content="Dreamguys - Bootstrap Admin Template" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Kacetak System</title>
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/kacetak.jpeg" />
 
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
-	<meta name="description" content="POS - Bootstrap Admin Template">
-	<meta name="keywords"
-		content="admin, estimates, bootstrap, business, corporate, creative, invoice, html5, responsive, Projects">
-	<meta name="author" content="Dreamguys - Bootstrap Admin Template">
-	<meta name="robots" content="noindex, nofollow">
-	<title>Dreams Pos Admin Template</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
 
-	<!-- Favicon -->
-	<link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png" />
+    <!-- Datetimepicker CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap-datetimepicker.min.css" />
 
-	<!-- Bootstrap CSS -->
-	<link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <!-- animation CSS -->
+    <link rel="stylesheet" href="assets/css/animate.css" />
 
-	<!-- Datetimepicker CSS -->
-	<link rel="stylesheet" href="assets/css/bootstrap-datetimepicker.min.css" />
+    <!-- Select2 CSS -->
+    <link rel="stylesheet" href="assets/plugins/select2/css/select2.min.css" />
 
-	<!-- animation CSS -->
-	<link rel="stylesheet" href="assets/css/animate.css" />
+    <!-- Datatable CSS -->
+    <link rel="stylesheet" href="assets/css/dataTables.bootstrap5.min.css" />
 
-	<!-- Select2 CSS -->
-	<link rel="stylesheet" href="assets/plugins/select2/css/select2.min.css" />
+    <!-- Daterangepikcer CSS -->
+    <link rel="stylesheet" href="assets/plugins/daterangepicker/daterangepicker.css" />
 
-	<!-- Datatable CSS -->
-	<link rel="stylesheet" href="assets/css/dataTables.bootstrap5.min.css" />
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css" />
+    <link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css" />
 
-	<!-- Daterangepikcer CSS -->
-	<link rel="stylesheet" href="assets/plugins/daterangepicker/daterangepicker.css" />
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
 
-	<!-- Fontawesome CSS -->
-	<link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css" />
-	<link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css" />
+  <body>
+    <div id="global-loader">
+      <div class="loader"></div>
+    </div>
+    <!-- Main Wrapper -->
+    <div class="main-wrapper">
+      <!-- header -->
+      <div id="header-placeholder"></div>
+      <!-- sidebar -->
+      <div id="sidebar-placeholder"></div>
 
-	<!-- Main CSS -->
-	<link rel="stylesheet" href="assets/css/style.css" />
+      <div class="page-wrapper mt-3">
+        <!-- Main content tulis disini -->
+        <div class="content">
+          <div class="page-header justify-content-between">
+            <div class="page-title">
+              <h4>Cash Flow</h4>
+              <h6>Manage your Cash Flow</h6>
+            </div>
+            <ul class="table-top-head">
+              <li>
+                <a data-bs-toggle="tooltip" data-bs-placement="top" title="Pdf"
+                  ><img src="assets/img/icons/pdf.svg" alt="img"
+                /></a>
+              </li>
+              <li>
+                <a data-bs-toggle="tooltip" data-bs-placement="top" title="Print"
+                  ><i data-feather="printer" class="feather-rotate-ccw"></i
+                ></a>
+              </li>
+              <li>
+                <a data-bs-toggle="tooltip" data-bs-placement="top" title="Refresh"
+                  ><i data-feather="rotate-ccw" class="feather-rotate-ccw"></i
+                ></a>
+              </li>
+              <li>
+                <a data-bs-toggle="tooltip" data-bs-placement="top" title="Collapse" id="collapse-header"
+                  ><i data-feather="chevron-up" class="feather-chevron-up"></i
+                ></a>
+              </li>
+            </ul>
+          </div>
 
-</head>
+          <!-- /product list -->
+          <div class="card table-list-card">
+            <div class="card-body">
+              <!-- Filter -->
+              <div class="table-top d-flex align-items-center justify-content-between">
+                <!-- Search Input -->
+                <div class="search-set d-block d-md-flex">
+                  <!-- Date Range -->
+                  <div class="my-2">
+                    <div class="pemilihrentang-container">
+                      <input
+                        type="text"
+                        id="pemilihrentang-input"
+                        class="pemilihrentang-input form-control"
+                        readonly
+                        placeholder="Date"
+                        style="height: fit-content !important; width: 100% !important"
+                      />
+                      <div id="pemilihrentang-panel" class="pemilihrentang-panel">
+                        <div class="pemilihrentang-isi">
+                          <div class="opsi-cepat">
+                            <div data-range="kemarin">Kemarin</div>
+                            <div data-range="7hari">7 Hari Terakhir</div>
+                            <div data-range="bulanIni">Bulan Ini</div>
+                            <div data-range="bulanLalu">Bulan Lalu</div>
+                            <div data-range="tahunLalu">Tahun Lalu</div>
+                            <div data-range="kustom">Rentang Kustom</div>
+                          </div>
+                          <div class="kalender" id="kalender-view" style="display: none"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="filters d-flex justify-content-end">
+                  <div class="dropdown w-100 me-2">
+                    <button
+                      class="btn btn-outline-primary dropdown-toggle"
+                      type="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                      Payment Methode
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Stripe</a></li>
+                      <li><a class="dropdown-item" href="#">Transfer</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <!-- /Filter -->
+              <div class="table-responsive">
+                <div class="row">
+                  <div class="col-md-12 border-0">
+                    <table class="table">
+                      <tbody>
+                        <tr>
+                          <td style="font-weight: bold">DESCRIPTION</td>
+                          <td style="font-weight: bold">AMOUNT</td>
+                        </tr>
+                        <tr>
+                          <td colspan="2" style="font-weight: bold">CASH FLOWS FROM OPERATING ACTIVITIES</td>
+                        </tr>
+                        <tr>
+                          <td>Cash Received from Customers</td>
+                          <td>45.000.000</td>
+                        </tr>
+                        <tr>
+                          <td>Cash Paid for Materials (Paper, Ink, etc.)</td>
+                          <td>-18.000.000</td>
+                        </tr>
+                        <tr>
+                          <td>Cash Paid for Operating Expenses (Electricity, Rent)</td>
+                          <td>-5.000.000</td>
+                        </tr>
+                        <tr>
+                          <td>Cash Paid for Wages/Salaries</td>
+                          <td>-7.000.000</td>
+                        </tr>
+                        <tr style="font-weight: bold">
+                          <td>Net Cash Provided by Operating Activities</td>
+                          <td>15.000.000</td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td colspan="2" style="font-weight: bold">CASH FLOWS FROM OTHER ACTIVITIES</td>
+                        </tr>
+                        <tr>
+                          <td>Other Financing Activities</td>
+                          <td>3.000.000</td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                        </tr>
+                        <tr style="font-weight: bold">
+                          <td>NET INCREASE IN CASH</td>
+                          <td>8.000.000</td>
+                        </tr>
+                        <tr style="font-weight: bold">
+                          <td>CASH AT BEGINNING OF MONTH</td>
+                          <td>7.000.000</td>
+                        </tr>
+                        <tr style="font-weight: bold">
+                          <td>CASH AT END OF MONTH</td>
+                          <td>15.000.000</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- /product list -->
+        </div>
+      </div>
+    </div>
+    <!-- /Main Wrapper -->
+    <!-- modals -->
 
-<body>
-	<div id="global-loader">
-		<div class="loader"> </div>
-	</div>
-	<!-- Main Wrapper -->
-	<div class="main-wrapper">
+    <!-- /modals -->
 
-		<!-- header -->
-		<div id="header-placeholder"></div>
-		<!-- sidebar -->
-		<div id="sidebar-placeholder"></div>
+    <!-- jQuery -->
+    <script src="assets/js/jquery-3.7.1.min.js"></script>
 
-		<div class="page-wrapper mt-3">
-			<!-- Main content tulis disini -->
-			<div class="content">
-				<div class="page-header justify-content-between">
-					<div class="page-title">
-						<h4>Cash Flow</h4>
-						<h6>Manage your Cash Flow</h6>
-					</div>
-					<ul class="table-top-head">
-						<li>
-							<a data-bs-toggle="tooltip" data-bs-placement="top" title="Pdf"><img
-									src="assets/img/icons/pdf.svg" alt="img" /></a>
-						</li>
-						<li>
-							<a data-bs-toggle="tooltip" data-bs-placement="top" title="Print"><i data-feather="printer"
-									class="feather-rotate-ccw"></i></a>
-						</li>
-						<li>
-							<a data-bs-toggle="tooltip" data-bs-placement="top" title="Refresh"><i
-									data-feather="rotate-ccw" class="feather-rotate-ccw"></i></a>
-						</li>
-						<li>
-							<a data-bs-toggle="tooltip" data-bs-placement="top" title="Collapse" id="collapse-header"><i
-									data-feather="chevron-up" class="feather-chevron-up"></i></a>
-						</li>
-					</ul>
-				</div>
+    <!-- Feather Icon JS -->
+    <script src="assets/js/feather.min.js"></script>
 
-				<!-- /product list -->
-				<div class="card table-list-card">
-					<div class="card-body">
-						<!-- Filter -->
-						<div class="table-top d-flex align-items-center justify-content-between">
-							<!-- Search Input -->
-							<div class="search-set d-block d-md-flex">
-								
-								<!-- Date Range -->
-								<div class="my-2">
-									<div class="pemilihrentang-container ">
-										<input type="text" id="pemilihrentang-input"
-											class="pemilihrentang-input form-control" readonly placeholder="Date"
-											style="height: fit-content !important;width: 100% !important;">
-										<div id="pemilihrentang-panel" class="pemilihrentang-panel">
-											<div class="pemilihrentang-isi">
-												<div class="opsi-cepat">
-													<div data-range="kemarin">Kemarin</div>
-													<div data-range="7hari">7 Hari Terakhir</div>
-													<div data-range="bulanIni">Bulan Ini</div>
-													<div data-range="bulanLalu">Bulan Lalu</div>
-													<div data-range="tahunLalu">Tahun Lalu</div>
-													<div data-range="kustom">Rentang Kustom</div>
-												</div>
-												<div class="kalender" id="kalender-view" style="display:none;">
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="filters d-flex justify-content-end">
-								<div class="dropdown w-100 me-2">
-									<button class="btn btn-outline-primary dropdown-toggle" type="button"
-										data-bs-toggle="dropdown" aria-expanded="false">
-										Payment Methode
-									</button>
-									<ul class="dropdown-menu">
-										<li><a class="dropdown-item" href="#">Stripe</a></li>
-										<li><a class="dropdown-item" href="#">Transfer</a></li>
-									</ul>
-								</div>
-							</div>
-						</div>
-						<!-- /Filter -->
-						<div class="table-responsive">
-							<div class="row">
-								<div class="col-md-12 border-0">
-									<table class="table">
-										<tbody>
-											<tr>
-												<td style="font-weight: bold;">DESCRIPTION
-												</td>
-												<td style="font-weight: bold;">AMOUNT</td>
-											</tr>
-											<tr>
-												<td colspan="2" style="font-weight: bold;">CASH FLOWS FROM OPERATING
-													ACTIVITIES</td>
-											</tr>
-											<tr>
-												<td>Cash Received from Customers</td>
-												<td>45.000.000</td>
-											</tr>
-											<tr>
-												<td>Cash Paid for Materials (Paper, Ink, etc.)</td>
-												<td>-18.000.000</td>
-											</tr>
-											<tr>
-												<td>Cash Paid for Operating Expenses (Electricity, Rent)</td>
-												<td>-5.000.000</td>
-											</tr>
-											<tr>
-												<td>Cash Paid for Wages/Salaries</td>
-												<td>-7.000.000</td>
-											</tr>
-											<tr style="font-weight: bold;">
-												<td>Net Cash Provided by Operating Activities</td>
-												<td>15.000.000</td>
-											</tr>
-											<tr>
-												<td></td>
-											</tr>
-											<tr>
-												<td colspan="2" style="font-weight: bold;">CASH FLOWS FROM OTHER
-													ACTIVITIES</td>
-											</tr>
-											<tr>
-												<td>Other Financing Activities</td>
-												<td>3.000.000</td>
-											</tr>
-											<tr>
-												<td></td>
-											</tr>
-											<tr style="font-weight: bold;">
-												<td>NET INCREASE IN CASH</td>
-												<td>8.000.000</td>
-											</tr>
-											<tr style="font-weight: bold;">
-												<td>CASH AT BEGINNING OF MONTH</td>
-												<td>7.000.000</td>
-											</tr>
-											<tr style="font-weight: bold;">
-												<td>CASH AT END OF MONTH</td>
-												<td>15.000.000</td>
-											</tr>
-										</tbody>
-									</table>
-								</div>
+    <!-- Slimscroll JS -->
+    <script src="assets/js/jquery.slimscroll.min.js"></script>
 
-							</div>
-						</div>
-					</div>
-				</div>
-				<!-- /product list -->
-			</div>
-		</div>
+    <!-- Datatable JS -->
+    <script src="assets/js/jquery.dataTables.min.js"></script>
+    <script src="assets/js/dataTables.bootstrap5.min.js"></script>
 
-	</div>
-	<!-- /Main Wrapper -->
-	<!-- modals -->
+    <!-- Bootstrap Core JS -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
 
-	<!-- /modals -->
+    <!-- Datetimepicker JS -->
+    <script src="assets/js/moment.min.js"></script>
+    <script src="assets/js/bootstrap-datetimepicker.min.js"></script>
 
-	<!-- jQuery -->
-	<script src="assets/js/jquery-3.7.1.min.js"></script>
+    <!-- Daterangepikcer JS -->
+    <script src="assets/js/moment.min.js"></script>
+    <script src="assets/plugins/daterangepicker/daterangepicker.js"></script>
 
-	<!-- Feather Icon JS -->
-	<script src="assets/js/feather.min.js"></script>
+    <!-- Select2 JS -->
+    <script src="assets/plugins/select2/js/select2.min.js"></script>
 
-	<!-- Slimscroll JS -->
-	<script src="assets/js/jquery.slimscroll.min.js"></script>
+    <!-- Sweetalert 2 -->
+    <script src="assets/plugins/sweetalert/sweetalert2.all.min.js"></script>
+    <script src="assets/plugins/sweetalert/sweetalerts.min.js"></script>
 
-	<!-- Datatable JS -->
-	<script src="assets/js/jquery.dataTables.min.js"></script>
-	<script src="assets/js/dataTables.bootstrap5.min.js"></script>
-
-	<!-- Bootstrap Core JS -->
-	<script src="assets/js/bootstrap.bundle.min.js"></script>
-
-	<!-- Datetimepicker JS -->
-	<script src="assets/js/moment.min.js"></script>
-	<script src="assets/js/bootstrap-datetimepicker.min.js"></script>
-
-	<!-- Daterangepikcer JS -->
-	<script src="assets/js/moment.min.js"></script>
-	<script src="assets/plugins/daterangepicker/daterangepicker.js"></script>
-
-	<!-- Select2 JS -->
-	<script src="assets/plugins/select2/js/select2.min.js"></script>
-
-	<!-- Sweetalert 2 -->
-	<script src="assets/plugins/sweetalert/sweetalert2.all.min.js"></script>
-	<script src="assets/plugins/sweetalert/sweetalerts.min.js"></script>
-
-	<!-- Custom JS -->
-	<script src="assets/js/theme-script.js"></script>
-	<script src="assets/js/script.js"></script>
-
-
-</body>
-
+    <!-- Custom JS -->
+    <script src="assets/js/theme-script.js"></script>
+    <script src="assets/js/script.js"></script>
+  </body>
 </html>

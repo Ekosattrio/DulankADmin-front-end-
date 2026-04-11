@@ -1,203 +1,198 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
-    <meta name="description" content="POS - Bootstrap Admin Template">
-    <meta name="keywords"
-        content="admin, estimates, bootstrap, business, corporate, creative, invoice, html5, responsive, Projects">
-    <meta name="author" content="Dreamguys - Bootstrap Admin Template">
-    <meta name="robots" content="noindex, nofollow">
-    <title>Dreams Pos Admin Template</title>
-
-    <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0" />
+    <meta name="description" content="POS - Bootstrap Admin Template" />
+    <meta
+      name="keywords"
+      content="admin, estimates, bootstrap, business, corporate, creative, invoice, html5, responsive, Projects"
+    />
+    <meta name="author" content="Dreamguys - Bootstrap Admin Template" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Kacetak System</title>
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/kacetak.jpeg" />
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
 
     <!-- animation CSS -->
-    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet" href="assets/css/animate.css" />
 
     <!-- Datatable CSS -->
-    <link rel="stylesheet" href="assets/css/dataTables.bootstrap5.min.css">
+    <link rel="stylesheet" href="assets/css/dataTables.bootstrap5.min.css" />
 
     <!-- Fontawesome CSS -->
-    <link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css">
-    <link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css" />
+    <link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css" />
 
     <!-- Main CSS -->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
 
-</head>
-
-<body>
+  <body>
     <div id="global-loader">
-        <div class="loader"> </div>
+      <div class="loader"></div>
     </div>
     <!-- Main Wrapper -->
     <div class="main-wrapper">
+      <!-- header -->
+      <div id="header-placeholder"></div>
+      <!-- sidebar -->
+      <div id="sidebar-placeholder"></div>
 
-        <!-- header -->
-        <div id="header-placeholder"></div>
-        <!-- sidebar -->
-        <div id="sidebar-placeholder"></div>
-
-        <div class="page-wrapper">
-            <!-- Main content tulis disini -->
-            <div class="content container-fluid">
-                <div class="page-header mt-5">
-                    <div class="add-item d-flex">
-                        <div class="page-title">
-                            <h4>Contact Form List</h4>
-                            <h6>Manage Contact Form</h6>
-                        </div>
-                    </div>
-
-
-
-                </div>
-                <div class="row mt-5">
-                    <div class="col-xl-3 col-sm-6 col-12 d-flex">
-                        <div class="dash-widget w-100">
-                            <div class="dash-widgetimg">
-                                <span><img src="assets/img/icons/dash1.svg" alt="img"></span>
-                            </div>
-                            <div class="dash-widgetcontent">
-                                <h6>Total Contact</h6>
-                                <h5><span class="counters" data-count="307144">307144</span></h5>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- data table -->
-                <div class="card table-list-card">
-                    <div class="card-body">
-                        <!-- Filter -->
-                        <div class="table-top d-flex align-items-center justify-content-between">
-                            <!-- Search Input -->
-                            <div class="search-set d-block d-md-flex">
-                                <div class="search-input">
-                                    <a href="" class="btn btn-searchset"><i data-feather="search"
-                                            class="feather-search"></i></a>
-                                </div>
-                                <!-- Date Range -->
-                                <div class="my-2">
-                                    <div class="pemilihrentang-container ">
-                                        <input type="text" id="pemilihrentang-input"
-                                            class="pemilihrentang-input form-control" readonly placeholder="Date"
-                                            style="height: fit-content !important;width: 100% !important;">
-                                        <div id="pemilihrentang-panel" class="pemilihrentang-panel">
-                                            <div class="pemilihrentang-isi">
-                                                <div class="opsi-cepat">
-                                                    <div data-range="kemarin">Kemarin</div>
-                                                    <div data-range="7hari">7 Hari Terakhir</div>
-                                                    <div data-range="bulanIni">Bulan Ini</div>
-                                                    <div data-range="bulanLalu">Bulan Lalu</div>
-                                                    <div data-range="tahunLalu">Tahun Lalu</div>
-                                                    <div data-range="kustom">Rentang Kustom</div>
-                                                </div>
-                                                <div class="kalender" id="kalender-view" style="display:none;">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- /Filter -->
-                        <div class="table-responsive product-list">
-                            <table class="table datanew">
-                                <thead>
-                                    <tr>
-                                        <th>Name</th>
-                                        <th>Email</th>
-                                        <th>Phone</th>
-                                        <th>Message</th>
-                                        <th>Date</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>John Doe</td>
-                                        <td>john.doe@email.com</td>
-                                        <td>+62 812 3456 7890</td>
-                                        <td>Hello, I want to know more about your products.</td>
-                                        <td>20/01/2024</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Jane Smith</td>
-                                        <td>jane.smith@email.com</td>
-                                        <td>+62 823 4567 8901</td>
-                                        <td>Can I get a price list for bulk orders?</td>
-                                        <td>15/01/2024</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Michael Brown</td>
-                                        <td>michael.brown@email.com</td>
-                                        <td>+62 834 5678 9012</td>
-                                        <td>I have an issue with my last order.</td>
-                                        <td>05/12/2023</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Sarah Jones</td>
-                                        <td>sarah.jones@email.com</td>
-                                        <td>+62 845 6789 0123</td>
-                                        <td>Do you offer international shipping?</td>
-                                        <td>22/11/2023</td>
-                                    </tr>
-                                    <tr>
-                                        <td>David Williams</td>
-                                        <td>david.williams@email.com</td>
-                                        <td>+62 856 7890 1234</td>
-                                        <td>Thank you for the fast response!</td>
-                                        <td>10/10/2023</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Emily Davis</td>
-                                        <td>emily.davis@email.com</td>
-                                        <td>+62 867 8901 2345</td>
-                                        <td>Looking for partnership opportunities.</td>
-                                        <td>01/09/2023</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Chris Wilson</td>
-                                        <td>chris.wilson@email.com</td>
-                                        <td>+62 878 9012 3456</td>
-                                        <td>How do I cancel my subscription?</td>
-                                        <td>19/08/2023</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Olivia Martin</td>
-                                        <td>olivia.martin@email.com</td>
-                                        <td>+62 889 0123 4567</td>
-                                        <td>The checkout page is showing an error.</td>
-                                        <td>03/07/2023</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Daniel Lee</td>
-                                        <td>daniel.lee@email.com</td>
-                                        <td>+62 890 1234 5678</td>
-                                        <td>Need technical support with API integration.</td>
-                                        <td>11/06/2023</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Sophia Hall</td>
-                                        <td>sophia.hall@email.com</td>
-                                        <td>+62 811 2345 6789</td>
-                                        <td>Please send me the latest catalog.</td>
-                                        <td>25/05/2023</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-
+      <div class="page-wrapper">
+        <!-- Main content tulis disini -->
+        <div class="content container-fluid">
+          <div class="page-header mt-5">
+            <div class="add-item d-flex">
+              <div class="page-title">
+                <h4>Contact Form List</h4>
+                <h6>Manage Contact Form</h6>
+              </div>
             </div>
+          </div>
+          <div class="row mt-5">
+            <div class="col-xl-3 col-sm-6 col-12 d-flex">
+              <div class="dash-widget w-100">
+                <div class="dash-widgetimg">
+                  <span><img src="assets/img/icons/dash1.svg" alt="img" /></span>
+                </div>
+                <div class="dash-widgetcontent">
+                  <h6>Total Contact</h6>
+                  <h5><span class="counters" data-count="307144">307144</span></h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- data table -->
+          <div class="card table-list-card">
+            <div class="card-body">
+              <!-- Filter -->
+              <div class="table-top d-flex align-items-center justify-content-between">
+                <!-- Search Input -->
+                <div class="search-set d-block d-md-flex">
+                  <div class="search-input">
+                    <a href="" class="btn btn-searchset"><i data-feather="search" class="feather-search"></i></a>
+                  </div>
+                  <!-- Date Range -->
+                  <div class="my-2">
+                    <div class="pemilihrentang-container">
+                      <input
+                        type="text"
+                        id="pemilihrentang-input"
+                        class="pemilihrentang-input form-control"
+                        readonly
+                        placeholder="Date"
+                        style="height: fit-content !important; width: 100% !important"
+                      />
+                      <div id="pemilihrentang-panel" class="pemilihrentang-panel">
+                        <div class="pemilihrentang-isi">
+                          <div class="opsi-cepat">
+                            <div data-range="kemarin">Kemarin</div>
+                            <div data-range="7hari">7 Hari Terakhir</div>
+                            <div data-range="bulanIni">Bulan Ini</div>
+                            <div data-range="bulanLalu">Bulan Lalu</div>
+                            <div data-range="tahunLalu">Tahun Lalu</div>
+                            <div data-range="kustom">Rentang Kustom</div>
+                          </div>
+                          <div class="kalender" id="kalender-view" style="display: none"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- /Filter -->
+              <div class="table-responsive product-list">
+                <table class="table datanew">
+                  <thead>
+                    <tr>
+                      <th>Name</th>
+                      <th>Email</th>
+                      <th>Phone</th>
+                      <th>Message</th>
+                      <th>Date</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>John Doe</td>
+                      <td>john.doe@email.com</td>
+                      <td>+62 812 3456 7890</td>
+                      <td>Hello, I want to know more about your products.</td>
+                      <td>20/01/2024</td>
+                    </tr>
+                    <tr>
+                      <td>Jane Smith</td>
+                      <td>jane.smith@email.com</td>
+                      <td>+62 823 4567 8901</td>
+                      <td>Can I get a price list for bulk orders?</td>
+                      <td>15/01/2024</td>
+                    </tr>
+                    <tr>
+                      <td>Michael Brown</td>
+                      <td>michael.brown@email.com</td>
+                      <td>+62 834 5678 9012</td>
+                      <td>I have an issue with my last order.</td>
+                      <td>05/12/2023</td>
+                    </tr>
+                    <tr>
+                      <td>Sarah Jones</td>
+                      <td>sarah.jones@email.com</td>
+                      <td>+62 845 6789 0123</td>
+                      <td>Do you offer international shipping?</td>
+                      <td>22/11/2023</td>
+                    </tr>
+                    <tr>
+                      <td>David Williams</td>
+                      <td>david.williams@email.com</td>
+                      <td>+62 856 7890 1234</td>
+                      <td>Thank you for the fast response!</td>
+                      <td>10/10/2023</td>
+                    </tr>
+                    <tr>
+                      <td>Emily Davis</td>
+                      <td>emily.davis@email.com</td>
+                      <td>+62 867 8901 2345</td>
+                      <td>Looking for partnership opportunities.</td>
+                      <td>01/09/2023</td>
+                    </tr>
+                    <tr>
+                      <td>Chris Wilson</td>
+                      <td>chris.wilson@email.com</td>
+                      <td>+62 878 9012 3456</td>
+                      <td>How do I cancel my subscription?</td>
+                      <td>19/08/2023</td>
+                    </tr>
+                    <tr>
+                      <td>Olivia Martin</td>
+                      <td>olivia.martin@email.com</td>
+                      <td>+62 889 0123 4567</td>
+                      <td>The checkout page is showing an error.</td>
+                      <td>03/07/2023</td>
+                    </tr>
+                    <tr>
+                      <td>Daniel Lee</td>
+                      <td>daniel.lee@email.com</td>
+                      <td>+62 890 1234 5678</td>
+                      <td>Need technical support with API integration.</td>
+                      <td>11/06/2023</td>
+                    </tr>
+                    <tr>
+                      <td>Sophia Hall</td>
+                      <td>sophia.hall@email.com</td>
+                      <td>+62 811 2345 6789</td>
+                      <td>Please send me the latest catalog.</td>
+                      <td>25/05/2023</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
         </div>
-
+      </div>
     </div>
 
     <!-- /Main Wrapper -->
@@ -237,8 +232,5 @@
 
     <script src="assets/js/theme-script.js"></script>
     <script src="assets/js/script.js"></script>
-
-
-</body>
-
+  </body>
 </html>

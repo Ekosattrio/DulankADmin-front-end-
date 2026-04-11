@@ -10,10 +10,8 @@
     />
     <meta name="author" content="Dreamguys - Bootstrap Admin Template" />
     <meta name="robots" content="noindex, nofollow" />
-    <title>Dreams Pos Admin Template</title>
-
-    <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png" />
+    <title>Kacetak System</title>
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/kacetak.jpeg" />
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
@@ -87,18 +85,18 @@
             </ul>
             <div class="page-btn">
               <a href="#" class="btn btn-added" data-bs-toggle="modal" data-bs-target="#addNewJobProcessModal"
-                ><i data-feather="plus-circle" class="me-2"></i>Add New Process Name</a
+                ><i data-feather="plus-circle" class="me-2"></i>Add New Flow Name</a
               >
             </div>
           </div>
-          <div class="row mt-5">
+          <!-- <div class="row mt-5">
             <div class="col-xl-3 col-sm-6 col-12 d-flex">
               <div class="dash-widget w-100">
                 <div class="dash-widgetimg">
                   <span><img src="assets/img/icons/dash1.svg" alt="img" /></span>
                 </div>
                 <div class="dash-widgetcontent">
-                  <h6>Total Process Name</h6>
+                  <h6>Total Flow Name</h6>
                   <h5><span class="counters" data-count="307144">307144</span></h5>
                 </div>
               </div>
@@ -114,7 +112,7 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div> -->
           <!-- /product list -->
           <div class="card table-list-card">
             <div class="card-body">
@@ -133,7 +131,7 @@
                         id="pemilihrentang-input"
                         class="pemilihrentang-input form-control"
                         readonly
-                        placeholder="Date"
+                        placeholder="Search Assignee"
                         style="height: fit-content !important; width: 100% !important"
                       />
                       <div id="pemilihrentang-panel" class="pemilihrentang-panel">
@@ -160,7 +158,7 @@
                       data-bs-toggle="dropdown"
                       aria-expanded="false"
                     >
-                      Process Name
+                      Flow Name
                     </button>
                     <ul class="dropdown-menu">
                       <li><a class="dropdown-item" href="#">Printing</a></li>
@@ -174,7 +172,7 @@
                       data-bs-toggle="dropdown"
                       aria-expanded="false"
                     >
-                      Category Process
+                      Flow Category
                     </button>
                     <ul class="dropdown-menu">
                       <li><a class="dropdown-item" href="#">Design</a></li>
@@ -192,11 +190,13 @@
                   <thead>
                     <tr>
                       <th>No</th>
-                      <th>Process Category</th>
-                      <th>Process Name</th>
+                      <th>Flow Category</th>
+                      <th>Flow Name</th>
+                      <th>For Product Category</th>
                       <th>Incentive Amount (Rp)</th>
                       <th>Unit Incentive</th>
-                      <th>Assignee</th>
+                      <th>Flow Assignee</th>
+                      <th>Flow Type</th>
                       <th>Create Date</th>
                       <th class="no-sort">Action</th>
                     </tr>
@@ -205,10 +205,12 @@
                     <tr>
                       <td>JBP-0001</td>
                       <td>Design</td>
-                      <td>Desain Nota Simple</td>
+                      <td>Design Layout</td>
+                      <td>Nota / Faktur</td>
                       <td>5000</td>
                       <td>Per Job</td>
                       <td>Adul, Nurdin</td>
+                      <td>Internal</td>
                       <td>Admin, 2025-10-13 10:35:00</td>
                       <td class="action-table-data">
                         <div class="edit-delete-action">
@@ -222,10 +224,12 @@
                     <tr>
                       <td>JBP-0002</td>
                       <td>Pracetak</td>
-                      <td>Penyetelan Mesin Offset</td>
+                      <td>Pre-press Setting</td>
+                      <td>Buku / Majalah</td>
                       <td>8500</td>
                       <td>Per Job</td>
                       <td>Adul, Nurdin, Admin</td>
+                      <td>Internal</td>
                       <td>Admin, 2025-10-13 10:40:00</td>
                       <td class="action-table-data">
                         <div class="edit-delete-action">
@@ -239,10 +243,12 @@
                     <tr>
                       <td>JBP-0003</td>
                       <td>Cetak</td>
-                      <td>Cetak Spanduk Flexi</td>
+                      <td>Digital Printing</td>
+                      <td>Banner / Spanduk</td>
                       <td>4000</td>
                       <td>Per Meter</td>
                       <td>Arif, Galih</td>
+                      <td>Eksternal</td>
                       <td>Admin, 2025-10-13 10:45:00</td>
                       <td class="action-table-data">
                         <div class="edit-delete-action">
@@ -256,10 +262,12 @@
                     <tr>
                       <td>JBP-0004</td>
                       <td>Finishing</td>
-                      <td>Potong Kertas A3+</td>
+                      <td>Paper Cutting</td>
+                      <td>Poster / Stiker</td>
                       <td>1500</td>
                       <td>Per Ream</td>
                       <td>Rapli, Nurdin</td>
+                      <td>Internal</td>
                       <td>Admin, 2025-10-13 10:50:00</td>
                       <td class="action-table-data">
                         <div class="edit-delete-action">
@@ -270,14 +278,15 @@
                         </div>
                       </td>
                     </tr>
-
                     <tr>
                       <td>JBP-0005</td>
                       <td>Design</td>
-                      <td>Desain Kalender Meja</td>
+                      <td>Custom Design</td>
+                      <td>Kalender</td>
                       <td>9000</td>
                       <td>Per Job</td>
                       <td>Adul, Admin, Arif</td>
+                      <td>Internal</td>
                       <td>Adul, 2025-10-14 09:00:00</td>
                       <td class="action-table-data">
                         <div class="edit-delete-action">
@@ -288,14 +297,15 @@
                         </div>
                       </td>
                     </tr>
-
                     <tr>
                       <td>JBP-0006</td>
                       <td>Pracetak</td>
-                      <td>Pembuatan Plate CTP</td>
+                      <td>Plate Making</td>
+                      <td>Buku / Majalah</td>
                       <td>6000</td>
                       <td>Per Pieces</td>
                       <td>Nurdin, Galih</td>
+                      <td>Eksternal</td>
                       <td>Adul, 2025-10-14 09:05:00</td>
                       <td class="action-table-data">
                         <div class="edit-delete-action">
@@ -306,14 +316,15 @@
                         </div>
                       </td>
                     </tr>
-
                     <tr>
                       <td>JBP-0007</td>
                       <td>Cetak</td>
-                      <td>Cetak Brosur Full Color</td>
+                      <td>Offset Printing</td>
+                      <td>Brosur / Flyer</td>
                       <td>5000</td>
                       <td>Per Ream</td>
                       <td>Admin, Rapli, Adul</td>
+                      <td>Internal</td>
                       <td>Adul, 2025-10-14 09:10:00</td>
                       <td class="action-table-data">
                         <div class="edit-delete-action">
@@ -324,14 +335,15 @@
                         </div>
                       </td>
                     </tr>
-
                     <tr>
                       <td>JBP-0008</td>
                       <td>Finishing</td>
-                      <td>Laminasi Doff/Glossy</td>
+                      <td>Laminating</td>
+                      <td>Buku / Poster</td>
                       <td>8500</td>
                       <td>Per Pieces</td>
                       <td>Galih, Arif</td>
+                      <td>Internal</td>
                       <td>Nurdin, 2025-10-14 11:20:00</td>
                       <td class="action-table-data">
                         <div class="edit-delete-action">
@@ -342,14 +354,15 @@
                         </div>
                       </td>
                     </tr>
-
                     <tr>
                       <td>JBP-0009</td>
                       <td>Design</td>
-                      <td>Koreksi File Klien</td>
+                      <td>File Proofing</td>
+                      <td>Semua Produk</td>
                       <td>4000</td>
                       <td>Per Job</td>
                       <td>Nurdin, Admin</td>
+                      <td>Internal</td>
                       <td>Nurdin, 2025-10-14 11:25:00</td>
                       <td class="action-table-data">
                         <div class="edit-delete-action">
@@ -360,14 +373,15 @@
                         </div>
                       </td>
                     </tr>
-
                     <tr>
                       <td>JBP-0010</td>
                       <td>Pracetak</td>
-                      <td>Proofing Digital</td>
+                      <td>Digital Proofing</td>
+                      <td>Brosur / Undangan</td>
                       <td>1500</td>
                       <td>Per Job</td>
                       <td>Adul, Arif</td>
+                      <td>Internal</td>
                       <td>Nurdin, 2025-10-14 11:30:00</td>
                       <td class="action-table-data">
                         <div class="edit-delete-action">
@@ -378,14 +392,15 @@
                         </div>
                       </td>
                     </tr>
-
                     <tr>
                       <td>JBP-0011</td>
                       <td>Cetak</td>
-                      <td>Cetak Digital Banner</td>
+                      <td>Large Format Printing</td>
+                      <td>Banner / X-Banner</td>
                       <td>9000</td>
                       <td>Per Meter</td>
                       <td>Galih, Rapli, Nurdin</td>
+                      <td>Eksternal</td>
                       <td>Admin, 2025-10-15 13:00:00</td>
                       <td class="action-table-data">
                         <div class="edit-delete-action">
@@ -396,14 +411,15 @@
                         </div>
                       </td>
                     </tr>
-
                     <tr>
                       <td>JBP-0012</td>
                       <td>Finishing</td>
-                      <td>Jilid Spiral Kawat</td>
+                      <td>Binding</td>
+                      <td>Kalender / Blocknote</td>
                       <td>6000</td>
                       <td>Per Pieces</td>
                       <td>Adul, Galih, Admin, Arif</td>
+                      <td>Internal</td>
                       <td>Admin, 2025-10-15 13:05:00</td>
                       <td class="action-table-data">
                         <div class="edit-delete-action">
@@ -414,14 +430,15 @@
                         </div>
                       </td>
                     </tr>
-
                     <tr>
                       <td>JBP-0013</td>
                       <td>Design</td>
-                      <td>Desain Logo Baru</td>
+                      <td>Redesign</td>
+                      <td>Corporate Identity</td>
                       <td>5000</td>
                       <td>Per Job</td>
                       <td>Admin, Arif, Rapli, Galih</td>
+                      <td>Internal</td>
                       <td>Adul, 2025-10-15 13:45:00</td>
                       <td class="action-table-data">
                         <div class="edit-delete-action">
@@ -432,14 +449,15 @@
                         </div>
                       </td>
                     </tr>
-
                     <tr>
                       <td>JBP-0014</td>
                       <td>Pracetak</td>
-                      <td>Setting Warna Khusus (Spot)</td>
+                      <td>Color Separation</td>
+                      <td>Kemasan / Undangan</td>
                       <td>8500</td>
                       <td>Per Job</td>
                       <td>Adul, Nurdin, Arif</td>
+                      <td>Internal</td>
                       <td>Adul, 2025-10-15 15:50:00</td>
                       <td class="action-table-data">
                         <div class="edit-delete-action">
@@ -450,14 +468,15 @@
                         </div>
                       </td>
                     </tr>
-
                     <tr>
                       <td>JBP-0015</td>
                       <td>Cetak</td>
-                      <td>Cetak Box Packaging</td>
+                      <td>UV Printing</td>
+                      <td>Kemasan / Packaging</td>
                       <td>4000</td>
                       <td>Per Pieces</td>
                       <td>Nurdin, Rapli</td>
+                      <td>Internal</td>
                       <td>Nurdin, 2025-10-16 08:35:00</td>
                       <td class="action-table-data">
                         <div class="edit-delete-action">
@@ -468,14 +487,15 @@
                         </div>
                       </td>
                     </tr>
-
                     <tr>
                       <td>JBP-0016</td>
                       <td>Finishing</td>
-                      <td>Pengepakan (Packing)</td>
+                      <td>Packing</td>
+                      <td>Semua Produk</td>
                       <td>1500</td>
                       <td>Per Job</td>
                       <td>Admin, Adul, Nurdin, Arif, Galih, Rapli</td>
+                      <td>Internal</td>
                       <td>Nurdin, 2025-10-16 08:35:00</td>
                       <td class="action-table-data">
                         <div class="edit-delete-action">
@@ -486,14 +506,15 @@
                         </div>
                       </td>
                     </tr>
-
                     <tr>
                       <td>JBP-0017</td>
                       <td>Design</td>
-                      <td>Final Approval Desain</td>
+                      <td>Final Artwork</td>
+                      <td>Semua Produk</td>
                       <td>9000</td>
                       <td>Per Job</td>
                       <td>Adul, Rapli</td>
+                      <td>Internal</td>
                       <td>Admin, 2025-10-16 16:15:00</td>
                       <td class="action-table-data">
                         <div class="edit-delete-action">
@@ -504,14 +525,15 @@
                         </div>
                       </td>
                     </tr>
-
                     <tr>
                       <td>JBP-0018</td>
                       <td>Pracetak</td>
-                      <td>Koreksi Film &amp; Plate</td>
+                      <td>Film Checking</td>
+                      <td>Buku / Majalah</td>
                       <td>6000</td>
                       <td>Per Pieces</td>
                       <td>Nurdin, Admin, Galih</td>
+                      <td>Internal</td>
                       <td>Admin, 2025-10-16 16:20:00</td>
                       <td class="action-table-data">
                         <div class="edit-delete-action">
@@ -522,14 +544,15 @@
                         </div>
                       </td>
                     </tr>
-
                     <tr>
                       <td>JBP-0019</td>
                       <td>Cetak</td>
-                      <td>Cetak Amplop Kop Surat</td>
+                      <td>Screen Printing</td>
+                      <td>Stationery</td>
                       <td>5000</td>
                       <td>Per Ream</td>
                       <td>Arif, Adul</td>
+                      <td>Internal</td>
                       <td>Adul, 2025-10-17 09:40:00</td>
                       <td class="action-table-data">
                         <div class="edit-delete-action">
@@ -540,14 +563,15 @@
                         </div>
                       </td>
                     </tr>
-
                     <tr>
                       <td>JBP-0020</td>
                       <td>Finishing</td>
-                      <td>Lipat Manual/Mesin</td>
+                      <td>Folding</td>
+                      <td>Brosur / Undangan</td>
                       <td>8500</td>
                       <td>Per Ream</td>
                       <td>Rapli, Arif, Admin</td>
+                      <td>Internal</td>
                       <td>Adul, 2025-10-17 09:45:00</td>
                       <td class="action-table-data">
                         <div class="edit-delete-action">
@@ -569,7 +593,7 @@
     </div>
     <!-- /Main Wrapper -->
 
-    <!-- Modal for add new paper group -->
+    <!-- Modal for add new  -->
     <div
       class="modal fade text-standard"
       id="addNewJobProcessModal"
@@ -580,7 +604,7 @@
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header py-2">
-            <h5 class="modal-title" id="addNewJobProcessModalLabel">Add New Process Name</h5>
+            <h5 class="modal-title" id="addNewJobProcessModalLabel">Add New Flow Name</h5>
             <div class="d-flex align-items-center">
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
@@ -590,7 +614,86 @@
               <form>
                 <div class="row mb-3">
                   <div class="col-5">
-                    <label class="form-label">Proses Category</label>
+                    <label for="name" class="form-label">Flow Name</label>
+                  </div>
+                  <div class="col-7">
+                    <input type="text" class="form-control" id="name" />
+                  </div>
+                </div>
+
+                <div class="row mb-3">
+                  <div class="col-5">
+                    <label for="incentive" class="form-label">Incentive Amount</label>
+                  </div>
+                  <div class="col-7">
+                    <input type="text" class="form-control number-separator" inputmode="numeric" pattern="[0-9]*" />
+                    <input type="hidden" class="result-input" id="incentive" />
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <div class="col-5">
+                    <label class="form-label">Unit Incentive</label>
+                  </div>
+                  <div class="col-7">
+                    <select class="select">
+                      <option>Per Job</option>
+                      <option>Per Meter</option>
+                      <option>Per Pieces</option>
+                      <option>Per Ream</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="row mb-3">
+                  <div class="col-5">
+                    <label class="form-label mt-2">Assignee</label>
+                  </div>
+                  <div class="col-7">
+                    <div class="d-flex mb-2 mt-2">
+                      <div class="form-check form-check-inline">
+                        <input
+                          class="form-check-input"
+                          type="radio"
+                          name="assigneeType"
+                          id="radioEmployee"
+                          value="employee"
+                          checked
+                        />
+                        <label class="form-check-label" for="radioEmployee">Employees</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input
+                          class="form-check-input"
+                          type="radio"
+                          name="assigneeType"
+                          id="radioDepartment"
+                          value="department"
+                        />
+                        <label class="form-check-label" for="radioDepartment">Department</label>
+                      </div>
+                    </div>
+
+                    <div class="form-check mb-2" id="multipleEmployeeWrapper">
+                      <input class="form-check-input" type="checkbox" id="checkMultiple" value="multiple" />
+                      <label class="form-check-label text-muted small" for="checkMultiple">Multiple Assignees</label>
+                    </div>
+
+                    <input type="text" class="form-control" id="assigne-input" placeholder="Enter assignee name" />
+
+                    <div id="multiple-select-wrapper" class="d-none">
+                      <select class="select2 form-control" id="assigne-multiple-select" multiple="multiple"></select>
+                    </div>
+
+                    <select id="assigne-select" class="form-select d-none" disabled>
+                      <option value="">Select department</option>
+                      <option value="tim-cutting">Tim Cutting</option>
+                      <option value="tim-printing">Tim Printing</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <div class="col-5">
+                    <label class="form-label">Flow Category</label>
                   </div>
                   <div class="col-7">
                     <select class="select">
@@ -601,68 +704,23 @@
                     </select>
                   </div>
                 </div>
-
                 <div class="row mb-3">
                   <div class="col-5">
-                    <label for="name" class="form-label">Process Name</label>
-                  </div>
-                  <div class="col-7">
-                    <input type="text" class="form-control" id="name" />
-                  </div>
-                </div>
-
-                <div class="row mb-3">
-                  <div class="col-5">
-                    <label for="incentive" class="form-label">Incentive</label>
-                  </div>
-                  <div class="col-7">
-                    <input type="text" class="form-control number-separator" inputmode="numeric" pattern="[0-9]*" />
-                    <input type="hidden" class="result-input" id="incentive" />
-                  </div>
-                </div>
-
-                <div class="row mb-3">
-                  <div class="col-5">
-                    <label for="assigne" class="form-label">Assignee</label>
+                    <label class="form-label">Flow Type</label>
                   </div>
                   <div class="col-7">
                     <div class="card-body p-0 mb-2">
                       <div class="form-check form-check-inline">
-                        <input
-                          class="form-check-input"
-                          type="radio"
-                          name="assigneeType"
-                          id="radioEmployee"
-                          value="employee"
-                          checked
-                        />
-                        <label class="form-check-label" for="radioEmployee"> Employees </label>
+                        <input class="form-check-input" type="radio" name="flow_type" id="inhouse" value="In-House" />
+                        <label class="form-check-label" for="inhouse"> In-House </label>
                       </div>
                       <div class="form-check form-check-inline">
-                        <input
-                          class="form-check-input"
-                          type="radio"
-                          name="assigneeType"
-                          id="radioDepartment"
-                          value="department"
-                        />
-                        <label class="form-check-label" for="radioDepartment"> Department </label>
+                        <input class="form-check-input" type="radio" name="flow_type" id="outsource" value="OutSource" />
+                        <label class="form-check-label" for="outsource"> OutSource </label>
                       </div>
                     </div>
-
-                    <!-- plain input (default) -->
-                    <input type="text" class="form-control" id="assigne-input" placeholder="Enter assignee name" />
-
-                    <!-- select for department (hidden by default) -->
-                    <select id="assigne-select" class="form-select d-none" disabled>
-                      <option value="">Select department</option>
-                      <option value="tim-cutting">Tim Cutting</option>
-                      <option value="tim-printing">Tim Printing</option>
-                      <!-- tambahkan opsi department lain di sini -->
-                    </select>
                   </div>
                 </div>
-
                 <small class="d-none text-standard text-danger" id="info-selected-all-1"
                   ><i class="fa-solid fa-circle-info"></i> please input your specification<br
                 /></small>
@@ -683,7 +741,7 @@
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header py-2">
-            <h5 class="modal-title" id="edit-unitsLabel">Add New Process Name</h5>
+            <h5 class="modal-title" id="addNewJobProcessModalLabel">Edit New Flow Name</h5>
             <div class="d-flex align-items-center">
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
@@ -693,7 +751,86 @@
               <form>
                 <div class="row mb-3">
                   <div class="col-5">
-                    <label class="form-label">Process Category</label>
+                    <label for="name" class="form-label">Flow Name</label>
+                  </div>
+                  <div class="col-7">
+                    <input type="text" class="form-control" id="name" value="Printing" />
+                  </div>
+                </div>
+
+                <div class="row mb-3">
+                  <div class="col-5">
+                    <label for="incentive" class="form-label">Incentive Amount</label>
+                  </div>
+                  <div class="col-7">
+                    <input type="text" class="form-control number-separator" inputmode="numeric" pattern="[0-9]*" value="10000" />
+                    <input type="hidden" class="result-input" id="incentive" value="10000" />
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <div class="col-5">
+                    <label class="form-label">Unit Incentive</label>
+                  </div>
+                  <div class="col-7">
+                    <select class="select">
+                      <option>Per Job</option>
+                      <option>Per Meter</option>
+                      <option>Per Pieces</option>
+                      <option>Per Ream</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="row mb-3">
+                  <div class="col-5">
+                    <label class="form-label mt-2">Assignee</label>
+                  </div>
+                  <div class="col-7">
+                    <div class="d-flex mb-2 mt-2">
+                      <div class="form-check form-check-inline">
+                        <input
+                          class="form-check-input"
+                          type="radio"
+                          name="assigneeType"
+                          id="radioEmployee"
+                          value="employee"
+                          checked
+                        />
+                        <label class="form-check-label" for="radioEmployee">Employees</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input
+                          class="form-check-input"
+                          type="radio"
+                          name="assigneeType"
+                          id="radioDepartment"
+                          value="department"
+                        />
+                        <label class="form-check-label" for="radioDepartment">Department</label>
+                      </div>
+                    </div>
+
+                    <div class="form-check mb-2" id="multipleEmployeeWrapper">
+                      <input class="form-check-input" type="checkbox" id="checkMultiple" value="multiple" />
+                      <label class="form-check-label text-muted small" for="checkMultiple">Multiple Assignees</label>
+                    </div>
+
+                    <input type="text" class="form-control" id="assigne-input" placeholder="Enter assignee name" />
+
+                    <div id="multiple-select-wrapper" class="d-none">
+                      <select class="select2 form-control" id="assigne-multiple-select" multiple="multiple"></select>
+                    </div>
+
+                    <select id="assigne-select" class="form-select d-none" disabled>
+                      <option value="">Select department</option>
+                      <option value="tim-cutting">Tim Cutting</option>
+                      <option value="tim-printing">Tim Printing</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <div class="col-5">
+                    <label class="form-label">Flow Category</label>
                   </div>
                   <div class="col-7">
                     <select class="select">
@@ -706,71 +843,21 @@
                 </div>
                 <div class="row mb-3">
                   <div class="col-5">
-                    <label for="name" class="form-label">Nama of Process</label>
-                  </div>
-                  <div class="col-7">
-                    <input type="text" class="form-control" id="name" value="Printing" />
-                  </div>
-                </div>
-
-                <div class="row mb-3">
-                  <div class="col-5">
-                    <label for="incentive" class="form-label">Incentive</label>
-                  </div>
-                  <div class="col-7">
-                    <input type="text" class="form-control number-separator" inputmode="numeric" pattern="[0-9]*" value="500" />
-                    <input type="hidden" class="result-input" id="incentive" value="500" />
-                  </div>
-                </div>
-
-                <div class="row mb-3">
-                  <div class="col-5">
-                    <label for="assigne" class="form-label">Assignee</label>
+                    <label class="form-label">Flow Type</label>
                   </div>
                   <div class="col-7">
                     <div class="card-body p-0 mb-2">
                       <div class="form-check form-check-inline">
-                        <input
-                          class="form-check-input"
-                          type="radio"
-                          name="assigneeType"
-                          id="radioEmployee"
-                          value="employee"
-                          checked
-                        />
-                        <label class="form-check-label" for="radioEmployee"> Employees </label>
+                        <input class="form-check-input" type="radio" name="flow_type" id="inhouse" value="In-House" />
+                        <label class="form-check-label" for="inhouse"> In-House </label>
                       </div>
                       <div class="form-check form-check-inline">
-                        <input
-                          class="form-check-input"
-                          type="radio"
-                          name="assigneeType"
-                          id="radioDepartment"
-                          value="department"
-                        />
-                        <label class="form-check-label" for="radioDepartment"> Department </label>
+                        <input class="form-check-input" type="radio" name="flow_type" id="outsource" value="OutSource" />
+                        <label class="form-check-label" for="outsource"> OutSource </label>
                       </div>
                     </div>
-
-                    <!-- plain input (default) -->
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="assigne-input"
-                      placeholder="Enter assignee name"
-                      value="Eko Satrio, Desman Dwi	"
-                    />
-
-                    <!-- select for department (hidden by default) -->
-                    <select id="assigne-select" class="form-select d-none" disabled>
-                      <option value="">Select department</option>
-                      <option value="tim-cutting">Tim Cutting</option>
-                      <option value="tim-printing">Tim Printing</option>
-                      <!-- tambahkan opsi department lain di sini -->
-                    </select>
                   </div>
                 </div>
-
                 <small class="d-none text-standard text-danger" id="info-selected-all-1"
                   ><i class="fa-solid fa-circle-info"></i> please input your specification<br
                 /></small>
@@ -824,21 +911,38 @@
     <script src="assets/js/script.js"></script>
 
     <script>
-      (function ($) {
+      $(document).ready(function () {
+        $("#assigne-multiple-select").select2({
+          tags: true,
+          placeholder: "Enter untuk input nama",
+          width: "100%",
+          tokenSeparators: [","],
+        });
+
         function toggleAssignee() {
           if ($("#radioDepartment").is(":checked")) {
+            $("#multipleEmployeeWrapper").addClass("d-none");
+
             $("#assigne-input").addClass("d-none").prop("disabled", true);
+            $("#multiple-select-wrapper").addClass("d-none");
+
             $("#assigne-select").removeClass("d-none").prop("disabled", false);
           } else {
+            $("#multipleEmployeeWrapper").removeClass("d-none");
             $("#assigne-select").addClass("d-none").prop("disabled", true);
-            $("#assigne-input").removeClass("d-none").prop("disabled", false);
+            if ($("#checkMultiple").is(":checked")) {
+              $("#assigne-input").addClass("d-none").prop("disabled", true);
+              $("#multiple-select-wrapper").removeClass("d-none");
+            } else {
+              $("#multiple-select-wrapper").addClass("d-none");
+              $("#assigne-input").removeClass("d-none").prop("disabled", false);
+            }
           }
         }
-        $(function () {
-          toggleAssignee();
-          $(document).on("change", 'input[name="assigneeType"]', toggleAssignee);
-        });
-      })(jQuery);
+        toggleAssignee();
+        $('input[name="assigneeType"]').on("change", toggleAssignee);
+        $("#checkMultiple").on("change", toggleAssignee);
+      });
     </script>
   </body>
 </html>

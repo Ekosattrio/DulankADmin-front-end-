@@ -1,340 +1,350 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0" />
+    <meta name="description" content="POS - Bootstrap Admin Template" />
+    <meta
+      name="keywords"
+      content="admin, estimates, bootstrap, business, corporate, creative, invoice, html5, responsive, Projects"
+    />
+    <meta name="author" content="Dreamguys - Bootstrap Admin Template" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Kacetak System</title>
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/kacetak.jpeg" />
 
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
-	<meta name="description" content="POS - Bootstrap Admin Template">
-	<meta name="keywords"
-		content="admin, estimates, bootstrap, business, corporate, creative, invoice, html5, responsive, Projects">
-	<meta name="author" content="Dreamguys - Bootstrap Admin Template">
-	<meta name="robots" content="noindex, nofollow">
-	<title>Dreams Pos Admin Template</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
 
-	<!-- Favicon -->
-	<link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png" />
+    <!-- Datetimepicker CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap-datetimepicker.min.css" />
 
-	<!-- Bootstrap CSS -->
-	<link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <!-- animation CSS -->
+    <link rel="stylesheet" href="assets/css/animate.css" />
 
-	<!-- Datetimepicker CSS -->
-	<link rel="stylesheet" href="assets/css/bootstrap-datetimepicker.min.css" />
+    <!-- Select2 CSS -->
+    <link rel="stylesheet" href="assets/plugins/select2/css/select2.min.css" />
 
-	<!-- animation CSS -->
-	<link rel="stylesheet" href="assets/css/animate.css" />
+    <!-- Datatable CSS -->
+    <link rel="stylesheet" href="assets/css/dataTables.bootstrap5.min.css" />
 
-	<!-- Select2 CSS -->
-	<link rel="stylesheet" href="assets/plugins/select2/css/select2.min.css" />
+    <!-- Daterangepikcer CSS -->
+    <link rel="stylesheet" href="assets/plugins/daterangepicker/daterangepicker.css" />
 
-	<!-- Datatable CSS -->
-	<link rel="stylesheet" href="assets/css/dataTables.bootstrap5.min.css" />
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css" />
+    <link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css" />
 
-	<!-- Daterangepikcer CSS -->
-	<link rel="stylesheet" href="assets/plugins/daterangepicker/daterangepicker.css" />
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
 
-	<!-- Fontawesome CSS -->
-	<link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css" />
-	<link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css" />
+  <body>
+    <div id="global-loader">
+      <div class="loader"></div>
+    </div>
+    <!-- Main Wrapper -->
+    <div class="main-wrapper">
+      <!-- header -->
+      <div id="header-placeholder"></div>
+      <!-- sidebar -->
+      <div id="sidebar-placeholder"></div>
 
-	<!-- Main CSS -->
-	<link rel="stylesheet" href="assets/css/style.css" />
+      <div class="page-wrapper mt-3">
+        <!-- Main content tulis disini -->
+        <div class="content">
+          <div class="page-header justify-content-between">
+            <div class="page-title">
+              <h4>Account Statement</h4>
+              <h6>View Your Statement</h6>
+            </div>
+            <ul class="table-top-head">
+              <li>
+                <a data-bs-toggle="tooltip" data-bs-placement="top" title="Pdf"
+                  ><img src="assets/img/icons/pdf.svg" alt="img"
+                /></a>
+              </li>
+              <li>
+                <a data-bs-toggle="tooltip" data-bs-placement="top" title="Print"
+                  ><i data-feather="printer" class="feather-rotate-ccw"></i
+                ></a>
+              </li>
+              <li>
+                <a data-bs-toggle="tooltip" data-bs-placement="top" title="Refresh"
+                  ><i data-feather="rotate-ccw" class="feather-rotate-ccw"></i
+                ></a>
+              </li>
+              <li>
+                <a data-bs-toggle="tooltip" data-bs-placement="top" title="Collapse" id="collapse-header"
+                  ><i data-feather="chevron-up" class="feather-chevron-up"></i
+                ></a>
+              </li>
+            </ul>
+          </div>
 
-</head>
-
-<body>
-	<div id="global-loader">
-		<div class="loader"> </div>
-	</div>
-	<!-- Main Wrapper -->
-	<div class="main-wrapper">
-
-		<!-- header -->
-		<div id="header-placeholder"></div>
-		<!-- sidebar -->
-		<div id="sidebar-placeholder"></div>
-
-		<div class="page-wrapper mt-3">
-			<!-- Main content tulis disini -->
-			<div class="content">
-				<div class="page-header justify-content-between">
-					<div class="page-title">
-						<h4>Account Statement</h4>
-						<h6>View Your Statement</h6>
-					</div>
-					<ul class="table-top-head">
-						<li>
-							<a data-bs-toggle="tooltip" data-bs-placement="top" title="Pdf"><img
-									src="assets/img/icons/pdf.svg" alt="img" /></a>
-						</li>
-						<li>
-							<a data-bs-toggle="tooltip" data-bs-placement="top" title="Print"><i data-feather="printer"
-									class="feather-rotate-ccw"></i></a>
-						</li>
-						<li>
-							<a data-bs-toggle="tooltip" data-bs-placement="top" title="Refresh"><i
-									data-feather="rotate-ccw" class="feather-rotate-ccw"></i></a>
-						</li>
-						<li>
-							<a data-bs-toggle="tooltip" data-bs-placement="top" title="Collapse" id="collapse-header"><i
-									data-feather="chevron-up" class="feather-chevron-up"></i></a>
-						</li>
-					</ul>
-				</div>
-
-				<!-- /product list -->
-				<div class="card table-list-card">
-					<div class="card-body">
-						<!-- Filter -->
-						<div class="table-top d-flex align-items-center justify-content-between">
-							<!-- Search Input -->
-							<div class="search-set d-block d-md-flex">
-								<div class="search-input d-none">
-									<a href="" class="btn btn-searchset"><i data-feather="search"
-											class="feather-search"></i></a>
-								</div>
-								<!-- Date Range -->
-								<div class="my-2">
-									<div class="pemilihrentang-container ">
-										<input type="text" id="pemilihrentang-input"
-											class="pemilihrentang-input form-control" readonly placeholder="Date"
-											style="height: fit-content !important;width: 100% !important;">
-										<div id="pemilihrentang-panel" class="pemilihrentang-panel">
-											<div class="pemilihrentang-isi">
-												<div class="opsi-cepat">
-													<div data-range="kemarin">Kemarin</div>
-													<div data-range="7hari">7 Hari Terakhir</div>
-													<div data-range="bulanIni">Bulan Ini</div>
-													<div data-range="bulanLalu">Bulan Lalu</div>
-													<div data-range="tahunLalu">Tahun Lalu</div>
-													<div data-range="kustom">Rentang Kustom</div>
-												</div>
-												<div class="kalender" id="kalender-view" style="display:none;">
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="filters d-flex justify-content-end gap-2">
-							
-								<select id="accountSelect" class="btn btn-outline-primary dropdown-toggle"
-										style="appearance: none; background-image: url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 16 16%22%3E%3Cpath fill=%22none%22 stroke=%22%23343a40%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22 stroke-width=%222%22 d=%22M2 5l6 6 6-6%22/%3E%3C/svg%3E'); background-repeat: no-repeat; background-position: right 0.75rem center; background-size: 16px 12px; padding-right: 2.25rem;">
-										<option value="" class="bg-light text-primary">Account</option>
-										<option value="zephyria" class="bg-light text-primary">Zephyria</option>
-										<option value="linda" class="bg-light text-primary">Linda</option>
-										<option value="eko" class="bg-light text-primary">Eko</option>
-									</select>
-								<button id="submitBtn" type="button" class="btn btn-primary" disabled>
-									Submit
-								</button>
-							</div>
-
-						</div>
-						<!-- /Filter -->
-						<div class="table-responsive">
-							<table class="table  datanew list">
-								<thead>
-									<tr>
-										<!-- <th>Reference Number</th>
+          <!-- /product list -->
+          <div class="card table-list-card">
+            <div class="card-body">
+              <!-- Filter -->
+              <div class="table-top d-flex align-items-center justify-content-between">
+                <!-- Search Input -->
+                <div class="search-set d-block d-md-flex">
+                  <div class="search-input d-none">
+                    <a href="" class="btn btn-searchset"><i data-feather="search" class="feather-search"></i></a>
+                  </div>
+                  <!-- Date Range -->
+                  <div class="my-2">
+                    <div class="pemilihrentang-container">
+                      <input
+                        type="text"
+                        id="pemilihrentang-input"
+                        class="pemilihrentang-input form-control"
+                        readonly
+                        placeholder="Date"
+                        style="height: fit-content !important; width: 100% !important"
+                      />
+                      <div id="pemilihrentang-panel" class="pemilihrentang-panel">
+                        <div class="pemilihrentang-isi">
+                          <div class="opsi-cepat">
+                            <div data-range="kemarin">Kemarin</div>
+                            <div data-range="7hari">7 Hari Terakhir</div>
+                            <div data-range="bulanIni">Bulan Ini</div>
+                            <div data-range="bulanLalu">Bulan Lalu</div>
+                            <div data-range="tahunLalu">Tahun Lalu</div>
+                            <div data-range="kustom">Rentang Kustom</div>
+                          </div>
+                          <div class="kalender" id="kalender-view" style="display: none"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="filters d-flex justify-content-end gap-2">
+                  <select
+                    id="accountSelect"
+                    class="btn btn-outline-primary dropdown-toggle"
+                    style="
+                      appearance: none;
+                      background-image: url(&quot;data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 16 16%22%3E%3Cpath fill=%22none%22 stroke=%22%23343a40%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22 stroke-width=%222%22 d=%22M2 5l6 6 6-6%22/%3E%3C/svg%3E&quot;);
+                      background-repeat: no-repeat;
+                      background-position: right 0.75rem center;
+                      background-size: 16px 12px;
+                      padding-right: 2.25rem;
+                    "
+                  >
+                    <option value="" class="bg-light text-primary">Account</option>
+                    <option value="zephyria" class="bg-light text-primary">Zephyria</option>
+                    <option value="linda" class="bg-light text-primary">Linda</option>
+                    <option value="eko" class="bg-light text-primary">Eko</option>
+                  </select>
+                  <button id="submitBtn" type="button" class="btn btn-primary" disabled>Submit</button>
+                </div>
+              </div>
+              <!-- /Filter -->
+              <div class="table-responsive">
+                <table class="table datanew list">
+                  <thead>
+                    <tr>
+                      <!-- <th>Reference Number</th>
 										<th>Date</th>
 										<th>Category</th>
 										<th>Description</th>
 										<th>Amount</th>
 										<th>Transaction type</th>
 										<th>Balance</th> -->
-										<th>No</th>
-										<th>Date</th>
-										<th>Category</th>
-										<th>Description</th>
-										<th>Amount</th>
-										<th>Transaction type</th>
-										<th>Balance</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>1</td>
-										<td>01/12/25</td>
-										<td>Sale</td>
-										<td>Pelunasan Cetak Brosur (Invoice #001)</td>
-										<td>2500000</td>
-										<td><span class="badge bg-outline-success">Credit</span></td>
-										<td>18250000</td>
-									</tr>
-									<tr>
-										<td>2</td>
-										<td>03/12/25</td>
-										<td>Purchase</td>
-										<td>Pembelian Kertas Art Paper 230gr</td>
-										<td>4200000</td>
-										<td><span class="badge bg-outline-danger">Debit</span></td>
-										<td>14050000</td>
-									</tr>
-									<tr>
-										<td>3</td>
-										<td>05/12/25</td>
-										<td>Expense</td>
-										<td>Pembayaran Listrik Workshop</td>
-										<td>1200000</td>
-										<td><span class="badge bg-outline-danger">Debit</span></td>
-										<td>12850000</td>
-									</tr>
-									<tr>
-										<td>4</td>
-										<td>08/12/25</td>
-										<td>Sale</td>
-										<td>DP Cetak Banner Pilkada</td>
-										<td>5000000</td>
-										<td><span class="badge bg-outline-success">Credit</span></td>
-										<td>17850000</td>
-									</tr>
-									<tr>
-										<td>5</td>
-										<td>10/12/25</td>
-										<td>Sales Refund</td>
-										<td>Refund Salah Ukuran Cetak (Ref #002)</td>
-										<td>500000</td>
-										<td><span class="badge bg-outline-danger">Debit</span></td>
-										<td>17350000</td>
-									</tr>
-									<tr>
-										<td>6</td>
-										<td>12/12/25</td>
-										<td>Expense</td>
-										<td>Service Mesin Plotter Utama</td>
-										<td>850000</td>
-										<td><span class="badge bg-outline-danger">Debit</span></td>
-										<td>16500000</td>
-									</tr>
-									<tr>
-										<td>7</td>
-										<td>15/12/25</td>
-										<td>Purchase Refund</td>
-										<td>Retur Tinta Kadaluarsa</td>
-										<td>750000</td>
-										<td><span class="badge bg-outline-success">Credit</span></td>
-										<td>17250000</td>
-									</tr>
-									<tr>
-										<td>8</td>
-										<td>18/12/25</td>
-										<td>Sale</td>
-										<td>Cetak Kartu Nama 10 Box</td>
-										<td>450000</td>
-										<td><span class="badge bg-outline-success">Credit</span></td>
-										<td>17700000</td>
-									</tr>
-									<tr>
-										<td>9</td>
-										<td>20/12/25</td>
-										<td>Expense</td>
-										<td>Pembelian Alat Tulis Kantor (ATK)</td>
-										<td>150000</td>
-										<td><span class="badge bg-outline-danger">Debit</span></td>
-										<td>17550000</td>
-									</tr>
-									<tr>
-										<td>10</td>
-										<td>24/12/25</td>
-										<td>Purchase</td>
-										<td>Pembelian Tinta CMYK 4 Set</td>
-										<td>3200000</td>
-										<td><span class="badge bg-outline-danger">Debit</span></td>
-										<td>14350000</td>
-									</tr>
-									<tr>
-										<td>11</td>
-										<td>28/12/25</td>
-										<td>Sale</td>
-										<td>Pelunasan Order Banner Pilkada</td>
-										<td>7500000</td>
-										<td><span class="badge bg-outline-success">Credit</span></td>
-										<td>21850000</td>
-									</tr>
-									<tr>
-										<td>12</td>
-										<td>31/12/25</td>
-										<td>Expense</td>
-										<td>Gaji Karyawan Bagian Produksi</td>
-										<td>4500000</td>
-										<td><span class="badge bg-outline-danger">Debit</span></td>
-										<td>17350000</td>
-									</tr>
-									<tr>
-										<td>13</td>
-										<td>02/01/26</td>
-										<td>Sale</td>
-										<td>Cetak Undangan Pernikahan</td>
-										<td>1200000</td>
-										<td><span class="badge bg-outline-success">Credit</span></td>
-										<td>18550000</td>
-									</tr>
-									<tr>
-										<td>14</td>
-										<td>05/01/26</td>
-										<td>Purchase</td>
-										<td>Stok Kertas HVS & Map</td>
-										<td>2100000</td>
-										<td><span class="badge bg-outline-danger">Debit</span></td>
-										<td>16450000</td>
-									</tr>
-									<tr>
-										<td>15</td>
-										<td>08/01/26</td>
-										<td>Expense</td>
-										<td>Biaya Internet & Promosi Sosmed</td>
-										<td>600000</td>
-										<td><span class="badge bg-outline-danger">Debit</span></td>
-										<td>15850000</td>
-									</tr>
-									<tr>
-										<td>16</td>
-										<td>12/01/26</td>
-										<td>Sale</td>
-										<td>Jasa Desain Logo & Branding</td>
-										<td>1500000</td>
-										<td><span class="badge bg-outline-success">Credit</span></td>
-										<td>17350000</td>
-									</tr>
-									<tr>
-										<td>17</td>
-										<td>15/01/26</td>
-										<td>Expense</td>
-										<td>Perbaikan AC Ruang Desain</td>
-										<td>400000</td>
-										<td><span class="badge bg-outline-danger">Debit</span></td>
-										<td>16950000</td>
-									</tr>
-									<tr>
-										<td>18</td>
-										<td>19/01/26</td>
-										<td>Sale</td>
-										<td>Cetak Kaos Komunitas (20 pcs)</td>
-										<td>2000000</td>
-										<td><span class="badge bg-outline-success">Credit</span></td>
-										<td>18950000</td>
-									</tr>
-									<tr>
-										<td>19</td>
-										<td>22/01/26</td>
-										<td>Purchase Refund</td>
-										<td>Diskon Nota Pembelian Kertas</td>
-										<td>300000</td>
-										<td><span class="badge bg-outline-success">Credit</span></td>
-										<td>19250000</td>
-									</tr>
-									<tr>
-										<td>20</td>
-										<td>25/01/26</td>
-										<td>Expense</td>
-										<td>Pembelian Galon & Kopi Kantor</td>
-										<td>1200000</td>
-										<td><span class="badge bg-outline-danger">Debit</span></td>
-										<td>19130000</td>
-									</tr>
-								</tbody>
+                      <th>No</th>
+                      <th>Date</th>
+                      <th>Category</th>
+                      <th>Description</th>
+                      <th>Amount</th>
+                      <th>Transaction type</th>
+                      <th>Balance</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1</td>
+                      <td>01/12/25</td>
+                      <td>Sale</td>
+                      <td>Pelunasan Cetak Brosur (Invoice #001)</td>
+                      <td>2500000</td>
+                      <td><span class="badge bg-outline-success">Credit</span></td>
+                      <td>18250000</td>
+                    </tr>
+                    <tr>
+                      <td>2</td>
+                      <td>03/12/25</td>
+                      <td>Purchase</td>
+                      <td>Pembelian Kertas Art Paper 230gr</td>
+                      <td>4200000</td>
+                      <td><span class="badge bg-outline-danger">Debit</span></td>
+                      <td>14050000</td>
+                    </tr>
+                    <tr>
+                      <td>3</td>
+                      <td>05/12/25</td>
+                      <td>Expense</td>
+                      <td>Pembayaran Listrik Workshop</td>
+                      <td>1200000</td>
+                      <td><span class="badge bg-outline-danger">Debit</span></td>
+                      <td>12850000</td>
+                    </tr>
+                    <tr>
+                      <td>4</td>
+                      <td>08/12/25</td>
+                      <td>Sale</td>
+                      <td>DP Cetak Banner Pilkada</td>
+                      <td>5000000</td>
+                      <td><span class="badge bg-outline-success">Credit</span></td>
+                      <td>17850000</td>
+                    </tr>
+                    <tr>
+                      <td>5</td>
+                      <td>10/12/25</td>
+                      <td>Sales Refund</td>
+                      <td>Refund Salah Ukuran Cetak (Ref #002)</td>
+                      <td>500000</td>
+                      <td><span class="badge bg-outline-danger">Debit</span></td>
+                      <td>17350000</td>
+                    </tr>
+                    <tr>
+                      <td>6</td>
+                      <td>12/12/25</td>
+                      <td>Expense</td>
+                      <td>Service Mesin Plotter Utama</td>
+                      <td>850000</td>
+                      <td><span class="badge bg-outline-danger">Debit</span></td>
+                      <td>16500000</td>
+                    </tr>
+                    <tr>
+                      <td>7</td>
+                      <td>15/12/25</td>
+                      <td>Purchase Refund</td>
+                      <td>Retur Tinta Kadaluarsa</td>
+                      <td>750000</td>
+                      <td><span class="badge bg-outline-success">Credit</span></td>
+                      <td>17250000</td>
+                    </tr>
+                    <tr>
+                      <td>8</td>
+                      <td>18/12/25</td>
+                      <td>Sale</td>
+                      <td>Cetak Kartu Nama 10 Box</td>
+                      <td>450000</td>
+                      <td><span class="badge bg-outline-success">Credit</span></td>
+                      <td>17700000</td>
+                    </tr>
+                    <tr>
+                      <td>9</td>
+                      <td>20/12/25</td>
+                      <td>Expense</td>
+                      <td>Pembelian Alat Tulis Kantor (ATK)</td>
+                      <td>150000</td>
+                      <td><span class="badge bg-outline-danger">Debit</span></td>
+                      <td>17550000</td>
+                    </tr>
+                    <tr>
+                      <td>10</td>
+                      <td>24/12/25</td>
+                      <td>Purchase</td>
+                      <td>Pembelian Tinta CMYK 4 Set</td>
+                      <td>3200000</td>
+                      <td><span class="badge bg-outline-danger">Debit</span></td>
+                      <td>14350000</td>
+                    </tr>
+                    <tr>
+                      <td>11</td>
+                      <td>28/12/25</td>
+                      <td>Sale</td>
+                      <td>Pelunasan Order Banner Pilkada</td>
+                      <td>7500000</td>
+                      <td><span class="badge bg-outline-success">Credit</span></td>
+                      <td>21850000</td>
+                    </tr>
+                    <tr>
+                      <td>12</td>
+                      <td>31/12/25</td>
+                      <td>Expense</td>
+                      <td>Gaji Karyawan Bagian Produksi</td>
+                      <td>4500000</td>
+                      <td><span class="badge bg-outline-danger">Debit</span></td>
+                      <td>17350000</td>
+                    </tr>
+                    <tr>
+                      <td>13</td>
+                      <td>02/01/26</td>
+                      <td>Sale</td>
+                      <td>Cetak Undangan Pernikahan</td>
+                      <td>1200000</td>
+                      <td><span class="badge bg-outline-success">Credit</span></td>
+                      <td>18550000</td>
+                    </tr>
+                    <tr>
+                      <td>14</td>
+                      <td>05/01/26</td>
+                      <td>Purchase</td>
+                      <td>Stok Kertas HVS & Map</td>
+                      <td>2100000</td>
+                      <td><span class="badge bg-outline-danger">Debit</span></td>
+                      <td>16450000</td>
+                    </tr>
+                    <tr>
+                      <td>15</td>
+                      <td>08/01/26</td>
+                      <td>Expense</td>
+                      <td>Biaya Internet & Promosi Sosmed</td>
+                      <td>600000</td>
+                      <td><span class="badge bg-outline-danger">Debit</span></td>
+                      <td>15850000</td>
+                    </tr>
+                    <tr>
+                      <td>16</td>
+                      <td>12/01/26</td>
+                      <td>Sale</td>
+                      <td>Jasa Desain Logo & Branding</td>
+                      <td>1500000</td>
+                      <td><span class="badge bg-outline-success">Credit</span></td>
+                      <td>17350000</td>
+                    </tr>
+                    <tr>
+                      <td>17</td>
+                      <td>15/01/26</td>
+                      <td>Expense</td>
+                      <td>Perbaikan AC Ruang Desain</td>
+                      <td>400000</td>
+                      <td><span class="badge bg-outline-danger">Debit</span></td>
+                      <td>16950000</td>
+                    </tr>
+                    <tr>
+                      <td>18</td>
+                      <td>19/01/26</td>
+                      <td>Sale</td>
+                      <td>Cetak Kaos Komunitas (20 pcs)</td>
+                      <td>2000000</td>
+                      <td><span class="badge bg-outline-success">Credit</span></td>
+                      <td>18950000</td>
+                    </tr>
+                    <tr>
+                      <td>19</td>
+                      <td>22/01/26</td>
+                      <td>Purchase Refund</td>
+                      <td>Diskon Nota Pembelian Kertas</td>
+                      <td>300000</td>
+                      <td><span class="badge bg-outline-success">Credit</span></td>
+                      <td>19250000</td>
+                    </tr>
+                    <tr>
+                      <td>20</td>
+                      <td>25/01/26</td>
+                      <td>Expense</td>
+                      <td>Pembelian Galon & Kopi Kantor</td>
+                      <td>1200000</td>
+                      <td><span class="badge bg-outline-danger">Debit</span></td>
+                      <td>19130000</td>
+                    </tr>
+                  </tbody>
 
-								<!-- <tr>
+                  <!-- <tr>
 										<td>#AS821</td>
 										<td>24 Dec 2024</td>
 										<td>Sale</td>
@@ -443,103 +453,93 @@
 										<td>200000</td>
 									</tr> -->
 
-								<tfoot>
-									<tr>
-										<td class="text-start fw-bold">Total</td>
-										<!-- gunakan class sum-target dan data-col-index agar reusable -->
-										<td colspan="5"></td>
-										<td id="amount-total" class="fw-bold sum-target" data-col-index="6">0</td>
-									</tr>
-								</tfoot>
-							</table>
-						</div>
+                  <tfoot>
+                    <tr>
+                      <td class="text-start fw-bold">Total</td>
+                      <!-- gunakan class sum-target dan data-col-index agar reusable -->
+                      <td colspan="5"></td>
+                      <td id="amount-total" class="fw-bold sum-target" data-col-index="6">0</td>
+                    </tr>
+                  </tfoot>
+                </table>
+              </div>
+            </div>
+          </div>
 
-					</div>
-				</div>
+          <!-- /product list -->
+        </div>
+      </div>
+    </div>
+    <!-- /Main Wrapper -->
 
+    <!-- jQuery -->
+    <script src="assets/js/jquery-3.7.1.min.js"></script>
 
+    <!-- Feather Icon JS -->
+    <script src="assets/js/feather.min.js"></script>
 
+    <!-- Slimscroll JS -->
+    <script src="assets/js/jquery.slimscroll.min.js"></script>
 
+    <!-- Datatable JS -->
+    <script src="assets/js/jquery.dataTables.min.js"></script>
+    <script src="assets/js/dataTables.bootstrap5.min.js"></script>
 
+    <!-- Bootstrap Core JS -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
 
+    <!-- Datetimepicker JS -->
+    <script src="assets/js/moment.min.js"></script>
+    <script src="assets/js/bootstrap-datetimepicker.min.js"></script>
 
-				<!-- /product list -->
-			</div>
-		</div>
+    <!-- Daterangepikcer JS -->
+    <script src="assets/js/moment.min.js"></script>
+    <script src="assets/plugins/daterangepicker/daterangepicker.js"></script>
 
-	</div>
-	<!-- /Main Wrapper -->
+    <!-- Select2 JS -->
+    <script src="assets/plugins/select2/js/select2.min.js"></script>
 
-	<!-- jQuery -->
-	<script src="assets/js/jquery-3.7.1.min.js"></script>
+    <!-- Sweetalert 2 -->
+    <script src="assets/plugins/sweetalert/sweetalert2.all.min.js"></script>
+    <script src="assets/plugins/sweetalert/sweetalerts.min.js"></script>
 
-	<!-- Feather Icon JS -->
-	<script src="assets/js/feather.min.js"></script>
+    <!-- Custom JS -->
+    <script src="assets/js/theme-script.js"></script>
+    <script src="assets/js/script.js"></script>
 
-	<!-- Slimscroll JS -->
-	<script src="assets/js/jquery.slimscroll.min.js"></script>
+    <script>
+      // Enable/Disable Submit Button Logic
+      const dateInput = document.getElementById("pemilihrentang-input");
+      const accountSelect = document.getElementById("accountSelect");
+      const submitBtn = document.getElementById("submitBtn");
 
-	<!-- Datatable JS -->
-	<script src="assets/js/jquery.dataTables.min.js"></script>
-	<script src="assets/js/dataTables.bootstrap5.min.js"></script>
+      function checkFormValidity() {
+        const hasDate = dateInput.value.trim() !== "";
+        const hasAccount = accountSelect.value !== "";
 
-	<!-- Bootstrap Core JS -->
-	<script src="assets/js/bootstrap.bundle.min.js"></script>
+        if (hasDate && hasAccount) {
+          submitBtn.disabled = false;
+        } else {
+          submitBtn.disabled = true;
+        }
+      }
 
-	<!-- Datetimepicker JS -->
-	<script src="assets/js/moment.min.js"></script>
-	<script src="assets/js/bootstrap-datetimepicker.min.js"></script>
+      // Listen to date input changes
+      if (dateInput) {
+        dateInput.addEventListener("change", checkFormValidity);
+      }
 
-	<!-- Daterangepikcer JS -->
-	<script src="assets/js/moment.min.js"></script>
-	<script src="assets/plugins/daterangepicker/daterangepicker.js"></script>
+      // Listen to account select changes
+      if (accountSelect) {
+        accountSelect.addEventListener("change", checkFormValidity);
+      }
 
-	<!-- Select2 JS -->
-	<script src="assets/plugins/select2/js/select2.min.js"></script>
-
-	<!-- Sweetalert 2 -->
-	<script src="assets/plugins/sweetalert/sweetalert2.all.min.js"></script>
-	<script src="assets/plugins/sweetalert/sweetalerts.min.js"></script>
-
-	<!-- Custom JS -->
-	<script src="assets/js/theme-script.js"></script>
-	<script src="assets/js/script.js"></script>
-
-	<script>
-		// Enable/Disable Submit Button Logic
-		const dateInput = document.getElementById('pemilihrentang-input');
-		const accountSelect = document.getElementById('accountSelect');
-		const submitBtn = document.getElementById('submitBtn');
-
-		function checkFormValidity() {
-			const hasDate = dateInput.value.trim() !== '';
-			const hasAccount = accountSelect.value !== '';
-
-			if (hasDate && hasAccount) {
-				submitBtn.disabled = false;
-			} else {
-				submitBtn.disabled = true;
-			}
-		}
-
-		// Listen to date input changes
-		if (dateInput) {
-			dateInput.addEventListener('change', checkFormValidity);
-		}
-
-		// Listen to account select changes
-		if (accountSelect) {
-			accountSelect.addEventListener('change', checkFormValidity);
-		}
-
-		// Submit button click handler
-		submitBtn.addEventListener('click', function () {
-			console.log('Submit button clicked');
-			console.log('Date:', dateInput.value);
-			console.log('Account:', accountSelect.value);
-		});
-	</script>
-
-</body>
-
+      // Submit button click handler
+      submitBtn.addEventListener("click", function () {
+        console.log("Submit button clicked");
+        console.log("Date:", dateInput.value);
+        console.log("Account:", accountSelect.value);
+      });
+    </script>
+  </body>
 </html>

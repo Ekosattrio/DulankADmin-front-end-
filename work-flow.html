@@ -57,8 +57,8 @@
           <div class="page-header">
             <div class="add-item d-flex">
               <div class="page-title">
-                <h4>Flow Arrange List</h4>
-                <h6>Manage your Flow Arrange</h6>
+                <h4>Work Flow List</h4>
+                <h6>Manage your Work Flow</h6>
               </div>
             </div>
             <ul class="table-top-head">
@@ -82,43 +82,14 @@
                   ><i data-feather="chevron-up" class="feather-chevron-up"></i
                 ></a>
               </li>
+              <div class="page-btn">
+                <a href="add-work-flow.html" class="btn btn-added" 
+                  ><i data-feather="plus-circle" class="me-2"></i> Add New Work Flow</a
+                >
+              </div>
             </ul>
           </div>
-          <div class="row mt-5">
-            <div class="col-xl-3 col-sm-6 col-12 d-flex">
-              <div class="dash-widget w-100">
-                <div class="dash-widgetimg">
-                  <span><img src="assets/img/icons/dash1.svg" alt="img" /></span>
-                </div>
-                <div class="dash-widgetcontent">
-                  <h6>Arrange Process</h6>
-                  <h5><span class="counters" data-count="307144">307144</span></h5>
-                </div>
-              </div>
-            </div>
-            <div class="col-xl-3 col-sm-6 col-12 d-flex">
-              <div class="dash-widget dash2 w-100">
-                <div class="dash-widgetimg">
-                  <span><img src="assets/img/icons/dash3.svg" alt="img" /></span>
-                </div>
-                <div class="dash-widgetcontent">
-                  <h6>Total Artwork</h6>
-                  <h5><span class="counters" data-count="3000">3000</span></h5>
-                </div>
-              </div>
-            </div>
-            <div class="col-xl-3 col-sm-6 col-12 d-flex">
-              <div class="dash-widget dash3 w-100">
-                <div class="dash-widgetimg">
-                  <span><img src="assets/img/icons/dash4.svg" alt="img" /></span>
-                </div>
-                <div class="dash-widgetcontent">
-                  <h6>Total Design</h6>
-                  <h5><span class="counters" data-count="1385">1385</span></h5>
-                </div>
-              </div>
-            </div>
-          </div>
+
           <!-- /product list -->
           <div class="card table-list-card">
             <div class="card-body">
@@ -156,27 +127,6 @@
                     </div>
                   </div>
                 </div>
-                <div class="filters d-flex justify-content-end">
-                  <div class="dropdown w-100">
-                    <button
-                      class="btn btn-outline-primary dropdown-toggle"
-                      type="button"
-                      data-bs-toggle="dropdown"
-                      aria-expanded="false"
-                    >
-                      Design
-                    </button>
-                    <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="#">Design</a></li>
-                      <li><a class="dropdown-item" href="#">Artwork</a></li>
-                    </ul>
-                  </div>
-                  <div class="ms-2">
-                    <button type="button" class="btn btn-primary" onclick="window.location.href = 'add-arange-proces.html'">
-                      Add
-                    </button>
-                  </div>
-                </div>
               </div>
               <!-- /Filter -->
               <!-- Arrange Process Table -->
@@ -193,10 +143,7 @@
                       <th>No</th>
                       <th>Product Category</th>
                       <th>Product</th>
-                      <th>Design</th>
-                      <th>Pracetak</th>
-                      <th>Cetak</th>
-                      <th>Finishing</th>
+                      <th>Work Flow</th>
                       <th class="no-sort">Action</th>
                     </tr>
                   </thead>
@@ -208,13 +155,10 @@
                       <td>JAP-0001</td>
                       <td>Offset</td>
                       <td>Brosur A5</td>
-                      <td>Artwork</td>
-                      <td>Plat CTP</td>
-                      <td>Cetak SM52</td>
-                      <td>Potong → Lipat → Sortir → Packing</td>
+                      <td>Artwork, Plat CTP, Cetak SM52, Potong, Lipat, Sortir, Packing</td>
                       <td class="action-table-data">
                         <div class="edit-delete-action">
-                          <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#edit-units"
+                          <a class="me-2 p-2" href="edit-work-flow.html"
                             ><i data-feather="edit"></i
                           ></a>
                           <a class="confirm-text p-2" href="javascript:void(0);"><i data-feather="trash-2"></i></a>
@@ -229,13 +173,10 @@
                       <td>JAP-0002</td>
                       <td>Large Format</td>
                       <td>Spanduk Banner</td>
-                      <td>Design</td>
-                      <td>Output Film</td>
-                      <td>Cetak Outdoor</td>
-                      <td>Potong → Selongsong → Packing</td>
+                      <td>Design, Output Film, Cetak Outdoor, Potong, Selongsong, Packing</td>
                       <td class="action-table-data">
                         <div class="edit-delete-action">
-                          <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#edit-units"
+                          <a class="me-2 p-2" href="edit-work-flow.html"
                             ><i data-feather="edit"></i
                           ></a>
                           <a class="confirm-text p-2" href="javascript:void(0);"><i data-feather="trash-2"></i></a>
@@ -250,13 +191,10 @@
                       <td>JAP-0003</td>
                       <td>Digital A3+</td>
                       <td>Kartu Nama</td>
-                      <td>Design</td>
-                      <td>-</td>
-                      <td>Cetak Xerox</td>
-                      <td>Potong → Laminasi → Sortir → Packing</td>
+                      <td>Design, Cetak Xerox, Potong, Laminasi, Sortir, Packing</td>
                       <td class="action-table-data">
                         <div class="edit-delete-action">
-                          <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#edit-units"
+                          <a class="me-2 p-2" href="edit-work-flow.html"
                             ><i data-feather="edit"></i
                           ></a>
                           <a class="confirm-text p-2" href="javascript:void(0);"><i data-feather="trash-2"></i></a>
@@ -271,13 +209,10 @@
                       <td>JAP-0004</td>
                       <td>Sablon</td>
                       <td>Kaos Distro</td>
-                      <td>Artwork</td>
-                      <td>Klise</td>
-                      <td>-</td>
-                      <td>Sortir → Lipat → Packing</td>
+                      <td>Artwork, Klise, Sortir, Lipat, Packing</td>
                       <td class="action-table-data">
                         <div class="edit-delete-action">
-                          <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#edit-units"
+                          <a class="me-2 p-2" href="edit-work-flow.html"
                             ><i data-feather="edit"></i
                           ></a>
                           <a class="confirm-text p-2" href="javascript:void(0);"><i data-feather="trash-2"></i></a>
@@ -292,13 +227,10 @@
                       <td>JAP-0005</td>
                       <td>Offset</td>
                       <td>Buku Yasin</td>
-                      <td>Design</td>
-                      <td>Plat CTP</td>
-                      <td>Cetak Oliver52</td>
-                      <td>Susun Komplit → Lem → Potong → Packing</td>
+                      <td>Design, Plat CTP, Cetak Oliver52, Susun Komplit, Lem, Potong, Packing</td>
                       <td class="action-table-data">
                         <div class="edit-delete-action">
-                          <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#edit-units"
+                          <a class="me-2 p-2" href="edit-work-flow.html"
                             ><i data-feather="edit"></i
                           ></a>
                           <a class="confirm-text p-2" href="javascript:void(0);"><i data-feather="trash-2"></i></a>
@@ -313,13 +245,10 @@
                       <td>JAP-0006</td>
                       <td>Large Format</td>
                       <td>Poster Display</td>
-                      <td>Artwork</td>
-                      <td>Output Film</td>
-                      <td>Cetak Indoor</td>
-                      <td>Potong → Laminasi → Roll</td>
+                      <td>Artwork, Output Film, Cetak Indoor, Potong, Laminasi, Roll</td>
                       <td class="action-table-data">
                         <div class="edit-delete-action">
-                          <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#edit-units"
+                          <a class="me-2 p-2" href="edit-work-flow.html"
                             ><i data-feather="edit"></i
                           ></a>
                           <a class="confirm-text p-2" href="javascript:void(0);"><i data-feather="trash-2"></i></a>
@@ -334,13 +263,10 @@
                       <td>JAP-0007</td>
                       <td>Digital A3+</td>
                       <td>Undangan Pernikahan</td>
-                      <td>Design</td>
-                      <td>-</td>
-                      <td>Cetak Xerox</td>
-                      <td>Potong → Lipat → Lem → Packing</td>
+                      <td>Design, Cetak Xerox, Potong, Lipat, Lem, Packing</td>
                       <td class="action-table-data">
                         <div class="edit-delete-action">
-                          <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#edit-units"
+                          <a class="me-2 p-2" href="edit-work-flow.html"
                             ><i data-feather="edit"></i
                           ></a>
                           <a class="confirm-text p-2" href="javascript:void(0);"><i data-feather="trash-2"></i></a>
@@ -355,13 +281,10 @@
                       <td>JAP-0008</td>
                       <td>Offset</td>
                       <td>Kwitansi NCR 3 Ply</td>
-                      <td>Artwork</td>
-                      <td>Klise</td>
-                      <td>Cetak Multilith</td>
-                      <td>Numerasi → Susun Komplit → Potong → Packing</td>
+                      <td>Artwork, Klise, Cetak Multilith, Numerasi, Susun Komplit, Potong, Packing</td>
                       <td class="action-table-data">
                         <div class="edit-delete-action">
-                          <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#edit-units"
+                          <a class="me-2 p-2" href="edit-work-flow.html"
                             ><i data-feather="edit"></i
                           ></a>
                           <a class="confirm-text p-2" href="javascript:void(0);"><i data-feather="trash-2"></i></a>
@@ -376,13 +299,10 @@
                       <td>JAP-0009</td>
                       <td>Sablon</td>
                       <td>Goodie Bag</td>
-                      <td>Design</td>
-                      <td>Klise</td>
-                      <td>-</td>
-                      <td>Sortir → Lipat → Packing</td>
+                      <td>Design, Klise, Sortir, Lipat, Packing</td>
                       <td class="action-table-data">
                         <div class="edit-delete-action">
-                          <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#edit-units"
+                          <a class="me-2 p-2" href="edit-work-flow.html"
                             ><i data-feather="edit"></i
                           ></a>
                           <a class="confirm-text p-2" href="javascript:void(0);"><i data-feather="trash-2"></i></a>
@@ -397,13 +317,10 @@
                       <td>JAP-0010</td>
                       <td>Large Format</td>
                       <td>Stiker Vinyl</td>
-                      <td>Artwork</td>
-                      <td>Output Film</td>
-                      <td>Cetak Outdoor</td>
-                      <td>Potong → Laminasi</td>
+                      <td>Artwork, Output Film, Cetak Outdoor, Potong, Laminasi</td>
                       <td class="action-table-data">
                         <div class="edit-delete-action">
-                          <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#edit-units"
+                          <a class="me-2 p-2" href="edit-work-flow.html"
                             ><i data-feather="edit"></i
                           ></a>
                           <a class="confirm-text p-2" href="javascript:void(0);"><i data-feather="trash-2"></i></a>
@@ -418,13 +335,10 @@
                       <td>JAP-0011</td>
                       <td>Offset</td>
                       <td>Kop Surat</td>
-                      <td>Design</td>
-                      <td>Plat CTP</td>
-                      <td>Cetak Multilith</td>
-                      <td>Potong → Sortir → Packing</td>
+                      <td>Design, Plat CTP, Cetak Multilith, Potong, Sortir, Packing</td>
                       <td class="action-table-data">
                         <div class="edit-delete-action">
-                          <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#edit-units"
+                          <a class="me-2 p-2" href="edit-work-flow.html"
                             ><i data-feather="edit"></i
                           ></a>
                           <a class="confirm-text p-2" href="javascript:void(0);"><i data-feather="trash-2"></i></a>
@@ -439,13 +353,10 @@
                       <td>JAP-0012</td>
                       <td>Digital A3+</td>
                       <td>Sertifikat A4</td>
-                      <td>Design</td>
-                      <td>-</td>
-                      <td>Cetak Xerox</td>
-                      <td>Potong → Sortir → Packing</td>
+                      <td>Design, Cetak Xerox, Potong, Sortir, Packing</td>
                       <td class="action-table-data">
                         <div class="edit-delete-action">
-                          <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#edit-units"
+                          <a class="me-2 p-2" href="edit-work-flow.html"
                             ><i data-feather="edit"></i
                           ></a>
                           <a class="confirm-text p-2" href="javascript:void(0);"><i data-feather="trash-2"></i></a>
@@ -460,13 +371,10 @@
                       <td>JAP-0013</td>
                       <td>Large Format</td>
                       <td>X-Banner</td>
-                      <td>Artwork</td>
-                      <td>Output Film</td>
-                      <td>Cetak Indoor</td>
-                      <td>Potong → Pasang Stand → Packing</td>
+                      <td>Artwork, Output Film, Cetak Indoor, Potong, Pasang Stand, Packing</td>
                       <td class="action-table-data">
                         <div class="edit-delete-action">
-                          <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#edit-units"
+                          <a class="me-2 p-2" href="edit-work-flow.html"
                             ><i data-feather="edit"></i
                           ></a>
                           <a class="confirm-text p-2" href="javascript:void(0);"><i data-feather="trash-2"></i></a>
@@ -481,13 +389,10 @@
                       <td>JAP-0014</td>
                       <td>Offset</td>
                       <td>Kalender Dinding</td>
-                      <td>Design</td>
-                      <td>Plat CTP</td>
-                      <td>Cetak Oliver52</td>
-                      <td>Potong → Susun Komplit → Klem Kawat → Packing</td>
+                      <td>Design, Plat CTP, Cetak Oliver52, Potong, Susun Komplit, Klem Kawat, Packing</td>
                       <td class="action-table-data">
                         <div class="edit-delete-action">
-                          <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#edit-units"
+                          <a class="me-2 p-2" href="edit-work-flow.html"
                             ><i data-feather="edit"></i
                           ></a>
                           <a class="confirm-text p-2" href="javascript:void(0);"><i data-feather="trash-2"></i></a>
@@ -502,13 +407,10 @@
                       <td>JAP-0015</td>
                       <td>Sablon</td>
                       <td>Topi</td>
-                      <td>Artwork</td>
-                      <td>Klise</td>
-                      <td>-</td>
-                      <td>Sortir → Packing</td>
+                      <td>Artwork, Klise, Sortir, Packing</td>
                       <td class="action-table-data">
                         <div class="edit-delete-action">
-                          <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#edit-units"
+                          <a class="me-2 p-2" href="edit-work-flow.html"
                             ><i data-feather="edit"></i
                           ></a>
                           <a class="confirm-text p-2" href="javascript:void(0);"><i data-feather="trash-2"></i></a>
@@ -523,13 +425,10 @@
                       <td>JAP-0016</td>
                       <td>Digital A3+</td>
                       <td>Menu Cafe</td>
-                      <td>Design</td>
-                      <td>-</td>
-                      <td>Cetak Xerox</td>
-                      <td>Laminasi → Potong → Binding</td>
+                      <td>Design, Cetak Xerox, Laminasi, Potong, Binding</td>
                       <td class="action-table-data">
                         <div class="edit-delete-action">
-                          <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#edit-units"
+                          <a class="me-2 p-2" href="edit-work-flow.html"
                             ><i data-feather="edit"></i
                           ></a>
                           <a class="confirm-text p-2" href="javascript:void(0);"><i data-feather="trash-2"></i></a>
@@ -544,13 +443,10 @@
                       <td>JAP-0017</td>
                       <td>Offset</td>
                       <td>Buku Katalog</td>
-                      <td>Artwork</td>
-                      <td>Plat CTP</td>
-                      <td>Cetak SM52</td>
-                      <td>Potong → Susun Komplit → Jahit Benang → Packing</td>
+                      <td>Artwork, Plat CTP, Cetak SM52, Potong, Susun Komplit, Jahit Benang, Packing</td>
                       <td class="action-table-data">
                         <div class="edit-delete-action">
-                          <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#edit-units"
+                          <a class="me-2 p-2" href="edit-work-flow.html"
                             ><i data-feather="edit"></i
                           ></a>
                           <a class="confirm-text p-2" href="javascript:void(0);"><i data-feather="trash-2"></i></a>
@@ -565,13 +461,10 @@
                       <td>JAP-0018</td>
                       <td>Large Format</td>
                       <td>Wallpaper Custom</td>
-                      <td>Design</td>
-                      <td>Output Film</td>
-                      <td>Cetak Indoor</td>
-                      <td>Potong → Roll → Packing</td>
+                      <td>Design, Output Film, Cetak Indoor, Potong, Roll, Packing</td>
                       <td class="action-table-data">
                         <div class="edit-delete-action">
-                          <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#edit-units"
+                          <a class="me-2 p-2" href="edit-work-flow.html"
                             ><i data-feather="edit"></i
                           ></a>
                           <a class="confirm-text p-2" href="javascript:void(0);"><i data-feather="trash-2"></i></a>
@@ -586,13 +479,10 @@
                       <td>JAP-0019</td>
                       <td>Offset</td>
                       <td>Amplop Kabinet</td>
-                      <td>Artwork</td>
-                      <td>Klise</td>
-                      <td>Cetak Multilith</td>
-                      <td>Potong → Lem → Sortir → Packing</td>
+                      <td>Artwork, Klise, Cetak Multilith, Potong, Lem, Sortir, Packing</td>
                       <td class="action-table-data">
                         <div class="edit-delete-action">
-                          <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#edit-units"
+                          <a class="me-2 p-2" href="edit-work-flow.html"
                             ><i data-feather="edit"></i
                           ></a>
                           <a class="confirm-text p-2" href="javascript:void(0);"><i data-feather="trash-2"></i></a>
@@ -607,13 +497,10 @@
                       <td>JAP-0020</td>
                       <td>Digital A3+</td>
                       <td>Stiker Kromo</td>
-                      <td>Design</td>
-                      <td>-</td>
-                      <td>Cetak Xerox</td>
-                      <td>Potong (Kiss Cut) → Packing</td>
+                      <td>Design, Cetak Xerox, Potong (Kiss Cut), Packing</td>
                       <td class="action-table-data">
                         <div class="edit-delete-action">
-                          <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#edit-units"
+                          <a class="me-2 p-2" href="edit-work-flow.html"
                             ><i data-feather="edit"></i
                           ></a>
                           <a class="confirm-text p-2" href="javascript:void(0);"><i data-feather="trash-2"></i></a>
@@ -669,49 +556,14 @@
 
                 <div class="row mb-3">
                   <div class="col-5">
-                    <label class="form-label">Design</label>
-                  </div>
-                  <div class="col-7">
-                    <select class="select">
-                      <option>Artwork</option>
-                      <option>Design</option>
-                    </select>
-                  </div>
-                </div>
-
-                <div class="row mb-3">
-                  <div class="col-5">
-                    <label class="form-label">Pracetak</label>
-                  </div>
-                  <div class="col-7">
-                    <select class="select">
-                      <option>-</option>
-                      <option>Plat CTP</option>
-                      <option>Output Film</option>
-                      <option>Klise</option>
-                    </select>
-                  </div>
-                </div>
-
-                <div class="row mb-3">
-                  <div class="col-5">
-                    <label for="name" class="form-label">Cetak</label>
-                  </div>
-                  <div class="col-7">
-                    <input type="text" class="form-control" value="Cetak SM52" />
-                  </div>
-                </div>
-
-                <div class="row mb-3">
-                  <div class="col-5">
-                    <label for="name" class="form-label">Finishing</label>
+                    <label for="workflow" class="form-label">Work Flow</label>
                   </div>
                   <div class="col-7">
                     <input
+                      id="workflow"
                       type="text"
                       class="form-control"
-                      value="Potong, Lipat, Sortir, Packing
-"
+                      value="Artwork, Plat CTP, Cetak SM52, Potong, Lipat, Sortir, Packing"
                     />
                   </div>
                 </div>

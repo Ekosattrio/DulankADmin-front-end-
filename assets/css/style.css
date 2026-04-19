@@ -39342,3 +39342,39 @@ a.product-img img {
 .balance-summary-table td {
   padding: 10px 12px;
 }
+
+/* work flow */
+.template-toggle,
+.flow-template-row {
+  display: none;
+}
+
+.template-toggle.is-visible {
+  display: flex;
+}
+
+.flow-template-row.is-visible {
+  display: block;
+}
+
+.arrange-head,
+.arrange-row {
+  display: grid;
+  grid-template-columns: 70px minmax(0, 1fr) 90px;
+  gap: 16px;
+  align-items: center;
+}
+
+.arrange-btn {
+  width: 34px;
+  height: 34px;
+}
+
+@media (max-width: 767.98px) {
+
+  .arrange-head,
+  .arrange-row {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+}

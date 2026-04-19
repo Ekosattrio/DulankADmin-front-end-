@@ -1,0 +1,64 @@
+{
+  "product": [
+    {
+      "name": "Brosur A5",
+      "code": "PRD-0001",
+      "category": "Offset"
+    },
+    {
+      "name": "Spanduk Banner",
+      "code": "PRD-0002",
+      "category": "Large Format"
+    },
+    {
+      "name": "Kartu Nama",
+      "code": "PRD-0003",
+      "category": "Digital A3+"
+    },
+    {
+      "name": "Kaos Distro",
+      "code": "PRD-0004",
+      "category": "Sablon"
+    },
+    {
+      "name": "Buku Yasin",
+      "code": "PRD-0005",
+      "category": "Offset"
+    },
+    {
+      "name": "Poster Display",
+      "code": "PRD-0006",
+      "category": "Large Format"
+    },
+    {
+      "name": "Stiker Vinyl",
+      "code": "PRD-0007",
+      "category": "Digital Printing"
+    },
+    {
+      "name": "Undangan Soft Cover",
+      "code": "PRD-0008",
+      "category": "Offset"
+    },
+    {
+      "name": "X Banner",
+      "code": "PRD-0009",
+      "category": "Large Format"
+    },
+    {
+      "name": "Kalender Meja",
+      "code": "PRD-0010",
+      "category": "Finishing"
+    },
+    {
+      "name": "Flyer Promo",
+      "code": "PRD-0011",
+      "category": "Offset"
+    },
+    {
+      "name": "Hang Tag",
+      "code": "PRD-0012",
+      "category": "Digital A3+"
+    }
+  ]
+}

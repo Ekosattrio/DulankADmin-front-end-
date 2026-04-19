@@ -2688,4 +2688,142 @@ $(document).ready(function () {
     else freezeGroup.style.display = "none";
     // Perform other actions based on the selection
   });
+
+  // work flow
+  $(function () {
+    var arrangedFlows = [];
+
+    function escapeHtml(value) {
+      return String(value)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+    }
+
+    function syncTemplateToggle($checkbox) {
+      var $option = $checkbox.closest(".flow-option");
+      var $toggle = $option.find(".template-toggle");
+      var $templateCheckbox = $option.find(".template-checkbox");
+      var $templateRow = $option.find(".flow-template-row");
+
+      if ($checkbox.is(":checked")) {
+        $toggle.addClass("is-visible");
+        if ($templateCheckbox.length && $templateCheckbox.is(":checked")) {
+          $templateRow.addClass("is-visible");
+        }
+      } else {
+        $toggle.removeClass("is-visible");
+        $templateCheckbox.prop("checked", false);
+        $templateRow.removeClass("is-visible");
+      }
+    }
+
+    function collectSelectedFlows() {
+      var selected = [];
+
+      $(".flow-checkbox:checked").each(function () {
+        selected.push({
+          id: this.id,
+          name: $(this).data("flow-name"),
+        });
+      });
+
+      arrangedFlows = arrangedFlows.filter(function (item) {
+        return selected.some(function (selectedItem) {
+          return selectedItem.id === item.id;
+        });
+      });
+
+      selected.forEach(function (item) {
+        var exists = arrangedFlows.some(function (current) {
+          return current.id === item.id;
+        });
+
+        if (!exists) {
+          arrangedFlows.push(item);
+        }
+      });
+    }
+
+    function renderArrangeList() {
+      collectSelectedFlows();
+
+      var html = arrangedFlows
+        .map(function (item, index) {
+          return (
+            '<div class="arrange-row small py-2" data-id="' +
+            escapeHtml(item.id) +
+            '">' +
+            '<div class="text-muted">No. ' +
+            (index + 1) +
+            "</div>" +
+            '<div>' +
+            escapeHtml(item.name) +
+            "</div>" +
+            '<div class="d-flex gap-2">' +
+            '<button type="button" class="arrange-btn btn btn-outline-secondary p-0 move-down" aria-label="Move down" ' +
+            (index === arrangedFlows.length - 1 ? "disabled" : "") +
+            '><i data-feather="arrow-down"></i></button>' +
+            '<button type="button" class="arrange-btn btn btn-outline-secondary p-0 move-up" aria-label="Move up" ' +
+            (index === 0 ? "disabled" : "") +
+            '><i data-feather="arrow-up"></i></button>' +
+            "</div>" +
+            "</div>"
+          );
+        })
+        .join("");
+
+      $("#arrangeList").html(html);
+
+      if (window.feather) {
+        feather.replace();
+      }
+    }
+
+    $(".flow-checkbox").each(function () {
+      syncTemplateToggle($(this));
+    });
+
+    renderArrangeList();
+
+    $(document).on("change", ".flow-checkbox", function () {
+      syncTemplateToggle($(this));
+      renderArrangeList();
+    });
+
+    $(document).on("change", ".template-checkbox", function () {
+      var target = $(this).data("target");
+      $(target).toggleClass("is-visible", $(this).is(":checked"));
+    });
+
+    $(document).on("click", ".move-up", function () {
+      var id = $(this).closest(".arrange-row").data("id");
+      var index = arrangedFlows.findIndex(function (item) {
+        return item.id === id;
+      });
+
+      if (index > 0) {
+        var temp = arrangedFlows[index - 1];
+        arrangedFlows[index - 1] = arrangedFlows[index];
+        arrangedFlows[index] = temp;
+        renderArrangeList();
+      }
+    });
+
+    $(document).on("click", ".move-down", function () {
+      var id = $(this).closest(".arrange-row").data("id");
+      var index = arrangedFlows.findIndex(function (item) {
+        return item.id === id;
+      });
+
+      if (index > -1 && index < arrangedFlows.length - 1) {
+        var temp = arrangedFlows[index + 1];
+        arrangedFlows[index + 1] = arrangedFlows[index];
+        arrangedFlows[index] = temp;
+        renderArrangeList();
+      }
+    });
+  });
 });

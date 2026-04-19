@@ -1,0 +1,428 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0" />
+  <meta name="description" content="POS - Bootstrap Admin Template" />
+  <meta name="keywords"
+    content="admin, estimates, bootstrap, business, corporate, creative, invoice, html5, responsive, Projects" />
+  <meta name="author" content="Dreamguys - Bootstrap Admin Template" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Kacetak System</title>
+  <link rel="shortcut icon" type="image/x-icon" href="assets/img/kacetak.jpeg" />
+
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="assets/css/animate.css" />
+  <link rel="stylesheet" href="assets/plugins/select2/css/select2.min.css" />
+  <link rel="stylesheet" href="assets/css/bootstrap-datetimepicker.min.css" />
+  <link rel="stylesheet" href="assets/plugins/intltelinput/css/intlTelInput.css" />
+  <link rel="stylesheet" href="assets/plugins/intltelinput/css/demo.css" />
+  <link rel="stylesheet" href="assets/css/dataTables.bootstrap5.min.css" />
+  <link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css" />
+  <link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body>
+  <div id="global-loader">
+    <div class="loader"></div>
+  </div>
+
+  <div class="main-wrapper">
+    <div id="header-placeholder"></div>
+    <div id="sidebar-placeholder"></div>
+
+    <div class="page-wrapper">
+      <div class="content mt-4 p-3">
+        <div class="page-header">
+          <div class="add-item d-flex">
+            <div class="page-title">
+              <h4>Add Work Flow</h4>
+              <h6>Manage your product with default Work Flow</h6>
+            </div>
+          </div>
+        </div>
+
+        <div class="row g-3">
+          <div class="col-xl-7 col-12">
+            <div class="card h-100 mb-0">
+              <div class="card-body p-4">
+                <div class="d-flex justify-content-between align-items-start flex-wrap gap-2 mb-3">
+                  <div class="fw-bold">Chosse the Product want to arange work flow</div>
+                </div>
+
+                <div class="row align-items-center g-3 mb-4">
+                  <label for="productSearch" class="col-md-3 col-form-label">Product</label>
+                  <div class="col-md-9 col-lg-8">
+                    <div class="d-flex justify-content-end mb-2">
+                      <a href="create-product.html" class="text-warning">Add New Product</a>
+                    </div>
+                    <div class="search-container">
+                      <input id="productSearch" type="text" class="form-control product-input"
+                        placeholder="Search Product" />
+                      <div class="search-results"></div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="fw-bold mb-3">Setting all flow to show in default job order</div>
+
+                <div class="border-top pt-3 pb-4" data-category="Design">
+                  <div class="row g-3 mb-3">
+                    <div class="col-md-6">
+                      <a href="#" data-bs-toggle="modal" data-bs-target="#addNewFlowCategoryModal"
+                        class="text-warning">Add New Flow Category</a>
+                    </div>
+                    <div class="col-md-6">
+                      <a href="#" data-bs-toggle="modal" data-bs-target="#addNewFlowNameModal" class="text-warning">Add
+                        New Flow Name</a>
+                    </div>
+                  </div>
+                  <div class="row g-4">
+                    <div class="col-md-4">
+                      <div class="small text-muted">Flow Category :</div>
+                      <div class="fw-bold">Design</div>
+                    </div>
+                    <div class="col-md-8">
+                      <div class="small text-muted mb-2">Flow Name :</div>
+                      <div class="d-flex flex-column gap-3">
+                        <div class="d-flex align-items-center gap-2">
+                          <input class="flow-checkbox" type="checkbox" id="design-artwork" data-flow-name="Artwork" />
+                          <label for="design-artwork">Artwork</label>
+                        </div>
+                        <div class="d-flex align-items-center gap-2">
+                          <input class="flow-checkbox" type="checkbox" id="design-editing" data-flow-name="Editing" />
+                          <label for="design-editing">Editing</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="border-top pt-3 pb-4" data-category="Cetak">
+                  <div class="row g-4">
+                    <div class="col-md-4">
+                      <div class="small text-muted">Flow Category :</div>
+                      <div class="fw-bold">Cetak</div>
+                    </div>
+                    <div class="col-md-8">
+                      <div class="small text-muted mb-2">Flow Name :</div>
+                      <div class="d-flex flex-column gap-3">
+                        <div class="d-flex align-items-center gap-2">
+                          <input class="flow-checkbox" type="checkbox" id="cetak-sm52" data-flow-name="Mesin Sm52" />
+                          <label for="cetak-sm52">Mesin Sm52</label>
+                        </div>
+                        <div class="flow-option d-flex flex-column gap-2">
+                          <div class="d-flex align-items-center gap-2">
+                            <input class="flow-checkbox" type="checkbox" id="cetak-multilith"
+                              data-flow-name="Mesin Multilith" />
+                            <label for="cetak-multilith">Mesin Multilith</label>
+                          </div>
+                          <div class="template-toggle is-visible">
+                            <div class="d-flex align-items-center gap-2">
+                              <input class="template-checkbox" type="checkbox" id="template-cetak-multilith"
+                                data-target="#template-row-cetak-multilith" />
+                              <label for="template-cetak-multilith" class="mb-0">Flow Template</label>
+                            </div>
+                          </div>
+                          <div class="flow-template-row is-visible" id="template-row-cetak-multilith">
+                            <select class="form-select select">
+                              <option selected>Choose Flow Templete</option>
+                              <option>Multilith A</option>
+                              <option>Multilith B</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="d-flex align-items-center gap-2">
+                          <input class="flow-checkbox" type="checkbox" id="cetak-myjet"
+                            data-flow-name="Myjet Outdoor Km512" />
+                          <label for="cetak-myjet">Myjet Outdoor Km512</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="border-top pt-3 pb-4" data-category="PraCetak">
+                  <div class="row g-4">
+                    <div class="col-md-4">
+                      <div class="small text-muted">Flow Category :</div>
+                      <div class="fw-bold">PraCetak</div>
+                    </div>
+                    <div class="col-md-8">
+                      <div class="small text-muted mb-2">Flow Name :</div>
+                      <div class="d-flex flex-column gap-3">
+                        <div class="d-flex align-items-center gap-2">
+                          <input class="flow-checkbox" type="checkbox" id="pracetak-klise" data-flow-name="Klise" />
+                          <label for="pracetak-klise">Klise</label>
+                        </div>
+                        <div class="d-flex align-items-center gap-2">
+                          <input class="flow-checkbox" type="checkbox" id="pracetak-pisopond"
+                            data-flow-name="Piso Pond" />
+                          <label for="pracetak-pisopond">Piso Pond</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="border-top pt-3 pb-4" data-category="Finishing">
+                  <div class="row g-4">
+                    <div class="col-md-4">
+                      <div class="small text-muted">Flow Category :</div>
+                      <div class="fw-bold">Finishing</div>
+                    </div>
+                    <div class="col-md-8">
+                      <div class="small text-muted mb-2">Flow Name :</div>
+                      <div class="d-flex flex-column gap-3">
+                        <div class="d-flex align-items-center gap-2">
+                          <input class="flow-checkbox" type="checkbox" id="finishing-glossy" data-flow-name="Glossy" />
+                          <label for="finishing-glossy">Glossy</label>
+                        </div>
+                        <div class="d-flex align-items-center gap-2">
+                          <input class="flow-checkbox" type="checkbox" id="finishing-doff" data-flow-name="Doff" />
+                          <label for="finishing-doff">Doff</label>
+                        </div>
+                        <div class="d-flex align-items-center gap-2">
+                          <input class="flow-checkbox" type="checkbox" id="finishing-poliemas"
+                            data-flow-name="Poli Emas" />
+                          <label for="finishing-poliemas">Poli Emas</label>
+                        </div>
+                        <div class="flow-option d-flex flex-column gap-2">
+                          <div class="d-flex align-items-center gap-2">
+                            <input class="flow-checkbox" type="checkbox" id="finishing-potong"
+                              data-flow-name="Potong" />
+                            <label for="finishing-potong">Potong</label>
+                          </div>
+                          <div class="template-toggle is-visible">
+                            <div class="d-flex align-items-center gap-2">
+                              <input class="template-checkbox" type="checkbox" id="template-finishing-potong"
+                                data-target="#template-row-finishing-potong" />
+                              <label for="template-finishing-potong" class="mb-0">Flow Template</label>
+                            </div>
+                          </div>
+                          <div class="flow-template-row is-visible" id="template-row-finishing-potong">
+                            <select class="form-select select">
+                              <option>Choose Flow Templete</option>
+                              <option selected>Potong Sisir</option>
+                              <option>Potong Standar</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xl-5 col-12">
+            <div class="card h-100 mb-0">
+              <div class="card-body p-4">
+                <div class="fw-bold mb-3">Work Flow Arrange</div>
+                <div>
+                  <div class="arrange-head fw-bold small mb-2">
+                    <div>Flow</div>
+                    <div>Flow Name</div>
+                    <div>Up/Down</div>
+                  </div>
+                  <div id="arrangeList"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="d-flex justify-content-end flex-wrap gap-3 mt-4">
+          <button type="button" class="btn btn-secondary px-4">Cancel</button>
+          <button type="button" class="btn btn-primary px-4">Save</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal for add new  -->
+  <div class="modal fade text-standard" id="addNewFlowNameModal" tabindex="-1"
+    aria-labelledby="addNewFlowNameModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header py-2">
+          <h5 class="modal-title" id="addNewFlowNameModalLabel">Add New Flow Name</h5>
+          <div class="d-flex align-items-center">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+        </div>
+        <div class="modal-body">
+          <div>
+            <form>
+              <div class="row mb-3">
+                <div class="col-5">
+                  <label for="name" class="form-label">Flow Name</label>
+                </div>
+                <div class="col-7">
+                  <input type="text" class="form-control" id="name" />
+                </div>
+              </div>
+
+              <div class="row mb-3">
+                <div class="col-5">
+                  <label for="incentive" class="form-label">Incentive Amount</label>
+                </div>
+                <div class="col-7">
+                  <input type="text" class="form-control number-separator" inputmode="numeric" pattern="[0-9]*" />
+                  <input type="hidden" class="result-input" id="incentive" />
+                </div>
+              </div>
+              <div class="row mb-3">
+                <div class="col-5">
+                  <label class="form-label">Unit Incentive</label>
+                </div>
+                <div class="col-7">
+                  <select class="select">
+                    <option>Per Job</option>
+                    <option>Per Meter</option>
+                    <option>Per Pieces</option>
+                    <option>Per Ream</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="row mb-3">
+                <div class="col-5">
+                  <label class="form-label mt-2">Assignee</label>
+                </div>
+                <div class="col-7">
+                  <div class="d-flex mb-2 mt-2">
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="assigneeType" id="radioEmployee"
+                        value="employee" />
+                      <label class="form-check-label" for="radioEmployee">Employees</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="assigneeType" id="radioDepartment"
+                        value="department" />
+                      <label class="form-check-label" for="radioDepartment">Department</label>
+                    </div>
+                  </div>
+
+                  <div class="form-check mb-2" id="multipleEmployeeWrapper">
+                    <input class="form-check-input" type="checkbox" id="checkMultiple" value="multiple" />
+                    <label class="form-check-label text-muted small" for="checkMultiple">Multiple Assignees</label>
+                  </div>
+
+                  <input type="text" class="form-control" id="assigne-input" placeholder="Enter assignee name" />
+
+                  <div id="multiple-select-wrapper" class="d-none">
+                    <select class="select2 form-control" id="assigne-multiple-select" multiple="multiple"></select>
+                  </div>
+
+                  <select id="assigne-select" class="form-select d-none" disabled>
+                    <option value="">Select department</option>
+                    <option value="tim-cutting">Tim Cutting</option>
+                    <option value="tim-printing">Tim Printing</option>
+                  </select>
+                </div>
+              </div>
+              <div class="row mb-3">
+                <div class="col-5">
+                  <label class="form-label">Flow Category</label>
+                </div>
+                <div class="col-7">
+                  <select class="select">
+                    <option>Design</option>
+                    <option>Pracetak</option>
+                    <option>Cetak</option>
+                    <option>Finishing</option>
+                  </select>
+                </div>
+              </div>
+              <div class="row mb-3">
+                <div class="col-5">
+                  <label class="form-label">Flow Type</label>
+                </div>
+                <div class="col-7">
+                  <div class="card-body p-0 mb-2">
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="flow_type" id="inhouse" value="In-House" />
+                      <label class="form-check-label" for="inhouse"> In-House </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="flow_type" id="outsource" value="OutSource" />
+                      <label class="form-check-label" for="outsource"> OutSource </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <small class="d-none text-standard text-danger" id="info-selected-all-1"><i
+                  class="fa-solid fa-circle-info"></i> please input your specification<br /></small>
+              <div class="row mb-3 justify-content-end">
+                <div class="col-7">
+                  <button class="btn btn-primary w-100" id="save-btn-1">Simpan</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade text-standard" id="addNewFlowCategoryModal" tabindex="-1" aria-labelledby="add-unitsLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header py-2">
+          <h5 class="modal-title" id="add-unitsLabel">Add New Process Name</h5>
+          <div class="d-flex align-items-center">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+        </div>
+        <div class="modal-body">
+          <div>
+            <form>
+              <div class="row mb-3">
+                <div class="col-5">
+                  <label class="form-label">Flow Category</label>
+                </div>
+                <div class="col-7">
+                  <input type="text" class="form-control number-separator" inputmode="numeric" pattern="[0-9]*" />
+                  <input type="hidden" class="result-input" id="used" />
+                </div>
+              </div>
+
+              <small class="d-none text-standard text-danger" id="info-selected-all-1"><i
+                  class="fa-solid fa-circle-info"></i> please input your specification<br /></small>
+              <div class="row mb-3 justify-content-end">
+                <div class="col-7">
+                  <button class="btn btn-primary w-100" id="save-btn-1">Simpan</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/js/jquery-3.7.1.min.js"></script>
+  <script src="assets/js/feather.min.js"></script>
+  <script src="assets/js/jquery.slimscroll.min.js"></script>
+  <script src="assets/js/jquery.dataTables.min.js"></script>
+  <script src="assets/js/dataTables.bootstrap5.min.js"></script>
+  <script src="assets/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/moment.min.js"></script>
+  <script src="assets/js/bootstrap-datetimepicker.min.js"></script>
+  <script src="assets/plugins/intltelinput/js/intlTelInput.js"></script>
+  <script src="assets/plugins/select2/js/select2.min.js"></script>
+  <script src="assets/plugins/sweetalert/sweetalert2.all.min.js"></script>
+  <script src="assets/plugins/sweetalert/sweetalerts.min.js"></script>
+  <script src="assets/js/easy-number-separator.js"></script>
+  <script src="assets/js/liveSearch.js"></script>
+  <script src="assets/js/liveSearch-product.js"></script>
+  <script src="assets/js/theme-script.js"></script>
+  <script src="assets/js/script.js"></script>
+</body>
+
+</html>

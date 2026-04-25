@@ -39378,3 +39378,18 @@ a.product-img img {
     gap: 8px;
   }
 }
+
+/* ============================================ */
+/* TABLE TEXT WRAPPING - AUTO WRAP UNTUK KOLOM PANJANG */
+/* ============================================ */
+
+/* Tambahkan class "long-text" pada td/th yang kolom nya panjang */
+/* Contoh: <td class="long-text">Teks panjang...</td> */
+.long-text {
+  min-width: 300px !important;
+  word-wrap: break-word !important;
+  overflow-wrap: break-word !important;
+  word-break: break-word !important;
+  white-space: normal !important;
+  vertical-align: top !important;
+}

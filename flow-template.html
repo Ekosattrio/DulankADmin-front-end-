@@ -270,7 +270,7 @@
         <div class="modal-body">
           <p class="mb-1 fs-6">Add all Information you need in your flow Templete</p>
           <div class="p-4 mt-4">
-            <form id="add-flow-template-form">
+            <form class="flow-template-form" data-default-note-visible="true">
               <div class="row align-items-center mb-4">
                 <div class="col-lg-3 mb-2 mb-lg-0">
                   <label class="form-label" for="flow-template-name">Flow Templete Name</label>
@@ -281,12 +281,26 @@
               </div>
 
               <div class="mb-4">
-                <a href="#" class="text-warning" id="add-information-trigger">Add Information</a>
+                <a href="#" class="text-warning add-information-trigger">Add Information</a>
               </div>
 
               <div class="table-responsive">
                 <table class="table mb-0">
-                  <tbody></tbody>
+                  <tbody class="flow-template-table-body">
+                    <tr class="flow-template-note-row">
+                      <td class="ps-0">
+                        <input type="text" class="form-control flow-template-note-input" placeholder="Information" />
+                      </td>
+                      <td colspan="2">
+                        <div class="d-flex align-items-center gap-3">
+                          <a href="#" class="text-warning note-cancel-btn">Cancel</a>
+                          <button type="button" class="btn btn-primary btn-sm note-save-btn">Save</button>
+                        </div>
+                      </td>
+                      <td class="data-select-action-cell"></td>
+                      <td class="data-select-action-cell"></td>
+                    </tr>
+                  </tbody>
                 </table>
               </div>
 
@@ -315,7 +329,7 @@
         <div class="modal-body">
           <p class="mb-1 fs-6">Add all Information you need in your flow Templete</p>
           <div class="p-4 mt-4">
-            <form id="add-flow-template-form">
+            <form class="flow-template-form" data-default-note-visible="false">
               <div class="row align-items-center mb-4">
                 <div class="col-lg-3 mb-2 mb-lg-0">
                   <label class="form-label" for="flow-template-name">Flow Templete Name</label>
@@ -326,47 +340,47 @@
               </div>
 
               <div class="mb-4">
-                <a href="#" class="text-warning" id="add-information-trigger">Add Information</a>
+                <a href="#" class="text-warning add-information-trigger">Add Information</a>
               </div>
 
               <div class="table-responsive">
                 <table class="table mb-0">
-                  <tbody id="flow-template-table-body">
+                  <tbody class="flow-template-table-body">
                     <tr>
                       <td class="ps-0">Project Name</td>
                       <td><a href="#" class="text-warning">Edit</a></td>
                       <td><a href="#" class="text-warning">Delete</a></td>
                       <td>
-                        <select class="form-select select">
+                        <select class="form-select select flow-input-type-select">
                           <option selected>Input Type</option>
                           <option>Select Type</option>
                         </select>
                       </td>
-                      <td></td>
+                      <td class="data-select-action-cell"></td>
                     </tr>
                     <tr>
                       <td class="ps-0">Kertas</td>
                       <td><a href="#" class="text-warning">Edit</a></td>
                       <td><a href="#" class="text-warning">Delete</a></td>
                       <td>
-                        <select class="form-select select">
+                        <select class="form-select select flow-input-type-select">
                           <option selected>Input Type</option>
                           <option>Select Type</option>
                         </select>
                       </td>
-                      <td></td>
+                      <td class="data-select-action-cell"></td>
                     </tr>
                     <tr>
                       <td class="ps-0">Sisi Cetak</td>
                       <td><a href="#" class="text-warning">Edit</a></td>
                       <td><a href="#" class="text-warning">Delete</a></td>
                       <td>
-                        <select class="form-select select">
+                        <select class="form-select select flow-input-type-select">
                           <option>Input Type</option>
                           <option selected>Select Type</option>
                         </select>
                       </td>
-                      <td>
+                      <td class="data-select-action-cell">
                         <a href="#" class="text-dark data-select-trigger" data-information="Sisi Cetak"
                           data-default-options="Depan|Bolak-balik">Edit Data Select</a>
                       </td>
@@ -376,79 +390,79 @@
                       <td><a href="#" class="text-warning">Edit</a></td>
                       <td><a href="#" class="text-warning">Delete</a></td>
                       <td>
-                        <select class="form-select select">
+                        <select class="form-select select flow-input-type-select">
                           <option selected>Input Type</option>
                           <option>Select Type</option>
                         </select>
                       </td>
-                      <td></td>
+                      <td class="data-select-action-cell"></td>
                     </tr>
                     <tr>
                       <td class="ps-0">Lebar Kertas (cm)</td>
                       <td><a href="#" class="text-warning">Edit</a></td>
                       <td><a href="#" class="text-warning">Delete</a></td>
                       <td>
-                        <select class="form-select select">
+                        <select class="form-select select flow-input-type-select">
                           <option selected>Input Type</option>
                           <option>Select Type</option>
                         </select>
                       </td>
-                      <td></td>
+                      <td class="data-select-action-cell"></td>
                     </tr>
                     <tr>
                       <td class="ps-0">Kater/Model</td>
                       <td><a href="#" class="text-warning">Edit</a></td>
                       <td><a href="#" class="text-warning">Delete</a></td>
                       <td>
-                        <select class="form-select select">
+                        <select class="form-select select flow-input-type-select">
                           <option selected>Input Type</option>
                           <option>Select Type</option>
                         </select>
                       </td>
-                      <td></td>
+                      <td class="data-select-action-cell"></td>
                     </tr>
                     <tr>
                       <td class="ps-0">Jumlah Plat</td>
                       <td><a href="#" class="text-warning">Edit</a></td>
                       <td><a href="#" class="text-warning">Delete</a></td>
                       <td>
-                        <select class="form-select select">
+                        <select class="form-select select flow-input-type-select">
                           <option selected>Input Type</option>
                           <option>Select Type</option>
                         </select>
                       </td>
-                      <td></td>
+                      <td class="data-select-action-cell"></td>
                     </tr>
                     <tr>
                       <td class="ps-0">Jumlah Bahan</td>
                       <td><a href="#" class="text-warning">Edit</a></td>
                       <td><a href="#" class="text-warning">Delete</a></td>
                       <td>
-                        <select class="form-select select">
+                        <select class="form-select select flow-input-type-select">
                           <option selected>Input Type</option>
                           <option>Select Type</option>
                         </select>
                       </td>
-                      <td></td>
+                      <td class="data-select-action-cell"></td>
                     </tr>
                     <tr>
                       <td class="ps-0">Jumlah Insit</td>
                       <td><a href="#" class="text-warning">Edit</a></td>
                       <td><a href="#" class="text-warning">Delete</a></td>
                       <td>
-                        <select class="form-select select">
+                        <select class="form-select select flow-input-type-select">
                           <option selected>Input Type</option>
                           <option>Select Type</option>
                         </select>
                       </td>
-                      <td></td>
+                      <td class="data-select-action-cell"></td>
                     </tr>
                     <tr>
                       <td class="ps-0">Jumlah Butuh</td>
                       <td><a href="#" class="text-warning">Edit</a></td>
                       <td><a href="#" class="text-warning">Delete</a></td>
                       <td>
-                        <select class="form-select select">
+                        <select class="form-select select flow-input-type-select">
                           <option selected>Input Type</option>
                           <option>Select Type</option>
                         </select>
@@ -460,12 +474,12 @@
                       <td><a href="#" class="text-warning">Edit</a></td>
                       <td><a href="#" class="text-warning">Delete</a></td>
                       <td>
-                        <select class="form-select select">
+                        <select class="form-select select flow-input-type-select">
                           <option>Input Type</option>
                           <option selected>Select Type</option>
                         </select>
                       </td>
-                      <td>
+                      <td class="data-select-action-cell">
                         <a href="#" class="text-dark data-select-trigger" data-information="Ada Contoh?"
                           data-default-options="Ya|Tidak">Edit Data Select</a>
                       </td>
@@ -475,24 +489,24 @@
                       <td><a href="#" class="text-warning">Edit</a></td>
                       <td><a href="#" class="text-warning">Delete</a></td>
                       <td>
-                        <select class="form-select select">
+                        <select class="form-select select flow-input-type-select">
                           <option>Input Type</option>
                           <option selected>Select Type</option>
                         </select>
                       </td>
-                      <td>
+                      <td class="data-select-action-cell">
                         <a href="#" class="text-warning data-select-trigger" data-information="Acc Warna?"
                           data-default-options="Ya|Tidak">Add Data Select</a>
                       </td>
                     </tr>
-                    <tr class="d-none" id="flow-template-note-row">
+                    <tr class="flow-template-note-row d-none">
                       <td class="ps-0">
-                        <input type="text" class="form-control" id="flow-template-note" placeholder="Information" />
+                        <input type="text" class="form-control flow-template-note-input" placeholder="Information" />
                       </td>
                       <td colspan="2">
                         <div class="d-flex align-items-center gap-3">
-                          <a href="#" class="text-warning" id="note-cancel-btn">Cancel</a>
-                          <button type="button" class="btn btn-primary btn-sm" id="note-save-btn">Save</button>
+                          <a href="#" class="text-warning note-cancel-btn">Cancel</a>
+                          <button type="button" class="btn btn-primary btn-sm note-save-btn">Save</button>
                         </div>
                       </td>
                       <td></td>
@@ -600,17 +614,9 @@
   <script src="assets/js/script.js"></script>
   <script>
     (function () {
+      const flowTemplateModals = document.querySelectorAll("#add-units, #edit-units");
       const addUnitsModal = document.getElementById("add-units");
       const addDataSelectModal = document.getElementById("add-data-select-modal");
-      const addInfoTrigger = document.getElementById("add-information-trigger");
-      const noteRow = document.getElementById("flow-template-note-row");
-      const noteCancelBtn = document.getElementById("note-cancel-btn");
-      const noteSaveBtn = document.getElementById("note-save-btn");
-      const noteInput = document.getElementById("flow-template-note");
-      const flowTemplateName = document.getElementById("flow-template-name");
-      const form = document.getElementById("add-flow-template-form");
-      const tableBody = document.getElementById("flow-template-table-body");
-      const dataSelectTriggers = document.querySelectorAll(".data-select-trigger");
       const dataSelectForm = document.getElementById("add-data-select-form");
       const dataSelectInformationInput = document.getElementById("data-select-information");
       const dataSelectInput = document.getElementById("data-select-input");
@@ -621,17 +627,12 @@
       const selectDataStore = {};
       let reopenAddUnitsModal = false;
       let activeDataSelectKey = "";
+      let activeFlowTemplateModal = null;
 
       if (
+        !flowTemplateModals.length ||
         !addUnitsModal ||
         !addDataSelectModal ||
-        !addInfoTrigger ||
-        !noteRow ||
-        !noteCancelBtn ||
-        !noteSaveBtn ||
-        !noteInput ||
-        !form ||
-        !tableBody ||
         !dataSelectForm ||
         !dataSelectInformationInput ||
         !dataSelectInput ||
@@ -641,18 +642,42 @@
         return;
       }
 
-      function showNoteRow() {
-        noteRow.classList.remove("d-none");
+      function getModalParts(modalElement) {
+        const form = modalElement.querySelector(".flow-template-form");
 
-        if (noteInput) {
-          noteInput.focus();
+        if (!form) {
+          return null;
+        }
+
+        return {
+          modalElement: modalElement,
+          modalInstance: bootstrap.Modal.getOrCreateInstance(modalElement),
+          form: form,
+          flowTemplateName: form.querySelector('input[type="text"]'),
+          addInfoTrigger: form.querySelector(".add-information-trigger"),
+          tableBody: form.querySelector(".flow-template-table-body"),
+          noteRow: form.querySelector(".flow-template-note-row"),
+          noteCancelBtn: form.querySelector(".note-cancel-btn"),
+          noteSaveBtn: form.querySelector(".note-save-btn"),
+          noteInput: form.querySelector(".flow-template-note-input"),
+          defaultNoteVisible: form.dataset.defaultNoteVisible === "true"
+        };
+      }
+
+      function showNoteRow(parts) {
+        parts.noteRow.classList.remove("d-none");
+
+        if (parts.noteInput) {
+          parts.noteInput.focus();
         }
       }
 
-      function hideNoteRow() {
-        noteRow.classList.add("d-none");
+      function hideNoteRow(parts) {
+        parts.noteRow.classList.add("d-none");
 
-        noteInput.value = "";
+        if (parts.noteInput) {
+          parts.noteInput.value = "";
+        }
       }
 
       function createInformationRow(label) {
@@ -663,22 +688,188 @@
             <td><a href="#" class="text-warning">Edit</a></td>
             <td><a href="#" class="text-warning">Delete</a></td>
             <td>
-              <select class="form-select select">
+              <select class="form-select select flow-input-type-select">
                 <option selected>Input Type</option>
                 <option>Select Type</option>
               </select>
             </td>
-            <td></td>
+            <td class="data-select-action-cell"></td>
           `;
         row.querySelector(".dynamic-information-label").textContent = label;
 
         return row;
       }
 
-      function removeDynamicRows() {
-        tableBody.querySelectorAll(".dynamic-information-row").forEach(function (row) {
+      function removeDynamicRows(parts) {
+        parts.tableBody.querySelectorAll(".dynamic-information-row").forEach(function (row) {
           row.remove();
         });
+      }
+
+      function prepareFlowTemplateRows(parts) {
+        parts.tableBody.querySelectorAll("tr").forEach(function (row) {
+          const cells = row.querySelectorAll("td");
+          const typeSelect = row.querySelector("select");
+
+          if (typeSelect) {
+            typeSelect.classList.add("flow-input-type-select");
+          }
+
+          if (cells[4]) {
+            cells[4].classList.add("data-select-action-cell");
+          }
+        });
+      }
+
+      function bindFlowTypeSelects(parts) {
+        parts.tableBody.querySelectorAll(".flow-input-type-select").forEach(function (selectElement) {
+          if (selectElement.dataset.flowTypeBound === "true") {
+            return;
+          }
+
+          function handleTypeChange() {
+            const row = selectElement.closest("tr");
+
+            if (!row) {
+              return;
+            }
+
+            updateDataSelectAction(row);
+            markModalDirty(parts);
+          }
+
+          selectElement.addEventListener("change", handleTypeChange);
+
+          if (window.jQuery) {
+            window.jQuery(selectElement).on("change.select2FlowType select2:select", handleTypeChange);
+          }
+
+          selectElement.dataset.flowTypeBound = "true";
+        });
+      }
+
+      function normalizeTypeValue(value) {
+        return String(value || "").trim().toLowerCase();
+      }
+
+      function ensureDataSelectAction(row) {
+        const informationCell = row.querySelector("td:first-child");
+        const actionCell = row.querySelector(".data-select-action-cell") || row.cells[4];
+        const label = informationCell ? informationCell.textContent.trim() : "";
+
+        if (!actionCell) {
+          return null;
+        }
+
+        let trigger = actionCell.querySelector(".data-select-trigger");
+
+        if (!trigger) {
+          trigger = document.createElement("a");
+          trigger.href = "#";
+          trigger.className = "text-warning data-select-trigger d-none";
+          trigger.setAttribute("data-information", label);
+          trigger.textContent = "Add Data Select";
+          actionCell.appendChild(trigger);
+        }
+
+        if (!trigger.getAttribute("data-information")) {
+          trigger.setAttribute("data-information", label);
+        }
+
+        return trigger;
+      }
+
+      function updateDataSelectAction(row) {
+        const typeSelect = row.querySelector(".flow-input-type-select") || row.querySelector("select");
+        const trigger = ensureDataSelectAction(row);
+
+        if (!typeSelect || !trigger) {
+          return;
+        }
+
+        const isSelectType = normalizeTypeValue(typeSelect.value) === "select type";
+        const hasDefaultOptions = Boolean((trigger.getAttribute("data-default-options") || "").trim());
+        const storedOptions = selectDataStore[trigger.getAttribute("data-information")] || [];
+        const hasOptions = hasDefaultOptions || storedOptions.length > 0;
+
+        trigger.classList.toggle("d-none", !isSelectType);
+        trigger.textContent = hasOptions ? "Edit Data Select" : "Add Data Select";
+        trigger.classList.toggle("text-dark", hasOptions);
+        trigger.classList.toggle("text-warning", !hasOptions);
+      }
+
+      function syncDataSelectActions(parts) {
+        parts.tableBody.querySelectorAll("tr").forEach(function (row) {
+          updateDataSelectAction(row);
+        });
+      }
+
+      function getFormSnapshot(parts) {
+        const data = [];
+
+        parts.form.querySelectorAll("input, select, textarea").forEach(function (field) {
+          if (field.type === "checkbox" || field.type === "radio") {
+            data.push(field.checked ? "1" : "0");
+            return;
+          }
+
+          data.push(field.value || "");
+        });
+
+        parts.tableBody.querySelectorAll(".dynamic-information-row .dynamic-information-label").forEach(function (label) {
+          data.push(label.textContent.trim());
+        });
+
+        parts.tableBody.querySelectorAll(".data-select-trigger").forEach(function (trigger) {
+          data.push(trigger.classList.contains("d-none") ? "hidden" : "shown");
+          data.push(trigger.textContent.trim());
+        });
+
+        return JSON.stringify(data);
+      }
+
+      function markModalDirty(parts) {
+        parts.isDirty = parts.initialSnapshot !== getFormSnapshot(parts);
+      }
+
+      function confirmDiscard(parts) {
+        Swal.fire({
+          title: "Perubahan belum disimpan",
+          text: "Tutup modal dan buang perubahan?",
+          icon: "warning",
+          showCancelButton: true,
+          confirmButtonText: "Ya, tutup",
+          cancelButtonText: "Lanjut edit"
+        }).then(function (result) {
+          if (!result.isConfirmed) {
+            return;
+          }
+
+          parts.skipDiscardWarning = true;
+          parts.modalInstance.hide();
+        });
+      }
+
+      function resetFlowTemplateModal(parts) {
+        removeDynamicRows(parts);
+        parts.form.reset();
+
+        if (parts.flowTemplateName) {
+          parts.flowTemplateName.value = "SPK Heidelberg Sm52 4 Warna";
+        }
+
+        if (parts.defaultNoteVisible) {
+          showNoteRow(parts);
+        } else {
+          hideNoteRow(parts);
+        }
+
+        prepareFlowTemplateRows(parts);
+        bindFlowTypeSelects(parts);
+        syncDataSelectActions(parts);
+        parts.initialSnapshot = getFormSnapshot(parts);
+        parts.isDirty = false;
+        parts.skipDiscardWarning = false;
       }
 
       function getStoredOptions(key, defaults) {
@@ -724,36 +915,132 @@
         renderSavedOptions();
         dataSelectInput.value = "";
         reopenAddUnitsModal = true;
-        addUnitsModalInstance.hide();
+        activeFlowTemplateModal = trigger.closest(".modal");
+        if (activeFlowTemplateModal) {
+          const activeParts = getModalParts(activeFlowTemplateModal);
+          if (activeParts) {
+            activeParts.skipDiscardWarning = true;
+          }
+          bootstrap.Modal.getOrCreateInstance(activeFlowTemplateModal).hide();
+        }
       }
 
-      addInfoTrigger.addEventListener("click", function (event) {
-        event.preventDefault();
-        showNoteRow();
-      });
+      flowTemplateModals.forEach(function (modalElement) {
+        const parts = getModalParts(modalElement);
 
-      dataSelectTriggers.forEach(function (trigger) {
-        trigger.addEventListener("click", function (event) {
-          event.preventDefault();
-          openDataSelectModal(trigger);
-        });
-      });
-
-      noteCancelBtn.addEventListener("click", function (event) {
-        event.preventDefault();
-        hideNoteRow();
-      });
-
-      noteSaveBtn.addEventListener("click", function () {
-        const informationValue = noteInput.value.trim();
-
-        if (!informationValue) {
-          noteInput.focus();
+        if (!parts) {
           return;
         }
 
-        tableBody.insertBefore(createInformationRow(informationValue), noteRow);
-        hideNoteRow();
+        parts.addInfoTrigger.addEventListener("click", function (event) {
+          event.preventDefault();
+          showNoteRow(parts);
+          markModalDirty(parts);
+        });
+
+        parts.noteCancelBtn.addEventListener("click", function (event) {
+          event.preventDefault();
+
+          if (parts.defaultNoteVisible) {
+            if (parts.noteInput) {
+              parts.noteInput.value = "";
+            }
+            markModalDirty(parts);
+            return;
+          }
+
+          hideNoteRow(parts);
+          markModalDirty(parts);
+        });
+
+        parts.noteSaveBtn.addEventListener("click", function () {
+          const informationValue = parts.noteInput.value.trim();
+
+          if (!informationValue) {
+            parts.noteInput.focus();
+            return;
+          }
+
+          parts.tableBody.insertBefore(createInformationRow(informationValue), parts.noteRow);
+          prepareFlowTemplateRows(parts);
+          bindFlowTypeSelects(parts);
+          syncDataSelectActions(parts);
+
+          if (parts.defaultNoteVisible) {
+            parts.noteInput.value = "";
+            parts.noteInput.focus();
+            markModalDirty(parts);
+            return;
+          }
+
+          hideNoteRow(parts);
+          markModalDirty(parts);
+        });
+
+        parts.form.addEventListener("submit", function (event) {
+          event.preventDefault();
+        });
+
+        parts.form.addEventListener("input", function () {
+          markModalDirty(parts);
+        });
+
+        parts.form.addEventListener("change", function () {
+          markModalDirty(parts);
+        });
+
+        modalElement.addEventListener("click", function (event) {
+          const dismissTrigger = event.target.closest('[data-bs-dismiss="modal"], .btn-close');
+
+          if (!dismissTrigger || parts.skipDiscardWarning || !parts.isDirty) {
+            return;
+          }
+
+          event.preventDefault();
+          confirmDiscard(parts);
+        });
+
+        modalElement.addEventListener("hide.bs.modal", function (event) {
+          if (parts.skipDiscardWarning || !parts.isDirty) {
+            return;
+          }
+
+          event.preventDefault();
+          confirmDiscard(parts);
+        });
+
+        modalElement.addEventListener("hidden.bs.modal", function () {
+          parts.skipDiscardWarning = false;
+
+          if (reopenAddUnitsModal && activeFlowTemplateModal === modalElement) {
+            addDataSelectModalInstance.show();
+            return;
+          }
+
+          resetFlowTemplateModal(parts);
+        });
+
+        modalElement.addEventListener("shown.bs.modal", function () {
+          prepareFlowTemplateRows(parts);
+          bindFlowTypeSelects(parts);
+          syncDataSelectActions(parts);
+          markModalDirty(parts);
+          parts.initialSnapshot = getFormSnapshot(parts);
+          parts.isDirty = false;
+        });
+
+        resetFlowTemplateModal(parts);
+      });
+
+      document.addEventListener("click", function (event) {
+        const trigger = event.target.closest(".data-select-trigger");
+
+        if (!trigger) {
+          return;
+        }
+
+        event.preventDefault();
+        openDataSelectModal(trigger);
       });
 
       dataSelectAddBtn.addEventListener("click", function () {
@@ -768,6 +1055,14 @@
         dataSelectInput.value = "";
         renderSavedOptions();
         dataSelectInput.focus();
+
+        if (activeFlowTemplateModal) {
+          const parts = getModalParts(activeFlowTemplateModal);
+          if (parts) {
+            syncDataSelectActions(parts);
+            markModalDirty(parts);
+          }
+        }
       });
 
       dataSelectSavedList.addEventListener("click", function (event) {
@@ -787,6 +1082,14 @@
 
         selectDataStore[activeDataSelectKey].splice(index, 1);
         renderSavedOptions();
+
+        if (activeFlowTemplateModal) {
+          const parts = getModalParts(activeFlowTemplateModal);
+          if (parts) {
+            syncDataSelectActions(parts);
+            markModalDirty(parts);
+          }
+        }
       });
 
       dataSelectForm.addEventListener("submit", function (event) {
@@ -795,28 +1098,13 @@
         addDataSelectModalInstance.hide();
       });
 
-      addUnitsModal.addEventListener("hidden.bs.modal", function () {
-        if (reopenAddUnitsModal) {
-          addDataSelectModalInstance.show();
-          return;
-        }
-
-        removeDynamicRows();
-        form.reset();
-        hideNoteRow();
-
-        if (flowTemplateName) {
-          flowTemplateName.value = "SPK Heidelberg Sm52 4 Warna";
-        }
-      });
-
       addDataSelectModal.addEventListener("hidden.bs.modal", function () {
         dataSelectForm.reset();
         dataSelectInformationInput.value = activeDataSelectKey;
 
-        if (reopenAddUnitsModal) {
+        if (reopenAddUnitsModal && activeFlowTemplateModal) {
           reopenAddUnitsModal = false;
-          addUnitsModalInstance.show();
+          bootstrap.Modal.getOrCreateInstance(activeFlowTemplateModal).show();
         }
       });
 

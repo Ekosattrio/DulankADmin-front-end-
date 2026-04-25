@@ -87,13 +87,43 @@
                     <div class="col-md-8">
                       <div class="small text-muted mb-2">Flow Name :</div>
                       <div class="d-flex flex-column gap-3">
-                        <div class="d-flex align-items-center gap-2">
-                          <input class="flow-checkbox" type="checkbox" id="design-artwork" data-flow-name="Artwork" />
-                          <label for="design-artwork">Artwork</label>
+                        <div class="flow-option d-flex flex-column gap-2" data-flow-option>
+                          <div class="flow-option-head d-flex align-items-center justify-content-between gap-2 flex-wrap">
+                            <div class="flow-option-label d-flex align-items-center gap-2">
+                              <input class="flow-checkbox" type="checkbox" id="design-artwork" data-flow-name="Artwork"
+                                onchange="handleFlowCheckbox(this)"
+                                data-template-options="Multilith A|Multilith B" />
+                              <label for="design-artwork" class="mb-0">Artwork</label>
+                            </div>
+                            <button type="button" class="btn btn-outline-primary btn-sm flow-template-action d-none text-nowrap"
+                              onclick="toggleFlowTemplate(this)">Add
+                              Flow Templete</button>
+                          </div>
+                          <div class="flow-template-row ms-4">
+                            <label class="small fw-semibold text-muted d-block mb-2">Flow Template</label>
+                            <select class="form-select select">
+                              <option selected>Choose Flow Templete</option>
+                            </select>
+                          </div>
                         </div>
-                        <div class="d-flex align-items-center gap-2">
-                          <input class="flow-checkbox" type="checkbox" id="design-editing" data-flow-name="Editing" />
-                          <label for="design-editing">Editing</label>
+                        <div class="flow-option d-flex flex-column gap-2" data-flow-option>
+                          <div class="flow-option-head d-flex align-items-center justify-content-between gap-2 flex-wrap">
+                            <div class="flow-option-label d-flex align-items-center gap-2">
+                              <input class="flow-checkbox" type="checkbox" id="design-editing" data-flow-name="Editing"
+                                onchange="handleFlowCheckbox(this)"
+                                data-template-options="Multilith A|Multilith B" />
+                              <label for="design-editing" class="mb-0">Editing</label>
+                            </div>
+                            <button type="button" class="btn btn-outline-primary btn-sm flow-template-action d-none text-nowrap"
+                              onclick="toggleFlowTemplate(this)">Add
+                              Flow Templete</button>
+                          </div>
+                          <div class="flow-template-row ms-4">
+                            <label class="small fw-semibold text-muted d-block mb-2">Flow Template</label>
+                            <select class="form-select select">
+                              <option selected>Choose Flow Templete</option>
+                            </select>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -109,24 +139,20 @@
                     <div class="col-md-8">
                       <div class="small text-muted mb-2">Flow Name :</div>
                       <div class="d-flex flex-column gap-3">
-                        <div class="d-flex align-items-center gap-2">
-                          <input class="flow-checkbox" type="checkbox" id="cetak-sm52" data-flow-name="Mesin Sm52" />
-                          <label for="cetak-sm52">Mesin Sm52</label>
-                        </div>
-                        <div class="flow-option d-flex flex-column gap-2">
-                          <div class="d-flex align-items-center gap-2">
-                            <input class="flow-checkbox" type="checkbox" id="cetak-multilith"
-                              data-flow-name="Mesin Multilith" />
-                            <label for="cetak-multilith">Mesin Multilith</label>
-                          </div>
-                          <div class="template-toggle is-visible">
-                            <div class="d-flex align-items-center gap-2">
-                              <input class="template-checkbox" type="checkbox" id="template-cetak-multilith"
-                                data-target="#template-row-cetak-multilith" />
-                              <label for="template-cetak-multilith" class="mb-0">Flow Template</label>
+                        <div class="flow-option d-flex flex-column gap-2" data-flow-option>
+                          <div class="flow-option-head d-flex align-items-center justify-content-between gap-2 flex-wrap">
+                            <div class="flow-option-label d-flex align-items-center gap-2">
+                              <input class="flow-checkbox" type="checkbox" id="cetak-sm52" data-flow-name="Mesin Sm52"
+                                onchange="handleFlowCheckbox(this)"
+                                data-template-options="Multilith A|Multilith B" />
+                              <label for="cetak-sm52" class="mb-0">Mesin Sm52</label>
                             </div>
+                            <button type="button" class="btn btn-outline-primary btn-sm flow-template-action d-none text-nowrap"
+                              onclick="toggleFlowTemplate(this)">Add
+                              Flow Templete</button>
                           </div>
-                          <div class="flow-template-row is-visible" id="template-row-cetak-multilith">
+                          <div class="flow-template-row ms-4">
+                            <label class="small fw-semibold text-muted d-block mb-2">Flow Template</label>
                             <select class="form-select select">
                               <option selected>Choose Flow Templete</option>
                               <option>Multilith A</option>
@@ -134,10 +160,47 @@
                             </select>
                           </div>
                         </div>
-                        <div class="d-flex align-items-center gap-2">
-                          <input class="flow-checkbox" type="checkbox" id="cetak-myjet"
-                            data-flow-name="Myjet Outdoor Km512" />
-                          <label for="cetak-myjet">Myjet Outdoor Km512</label>
+                        <div class="flow-option d-flex flex-column gap-2" data-flow-option>
+                          <div class="flow-option-head d-flex align-items-center justify-content-between gap-2 flex-wrap">
+                            <div class="flow-option-label d-flex align-items-center gap-2">
+                              <input class="flow-checkbox" type="checkbox" id="cetak-multilith"
+                                onchange="handleFlowCheckbox(this)"
+                                data-flow-name="Mesin Multilith" data-template-options="Multilith A|Multilith B" />
+                              <label for="cetak-multilith" class="mb-0">Mesin Multilith</label>
+                            </div>
+                            <button type="button" class="btn btn-outline-primary btn-sm flow-template-action d-none text-nowrap"
+                              onclick="toggleFlowTemplate(this)">Add
+                              Flow Templete</button>
+                          </div>
+                          <div class="flow-template-row ms-4" id="template-row-cetak-multilith">
+                            <label class="small fw-semibold text-muted d-block mb-2">Flow Template</label>
+                            <select class="form-select select">
+                              <option selected>Choose Flow Templete</option>
+                              <option>Multilith A</option>
+                              <option>Multilith B</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="flow-option d-flex flex-column gap-2" data-flow-option>
+                          <div class="flow-option-head d-flex align-items-center justify-content-between gap-2 flex-wrap">
+                            <div class="flow-option-label d-flex align-items-center gap-2">
+                              <input class="flow-checkbox" type="checkbox" id="cetak-myjet"
+                                onchange="handleFlowCheckbox(this)"
+                                data-flow-name="Myjet Outdoor Km512" data-template-options="Multilith A|Multilith B" />
+                              <label for="cetak-myjet" class="mb-0">Myjet Outdoor Km512</label>
+                            </div>
+                            <button type="button" class="btn btn-outline-primary btn-sm flow-template-action d-none text-nowrap"
+                              onclick="toggleFlowTemplate(this)">Add
+                              Flow Templete</button>
+                          </div>
+                          <div class="flow-template-row ms-4">
+                            <label class="small fw-semibold text-muted d-block mb-2">Flow Template</label>
+                            <select class="form-select select">
+                              <option selected>Choose Flow Templete</option>
+                              <option>Multilith A</option>
+                              <option>Multilith B</option>
+                            </select>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -153,14 +216,47 @@
                     <div class="col-md-8">
                       <div class="small text-muted mb-2">Flow Name :</div>
                       <div class="d-flex flex-column gap-3">
-                        <div class="d-flex align-items-center gap-2">
-                          <input class="flow-checkbox" type="checkbox" id="pracetak-klise" data-flow-name="Klise" />
-                          <label for="pracetak-klise">Klise</label>
+                        <div class="flow-option d-flex flex-column gap-2" data-flow-option>
+                          <div class="flow-option-head d-flex align-items-center justify-content-between gap-2 flex-wrap">
+                            <div class="flow-option-label d-flex align-items-center gap-2">
+                              <input class="flow-checkbox" type="checkbox" id="pracetak-klise" data-flow-name="Klise"
+                                onchange="handleFlowCheckbox(this)"
+                                data-template-options="Multilith A|Multilith B" />
+                              <label for="pracetak-klise" class="mb-0">Klise</label>
+                            </div>
+                            <button type="button" class="btn btn-outline-primary btn-sm flow-template-action d-none text-nowrap"
+                              onclick="toggleFlowTemplate(this)">Add
+                              Flow Templete</button>
+                          </div>
+                          <div class="flow-template-row ms-4">
+                            <label class="small fw-semibold text-muted d-block mb-2">Flow Template</label>
+                            <select class="form-select select">
+                              <option selected>Choose Flow Templete</option>
+                              <option>Multilith A</option>
+                              <option>Multilith B</option>
+                            </select>
+                          </div>
                         </div>
-                        <div class="d-flex align-items-center gap-2">
-                          <input class="flow-checkbox" type="checkbox" id="pracetak-pisopond"
-                            data-flow-name="Piso Pond" />
-                          <label for="pracetak-pisopond">Piso Pond</label>
+                        <div class="flow-option d-flex flex-column gap-2" data-flow-option>
+                          <div class="flow-option-head d-flex align-items-center justify-content-between gap-2 flex-wrap">
+                            <div class="flow-option-label d-flex align-items-center gap-2">
+                              <input class="flow-checkbox" type="checkbox" id="pracetak-pisopond"
+                                onchange="handleFlowCheckbox(this)"
+                                data-flow-name="Piso Pond" data-template-options="Multilith A|Multilith B" />
+                              <label for="pracetak-pisopond" class="mb-0">Piso Pond</label>
+                            </div>
+                            <button type="button" class="btn btn-outline-primary btn-sm flow-template-action d-none text-nowrap"
+                              onclick="toggleFlowTemplate(this)">Add
+                              Flow Templete</button>
+                          </div>
+                          <div class="flow-template-row ms-4">
+                            <label class="small fw-semibold text-muted d-block mb-2">Flow Template</label>
+                            <select class="form-select select">
+                              <option selected>Choose Flow Templete</option>
+                              <option>Multilith A</option>
+                              <option>Multilith B</option>
+                            </select>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -176,37 +272,87 @@
                     <div class="col-md-8">
                       <div class="small text-muted mb-2">Flow Name :</div>
                       <div class="d-flex flex-column gap-3">
-                        <div class="d-flex align-items-center gap-2">
-                          <input class="flow-checkbox" type="checkbox" id="finishing-glossy" data-flow-name="Glossy" />
-                          <label for="finishing-glossy">Glossy</label>
-                        </div>
-                        <div class="d-flex align-items-center gap-2">
-                          <input class="flow-checkbox" type="checkbox" id="finishing-doff" data-flow-name="Doff" />
-                          <label for="finishing-doff">Doff</label>
-                        </div>
-                        <div class="d-flex align-items-center gap-2">
-                          <input class="flow-checkbox" type="checkbox" id="finishing-poliemas"
-                            data-flow-name="Poli Emas" />
-                          <label for="finishing-poliemas">Poli Emas</label>
-                        </div>
-                        <div class="flow-option d-flex flex-column gap-2">
-                          <div class="d-flex align-items-center gap-2">
-                            <input class="flow-checkbox" type="checkbox" id="finishing-potong"
-                              data-flow-name="Potong" />
-                            <label for="finishing-potong">Potong</label>
-                          </div>
-                          <div class="template-toggle is-visible">
-                            <div class="d-flex align-items-center gap-2">
-                              <input class="template-checkbox" type="checkbox" id="template-finishing-potong"
-                                data-target="#template-row-finishing-potong" />
-                              <label for="template-finishing-potong" class="mb-0">Flow Template</label>
+                        <div class="flow-option d-flex flex-column gap-2" data-flow-option>
+                          <div class="flow-option-head d-flex align-items-center justify-content-between gap-2 flex-wrap">
+                            <div class="flow-option-label d-flex align-items-center gap-2">
+                              <input class="flow-checkbox" type="checkbox" id="finishing-glossy" data-flow-name="Glossy"
+                                onchange="handleFlowCheckbox(this)"
+                                data-template-options="Multilith A|Multilith B" />
+                              <label for="finishing-glossy" class="mb-0">Glossy</label>
                             </div>
+                            <button type="button" class="btn btn-outline-primary btn-sm flow-template-action d-none text-nowrap"
+                              onclick="toggleFlowTemplate(this)">Add
+                              Flow Templete</button>
                           </div>
-                          <div class="flow-template-row is-visible" id="template-row-finishing-potong">
+                          <div class="flow-template-row ms-4">
+                            <label class="small fw-semibold text-muted d-block mb-2">Flow Template</label>
                             <select class="form-select select">
-                              <option>Choose Flow Templete</option>
-                              <option selected>Potong Sisir</option>
-                              <option>Potong Standar</option>
+                              <option selected>Choose Flow Templete</option>
+                              <option>Multilith A</option>
+                              <option>Multilith B</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="flow-option d-flex flex-column gap-2" data-flow-option>
+                          <div class="flow-option-head d-flex align-items-center justify-content-between gap-2 flex-wrap">
+                            <div class="flow-option-label d-flex align-items-center gap-2">
+                              <input class="flow-checkbox" type="checkbox" id="finishing-doff" data-flow-name="Doff"
+                                onchange="handleFlowCheckbox(this)"
+                                data-template-options="Multilith A|Multilith B" />
+                              <label for="finishing-doff" class="mb-0">Doff</label>
+                            </div>
+                            <button type="button" class="btn btn-outline-primary btn-sm flow-template-action d-none text-nowrap"
+                              onclick="toggleFlowTemplate(this)">Add
+                              Flow Templete</button>
+                          </div>
+                          <div class="flow-template-row ms-4">
+                            <label class="small fw-semibold text-muted d-block mb-2">Flow Template</label>
+                            <select class="form-select select">
+                              <option selected>Choose Flow Templete</option>
+                              <option>Multilith A</option>
+                              <option>Multilith B</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="flow-option d-flex flex-column gap-2" data-flow-option>
+                          <div class="flow-option-head d-flex align-items-center justify-content-between gap-2 flex-wrap">
+                            <div class="flow-option-label d-flex align-items-center gap-2">
+                              <input class="flow-checkbox" type="checkbox" id="finishing-poliemas"
+                                onchange="handleFlowCheckbox(this)"
+                                data-flow-name="Poli Emas" data-template-options="Multilith A|Multilith B" />
+                              <label for="finishing-poliemas" class="mb-0">Poli Emas</label>
+                            </div>
+                            <button type="button" class="btn btn-outline-primary btn-sm flow-template-action d-none text-nowrap"
+                              onclick="toggleFlowTemplate(this)">Add
+                              Flow Templete</button>
+                          </div>
+                          <div class="flow-template-row ms-4">
+                            <label class="small fw-semibold text-muted d-block mb-2">Flow Template</label>
+                            <select class="form-select select">
+                              <option selected>Choose Flow Templete</option>
+                              <option>Multilith A</option>
+                              <option>Multilith B</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="flow-option d-flex flex-column gap-2" data-flow-option>
+                          <div class="flow-option-head d-flex align-items-center justify-content-between gap-2 flex-wrap">
+                            <div class="flow-option-label d-flex align-items-center gap-2">
+                              <input class="flow-checkbox" type="checkbox" id="finishing-potong" data-flow-name="Potong"
+                                onchange="handleFlowCheckbox(this)"
+                                data-template-options="Multilith A|Multilith B" />
+                              <label for="finishing-potong" class="mb-0">Potong</label>
+                            </div>
+                            <button type="button" class="btn btn-outline-primary btn-sm flow-template-action d-none text-nowrap"
+                              onclick="toggleFlowTemplate(this)">Add
+                              Flow Templete</button>
+                          </div>
+                          <div class="flow-template-row ms-4" id="template-row-finishing-potong">
+                            <label class="small fw-semibold text-muted d-block mb-2">Flow Template</label>
+                            <select class="form-select select">
+                              <option selected>Choose Flow Templete</option>
+                              <option>Multilith A</option>
+                              <option>Multilith B</option>
                             </select>
                           </div>
                         </div>
@@ -423,6 +569,62 @@
   <script src="assets/js/liveSearch-product.js"></script>
   <script src="assets/js/theme-script.js"></script>
   <script src="assets/js/script.js"></script>
+  <script>
+    function getTemplateOptions(checkbox) {
+      return (checkbox.dataset.templateOptions || "Multilith A|Multilith B")
+        .split("|")
+        .map(function (item) {
+          return item.trim();
+        })
+        .filter(Boolean);
+    }
+
+    function renderTemplateOptions(selectElement, items) {
+      if (!selectElement) {
+        return;
+      }
+
+      selectElement.innerHTML = '<option selected>Choose Flow Templete</option>' +
+        items.map(function (item) {
+          return "<option>" + item + "</option>";
+        }).join("");
+    }
+
+    function handleFlowCheckbox(checkbox) {
+      var flowOption = checkbox.closest("[data-flow-option]");
+      console.log(flowOption)
+      var actionButton = flowOption.querySelector(".flow-template-action");
+      var templateRow = flowOption.querySelector(".flow-template-row");
+      var templateSelect = flowOption.querySelector("select");
+
+      renderTemplateOptions(templateSelect, getTemplateOptions(checkbox));
+      actionButton.classList.toggle("d-none", !checkbox.checked);
+
+      if (!checkbox.checked) {
+        templateRow.classList.remove("is-visible");
+        if (templateSelect) {
+          templateSelect.selectedIndex = 0;
+        }
+      }
+    }
+
+    function toggleFlowTemplate(button) {
+      var flowOption = button.closest("[data-flow-option]");
+      var checkbox = flowOption.querySelector(".flow-checkbox");
+      var templateRow = flowOption.querySelector(".flow-template-row");
+      if (!checkbox.checked) {
+        return;
+      }
+
+      templateRow.classList.toggle("is-visible");
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+      document.querySelectorAll(".flow-checkbox").forEach(function (checkbox) {
+        handleFlowCheckbox(checkbox);
+      });
+    });
+  </script>
 </body>
 
 </html>

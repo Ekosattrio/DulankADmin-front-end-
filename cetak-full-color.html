@@ -36,6 +36,7 @@
 	<!-- Main CSS -->
 	<link rel="stylesheet" href="assets/css/style.css">
 
+	
 </head>
 
 <body>
@@ -120,58 +121,94 @@
 								<li class="nav-item" role="presentation">
 									<button class="nav-link" id="process-arrange" data-bs-toggle="tab"
 										data-bs-target="#processArrangeTabContent" type="button" role="tab"
-										aria-controls="processArrangeTabContent" aria-selected="false">Process
-										Arrange</button>
+										aria-controls="processArrangeTabContent" aria-selected="false">Work Flow</button>
 								</li>
 							</ul>
 							<div class="tab-content py-4 px-2 col-md-9" id=" mainTabContent">
 								<div class="tab-pane fade show active" id="categoryTabContent" role="tabpanel"
 									aria-labelledby="product-category">
-									<h4 class="mb-0 flex-grow-1">Produk Detail</h4>
+									<div class="justify-content-between d-flex align-items-center mb-2">
+										<h4 class="flex-grow-1">Product Category</h4>
+										<button class="btn btn-warning btn-sm" id="btnTambahKategori"
+											data-bs-toggle="modal" data-bs-target="#modalAddCategory">
+											Add Category
+										</button>
+									</div>
 									<div>
-										<div class="row my-3">
-											<div class="col-md-2">Product Category</div>
-											<div class="col-md-10">
-												<input type="text" class="form-control" placeholder="Category">
-											</div>
+										<div class="table-responsive">
+											<table class="table text-nowrap align-middle">
+												<thead>
+													<tr>
+														<th>No.</th>
+														<th>Product Category</th>
+														<th>Description</th>
+														<th>Image</th>
+														<th>Status</th>
+														<th>Aksi</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td>1</td>
+														<td>Brosur</td>
+														<td>Kategori untuk kebutuhan brosur promosi dan informasi.</td>
+														<td>1 image</td>
+														<td><span class="badge bg-soft-success">Publish</span></td>
+														<td>
+															<div class="hstack gap-2 fs-15">
+																<a href="javascript:void(0);"
+																	class="btn btn-icon btn-sm btn-light"
+																	data-bs-toggle="modal"
+																	data-bs-target="#modalAddCategory"><i
+																		class="feather-edit"></i></a>
+																<a href="javascript:void(0);"
+																	class="btn btn-icon btn-sm btn-light"><i
+																		class="feather-trash"></i></a>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>2</td>
+														<td>Kartu Nama</td>
+														<td>Kategori cetak kartu nama premium dan reguler.</td>
+														<td>2 images</td>
+														<td><span class="badge bg-soft-success">Publish</span></td>
+														<td>
+															<div class="hstack gap-2 fs-15">
+																<a href="javascript:void(0);"
+																	class="btn btn-icon btn-sm btn-light"
+																	data-bs-toggle="modal"
+																	data-bs-target="#modalAddCategory"><i
+																		class="feather-edit"></i></a>
+																<a href="javascript:void(0);"
+																	class="btn btn-icon btn-sm btn-light"><i
+																		class="feather-trash"></i></a>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>3</td>
+														<td>Poster</td>
+														<td>Kategori poster promosi ukuran besar dengan cetak full color.
+														</td>
+														<td>1 image</td>
+														<td><span class="badge bg-soft-danger">Draft</span></td>
+														<td>
+															<div class="hstack gap-2 fs-15">
+																<a href="javascript:void(0);"
+																	class="btn btn-icon btn-sm btn-light"
+																	data-bs-toggle="modal"
+																	data-bs-target="#modalAddCategory"><i
+																		class="feather-edit"></i></a>
+																<a href="javascript:void(0);"
+																	class="btn btn-icon btn-sm btn-light"><i
+																		class="feather-trash"></i></a>
+															</div>
+														</td>
+													</tr>
+												</tbody>
+											</table>
 										</div>
-										<div class="row my-3">
-											<div class="col-md-2">Description</div>
-											<div class="col-md-10">
-												<div id="summernote"></div>
-											</div>
-										</div>
-										<div class="row my-3">
-											<div class="col-md-2">
-												<p>Image</p>
-												<button class="btn btn-warning btn-sm" id="btnTambahGambar">
-													<i class="fa fa-plus"></i> Tambah
-												</button>
-											</div>
-											<div class="col-md-10">
-												<div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 g-3"
-													id="gridGambarBrosur">
-													<div class="col">
-														<div
-															class="brosur-item position-relative border rounded overflow-hidden">
-															<img src="assets/img/placeholder.png" class="img-brosur"
-																alt="">
-															<input type="checkbox"
-																class="form-check-input position-absolute top-0 end-0 m-1"
-																checked>
-														</div>
-													</div>
-
-												</div>
-												<div class="mt-3 d-flex gap-2">
-													<button class="btn btn-warning btn-sm"
-														id="btnHapusGambar">Hapus</button>
-													<button class="btn btn-warning btn-sm" id="btnGambarUtama">Gambar
-														Utama</button>
-												</div>
-											</div>
-										</div>
-
 									</div>
 								</div>
 								<div class="tab-pane fade show " id="productTabContent" role="tabpanel"
@@ -1176,7 +1213,7 @@
 								<div class="tab-pane fade" id="processArrangeTabContent" role="tabpanel"
 									aria-labelledby="process-arrange">
 									<div>
-										<h4>Process Arrange for the product</h4>
+										<h4>Work Flow for the product</h4>
 										<p class="text-muted small">
 											The following are the datas for <a href="#" class="text-decoration-none">Job
 												Task</a>
@@ -1495,7 +1532,7 @@
 										<div>
 											<h4>List Of Process</h4>
 											<p class="text-muted small">
-												The following are the datas for Process Arrange
+												The following are the datas for Work Flow
 											</p>
 										</div>
 										<a class="btn btn-outline-warning btn-sm" href="job-proses.html">
@@ -1596,6 +1633,61 @@
 			</div>
 			<!-- Modal ukuran -->
 			<!-- Modal Tambah/Edit Ukuran Kertas -->
+			<div class="modal fade" id="modalAddCategory" tabindex="-1" aria-labelledby="modalAddCategoryLabel"
+				aria-hidden="true">
+				<div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title" id="modalAddCategoryLabel">Add Category</h5>
+							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+						</div>
+						<div class="modal-body">
+							<div class="row my-3 align-items-start">
+								<div class="col-md-2">Product Category</div>
+								<div class="col-md-10">
+									<input type="text" class="form-control" placeholder="Category">
+								</div>
+							</div>
+							<div class="row my-3 align-items-start">
+								<div class="col-md-2">Description</div>
+								<div class="col-md-10">
+									<div id="summernoteCategory"></div>
+								</div>
+							</div>
+							<div class="row my-3 align-items-start">
+								<div class="col-md-2">
+									<p>Image</p>
+									<button class="btn btn-warning btn-sm" id="btnTambahGambarCategory" type="button">
+										<i class="fa fa-plus"></i> Tambah
+									</button>
+								</div>
+								<div class="col-md-10">
+									<div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 g-3" id="gridGambarBrosur">
+										<div class="col">
+											<div class="brosur-item position-relative border rounded overflow-hidden">
+												<img src="assets/img/placeholder.png" class="img-brosur" alt="">
+												<input type="checkbox"
+													class="form-check-input position-absolute top-0 end-0 m-1" checked>
+											</div>
+										</div>
+									</div>
+									<div class="mt-3 d-flex gap-2">
+										<button class="btn btn-warning btn-sm" id="btnHapusGambar"
+											type="button">Hapus</button>
+										<button class="btn btn-warning btn-sm" id="btnGambarUtama" type="button">Gambar
+											Utama</button>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancel</button>
+							<button type="button" class="btn btn-warning">Save Category</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
 			<div class="modal fade" id="modaladdukuran" tabindex="-1" aria-labelledby="modalFormLabel"
 				aria-hidden="true">
 				<div class="modal-dialog modal-dialog-centered">
@@ -2152,6 +2244,36 @@
 
 		<!-- Summernote JS -->
 		<script src="assets/plugins/summernote/summernote-bs4.min.js"></script>
+		<script>
+			$(function () {
+				$('#summernoteCategory').summernote({
+					height: 180,
+					placeholder: 'Description'
+				});
+
+				const imageModalElement = document.getElementById('modalTambahGambar');
+				const categoryModalElement = document.getElementById('modalAddCategory');
+				const imageModal = imageModalElement ? new bootstrap.Modal(imageModalElement) : null;
+
+				$('#btnTambahGambarCategory').on('click', function () {
+					if (imageModal) {
+						imageModal.show();
+					}
+				});
+
+				if (categoryModalElement) {
+					categoryModalElement.addEventListener('show.bs.modal', function (event) {
+						const trigger = event.relatedTarget;
+						const title = categoryModalElement.querySelector('.modal-title');
+						const isEdit = trigger && trigger.querySelector('.feather-edit');
+
+						if (title) {
+							title.textContent = isEdit ? 'Edit Category' : 'Add Category';
+						}
+					});
+				}
+			});
+		</script>
 
 		<!-- Custom JS -->
 		<script src="assets/js/theme-script.js"></script>

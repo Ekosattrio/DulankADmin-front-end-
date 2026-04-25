@@ -13,200 +13,75 @@
     <title>Kacetak System</title>
     <link rel="shortcut icon" type="image/x-icon" href="assets/img/kacetak.jpeg" />
 
-    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
-
-    <!-- animation CSS -->
     <link rel="stylesheet" href="assets/css/animate.css" />
-
-    <!-- Select2 CSS -->
     <link rel="stylesheet" href="assets/plugins/select2/css/select2.min.css" />
-
-    <!-- Datetimepicker CSS -->
     <link rel="stylesheet" href="assets/css/bootstrap-datetimepicker.min.css" />
-
-    <!-- Mobile CSS-->
     <link rel="stylesheet" href="assets/plugins/intltelinput/css/intlTelInput.css" />
     <link rel="stylesheet" href="assets/plugins/intltelinput/css/demo.css" />
-
-    <!-- Datatable CSS -->
     <link rel="stylesheet" href="assets/css/dataTables.bootstrap5.min.css" />
-
-    <!-- Fontawesome CSS -->
     <link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css" />
     <link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css" />
-
-    <!-- Main CSS -->
     <link rel="stylesheet" href="assets/css/style.css" />
-    <style>
-      .stat-card {
-        border: none;
-        border-radius: 12px;
-        padding: 16px;
-        text-align: center;
-        background: #fff;
-        transition: all 0.2s ease;
-      }
-
-      .stat-card p {
-        margin: 0;
-        font-size: 13px;
-        color: #888;
-      }
-
-      .stat-card h4 {
-        margin-top: 6px;
-        font-weight: 700;
-        color: #333;
-      }
-
-      /* hover biar ada feel */
-      .stat-card:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-      }
-
-      /* warna indikator kiri */
-      .stat-card::before {
-        content: "";
-        display: block;
-        height: 4px;
-        width: 40px;
-        margin: 0 auto 10px;
-        border-radius: 2px;
-        background: #ddd;
-      }
-      .stat-card {
-        position: relative;
-        border-radius: 12px;
-        padding: 16px;
-        background: #fff;
-        overflow: hidden;
-        z-index: 1;
-      }
-
-      /* layer animasi */
-      .stat-card::after {
-        content: "";
-        position: absolute;
-        inset: 0;
-        border-radius: 12px;
-        padding: 2px; /* tebal border */
-        background: linear-gradient(90deg, #ff9800, #ffc107, #ff9800);
-        -webkit-mask:
-          linear-gradient(#fff 0 0) content-box,
-          linear-gradient(#fff 0 0);
-        -webkit-mask-composite: xor;
-        mask-composite: exclude;
-
-        opacity: 0;
-        transform: scale(0.95);
-        transition: all 0.3s ease;
-      }
-
-      /* hover trigger */
-      .stat-card:hover::after {
-        opacity: 1;
-        transform: scale(1);
-      }
-      /* warna beda tiap kategori */
-      .stat-card.waiting::before {
-        background: #f44336;
-      }
-
-      .stat-card.process::before {
-        background: #ff9800;
-      }
-
-      .stat-card.inhouse::before {
-        background: #4caf50;
-      }
-
-      .stat-card.outsource::before {
-        background: #2196f3;
-      }
-      .workflow-item {
-        cursor: pointer;
-        border-radius: 8px;
-        transition: all 0.2s ease;
-        color: #333;
-      }
-
-      /* hover */
-      .workflow-item:hover {
-        background-color: #f5f5f5;
-      }
-
-      /* ACTIVE (ini kunci) */
-      .workflow-item.active {
-        background-color: #ffe8cc !important;
-        color: #000 !important;
-        font-weight: 600;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-      }
-
-      /* badge default */
-      .workflow-item .badge {
-        background-color: #ff9800;
-        color: #fff;
-      }
-    </style>
   </head>
 
   <body>
     <div id="global-loader">
       <div class="loader"></div>
     </div>
-    <!-- Main Wrapper -->
+
     <div class="main-wrapper">
-      <!-- header -->
       <div id="header-placeholder"></div>
-      <!-- sidebar -->
       <div id="sidebar-placeholder"></div>
 
       <div class="page-wrapper mt-3">
-        <!-- Main content tulis disini -->
         <div class="content">
-          <div class="page-header">
+          <div class="page-header mb-4 border-bottom pb-3">
             <div class="page-title">
-              <h4>Job Order List</h4>
-              <h6>Manage your Job order list</h6>
+              <h4 class="fw-bold">Job Order List</h4>
+              <h6 class="text-muted">Manage your Job order list</h6>
             </div>
           </div>
 
-          <div class="row g-3 mb-4">
-            <div class="col-lg-2 col-md-4 col-sm-6">
-              <div class="card stat-card">
-                <p>Total Job Order</p>
-                <h4>105</h4>
+          <div class="row row-cols-2 row-cols-md-3 row-cols-lg-5 g-3 mb-4">
+            <div class="col">
+              <div class="card h-100 shadow-sm border">
+                <div class="card-body text-center p-3">
+                  <p class="text-muted mb-1 small fw-semibold">Total Job Order</p>
+                  <h4 class="fw-bold mb-0">105</h4>
+                </div>
               </div>
             </div>
-
-            <div class="col-lg-2 col-md-4 col-sm-6">
-              <div class="card stat-card waiting">
-                <p>Total Waiting</p>
-                <h4>100</h4>
+            <div class="col">
+              <div class="card h-100 shadow-sm border">
+                <div class="card-body text-center p-3">
+                  <p class="text-muted mb-1 small fw-semibold">Total Waiting</p>
+                  <h4 class="fw-bold mb-0">100</h4>
+                </div>
               </div>
             </div>
-
-            <div class="col-lg-2 col-md-4 col-sm-6">
-              <div class="card stat-card process">
-                <p>Total On Process</p>
-                <h4>5</h4>
+            <div class="col">
+              <div class="card h-100 shadow-sm border">
+                <div class="card-body text-center p-3">
+                  <p class="text-muted mb-1 small fw-semibold">Total On Process</p>
+                  <h4 class="fw-bold mb-0">5</h4>
+                </div>
               </div>
             </div>
-
-            <div class="col-lg-2 col-md-4 col-sm-6">
-              <div class="card stat-card inhouse">
-                <p>Total In-House</p>
-                <h4>90</h4>
+            <div class="col">
+              <div class="card h-100 shadow-sm border">
+                <div class="card-body text-center p-3">
+                  <p class="text-muted mb-1 small fw-semibold">Total In-House</p>
+                  <h4 class="fw-bold mb-0">90</h4>
+                </div>
               </div>
             </div>
-
-            <div class="col-lg-2 col-md-4 col-sm-6">
-              <div class="card stat-card outsource">
-                <p>Total Outsource</p>
-                <h4>15</h4>
+            <div class="col">
+              <div class="card h-100 shadow-sm border">
+                <div class="card-body text-center p-3">
+                  <p class="text-muted mb-1 small fw-semibold">Total Outsource</p>
+                  <h4 class="fw-bold mb-0">15</h4>
+                </div>
               </div>
             </div>
           </div>
@@ -218,55 +93,81 @@
                   <h5 class="fw-bold mb-3">All Work Flow</h5>
 
                   <div class="mb-3">
-                    <p class="fw-bold mb-1">Design</p>
-                    <ul class="list-group list-group-flush ps-3">
+                    <p class="fw-bold mb-1 text-muted small text-uppercase">Design</p>
+                    <ul class="list-group list-group-flush">
                       <li
-                        class="workflow-item list-group-item d-flex justify-content-between align-items-center border-0 py-1 bg-transparent"
+                        class="workflow-item list-group-item list-group-item-action d-flex justify-content-between align-items-center border-0 py-2"
                         data-type="design"
+                        style="cursor: pointer"
                       >
-                        Design <span class="badge bg-warning rounded-pill text-dark">1</span>
+                        Design <span class="badge bg-warning text-white rounded-pill">1</span>
                       </li>
                       <li
-                        class="workflow-item list-group-item d-flex justify-content-between align-items-center border-0 py-1 bg-transparent"
+                        class="workflow-item list-group-item list-group-item-action d-flex justify-content-between align-items-center border-0 py-2"
                         data-type="editing"
+                        style="cursor: pointer"
                       >
-                        Editing <span class="badge bg-warning rounded-pill text-dark">1</span>
+                        Editing <span class="badge bg-warning text-white rounded-pill">1</span>
                       </li>
                     </ul>
                   </div>
 
                   <div class="mb-3">
-                    <p class="fw-bold mb-1">Pracetak</p>
-                    <ul class="list-group list-group-flush ps-3">
-                      <li class="workflow-item list-group-item border-0 py-1 bg-transparent" data-type="klise">Plate Klise</li>
-                      <li class="workflow-item list-group-item border-0 py-1 bg-transparent" data-type="ctp">Plate CTP</li>
+                    <p class="fw-bold mb-1 text-muted small text-uppercase">Pracetak</p>
+                    <ul class="list-group">
+                      <li
+                        class="workflow-item list-group-item list-group-item-action border-0 py-2"
+                        data-type="klise"
+                        style="cursor: pointer"
+                      >
+                        Plate Klise
+                      </li>
+                      <li
+                        class="workflow-item list-group-item list-group-item-action border-0 py-2"
+                        data-type="ctp"
+                        style="cursor: pointer"
+                      >
+                        Plate CTP
+                      </li>
                     </ul>
                   </div>
 
                   <div class="mb-3">
-                    <p class="fw-bold mb-1">Cetak</p>
-                    <ul class="list-group list-group-flush ps-3">
-                      <li class="workflow-item list-group-item border-0 py-1 bg-transparent" data-type="sm52">Mesin Sm52</li>
-                      <li class="workflow-item list-group-item border-0 py-1 bg-transparent" data-type="multilith">
+                    <p class="fw-bold mb-1 text-muted small text-uppercase">Cetak</p>
+                    <ul class="list-group list-group-flush">
+                      <li
+                        class="workflow-item list-group-item list-group-item-action border-0 py-2"
+                        data-type="sm52"
+                        style="cursor: pointer"
+                      >
+                        Mesin Sm52
+                      </li>
+                      <li
+                        class="workflow-item list-group-item list-group-item-action border-0 py-2"
+                        data-type="multilith"
+                        style="cursor: pointer"
+                      >
                         Mesin Multilith
                       </li>
                     </ul>
                   </div>
 
                   <div class="mb-3">
-                    <p class="fw-bold mb-1">Finishing</p>
-                    <ul class="list-group list-group-flush ps-3">
+                    <p class="fw-bold mb-1 text-muted small text-uppercase">Finishing</p>
+                    <ul class="list-group list-group-flush">
                       <li
-                        class="workflow-item list-group-item d-flex justify-content-between align-items-center border-0 py-1 bg-transparent"
+                        class="workflow-item list-group-item list-group-item-action d-flex justify-content-between align-items-center border-0 py-2"
                         data-type="nota"
+                        style="cursor: pointer"
                       >
-                        Finishing Nota <span class="badge bg-warning rounded-pill text-dark">5</span>
+                        Finishing Nota <span class="badge bg-warning text-white rounded-pill">5</span>
                       </li>
                       <li
-                        class="workflow-item list-group-item d-flex justify-content-between align-items-center border-0 py-1 rounded"
+                        class="workflow-item list-group-item list-group-item-action d-flex justify-content-between align-items-center border-0 py-2"
                         data-type="potong"
+                        style="cursor: pointer"
                       >
-                        Potong <span class="badge bg-warning rounded-pill text-dark">10</span>
+                        Potong <span class="badge bg-warning text-white rounded-pill">10</span>
                       </li>
                     </ul>
                   </div>
@@ -275,18 +176,29 @@
             </div>
 
             <div class="col-xl-9 col-lg-8">
-              <div class="card border">
+              <div class="card shadow-sm">
                 <div class="card-body">
-                  <div class="d-flex justify-content-between align-items-center mb-3">
+                  <div class="table-top d-flex justify-content-between align-items-center mb-3">
                     <h5 id="table-title" class="fw-bold m-0">Job Order : Potong</h5>
-                    <div class="dropdown">
-                      <button class="btn btn-sm btn-outline-warning dropdown-toggle" type="button">Flow Type</button>
+                    <div class="search-set d-block d-md-flex">
+                      <div class="search-input d-none">
+                        <a href="" class="btn btn-searchset"><i data-feather="search" class="feather-search"></i></a>
+                      </div>
+                    </div>
+                    <div class="">
+                      <select class="select form-select form-select-sm p-2">
+                        <option value="">Flow Type</option>
+                        <option value="design">Design</option>
+                        <option value="pracetak">Pracetak</option>
+                        <option value="cetak">Cetak</option>
+                        <option value="finishing">Finishing</option>
+                      </select>
                     </div>
                   </div>
 
                   <div class="table-responsive">
-                    <table class="table table-bordered table-hover align-middle">
-                      <thead class="table-light text-nowrap">
+                    <table class="table datanew align-middle mb-0">
+                      <thead class="table-light text-nowrap" style="font-size: 0.85rem; text-transform: uppercase">
                         <tr>
                           <th>No</th>
                           <th>Due Date</th>
@@ -295,12 +207,10 @@
                           <th>Job Title</th>
                           <th>Priority</th>
                           <th>Status</th>
-                          <th>Action</th>
+                          <th class="no-sort text-center">Action</th>
                         </tr>
                       </thead>
-                      <tbody id="table-body">
-                        <!-- DIISI VIA JS -->
-                      </tbody>
+                      <tbody id="table-body"></tbody>
                     </table>
                   </div>
                 </div>
@@ -308,188 +218,93 @@
             </div>
           </div>
         </div>
-
-        <style>
-          /* Custom Styling tambahan */
-          .col-md-2-5 {
-            flex: 0 0 auto;
-            width: 20%; /* Untuk membagi 5 kotak di satu baris */
-          }
-          .badge.bg-warning {
-            background-color: #ff9f43 !important; /* Warna oranye seperti di gambar */
-          }
-          .table thead th {
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            background-color: #f8f9fa;
-          }
-          .list-group-item {
-            font-size: 0.9rem;
-          }
-        </style>
       </div>
     </div>
-    <!-- /Main Wrapper -->
-
-    <!-- Modal for edit -->
     <div class="modal fade text-standard" id="edit-units" tabindex="-1" aria-labelledby="edit-unitsLabel" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-          <div class="modal-header py-2">
-            <h5 class="modal-title" id="edit-unitsLabel">Add New Process Name</h5>
-            <div class="d-flex align-items-center">
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
+        <div class="modal-content border-0 shadow">
+          <div class="modal-header py-3 bg-light">
+            <h5 class="modal-title fw-bold" id="edit-unitsLabel">Edit Job Order</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <div>
-              <form>
-                <div class="row mb-3">
-                  <div class="col-5">
-                    <label class="form-label">Customer</label>
-                  </div>
-                  <div class="col-7">
-                    <div class="search-container">
-                      <input type="text" class="form-control customer-input" placeholder="Search Employee" />
-                      <div class="search-results"></div>
-                    </div>
-                  </div>
+            <form>
+              <div class="row align-items-center mb-3">
+                <div class="col-4">
+                  <label class="form-label fw-semibold m-0">Customer</label>
                 </div>
-
-                <div class="row mb-3">
-                  <div class="col-5">
-                    <label class="form-label">Product</label>
-                  </div>
-                  <div class="col-7">
-                    <input type="text" class="form-control" value="Brosur A5" />
-                  </div>
+                <div class="col-8">
+                  <input type="text" class="form-control customer-input" placeholder="Search Customer" />
                 </div>
-
-                <div class="row mb-3">
-                  <div class="col-5">
-                    <label class="form-label">Job Title</label>
-                  </div>
-                  <div class="col-7">
-                    <input type="text" class="form-control" value="Amplop Ukuran Kabinet" />
-                  </div>
+              </div>
+              <div class="row align-items-center mb-3">
+                <div class="col-4">
+                  <label class="form-label fw-semibold m-0">Product</label>
                 </div>
-
-                <div class="row mb-3">
-                  <div class="col-5">
-                    <label class="form-label">Material</label>
-                  </div>
-                  <div class="col-7">
-                    <input type="text" class="form-control" value="Art Paper 150 gsm" />
-                  </div>
+                <div class="col-8">
+                  <input type="text" class="form-control" value="Brosur A5" />
                 </div>
-
-                <div class="row mb-3">
-                  <div class="col-5">
-                    <label class="form-label">Qty</label>
-                  </div>
-                  <div class="col-7">
-                    <input type="text" class="form-control number-separator" inputmode="numeric" pattern="[0-9]*" value="500" />
-                    <input type="hidden" class="result-input" id="qty" value="5000" />
-                  </div>
+              </div>
+              <div class="row align-items-center mb-3">
+                <div class="col-4">
+                  <label class="form-label fw-semibold m-0">Job Title</label>
                 </div>
-
-                <div class="row mb-3">
-                  <div class="col-5">
-                    <label class="form-label">All Process</label>
-                  </div>
-                  <div class="col-7">
-                    <input type="text" class="form-control" value="Artwork, Plat CTP, Cetak SM52, Potong, Sortir, Packing" />
-                  </div>
+                <div class="col-8">
+                  <input type="text" class="form-control" value="Amplop Ukuran Kabinet" />
                 </div>
-
-                <div class="row mb-3">
-                  <div class="col-5">
-                    <label class="form-label">Priority</label>
-                  </div>
-                  <div class="col-7">
-                    <select class="select">
-                      <option>High</option>
-                      <option>Urgent</option>
-                      <option>Reguler</option>
-                    </select>
-                  </div>
+              </div>
+              <div class="row align-items-center mb-3">
+                <div class="col-4">
+                  <label class="form-label fw-semibold m-0">Qty</label>
                 </div>
-
-                <div class="row mb-3">
-                  <div class="col-5">
-                    <label for="shipping" class="form-label">Shipping</label>
-                  </div>
-                  <div class="col-7">
-                    <input type="text" class="form-control" id="shipping" value="Courier" />
-                  </div>
+                <div class="col-8">
+                  <input type="text" class="form-control" inputmode="numeric" value="500" />
                 </div>
-
-                <small class="d-none text-standard text-danger" id="info-selected-all-1"
-                  ><i class="fa-solid fa-circle-info"></i> please input your specification<br
-                /></small>
-                <div class="row mb-3 justify-content-end">
-                  <div class="col-7">
-                    <button class="btn btn-primary w-100" id="save-btn-1">Simpan</button>
-                  </div>
-                </div>
-              </form>
-            </div>
+              </div>
+              <div class="d-flex justify-content-end mt-4">
+                <button type="button" class="btn btn-primary px-4" data-bs-dismiss="modal">Simpan</button>
+              </div>
+            </form>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- modal view -->
-    <div class="modal fade" id="viewFlowModal">
+    <div class="modal fade" id="viewFlowModal" tabindex="-1">
       <div class="modal-dialog modal-dialog-centered modal-md">
-        <!-- kecilin di sini -->
-        <div class="modal-content p-3">
-          <!-- HEADER -->
+        <div class="modal-content p-3 border-0 shadow">
           <div class="d-flex justify-content-between align-items-center border-bottom pb-2 mb-3">
             <h5 class="fw-bold m-0">View Flow</h5>
-            <button class="btn-close" data-bs-dismiss="modal"></button>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
           </div>
-
-          <!-- SALES INFO -->
           <div class="mb-3">
             <p class="fw-bold mb-2">Sales Information</p>
-
-            <div class="row">
+            <div class="row small">
               <div class="col-5 text-muted">Sales Date</div>
               <div class="col-7" id="sf-date"></div>
-
               <div class="col-5 text-muted">No Sales</div>
               <div class="col-7" id="sf-no"></div>
-
               <div class="col-5 text-muted">Customer</div>
               <div class="col-7" id="sf-customer"></div>
-
               <div class="col-5 text-muted">Shipping</div>
               <div class="col-7" id="sf-shipping"></div>
-
               <div class="col-5 text-muted">Order Summary</div>
               <div class="col-7" id="sf-summary"></div>
             </div>
           </div>
-
-          <!-- WORKFLOW INFO -->
           <div class="mb-3">
             <p class="fw-bold mb-2">Work Flow</p>
-
-            <div class="row mb-2">
+            <div class="row small mb-2">
               <div class="col-5 text-muted">Product</div>
               <div class="col-7" id="wf-product"></div>
             </div>
-
-            <div class="row mb-2">
+            <div class="row small mb-2">
               <div class="col-5 text-muted">Job Title</div>
               <div class="col-7" id="wf-title"></div>
             </div>
           </div>
-
-          <!-- TABLE -->
           <div class="table-responsive mb-3">
-            <table class="table table-sm table-bordered">
+            <table class="table table-sm">
               <thead class="table-light">
                 <tr>
                   <th>Flow Name</th>
@@ -500,39 +315,24 @@
               <tbody id="flow-table"></tbody>
             </table>
           </div>
-
-          <!-- FOOTER -->
           <div class="text-end">
             <button class="btn btn-secondary px-4" data-bs-dismiss="modal">Close</button>
           </div>
         </div>
       </div>
     </div>
-    <!-- modal view -->
 
     <script>
-      /* =======================
-   MASTER DATA
-======================= */
+      /* ======================= MASTER DATA ======================= */
       const customers = ["PT Makmur Abadi", "PT Sejahtera", "CV Mandiri", "PT Global Indo", "PT Nusantara"];
-
       const products = ["Brosur A5", "Flyer", "Poster", "Banner", "Katalog"];
-
       const operators = ["Bejo", "Andi", "Rudi", "Bambang", "Nurdin"];
-
-      /* =======================
-   STEP WORKFLOW (URUTAN PROSES)
-======================= */
       const steps = ["Design", "Editing", "Klise", "CTP", "SM52", "Multilith", "Nota", "Potong"];
 
-      /* =======================
-   GENERATE JOB TABLE (5 PER TYPE)
-======================= */
       function generateJobs(startIndex) {
         return Array.from({ length: 5 }, (_, i) => {
           const index = startIndex + i;
           const id = "JOB-25100000" + (index + 1);
-
           return {
             no: id,
             due: `${15 + i}/10/2025`,
@@ -557,34 +357,18 @@
         potong: generateJobs(35),
       };
 
-      /* =======================
-   GENERATE FLOW TRACKING
-======================= */
       function generateFlowProgress() {
         const progressLength = Math.floor(Math.random() * steps.length) + 1;
-
         return steps.map((step, i) => {
           if (i < progressLength) {
-            return {
-              step,
-              date: `${25 + i}/12/2025`,
-              operator: operators[i % operators.length],
-            };
+            return { step, date: `${25 + i}/12/2025`, operator: operators[i % operators.length] };
           } else {
-            return {
-              step,
-              date: "-",
-              operator: "-",
-            };
+            return { step, date: "-", operator: "-" };
           }
         });
       }
 
-      /* =======================
-   FLOW DETAIL (AUTO SYNC)
-======================= */
       const flowDetail = {};
-
       Object.values(workflowData)
         .flat()
         .forEach((job, i) => {
@@ -596,83 +380,69 @@
               shipping: "Pick Up",
               summary: "1 of 2 Products",
             },
-            workflow: {
-              product: job.product,
-              title: job.title,
-            },
+            workflow: { product: job.product, title: job.title },
             flow: generateFlowProgress(),
           };
         });
 
-      /* =======================
-   ELEMENT
-======================= */
       const items = document.querySelectorAll(".workflow-item");
       const tableBody = document.getElementById("table-body");
       const tableTitle = document.getElementById("table-title");
 
-      /* =======================
-   RENDER TABLE
-======================= */
+      /* ======================= RENDER TABLE ======================= */
       function renderTable(type) {
         const data = workflowData[type] || [];
 
         if (data.length === 0) {
-          tableBody.innerHTML = `
-      <tr>
-        <td colspan="8" class="text-center text-muted">No Data</td>
-      </tr>
-    `;
-          tableTitle.innerText = "Job Order : " + type;
+          tableBody.innerHTML = `<tr><td colspan="8" class="text-center text-muted">No Data</td></tr>`;
+          tableTitle.innerText = "Job Order : " + type.charAt(0).toUpperCase() + type.slice(1);
           return;
         }
 
+        // Generate Rows mengikuti template action table
         tableBody.innerHTML = data
           .map(
             (row) => `
-    <tr>
-      <td>${row.no}</td>
-      <td>
-        ${row.due}<br>
-        <small class="text-danger">${row.remain}</small>
-      </td>
-      <td>${row.customer}</td>
-      <td>${row.product}</td>
-      <td>${row.title}</td>
-      <td>
-        <span class="badge ${row.priority === "High" ? "bg-secondary" : "bg-info"}">
-          ${row.priority}
-        </span>
-      </td>
-      <td>
-        ${row.status === "On Process" ? '<span class="text-warning">On Process</span>' : row.status}
-      </td>
-      <td>
-        <button 
-          class="btn btn-sm btn-light border view-flow-btn"
-          data-id="${row.no}"
-        >
-          View Flow
-        </button>
-      </td>
-    </tr>
-  `,
+          <tr>
+            <td class="fw-semibold text-dark">${row.no}</td>
+            <td>${row.due}<br><small class="text-danger">${row.remain}</small></td>
+            <td>${row.customer}</td>
+            <td>${row.product}</td>
+            <td>${row.title}</td>
+            <td>
+               <span class="badge ${row.priority === "High" ? "bg-danger" : "bg-primary"} bg-opacity-75">${row.priority}</span>
+            </td>
+            <td>
+               <span class="badge ${row.status === "On Process" ? "bg-warning text-dark" : "bg-info"}">${row.status}</span>
+            </td>
+            <td class="action-table-data text-center">
+              <div class="edit-delete-action justify-content-center d-flex">
+                <a class="me-2 p-2 view-flow-btn" href="javascript:void(0);" data-id="${row.no}" title="View Flow">
+                  <i data-feather="eye" style="width:16px; height:16px;" ></i>
+                </a>
+                
+              </div>
+            </td>
+          </tr>
+        `,
           )
           .join("");
 
-        tableTitle.innerText = "Job Order : " + type;
+        tableTitle.innerText = "Job Order : " + type.charAt(0).toUpperCase() + type.slice(1);
+
+        // Panggil feather replace setiap kali tabel digenerate ulang agar icon muncul
+        if (typeof feather !== "undefined") {
+          feather.replace();
+        }
       }
 
-      /* =======================
-   CLICK SIDEBAR
-======================= */
+      /* ======================= EVENT LISTENERS ======================= */
       items.forEach((item) => {
         item.addEventListener("click", () => {
-          items.forEach((i) => i.classList.remove("active"));
-          item.classList.add("active");
+          items.forEach((i) => i.classList.remove("bg-light", "fw-bold"));
+          item.classList.add("bg-light", "fw-bold");
 
           const type = item.dataset.type;
-
           renderTable(type);
 
           const badge = item.querySelector(".badge");
@@ -680,9 +450,6 @@
         });
       });
 
-      /* =======================
-   CLICK VIEW FLOW (TRACKING MODAL)
-======================= */
       document.addEventListener("click", function (e) {
         const btn = e.target.closest(".view-flow-btn");
         if (!btn) return;
@@ -691,89 +458,53 @@
         const data = flowDetail[id];
         if (!data) return;
 
-        // SALES
         document.getElementById("sf-date").innerText = data.sales.date;
         document.getElementById("sf-no").innerText = data.sales.no;
         document.getElementById("sf-customer").innerText = data.sales.customer;
         document.getElementById("sf-shipping").innerText = data.sales.shipping;
         document.getElementById("sf-summary").innerText = data.sales.summary;
-
-        // WORKFLOW
         document.getElementById("wf-product").innerText = data.workflow.product;
         document.getElementById("wf-title").innerText = data.workflow.title;
 
-        // TRACKING FLOW
         const flows = data.flow;
-
         const lastDoneIndex = flows.findLastIndex((f) => f.date !== "-");
 
         document.getElementById("flow-table").innerHTML = flows
           .map(
             (f, i) => `
-    <tr class="
-      ${f.date !== "-" ? "table-success" : ""}
-      ${i === lastDoneIndex ? "table-warning fw-bold" : ""}
-    ">
-      <td>${f.step}</td>
-      <td>${f.date}</td>
-      <td>${f.operator}</td>
-    </tr>
-  `,
+          <tr class="${f.date !== "-" ? "table-success" : ""} ${i === lastDoneIndex ? "table-warning fw-bold" : ""}">
+            <td>${f.step}</td>
+            <td>${f.date}</td>
+            <td>${f.operator}</td>
+          </tr>
+        `,
           )
           .join("");
 
         new bootstrap.Modal(document.getElementById("viewFlowModal")).show();
       });
 
-      /* =======================
-   DEFAULT LOAD
-======================= */
       document.addEventListener("DOMContentLoaded", () => {
         const defaultItem = document.querySelector('[data-type="design"]');
-
         if (defaultItem) {
-          defaultItem.classList.add("active");
+          defaultItem.classList.add("bg-light", "fw-bold");
           renderTable("design");
         }
       });
     </script>
-    <!-- jQuery -->
+
     <script src="assets/js/jquery-3.7.1.min.js"></script>
-
-    <!-- Feather Icon JS -->
     <script src="assets/js/feather.min.js"></script>
-
-    <!-- Slimscroll JS -->
     <script src="assets/js/jquery.slimscroll.min.js"></script>
-
-    <!-- Datatable JS -->
     <script src="assets/js/jquery.dataTables.min.js"></script>
     <script src="assets/js/dataTables.bootstrap5.min.js"></script>
-
-    <!-- Bootstrap Core JS -->
     <script src="assets/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Datetimepicker JS -->
     <script src="assets/js/moment.min.js"></script>
     <script src="assets/js/bootstrap-datetimepicker.min.js"></script>
-
-    <!-- Mobile Input -->
     <script src="assets/plugins/intltelinput/js/intlTelInput.js"></script>
-
-    <!-- Select2 JS -->
     <script src="assets/plugins/select2/js/select2.min.js"></script>
-
-    <!-- Sweetalert 2 -->
     <script src="assets/plugins/sweetalert/sweetalert2.all.min.js"></script>
     <script src="assets/plugins/sweetalert/sweetalerts.min.js"></script>
-
-    <!-- Separator -->
-    <script src="assets/js/easy-number-separator.js"></script>
-
-    <!-- Live Search -->
-    <script src="assets/js/liveSearch.js"></script>
-
-    <!-- Custom JS -->
     <script src="assets/js/theme-script.js"></script>
     <script src="assets/js/script.js"></script>
   </body>

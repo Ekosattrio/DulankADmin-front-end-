@@ -99,57 +99,66 @@
                   </div>
                 </div>
 
-                <div class="d-flex align-items-center justify-content-between border-bottom pb-3 mb-4">
-                  <h5 class="mb-0">Work Flow Default</h5>
-                  <i class="fas fa-angle-down"></i>
-                </div>
-                <div class="row">
-                  <div class="col-lg-4 mb-4">
-                    <div class="nav flex-column custom-nav-tabs" id="workflow-1-tab" role="tablist">
-                      <button
-                        type="button"
-                        class="nav-link text-start rounded-0"
-                        data-bs-toggle="list"
-                        data-bs-target="#wf1-flow1"
-                        role="tab"
-                      >
-                        No 1. Design
-                      </button>
-                      <button
-                        type="button"
-                        class="nav-link text-start rounded-0 active"
-                        data-bs-toggle="list"
-                        data-bs-target="#wf1-flow2"
-                        role="tab"
-                      >
-                        No 2. SPK PLAT CTP
-                      </button>
-                      <button
-                        type="button"
-                        class="nav-link text-start rounded-0"
-                        data-bs-toggle="list"
-                        data-bs-target="#wf1-flow3"
-                        role="tab"
-                      >
-                        No 3. SPK Heidelberg SM52 4 Warna
-                      </button>
-                      <button
-                        type="button"
-                        class="nav-link text-start rounded-0"
-                        data-bs-toggle="list"
-                        data-bs-target="#wf1-flow4"
-                        role="tab"
-                      >
-                        No 4. Potong Sisi
-                      </button>
-                    </div>
-                    <div class="d-flex flex-wrap gap-3 mt-3">
-                      <button type="button" class="btn btn-link p-0 text-decoration-none text-primary" data-action="add-flow">Add Flow</button>
-                      <button type="button" class="btn btn-link p-0 text-decoration-none text-primary" data-action="arrange-flow">Arrange Flow Work</button>
-                    </div>
-                  </div>
-                  <div class="col-lg-8">
-                    <div class="tab-content">
+                <ul class="nav nav-tabs mb-4" id="product-1-tabs" role="tablist">
+                  <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="product-1-workflow-tab" data-bs-toggle="tab" data-bs-target="#product-1-workflow" type="button" role="tab">Work Flow Default</button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="product-1-assignee-tab" data-bs-toggle="tab" data-bs-target="#product-1-assignee" type="button" role="tab">Assignee</button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="product-1-incentive-tab" data-bs-toggle="tab" data-bs-target="#product-1-incentive" type="button" role="tab">Incentive</button>
+                  </li>
+                </ul>
+                <div class="tab-content">
+                  <div class="tab-pane fade show active" id="product-1-workflow" role="tabpanel">
+                    <div class="row">
+                      <div class="col-lg-4 mb-4">
+                        <div class="nav flex-column custom-nav-tabs" id="workflow-1-tab" role="tablist">
+                          <button
+                            type="button"
+                            class="nav-link text-start rounded-0"
+                            data-bs-toggle="list"
+                            data-bs-target="#wf1-flow1"
+                            role="tab"
+                          >
+                            No 1. Design
+                          </button>
+                          <button
+                            type="button"
+                            class="nav-link text-start rounded-0 active"
+                            data-bs-toggle="list"
+                            data-bs-target="#wf1-flow2"
+                            role="tab"
+                          >
+                            No 2. SPK PLAT CTP
+                          </button>
+                          <button
+                            type="button"
+                            class="nav-link text-start rounded-0"
+                            data-bs-toggle="list"
+                            data-bs-target="#wf1-flow3"
+                            role="tab"
+                          >
+                            No 3. SPK Heidelberg SM52 4 Warna
+                          </button>
+                          <button
+                            type="button"
+                            class="nav-link text-start rounded-0"
+                            data-bs-toggle="list"
+                            data-bs-target="#wf1-flow4"
+                            role="tab"
+                          >
+                            No 4. Potong Sisi
+                          </button>
+                        </div>
+                        <div class="d-flex flex-wrap gap-3 mt-3">
+                          <button type="button" class="btn btn-link p-0 text-decoration-none text-primary" data-action="add-flow">Add Flow</button>
+                          <button type="button" class="btn btn-link p-0 text-decoration-none text-primary" data-action="arrange-flow">Arrange Flow Work</button>
+                        </div>
+                      </div>
+                      <div class="col-lg-8">
+                        <div class="tab-content">
                       <div class="tab-pane fade" id="wf1-flow1" role="tabpanel">
                         <div class="workflow-pane">
                           <div class="row mb-4">
@@ -391,6 +400,178 @@
                           </div>
                         </div>
                       </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="tab-pane fade" id="product-1-assignee" role="tabpanel">
+                    <div class="row">
+                      <div class="col-lg-4 mb-4">
+                        <div class="nav flex-column custom-nav-tabs" id="assignee-1-tab" role="tablist">
+                          <button type="button" class="nav-link text-start rounded-0" data-bs-toggle="list" data-bs-target="#asg1-flow1" role="tab">No 1. Design</button>
+                          <button type="button" class="nav-link text-start rounded-0 active" data-bs-toggle="list" data-bs-target="#asg1-flow2" role="tab">No 2. SPK PLAT CTP</button>
+                          <button type="button" class="nav-link text-start rounded-0" data-bs-toggle="list" data-bs-target="#asg1-flow3" role="tab">No 3. SPK Heidelberg SM52 4 Warna</button>
+                          <button type="button" class="nav-link text-start rounded-0" data-bs-toggle="list" data-bs-target="#asg1-flow4" role="tab">No 4. Potong Sisi</button>
+                        </div>
+                      </div>
+                      <div class="col-lg-8">
+                        <div class="tab-content">
+                          <div class="tab-pane fade" id="asg1-flow1" role="tabpanel">
+                            <div class="row g-3">
+                              <div class="col-lg-4"><label class="form-label">Flow Detail</label></div>
+                              <div class="col-lg-8"><p class="mb-0 fw-bold">Design</p></div>
+                              <div class="col-lg-4"><label class="form-label">Assignee</label></div>
+                              <div class="col-lg-8">
+                                <select class="form-select select">
+                                  <option selected>Bejo</option>
+                                  <option>Galih</option>
+                                  <option>Nurdin</option>
+                                  <option>Rapli</option>
+                                </select>
+                              </div>
+                              <div class="col-lg-4"><label class="form-label">Date Start</label></div>
+                              <div class="col-lg-8"><input type="date" class="form-control" value="2025-12-18" /></div>
+                              <div class="col-lg-4"><label class="form-label">Date Completed</label></div>
+                              <div class="col-lg-8"><input type="date" class="form-control" value="2025-12-19" /></div>
+                              <div class="col-lg-4"><label class="form-label">Notes</label></div>
+                              <div class="col-lg-8"><textarea class="form-control" rows="3">Brief desain sudah disetujui customer.</textarea></div>
+                            </div>
+                          </div>
+                          <div class="tab-pane fade show active" id="asg1-flow2" role="tabpanel">
+                            <div class="row g-3">
+                              <div class="col-lg-4"><label class="form-label">Flow Detail</label></div>
+                              <div class="col-lg-8"><p class="mb-0 fw-bold">SPK PLAT CTP</p></div>
+                              <div class="col-lg-4"><label class="form-label">Assignee</label></div>
+                              <div class="col-lg-8">
+                                <select class="form-select select">
+                                  <option>Bejo</option>
+                                  <option selected>Nurdin</option>
+                                  <option>Galih</option>
+                                  <option>Rapli</option>
+                                </select>
+                              </div>
+                              <div class="col-lg-4"><label class="form-label">Date Start</label></div>
+                              <div class="col-lg-8"><input type="date" class="form-control" value="2025-12-19" /></div>
+                              <div class="col-lg-4"><label class="form-label">Date Completed</label></div>
+                              <div class="col-lg-8"><input type="date" class="form-control" value="2025-12-20" /></div>
+                              <div class="col-lg-4"><label class="form-label">Notes</label></div>
+                              <div class="col-lg-8"><textarea class="form-control" rows="3">Pastikan plat dan separasi warna sudah sesuai approval.</textarea></div>
+                            </div>
+                          </div>
+                          <div class="tab-pane fade" id="asg1-flow3" role="tabpanel">
+                            <div class="row g-3">
+                              <div class="col-lg-4"><label class="form-label">Flow Detail</label></div>
+                              <div class="col-lg-8"><p class="mb-0 fw-bold">SPK Heidelberg SM52 4 Warna</p></div>
+                              <div class="col-lg-4"><label class="form-label">Assignee</label></div>
+                              <div class="col-lg-8">
+                                <select class="form-select select">
+                                  <option>Bejo</option>
+                                  <option>Nurdin</option>
+                                  <option selected>Galih</option>
+                                  <option>Rapli</option>
+                                </select>
+                              </div>
+                              <div class="col-lg-4"><label class="form-label">Date Start</label></div>
+                              <div class="col-lg-8"><input type="date" class="form-control" value="2025-12-20" /></div>
+                              <div class="col-lg-4"><label class="form-label">Date Completed</label></div>
+                              <div class="col-lg-8"><input type="date" class="form-control" value="2025-12-21" /></div>
+                              <div class="col-lg-4"><label class="form-label">Notes</label></div>
+                              <div class="col-lg-8"><textarea class="form-control" rows="3">Cetak 4 warna, cek register dan density sebelum jalan penuh.</textarea></div>
+                            </div>
+                          </div>
+                          <div class="tab-pane fade" id="asg1-flow4" role="tabpanel">
+                            <div class="row g-3">
+                              <div class="col-lg-4"><label class="form-label">Flow Detail</label></div>
+                              <div class="col-lg-8"><p class="mb-0 fw-bold">Potong Sisi</p></div>
+                              <div class="col-lg-4"><label class="form-label">Assignee</label></div>
+                              <div class="col-lg-8">
+                                <select class="form-select select">
+                                  <option>Bejo</option>
+                                  <option>Nurdin</option>
+                                  <option>Galih</option>
+                                  <option selected>Rapli</option>
+                                </select>
+                              </div>
+                              <div class="col-lg-4"><label class="form-label">Date Start</label></div>
+                              <div class="col-lg-8"><input type="date" class="form-control" value="2025-12-21" /></div>
+                              <div class="col-lg-4"><label class="form-label">Date Completed</label></div>
+                              <div class="col-lg-8"><input type="date" class="form-control" value="2025-12-22" /></div>
+                              <div class="col-lg-4"><label class="form-label">Notes</label></div>
+                              <div class="col-lg-8"><textarea class="form-control" rows="3">Potongan final mengikuti dummy yang sudah disetujui.</textarea></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="tab-pane fade" id="product-1-incentive" role="tabpanel">
+                    <div class="row">
+                      <div class="col-lg-4 mb-4">
+                        <div class="nav flex-column custom-nav-tabs" id="incentive-1-tab" role="tablist">
+                          <button type="button" class="nav-link text-start rounded-0" data-bs-toggle="list" data-bs-target="#inc1-flow1" role="tab">No 1. Design</button>
+                          <button type="button" class="nav-link text-start rounded-0 active" data-bs-toggle="list" data-bs-target="#inc1-flow2" role="tab">No 2. SPK PLAT CTP</button>
+                          <button type="button" class="nav-link text-start rounded-0" data-bs-toggle="list" data-bs-target="#inc1-flow3" role="tab">No 3. SPK Heidelberg SM52 4 Warna</button>
+                          <button type="button" class="nav-link text-start rounded-0" data-bs-toggle="list" data-bs-target="#inc1-flow4" role="tab">No 4. Potong Sisi</button>
+                        </div>
+                      </div>
+                      <div class="col-lg-8">
+                        <div class="tab-content">
+                          <div class="tab-pane fade" id="inc1-flow1" role="tabpanel">
+                            <div class="table-responsive">
+                              <table class="table table-bordered mb-0">
+                                <tbody>
+                                  <tr><td>Flow Detail</td><td><strong>Design</strong></td></tr>
+                                  <tr><td>Amount</td><td>3.000</td></tr>
+                                  <tr><td>Unit Incentive</td><td>Per Job</td></tr>
+                                  <tr><td>Job Qty</td><td>1</td></tr>
+                                  <tr><td>Total Incentive</td><td><strong>3.000</strong></td></tr>
+                                </tbody>
+                              </table>
+                            </div>
+                          </div>
+                          <div class="tab-pane fade show active" id="inc1-flow2" role="tabpanel">
+                            <div class="table-responsive">
+                              <table class="table table-bordered mb-0">
+                                <tbody>
+                                  <tr><td>Flow Detail</td><td><strong>SPK PLAT CTP</strong></td></tr>
+                                  <tr><td>Amount</td><td>5.000</td></tr>
+                                  <tr><td>Unit Incentive</td><td>Per Job</td></tr>
+                                  <tr><td>Job Qty</td><td>1</td></tr>
+                                  <tr><td>Total Incentive</td><td><strong>5.000</strong></td></tr>
+                                </tbody>
+                              </table>
+                            </div>
+                          </div>
+                          <div class="tab-pane fade" id="inc1-flow3" role="tabpanel">
+                            <div class="table-responsive">
+                              <table class="table table-bordered mb-0">
+                                <tbody>
+                                  <tr><td>Flow Detail</td><td><strong>SPK Heidelberg SM52 4 Warna</strong></td></tr>
+                                  <tr><td>Amount</td><td>8.000</td></tr>
+                                  <tr><td>Unit Incentive</td><td>Per Job</td></tr>
+                                  <tr><td>Job Qty</td><td>1</td></tr>
+                                  <tr><td>Total Incentive</td><td><strong>8.000</strong></td></tr>
+                                </tbody>
+                              </table>
+                            </div>
+                          </div>
+                          <div class="tab-pane fade" id="inc1-flow4" role="tabpanel">
+                            <div class="table-responsive">
+                              <table class="table table-bordered mb-0">
+                                <tbody>
+                                  <tr><td>Flow Detail</td><td><strong>Potong Sisi</strong></td></tr>
+                                  <tr><td>Amount</td><td>2.500</td></tr>
+                                  <tr><td>Unit Incentive</td><td>Per Job</td></tr>
+                                  <tr><td>Job Qty</td><td>1</td></tr>
+                                  <tr><td>Total Incentive</td><td><strong>2.500</strong></td></tr>
+                                </tbody>
+                              </table>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -419,57 +600,66 @@
                   </div>
                 </div>
 
-                <div class="d-flex align-items-center justify-content-between border-bottom pb-3 mb-4">
-                  <h5 class="mb-0">Work Flow Default</h5>
-                  <i class="fas fa-angle-down"></i>
-                </div>
-                <div class="row">
-                  <div class="col-lg-4 mb-4">
-                    <div class="nav flex-column custom-nav-tabs" id="workflow-2-tab" role="tablist">
-                      <button
-                        type="button"
-                        class="nav-link text-start rounded-0 active"
-                        data-bs-toggle="list"
-                        data-bs-target="#wf2-flow1"
-                        role="tab"
-                      >
-                        No 1. Design
-                      </button>
-                      <button
-                        type="button"
-                        class="nav-link text-start rounded-0"
-                        data-bs-toggle="list"
-                        data-bs-target="#wf2-flow2"
-                        role="tab"
-                      >
-                        No 2. Digital A3+
-                      </button>
-                      <button
-                        type="button"
-                        class="nav-link text-start rounded-0"
-                        data-bs-toggle="list"
-                        data-bs-target="#wf2-flow3"
-                        role="tab"
-                      >
-                        No 3. Finishing Lem
-                      </button>
-                      <button
-                        type="button"
-                        class="nav-link text-start rounded-0"
-                        data-bs-toggle="list"
-                        data-bs-target="#wf2-flow4"
-                        role="tab"
-                      >
-                        No 4. Potong Sisi
-                      </button>
-                    </div>
-                    <div class="d-flex flex-wrap gap-3 mt-3">
-                      <button type="button" class="btn btn-link p-0 text-decoration-none text-primary" data-action="add-flow">Add Flow</button>
-                      <button type="button" class="btn btn-link p-0 text-decoration-none text-primary" data-action="arrange-flow">Arrange Flow Work</button>
-                    </div>
-                  </div>
-                  <div class="col-lg-8">
-                    <div class="tab-content">
+                <ul class="nav nav-tabs mb-4" id="product-2-tabs" role="tablist">
+                  <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="product-2-workflow-tab" data-bs-toggle="tab" data-bs-target="#product-2-workflow" type="button" role="tab">Work Flow Default</button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="product-2-assignee-tab" data-bs-toggle="tab" data-bs-target="#product-2-assignee" type="button" role="tab">Assignee</button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="product-2-incentive-tab" data-bs-toggle="tab" data-bs-target="#product-2-incentive" type="button" role="tab">Incentive</button>
+                  </li>
+                </ul>
+                <div class="tab-content">
+                  <div class="tab-pane fade show active" id="product-2-workflow" role="tabpanel">
+                    <div class="row">
+                      <div class="col-lg-4 mb-4">
+                        <div class="nav flex-column custom-nav-tabs" id="workflow-2-tab" role="tablist">
+                          <button
+                            type="button"
+                            class="nav-link text-start rounded-0 active"
+                            data-bs-toggle="list"
+                            data-bs-target="#wf2-flow1"
+                            role="tab"
+                          >
+                            No 1. Design
+                          </button>
+                          <button
+                            type="button"
+                            class="nav-link text-start rounded-0"
+                            data-bs-toggle="list"
+                            data-bs-target="#wf2-flow2"
+                            role="tab"
+                          >
+                            No 2. Digital A3+
+                          </button>
+                          <button
+                            type="button"
+                            class="nav-link text-start rounded-0"
+                            data-bs-toggle="list"
+                            data-bs-target="#wf2-flow3"
+                            role="tab"
+                          >
+                            No 3. Finishing Lem
+                          </button>
+                          <button
+                            type="button"
+                            class="nav-link text-start rounded-0"
+                            data-bs-toggle="list"
+                            data-bs-target="#wf2-flow4"
+                            role="tab"
+                          >
+                            No 4. Potong Sisi
+                          </button>
+                        </div>
+                        <div class="d-flex flex-wrap gap-3 mt-3">
+                          <button type="button" class="btn btn-link p-0 text-decoration-none text-primary" data-action="add-flow">Add Flow</button>
+                          <button type="button" class="btn btn-link p-0 text-decoration-none text-primary" data-action="arrange-flow">Arrange Flow Work</button>
+                        </div>
+                      </div>
+                      <div class="col-lg-8">
+                        <div class="tab-content">
                       <div class="tab-pane fade show active" id="wf2-flow1" role="tabpanel">
                         <div class="workflow-pane">
                           <div class="row mb-4">
@@ -673,6 +863,178 @@
                           </div>
                           <div class="text-end mt-4">
                             <button type="button" class="btn btn-submit" data-action="remove-flow"><i class="fas fa-trash-alt me-1"></i>Remove Flow</button>
+                          </div>
+                        </div>
+                      </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="tab-pane fade" id="product-2-assignee" role="tabpanel">
+                    <div class="row">
+                      <div class="col-lg-4 mb-4">
+                        <div class="nav flex-column custom-nav-tabs" id="assignee-2-tab" role="tablist">
+                          <button type="button" class="nav-link text-start rounded-0 active" data-bs-toggle="list" data-bs-target="#asg2-flow1" role="tab">No 1. Design</button>
+                          <button type="button" class="nav-link text-start rounded-0" data-bs-toggle="list" data-bs-target="#asg2-flow2" role="tab">No 2. Digital A3+</button>
+                          <button type="button" class="nav-link text-start rounded-0" data-bs-toggle="list" data-bs-target="#asg2-flow3" role="tab">No 3. Finishing Lem</button>
+                          <button type="button" class="nav-link text-start rounded-0" data-bs-toggle="list" data-bs-target="#asg2-flow4" role="tab">No 4. Potong Sisi</button>
+                        </div>
+                      </div>
+                      <div class="col-lg-8">
+                        <div class="tab-content">
+                          <div class="tab-pane fade show active" id="asg2-flow1" role="tabpanel">
+                            <div class="row g-3">
+                              <div class="col-lg-4"><label class="form-label">Flow Detail</label></div>
+                              <div class="col-lg-8"><p class="mb-0 fw-bold">Design</p></div>
+                              <div class="col-lg-4"><label class="form-label">Assignee</label></div>
+                              <div class="col-lg-8">
+                                <select class="form-select select">
+                                  <option selected>Bejo</option>
+                                  <option>Galih</option>
+                                  <option>Nurdin</option>
+                                  <option>Rapli</option>
+                                </select>
+                              </div>
+                              <div class="col-lg-4"><label class="form-label">Date Start</label></div>
+                              <div class="col-lg-8"><input type="date" class="form-control" value="2025-12-18" /></div>
+                              <div class="col-lg-4"><label class="form-label">Date Completed</label></div>
+                              <div class="col-lg-8"><input type="date" class="form-control" value="2025-12-19" /></div>
+                              <div class="col-lg-4"><label class="form-label">Notes</label></div>
+                              <div class="col-lg-8"><textarea class="form-control" rows="3">Desain cover dan isi dikerjakan internal.</textarea></div>
+                            </div>
+                          </div>
+                          <div class="tab-pane fade" id="asg2-flow2" role="tabpanel">
+                            <div class="row g-3">
+                              <div class="col-lg-4"><label class="form-label">Flow Detail</label></div>
+                              <div class="col-lg-8"><p class="mb-0 fw-bold">Digital A3+</p></div>
+                              <div class="col-lg-4"><label class="form-label">Assignee</label></div>
+                              <div class="col-lg-8">
+                                <select class="form-select select">
+                                  <option>Bejo</option>
+                                  <option selected>Nurdin</option>
+                                  <option>Galih</option>
+                                  <option>Rapli</option>
+                                </select>
+                              </div>
+                              <div class="col-lg-4"><label class="form-label">Date Start</label></div>
+                              <div class="col-lg-8"><input type="date" class="form-control" value="2025-12-19" /></div>
+                              <div class="col-lg-4"><label class="form-label">Date Completed</label></div>
+                              <div class="col-lg-8"><input type="date" class="form-control" value="2025-12-20" /></div>
+                              <div class="col-lg-4"><label class="form-label">Notes</label></div>
+                              <div class="col-lg-8"><textarea class="form-control" rows="3">Cetak sample dulu sebelum produksi penuh.</textarea></div>
+                            </div>
+                          </div>
+                          <div class="tab-pane fade" id="asg2-flow3" role="tabpanel">
+                            <div class="row g-3">
+                              <div class="col-lg-4"><label class="form-label">Flow Detail</label></div>
+                              <div class="col-lg-8"><p class="mb-0 fw-bold">Finishing Lem</p></div>
+                              <div class="col-lg-4"><label class="form-label">Assignee</label></div>
+                              <div class="col-lg-8">
+                                <select class="form-select select">
+                                  <option>Bejo</option>
+                                  <option>Nurdin</option>
+                                  <option selected>Galih</option>
+                                  <option>Rapli</option>
+                                </select>
+                              </div>
+                              <div class="col-lg-4"><label class="form-label">Date Start</label></div>
+                              <div class="col-lg-8"><input type="date" class="form-control" value="2025-12-20" /></div>
+                              <div class="col-lg-4"><label class="form-label">Date Completed</label></div>
+                              <div class="col-lg-8"><input type="date" class="form-control" value="2025-12-21" /></div>
+                              <div class="col-lg-4"><label class="form-label">Notes</label></div>
+                              <div class="col-lg-8"><textarea class="form-control" rows="3">Pastikan hasil lem rapi dan tidak mudah lepas.</textarea></div>
+                            </div>
+                          </div>
+                          <div class="tab-pane fade" id="asg2-flow4" role="tabpanel">
+                            <div class="row g-3">
+                              <div class="col-lg-4"><label class="form-label">Flow Detail</label></div>
+                              <div class="col-lg-8"><p class="mb-0 fw-bold">Potong Sisi</p></div>
+                              <div class="col-lg-4"><label class="form-label">Assignee</label></div>
+                              <div class="col-lg-8">
+                                <select class="form-select select">
+                                  <option>Bejo</option>
+                                  <option>Nurdin</option>
+                                  <option>Galih</option>
+                                  <option selected>Rapli</option>
+                                </select>
+                              </div>
+                              <div class="col-lg-4"><label class="form-label">Date Start</label></div>
+                              <div class="col-lg-8"><input type="date" class="form-control" value="2025-12-21" /></div>
+                              <div class="col-lg-4"><label class="form-label">Date Completed</label></div>
+                              <div class="col-lg-8"><input type="date" class="form-control" value="2025-12-21" /></div>
+                              <div class="col-lg-4"><label class="form-label">Notes</label></div>
+                              <div class="col-lg-8"><textarea class="form-control" rows="3">Finishing akhir mengikuti ukuran final yasin.</textarea></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="tab-pane fade" id="product-2-incentive" role="tabpanel">
+                    <div class="row">
+                      <div class="col-lg-4 mb-4">
+                        <div class="nav flex-column custom-nav-tabs" id="incentive-2-tab" role="tablist">
+                          <button type="button" class="nav-link text-start rounded-0 active" data-bs-toggle="list" data-bs-target="#inc2-flow1" role="tab">No 1. Design</button>
+                          <button type="button" class="nav-link text-start rounded-0" data-bs-toggle="list" data-bs-target="#inc2-flow2" role="tab">No 2. Digital A3+</button>
+                          <button type="button" class="nav-link text-start rounded-0" data-bs-toggle="list" data-bs-target="#inc2-flow3" role="tab">No 3. Finishing Lem</button>
+                          <button type="button" class="nav-link text-start rounded-0" data-bs-toggle="list" data-bs-target="#inc2-flow4" role="tab">No 4. Potong Sisi</button>
+                        </div>
+                      </div>
+                      <div class="col-lg-8">
+                        <div class="tab-content">
+                          <div class="tab-pane fade show active" id="inc2-flow1" role="tabpanel">
+                            <div class="table-responsive">
+                              <table class="table table-bordered mb-0">
+                                <tbody>
+                                  <tr><td>Flow Detail</td><td><strong>Design</strong></td></tr>
+                                  <tr><td>Amount</td><td>4.000</td></tr>
+                                  <tr><td>Unit Incentive</td><td>Per Job</td></tr>
+                                  <tr><td>Job Qty</td><td>1</td></tr>
+                                  <tr><td>Total Incentive</td><td><strong>4.000</strong></td></tr>
+                                </tbody>
+                              </table>
+                            </div>
+                          </div>
+                          <div class="tab-pane fade" id="inc2-flow2" role="tabpanel">
+                            <div class="table-responsive">
+                              <table class="table table-bordered mb-0">
+                                <tbody>
+                                  <tr><td>Flow Detail</td><td><strong>Digital A3+</strong></td></tr>
+                                  <tr><td>Amount</td><td>6.500</td></tr>
+                                  <tr><td>Unit Incentive</td><td>Per Job</td></tr>
+                                  <tr><td>Job Qty</td><td>1</td></tr>
+                                  <tr><td>Total Incentive</td><td><strong>6.500</strong></td></tr>
+                                </tbody>
+                              </table>
+                            </div>
+                          </div>
+                          <div class="tab-pane fade" id="inc2-flow3" role="tabpanel">
+                            <div class="table-responsive">
+                              <table class="table table-bordered mb-0">
+                                <tbody>
+                                  <tr><td>Flow Detail</td><td><strong>Finishing Lem</strong></td></tr>
+                                  <tr><td>Amount</td><td>3.500</td></tr>
+                                  <tr><td>Unit Incentive</td><td>Per Job</td></tr>
+                                  <tr><td>Job Qty</td><td>1</td></tr>
+                                  <tr><td>Total Incentive</td><td><strong>3.500</strong></td></tr>
+                                </tbody>
+                              </table>
+                            </div>
+                          </div>
+                          <div class="tab-pane fade" id="inc2-flow4" role="tabpanel">
+                            <div class="table-responsive">
+                              <table class="table table-bordered mb-0">
+                                <tbody>
+                                  <tr><td>Flow Detail</td><td><strong>Potong Sisi</strong></td></tr>
+                                  <tr><td>Amount</td><td>2.000</td></tr>
+                                  <tr><td>Unit Incentive</td><td>Per Job</td></tr>
+                                  <tr><td>Job Qty</td><td>1</td></tr>
+                                  <tr><td>Total Incentive</td><td><strong>2.000</strong></td></tr>
+                                </tbody>
+                              </table>
+                            </div>
                           </div>
                         </div>
                       </div>

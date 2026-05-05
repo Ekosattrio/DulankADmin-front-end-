@@ -2759,7 +2759,7 @@ $(document).ready(function () {
             '<div class="text-muted">No. ' +
             (index + 1) +
             "</div>" +
-            '<div>' +
+            "<div>" +
             escapeHtml(item.name) +
             "</div>" +
             '<div class="d-flex gap-2">' +
@@ -2825,5 +2825,30 @@ $(document).ready(function () {
         renderArrangeList();
       }
     });
+  });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const toggles = document.querySelectorAll(".status-toggle");
+
+  toggles.forEach((toggle) => {
+    const checkbox = toggle.querySelector('input[type="checkbox"]');
+    const switchLabel = toggle.querySelector(".checktoggle");
+
+    if (!checkbox || !switchLabel) return;
+
+    let statusText = toggle.querySelector(".status-text");
+    if (!statusText) {
+      statusText = document.createElement("span");
+      statusText.classList.add("status-text");
+      switchLabel.after(statusText);
+    }
+
+    const updateStatus = () => {
+      statusText.textContent = checkbox.checked ? "Active" : "Inactive";
+    };
+
+    updateStatus();
+    checkbox.addEventListener("change", updateStatus);
   });
 });

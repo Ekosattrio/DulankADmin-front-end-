@@ -106,11 +106,11 @@
 
                   <div class="d-flex justify-content-between align-items-center mt-auto pt-3 border-top gap-2">
                     <div class="flex-grow-1">
-                      <select class="select form-control">
+                      <select class="select form-control status-dropdown" data-job-id="JO-0001">
                         <option value="">Change Status</option>
-                        <option value="Urgent">Urgent</option>
-                        <option value="High">High</option>
-                        <option value="Normal">Normal</option>
+                        <option value="Urgent">Complete</option>
+                        <option value="High">On Process</option>
+                        <option value="Normal">Hold</option>
                       </select>
                     </div>
 
@@ -152,11 +152,57 @@
 
                   <div class="d-flex justify-content-between align-items-center mt-auto pt-3 border-top gap-2">
                     <div class="flex-grow-1">
-                      <select class="select form-control">
+                      <select class="select form-control status-dropdown" data-job-id="JO-0001">
                         <option value="">Change Status</option>
-                        <option value="Urgent">Urgent</option>
-                        <option value="High">High</option>
-                        <option value="Normal">Normal</option>
+                        <option value="Urgent">Complete</option>
+                        <option value="High">On Process</option>
+                        <option value="Normal">Hold</option>
+                      </select>
+                    </div>
+
+                    <div class="edit-delet-action">
+                      <a class="text-warning p-2" data-bs-toggle="modal" data-bs-target="#view-units" style="cursor: pointer">
+                        <i data-feather="eye"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 mb-4 job-card" data-priority="normal">
+              <div class="card h-100 border-secondary rounded-3" style="border-width: 1px">
+                <div class="card-body d-flex flex-column">
+                  <div class="border-bottom pb-2 mb-2">
+                    <small class="text-muted d-block" style="font-size: 11px">Flow Name :</small>
+                    <h6 class="fw-bold mb-0 fs-6">Mesin Sm52 4 Warna</h6>
+                  </div>
+                  <div class="text-end mb-3">
+                    <span class="text-secondary small fw-bold" style="font-size: 12px">Priority : Normal</span>
+                  </div>
+
+                  <div class="mb-3">
+                    <small class="text-muted d-block" style="font-size: 11px">Product</small>
+                    <p class="mb-0 fw-bold" style="font-size: 13px">Brosur A5</p>
+                  </div>
+                  <div class="mb-3">
+                    <small class="text-muted d-block" style="font-size: 11px">Job Title</small>
+                    <p class="mb-0 fw-bold" style="font-size: 13px">Brosur Penawaran Bisnis</p>
+                  </div>
+                  <div class="mb-4">
+                    <small class="text-muted d-block" style="font-size: 11px">Description</small>
+                    <p class="text-dark fw-semibold mb-0" style="font-size: 12px; line-height: 1.4">
+                      Brosur Full Color A4 (210x297 Millimeter), Art paper 150gr, Tanpa Laminasi, Tanpa Lipatan
+                    </p>
+                  </div>
+
+                  <div class="d-flex justify-content-between align-items-center mt-auto pt-3 border-top gap-2">
+                    <div class="flex-grow-1">
+                      <select class="select form-control status-dropdown" data-job-id="JO-0001">
+                        <option value="">Change Status</option>
+                        <option value="Urgent">Complete</option>
+                        <option value="High">On Process</option>
+                        <option value="Normal">Hold</option>
                       </select>
                     </div>
 
@@ -200,55 +246,9 @@
                     <div class="flex-grow-1">
                       <select class="select form-control">
                         <option value="">Change Status</option>
-                        <option value="Urgent">Urgent</option>
-                        <option value="High">High</option>
-                        <option value="Normal">Normal</option>
-                      </select>
-                    </div>
-
-                    <div class="edit-delet-action">
-                      <a class="text-warning p-2" data-bs-toggle="modal" data-bs-target="#view-units" style="cursor: pointer">
-                        <i data-feather="eye"></i>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 mb-4 job-card" data-priority="normal">
-              <div class="card h-100 border-secondary rounded-3" style="border-width: 1px">
-                <div class="card-body d-flex flex-column">
-                  <div class="border-bottom pb-2 mb-2">
-                    <small class="text-muted d-block" style="font-size: 11px">Flow Name :</small>
-                    <h6 class="fw-bold mb-0 fs-6">Mesin Sm52 4 Warna</h6>
-                  </div>
-                  <div class="text-end mb-3">
-                    <span class="text-secondary small fw-bold" style="font-size: 12px">Priority : Normal</span>
-                  </div>
-
-                  <div class="mb-3">
-                    <small class="text-muted d-block" style="font-size: 11px">Product</small>
-                    <p class="mb-0 fw-bold" style="font-size: 13px">Brosur A5</p>
-                  </div>
-                  <div class="mb-3">
-                    <small class="text-muted d-block" style="font-size: 11px">Job Title</small>
-                    <p class="mb-0 fw-bold" style="font-size: 13px">Brosur Penawaran Bisnis</p>
-                  </div>
-                  <div class="mb-4">
-                    <small class="text-muted d-block" style="font-size: 11px">Description</small>
-                    <p class="text-dark fw-semibold mb-0" style="font-size: 12px; line-height: 1.4">
-                      Brosur Full Color A4 (210x297 Millimeter), Art paper 150gr, Tanpa Laminasi, Tanpa Lipatan
-                    </p>
-                  </div>
-
-                  <div class="d-flex justify-content-between align-items-center mt-auto pt-3 border-top gap-2">
-                    <div class="flex-grow-1">
-                      <select class="select form-control">
-                        <option value="">Change Status</option>
-                        <option value="Urgent">Urgent</option>
-                        <option value="High">High</option>
-                        <option value="Normal">Normal</option>
+                        <option value="Urgent">Waiting</option>
+                        <option value="High">On Process</option>
+                        <option value="Normal">Hold</option>
                       </select>
                     </div>
 
@@ -400,6 +400,48 @@
       </div>
     </div>
 
+    <!-- modal onchange status -->
+
+    <!-- modal onchange status -->
+    <div class="modal fade" id="modalUbahStatus" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Konfirmasi Ubah Status</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="row align-items-center">
+                <div class="col-5">
+                  <label for="qtyOk" class="form-label fw-bold mb-0"> Qty Lembar OK ? <span class="text-danger">*</span> </label>
+                </div>
+                <div class="col-7">
+                  <input type="text" id="qtyOk" class="form-control" placeholder="0" min="0" />
+                </div>
+              </div>
+            </div>
+            <div class="row mt-3">
+              <div class="row align-items-center">
+                <div class="col-5">
+                  <label for="qtyRusak" class="form-label fw-bold mb-0">
+                    Lembar Rusak ? <span class="text-danger">*</span>
+                  </label>
+                </div>
+                <div class="col-7">
+                  <input type="text" id="qtyRusak" class="form-control" placeholder="0" min="0" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+            <button type="button" class="btn btn-primary" id="btnSimpanStatus">Simpan Perubahan</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <script>
       function filterJobs(priority) {
         // 1. Ambil semua elemen kartu job
@@ -479,5 +521,82 @@
 
     <script src="assets/js/theme-script.js"></script>
     <script src="assets/js/script.js"></script>
+    <!-- js ubah status -->
+    <script>
+      $(document).ready(function () {
+        // Inisialisasi modal
+        const modalElement = document.getElementById("modalUbahStatus");
+        const statusModal = new bootstrap.Modal(modalElement);
+
+        let activeDropdown = null;
+
+        // Trigger pas dropdown (di kartu manapun) diubah
+        $(".status-dropdown").on("change", function () {
+          activeDropdown = $(this);
+          const selectedValue = $(this).val();
+          const selectedText = $(this).find("option:selected").text();
+
+          // Jika opsi yg dipilih bukan "Change Status"
+          if (selectedValue !== "") {
+            $("#teksStatusTerpilih").text(selectedText);
+            statusModal.show();
+          }
+        });
+
+        // Event ketika modal di-close atau batal
+        modalElement.addEventListener("hidden.bs.modal", function () {
+          if (activeDropdown) {
+            // Balikin dropdown ke default
+            activeDropdown.val("");
+            activeDropdown.trigger("change.select2");
+          }
+          // Kosongkan input form biar ngga bocor ke job lain
+          $("#qtyOk").val("");
+          $("#qtyRusak").val("");
+        });
+
+        // Event Simpan Perubahan
+        $("#btnSimpanStatus").on("click", function () {
+          if (activeDropdown) {
+            // 1. Ambil data yang mau disimpan
+            const selectedText = activeDropdown.find("option:selected").text();
+            const jobId = activeDropdown.data("job-id"); // Dapat ID untuk query ke database
+            const qtyOk = $("#qtyOk").val();
+            const qtyRusak = $("#qtyRusak").val();
+
+            // (Opsional) Validasi kalau Qty harus diisi
+            // if (qtyOk === "" || qtyRusak === "") {
+            //   alert("Qty OK dan Qty Rusak wajib diisi!");
+            //   return; // Stop fungsi biar modal ngga ketutup
+            // }
+
+            // --- TEMPAT TARUH AJAX POST KE LARAVEL NANTI ---
+            console.log("Data siap kirim ke backend:", {
+              id_job: jobId,
+              status: selectedText,
+              lembar_ok: qtyOk,
+              lembar_rusak: qtyRusak,
+            });
+            // -----------------------------------------------
+
+            // 2. Logic Front-End: Hilangkan card kalau statusnya Complete
+            if (selectedText === "Complete") {
+              activeDropdown.closest(".job-card").fadeOut(400, function () {
+                $(this).remove();
+              });
+            }
+
+            // 3. Bersihkan sesi dropdown yang aktif
+            activeDropdown = null;
+          }
+
+          // Tutup modal dan reset input
+          statusModal.hide();
+          $("#qtyOk").val("");
+          $("#qtyRusak").val("");
+        });
+      });
+    </script>
+    <!-- js ubah status -->
   </body>
 </html>

@@ -877,6 +877,7 @@
 
     <!-- Select2 JS -->
     <script src="assets/plugins/select2/js/select2.min.js"></script>
+    <script src="assets/js/assignee-select.js"></script>
 
     <!-- Sweetalert 2 -->
     <script src="assets/plugins/sweetalert/sweetalert2.all.min.js"></script>
@@ -891,23 +892,15 @@
 
     <script>
       $(document).ready(function () {
-        const employeeOptions = ["Adul", "Nurdin", "Admin", "Arif", "Galih", "Rapli"];
-        const departmentMembers = {
-          "tim-cutting": ["Rapli", "Nurdin", "Bagas"],
-          "tim-printing": ["Adul", "Arif", "Galih"],
-          "tim-design": ["Admin", "Nurdin", "Citra"]
-        };
+        const employeeOptions = window.AssigneeSelect.employeeOptions;
+        const departmentMembers = window.AssigneeSelect.departmentMembers;
 
         function ensureOption($select, value) {
-          if ($select.find(`option[value="${value}"]`).length === 0) {
-            const newOption = new Option(value, value, false, false);
-            $select.append(newOption);
-          }
+          window.AssigneeSelect.ensureOption($select, value);
         }
 
         function setSelectValues($select, values) {
-          values.forEach((value) => ensureOption($select, value));
-          $select.val(values).trigger("change");
+          window.AssigneeSelect.setValues($select, values);
         }
 
         function toggleOptionalField($checkbox) {

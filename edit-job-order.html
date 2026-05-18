@@ -20,79 +20,8 @@
   <link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css" />
   <link rel="stylesheet" href="assets/css/style.css" />
   <style>
-    .workflow-tab-item {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .workflow-tab-item .nav-link {
-      flex: 1;
-    }
-
-    .workflow-arrange-controls {
-      display: none;
-      gap: 6px;
-      flex-shrink: 0;
-    }
-
     .is-arranging .workflow-arrange-controls {
-      display: flex;
-    }
-
-    .workflow-arrange-btn {
-      width: 30px;
-      height: 30px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .assignee-workflow-table {
-      row-gap: 16px;
-    }
-
-    .assignee-workflow-table .form-control {
-      min-height: 48px;
-    }
-
-    .assignee-workflow-table .select2-container--default .select2-selection--multiple {
-      min-height: 48px;
-      border-color: #ced4da;
-      border-radius: 6px;
-      display: flex;
-      align-items: center;
-      padding: 4px 8px;
-    }
-
-    .assignee-workflow-table .select2-container--default .select2-selection--multiple .select2-selection__choice {
-      border-radius: 20px;
-      background: #fff !important;
-      border-color: #ced4da !important;
-      color: #212529 !important;
-      padding: 3px 12px;
-      font-size: 15px;
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-    }
-
-    .assignee-workflow-table .select2-container--default .select2-selection--multiple .select2-selection__choice__remove {
-      background: transparent !important;
-      border: 0 !important;
-      color: #d99032 !important;
-      position: static;
-      width: auto;
-      height: auto;
-      margin-right: 0;
-      padding: 0;
-      order: 2;
-    }
-
-    .assignee-workflow-table .select2-container--default .select2-selection--multiple .select2-selection__choice__display {
-      color: #212529;
-      padding-left: 0;
-      padding-right: 0;
+      display: flex !important;
     }
   </style>
 </head>
@@ -119,531 +48,549 @@
 
 
         <form action="job-order.html">
-          <div class="bg-white row">
+          <div class="bg-white row p-0 m-0">
 
             <div class="col-md-4">
-              <h5 class="mb-5">Sales Information</h5>
+              <div class="border border-1 border-dark p-4">
+                <h5 class="mb-5">Sales Information</h5>
 
-              <div class="mb-5">
-                <div class="row mb-2">
-                  <div class="col-5">Sales Date</div>
-                  <div class="col-7 fw-bold">17/12/2025</div>
+                <div class="mb-5">
+                  <div class="row mb-2">
+                    <div class="col-5">Sales Date</div>
+                    <div class="col-7 fw-bold">17/12/2025</div>
+                  </div>
+                  <div class="row mb-2">
+                    <div class="col-5">No Sales</div>
+                    <div class="col-7 fw-bold">25250025452</div>
+                  </div>
+                  <div class="row mb-2">
+                    <div class="col-5">Customer</div>
+                    <div class="col-7 fw-bold">PT. Makmur Abadi</div>
+                  </div>
+                  <div class="row mb-2">
+                    <div class="col-5">Shipping</div>
+                    <div class="col-7 fw-bold">Pick Up</div>
+                  </div>
+                  <div class="row">
+                    <div class="col-5">Order Summary</div>
+                    <div class="col-7 fw-bold">2 Products</div>
+                  </div>
                 </div>
-                <div class="row mb-2">
-                  <div class="col-5">No Sales</div>
-                  <div class="col-7 fw-bold">25250025452</div>
-                </div>
-                <div class="row mb-2">
-                  <div class="col-5">Customer</div>
-                  <div class="col-7 fw-bold">PT. Makmur Abadi</div>
-                </div>
-                <div class="row mb-2">
-                  <div class="col-5">Shipping</div>
-                  <div class="col-7 fw-bold">Pick Up</div>
-                </div>
-                <div class="row">
-                  <div class="col-5">Order Summary</div>
-                  <div class="col-7 fw-bold">2 Products</div>
-                </div>
-              </div>
 
-              <h5 class="mb-4">Order Detail</h5>
-              <div class="table-responsive mb-5">
-                <table class="table table-borderless align-middle mb-0">
-                  <thead>
-                    <tr>
-                      <th class="fw-normal">Product Name</th>
-                      <th class="fw-normal">Job Title</th>
-                      <th class="fw-normal"></th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>Brosur Full Color Promo</td>
-                      <td>Brosur SMKN 1 Karawang</td>
-                      <td><a href="#manage-job-order" class="text-primary">Manage</a></td>
-                    </tr>
-                    <tr>
-                      <td>Yasin Soft Cover 192 HVS</td>
-                      <td>40 Hari Alm Kusnadi</td>
-                      <td><a href="#manage-job-order" class="text-primary">Manage</a></td>
-                    </tr>
-                  </tbody>
-                </table>
+                <h5 class="mb-4">Order Detail</h5>
+                <div class="table-responsive mb-5">
+                  <table class="table table-borderless align-middle mb-0">
+                    <thead>
+                      <tr>
+                        <th class="fw-normal">Product Name</th>
+                        <th class="fw-normal">Job Title</th>
+                        <th class="fw-normal"></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Brosur Full Color Promo</td>
+                        <td>Brosur SMKN 1 Karawang</td>
+                        <td><a href="#manage-job-order" class="text-primary" data-action="manage-job-order">Manage</a></td>
+                      </tr>
+                      <tr>
+                        <td>Yasin Soft Cover 192 HVS</td>
+                        <td>40 Hari Alm Kusnadi</td>
+                        <td><a href="#manage-job-order" class="text-primary" data-action="manage-job-order">Manage</a></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
               </div>
             </div>
 
             <div class="col-md-8">
-              <section id="manage-job-order" class="mb-5">
-                <h5 class="mb-4">Manage Job Order : Brosur Full Color Promo</h5>
-                <div class="row mb-2">
-                  <div class="col-lg-2 col-md-3">Job Title</div>
-                  <div class="col-lg-10 col-md-9 fw-bold">Brosur SMKN 1 Karawang</div>
-                </div>
-                <div class="row mb-2">
-                  <div class="col-lg-2 col-md-3">Description</div>
-                  <div class="col-lg-10 col-md-9">Brosur Full Color A4 (210x297 Millimeter), Art paper 150gr, Tanpa
-                    Laminasi, Tanpa Lipatan</div>
-                </div>
-                <div class="row mb-4">
-                  <div class="col-lg-2 col-md-3">Qty</div>
-                  <div class="col-lg-10 col-md-9">15 Rim</div>
-                </div>
-                <div class="row align-items-center">
-                  <div class="col-lg-2 col-md-3">Priority</div>
-                  <div class="col-lg-4 col-md-6">
-                    <select class="form-select select">
-                      <option selected>Urgent</option>
-                      <option>High</option>
-                      <option>Normal</option>
-                      <option>Low</option>
-                    </select>
+              <div class="p-4" id="manage-job-order">
+                <section class="mb-5">
+                  <h5 class="mb-4">Manage Job Order : Brosur Full Color Promo</h5>
+                  <div class="row mb-2">
+                    <div class="col-lg-2 col-md-3">Job Title</div>
+                    <div class="col-lg-10 col-md-9 fw-bold">Brosur SMKN 1 Karawang</div>
                   </div>
-                </div>
-              </section>
+                  <div class="row mb-2">
+                    <div class="col-lg-2 col-md-3">Description</div>
+                    <div class="col-lg-10 col-md-9">Brosur Full Color A4 (210x297 Millimeter), Art paper 150gr, Tanpa
+                      Laminasi, Tanpa Lipatan</div>
+                  </div>
+                  <div class="row mb-4">
+                    <div class="col-lg-2 col-md-3">Qty</div>
+                    <div class="col-lg-10 col-md-9">15 Rim</div>
+                  </div>
+                  <div class="row align-items-center">
+                    <div class="col-lg-2 col-md-3">Priority</div>
+                    <div class="col-lg-4 col-md-6">
+                      <select class="form-select select">
+                        <option selected>Urgent</option>
+                        <option>High</option>
+                        <option>Normal</option>
+                        <option>Low</option>
+                      </select>
+                    </div>
+                  </div>
+                </section>
 
-              <ul class="nav nav-tabs mb-4" id="job-order-tabs" role="tablist">
-                <li class="nav-item" role="presentation">
-                  <button class="nav-link active" id="workflow-tab" data-bs-toggle="tab"
-                    data-bs-target="#workflow-default" type="button" role="tab">Work Flow Default</button>
-                </li>
-                <li class="nav-item" role="presentation">
-                  <button class="nav-link" id="assignee-tab" data-bs-toggle="tab" data-bs-target="#assignee"
-                    type="button" role="tab">Assignee</button>
-                </li>
-                <li class="nav-item" role="presentation">
-                  <button class="nav-link" id="incentive-tab" data-bs-toggle="tab" data-bs-target="#incentive"
-                    type="button" role="tab">Incentive</button>
-                </li>
-              </ul>
+                <ul class="nav nav-tabs mb-4" id="job-order-tabs" role="tablist">
+                  <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="workflow-tab" data-bs-toggle="tab"
+                      data-bs-target="#workflow-default" type="button" role="tab">Work Flow Default</button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="assignee-tab" data-bs-toggle="tab" data-bs-target="#assignee"
+                      type="button" role="tab">Assignee</button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="incentive-tab" data-bs-toggle="tab" data-bs-target="#incentive"
+                      type="button" role="tab">Incentive</button>
+                  </li>
+                </ul>
 
-              <div class="tab-content">
-                <div class="tab-pane fade show active" id="workflow-default" role="tabpanel">
-                  <div class="border">
-                    <div class="row g-0">
-                      <div class="col-lg-4 border-end p-4">
-                        <h6 class="mb-3">Workflow Included</h6>
-                        <ul class="nav flex-column custom-nav-tabs" id="workflow-included-tabs" role="tablist">
-                          <li class="nav-item workflow-tab-item" role="presentation">
-                            <button class="nav-link text-start" id="flow-design-tab" data-bs-toggle="tab"
-                              data-bs-target="#flow-design" type="button" role="tab">
-                              Design
-                            </button>
-                            <div class="workflow-arrange-controls">
-                              <button type="button" class="btn btn-outline-secondary p-0 workflow-arrange-btn"
-                                data-action="move-flow-up" aria-label="Move up"><i data-feather="arrow-up"></i></button>
-                              <button type="button" class="btn btn-outline-secondary p-0 workflow-arrange-btn"
-                                data-action="move-flow-down" aria-label="Move down"><i
-                                  data-feather="arrow-down"></i></button>
+                <div class="tab-content">
+                  <div class="tab-pane fade show active" id="workflow-default" role="tabpanel">
+                    <div class="border">
+                      <div class="row g-0">
+                        <div class="col-lg-4 border-end p-4">
+                          <h6 class="mb-3">Workflow Included</h6>
+                          <ul class="nav flex-column custom-nav-tabs" id="workflow-included-tabs" role="tablist">
+                            <li class="nav-item workflow-tab-item d-flex align-items-center gap-2" role="presentation">
+                              <button class="nav-link text-start flex-grow-1" id="flow-design-tab" data-bs-toggle="tab"
+                                data-bs-target="#flow-design" type="button" role="tab">
+                                Design
+                              </button>
+                              <div class="workflow-arrange-controls d-none gap-1 flex-shrink-0">
+                                <button type="button" class="btn btn-sm btn-outline-secondary p-1"
+                                  data-action="move-flow-up" aria-label="Move up"><i
+                                    data-feather="arrow-up"></i></button>
+                                <button type="button" class="btn btn-sm btn-outline-secondary p-1"
+                                  data-action="move-flow-down" aria-label="Move down"><i
+                                    data-feather="arrow-down"></i></button>
+                              </div>
+                            </li>
+                            <li class="nav-item workflow-tab-item d-flex align-items-center gap-2" role="presentation">
+                              <button class="nav-link text-start flex-grow-1 active" id="flow-plat-tab"
+                                data-bs-toggle="tab" data-bs-target="#flow-plat" type="button" role="tab">
+                                SPK PLAT CTP
+                              </button>
+                              <div class="workflow-arrange-controls d-none gap-1 flex-shrink-0">
+                                <button type="button" class="btn btn-sm btn-outline-secondary p-1"
+                                  data-action="move-flow-up" aria-label="Move up"><i
+                                    data-feather="arrow-up"></i></button>
+                                <button type="button" class="btn btn-sm btn-outline-secondary p-1"
+                                  data-action="move-flow-down" aria-label="Move down"><i
+                                    data-feather="arrow-down"></i></button>
+                              </div>
+                            </li>
+                            <li class="nav-item workflow-tab-item d-flex align-items-center gap-2" role="presentation">
+                              <button class="nav-link text-start flex-grow-1" id="flow-heidelberg-tab"
+                                data-bs-toggle="tab" data-bs-target="#flow-heidelberg" type="button" role="tab">
+                                SPK Heidelberg SM52 4 Warna
+                              </button>
+                              <div class="workflow-arrange-controls d-none gap-1 flex-shrink-0">
+                                <button type="button" class="btn btn-sm btn-outline-secondary p-1"
+                                  data-action="move-flow-up" aria-label="Move up"><i
+                                    data-feather="arrow-up"></i></button>
+                                <button type="button" class="btn btn-sm btn-outline-secondary p-1"
+                                  data-action="move-flow-down" aria-label="Move down"><i
+                                    data-feather="arrow-down"></i></button>
+                              </div>
+                            </li>
+                            <li class="nav-item workflow-tab-item d-flex align-items-center gap-2" role="presentation">
+                              <button class="nav-link text-start flex-grow-1" id="flow-potong-tab" data-bs-toggle="tab"
+                                data-bs-target="#flow-potong" type="button" role="tab">
+                                Potong Sisir
+                              </button>
+                              <div class="workflow-arrange-controls d-none gap-1 flex-shrink-0">
+                                <button type="button" class="btn btn-sm btn-outline-secondary p-1"
+                                  data-action="move-flow-up" aria-label="Move up"><i
+                                    data-feather="arrow-up"></i></button>
+                                <button type="button" class="btn btn-sm btn-outline-secondary p-1"
+                                  data-action="move-flow-down" aria-label="Move down"><i
+                                    data-feather="arrow-down"></i></button>
+                              </div>
+                            </li>
+                          </ul>
+                          <div class="row g-2 align-items-center mt-3 d-none" id="add-flow-editor">
+                            <div class="col-12">
+                              <select class="form-select select" id="add-flow-select">
+                                <option selected value="">Choose Flow Name</option>
+                              </select>
                             </div>
-                          </li>
-                          <li class="nav-item workflow-tab-item" role="presentation">
-                            <button class="nav-link text-start active" id="flow-plat-tab" data-bs-toggle="tab"
-                              data-bs-target="#flow-plat" type="button" role="tab">
-                              SPK PLAT CTP
-                            </button>
-                            <div class="workflow-arrange-controls">
-                              <button type="button" class="btn btn-outline-secondary p-0 workflow-arrange-btn"
-                                data-action="move-flow-up" aria-label="Move up"><i data-feather="arrow-up"></i></button>
-                              <button type="button" class="btn btn-outline-secondary p-0 workflow-arrange-btn"
-                                data-action="move-flow-down" aria-label="Move down"><i
-                                  data-feather="arrow-down"></i></button>
-                            </div>
-                          </li>
-                          <li class="nav-item workflow-tab-item" role="presentation">
-                            <button class="nav-link text-start" id="flow-heidelberg-tab" data-bs-toggle="tab"
-                              data-bs-target="#flow-heidelberg" type="button" role="tab">
-                              SPK Heidelberg SM52 4 Warna
-                            </button>
-                            <div class="workflow-arrange-controls">
-                              <button type="button" class="btn btn-outline-secondary p-0 workflow-arrange-btn"
-                                data-action="move-flow-up" aria-label="Move up"><i data-feather="arrow-up"></i></button>
-                              <button type="button" class="btn btn-outline-secondary p-0 workflow-arrange-btn"
-                                data-action="move-flow-down" aria-label="Move down"><i
-                                  data-feather="arrow-down"></i></button>
-                            </div>
-                          </li>
-                          <li class="nav-item workflow-tab-item" role="presentation">
-                            <button class="nav-link text-start" id="flow-potong-tab" data-bs-toggle="tab"
-                              data-bs-target="#flow-potong" type="button" role="tab">
-                              Potong Sisir
-                            </button>
-                            <div class="workflow-arrange-controls">
-                              <button type="button" class="btn btn-outline-secondary p-0 workflow-arrange-btn"
-                                data-action="move-flow-up" aria-label="Move up"><i data-feather="arrow-up"></i></button>
-                              <button type="button" class="btn btn-outline-secondary p-0 workflow-arrange-btn"
-                                data-action="move-flow-down" aria-label="Move down"><i
-                                  data-feather="arrow-down"></i></button>
-                            </div>
-                          </li>
-                        </ul>
-                        <div class="row g-2 align-items-center mt-3 d-none" id="add-flow-editor">
-                          <div class="col-12">
-                            <select class="form-select select" id="add-flow-select">
-                              <option selected value="">Choose Flow Name</option>
-                            </select>
+                            <div class="col-auto"><button type="button" class="btn btn-cancel"
+                                data-action="cancel-add-flow">Cancel</button></div>
+                            <div class="col-auto"><button type="button" class="btn btn-submit"
+                                data-action="save-add-flow">Add</button></div>
                           </div>
-                          <div class="col-auto"><button type="button" class="btn btn-cancel"
-                              data-action="cancel-add-flow">Cancel</button></div>
-                          <div class="col-auto"><button type="button" class="btn btn-submit"
-                              data-action="save-add-flow">Add</button></div>
+                          <div class="d-flex flex-wrap justify-content-between mt-5">
+                            <button type="button" class="btn btn-link p-0 text-decoration-none text-primary"
+                              data-action="add-flow">Add Flow</button>
+                            <button type="button" class="btn btn-link p-0 text-decoration-none text-primary"
+                              data-action="arrange-flow">Arrange Flow Work</button>
+                          </div>
                         </div>
-                        <div class="d-flex flex-wrap justify-content-between mt-5">
-                          <button type="button" class="btn btn-link p-0 text-decoration-none text-primary"
-                            data-action="add-flow">Add Flow</button>
-                          <button type="button" class="btn btn-link p-0 text-decoration-none text-primary"
-                            data-action="arrange-flow">Arrange Flow Work</button>
-                        </div>
-                      </div>
 
-                      <div class="col-lg-8 p-4">
-                        <div class="tab-content">
-                          <div class="tab-pane fade workflow-pane" id="flow-design" role="tabpanel">
-                            <h6 class="mb-4">Add Information Detail</h6>
-                            <div class="row align-items-center mb-3">
-                              <div class="col-lg-4">Flow Type</div>
-                              <div class="col-lg-8">
-                                <div class="d-flex flex-wrap gap-5">
-                                  <div class="form-check mb-0">
-                                    <input class="form-check-input" type="radio" name="flow-design-type" checked />
-                                    <label class="form-check-label">In-House</label>
-                                  </div>
-                                  <div class="form-check mb-0">
-                                    <input class="form-check-input" type="radio" name="flow-design-type" />
-                                    <label class="form-check-label">Outsource</label>
+                        <div class="col-lg-8 p-4">
+                          <div class="tab-content">
+                            <div class="tab-pane fade workflow-pane" id="flow-design" role="tabpanel">
+                              <h6 class="mb-4">Add Information Detail</h6>
+                              <div class="row align-items-center mb-3">
+                                <div class="col-lg-4">Flow Type</div>
+                                <div class="col-lg-8">
+                                  <div class="d-flex flex-wrap gap-5">
+                                    <div class="form-check mb-0">
+                                      <input class="form-check-input" type="radio" name="flow-design-type" checked />
+                                      <label class="form-check-label">In-House</label>
+                                    </div>
+                                    <div class="form-check mb-0">
+                                      <input class="form-check-input" type="radio" name="flow-design-type" />
+                                      <label class="form-check-label">Outsource</label>
+                                    </div>
                                   </div>
                                 </div>
                               </div>
+                              <div class="flow-fields">
+                                <div class="row align-items-center mb-3 flow-field-row">
+                                  <div class="col-lg-4"><label class="form-label mb-lg-0">Ada Sample/Referensi
+                                      Design</label></div>
+                                  <div class="col-lg-7 col-md-10">
+                                    <select class="form-select select">
+                                      <option>Ada</option>
+                                      <option selected>Tidak</option>
+                                    </select>
+                                  </div>
+                                  <div class="col-lg-1 col-md-2 text-md-end"><button type="button"
+                                      class="btn btn-link text-primary p-0" data-action="delete-field"><i
+                                        class="fas fa-trash-alt"></i></button></div>
+                                </div>
+                                <div class="row align-items-center mb-3 flow-field-row">
+                                  <div class="col-lg-4"><label class="form-label mb-lg-0">Warna Dominan</label></div>
+                                  <div class="col-lg-7 col-md-10"><input type="text" class="form-control"
+                                      value="Biru" />
+                                  </div>
+                                  <div class="col-lg-1 col-md-2 text-md-end"><button type="button"
+                                      class="btn btn-link text-primary p-0" data-action="delete-field"><i
+                                        class="fas fa-trash-alt"></i></button></div>
+                                </div>
+                                <div class="row align-items-center mb-3 flow-field-row">
+                                  <div class="col-lg-4"><label class="form-label mb-lg-0">Jumlah Page/Design</label>
+                                  </div>
+                                  <div class="col-lg-7 col-md-10"><input type="text" class="form-control"
+                                      value="3 Page" />
+                                  </div>
+                                  <div class="col-lg-1 col-md-2 text-md-end"><button type="button"
+                                      class="btn btn-link text-primary p-0" data-action="delete-field"><i
+                                        class="fas fa-trash-alt"></i></button></div>
+                                </div>
+                              </div>
+                              <div class="mt-4">
+                                <button type="button" class="btn btn-link p-0 text-decoration-none text-primary"
+                                  data-action="show-add-information">Add Information</button>
+                                <div class="row g-2 align-items-center mt-1 d-none flow-add-editor">
+                                  <div class="col-md-5"><input type="text" class="form-control"
+                                      placeholder="Input label information" /></div>
+                                  <div class="col-md-auto"><button type="button" class="btn btn-cancel"
+                                      data-action="cancel-add-information">Cancel</button></div>
+                                  <div class="col-md-auto"><button type="button" class="btn btn-submit"
+                                      data-action="save-add-information">Save</button></div>
+                                </div>
+                              </div>
+                              <h6 class="mt-5 mb-4">Add Information if Flow Completed</h6>
+                              <div class="row align-items-center mb-3">
+                                <div class="col-lg-4">File Design Final?</div>
+                                <div class="col-lg-7 col-md-10"><input type="text" class="form-control" /></div>
+                                <div class="col-lg-1 col-md-2 text-md-end"><button type="button"
+                                    class="btn btn-link text-primary p-0"><i class="fas fa-trash-alt"></i></button>
+                                </div>
+                              </div>
+                              <div class="row align-items-center">
+                                <div class="col-md-6"><button type="button"
+                                    class="btn btn-link p-0 text-decoration-none text-primary"
+                                    data-action="show-add-information-after">Add Information
+                                    After</button></div>
+                                <div class="col-md-6 text-md-end mt-3 mt-md-0"><button type="button"
+                                    class="btn btn-submit" data-action="remove-flow"><i
+                                      class="fas fa-trash-alt me-1"></i>Remove Flow</button>
+                                </div>
+                              </div>
                             </div>
-                            <div class="flow-fields">
-                              <div class="row align-items-center mb-3 flow-field-row">
-                                <div class="col-lg-4"><label class="form-label mb-lg-0">Ada Sample/Referensi
-                                    Design</label></div>
-                                <div class="col-lg-7 col-md-10">
-                                  <select class="form-select select">
-                                    <option>Ada</option>
-                                    <option selected>Tidak</option>
+
+                            <div class="tab-pane fade show active workflow-pane" id="flow-plat" role="tabpanel">
+                              <h6 class="mb-4">Add Information Detail</h6>
+                              <div class="row align-items-center mb-3">
+                                <div class="col-lg-4">Flow Type</div>
+                                <div class="col-lg-8">
+                                  <div class="d-flex flex-wrap gap-5">
+                                    <div class="form-check mb-0">
+                                      <input class="form-check-input" type="radio" name="flow-plat-type" checked />
+                                      <label class="form-check-label">In-House</label>
+                                    </div>
+                                    <div class="form-check mb-0">
+                                      <input class="form-check-input" type="radio" name="flow-plat-type" />
+                                      <label class="form-check-label">Outsource</label>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="flow-fields">
+                                <div class="row align-items-center mb-3 flow-field-row">
+                                  <div class="col-lg-4"><label class="form-label mb-lg-0">Jenis Plat</label></div>
+                                  <div class="col-lg-7 col-md-10"><input type="text" class="form-control"
+                                      value="UV-CTP / Conventional Plate" /></div>
+                                  <div class="col-lg-1 col-md-2 text-md-end"><button type="button"
+                                      class="btn btn-link text-primary p-0" data-action="delete-field"><i
+                                        class="fas fa-trash-alt"></i></button></div>
+                                </div>
+                                <div class="row align-items-center mb-3 flow-field-row">
+                                  <div class="col-lg-4"><label class="form-label mb-lg-0">Ukuran Plat</label></div>
+                                  <div class="col-lg-7 col-md-10">
+                                    <select class="form-select select">
+                                      <option selected>650 x 550 mm</option>
+                                      <option>760 x 605 mm</option>
+                                    </select>
+                                  </div>
+                                  <div class="col-lg-1 col-md-2 text-md-end"><button type="button"
+                                      class="btn btn-link text-primary p-0" data-action="delete-field"><i
+                                        class="fas fa-trash-alt"></i></button></div>
+                                </div>
+                                <div class="row align-items-center mb-3 flow-field-row">
+                                  <div class="col-lg-4"><label class="form-label mb-lg-0">Jumlah Set</label></div>
+                                  <div class="col-lg-7 col-md-10"><input type="text" class="form-control"
+                                      value="2 Set (Total 8 Plat)" /></div>
+                                  <div class="col-lg-1 col-md-2 text-md-end"><button type="button"
+                                      class="btn btn-link text-primary p-0" data-action="delete-field"><i
+                                        class="fas fa-trash-alt"></i></button></div>
+                                </div>
+                                <div class="row align-items-center mb-3 flow-field-row">
+                                  <div class="col-lg-4"><label class="form-label mb-lg-0">Separasi Warna</label></div>
+                                  <div class="col-lg-7 col-md-10"><input type="text" class="form-control"
+                                      value="CMYK (Cyan, Magenta, Yellow, Black)" /></div>
+                                  <div class="col-lg-1 col-md-2 text-md-end"><button type="button"
+                                      class="btn btn-link text-primary p-0" data-action="delete-field"><i
+                                        class="fas fa-trash-alt"></i></button></div>
+                                </div>
+                                <div class="row align-items-center mb-3 flow-field-row">
+                                  <div class="col-lg-4"><label class="form-label mb-lg-0">Ada Warna Khusus?</label>
+                                  </div>
+                                  <div class="col-lg-7 col-md-10">
+                                    <select class="form-select select">
+                                      <option selected>Tidak</option>
+                                      <option>Ada</option>
+                                    </select>
+                                  </div>
+                                  <div class="col-lg-1 col-md-2 text-md-end"><button type="button"
+                                      class="btn btn-link text-primary p-0" data-action="delete-field"><i
+                                        class="fas fa-trash-alt"></i></button></div>
+                                </div>
+                                <div class="row align-items-center mb-3 flow-field-row">
+                                  <div class="col-lg-4"><label class="form-label mb-lg-0">Screen Ruling</label></div>
+                                  <div class="col-lg-7 col-md-10"><input type="text" class="form-control"
+                                      value="175 LPI (Line Per Inch)" /></div>
+                                  <div class="col-lg-1 col-md-2 text-md-end"><button type="button"
+                                      class="btn btn-link text-primary p-0" data-action="delete-field"><i
+                                        class="fas fa-trash-alt"></i></button></div>
+                                </div>
+                              </div>
+                              <div class="mt-4">
+                                <button type="button" class="btn btn-link p-0 text-decoration-none text-primary"
+                                  data-action="show-add-information">Add Information</button>
+                                <div class="row g-2 align-items-center mt-1 d-none flow-add-editor">
+                                  <div class="col-md-5"><input type="text" class="form-control"
+                                      placeholder="Input label information" /></div>
+                                  <div class="col-md-auto"><button type="button" class="btn btn-cancel"
+                                      data-action="cancel-add-information">Cancel</button></div>
+                                  <div class="col-md-auto"><button type="button" class="btn btn-submit"
+                                      data-action="save-add-information">Save</button></div>
+                                </div>
+                              </div>
+                              <h6 class="mt-5 mb-4">Add Information if Flow Completed</h6>
+                              <div class="row align-items-center mb-3">
+                                <div class="col-lg-4">Qty Plat Tercetak?</div>
+                                <div class="col-lg-7">
+                                  <select class="form-select select flow-input-type-select">
+                                    <option selected>Input Type</option>
+                                    <option>Select Type</option>
                                   </select>
                                 </div>
                                 <div class="col-lg-1 col-md-2 text-md-end"><button type="button"
-                                    class="btn btn-link text-primary p-0" data-action="delete-field"><i
-                                      class="fas fa-trash-alt"></i></button></div>
-                              </div>
-                              <div class="row align-items-center mb-3 flow-field-row">
-                                <div class="col-lg-4"><label class="form-label mb-lg-0">Warna Dominan</label></div>
-                                <div class="col-lg-7 col-md-10"><input type="text" class="form-control" value="Biru" />
+                                    class="btn btn-link text-primary p-0"><i class="fas fa-trash-alt"></i></button>
                                 </div>
-                                <div class="col-lg-1 col-md-2 text-md-end"><button type="button"
-                                    class="btn btn-link text-primary p-0" data-action="delete-field"><i
-                                      class="fas fa-trash-alt"></i></button></div>
                               </div>
-                              <div class="row align-items-center mb-3 flow-field-row">
-                                <div class="col-lg-4"><label class="form-label mb-lg-0">Jumlah Page/Design</label></div>
-                                <div class="col-lg-7 col-md-10"><input type="text" class="form-control"
-                                    value="3 Page" />
-                                </div>
-                                <div class="col-lg-1 col-md-2 text-md-end"><button type="button"
-                                    class="btn btn-link text-primary p-0" data-action="delete-field"><i
-                                      class="fas fa-trash-alt"></i></button></div>
-                              </div>
-                            </div>
-                            <div class="mt-4">
-                              <button type="button" class="btn btn-link p-0 text-decoration-none text-primary"
-                                data-action="show-add-information">Add Information</button>
-                              <div class="row g-2 align-items-center mt-1 d-none flow-add-editor">
-                                <div class="col-md-5"><input type="text" class="form-control"
-                                    placeholder="Input label information" /></div>
-                                <div class="col-md-auto"><button type="button" class="btn btn-cancel"
-                                    data-action="cancel-add-information">Cancel</button></div>
-                                <div class="col-md-auto"><button type="button" class="btn btn-submit"
-                                    data-action="save-add-information">Save</button></div>
-                              </div>
-                            </div>
-                            <h6 class="mt-5 mb-4">Add Information if Flow Completed</h6>
-                            <div class="row align-items-center mb-3">
-                              <div class="col-lg-4">File Design Final?</div>
-                              <div class="col-lg-7 col-md-10"><input type="text" class="form-control" /></div>
-                              <div class="col-lg-1 col-md-2 text-md-end"><button type="button"
-                                  class="btn btn-link text-primary p-0"><i class="fas fa-trash-alt"></i></button></div>
-                            </div>
-                            <div class="row align-items-center">
-                              <div class="col-md-6"><button type="button"
-                                  class="btn btn-link p-0 text-decoration-none text-primary"
-                                  data-action="show-add-information-after">Add Information
-                                  After</button></div>
-                              <div class="col-md-6 text-md-end mt-3 mt-md-0"><button type="button"
-                                  class="btn btn-submit" data-action="remove-flow"><i
-                                    class="fas fa-trash-alt me-1"></i>Remove Flow</button>
-                              </div>
-                            </div>
-                          </div>
 
-                          <div class="tab-pane fade show active workflow-pane" id="flow-plat" role="tabpanel">
-                            <h6 class="mb-4">Add Information Detail</h6>
-                            <div class="row align-items-center mb-3">
-                              <div class="col-lg-4">Flow Type</div>
-                              <div class="col-lg-8">
-                                <div class="d-flex flex-wrap gap-5">
-                                  <div class="form-check mb-0">
-                                    <input class="form-check-input" type="radio" name="flow-plat-type" checked />
-                                    <label class="form-check-label">In-House</label>
-                                  </div>
-                                  <div class="form-check mb-0">
-                                    <input class="form-check-input" type="radio" name="flow-plat-type" />
-                                    <label class="form-check-label">Outsource</label>
-                                  </div>
+                              <div class="row align-items-center">
+                                <div class="col-md-6"><button type="button"
+                                    class="btn btn-link p-0 text-decoration-none text-primary"
+                                    data-action="show-add-information-after">Add Information
+                                    After</button></div>
+                                <div class="col-md-6 text-md-end mt-3 mt-md-0"><button type="button"
+                                    class="btn btn-submit" data-action="remove-flow"><i
+                                      class="fas fa-trash-alt me-1"></i>Remove Flow</button>
                                 </div>
                               </div>
-                            </div>
-                            <div class="flow-fields">
-                              <div class="row align-items-center mb-3 flow-field-row">
-                                <div class="col-lg-4"><label class="form-label mb-lg-0">Jenis Plat</label></div>
-                                <div class="col-lg-7 col-md-10"><input type="text" class="form-control"
-                                    value="UV-CTP / Conventional Plate" /></div>
-                                <div class="col-lg-1 col-md-2 text-md-end"><button type="button"
-                                    class="btn btn-link text-primary p-0" data-action="delete-field"><i
-                                      class="fas fa-trash-alt"></i></button></div>
-                              </div>
-                              <div class="row align-items-center mb-3 flow-field-row">
-                                <div class="col-lg-4"><label class="form-label mb-lg-0">Ukuran Plat</label></div>
-                                <div class="col-lg-7 col-md-10">
-                                  <select class="form-select select">
-                                    <option selected>650 x 550 mm</option>
-                                    <option>760 x 605 mm</option>
-                                  </select>
-                                </div>
-                                <div class="col-lg-1 col-md-2 text-md-end"><button type="button"
-                                    class="btn btn-link text-primary p-0" data-action="delete-field"><i
-                                      class="fas fa-trash-alt"></i></button></div>
-                              </div>
-                              <div class="row align-items-center mb-3 flow-field-row">
-                                <div class="col-lg-4"><label class="form-label mb-lg-0">Jumlah Set</label></div>
-                                <div class="col-lg-7 col-md-10"><input type="text" class="form-control"
-                                    value="2 Set (Total 8 Plat)" /></div>
-                                <div class="col-lg-1 col-md-2 text-md-end"><button type="button"
-                                    class="btn btn-link text-primary p-0" data-action="delete-field"><i
-                                      class="fas fa-trash-alt"></i></button></div>
-                              </div>
-                              <div class="row align-items-center mb-3 flow-field-row">
-                                <div class="col-lg-4"><label class="form-label mb-lg-0">Separasi Warna</label></div>
-                                <div class="col-lg-7 col-md-10"><input type="text" class="form-control"
-                                    value="CMYK (Cyan, Magenta, Yellow, Black)" /></div>
-                                <div class="col-lg-1 col-md-2 text-md-end"><button type="button"
-                                    class="btn btn-link text-primary p-0" data-action="delete-field"><i
-                                      class="fas fa-trash-alt"></i></button></div>
-                              </div>
-                              <div class="row align-items-center mb-3 flow-field-row">
-                                <div class="col-lg-4"><label class="form-label mb-lg-0">Ada Warna Khusus?</label></div>
-                                <div class="col-lg-7 col-md-10">
-                                  <select class="form-select select">
-                                    <option selected>Tidak</option>
-                                    <option>Ada</option>
-                                  </select>
-                                </div>
-                                <div class="col-lg-1 col-md-2 text-md-end"><button type="button"
-                                    class="btn btn-link text-primary p-0" data-action="delete-field"><i
-                                      class="fas fa-trash-alt"></i></button></div>
-                              </div>
-                              <div class="row align-items-center mb-3 flow-field-row">
-                                <div class="col-lg-4"><label class="form-label mb-lg-0">Screen Ruling</label></div>
-                                <div class="col-lg-7 col-md-10"><input type="text" class="form-control"
-                                    value="175 LPI (Line Per Inch)" /></div>
-                                <div class="col-lg-1 col-md-2 text-md-end"><button type="button"
-                                    class="btn btn-link text-primary p-0" data-action="delete-field"><i
-                                      class="fas fa-trash-alt"></i></button></div>
-                              </div>
-                            </div>
-                            <div class="mt-4">
-                              <button type="button" class="btn btn-link p-0 text-decoration-none text-primary"
-                                data-action="show-add-information">Add Information</button>
-                              <div class="row g-2 align-items-center mt-1 d-none flow-add-editor">
-                                <div class="col-md-5"><input type="text" class="form-control"
-                                    placeholder="Input label information" /></div>
-                                <div class="col-md-auto"><button type="button" class="btn btn-cancel"
-                                    data-action="cancel-add-information">Cancel</button></div>
-                                <div class="col-md-auto"><button type="button" class="btn btn-submit"
-                                    data-action="save-add-information">Save</button></div>
-                              </div>
-                            </div>
-                            <h6 class="mt-5 mb-4">Add Information if Flow Completed</h6>
-                            <div class="row align-items-center mb-3">
-                              <div class="col-lg-4">Qty Plat Tercetak?</div>
-                              <div class="col-lg-7">
-                                <select class="form-select select flow-input-type-select">
-                                  <option selected>Input Type</option>
-                                  <option>Select Type</option>
-                                </select>
-                              </div>
-                              <div class="col-lg-1 col-md-2 text-md-end"><button type="button"
-                                  class="btn btn-link text-primary p-0"><i class="fas fa-trash-alt"></i></button></div>
                             </div>
 
-                            <div class="row align-items-center">
-                              <div class="col-md-6"><button type="button"
-                                  class="btn btn-link p-0 text-decoration-none text-primary"
-                                  data-action="show-add-information-after">Add Information
-                                  After</button></div>
-                              <div class="col-md-6 text-md-end mt-3 mt-md-0"><button type="button"
-                                  class="btn btn-submit" data-action="remove-flow"><i
-                                    class="fas fa-trash-alt me-1"></i>Remove Flow</button>
+                            <div class="tab-pane fade workflow-pane" id="flow-heidelberg" role="tabpanel">
+                              <h6 class="mb-4">Add Information Detail</h6>
+                              <div class="row align-items-center mb-3">
+                                <div class="col-lg-4">Flow Type</div>
+                                <div class="col-lg-8">
+                                  <div class="d-flex flex-wrap gap-5">
+                                    <div class="form-check mb-0">
+                                      <input class="form-check-input" type="radio" name="flow-heidelberg-type"
+                                        checked />
+                                      <label class="form-check-label">In-House</label>
+                                    </div>
+                                    <div class="form-check mb-0">
+                                      <input class="form-check-input" type="radio" name="flow-heidelberg-type" />
+                                      <label class="form-check-label">Outsource</label>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="flow-fields">
+                                <div class="row align-items-center mb-3 flow-field-row">
+                                  <div class="col-lg-4"><label class="form-label mb-lg-0">Kertas</label></div>
+                                  <div class="col-lg-7 col-md-10"><input type="text" class="form-control"
+                                      value="AP 150 Gr" /></div>
+                                  <div class="col-lg-1 col-md-2 text-md-end"><button type="button"
+                                      class="btn btn-link text-primary p-0" data-action="delete-field"><i
+                                        class="fas fa-trash-alt"></i></button></div>
+                                </div>
+                                <div class="row align-items-center mb-3 flow-field-row">
+                                  <div class="col-lg-4"><label class="form-label mb-lg-0">Sisi Cetak</label></div>
+                                  <div class="col-lg-7 col-md-10"><input type="text" class="form-control"
+                                      value="2 Sisi" />
+                                  </div>
+                                  <div class="col-lg-1 col-md-2 text-md-end"><button type="button"
+                                      class="btn btn-link text-primary p-0" data-action="delete-field"><i
+                                        class="fas fa-trash-alt"></i></button></div>
+                                </div>
+                                <div class="row align-items-center mb-3 flow-field-row">
+                                  <div class="col-lg-4"><label class="form-label mb-lg-0">Panjang Kertas</label></div>
+                                  <div class="col-lg-7 col-md-10"><input type="text" class="form-control"
+                                      value="32.5 cm" />
+                                  </div>
+                                  <div class="col-lg-1 col-md-2 text-md-end"><button type="button"
+                                      class="btn btn-link text-primary p-0" data-action="delete-field"><i
+                                        class="fas fa-trash-alt"></i></button></div>
+                                </div>
+                                <div class="row align-items-center mb-3 flow-field-row">
+                                  <div class="col-lg-4"><label class="form-label mb-lg-0">Lebar Kertas</label></div>
+                                  <div class="col-lg-7 col-md-10"><input type="text" class="form-control"
+                                      value="45 cm" />
+                                  </div>
+                                  <div class="col-lg-1 col-md-2 text-md-end"><button type="button"
+                                      class="btn btn-link text-primary p-0" data-action="delete-field"><i
+                                        class="fas fa-trash-alt"></i></button></div>
+                                </div>
+                                <div class="row align-items-center mb-3 flow-field-row">
+                                  <div class="col-lg-4"><label class="form-label mb-lg-0">Jumlah Bahan</label></div>
+                                  <div class="col-lg-7 col-md-10"><input type="text" class="form-control"
+                                      value="5100" />
+                                  </div>
+                                  <div class="col-lg-1 col-md-2 text-md-end"><button type="button"
+                                      class="btn btn-link text-primary p-0" data-action="delete-field"><i
+                                        class="fas fa-trash-alt"></i></button></div>
+                                </div>
+                              </div>
+                              <div class="mt-4">
+                                <button type="button" class="btn btn-link p-0 text-decoration-none text-primary"
+                                  data-action="show-add-information">Add Information</button>
+                                <div class="row g-2 align-items-center mt-1 d-none flow-add-editor">
+                                  <div class="col-md-5"><input type="text" class="form-control"
+                                      placeholder="Input label information" /></div>
+                                  <div class="col-md-auto"><button type="button" class="btn btn-cancel"
+                                      data-action="cancel-add-information">Cancel</button></div>
+                                  <div class="col-md-auto"><button type="button" class="btn btn-submit"
+                                      data-action="save-add-information">Save</button></div>
+                                </div>
+                              </div>
+                              <h6 class="mt-5 mb-4">Add Information if Flow Completed</h6>
+                              <div class="row align-items-center mb-3">
+                                <div class="col-lg-4">Jumlah Cetak Jadi?</div>
+                                <div class="col-lg-7 col-md-10"><input type="text" class="form-control" /></div>
+                                <div class="col-lg-1 col-md-2 text-md-end"><button type="button"
+                                    class="btn btn-link text-primary p-0"><i class="fas fa-trash-alt"></i></button>
+                                </div>
+                              </div>
+                              <div class="row align-items-center">
+                                <div class="col-md-6"><button type="button"
+                                    class="btn btn-link p-0 text-decoration-none text-primary"
+                                    data-action="show-add-information-after">Add Information
+                                    After</button></div>
+                                <div class="col-md-6 text-md-end mt-3 mt-md-0"><button type="button"
+                                    class="btn btn-submit" data-action="remove-flow"><i
+                                      class="fas fa-trash-alt me-1"></i>Remove Flow</button>
+                                </div>
                               </div>
                             </div>
-                          </div>
 
-                          <div class="tab-pane fade workflow-pane" id="flow-heidelberg" role="tabpanel">
-                            <h6 class="mb-4">Add Information Detail</h6>
-                            <div class="row align-items-center mb-3">
-                              <div class="col-lg-4">Flow Type</div>
-                              <div class="col-lg-8">
-                                <div class="d-flex flex-wrap gap-5">
-                                  <div class="form-check mb-0">
-                                    <input class="form-check-input" type="radio" name="flow-heidelberg-type" checked />
-                                    <label class="form-check-label">In-House</label>
-                                  </div>
-                                  <div class="form-check mb-0">
-                                    <input class="form-check-input" type="radio" name="flow-heidelberg-type" />
-                                    <label class="form-check-label">Outsource</label>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="flow-fields">
-                              <div class="row align-items-center mb-3 flow-field-row">
-                                <div class="col-lg-4"><label class="form-label mb-lg-0">Kertas</label></div>
-                                <div class="col-lg-7 col-md-10"><input type="text" class="form-control"
-                                    value="AP 150 Gr" /></div>
-                                <div class="col-lg-1 col-md-2 text-md-end"><button type="button"
-                                    class="btn btn-link text-primary p-0" data-action="delete-field"><i
-                                      class="fas fa-trash-alt"></i></button></div>
-                              </div>
-                              <div class="row align-items-center mb-3 flow-field-row">
-                                <div class="col-lg-4"><label class="form-label mb-lg-0">Sisi Cetak</label></div>
-                                <div class="col-lg-7 col-md-10"><input type="text" class="form-control"
-                                    value="2 Sisi" />
-                                </div>
-                                <div class="col-lg-1 col-md-2 text-md-end"><button type="button"
-                                    class="btn btn-link text-primary p-0" data-action="delete-field"><i
-                                      class="fas fa-trash-alt"></i></button></div>
-                              </div>
-                              <div class="row align-items-center mb-3 flow-field-row">
-                                <div class="col-lg-4"><label class="form-label mb-lg-0">Panjang Kertas</label></div>
-                                <div class="col-lg-7 col-md-10"><input type="text" class="form-control"
-                                    value="32.5 cm" />
-                                </div>
-                                <div class="col-lg-1 col-md-2 text-md-end"><button type="button"
-                                    class="btn btn-link text-primary p-0" data-action="delete-field"><i
-                                      class="fas fa-trash-alt"></i></button></div>
-                              </div>
-                              <div class="row align-items-center mb-3 flow-field-row">
-                                <div class="col-lg-4"><label class="form-label mb-lg-0">Lebar Kertas</label></div>
-                                <div class="col-lg-7 col-md-10"><input type="text" class="form-control" value="45 cm" />
-                                </div>
-                                <div class="col-lg-1 col-md-2 text-md-end"><button type="button"
-                                    class="btn btn-link text-primary p-0" data-action="delete-field"><i
-                                      class="fas fa-trash-alt"></i></button></div>
-                              </div>
-                              <div class="row align-items-center mb-3 flow-field-row">
-                                <div class="col-lg-4"><label class="form-label mb-lg-0">Jumlah Bahan</label></div>
-                                <div class="col-lg-7 col-md-10"><input type="text" class="form-control" value="5100" />
-                                </div>
-                                <div class="col-lg-1 col-md-2 text-md-end"><button type="button"
-                                    class="btn btn-link text-primary p-0" data-action="delete-field"><i
-                                      class="fas fa-trash-alt"></i></button></div>
-                              </div>
-                            </div>
-                            <div class="mt-4">
-                              <button type="button" class="btn btn-link p-0 text-decoration-none text-primary"
-                                data-action="show-add-information">Add Information</button>
-                              <div class="row g-2 align-items-center mt-1 d-none flow-add-editor">
-                                <div class="col-md-5"><input type="text" class="form-control"
-                                    placeholder="Input label information" /></div>
-                                <div class="col-md-auto"><button type="button" class="btn btn-cancel"
-                                    data-action="cancel-add-information">Cancel</button></div>
-                                <div class="col-md-auto"><button type="button" class="btn btn-submit"
-                                    data-action="save-add-information">Save</button></div>
-                              </div>
-                            </div>
-                            <h6 class="mt-5 mb-4">Add Information if Flow Completed</h6>
-                            <div class="row align-items-center mb-3">
-                              <div class="col-lg-4">Jumlah Cetak Jadi?</div>
-                              <div class="col-lg-7 col-md-10"><input type="text" class="form-control" /></div>
-                              <div class="col-lg-1 col-md-2 text-md-end"><button type="button"
-                                  class="btn btn-link text-primary p-0"><i class="fas fa-trash-alt"></i></button></div>
-                            </div>
-                            <div class="row align-items-center">
-                              <div class="col-md-6"><button type="button"
-                                  class="btn btn-link p-0 text-decoration-none text-primary"
-                                  data-action="show-add-information-after">Add Information
-                                  After</button></div>
-                              <div class="col-md-6 text-md-end mt-3 mt-md-0"><button type="button"
-                                  class="btn btn-submit" data-action="remove-flow"><i
-                                    class="fas fa-trash-alt me-1"></i>Remove Flow</button>
-                              </div>
-                            </div>
-                          </div>
-
-                          <div class="tab-pane fade workflow-pane" id="flow-potong" role="tabpanel">
-                            <h6 class="mb-4">Add Information Detail</h6>
-                            <div class="row align-items-center mb-3">
-                              <div class="col-lg-4">Flow Type</div>
-                              <div class="col-lg-8">
-                                <div class="d-flex flex-wrap gap-5">
-                                  <div class="form-check mb-0">
-                                    <input class="form-check-input" type="radio" name="flow-potong-type" checked />
-                                    <label class="form-check-label">In-House</label>
-                                  </div>
-                                  <div class="form-check mb-0">
-                                    <input class="form-check-input" type="radio" name="flow-potong-type" />
-                                    <label class="form-check-label">Outsource</label>
+                            <div class="tab-pane fade workflow-pane" id="flow-potong" role="tabpanel">
+                              <h6 class="mb-4">Add Information Detail</h6>
+                              <div class="row align-items-center mb-3">
+                                <div class="col-lg-4">Flow Type</div>
+                                <div class="col-lg-8">
+                                  <div class="d-flex flex-wrap gap-5">
+                                    <div class="form-check mb-0">
+                                      <input class="form-check-input" type="radio" name="flow-potong-type" checked />
+                                      <label class="form-check-label">In-House</label>
+                                    </div>
+                                    <div class="form-check mb-0">
+                                      <input class="form-check-input" type="radio" name="flow-potong-type" />
+                                      <label class="form-check-label">Outsource</label>
+                                    </div>
                                   </div>
                                 </div>
                               </div>
-                            </div>
-                            <div class="flow-fields">
-                              <div class="row align-items-center mb-3 flow-field-row">
-                                <div class="col-lg-4"><label class="form-label mb-lg-0">Keterangan</label></div>
-                                <div class="col-lg-7 col-md-10"><input type="text" class="form-control"
-                                    value="Potong Sesuai Kris" /></div>
-                                <div class="col-lg-1 col-md-2 text-md-end"><button type="button"
-                                    class="btn btn-link text-primary p-0" data-action="delete-field"><i
-                                      class="fas fa-trash-alt"></i></button></div>
-                              </div>
-                              <div class="row align-items-center mb-3 flow-field-row">
-                                <div class="col-lg-4"><label class="form-label mb-lg-0">Ukuran Jadi</label></div>
-                                <div class="col-lg-7 col-md-10"><input type="text" class="form-control" value="A4" />
+                              <div class="flow-fields">
+                                <div class="row align-items-center mb-3 flow-field-row">
+                                  <div class="col-lg-4"><label class="form-label mb-lg-0">Keterangan</label></div>
+                                  <div class="col-lg-7 col-md-10"><input type="text" class="form-control"
+                                      value="Potong Sesuai Kris" /></div>
+                                  <div class="col-lg-1 col-md-2 text-md-end"><button type="button"
+                                      class="btn btn-link text-primary p-0" data-action="delete-field"><i
+                                        class="fas fa-trash-alt"></i></button></div>
                                 </div>
+                                <div class="row align-items-center mb-3 flow-field-row">
+                                  <div class="col-lg-4"><label class="form-label mb-lg-0">Ukuran Jadi</label></div>
+                                  <div class="col-lg-7 col-md-10"><input type="text" class="form-control" value="A4" />
+                                  </div>
+                                  <div class="col-lg-1 col-md-2 text-md-end"><button type="button"
+                                      class="btn btn-link text-primary p-0" data-action="delete-field"><i
+                                        class="fas fa-trash-alt"></i></button></div>
+                                </div>
+                              </div>
+                              <div class="mt-4">
+                                <button type="button" class="btn btn-link p-0 text-decoration-none text-primary"
+                                  data-action="show-add-information">Add Information</button>
+                                <div class="row g-2 align-items-center mt-1 d-none flow-add-editor">
+                                  <div class="col-md-5"><input type="text" class="form-control"
+                                      placeholder="Input label information" /></div>
+                                  <div class="col-md-auto"><button type="button" class="btn btn-cancel"
+                                      data-action="cancel-add-information">Cancel</button></div>
+                                  <div class="col-md-auto"><button type="button" class="btn btn-submit"
+                                      data-action="save-add-information">Save</button></div>
+                                </div>
+                              </div>
+                              <h6 class="mt-5 mb-4">Add Information if Flow Completed</h6>
+                              <div class="row align-items-center mb-3">
+                                <div class="col-lg-4">Qty Selesai Potong?</div>
+                                <div class="col-lg-7 col-md-10"><input type="text" class="form-control" /></div>
                                 <div class="col-lg-1 col-md-2 text-md-end"><button type="button"
-                                    class="btn btn-link text-primary p-0" data-action="delete-field"><i
-                                      class="fas fa-trash-alt"></i></button></div>
+                                    class="btn btn-link text-primary p-0"><i class="fas fa-trash-alt"></i></button>
+                                </div>
                               </div>
-                            </div>
-                            <div class="mt-4">
-                              <button type="button" class="btn btn-link p-0 text-decoration-none text-primary"
-                                data-action="show-add-information">Add Information</button>
-                              <div class="row g-2 align-items-center mt-1 d-none flow-add-editor">
-                                <div class="col-md-5"><input type="text" class="form-control"
-                                    placeholder="Input label information" /></div>
-                                <div class="col-md-auto"><button type="button" class="btn btn-cancel"
-                                    data-action="cancel-add-information">Cancel</button></div>
-                                <div class="col-md-auto"><button type="button" class="btn btn-submit"
-                                    data-action="save-add-information">Save</button></div>
-                              </div>
-                            </div>
-                            <h6 class="mt-5 mb-4">Add Information if Flow Completed</h6>
-                            <div class="row align-items-center mb-3">
-                              <div class="col-lg-4">Qty Selesai Potong?</div>
-                              <div class="col-lg-7 col-md-10"><input type="text" class="form-control" /></div>
-                              <div class="col-lg-1 col-md-2 text-md-end"><button type="button"
-                                  class="btn btn-link text-primary p-0"><i class="fas fa-trash-alt"></i></button></div>
-                            </div>
-                            <div class="row align-items-center">
-                              <div class="col-md-6"><button type="button"
-                                  class="btn btn-link p-0 text-decoration-none text-primary"
-                                  data-action="show-add-information-after">Add Information
-                                  After</button></div>
-                              <div class="col-md-6 text-md-end mt-3 mt-md-0"><button type="button"
-                                  class="btn btn-submit" data-action="remove-flow"><i
-                                    class="fas fa-trash-alt me-1"></i>Remove Flow</button>
+                              <div class="row align-items-center">
+                                <div class="col-md-6"><button type="button"
+                                    class="btn btn-link p-0 text-decoration-none text-primary"
+                                    data-action="show-add-information-after">Add Information
+                                    After</button></div>
+                                <div class="col-md-6 text-md-end mt-3 mt-md-0"><button type="button"
+                                    class="btn btn-submit" data-action="remove-flow"><i
+                                      class="fas fa-trash-alt me-1"></i>Remove Flow</button>
+                                </div>
                               </div>
                             </div>
                           </div>
@@ -651,47 +598,58 @@
                       </div>
                     </div>
                   </div>
-                </div>
 
-                <div class="tab-pane fade" id="assignee" role="tabpanel">
-                  <div class="border p-4 p-lg-5">
-                    <div class="row assignee-workflow-table align-items-center">
-                      <div class="col-lg-4">
-                        <h5 class="mb-0">Flow Name with Incentive</h5>
-                      </div>
-                      <div class="col-lg-3">
-                        <h5 class="mb-0">Flow Type</h5>
-                      </div>
-                      <div class="col-lg-5">
-                        <h5 class="mb-0">Assignee List :</h5>
-                      </div>
+                  <div class="tab-pane fade" id="assignee" role="tabpanel">
+                    <div class="border p-4 p-lg-5">
+                      <div class="row assignee-workflow-table align-items-center">
+                        <div class="col-12 row p-0 m-0 mb-4">
 
-                      <div class="col-lg-4">Design</div>
-                      <div class="col-lg-3">In-House</div>
-                      <div class="col-lg-5">
-                        <select class="select2 form-control assigne-multiple-select" multiple="multiple"
-                          data-assignee-values="Adul|Nurdin"></select>
-                      </div>
+                          <div class="col-lg-4">
+                            <h5 class="mb-0">Flow Name with Incentive</h5>
+                          </div>
+                          <div class="col-lg-3">
+                            <h5 class="mb-0">Flow Type</h5>
+                          </div>
+                          <div class="col-lg-5">
+                            <h5 class="mb-0">Assignee List :</h5>
+                          </div>
+                        </div>
 
-                      <div class="col-lg-4">SPK PLAT CTP</div>
-                      <div class="col-lg-3">Outsource</div>
-                      <div class="col-lg-5">
-                        <select class="select2 form-control assigne-multiple-select" multiple="multiple"
-                          data-assignee-values="Nurdin"></select>
-                      </div>
+                        <div class="col-12 row p-0 m-0 mb-2">
+                          <div class="col-lg-4">Design</div>
+                          <div class="col-lg-3">In-House</div>
+                          <div class="col-lg-5">
+                            <select class="select2 form-control assigne-multiple-select" multiple="multiple"
+                              data-assignee-values="Adul|Nurdin"></select>
+                          </div>
+                        </div>
 
-                      <div class="col-lg-4">SPK Heidelberg SM52 4 Warna</div>
-                      <div class="col-lg-3">Outsource</div>
-                      <div class="col-lg-5">
-                        <select class="select2 form-control assigne-multiple-select" multiple="multiple"
-                          data-assignee-values="Nurdin"></select>
-                      </div>
+                        <div class="col-12 row p-0 m-0 mb-2">
+                          <div class="col-lg-4">SPK PLAT CTP</div>
+                          <div class="col-lg-3">Outsource</div>
+                          <div class="col-lg-5">
+                            <select class="select2 form-control assigne-multiple-select" multiple="multiple"
+                              data-assignee-values="Nurdin"></select>
+                          </div>
+                        </div>
 
-                      <div class="col-lg-4">Potong Sisir</div>
-                      <div class="col-lg-3">In-House</div>
-                      <div class="col-lg-5">
-                        <select class="select2 form-control assigne-multiple-select" multiple="multiple"
-                          data-assignee-values="Dadang"></select>
+                        <div class="col-12 row p-0 m-0 mb-2">
+                          <div class="col-lg-4">SPK Heidelberg SM52 4 Warna</div>
+                          <div class="col-lg-3">Outsource</div>
+                          <div class="col-lg-5">
+                            <select class="select2 form-control assigne-multiple-select" multiple="multiple"
+                              data-assignee-values="Nurdin"></select>
+                          </div>
+                        </div>
+
+                        <div class="col-12 row p-0 m-0 mb-2">
+                          <div class="col-lg-4">Potong Sisir</div>
+                          <div class="col-lg-3">In-House</div>
+                          <div class="col-lg-5">
+                            <select class="select2 form-control assigne-multiple-select" multiple="multiple"
+                              data-assignee-values="Dadang"></select>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -773,15 +731,16 @@
               </div>
             </div>
           </div>
-
-          <div class="d-flex justify-content-end gap-5 mt-4 flex-wrap">
-            <button type="button" class="btn btn-cancel px-5"
-              onclick="window.location.href='job-order.html'">Cancel</button>
-            <button type="submit" class="btn btn-submit px-5">Save</button>
-          </div>
-        </form>
       </div>
+
+      <div class="d-flex justify-content-end gap-5 mt-4 me-5 mb-5 flex-wrap">
+        <button type="button" class="btn btn-cancel px-5"
+          onclick="window.location.href='job-order.html'">Cancel</button>
+        <button type="submit" class="btn btn-submit px-5">Save</button>
+      </div>
+      </form>
     </div>
+  </div>
   </div>
 
   <script src="assets/js/jquery-3.7.1.min.js"></script>
@@ -894,10 +853,10 @@
 
     function createArrangeControls() {
       const controls = document.createElement("div");
-      controls.className = "workflow-arrange-controls";
+      controls.className = "workflow-arrange-controls d-none gap-1 flex-shrink-0";
       controls.innerHTML = `
-          <button type="button" class="btn btn-outline-secondary p-0 workflow-arrange-btn" data-action="move-flow-up" aria-label="Move up"><i data-feather="arrow-up"></i></button>
-          <button type="button" class="btn btn-outline-secondary p-0 workflow-arrange-btn" data-action="move-flow-down" aria-label="Move down"><i data-feather="arrow-down"></i></button>
+          <button type="button" class="btn btn-sm btn-outline-secondary p-1" data-action="move-flow-up" aria-label="Move up"><i data-feather="arrow-up"></i></button>
+          <button type="button" class="btn btn-sm btn-outline-secondary p-1" data-action="move-flow-down" aria-label="Move down"><i data-feather="arrow-down"></i></button>
         `;
       return controls;
     }
@@ -926,10 +885,10 @@
     function createFlowTabItem(flowName, paneId) {
       const item = document.createElement("li");
       const tabId = `${paneId}-tab`;
-      item.className = "nav-item workflow-tab-item";
+      item.className = "nav-item workflow-tab-item d-flex align-items-center gap-2";
       item.setAttribute("role", "presentation");
       item.innerHTML = `
-          <button class="nav-link text-start" id="${tabId}" data-bs-toggle="tab" data-bs-target="#${paneId}" type="button" role="tab">
+          <button class="nav-link text-start flex-grow-1" id="${tabId}" data-bs-toggle="tab" data-bs-target="#${paneId}" type="button" role="tab">
             ${escapeHtml(flowName)}
           </button>
         `;
@@ -1041,6 +1000,11 @@
       }
 
       const action = actionButton.dataset.action;
+
+      if (action === "manage-job-order") {
+        document.getElementById("manage-job-order").classList.add("border", "border-1", "border-dark");
+        return;
+      }
 
       if (action === "delete-field") {
         event.preventDefault();

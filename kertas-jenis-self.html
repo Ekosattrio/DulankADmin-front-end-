@@ -1,597 +1,1290 @@
-﻿<!DOCTYPE html>
+﻿<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
-    <meta name="description" content="POS - Bootstrap Admin Template">
-    <meta name="keywords"
-        content="admin, estimates, bootstrap, business, corporate, creative, invoice, html5, responsive, Projects">
-    <meta name="author" content="Dreamguys - Bootstrap Admin Template">
-    <meta name="robots" content="noindex, nofollow">
-   <title>Kacetak System</title>
-    <link rel="shortcut icon" type="image/x-icon" href="assets/img/kacetak.jpeg" />
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=0"
+    />
+    <meta name="description" content="POS - Bootstrap Admin Template" />
+    <meta
+      name="keywords"
+      content="admin, estimates, bootstrap, business, corporate, creative, invoice, html5, responsive, Projects"
+    />
+    <meta name="author" content="Dreamguys - Bootstrap Admin Template" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Kacetak System</title>
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="assets/img/kacetak.jpeg"
+    />
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
 
     <!-- animation CSS -->
-    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet" href="assets/css/animate.css" />
 
     <!-- Select2 CSS -->
-    <link rel="stylesheet" href="assets/plugins/select2/css/select2.min.css">
+    <link rel="stylesheet" href="assets/plugins/select2/css/select2.min.css" />
 
     <!-- Datetimepicker CSS -->
-    <link rel="stylesheet" href="assets/css/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" href="assets/css/bootstrap-datetimepicker.min.css" />
 
     <!-- Mobile CSS-->
-    <link rel="stylesheet" href="assets/plugins/intltelinput/css/intlTelInput.css">
-    <link rel="stylesheet" href="assets/plugins/intltelinput/css/demo.css">
+    <link
+      rel="stylesheet"
+      href="assets/plugins/intltelinput/css/intlTelInput.css"
+    />
+    <link rel="stylesheet" href="assets/plugins/intltelinput/css/demo.css" />
 
     <!-- Datatable CSS -->
-    <link rel="stylesheet" href="assets/css/dataTables.bootstrap5.min.css">
+    <link rel="stylesheet" href="assets/css/dataTables.bootstrap5.min.css" />
 
     <!-- Fontawesome CSS -->
-    <link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css">
-    <link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="assets/plugins/fontawesome/css/fontawesome.min.css"
+    />
+    <link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css" />
 
     <!-- Main CSS -->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
 
-
-</head>
-
-<body>
+  <body>
     <div id="global-loader">
-        <div class="loader"> </div>
+      <div class="loader"></div>
     </div>
     <!-- Main Wrapper -->
     <div class="main-wrapper">
+      <!-- header -->
+      <div id="header-placeholder"></div>
+      <!-- sidebar -->
+      <div id="sidebar-placeholder"></div>
 
-        <!-- header -->
-        <div id="header-placeholder"></div>
-        <!-- sidebar -->
-        <div id="sidebar-placeholder"></div>
-
-        <div class="page-wrapper mt-3">
-            <!-- Main content tulis disini -->
-            <div class="content">
-                <div class="page-header">
-                    <div class="add-item d-flex">
-                        <div class="page-title">
-                            <h4>Jenis Kertas List</h4>
-                            <h6>Manage your Jenis Kertas</h6>
-                        </div>
-                    </div>
-                    <ul class="table-top-head">
-                        <li>
-                            <a data-bs-toggle="tooltip" data-bs-placement="top" title="Pdf"><img
-                                    src="assets/img/icons/pdf.svg" alt="img"></a>
-                        </li>
-                        <li>
-                            <a data-bs-toggle="tooltip" data-bs-placement="top" title="Print"><i data-feather="printer"
-                                    class="feather-rotate-ccw"></i></a>
-                        </li>
-                        <li>
-                            <a data-bs-toggle="tooltip" data-bs-placement="top" title="Refresh"><i
-                                    data-feather="rotate-ccw" class="feather-rotate-ccw"></i></a>
-                        </li>
-                        <li>
-                            <a data-bs-toggle="tooltip" data-bs-placement="top" title="Collapse" id="collapse-header"><i
-                                    data-feather="chevron-up" class="feather-chevron-up"></i></a>
-                        </li>
-                    </ul>
-                    <div class="page-btn">
-                        <a href="#" class="btn btn-added" data-bs-toggle="modal"
-                            data-bs-target="#addNewPaperItemModal"><i data-feather="plus-circle" class="me-2"></i>Add
-                            New Jenis Kertas</a>
-                    </div>
-                </div>
-                <div class="row mt-5">
-                    <div class="col-xl-3 col-sm-6 col-12 d-flex">
-                        <div class="dash-widget w-100">
-                            <div class="dash-widgetimg">
-                                <span><img src="assets/img/icons/dash1.svg" alt="img"></span>
-                            </div>
-                            <div class="dash-widgetcontent">
-                                <h6>Jenis Kertas</h6>
-                                <h5><span class="counters" data-count="307144">307144</span></h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-sm-6 col-12 d-flex">
-                        <div class="dash-widget w-100">
-                            <div class="dash-widgetimg">
-                                <span><img src="assets/img/icons/dash1.svg" alt="img"></span>
-                            </div>
-                            <div class="dash-widgetcontent">
-                                <h6>Total Group Kertas</h6>
-                                <h5><span class="counters" data-count="12032">12032</span></h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-sm-6 col-12 d-flex">
-                        <div class="dash-widget dash2 w-100">
-                            <div class="dash-widgetimg">
-                                <span><img src="assets/img/icons/dash3.svg" alt="img"></span>
-                            </div>
-                            <div class="dash-widgetcontent">
-                                <h6>Total Active</h6>
-                                <h5><span class="counters" data-count="3000">3000</span></h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-sm-6 col-12 d-flex">
-                        <div class="dash-widget dash3 w-100">
-                            <div class="dash-widgetimg">
-                                <span><img src="assets/img/icons/dash4.svg" alt="img"></span>
-                            </div>
-                            <div class="dash-widgetcontent">
-                                <h6>Total Deactive</h6>
-                                <h5><span class="counters" data-count="1385">1385</span></h5>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- /product list -->
-                <div class="card table-list-card">
-                    <div class="card-body">
-                        <!-- Filter -->
-                        <div class="table-top d-flex align-items-center justify-content-between">
-                            <!-- Search Input -->
-                            <div class="search-set d-block d-md-flex">
-                                <div class="search-input">
-                                    <a href="" class="btn btn-searchset"><i data-feather="search"
-                                            class="feather-search"></i></a>
-                                </div>
-                                <!-- Date Range -->
-                                <div class="my-2">
-                                    <div class="pemilihrentang-container ">
-                                        <input type="text" id="pemilihrentang-input"
-                                            class="pemilihrentang-input form-control" readonly placeholder="Date"
-                                            style="height: fit-content !important;width: 100% !important;">
-                                        <div id="pemilihrentang-panel" class="pemilihrentang-panel">
-                                            <div class="pemilihrentang-isi">
-                                                <div class="opsi-cepat">
-                                                    <div data-range="kemarin">Kemarin</div>
-                                                    <div data-range="7hari">7 Hari Terakhir</div>
-                                                    <div data-range="bulanIni">Bulan Ini</div>
-                                                    <div data-range="bulanLalu">Bulan Lalu</div>
-                                                    <div data-range="tahunLalu">Tahun Lalu</div>
-                                                    <div data-range="kustom">Rentang Kustom</div>
-                                                </div>
-                                                <div class="kalender" id="kalender-view" style="display:none;">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="filters d-flex justify-content-end">
-                                <div class="dropdown w-100 me-2">
-                                    <button class="btn btn-outline-primary dropdown-toggle" type="button"
-                                        data-bs-toggle="dropdown" aria-expanded="false">
-                                        Group Kertas
-                                    </button>
-                                    <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="#">HVS Putih</a></li>
-                                        <li><a class="dropdown-item" href="#">Art Paper</a></li>
-                                        <li><a class="dropdown-item" href="#">Art Carton</a></li>
-                                    </ul>
-                                </div>
-                                <div class="dropdown w-100 me-2">
-                                    <button class="btn btn-outline-primary dropdown-toggle" type="button"
-                                        data-bs-toggle="dropdown" aria-expanded="false">
-                                        Status
-                                    </button>
-                                    <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="#">Active</a></li>
-                                        <li><a class="dropdown-item" href="#">Deactive</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- /Filter -->
-                        <!-- Tabel 2: Detail Kertas -->
-                        <div class="table-responsive mb-4">
-                            <table class="table datanew">
-                                <thead>
-                                    <tr>
-                                        <th>Paper Name</th>
-                                        <th>Merk</th>
-                                        <th>Price</th>
-                                        <th>Price Type</th>
-                                        <th>Unit Price</th>
-                                        <th>Gsm</th>
-                                        <th>Paper Size</th>
-                                        <th>Stock</th>
-                                        <th>Unit Stock</th>
-                                        <th>Update stock</th>
-                                        <th>Status</th>
-                                        <th class="no-sort">Action</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>Art Paper</td>
-                                        <td>Pindo Deli</td>
-                                        <td>52.000</td>
-                                        <td>Group</td>
-                                        <td>Kg</td>
-                                        <td>150</td>
-                                        <td>61x86 Cm</td>
-                                        <td>252</td>
-                                        <td>Pcs</td>
-                                        <td>admin, 25/02/2025, 15:14</td>
-                                        <td><span class="badge bg-info">actice</span></td>
-                                        <td class="action-table-data">
-                                            <div class="edit-delete-action">
-                                                <a class="me-2 edit-icon p-2" href="">
-													<i data-feather="eye" class="action-eye"></i>
-												</a>
-                                                <a class="me-2 p-2" href="#" data-bs-toggle="modal"
-                                                    data-bs-target="#addNewPaperItemModal"><i data-feather="edit"></i></a>
-                                                <a class="confirm-text p-2" href="javascript:void(0);"><i data-feather="trash-2"></i></a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Art Paper</td>
-                                        <td>Pindo Deli</td>
-                                        <td>52.000</td>
-                                        <td>Group</td>
-                                        <td>Kg</td>
-                                        <td>150</td>
-                                        <td>65x90 Cm</td>
-                                        <td>4.505</td>
-                                        <td>Pcs</td>
-                                        <td>admin, 25/02/2025, 15:15</td>
-                                        <td><span class="badge bg-info">actice</span></td>
-                                        <td class="action-table-data">
-                                            <div class="edit-delete-action">
-                                                <a class="me-2 edit-icon p-2" href="">
-													<i data-feather="eye" class="action-eye"></i>
-												</a>
-                                                <a class="me-2 p-2" href="#" data-bs-toggle="modal"
-                                                    data-bs-target="#addNewPaperItemModal"><i data-feather="edit"></i></a>
-                                                <a class="confirm-text p-2" href="javascript:void(0);"><i data-feather="trash-2"></i></a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Art Paper</td>
-                                        <td>Pindo Deli</td>
-                                        <td>52.000</td>
-                                        <td>Group</td>
-                                        <td>Kg</td>
-                                        <td>150</td>
-                                        <td>65x100 Cm</td>
-                                        <td>2.565</td>
-                                        <td>Pcs</td>
-                                        <td>admin, 25/02/2025, 15:16</td>
-                                        <td><span class="badge bg-info">actice</span></td>
-                                        <td class="action-table-data">
-                                            <div class="edit-delete-action">
-                                                <a class="me-2 edit-icon p-2" href="">
-													<i data-feather="eye" class="action-eye"></i>
-												</a>
-                                                <a class="me-2 p-2" href="#" data-bs-toggle="modal"
-                                                    data-bs-target="#addNewPaperItemModal"><i data-feather="edit"></i></a>
-                                                <a class="confirm-text p-2" href="javascript:void(0);"><i data-feather="trash-2"></i></a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Art Paper</td>
-                                        <td>Pindo Deli</td>
-                                        <td>52.000</td>
-                                        <td>Group</td>
-                                        <td>Kg</td>
-                                        <td>150</td>
-                                        <td>79x109 Cm</td>
-                                        <td>5.245</td>
-                                        <td>Pcs</td>
-                                        <td>admin, 25/02/2025, 15:17</td>
-                                        <td><span class="badge bg-info">actice</span></td>
-                                        <td class="action-table-data">
-                                            <div class="edit-delete-action">
-                                                <a class="me-2 edit-icon p-2" href="">
-													<i data-feather="eye" class="action-eye"></i>
-												</a>
-                                                <a class="me-2 p-2" href="#" data-bs-toggle="modal"
-                                                    data-bs-target="#addNewPaperItemModal"><i data-feather="edit"></i></a>
-                                                <a class="confirm-text p-2" href="javascript:void(0);"><i data-feather="trash-2"></i></a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Art Carton</td>
-                                        <td>Ika</td>
-                                        <td>65.000</td>
-                                        <td>Group</td>
-                                        <td>Kg</td>
-                                        <td>230</td>
-                                        <td>61x86 Cm</td>
-                                        <td>256</td>
-                                        <td>Pcs</td>
-                                        <td>admin, 17/08/2025, 15:18</td>
-                                        <td><span class="badge bg-info">actice</span></td>
-                                        <td class="action-table-data">
-                                            <div class="edit-delete-action">
-                                                <a class="me-2 edit-icon p-2" href="">
-													<i data-feather="eye" class="action-eye"></i>
-												</a>
-                                                <a class="me-2 p-2" href="#" data-bs-toggle="modal"
-                                                    data-bs-target="#addNewPaperItemModal"><i data-feather="edit"></i></a>
-                                                <a class="confirm-text p-2" href="javascript:void(0);"><i data-feather="trash-2"></i></a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Art Carton</td>
-                                        <td>Ika</td>
-                                        <td>65.000</td>
-                                        <td>Group</td>
-                                        <td>Kg</td>
-                                        <td>230</td>
-                                        <td>65x90 Cm</td>
-                                        <td>487</td>
-                                        <td>Pcs</td>
-                                        <td>admin, 17/08/2025, 15:19</td>
-                                        <td><span class="badge bg-info">actice</span></td>
-                                        <td class="action-table-data">
-                                            <div class="edit-delete-action">
-                                                <a class="me-2 edit-icon p-2" href="">
-													<i data-feather="eye" class="action-eye"></i>
-												</a>
-                                                <a class="me-2 p-2" href="#" data-bs-toggle="modal"
-                                                    data-bs-target="#addNewPaperItemModal"><i data-feather="edit"></i></a>
-                                                <a class="confirm-text p-2" href="javascript:void(0);"><i data-feather="trash-2"></i></a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Art Carton</td>
-                                        <td>Ika</td>
-                                        <td>65.000</td>
-                                        <td>Group</td>
-                                        <td>Kg</td>
-                                        <td>230</td>
-                                        <td>65x100 Cm</td>
-                                        <td>5.855</td>
-                                        <td>Pcs</td>
-                                        <td>admin, 17/08/2025, 15:20</td>
-                                        <td><span class="badge bg-info">actice</span></td>
-                                        <td class="action-table-data">
-                                            <div class="edit-delete-action">
-                                                <a class="me-2 edit-icon p-2" href="">
-													<i data-feather="eye" class="action-eye"></i>
-												</a>
-                                                <a class="me-2 p-2" href="#" data-bs-toggle="modal"
-                                                    data-bs-target="#addNewPaperItemModal"><i data-feather="edit"></i></a>
-                                                <a class="confirm-text p-2" href="javascript:void(0);"><i data-feather="trash-2"></i></a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Art Carton</td>
-                                        <td>Ika</td>
-                                        <td>65.000</td>
-                                        <td>Group</td>
-                                        <td>Kg</td>
-                                        <td>230</td>
-                                        <td>79x109 Cm</td>
-                                        <td>500</td>
-                                        <td>Pcs</td>
-                                        <td>admin, 17/08/2025, 15:21</td>
-                                        <td><span class="badge bg-info">actice</span></td>
-                                        <td class="action-table-data">
-                                            <div class="edit-delete-action">
-                                                <a class="me-2 edit-icon p-2" href="">
-													<i data-feather="eye" class="action-eye"></i>
-												</a>
-                                                <a class="me-2 p-2" href="#" data-bs-toggle="modal"
-                                                    data-bs-target="#addNewPaperItemModal"><i data-feather="edit"></i></a>
-                                                <a class="confirm-text p-2" href="javascript:void(0);"><i data-feather="trash-2"></i></a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>HVS Putih</td>
-                                        <td>Paperone</td>
-                                        <td>42.000</td>
-                                        <td>Single</td>
-                                        <td>Ream</td>
-                                        <td>70</td>
-                                        <td>21x29.7 Cm</td>
-                                        <td>5</td>
-                                        <td>Ream</td>
-                                        <td>admin, 17/08/2025, 15:22</td>
-                                        <td><span class="badge bg-info">actice</span></td>
-                                        <td class="action-table-data">
-                                            <div class="edit-delete-action">
-                                                <a class="me-2 edit-icon p-2" href="">
-													<i data-feather="eye" class="action-eye"></i>
-												</a>
-                                                <a class="me-2 p-2" href="#" data-bs-toggle="modal"
-                                                    data-bs-target="#addNewPaperItemModal"><i data-feather="edit"></i></a>
-                                                <a class="confirm-text p-2" href="javascript:void(0);"><i data-feather="trash-2"></i></a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Sticker Cromo</td>
-                                        <td>Lintec</td>
-                                        <td>6.500</td>
-                                        <td>Single</td>
-                                        <td>Pcs</td>
-                                        <td>180</td>
-                                        <td>75x108 cm</td>
-                                        <td>458</td>
-                                        <td>Pcs</td>
-                                        <td>admin, 17/08/2025, 15:23</td>
-                                        <td><span class="badge bg-info">actice</span></td>
-                                        <td class="action-table-data">
-                                            <div class="edit-delete-action">
-                                                <a class="me-2 edit-icon p-2" href="">
-													<i data-feather="eye" class="action-eye"></i>
-												</a>
-                                                <a class="me-2 p-2" href="#" data-bs-toggle="modal"
-                                                    data-bs-target="#addNewPaperItemModal"><i data-feather="edit"></i></a>
-                                                <a class="confirm-text p-2" href="javascript:void(0);"><i data-feather="trash-2"></i></a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-                <!-- /product list -->
+      <div class="page-wrapper mt-3">
+        <!-- Main content tulis disini -->
+        <div class="content">
+          <div class="page-header">
+            <div class="add-item d-flex">
+              <div class="page-title">
+                <h4>Jenis Kertas List</h4>
+                <h6>Manage your Jenis Kertas</h6>
+              </div>
             </div>
+            <ul class="table-top-head">
+              <li>
+                <a data-bs-toggle="tooltip" data-bs-placement="top" title="Pdf"
+                  ><img src="assets/img/icons/pdf.svg" alt="img"
+                /></a>
+              </li>
+              <li>
+                <a
+                  data-bs-toggle="tooltip"
+                  data-bs-placement="top"
+                  title="Print"
+                  ><i data-feather="printer" class="feather-rotate-ccw"></i
+                ></a>
+              </li>
+              <li>
+                <a
+                  data-bs-toggle="tooltip"
+                  data-bs-placement="top"
+                  title="Refresh"
+                  ><i data-feather="rotate-ccw" class="feather-rotate-ccw"></i
+                ></a>
+              </li>
+              <li>
+                <a
+                  data-bs-toggle="tooltip"
+                  data-bs-placement="top"
+                  title="Collapse"
+                  id="collapse-header"
+                  ><i data-feather="chevron-up" class="feather-chevron-up"></i
+                ></a>
+              </li>
+            </ul>
+            <div class="page-btn">
+              <a
+                href="#"
+                class="btn btn-added"
+                data-bs-toggle="modal"
+                data-bs-target="#addNewPaperItemModal"
+                ><i data-feather="plus-circle" class="me-2"></i>Add New Jenis
+                Kertas</a
+              >
+            </div>
+          </div>
+          <div class="row mt-5">
+            <div class="col-xl-3 col-sm-6 col-12 d-flex">
+              <div class="dash-widget w-100">
+                <div class="dash-widgetimg">
+                  <span
+                    ><img src="assets/img/icons/dash1.svg" alt="img"
+                  /></span>
+                </div>
+                <div class="dash-widgetcontent">
+                  <h6>Jenis Kertas</h6>
+                  <h5>
+                    <span class="counters" data-count="307144">307144</span>
+                  </h5>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-sm-6 col-12 d-flex">
+              <div class="dash-widget w-100">
+                <div class="dash-widgetimg">
+                  <span
+                    ><img src="assets/img/icons/dash1.svg" alt="img"
+                  /></span>
+                </div>
+                <div class="dash-widgetcontent">
+                  <h6>Total Group Kertas</h6>
+                  <h5>
+                    <span class="counters" data-count="12032">12032</span>
+                  </h5>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-sm-6 col-12 d-flex">
+              <div class="dash-widget dash2 w-100">
+                <div class="dash-widgetimg">
+                  <span
+                    ><img src="assets/img/icons/dash3.svg" alt="img"
+                  /></span>
+                </div>
+                <div class="dash-widgetcontent">
+                  <h6>Total Active</h6>
+                  <h5><span class="counters" data-count="3000">3000</span></h5>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-sm-6 col-12 d-flex">
+              <div class="dash-widget dash3 w-100">
+                <div class="dash-widgetimg">
+                  <span
+                    ><img src="assets/img/icons/dash4.svg" alt="img"
+                  /></span>
+                </div>
+                <div class="dash-widgetcontent">
+                  <h6>Total Deactive</h6>
+                  <h5><span class="counters" data-count="1385">1385</span></h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- /product list -->
+          <div class="card table-list-card">
+            <div class="card-body">
+              <!-- Filter -->
+              <div
+                class="table-top d-flex align-items-center justify-content-between"
+              >
+                <!-- Search Input -->
+                <div class="search-set d-block d-md-flex">
+                  <div class="search-input">
+                    <a href="" class="btn btn-searchset"
+                      ><i data-feather="search" class="feather-search"></i
+                    ></a>
+                  </div>
+                  <!-- Date Range -->
+                  <div class="my-2">
+                    <div class="pemilihrentang-container">
+                      <input
+                        type="text"
+                        id="pemilihrentang-input"
+                        class="pemilihrentang-input form-control"
+                        readonly
+                        placeholder="Date"
+                        style="
+                          height: fit-content !important;
+                          width: 100% !important;
+                        "
+                      />
+                      <div
+                        id="pemilihrentang-panel"
+                        class="pemilihrentang-panel"
+                      >
+                        <div class="pemilihrentang-isi">
+                          <div class="opsi-cepat">
+                            <div data-range="kemarin">Kemarin</div>
+                            <div data-range="7hari">7 Hari Terakhir</div>
+                            <div data-range="bulanIni">Bulan Ini</div>
+                            <div data-range="bulanLalu">Bulan Lalu</div>
+                            <div data-range="tahunLalu">Tahun Lalu</div>
+                            <div data-range="kustom">Rentang Kustom</div>
+                          </div>
+                          <div
+                            class="kalender"
+                            id="kalender-view"
+                            style="display: none"
+                          ></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="filters d-flex justify-content-end">
+                  <div class="dropdown w-100 me-2">
+                    <button
+                      class="btn btn-outline-primary dropdown-toggle"
+                      type="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                      Group Kertas
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">HVS Putih</a></li>
+                      <li><a class="dropdown-item" href="#">Art Paper</a></li>
+                      <li><a class="dropdown-item" href="#">Art Carton</a></li>
+                    </ul>
+                  </div>
+                  <div class="dropdown w-100 me-2">
+                    <button
+                      class="btn btn-outline-primary dropdown-toggle"
+                      type="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                      Status
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Active</a></li>
+                      <li><a class="dropdown-item" href="#">Deactive</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <!-- /Filter -->
+              <!-- Tabel 2: Detail Kertas -->
+              <div class="table-responsive mb-4">
+                <table class="table datanew">
+                  <thead>
+                    <tr>
+                      <th>Paper Name</th>
+                      <th>Merk</th>
+                      <th>Price</th>
+                      <th>Price Type</th>
+                      <th>Unit Price</th>
+                      <th>Gsm</th>
+                      <th>Paper Size</th>
+                      <th>Stock</th>
+                      <th>Unit Stock</th>
+                      <th>Update stock</th>
+                      <th>Status</th>
+                      <th class="no-sort">Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Art Paper</td>
+                      <td>Pindo Deli</td>
+                      <td>52.000</td>
+                      <td>Group</td>
+                      <td>Kg</td>
+                      <td>150</td>
+                      <td>61x86 Cm</td>
+                      <td>252</td>
+                      <td>Pcs</td>
+                      <td>admin, 25/02/2025, 15:14</td>
+                      <td><span class="badge bg-info">actice</span></td>
+                      <td class="action-table-data">
+                        <div class="edit-delete-action">
+                          <a class="me-2 edit-icon p-2" href="">
+                            <i data-feather="eye" class="action-eye"></i>
+                          </a>
+                          <a
+                            class="me-2 p-2"
+                            href="#"
+                            data-bs-toggle="modal"
+                            data-bs-target="#editPaperModal"
+                            ><i data-feather="edit"></i
+                          ></a>
+                          <a class="confirm-text p-2" href="javascript:void(0);"
+                            ><i data-feather="trash-2"></i
+                          ></a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Art Paper</td>
+                      <td>Pindo Deli</td>
+                      <td>52.000</td>
+                      <td>Group</td>
+                      <td>Kg</td>
+                      <td>150</td>
+                      <td>65x90 Cm</td>
+                      <td>4.505</td>
+                      <td>Pcs</td>
+                      <td>admin, 25/02/2025, 15:15</td>
+                      <td><span class="badge bg-info">actice</span></td>
+                      <td class="action-table-data">
+                        <div class="edit-delete-action">
+                          <a class="me-2 edit-icon p-2" href="">
+                            <i data-feather="eye" class="action-eye"></i>
+                          </a>
+                          <a
+                            class="me-2 p-2"
+                            href="#"
+                            data-bs-toggle="modal"
+                            data-bs-target="#editPaperModal"
+                            ><i data-feather="edit"></i
+                          ></a>
+                          <a class="confirm-text p-2" href="javascript:void(0);"
+                            ><i data-feather="trash-2"></i
+                          ></a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Art Paper</td>
+                      <td>Pindo Deli</td>
+                      <td>52.000</td>
+                      <td>Group</td>
+                      <td>Kg</td>
+                      <td>150</td>
+                      <td>65x100 Cm</td>
+                      <td>2.565</td>
+                      <td>Pcs</td>
+                      <td>admin, 25/02/2025, 15:16</td>
+                      <td><span class="badge bg-info">actice</span></td>
+                      <td class="action-table-data">
+                        <div class="edit-delete-action">
+                          <a class="me-2 edit-icon p-2" href="">
+                            <i data-feather="eye" class="action-eye"></i>
+                          </a>
+                          <a
+                            class="me-2 p-2"
+                            href="#"
+                            data-bs-toggle="modal"
+                            data-bs-target="#editPaperModal"
+                            ><i data-feather="edit"></i
+                          ></a>
+                          <a class="confirm-text p-2" href="javascript:void(0);"
+                            ><i data-feather="trash-2"></i
+                          ></a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Art Paper</td>
+                      <td>Pindo Deli</td>
+                      <td>52.000</td>
+                      <td>Group</td>
+                      <td>Kg</td>
+                      <td>150</td>
+                      <td>79x109 Cm</td>
+                      <td>5.245</td>
+                      <td>Pcs</td>
+                      <td>admin, 25/02/2025, 15:17</td>
+                      <td><span class="badge bg-info">actice</span></td>
+                      <td class="action-table-data">
+                        <div class="edit-delete-action">
+                          <a class="me-2 edit-icon p-2" href="">
+                            <i data-feather="eye" class="action-eye"></i>
+                          </a>
+                          <a
+                            class="me-2 p-2"
+                            href="#"
+                            data-bs-toggle="modal"
+                            data-bs-target="#editPaperModal"
+                            ><i data-feather="edit"></i
+                          ></a>
+                          <a class="confirm-text p-2" href="javascript:void(0);"
+                            ><i data-feather="trash-2"></i
+                          ></a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Art Carton</td>
+                      <td>Ika</td>
+                      <td>65.000</td>
+                      <td>Group</td>
+                      <td>Kg</td>
+                      <td>230</td>
+                      <td>61x86 Cm</td>
+                      <td>256</td>
+                      <td>Pcs</td>
+                      <td>admin, 17/08/2025, 15:18</td>
+                      <td><span class="badge bg-info">actice</span></td>
+                      <td class="action-table-data">
+                        <div class="edit-delete-action">
+                          <a class="me-2 edit-icon p-2" href="">
+                            <i data-feather="eye" class="action-eye"></i>
+                          </a>
+                          <a
+                            class="me-2 p-2"
+                            href="#"
+                            data-bs-toggle="modal"
+                            data-bs-target="#editPaperModal"
+                            ><i data-feather="edit"></i
+                          ></a>
+                          <a class="confirm-text p-2" href="javascript:void(0);"
+                            ><i data-feather="trash-2"></i
+                          ></a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Art Carton</td>
+                      <td>Ika</td>
+                      <td>65.000</td>
+                      <td>Group</td>
+                      <td>Kg</td>
+                      <td>230</td>
+                      <td>65x90 Cm</td>
+                      <td>487</td>
+                      <td>Pcs</td>
+                      <td>admin, 17/08/2025, 15:19</td>
+                      <td><span class="badge bg-info">actice</span></td>
+                      <td class="action-table-data">
+                        <div class="edit-delete-action">
+                          <a class="me-2 edit-icon p-2" href="">
+                            <i data-feather="eye" class="action-eye"></i>
+                          </a>
+                          <a
+                            class="me-2 p-2"
+                            href="#"
+                            data-bs-toggle="modal"
+                            data-bs-target="#editPaperModal"
+                            ><i data-feather="edit"></i
+                          ></a>
+                          <a class="confirm-text p-2" href="javascript:void(0);"
+                            ><i data-feather="trash-2"></i
+                          ></a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Art Carton</td>
+                      <td>Ika</td>
+                      <td>65.000</td>
+                      <td>Group</td>
+                      <td>Kg</td>
+                      <td>230</td>
+                      <td>65x100 Cm</td>
+                      <td>5.855</td>
+                      <td>Pcs</td>
+                      <td>admin, 17/08/2025, 15:20</td>
+                      <td><span class="badge bg-info">actice</span></td>
+                      <td class="action-table-data">
+                        <div class="edit-delete-action">
+                          <a class="me-2 edit-icon p-2" href="">
+                            <i data-feather="eye" class="action-eye"></i>
+                          </a>
+                          <a
+                            class="me-2 p-2"
+                            href="#"
+                            data-bs-toggle="modal"
+                            data-bs-target="#editPaperModal"
+                            ><i data-feather="edit"></i
+                          ></a>
+                          <a class="confirm-text p-2" href="javascript:void(0);"
+                            ><i data-feather="trash-2"></i
+                          ></a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Art Carton</td>
+                      <td>Ika</td>
+                      <td>65.000</td>
+                      <td>Group</td>
+                      <td>Kg</td>
+                      <td>230</td>
+                      <td>79x109 Cm</td>
+                      <td>500</td>
+                      <td>Pcs</td>
+                      <td>admin, 17/08/2025, 15:21</td>
+                      <td><span class="badge bg-info">actice</span></td>
+                      <td class="action-table-data">
+                        <div class="edit-delete-action">
+                          <a class="me-2 edit-icon p-2" href="">
+                            <i data-feather="eye" class="action-eye"></i>
+                          </a>
+                          <a
+                            class="me-2 p-2"
+                            href="#"
+                            data-bs-toggle="modal"
+                            data-bs-target="#editPaperModal"
+                            ><i data-feather="edit"></i
+                          ></a>
+                          <a class="confirm-text p-2" href="javascript:void(0);"
+                            ><i data-feather="trash-2"></i
+                          ></a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>HVS Putih</td>
+                      <td>Paperone</td>
+                      <td>42.000</td>
+                      <td>Single</td>
+                      <td>Ream</td>
+                      <td>70</td>
+                      <td>21x29.7 Cm</td>
+                      <td>5</td>
+                      <td>Ream</td>
+                      <td>admin, 17/08/2025, 15:22</td>
+                      <td><span class="badge bg-info">actice</span></td>
+                      <td class="action-table-data">
+                        <div class="edit-delete-action">
+                          <a class="me-2 edit-icon p-2" href="">
+                            <i data-feather="eye" class="action-eye"></i>
+                          </a>
+                          <a
+                            class="me-2 p-2"
+                            href="#"
+                            data-bs-toggle="modal"
+                            data-bs-target="#editPaperModal"
+                            ><i data-feather="edit"></i
+                          ></a>
+                          <a class="confirm-text p-2" href="javascript:void(0);"
+                            ><i data-feather="trash-2"></i
+                          ></a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Sticker Cromo</td>
+                      <td>Lintec</td>
+                      <td>6.500</td>
+                      <td>Single</td>
+                      <td>Pcs</td>
+                      <td>180</td>
+                      <td>75x108 cm</td>
+                      <td>458</td>
+                      <td>Pcs</td>
+                      <td>admin, 17/08/2025, 15:23</td>
+                      <td><span class="badge bg-info">actice</span></td>
+                      <td class="action-table-data">
+                        <div class="edit-delete-action">
+                          <a class="me-2 edit-icon p-2" href="">
+                            <i data-feather="eye" class="action-eye"></i>
+                          </a>
+                          <a
+                            class="me-2 p-2"
+                            href="#"
+                            data-bs-toggle="modal"
+                            data-bs-target="#editPaperModal"
+                            ><i data-feather="edit"></i
+                          ></a>
+                          <a class="confirm-text p-2" href="javascript:void(0);"
+                            ><i data-feather="trash-2"></i
+                          ></a>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <!-- /product list -->
         </div>
-
+      </div>
     </div>
     <!-- /Main Wrapper -->
 
     <!-- Modal for add new paper item -->
-    <div class="modal fade text-standard" id="addNewPaperItemModal" tabindex="-1"
-        aria-labelledby="addNewPaperItemModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header py-2">
-                    <h5 class="modal-title" id="addNewPaperItemModalLabel">Add New Paper Item</h5>
-                    <div class="d-flex align-items-center">
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
+    <div
+      class="modal fade text-standard"
+      id="addNewPaperItemModal"
+      tabindex="-1"
+      aria-labelledby="addNewPaperItemModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header py-2">
+            <h5 class="modal-title" id="addNewPaperItemModalLabel">
+              Add New Paper Item
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="row mb-3 align-items-center">
+                <div class="col-5">
+                  <label for="name-paper-item" class="form-label mb-0">
+                    Paper Name
+                  </label>
                 </div>
-                <div class="modal-body">
-                    <div>
-                        <form>
-
-                            <div class="row mb-3">
-                                <div class="col-5">
-                                    <label for="name-paper-item" class="form-label">Nama Kertas (Opsional)</label>
-                                </div>
-                                <div class="col-7">
-                                    <input type="text" class="form-control" id="name-paper-item">
-                                </div>
-                            </div>
-
-                            <div class="row mb-3">
-                                <div class="col-5">
-                                    <label for="pilihSatuan" class="form-label">Group Kertas tersedia</label>
-                                </div>
-                                <div class="col-7">
-                                    <div>
-                                        <div class="form-check mx-1 d-inline-block">
-                                            <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                                id="flexRadioDefault1">
-                                            <label class="form-check-label" for="flexRadioDefault1">
-                                                Art Carton
-                                            </label>
-                                        </div>
-                                        <div class="form-check mx-1 d-inline-block">
-                                            <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                                id="flexRadioDefault2" checked="">
-                                            <label class="form-check-label" for="flexRadioDefault2">
-                                                Art Paper
-                                            </label>
-                                        </div>
-                                        <div class="form-check mx-1 d-inline-block">
-                                            <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                                id="flexRadioDefault2" checked="">
-                                            <label class="form-check-label" for="flexRadioDefault2">
-                                                HVS
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="row mb-3">
-                                <div class="col-5">
-                                    <label for="gramatur-paper-item" class="form-label">Masukan Gramatur</label>
-                                </div>
-                                <div class="col-7">
-                                    <input type="text" class="form-control number-separator" inputmode="numeric"
-                                        pattern="[0-9]*">
-                                    <input type="hidden" class="result-input" id="gramatur-paper-item">
-                                </div>
-                            </div>
-
-                            <div class="row mb-3">
-                                <div class="col-5">
-                                    <label for="pilihSatuan" class="form-label">Ukuran Plano Tersedia</label>
-                                </div>
-                                <div class="col-7">
-                                    <div class="row">
-                                        <div class="col-6 my-1">
-                                            <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                                id="flexRadioDefault1">
-                                            <label class="form-check-label" for="flexRadioDefault1">
-                                                90 x 120
-                                            </label>
-                                        </div>
-                                        <div class="col-6 my-1">
-                                            <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                                id="flexRadioDefault2" checked="">
-                                            <label class="form-check-label" for="flexRadioDefault2">
-                                                97 x 109
-                                            </label>
-                                        </div>
-                                        <div class="col-6 my-1">
-                                            <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                                id="flexRadioDefault2" checked="">
-                                            <label class="form-check-label" for="flexRadioDefault2">
-                                                65 x 100
-                                            </label>
-                                        </div>
-                                        <div class="col-6 my-1">
-                                            <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                                id="flexRadioDefault2" checked="">
-                                            <label class="form-check-label" for="flexRadioDefault2">
-                                                65 x 90
-                                            </label>
-                                        </div>
-                                        <div class="col-6 my-1">
-                                            <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                                id="flexRadioDefault2" checked="">
-                                            <label class="form-check-label" for="flexRadioDefault2">
-                                                61 x 92
-                                            </label>
-                                        </div>
-                                        <div class="col-6 my-1">
-                                            <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                                id="flexRadioDefault2" checked="">
-                                            <label class="form-check-label" for="flexRadioDefault2">
-                                                61 x 68
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div
-                                class="mb-3 status-toggle modal-status d-flex justify-content-between align-items-center">
-                                <span class="status-label">Status</span>
-                                <input type="checkbox" id="user2" class="check" checked="">
-                                <label for="user2" class="checktoggle"></label>
-                            </div>
-
-                            <small class="d-none text-standard text-danger" id="info-selected-all-3"><i
-                                    class="fa-solid fa-circle-info"></i> please input your specification<br></small>
-                            <div class="row mb-3 justify-content-end">
-                                <div class="col-7">
-                                    <button class="btn btn-primary w-100" id="save-btn-3">Simpan</button>
-                                </div>
-                            </div>
-
-                        </form>
-                    </div>
+                <div class="col-7">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="name-paper-item"
+                    value="Art Paper"
+                  />
                 </div>
-            </div>
+              </div>
+
+              <div class="row mb-3 align-items-center">
+                <div class="col-5">
+                  <p class="form-label mb-0">Price Type</p>
+                </div>
+                <div class="col-7">
+                  <div class="d-flex flex-wrap gap-3">
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="add-paper-price-type"
+                        id="add-paper-price-group"
+                        checked
+                      />
+                      <label
+                        class="form-check-label"
+                        for="add-paper-price-group"
+                      >
+                        Paper Group
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="add-paper-price-type"
+                        id="add-paper-price-single"
+                      />
+                      <label
+                        class="form-check-label"
+                        for="add-paper-price-single"
+                      >
+                        Single
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div id="add-paper-group-panel">
+                <p class="mb-3">
+                  This Selection containing price settings and calculations in
+                  one group
+                </p>
+
+                <div class="row mb-3 align-items-center">
+                  <div class="col-5">
+                    <label for="add-paper-group-select" class="form-label mb-0">
+                      Paper Group
+                    </label>
+                  </div>
+                  <div class="col-7">
+                    <select class="form-select" id="add-paper-group-select">
+                      <option selected>Art Paper</option>
+                      <option>Art Carton</option>
+                      <option>HVS</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="row mb-3 align-items-center">
+                  <div class="col-5">
+                    <label for="add-paper-group-merk" class="form-label mb-0">
+                      Merk
+                    </label>
+                  </div>
+                  <div class="col-7">
+                    <select class="form-select" id="add-paper-group-merk">
+                      <option selected>Pindo Paper</option>
+                      <option>Paperone</option>
+                      <option>Lintec</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="row mb-3 align-items-center">
+                  <div class="col-5">
+                    <label for="add-paper-group-price" class="form-label mb-0">
+                      Price
+                    </label>
+                  </div>
+                  <div class="col-7">
+                    <input
+                      type="text"
+                      class="form-control bg-light"
+                      id="add-paper-group-price"
+                      value="52.000"
+                      readonly
+                    />
+                  </div>
+                </div>
+
+                <div class="row mb-3 align-items-center">
+                  <div class="col-5">
+                    <label
+                      for="add-paper-group-price-unit"
+                      class="form-label mb-0"
+                    >
+                      Price Unit
+                    </label>
+                  </div>
+                  <div class="col-7">
+                    <input
+                      type="text"
+                      class="form-control bg-light"
+                      id="add-paper-group-price-unit"
+                      value="Kilogram"
+                      readonly
+                    />
+                  </div>
+                </div>
+
+                <div class="row mb-3 align-items-center">
+                  <div class="col-5">
+                    <label
+                      for="add-paper-group-gramature"
+                      class="form-label mb-0"
+                    >
+                      Gramature
+                    </label>
+                  </div>
+                  <div class="col-7">
+                    <input
+                      type="text"
+                      class="form-control number-separator"
+                      inputmode="numeric"
+                      pattern="[0-9]*"
+                      id="add-paper-group-gramature"
+                      value="120"
+                    />
+                  </div>
+                </div>
+
+                <div class="row mb-3 align-items-start">
+                  <div class="col-5">
+                    <p class="form-label mb-0">Paper Size</p>
+                  </div>
+                  <div class="col-7">
+                    <div class="row gy-2">
+                      <div class="col-12">
+                        <div class="form-check">
+                          <input
+                            class="form-check-input add-paper-group-size"
+                            type="checkbox"
+                            id="add-paper-group-size-90-120"
+                          />
+                          <label
+                            class="form-check-label"
+                            for="add-paper-group-size-90-120"
+                          >
+                            90 x 120 cm
+                          </label>
+                        </div>
+                      </div>
+                      <div class="col-12">
+                        <div class="form-check">
+                          <input
+                            class="form-check-input add-paper-group-size"
+                            type="checkbox"
+                            id="add-paper-group-size-79-109"
+                            checked
+                          />
+                          <label
+                            class="form-check-label"
+                            for="add-paper-group-size-79-109"
+                          >
+                            79 x 109 cm
+                          </label>
+                        </div>
+                      </div>
+                      <div class="col-12">
+                        <div class="form-check">
+                          <input
+                            class="form-check-input add-paper-group-size"
+                            type="checkbox"
+                            id="add-paper-group-size-65-100"
+                            checked
+                          />
+                          <label
+                            class="form-check-label"
+                            for="add-paper-group-size-65-100"
+                          >
+                            65 x 100 cm
+                          </label>
+                        </div>
+                      </div>
+                      <div class="col-12">
+                        <div class="form-check">
+                          <input
+                            class="form-check-input add-paper-group-size"
+                            type="checkbox"
+                            id="add-paper-group-size-65-90"
+                            checked
+                          />
+                          <label
+                            class="form-check-label"
+                            for="add-paper-group-size-65-90"
+                          >
+                            65 x 90 cm
+                          </label>
+                        </div>
+                      </div>
+                      <div class="col-12">
+                        <div class="form-check">
+                          <input
+                            class="form-check-input add-paper-group-size"
+                            type="checkbox"
+                            id="add-paper-group-size-61-92"
+                          />
+                          <label
+                            class="form-check-label"
+                            for="add-paper-group-size-61-92"
+                          >
+                            61 x 92 cm
+                          </label>
+                        </div>
+                      </div>
+                      <div class="col-12">
+                        <div class="form-check">
+                          <input
+                            class="form-check-input add-paper-group-size"
+                            type="checkbox"
+                            id="add-paper-group-size-61-86"
+                            checked
+                          />
+                          <label
+                            class="form-check-label"
+                            for="add-paper-group-size-61-86"
+                          >
+                            61 x 86 cm
+                          </label>
+                        </div>
+                      </div>
+                      <p
+                        class="text-success fw-semibold mb-0"
+                        id="add-paper-size-count"
+                      >
+                        4 Paper Sizes will be saved
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div id="add-paper-single-panel" class="d-none">
+                <div class="row mb-3 align-items-center">
+                  <div class="col-5">
+                    <label for="add-paper-merk" class="form-label mb-0">
+                      Merk
+                    </label>
+                  </div>
+                  <div class="col-7">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="add-paper-merk"
+                      value="Lintec"
+                    />
+                  </div>
+                </div>
+
+                <div class="row mb-3 align-items-center">
+                  <div class="col-5">
+                    <label for="add-paper-price" class="form-label mb-0">
+                      Price
+                    </label>
+                  </div>
+                  <div class="col-7">
+                    <input
+                      type="text"
+                      class="form-control number-separator"
+                      inputmode="numeric"
+                      pattern="[0-9.]*"
+                      id="add-paper-price"
+                      value="6.500"
+                    />
+                  </div>
+                </div>
+
+                <div class="row mb-3 align-items-center">
+                  <div class="col-5">
+                    <label for="add-paper-price-unit" class="form-label mb-0">
+                      Price Unit
+                    </label>
+                  </div>
+                  <div class="col-7">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="add-paper-price-unit"
+                      value="Pcs"
+                    />
+                  </div>
+                </div>
+
+                <div class="row mb-3 align-items-center">
+                  <div class="col-5">
+                    <label for="gramatur-paper-item" class="form-label mb-0">
+                      Gramature
+                    </label>
+                  </div>
+                  <div class="col-7">
+                    <input
+                      type="text"
+                      class="form-control number-separator"
+                      inputmode="numeric"
+                      pattern="[0-9]*"
+                      id="gramatur-paper-item"
+                      value="180"
+                    />
+                  </div>
+                </div>
+
+                <div class="row mb-3 align-items-start">
+                  <div class="col-5">
+                    <p class="form-label mb-0">Paper Size</p>
+                  </div>
+                  <div class="col-7">
+                    <div class="row gy-2">
+                      <div class="col-12">
+                        <div class="form-check">
+                          <input
+                            class="form-check-input"
+                            type="radio"
+                            name="add-paper-size"
+                            id="add-paper-size-90-120"
+                          />
+                          <label
+                            class="form-check-label"
+                            for="add-paper-size-90-120"
+                          >
+                            90 x 120 cm
+                          </label>
+                        </div>
+                      </div>
+                      <div class="col-12">
+                        <div class="form-check">
+                          <input
+                            class="form-check-input"
+                            type="radio"
+                            name="add-paper-size"
+                            id="add-paper-size-79-109"
+                            checked
+                          />
+                          <label
+                            class="form-check-label"
+                            for="add-paper-size-79-109"
+                          >
+                            79 x 109 cm
+                          </label>
+                        </div>
+                      </div>
+                      <div class="col-12">
+                        <div class="form-check">
+                          <input
+                            class="form-check-input"
+                            type="radio"
+                            name="add-paper-size"
+                            id="add-paper-size-65-100"
+                          />
+                          <label
+                            class="form-check-label"
+                            for="add-paper-size-65-100"
+                          >
+                            65 x 100 cm
+                          </label>
+                        </div>
+                      </div>
+                      <div class="col-12">
+                        <div class="form-check">
+                          <input
+                            class="form-check-input"
+                            type="radio"
+                            name="add-paper-size"
+                            id="add-paper-size-65-90"
+                          />
+                          <label
+                            class="form-check-label"
+                            for="add-paper-size-65-90"
+                          >
+                            65 x 90 cm
+                          </label>
+                        </div>
+                      </div>
+                      <div class="col-12">
+                        <div class="form-check">
+                          <input
+                            class="form-check-input"
+                            type="radio"
+                            name="add-paper-size"
+                            id="add-paper-size-61-92"
+                          />
+                          <label
+                            class="form-check-label"
+                            for="add-paper-size-61-92"
+                          >
+                            61 x 92 cm
+                          </label>
+                        </div>
+                      </div>
+                      <div class="col-12">
+                        <div class="form-check">
+                          <input
+                            class="form-check-input"
+                            type="radio"
+                            name="add-paper-size"
+                            id="add-paper-size-61-86"
+                          />
+                          <label
+                            class="form-check-label"
+                            for="add-paper-size-61-86"
+                          >
+                            61 x 86 cm
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row justify-content-end">
+                <div class="col-7">
+                  <button
+                    type="submit"
+                    class="btn btn-primary w-100"
+                    id="save-btn-3"
+                  >
+                    Save
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
         </div>
+      </div>
+    </div>
+
+    <!-- modal for edit paper item -->
+    <div
+      class="modal fade text-standard"
+      id="editPaperModal"
+      tabindex="-1"
+      aria-labelledby="addNewPaperItemModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header py-2">
+            <h5 class="modal-title" id="addNewPaperItemModalLabel">
+              Add New Paper Item
+            </h5>
+            <div class="d-flex align-items-center">
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+          </div>
+          <div class="modal-body">
+            <div>
+              <form>
+                <div class="row mb-3">
+                  <div class="col-5">
+                    <label for="name-paper-item" class="form-label"
+                      >Nama Kertas (Opsional)</label
+                    >
+                  </div>
+                  <div class="col-7">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="name-paper-item"
+                    />
+                  </div>
+                </div>
+
+                <div class="row mb-3">
+                  <div class="col-5">
+                    <label for="pilihSatuan" class="form-label"
+                      >Group Kertas tersedia</label
+                    >
+                  </div>
+                  <div class="col-7">
+                    <div>
+                      <div class="form-check mx-1 d-inline-block">
+                        <input
+                          class="form-check-input"
+                          type="radio"
+                          name="flexRadioDefault"
+                          id="flexRadioDefault1"
+                        />
+                        <label class="form-check-label" for="flexRadioDefault1">
+                          Art Carton
+                        </label>
+                      </div>
+                      <div class="form-check mx-1 d-inline-block">
+                        <input
+                          class="form-check-input"
+                          type="radio"
+                          name="flexRadioDefault"
+                          id="flexRadioDefault2"
+                          checked=""
+                        />
+                        <label class="form-check-label" for="flexRadioDefault2">
+                          Art Paper
+                        </label>
+                      </div>
+                      <div class="form-check mx-1 d-inline-block">
+                        <input
+                          class="form-check-input"
+                          type="radio"
+                          name="flexRadioDefault"
+                          id="flexRadioDefault2"
+                          checked=""
+                        />
+                        <label class="form-check-label" for="flexRadioDefault2">
+                          HVS
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row mb-3">
+                  <div class="col-5">
+                    <label for="gramatur-paper-item" class="form-label"
+                      >Masukan Gramatur</label
+                    >
+                  </div>
+                  <div class="col-7">
+                    <input
+                      type="text"
+                      class="form-control number-separator"
+                      inputmode="numeric"
+                      pattern="[0-9]*"
+                    />
+                    <input
+                      type="hidden"
+                      class="result-input"
+                      id="gramatur-paper-item"
+                    />
+                  </div>
+                </div>
+
+                <div class="row mb-3">
+                  <div class="col-5">
+                    <label for="pilihSatuan" class="form-label"
+                      >Ukuran Plano Tersedia</label
+                    >
+                  </div>
+                  <div class="col-7">
+                    <div class="row">
+                      <div class="col-6 my-1">
+                        <input
+                          class="form-check-input"
+                          type="radio"
+                          name="flexRadioDefault"
+                          id="flexRadioDefault1"
+                        />
+                        <label class="form-check-label" for="flexRadioDefault1">
+                          90 x 120
+                        </label>
+                      </div>
+                      <div class="col-6 my-1">
+                        <input
+                          class="form-check-input"
+                          type="radio"
+                          name="flexRadioDefault"
+                          id="flexRadioDefault2"
+                          checked=""
+                        />
+                        <label class="form-check-label" for="flexRadioDefault2">
+                          97 x 109
+                        </label>
+                      </div>
+                      <div class="col-6 my-1">
+                        <input
+                          class="form-check-input"
+                          type="radio"
+                          name="flexRadioDefault"
+                          id="flexRadioDefault2"
+                          checked=""
+                        />
+                        <label class="form-check-label" for="flexRadioDefault2">
+                          65 x 100
+                        </label>
+                      </div>
+                      <div class="col-6 my-1">
+                        <input
+                          class="form-check-input"
+                          type="radio"
+                          name="flexRadioDefault"
+                          id="flexRadioDefault2"
+                          checked=""
+                        />
+                        <label class="form-check-label" for="flexRadioDefault2">
+                          65 x 90
+                        </label>
+                      </div>
+                      <div class="col-6 my-1">
+                        <input
+                          class="form-check-input"
+                          type="radio"
+                          name="flexRadioDefault"
+                          id="flexRadioDefault2"
+                          checked=""
+                        />
+                        <label class="form-check-label" for="flexRadioDefault2">
+                          61 x 92
+                        </label>
+                      </div>
+                      <div class="col-6 my-1">
+                        <input
+                          class="form-check-input"
+                          type="radio"
+                          name="flexRadioDefault"
+                          id="flexRadioDefault2"
+                          checked=""
+                        />
+                        <label class="form-check-label" for="flexRadioDefault2">
+                          61 x 68
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  class="mb-3 status-toggle modal-status d-flex justify-content-between align-items-center"
+                >
+                  <span class="status-label">Status</span>
+                  <input type="checkbox" id="user2" class="check" checked="" />
+                  <label for="user2" class="checktoggle"></label>
+                </div>
+
+                <small
+                  class="d-none text-standard text-danger"
+                  id="info-selected-all-3"
+                  ><i class="fa-solid fa-circle-info"></i> please input your
+                  specification<br
+                /></small>
+                <div class="row mb-3 justify-content-end">
+                  <div class="col-7">
+                    <button class="btn btn-primary w-100" id="save-btn-3">
+                      Simpan
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- jQuery -->
@@ -630,8 +1323,53 @@
     <!-- Custom JS -->
     <script src="assets/js/theme-script.js"></script>
     <script src="assets/js/script.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const modal = document.getElementById("addNewPaperItemModal");
 
+        if (!modal) {
+          return;
+        }
 
-</body>
+        const paperNameInput = modal.querySelector("#name-paper-item");
+        const modalTitle = modal.querySelector("#addNewPaperItemModalLabel");
+        const groupRadio = modal.querySelector("#add-paper-price-group");
+        const singleRadio = modal.querySelector("#add-paper-price-single");
+        const groupPanel = modal.querySelector("#add-paper-group-panel");
+        const singlePanel = modal.querySelector("#add-paper-single-panel");
+        const groupSizeInputs = modal.querySelectorAll(".add-paper-group-size");
+        const countLabel = modal.querySelector("#add-paper-size-count");
 
+        function updatePaperTypePanel() {
+          const isGroup = groupRadio.checked;
+
+          groupPanel.classList.toggle("d-none", !isGroup);
+          singlePanel.classList.toggle("d-none", isGroup);
+          paperNameInput.value = isGroup ? "Art Paper" : "Sticker Cromo";
+          modalTitle.textContent = isGroup
+            ? "Add New Paper List"
+            : "Add New Paper Item";
+        }
+
+        function updateSizeCount() {
+          const checkedCount = Array.from(groupSizeInputs).filter(
+            function (input) {
+              return input.checked;
+            },
+          ).length;
+
+          countLabel.textContent = checkedCount + " Paper Sizes will be saved";
+        }
+
+        groupRadio.addEventListener("change", updatePaperTypePanel);
+        singleRadio.addEventListener("change", updatePaperTypePanel);
+        groupSizeInputs.forEach(function (input) {
+          input.addEventListener("change", updateSizeCount);
+        });
+
+        updatePaperTypePanel();
+        updateSizeCount();
+      });
+    </script>
+  </body>
 </html>

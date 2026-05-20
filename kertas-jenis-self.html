@@ -2,10 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, user-scalable=0"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0" />
     <meta name="description" content="POS - Bootstrap Admin Template" />
     <meta
       name="keywords"
@@ -14,11 +11,7 @@
     <meta name="author" content="Dreamguys - Bootstrap Admin Template" />
     <meta name="robots" content="noindex, nofollow" />
     <title>Kacetak System</title>
-    <link
-      rel="shortcut icon"
-      type="image/x-icon"
-      href="assets/img/kacetak.jpeg"
-    />
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/kacetak.jpeg" />
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
@@ -33,24 +26,31 @@
     <link rel="stylesheet" href="assets/css/bootstrap-datetimepicker.min.css" />
 
     <!-- Mobile CSS-->
-    <link
-      rel="stylesheet"
-      href="assets/plugins/intltelinput/css/intlTelInput.css"
-    />
+    <link rel="stylesheet" href="assets/plugins/intltelinput/css/intlTelInput.css" />
     <link rel="stylesheet" href="assets/plugins/intltelinput/css/demo.css" />
 
     <!-- Datatable CSS -->
     <link rel="stylesheet" href="assets/css/dataTables.bootstrap5.min.css" />
 
     <!-- Fontawesome CSS -->
-    <link
-      rel="stylesheet"
-      href="assets/plugins/fontawesome/css/fontawesome.min.css"
-    />
+    <link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css" />
     <link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css" />
 
     <!-- Main CSS -->
     <link rel="stylesheet" href="assets/css/style.css" />
+
+    <style>
+      #paperTab .nav-link {
+        color: #6c757d;
+        border: none;
+        background: transparent;
+        border-bottom: 2px solid transparent;
+      }
+      #paperTab .nav-link.active {
+        color: #ef8200 !important;
+        border-bottom: 2px solid #ef8200 !important;
+      }
+    </style>
   </head>
 
   <body>
@@ -81,39 +81,24 @@
                 /></a>
               </li>
               <li>
-                <a
-                  data-bs-toggle="tooltip"
-                  data-bs-placement="top"
-                  title="Print"
+                <a data-bs-toggle="tooltip" data-bs-placement="top" title="Print"
                   ><i data-feather="printer" class="feather-rotate-ccw"></i
                 ></a>
               </li>
               <li>
-                <a
-                  data-bs-toggle="tooltip"
-                  data-bs-placement="top"
-                  title="Refresh"
+                <a data-bs-toggle="tooltip" data-bs-placement="top" title="Refresh"
                   ><i data-feather="rotate-ccw" class="feather-rotate-ccw"></i
                 ></a>
               </li>
               <li>
-                <a
-                  data-bs-toggle="tooltip"
-                  data-bs-placement="top"
-                  title="Collapse"
-                  id="collapse-header"
+                <a data-bs-toggle="tooltip" data-bs-placement="top" title="Collapse" id="collapse-header"
                   ><i data-feather="chevron-up" class="feather-chevron-up"></i
                 ></a>
               </li>
             </ul>
             <div class="page-btn">
-              <a
-                href="#"
-                class="btn btn-added"
-                data-bs-toggle="modal"
-                data-bs-target="#addNewPaperItemModal"
-                ><i data-feather="plus-circle" class="me-2"></i>Add New Jenis
-                Kertas</a
+              <a href="#" class="btn btn-added" data-bs-toggle="modal" data-bs-target="#addNewPaperItemModal"
+                ><i data-feather="plus-circle" class="me-2"></i>Add New Jenis Kertas</a
               >
             </div>
           </div>
@@ -121,9 +106,7 @@
             <div class="col-xl-3 col-sm-6 col-12 d-flex">
               <div class="dash-widget w-100">
                 <div class="dash-widgetimg">
-                  <span
-                    ><img src="assets/img/icons/dash1.svg" alt="img"
-                  /></span>
+                  <span><img src="assets/img/icons/dash1.svg" alt="img" /></span>
                 </div>
                 <div class="dash-widgetcontent">
                   <h6>Jenis Kertas</h6>
@@ -136,9 +119,7 @@
             <div class="col-xl-3 col-sm-6 col-12 d-flex">
               <div class="dash-widget w-100">
                 <div class="dash-widgetimg">
-                  <span
-                    ><img src="assets/img/icons/dash1.svg" alt="img"
-                  /></span>
+                  <span><img src="assets/img/icons/dash1.svg" alt="img" /></span>
                 </div>
                 <div class="dash-widgetcontent">
                   <h6>Total Group Kertas</h6>
@@ -151,9 +132,7 @@
             <div class="col-xl-3 col-sm-6 col-12 d-flex">
               <div class="dash-widget dash2 w-100">
                 <div class="dash-widgetimg">
-                  <span
-                    ><img src="assets/img/icons/dash3.svg" alt="img"
-                  /></span>
+                  <span><img src="assets/img/icons/dash3.svg" alt="img" /></span>
                 </div>
                 <div class="dash-widgetcontent">
                   <h6>Total Active</h6>
@@ -164,9 +143,7 @@
             <div class="col-xl-3 col-sm-6 col-12 d-flex">
               <div class="dash-widget dash3 w-100">
                 <div class="dash-widgetimg">
-                  <span
-                    ><img src="assets/img/icons/dash4.svg" alt="img"
-                  /></span>
+                  <span><img src="assets/img/icons/dash4.svg" alt="img" /></span>
                 </div>
                 <div class="dash-widgetcontent">
                   <h6>Total Deactive</h6>
@@ -179,15 +156,11 @@
           <div class="card table-list-card">
             <div class="card-body">
               <!-- Filter -->
-              <div
-                class="table-top d-flex align-items-center justify-content-between"
-              >
+              <div class="table-top d-flex align-items-center justify-content-between">
                 <!-- Search Input -->
                 <div class="search-set d-block d-md-flex">
                   <div class="search-input">
-                    <a href="" class="btn btn-searchset"
-                      ><i data-feather="search" class="feather-search"></i
-                    ></a>
+                    <a href="" class="btn btn-searchset"><i data-feather="search" class="feather-search"></i></a>
                   </div>
                   <!-- Date Range -->
                   <div class="my-2">
@@ -198,15 +171,9 @@
                         class="pemilihrentang-input form-control"
                         readonly
                         placeholder="Date"
-                        style="
-                          height: fit-content !important;
-                          width: 100% !important;
-                        "
+                        style="height: fit-content !important; width: 100% !important"
                       />
-                      <div
-                        id="pemilihrentang-panel"
-                        class="pemilihrentang-panel"
-                      >
+                      <div id="pemilihrentang-panel" class="pemilihrentang-panel">
                         <div class="pemilihrentang-isi">
                           <div class="opsi-cepat">
                             <div data-range="kemarin">Kemarin</div>
@@ -216,11 +183,7 @@
                             <div data-range="tahunLalu">Tahun Lalu</div>
                             <div data-range="kustom">Rentang Kustom</div>
                           </div>
-                          <div
-                            class="kalender"
-                            id="kalender-view"
-                            style="display: none"
-                          ></div>
+                          <div class="kalender" id="kalender-view" style="display: none"></div>
                         </div>
                       </div>
                     </div>
@@ -293,19 +256,13 @@
                       <td><span class="badge bg-info">actice</span></td>
                       <td class="action-table-data">
                         <div class="edit-delete-action">
-                          <a class="me-2 edit-icon p-2" href="">
+                          <a class="me-2 edit-icon p-2" href="#" data-bs-toggle="modal" data-bs-target="#viewPaperModal">
                             <i data-feather="eye" class="action-eye"></i>
                           </a>
-                          <a
-                            class="me-2 p-2"
-                            href="#"
-                            data-bs-toggle="modal"
-                            data-bs-target="#editPaperModal"
+                          <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#editPaperModal"
                             ><i data-feather="edit"></i
                           ></a>
-                          <a class="confirm-text p-2" href="javascript:void(0);"
-                            ><i data-feather="trash-2"></i
-                          ></a>
+                          <a class="confirm-text p-2" href="javascript:void(0);"><i data-feather="trash-2"></i></a>
                         </div>
                       </td>
                     </tr>
@@ -323,19 +280,13 @@
                       <td><span class="badge bg-info">actice</span></td>
                       <td class="action-table-data">
                         <div class="edit-delete-action">
-                          <a class="me-2 edit-icon p-2" href="">
+                          <a class="me-2 edit-icon p-2" href="#" data-bs-toggle="modal" data-bs-target="#viewPaperModal">
                             <i data-feather="eye" class="action-eye"></i>
                           </a>
-                          <a
-                            class="me-2 p-2"
-                            href="#"
-                            data-bs-toggle="modal"
-                            data-bs-target="#editPaperModal"
+                          <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#editPaperModal"
                             ><i data-feather="edit"></i
                           ></a>
-                          <a class="confirm-text p-2" href="javascript:void(0);"
-                            ><i data-feather="trash-2"></i
-                          ></a>
+                          <a class="confirm-text p-2" href="javascript:void(0);"><i data-feather="trash-2"></i></a>
                         </div>
                       </td>
                     </tr>
@@ -353,19 +304,13 @@
                       <td><span class="badge bg-info">actice</span></td>
                       <td class="action-table-data">
                         <div class="edit-delete-action">
-                          <a class="me-2 edit-icon p-2" href="">
+                          <a class="me-2 edit-icon p-2" href="#" data-bs-toggle="modal" data-bs-target="#viewPaperModal">
                             <i data-feather="eye" class="action-eye"></i>
                           </a>
-                          <a
-                            class="me-2 p-2"
-                            href="#"
-                            data-bs-toggle="modal"
-                            data-bs-target="#editPaperModal"
+                          <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#editPaperModal"
                             ><i data-feather="edit"></i
                           ></a>
-                          <a class="confirm-text p-2" href="javascript:void(0);"
-                            ><i data-feather="trash-2"></i
-                          ></a>
+                          <a class="confirm-text p-2" href="javascript:void(0);"><i data-feather="trash-2"></i></a>
                         </div>
                       </td>
                     </tr>
@@ -383,19 +328,13 @@
                       <td><span class="badge bg-info">actice</span></td>
                       <td class="action-table-data">
                         <div class="edit-delete-action">
-                          <a class="me-2 edit-icon p-2" href="">
+                          <a class="me-2 edit-icon p-2" href="#" data-bs-toggle="modal" data-bs-target="#viewPaperModal">
                             <i data-feather="eye" class="action-eye"></i>
                           </a>
-                          <a
-                            class="me-2 p-2"
-                            href="#"
-                            data-bs-toggle="modal"
-                            data-bs-target="#editPaperModal"
+                          <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#editPaperModal"
                             ><i data-feather="edit"></i
                           ></a>
-                          <a class="confirm-text p-2" href="javascript:void(0);"
-                            ><i data-feather="trash-2"></i
-                          ></a>
+                          <a class="confirm-text p-2" href="javascript:void(0);"><i data-feather="trash-2"></i></a>
                         </div>
                       </td>
                     </tr>
@@ -413,19 +352,13 @@
                       <td><span class="badge bg-info">actice</span></td>
                       <td class="action-table-data">
                         <div class="edit-delete-action">
-                          <a class="me-2 edit-icon p-2" href="">
+                          <a class="me-2 edit-icon p-2" href="#" data-bs-toggle="modal" data-bs-target="#viewPaperModal">
                             <i data-feather="eye" class="action-eye"></i>
                           </a>
-                          <a
-                            class="me-2 p-2"
-                            href="#"
-                            data-bs-toggle="modal"
-                            data-bs-target="#editPaperModal"
+                          <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#editPaperModal"
                             ><i data-feather="edit"></i
                           ></a>
-                          <a class="confirm-text p-2" href="javascript:void(0);"
-                            ><i data-feather="trash-2"></i
-                          ></a>
+                          <a class="confirm-text p-2" href="javascript:void(0);"><i data-feather="trash-2"></i></a>
                         </div>
                       </td>
                     </tr>
@@ -443,19 +376,13 @@
                       <td><span class="badge bg-info">actice</span></td>
                       <td class="action-table-data">
                         <div class="edit-delete-action">
-                          <a class="me-2 edit-icon p-2" href="">
+                          <a class="me-2 edit-icon p-2" href="#" data-bs-toggle="modal" data-bs-target="#viewPaperModal">
                             <i data-feather="eye" class="action-eye"></i>
                           </a>
-                          <a
-                            class="me-2 p-2"
-                            href="#"
-                            data-bs-toggle="modal"
-                            data-bs-target="#editPaperModal"
+                          <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#editPaperModal"
                             ><i data-feather="edit"></i
                           ></a>
-                          <a class="confirm-text p-2" href="javascript:void(0);"
-                            ><i data-feather="trash-2"></i
-                          ></a>
+                          <a class="confirm-text p-2" href="javascript:void(0);"><i data-feather="trash-2"></i></a>
                         </div>
                       </td>
                     </tr>
@@ -473,19 +400,13 @@
                       <td><span class="badge bg-info">actice</span></td>
                       <td class="action-table-data">
                         <div class="edit-delete-action">
-                          <a class="me-2 edit-icon p-2" href="">
+                          <a class="me-2 edit-icon p-2" href="#" data-bs-toggle="modal" data-bs-target="#viewPaperModal">
                             <i data-feather="eye" class="action-eye"></i>
                           </a>
-                          <a
-                            class="me-2 p-2"
-                            href="#"
-                            data-bs-toggle="modal"
-                            data-bs-target="#editPaperModal"
+                          <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#editPaperModal"
                             ><i data-feather="edit"></i
                           ></a>
-                          <a class="confirm-text p-2" href="javascript:void(0);"
-                            ><i data-feather="trash-2"></i
-                          ></a>
+                          <a class="confirm-text p-2" href="javascript:void(0);"><i data-feather="trash-2"></i></a>
                         </div>
                       </td>
                     </tr>
@@ -503,19 +424,13 @@
                       <td><span class="badge bg-info">actice</span></td>
                       <td class="action-table-data">
                         <div class="edit-delete-action">
-                          <a class="me-2 edit-icon p-2" href="">
+                          <a class="me-2 edit-icon p-2" href="#" data-bs-toggle="modal" data-bs-target="#viewPaperModal">
                             <i data-feather="eye" class="action-eye"></i>
                           </a>
-                          <a
-                            class="me-2 p-2"
-                            href="#"
-                            data-bs-toggle="modal"
-                            data-bs-target="#editPaperModal"
+                          <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#editPaperModal"
                             ><i data-feather="edit"></i
                           ></a>
-                          <a class="confirm-text p-2" href="javascript:void(0);"
-                            ><i data-feather="trash-2"></i
-                          ></a>
+                          <a class="confirm-text p-2" href="javascript:void(0);"><i data-feather="trash-2"></i></a>
                         </div>
                       </td>
                     </tr>
@@ -533,19 +448,13 @@
                       <td><span class="badge bg-info">actice</span></td>
                       <td class="action-table-data">
                         <div class="edit-delete-action">
-                          <a class="me-2 edit-icon p-2" href="">
+                          <a class="me-2 edit-icon p-2" href="#" data-bs-toggle="modal" data-bs-target="#viewPaperModal">
                             <i data-feather="eye" class="action-eye"></i>
                           </a>
-                          <a
-                            class="me-2 p-2"
-                            href="#"
-                            data-bs-toggle="modal"
-                            data-bs-target="#editPaperModal"
+                          <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#editPaperModal"
                             ><i data-feather="edit"></i
                           ></a>
-                          <a class="confirm-text p-2" href="javascript:void(0);"
-                            ><i data-feather="trash-2"></i
-                          ></a>
+                          <a class="confirm-text p-2" href="javascript:void(0);"><i data-feather="trash-2"></i></a>
                         </div>
                       </td>
                     </tr>
@@ -563,19 +472,13 @@
                       <td><span class="badge bg-info">actice</span></td>
                       <td class="action-table-data">
                         <div class="edit-delete-action">
-                          <a class="me-2 edit-icon p-2" href="">
+                          <a class="me-2 edit-icon p-2" href="#" data-bs-toggle="modal" data-bs-target="#viewPaperModal">
                             <i data-feather="eye" class="action-eye"></i>
                           </a>
-                          <a
-                            class="me-2 p-2"
-                            href="#"
-                            data-bs-toggle="modal"
-                            data-bs-target="#editPaperModal"
+                          <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#editPaperModal"
                             ><i data-feather="edit"></i
                           ></a>
-                          <a class="confirm-text p-2" href="javascript:void(0);"
-                            ><i data-feather="trash-2"></i
-                          ></a>
+                          <a class="confirm-text p-2" href="javascript:void(0);"><i data-feather="trash-2"></i></a>
                         </div>
                       </td>
                     </tr>
@@ -601,31 +504,17 @@
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header py-2">
-            <h5 class="modal-title" id="addNewPaperItemModalLabel">
-              Add New Paper Item
-            </h5>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
+            <h5 class="modal-title" id="addNewPaperItemModalLabel">Add New Paper Item</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
             <form>
               <div class="row mb-3 align-items-center">
                 <div class="col-5">
-                  <label for="name-paper-item" class="form-label mb-0">
-                    Paper Name
-                  </label>
+                  <label for="name-paper-item" class="form-label mb-0"> Paper Name </label>
                 </div>
                 <div class="col-7">
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="name-paper-item"
-                    value="Art Paper"
-                  />
+                  <input type="text" class="form-control" id="name-paper-item" value="Art Paper" />
                 </div>
               </div>
 
@@ -643,42 +532,22 @@
                         id="add-paper-price-group"
                         checked
                       />
-                      <label
-                        class="form-check-label"
-                        for="add-paper-price-group"
-                      >
-                        Paper Group
-                      </label>
+                      <label class="form-check-label" for="add-paper-price-group"> Paper Group </label>
                     </div>
                     <div class="form-check">
-                      <input
-                        class="form-check-input"
-                        type="radio"
-                        name="add-paper-price-type"
-                        id="add-paper-price-single"
-                      />
-                      <label
-                        class="form-check-label"
-                        for="add-paper-price-single"
-                      >
-                        Single
-                      </label>
+                      <input class="form-check-input" type="radio" name="add-paper-price-type" id="add-paper-price-single" />
+                      <label class="form-check-label" for="add-paper-price-single"> Single </label>
                     </div>
                   </div>
                 </div>
               </div>
 
               <div id="add-paper-group-panel">
-                <p class="mb-3">
-                  This Selection containing price settings and calculations in
-                  one group
-                </p>
+                <p class="mb-3">This Selection containing price settings and calculations in one group</p>
 
                 <div class="row mb-3 align-items-center">
                   <div class="col-5">
-                    <label for="add-paper-group-select" class="form-label mb-0">
-                      Paper Group
-                    </label>
+                    <label for="add-paper-group-select" class="form-label mb-0"> Paper Group </label>
                   </div>
                   <div class="col-7">
                     <select class="form-select" id="add-paper-group-select">
@@ -691,9 +560,7 @@
 
                 <div class="row mb-3 align-items-center">
                   <div class="col-5">
-                    <label for="add-paper-group-merk" class="form-label mb-0">
-                      Merk
-                    </label>
+                    <label for="add-paper-group-merk" class="form-label mb-0"> Merk </label>
                   </div>
                   <div class="col-7">
                     <select class="form-select" id="add-paper-group-merk">
@@ -706,49 +573,25 @@
 
                 <div class="row mb-3 align-items-center">
                   <div class="col-5">
-                    <label for="add-paper-group-price" class="form-label mb-0">
-                      Price
-                    </label>
+                    <label for="add-paper-group-price" class="form-label mb-0"> Price </label>
                   </div>
                   <div class="col-7">
-                    <input
-                      type="text"
-                      class="form-control bg-light"
-                      id="add-paper-group-price"
-                      value="52.000"
-                      readonly
-                    />
+                    <input type="text" class="form-control bg-light" id="add-paper-group-price" value="52.000" readonly />
                   </div>
                 </div>
 
                 <div class="row mb-3 align-items-center">
                   <div class="col-5">
-                    <label
-                      for="add-paper-group-price-unit"
-                      class="form-label mb-0"
-                    >
-                      Price Unit
-                    </label>
+                    <label for="add-paper-group-price-unit" class="form-label mb-0"> Price Unit </label>
                   </div>
                   <div class="col-7">
-                    <input
-                      type="text"
-                      class="form-control bg-light"
-                      id="add-paper-group-price-unit"
-                      value="Kilogram"
-                      readonly
-                    />
+                    <input type="text" class="form-control bg-light" id="add-paper-group-price-unit" value="Kilogram" readonly />
                   </div>
                 </div>
 
                 <div class="row mb-3 align-items-center">
                   <div class="col-5">
-                    <label
-                      for="add-paper-group-gramature"
-                      class="form-label mb-0"
-                    >
-                      Gramature
-                    </label>
+                    <label for="add-paper-group-gramature" class="form-label mb-0"> Gramature </label>
                   </div>
                   <div class="col-7">
                     <input
@@ -770,17 +613,8 @@
                     <div class="row gy-2">
                       <div class="col-12">
                         <div class="form-check">
-                          <input
-                            class="form-check-input add-paper-group-size"
-                            type="checkbox"
-                            id="add-paper-group-size-90-120"
-                          />
-                          <label
-                            class="form-check-label"
-                            for="add-paper-group-size-90-120"
-                          >
-                            90 x 120 cm
-                          </label>
+                          <input class="form-check-input add-paper-group-size" type="checkbox" id="add-paper-group-size-90-120" />
+                          <label class="form-check-label" for="add-paper-group-size-90-120"> 90 x 120 cm </label>
                         </div>
                       </div>
                       <div class="col-12">
@@ -791,12 +625,7 @@
                             id="add-paper-group-size-79-109"
                             checked
                           />
-                          <label
-                            class="form-check-label"
-                            for="add-paper-group-size-79-109"
-                          >
-                            79 x 109 cm
-                          </label>
+                          <label class="form-check-label" for="add-paper-group-size-79-109"> 79 x 109 cm </label>
                         </div>
                       </div>
                       <div class="col-12">
@@ -807,12 +636,7 @@
                             id="add-paper-group-size-65-100"
                             checked
                           />
-                          <label
-                            class="form-check-label"
-                            for="add-paper-group-size-65-100"
-                          >
-                            65 x 100 cm
-                          </label>
+                          <label class="form-check-label" for="add-paper-group-size-65-100"> 65 x 100 cm </label>
                         </div>
                       </div>
                       <div class="col-12">
@@ -823,27 +647,13 @@
                             id="add-paper-group-size-65-90"
                             checked
                           />
-                          <label
-                            class="form-check-label"
-                            for="add-paper-group-size-65-90"
-                          >
-                            65 x 90 cm
-                          </label>
+                          <label class="form-check-label" for="add-paper-group-size-65-90"> 65 x 90 cm </label>
                         </div>
                       </div>
                       <div class="col-12">
                         <div class="form-check">
-                          <input
-                            class="form-check-input add-paper-group-size"
-                            type="checkbox"
-                            id="add-paper-group-size-61-92"
-                          />
-                          <label
-                            class="form-check-label"
-                            for="add-paper-group-size-61-92"
-                          >
-                            61 x 92 cm
-                          </label>
+                          <input class="form-check-input add-paper-group-size" type="checkbox" id="add-paper-group-size-61-92" />
+                          <label class="form-check-label" for="add-paper-group-size-61-92"> 61 x 92 cm </label>
                         </div>
                       </div>
                       <div class="col-12">
@@ -854,20 +664,10 @@
                             id="add-paper-group-size-61-86"
                             checked
                           />
-                          <label
-                            class="form-check-label"
-                            for="add-paper-group-size-61-86"
-                          >
-                            61 x 86 cm
-                          </label>
+                          <label class="form-check-label" for="add-paper-group-size-61-86"> 61 x 86 cm </label>
                         </div>
                       </div>
-                      <p
-                        class="text-success fw-semibold mb-0"
-                        id="add-paper-size-count"
-                      >
-                        4 Paper Sizes will be saved
-                      </p>
+                      <p class="text-success fw-semibold mb-0" id="add-paper-size-count">4 Paper Sizes will be saved</p>
                     </div>
                   </div>
                 </div>
@@ -876,25 +676,16 @@
               <div id="add-paper-single-panel" class="d-none">
                 <div class="row mb-3 align-items-center">
                   <div class="col-5">
-                    <label for="add-paper-merk" class="form-label mb-0">
-                      Merk
-                    </label>
+                    <label for="add-paper-merk" class="form-label mb-0"> Merk </label>
                   </div>
                   <div class="col-7">
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="add-paper-merk"
-                      value="Lintec"
-                    />
+                    <input type="text" class="form-control" id="add-paper-merk" value="Lintec" />
                   </div>
                 </div>
 
                 <div class="row mb-3 align-items-center">
                   <div class="col-5">
-                    <label for="add-paper-price" class="form-label mb-0">
-                      Price
-                    </label>
+                    <label for="add-paper-price" class="form-label mb-0"> Price </label>
                   </div>
                   <div class="col-7">
                     <input
@@ -910,25 +701,16 @@
 
                 <div class="row mb-3 align-items-center">
                   <div class="col-5">
-                    <label for="add-paper-price-unit" class="form-label mb-0">
-                      Price Unit
-                    </label>
+                    <label for="add-paper-price-unit" class="form-label mb-0"> Price Unit </label>
                   </div>
                   <div class="col-7">
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="add-paper-price-unit"
-                      value="Pcs"
-                    />
+                    <input type="text" class="form-control" id="add-paper-price-unit" value="Pcs" />
                   </div>
                 </div>
 
                 <div class="row mb-3 align-items-center">
                   <div class="col-5">
-                    <label for="gramatur-paper-item" class="form-label mb-0">
-                      Gramature
-                    </label>
+                    <label for="gramatur-paper-item" class="form-label mb-0"> Gramature </label>
                   </div>
                   <div class="col-7">
                     <input
@@ -950,99 +732,38 @@
                     <div class="row gy-2">
                       <div class="col-12">
                         <div class="form-check">
-                          <input
-                            class="form-check-input"
-                            type="radio"
-                            name="add-paper-size"
-                            id="add-paper-size-90-120"
-                          />
-                          <label
-                            class="form-check-label"
-                            for="add-paper-size-90-120"
-                          >
-                            90 x 120 cm
-                          </label>
+                          <input class="form-check-input" type="radio" name="add-paper-size" id="add-paper-size-90-120" />
+                          <label class="form-check-label" for="add-paper-size-90-120"> 90 x 120 cm </label>
                         </div>
                       </div>
                       <div class="col-12">
                         <div class="form-check">
-                          <input
-                            class="form-check-input"
-                            type="radio"
-                            name="add-paper-size"
-                            id="add-paper-size-79-109"
-                            checked
-                          />
-                          <label
-                            class="form-check-label"
-                            for="add-paper-size-79-109"
-                          >
-                            79 x 109 cm
-                          </label>
+                          <input class="form-check-input" type="radio" name="add-paper-size" id="add-paper-size-79-109" checked />
+                          <label class="form-check-label" for="add-paper-size-79-109"> 79 x 109 cm </label>
                         </div>
                       </div>
                       <div class="col-12">
                         <div class="form-check">
-                          <input
-                            class="form-check-input"
-                            type="radio"
-                            name="add-paper-size"
-                            id="add-paper-size-65-100"
-                          />
-                          <label
-                            class="form-check-label"
-                            for="add-paper-size-65-100"
-                          >
-                            65 x 100 cm
-                          </label>
+                          <input class="form-check-input" type="radio" name="add-paper-size" id="add-paper-size-65-100" />
+                          <label class="form-check-label" for="add-paper-size-65-100"> 65 x 100 cm </label>
                         </div>
                       </div>
                       <div class="col-12">
                         <div class="form-check">
-                          <input
-                            class="form-check-input"
-                            type="radio"
-                            name="add-paper-size"
-                            id="add-paper-size-65-90"
-                          />
-                          <label
-                            class="form-check-label"
-                            for="add-paper-size-65-90"
-                          >
-                            65 x 90 cm
-                          </label>
+                          <input class="form-check-input" type="radio" name="add-paper-size" id="add-paper-size-65-90" />
+                          <label class="form-check-label" for="add-paper-size-65-90"> 65 x 90 cm </label>
                         </div>
                       </div>
                       <div class="col-12">
                         <div class="form-check">
-                          <input
-                            class="form-check-input"
-                            type="radio"
-                            name="add-paper-size"
-                            id="add-paper-size-61-92"
-                          />
-                          <label
-                            class="form-check-label"
-                            for="add-paper-size-61-92"
-                          >
-                            61 x 92 cm
-                          </label>
+                          <input class="form-check-input" type="radio" name="add-paper-size" id="add-paper-size-61-92" />
+                          <label class="form-check-label" for="add-paper-size-61-92"> 61 x 92 cm </label>
                         </div>
                       </div>
                       <div class="col-12">
                         <div class="form-check">
-                          <input
-                            class="form-check-input"
-                            type="radio"
-                            name="add-paper-size"
-                            id="add-paper-size-61-86"
-                          />
-                          <label
-                            class="form-check-label"
-                            for="add-paper-size-61-86"
-                          >
-                            61 x 86 cm
-                          </label>
+                          <input class="form-check-input" type="radio" name="add-paper-size" id="add-paper-size-61-86" />
+                          <label class="form-check-label" for="add-paper-size-61-86"> 61 x 86 cm </label>
                         </div>
                       </div>
                     </div>
@@ -1052,13 +773,7 @@
 
               <div class="row justify-content-end">
                 <div class="col-7">
-                  <button
-                    type="submit"
-                    class="btn btn-primary w-100"
-                    id="save-btn-3"
-                  >
-                    Save
-                  </button>
+                  <button type="submit" class="btn btn-primary w-100" id="save-btn-3">Save</button>
                 </div>
               </div>
             </form>
@@ -1072,220 +787,375 @@
       class="modal fade text-standard"
       id="editPaperModal"
       tabindex="-1"
-      aria-labelledby="addNewPaperItemModalLabel"
+      aria-labelledby="editPaperModalLabel"
       aria-hidden="true"
     >
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-          <div class="modal-header py-2">
-            <h5 class="modal-title" id="addNewPaperItemModalLabel">
-              Add New Paper Item
-            </h5>
-            <div class="d-flex align-items-center">
-              <button
-                type="button"
-                class="btn-close"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
-            </div>
+      <div class="modal-dialog modal-dialog-centered modal-md custom-modal-two">
+        <div class="modal-content rounded-0">
+          <div class="modal-header border-bottom border-dark py-3 rounded-0 custom-modal-header">
+            <h6 class="modal-title fw-bold" id="editPaperModalLabel">Edit Paper List</h6>
+            <button
+              type="button"
+              class="bg-transparent border-0 fw-bold"
+              style="color: #ef8200; font-size: 1.2rem"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            >
+              X
+            </button>
           </div>
-          <div class="modal-body">
-            <div>
-              <form>
-                <div class="row mb-3">
-                  <div class="col-5">
-                    <label for="name-paper-item" class="form-label"
-                      >Nama Kertas (Opsional)</label
-                    >
-                  </div>
-                  <div class="col-7">
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="name-paper-item"
-                    />
-                  </div>
-                </div>
 
-                <div class="row mb-3">
-                  <div class="col-5">
-                    <label for="pilihSatuan" class="form-label"
-                      >Group Kertas tersedia</label
-                    >
-                  </div>
-                  <div class="col-7">
-                    <div>
-                      <div class="form-check mx-1 d-inline-block">
-                        <input
-                          class="form-check-input"
-                          type="radio"
-                          name="flexRadioDefault"
-                          id="flexRadioDefault1"
-                        />
-                        <label class="form-check-label" for="flexRadioDefault1">
-                          Art Carton
-                        </label>
+          <div class="modal-body px-4 py-3 custom-modal-body">
+            <div class="card-body p-0">
+              <ul
+                class="nav nav-tabs nav-tabs-bottom nav-justified mb-4"
+                role="tablist"
+                style="
+                  --bs-nav-tabs-border-color: #333;
+                  --bs-nav-tabs-border-width: 2px;
+                  --bs-nav-tabs-link-active-color: #ef8200;
+                  --bs-nav-tabs-link-active-border-color: transparent transparent #ef8200 transparent;
+                  --bs-nav-link-color: #6c757d;
+                  --bs-nav-link-hover-color: #ef8200;
+                "
+              >
+                <li class="nav-item" role="presentation">
+                  <a
+                    class="nav-link active fw-bold border-top-0 border-start-0 border-end-0 bg-transparent"
+                    href="#detail"
+                    data-bs-toggle="tab"
+                    aria-selected="true"
+                    role="tab"
+                    >Paper Detail</a
+                  >
+                </li>
+                <li class="nav-item" role="presentation">
+                  <a
+                    class="nav-link fw-bold border-top-0 border-start-0 border-end-0 bg-transparent"
+                    href="#advance"
+                    data-bs-toggle="tab"
+                    aria-selected="false"
+                    role="tab"
+                    tabindex="-1"
+                    >Advance Setting</a
+                  >
+                </li>
+              </ul>
+
+              <div class="tab-content" id="paperTabContent">
+                <div class="tab-pane active show" id="detail" role="tabpanel" aria-labelledby="detail-tab">
+                  <form>
+                    <div class="row align-items-center mb-3">
+                      <div class="col-4">
+                        <label for="paperName" class="form-label mb-0 text-secondary">Paper Name</label>
                       </div>
-                      <div class="form-check mx-1 d-inline-block">
-                        <input
-                          class="form-check-input"
-                          type="radio"
-                          name="flexRadioDefault"
-                          id="flexRadioDefault2"
-                          checked=""
-                        />
-                        <label class="form-check-label" for="flexRadioDefault2">
-                          Art Paper
-                        </label>
-                      </div>
-                      <div class="form-check mx-1 d-inline-block">
-                        <input
-                          class="form-check-input"
-                          type="radio"
-                          name="flexRadioDefault"
-                          id="flexRadioDefault2"
-                          checked=""
-                        />
-                        <label class="form-check-label" for="flexRadioDefault2">
-                          HVS
-                        </label>
+                      <div class="col-8">
+                        <input type="text" class="form-control rounded-0" id="paperName" value="Sticker Cromo" />
                       </div>
                     </div>
-                  </div>
-                </div>
 
-                <div class="row mb-3">
-                  <div class="col-5">
-                    <label for="gramatur-paper-item" class="form-label"
-                      >Masukan Gramatur</label
-                    >
-                  </div>
-                  <div class="col-7">
-                    <input
-                      type="text"
-                      class="form-control number-separator"
-                      inputmode="numeric"
-                      pattern="[0-9]*"
-                    />
-                    <input
-                      type="hidden"
-                      class="result-input"
-                      id="gramatur-paper-item"
-                    />
-                  </div>
-                </div>
-
-                <div class="row mb-3">
-                  <div class="col-5">
-                    <label for="pilihSatuan" class="form-label"
-                      >Ukuran Plano Tersedia</label
-                    >
-                  </div>
-                  <div class="col-7">
-                    <div class="row">
-                      <div class="col-6 my-1">
-                        <input
-                          class="form-check-input"
-                          type="radio"
-                          name="flexRadioDefault"
-                          id="flexRadioDefault1"
-                        />
-                        <label class="form-check-label" for="flexRadioDefault1">
-                          90 x 120
-                        </label>
+                    <div class="row align-items-center mb-3">
+                      <div class="col-4">
+                        <label for="merk" class="form-label mb-0 text-secondary">Merk</label>
                       </div>
-                      <div class="col-6 my-1">
-                        <input
-                          class="form-check-input"
-                          type="radio"
-                          name="flexRadioDefault"
-                          id="flexRadioDefault2"
-                          checked=""
-                        />
-                        <label class="form-check-label" for="flexRadioDefault2">
-                          97 x 109
-                        </label>
-                      </div>
-                      <div class="col-6 my-1">
-                        <input
-                          class="form-check-input"
-                          type="radio"
-                          name="flexRadioDefault"
-                          id="flexRadioDefault2"
-                          checked=""
-                        />
-                        <label class="form-check-label" for="flexRadioDefault2">
-                          65 x 100
-                        </label>
-                      </div>
-                      <div class="col-6 my-1">
-                        <input
-                          class="form-check-input"
-                          type="radio"
-                          name="flexRadioDefault"
-                          id="flexRadioDefault2"
-                          checked=""
-                        />
-                        <label class="form-check-label" for="flexRadioDefault2">
-                          65 x 90
-                        </label>
-                      </div>
-                      <div class="col-6 my-1">
-                        <input
-                          class="form-check-input"
-                          type="radio"
-                          name="flexRadioDefault"
-                          id="flexRadioDefault2"
-                          checked=""
-                        />
-                        <label class="form-check-label" for="flexRadioDefault2">
-                          61 x 92
-                        </label>
-                      </div>
-                      <div class="col-6 my-1">
-                        <input
-                          class="form-check-input"
-                          type="radio"
-                          name="flexRadioDefault"
-                          id="flexRadioDefault2"
-                          checked=""
-                        />
-                        <label class="form-check-label" for="flexRadioDefault2">
-                          61 x 68
-                        </label>
+                      <div class="col-8">
+                        <input type="text" class="form-control rounded-0" id="merk" value="Lintec" />
                       </div>
                     </div>
-                  </div>
+
+                    <div class="row align-items-center mb-3">
+                      <div class="col-4">
+                        <label for="price" class="form-label mb-0 text-secondary">Price</label>
+                      </div>
+                      <div class="col-8">
+                        <input type="text" class="form-control rounded-0" id="price" value="6.500" />
+                      </div>
+                    </div>
+
+                    <div class="row align-items-center mb-3">
+                      <div class="col-4">
+                        <label for="priceUnit" class="form-label mb-0 text-secondary">Price Unit</label>
+                      </div>
+                      <div class="col-8">
+                        <select class="form-select rounded-0" id="priceUnit">
+                          <option value="Pcs" selected>Pcs</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <div class="row align-items-center mb-3">
+                      <div class="col-4">
+                        <label for="gramature" class="form-label mb-0 text-secondary">Gramature</label>
+                      </div>
+                      <div class="col-8">
+                        <input type="text" class="form-control rounded-0" id="gramature" value="180" />
+                      </div>
+                    </div>
+
+                    <div class="row align-items-center mb-3">
+                      <div class="col-4">
+                        <label for="paperWidth" class="form-label mb-0 text-secondary">Paper Widht</label>
+                      </div>
+                      <div class="col-8">
+                        <input type="text" class="form-control rounded-0" id="paperWidth" value="75" />
+                      </div>
+                    </div>
+
+                    <div class="row align-items-center mb-4">
+                      <div class="col-4">
+                        <label for="paperHeight" class="form-label mb-0 text-secondary">Paper Height</label>
+                      </div>
+                      <div class="col-8">
+                        <input type="text" class="form-control rounded-0" id="paperHeight" value="108" />
+                      </div>
+                    </div>
+
+                    <div class="d-flex justify-content-end mt-4">
+                      <button type="button" class="btn text-white px-5 rounded-1" style="background-color: #ef8200">Save</button>
+                    </div>
+                  </form>
                 </div>
 
-                <div
-                  class="mb-3 status-toggle modal-status d-flex justify-content-between align-items-center"
-                >
-                  <span class="status-label">Status</span>
-                  <input type="checkbox" id="user2" class="check" checked="" />
-                  <label for="user2" class="checktoggle"></label>
-                </div>
+                <div class="tab-pane" id="advance" role="tabpanel" aria-labelledby="advance-tab">
+                  <form>
+                    <div class="mb-2 text-secondary">Update Stock</div>
+                    <div class="border border-secondary-subtle p-3 mb-4">
+                      <div class="row align-items-center mb-3">
+                        <div class="col-4">
+                          <label for="currentStock" class="form-label mb-0 text-secondary">Current Stock</label>
+                        </div>
+                        <div class="col-8">
+                          <input
+                            type="text"
+                            class="form-control rounded-0 bg-light border-0"
+                            id="currentStock"
+                            value="150"
+                            readonly
+                          />
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-4">
+                          <label for="addStock" class="form-label mb-0 text-secondary mt-1">Add Stock</label>
+                        </div>
+                        <div class="col-8">
+                          <input type="text" class="form-control rounded-0 mb-1" id="addStock" />
+                          <small class="text-secondary d-block">Use (-) to reduce stock</small>
+                        </div>
+                      </div>
+                    </div>
 
-                <small
-                  class="d-none text-standard text-danger"
-                  id="info-selected-all-3"
-                  ><i class="fa-solid fa-circle-info"></i> please input your
-                  specification<br
-                /></small>
-                <div class="row mb-3 justify-content-end">
-                  <div class="col-7">
-                    <button class="btn btn-primary w-100" id="save-btn-3">
-                      Simpan
-                    </button>
-                  </div>
+                    <div class="mb-2 text-secondary">Order</div>
+                    <div class="border border-secondary-subtle p-3 mb-4">
+                      <div class="row align-items-center mb-3">
+                        <div class="col-4">
+                          <label for="minOrder" class="form-label mb-0 text-secondary">Minimum Order</label>
+                        </div>
+                        <div class="col-8">
+                          <input type="text" class="form-control rounded-0" id="minOrder" />
+                        </div>
+                      </div>
+                      <div class="row align-items-center mb-3">
+                        <div class="col-4">
+                          <label for="stepOrder" class="form-label mb-0 text-secondary">Step Order</label>
+                        </div>
+                        <div class="col-8">
+                          <input type="text" class="form-control rounded-0" id="stepOrder" />
+                        </div>
+                      </div>
+                      <div class="row align-items-center">
+                        <div class="col-4">
+                          <label for="minTransaction" class="form-label mb-0 text-secondary">Minimum Transaction</label>
+                        </div>
+                        <div class="col-8">
+                          <input type="text" class="form-control rounded-0" id="minTransaction" />
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="d-flex justify-content-end mt-4">
+                      <button type="button" class="btn text-white px-5 rounded-1" style="background-color: #ef8200">Save</button>
+                    </div>
+                  </form>
                 </div>
-              </form>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+    <!-- modal for edit paper item -->
+
+    <!-- modal view -->
+    <div
+      class="modal fade text-standard"
+      id="viewPaperModal"
+      tabindex="-1"
+      aria-labelledby="viewPaperModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-md custom-modal-two">
+        <div class="modal-content rounded-0">
+          <div class="modal-header border-bottom border-dark py-3 rounded-0 custom-modal-header">
+            <h6 class="modal-title fw-bold" id="viewPaperModalLabel">View Paper List</h6>
+            <button
+              type="button"
+              class="bg-transparent border-0 fw-bold"
+              style="color: #ef8200; font-size: 1.2rem"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            >
+              X
+            </button>
+          </div>
+
+          <div class="modal-body px-4 py-3 custom-modal-body">
+            <div class="card-body p-0">
+              <ul
+                class="nav nav-tabs nav-tabs-bottom nav-justified mb-4"
+                role="tablist"
+                style="
+                  --bs-nav-tabs-border-color: #333;
+                  --bs-nav-tabs-border-width: 2px;
+                  --bs-nav-tabs-link-active-color: #ef8200;
+                  --bs-nav-tabs-link-active-border-color: transparent transparent #ef8200 transparent;
+                  --bs-nav-link-color: #6c757d;
+                  --bs-nav-link-hover-color: #ef8200;
+                "
+              >
+                <li class="nav-item" role="presentation">
+                  <a
+                    class="nav-link active fw-bold border-top-0 border-start-0 border-end-0 bg-transparent"
+                    href="#view-detail-tab"
+                    data-bs-toggle="tab"
+                    aria-selected="true"
+                    role="tab"
+                    >Detail</a
+                  >
+                </li>
+                <li class="nav-item" role="presentation">
+                  <a
+                    class="nav-link fw-bold border-top-0 border-start-0 border-end-0 bg-transparent"
+                    href="#view-history-tab"
+                    data-bs-toggle="tab"
+                    aria-selected="false"
+                    role="tab"
+                    tabindex="-1"
+                    >Stock History</a
+                  >
+                </li>
+              </ul>
+
+              <div class="tab-content">
+                <div class="tab-pane active show" id="view-detail-tab" role="tabpanel">
+                  <div class="row mb-3">
+                    <div class="col-5 text-secondary">Paper Name</div>
+                    <div class="col-7 text-dark">Sticker Cromo</div>
+                  </div>
+                  <div class="row mb-3">
+                    <div class="col-5 text-secondary">Merk</div>
+                    <div class="col-7 text-dark">Lintec</div>
+                  </div>
+                  <div class="row mb-3">
+                    <div class="col-5 text-secondary">Price</div>
+                    <div class="col-7 text-dark">6.500</div>
+                  </div>
+                  <div class="row mb-3">
+                    <div class="col-5 text-secondary">Price Unit</div>
+                    <div class="col-7 text-dark">Pcs</div>
+                  </div>
+                  <div class="row mb-3">
+                    <div class="col-5 text-secondary">Gramature</div>
+                    <div class="col-7 text-dark">180</div>
+                  </div>
+                  <div class="row mb-3">
+                    <div class="col-5 text-secondary">Paper Widht</div>
+                    <div class="col-7 text-dark">75</div>
+                  </div>
+                  <div class="row mb-3">
+                    <div class="col-5 text-secondary">Paper Height</div>
+                    <div class="col-7 text-dark">108</div>
+                  </div>
+                  <div class="row mb-3">
+                    <div class="col-5 text-secondary">Minimum Order</div>
+                    <div class="col-7 text-dark">-</div>
+                  </div>
+                  <div class="row mb-3">
+                    <div class="col-5 text-secondary">Step Order</div>
+                    <div class="col-7 text-dark">-</div>
+                  </div>
+                  <div class="row mb-3">
+                    <div class="col-5 text-secondary">Minimum Transaction</div>
+                    <div class="col-7 text-dark">10.000</div>
+                  </div>
+                </div>
+
+                <div class="tab-pane" id="view-history-tab" role="tabpanel">
+                  <div class="table-responsive">
+                    <table class="table table-borderless align-middle">
+                      <thead>
+                        <tr class="fw-bold border-bottom">
+                          <th class="px-0 pb-2">Date</th>
+                          <th class="pb-2">Reff</th>
+                          <th class="text-end pb-2">Qty</th>
+                          <th class="pb-2">Unit</th>
+                          <th class="pb-2">Created</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td class="px-0 pt-3 text-dark">25/12/2025, 15:14</td>
+                          <td class="pt-3 text-dark">Sales</td>
+                          <td class="pt-3 text-end text-dark">-100</td>
+                          <td class="pt-3 text-dark">Pcs</td>
+                          <td class="pt-3 text-dark">Admin</td>
+                        </tr>
+                        <tr>
+                          <td class="px-0 text-dark">25/12/2025, 15:14</td>
+                          <td class="text-dark">Update Stock</td>
+                          <td class="text-end text-dark">8</td>
+                          <td class="text-dark">Pcs</td>
+                          <td class="text-dark">Admin</td>
+                        </tr>
+                        <tr>
+                          <td class="px-0 text-dark">25/12/2025, 15:14</td>
+                          <td class="text-dark">Sales</td>
+                          <td class="text-end text-dark">-500</td>
+                          <td class="text-dark">Pcs</td>
+                          <td class="text-dark">Admin</td>
+                        </tr>
+                        <tr>
+                          <td class="px-0 text-dark">25/12/2025, 15:14</td>
+                          <td class="text-dark">Update Stock</td>
+                          <td class="text-end text-dark">-3</td>
+                          <td class="text-dark">Pcs</td>
+                          <td class="text-dark">Admin</td>
+                        </tr>
+                        <tr>
+                          <td class="px-0 text-dark">25/12/2025, 15:14</td>
+                          <td class="text-dark">Purchase</td>
+                          <td class="text-end text-dark">500</td>
+                          <td class="text-dark">Pcs</td>
+                          <td class="text-dark">Admin</td>
+                        </tr>
+                        <tr>
+                          <td class="px-0 text-dark">25/12/2025, 15:14</td>
+                          <td class="text-dark">Sales</td>
+                          <td class="text-end text-dark">-750</td>
+                          <td class="text-dark">Pcs</td>
+                          <td class="text-dark">Admin</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- modal view -->
 
     <!-- jQuery -->
     <script src="assets/js/jquery-3.7.1.min.js"></script>
@@ -1346,17 +1216,13 @@
           groupPanel.classList.toggle("d-none", !isGroup);
           singlePanel.classList.toggle("d-none", isGroup);
           paperNameInput.value = isGroup ? "Art Paper" : "Sticker Cromo";
-          modalTitle.textContent = isGroup
-            ? "Add New Paper List"
-            : "Add New Paper Item";
+          modalTitle.textContent = isGroup ? "Add New Paper List" : "Add New Paper Item";
         }
 
         function updateSizeCount() {
-          const checkedCount = Array.from(groupSizeInputs).filter(
-            function (input) {
-              return input.checked;
-            },
-          ).length;
+          const checkedCount = Array.from(groupSizeInputs).filter(function (input) {
+            return input.checked;
+          }).length;
 
           countLabel.textContent = checkedCount + " Paper Sizes will be saved";
         }

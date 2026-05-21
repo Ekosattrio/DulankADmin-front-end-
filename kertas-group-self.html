@@ -406,13 +406,7 @@
     <!-- /Main Wrapper -->
 
     <!-- Modal for view new paper group -->
-    <div
-      class="modal fade text-standard"
-      id="view-unit"
-      tabindex="-1"
-      aria-labelledby="view-unitLabel"
-      aria-hidden="true"
-    >
+    <div class="modal fade text-standard" id="view-unit" tabindex="-1" aria-labelledby="view-unitLabel" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered modal-md">
         <div class="modal-content">
           <div class="modal-header py-2">
@@ -457,13 +451,7 @@
     </div>
 
     <!-- Modal for add new paper group -->
-    <div
-      class="modal fade text-standard"
-      id="add-unit"
-      tabindex="-1"
-      aria-labelledby="add-unitLabel"
-      aria-hidden="true"
-    >
+    <div class="modal fade text-standard" id="add-unit" tabindex="-1" aria-labelledby="add-unitLabel" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content">
           <div class="modal-header py-2 border-bottom border-dark">
@@ -500,11 +488,7 @@
                       <h5 class="fw-bold mb-0">Add Price Group</h5>
                       <span class="fst-italic">Optional</span>
                     </div>
-                    <button
-                      type="button"
-                      class="btn btn-link text-warning text-decoration-none p-0"
-                      id="add-price-group-cancel"
-                    >
+                    <button type="button" class="btn btn-link text-warning text-decoration-none p-0" id="add-price-group-cancel">
                       <span class="fst-italic">Cancel</span> X
                     </button>
                   </div>
@@ -515,22 +499,11 @@
                     </div>
                     <div class="col-7 d-flex gap-4">
                       <div class="form-check form-check-inline">
-                        <input
-                          class="form-check-input"
-                          type="radio"
-                          name="add-price-type"
-                          id="add-fix-price"
-                          checked
-                        />
+                        <input class="form-check-input" type="radio" name="add-price-type" id="add-fix-price" checked />
                         <label class="form-check-label" for="add-fix-price">Fix Price</label>
                       </div>
                       <div class="form-check form-check-inline">
-                        <input
-                          class="form-check-input"
-                          type="radio"
-                          name="add-price-type"
-                          id="add-sample-price"
-                        />
+                        <input class="form-check-input" type="radio" name="add-price-type" id="add-sample-price" />
                         <label class="form-check-label" for="add-sample-price">Sample Price</label>
                       </div>
                     </div>
@@ -539,8 +512,8 @@
                   <div class="border border-dark p-3 mb-4 d-none" id="add-sample-info">
                     <p class="mb-2">Information :</p>
                     <p class="mb-0">
-                      The entered price will be calculated per kilogram and applied to all sizes and weights within the
-                      same paper group
+                      The entered price will be calculated per kilogram and applied to all sizes and weights within the same paper
+                      group
                     </p>
                   </div>
 
@@ -602,8 +575,10 @@
                 </div>
 
                 <div class="row mb-3 justify-content-end">
-                  <div class="col-7">
-                    <button type="submit" class="btn btn-primary w-100" id="add-save-btn">Save</button>
+                  <div class="col-12 d-flex justify-content-end gap-2">
+                    <button type="submit" class="btn btn-primary" id="add-save-btn">Save</button>
+
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
                   </div>
                 </div>
               </form>
@@ -614,13 +589,7 @@
     </div>
 
     <!-- Modal for edit new paper group -->
-    <div
-      class="modal fade text-standard"
-      id="edit-unit"
-      tabindex="-1"
-      aria-labelledby="edit-unitLabel"
-      aria-hidden="true"
-    >
+    <div class="modal fade text-standard" id="edit-unit" tabindex="-1" aria-labelledby="edit-unitLabel" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content">
           <div class="modal-header py-2 border-bottom border-dark">
@@ -657,11 +626,7 @@
                       <h5 class="fw-bold mb-0">Add Price Group</h5>
                       <span class="fst-italic">Optional</span>
                     </div>
-                    <button
-                      type="button"
-                      class="btn btn-link text-warning text-decoration-none p-0"
-                      id="edit-price-group-cancel"
-                    >
+                    <button type="button" class="btn btn-link text-warning text-decoration-none p-0" id="edit-price-group-cancel">
                       <span class="fst-italic">Cancel</span> X
                     </button>
                   </div>
@@ -672,22 +637,11 @@
                     </div>
                     <div class="col-7 d-flex gap-4">
                       <div class="form-check form-check-inline">
-                        <input
-                          class="form-check-input"
-                          type="radio"
-                          name="edit-price-type"
-                          id="edit-fix-price"
-                          checked
-                        />
+                        <input class="form-check-input" type="radio" name="edit-price-type" id="edit-fix-price" checked />
                         <label class="form-check-label" for="edit-fix-price">Fix Price</label>
                       </div>
                       <div class="form-check form-check-inline">
-                        <input
-                          class="form-check-input"
-                          type="radio"
-                          name="edit-price-type"
-                          id="edit-sample-price"
-                        />
+                        <input class="form-check-input" type="radio" name="edit-price-type" id="edit-sample-price" />
                         <label class="form-check-label" for="edit-sample-price">Sample Price</label>
                       </div>
                     </div>
@@ -696,8 +650,8 @@
                   <div class="border border-dark p-3 mb-4 d-none" id="edit-sample-info">
                     <p class="mb-2">Information :</p>
                     <p class="mb-0">
-                      The entered price will be calculated per kilogram and applied to all sizes and weights within the
-                      same paper group
+                      The entered price will be calculated per kilogram and applied to all sizes and weights within the same paper
+                      group
                     </p>
                   </div>
 
@@ -759,8 +713,10 @@
                 </div>
 
                 <div class="row mb-3 justify-content-end">
-                  <div class="col-7">
-                    <button type="submit" class="btn btn-primary w-100" id="save-btn-1">Save</button>
+                  <div class="col-12 d-flex justify-content-end gap-2">
+                    <button type="submit" class="btn btn-primary" id="add-save-btn">Save</button>
+
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
                   </div>
                 </div>
               </form>
@@ -829,7 +785,23 @@
 
         if (priceGroupCancel) {
           priceGroupCancel.addEventListener("click", function () {
-            priceGroupBox.classList.add("d-none");
+            // 1. Balikin radio ke Fix Price dan update tampilan (sembunyiin field sample)
+            if (fixPrice) {
+              fixPrice.checked = true;
+              togglePriceType();
+            }
+
+            // 2. Kosongin semua inputan text di dalem kotak price group
+            const textInputs = priceGroupBox.querySelectorAll('input[type="text"]');
+            textInputs.forEach((input) => {
+              input.value = "";
+            });
+
+            // 3. Reset semua dropdown (select) di dalem kotak ke opsi pertama
+            const selectInputs = priceGroupBox.querySelectorAll("select");
+            selectInputs.forEach((select) => {
+              select.selectedIndex = 0;
+            });
           });
         }
       }

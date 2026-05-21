@@ -1,0 +1,522 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0" />
+    <meta name="description" content="POS - Bootstrap Admin Template" />
+    <meta
+      name="keywords"
+      content="admin, estimates, bootstrap, business, corporate, creative, invoice, html5, responsive, Projects"
+    />
+    <meta name="author" content="Dreamguys - Bootstrap Admin Template" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Kacetak System</title>
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/kacetak.jpeg" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+
+    <!-- animation CSS -->
+    <link rel="stylesheet" href="assets/css/animate.css" />
+
+    <!-- Select2 CSS -->
+    <link rel="stylesheet" href="assets/plugins/select2/css/select2.min.css" />
+
+    <!-- Datetimepicker CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap-datetimepicker.min.css" />
+
+    <!-- Mobile CSS-->
+    <link rel="stylesheet" href="assets/plugins/intltelinput/css/intlTelInput.css" />
+    <link rel="stylesheet" href="assets/plugins/intltelinput/css/demo.css" />
+
+    <!-- Datatable CSS -->
+    <link rel="stylesheet" href="assets/css/dataTables.bootstrap5.min.css" />
+
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css" />
+    <link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css" />
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+
+  <body>
+    <div id="global-loader">
+      <div class="loader"></div>
+    </div>
+    <!-- Main Wrapper -->
+    <div class="main-wrapper">
+      <!-- header -->
+      <div id="header-placeholder"></div>
+      <!-- sidebar -->
+      <div id="sidebar-placeholder"></div>
+
+      <div class="page-wrapper mt-3">
+        <!-- Main content tulis disini -->
+        <div class="content">
+          <div class="page-header">
+            <div class="add-item d-flex">
+              <div class="page-title">
+                <h4>Balance Account</h4>
+                <h6>Manage Balance Account</h6>
+              </div>
+            </div>
+            <ul class="table-top-head">
+              <li>
+                <a data-bs-toggle="tooltip" data-bs-placement="top" title="Pdf"
+                  ><img src="assets/img/icons/pdf.svg" alt="img"
+                /></a>
+              </li>
+              <li>
+                <a data-bs-toggle="tooltip" data-bs-placement="top" title="Print"
+                  ><i data-feather="printer" class="feather-rotate-ccw"></i
+                ></a>
+              </li>
+              <li>
+                <a data-bs-toggle="tooltip" data-bs-placement="top" title="Refresh"
+                  ><i data-feather="rotate-ccw" class="feather-rotate-ccw"></i
+                ></a>
+              </li>
+              <li>
+                <a data-bs-toggle="tooltip" data-bs-placement="top" title="Collapse" id="collapse-header"
+                  ><i data-feather="chevron-up" class="feather-chevron-up"></i
+                ></a>
+              </li>
+            </ul>
+            <div class="page-btn">
+              <a href="" class="btn btn-added" data-bs-toggle="modal" data-bs-target="#add-units"
+                ><i data-feather="plus-circle" class="me-2"></i>Add Balance</a
+              >
+            </div>
+          </div>
+          <div class="row mt-5">
+            <div class="col-xl-3 col-sm-6 col-12 d-flex">
+              <div class="dash-widget w-100">
+                <div class="dash-widgetimg">
+                  <span><img src="assets/img/icons/dash1.svg" alt="img" /></span>
+                </div>
+                <div class="dash-widgetcontent">
+                  <h6>Total Balance</h6>
+                  <h5>Rp<span class="counters" data-count="4385">4385</span></h5>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-sm-6 col-12 d-flex">
+              <div class="dash-widget dash1 w-100">
+                <div class="dash-widgetimg">
+                  <span><img src="assets/img/icons/dash2.svg" alt="img" /></span>
+                </div>
+
+                <div class="dash-widgetcontent">
+                  <h6>Total Customers</h6>
+                  <h5><span class="counters" data-count="307144">307144</span></h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- /product list -->
+          <div class="card table-list-card">
+            <div class="card-body">
+              <!-- Filter -->
+              <div class="table-top d-flex align-items-center justify-content-between">
+                <!-- Search Input -->
+                <div class="search-set d-block d-md-flex">
+                  <div class="search-input">
+                    <a href="" class="btn btn-searchset"><i data-feather="search" class="feather-search"></i></a>
+                  </div>
+                  <!-- Date Range -->
+                  <div class="my-2">
+                    <div class="pemilihrentang-container">
+                      <input
+                        type="text"
+                        id="pemilihrentang-input"
+                        class="pemilihrentang-input form-control"
+                        readonly
+                        placeholder="Date"
+                        style="height: fit-content !important; width: 100% !important"
+                      />
+                      <div id="pemilihrentang-panel" class="pemilihrentang-panel">
+                        <div class="pemilihrentang-isi">
+                          <div class="opsi-cepat">
+                            <div data-range="kemarin">Kemarin</div>
+                            <div data-range="7hari">7 Hari Terakhir</div>
+                            <div data-range="bulanIni">Bulan Ini</div>
+                            <div data-range="bulanLalu">Bulan Lalu</div>
+                            <div data-range="tahunLalu">Tahun Lalu</div>
+                            <div data-range="kustom">Rentang Kustom</div>
+                          </div>
+                          <div class="kalender" id="kalender-view" style="display: none"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="filters d-flex justify-content-end">
+                  <div class="dropdown w-100">
+                    <button
+                      class="btn btn-outline-primary dropdown-toggle"
+                      type="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                      Customer Type
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">corporate</a></li>
+                      <li><a class="dropdown-item" href="#">general</a></li>
+                      <li><a class="dropdown-item" href="#">reseller</a></li>
+                      <li><a class="dropdown-item" href="#">vip</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <!-- /Filter -->
+
+              <!-- My Incentive Table -->
+              <div class="table-responsive mb-5">
+                <table class="table datanew">
+                  <thead>
+                    <tr>
+                      <th>Customer ID</th>
+                      <th>Name</th>
+                      <th>Customer Type</th>
+                      <th>Balance Amount</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>ID000001</td>
+                      <td>Aditya Pratama</td>
+                      <td>Corporate</td>
+                      <td>1.500.000</td>
+                      <td class="action-table-data">
+                        <div class="edit-delete-action">
+                          <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#view-units">
+                            <i data-feather="eye" class="feather-eye"></i>
+                          </a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>ID000006</td>
+                      <td>Fitri Handayani</td>
+                      <td>General</td>
+                      <td>350.000</td>
+                      <td class="action-table-data">
+                        <div class="edit-delete-action">
+                          <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#view-units">
+                            <i data-feather="eye" class="feather-eye"></i>
+                          </a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>ID000007</td>
+                      <td>Guntur Saputra</td>
+                      <td>Reseller</td>
+                      <td>257.000</td>
+                      <td class="action-table-data">
+                        <div class="edit-delete-action">
+                          <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#view-units">
+                            <i data-feather="eye" class="feather-eye"></i>
+                          </a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>ID000008</td>
+                      <td>Hana Pertiwi</td>
+                      <td>VIP</td>
+                      <td>12.000</td>
+                      <td class="action-table-data">
+                        <div class="edit-delete-action">
+                          <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#view-units">
+                            <i data-feather="eye" class="feather-eye"></i>
+                          </a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>ID000013</td>
+                      <td>Maya Indah</td>
+                      <td>General</td>
+                      <td>58.000</td>
+                      <td class="action-table-data">
+                        <div class="edit-delete-action">
+                          <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#view-units">
+                            <i data-feather="eye" class="feather-eye"></i>
+                          </a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>ID000014</td>
+                      <td>Nanang Kosim</td>
+                      <td>Corporate</td>
+                      <td>75.000</td>
+                      <td class="action-table-data">
+                        <div class="edit-delete-action">
+                          <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#view-units">
+                            <i data-feather="eye" class="feather-eye"></i>
+                          </a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>ID000017</td>
+                      <td>Ratna Juwita</td>
+                      <td>Reseller</td>
+                      <td>85.000</td>
+                      <td class="action-table-data">
+                        <div class="edit-delete-action">
+                          <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#view-units">
+                            <i data-feather="eye" class="feather-eye"></i>
+                          </a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>ID000018</td>
+                      <td>Surya Kencana</td>
+                      <td>Corporate</td>
+                      <td>478.000</td>
+                      <td class="action-table-data">
+                        <div class="edit-delete-action">
+                          <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#view-units">
+                            <i data-feather="eye" class="feather-eye"></i>
+                          </a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>ID000019</td>
+                      <td>Tri Utami</td>
+                      <td>General</td>
+                      <td>254.000</td>
+                      <td class="action-table-data">
+                        <div class="edit-delete-action">
+                          <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#view-units">
+                            <i data-feather="eye" class="feather-eye"></i>
+                          </a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>ID000020</td>
+                      <td>Wahyu Hidayat</td>
+                      <td>VIP</td>
+                      <td>657.000</td>
+                      <td class="action-table-data">
+                        <div class="edit-delete-action">
+                          <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#view-units">
+                            <i data-feather="eye" class="feather-eye"></i>
+                          </a>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                  <!-- <tfoot>
+                    <tr>
+                      <td class="text-start fw-bold" colspan="3">Total</td>
+                      <td id="amount-total" class="fw-bold sum-target" data-col-index="3"></td>
+                      <td></td>
+                    </tr>
+                  </tfoot> -->
+                </table>
+              </div>
+            </div>
+          </div>
+          <!-- /product list -->
+        </div>
+      </div>
+    </div>
+    <!-- /Main Wrapper -->
+
+    <!-- modal -->
+
+    <!-- add unit -->
+    <div class="modal fade text-standard" id="add-units" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-md custom-modal-two">
+        <div class="modal-content rounded-0">
+          <div class="page-wrapper-new p-0">
+            <div class="content">
+              <div class="modal-header border-bottom border-dark py-3 rounded-0 custom-modal-header">
+                <h6 class="modal-title fw-bold">Add Balance Account - Top Up</h6>
+                <button
+                  type="button"
+                  class="bg-transparent border-0 text-primary fw-bold fs-5"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                >
+                  X
+                </button>
+              </div>
+
+              <form action="customers.html">
+                <div class="modal-body px-4 py-4 custom-modal-body">
+                  <div class="row align-items-center mb-3">
+                    <div class="col-4">
+                      <label class="form-label mb-0 text-secondary">Customer</label>
+                    </div>
+                    <div class="col-8">
+                      <input type="text" class="form-control rounded-0" />
+                    </div>
+                  </div>
+
+                  <div class="row align-items-center mb-3">
+                    <div class="col-4">
+                      <label class="form-label mb-0 text-secondary">Customer ID</label>
+                    </div>
+                    <div class="col-8">
+                      <input type="text" class="form-control rounded-0 bg-light" value="ID00002" disabled />
+                    </div>
+                  </div>
+
+                  <div class="row align-items-center mb-3">
+                    <div class="col-4">
+                      <label class="form-label mb-0 text-secondary">Email</label>
+                    </div>
+                    <div class="col-8">
+                      <input type="email" class="form-control rounded-0 bg-light" value="siti.aminah@gmail.com" disabled />
+                    </div>
+                  </div>
+
+                  <div class="row align-items-center mb-4">
+                    <div class="col-4">
+                      <label class="form-label mb-0 text-secondary">Source</label>
+                    </div>
+                    <div class="col-8">
+                      <input type="text" class="form-control rounded-0 bg-light" value="Balance Account" disabled />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="d-flex justify-content-end px-4 pb-4">
+                  <button type="button" class="btn btn-secondary me-2 rounded-1 px-4" data-bs-dismiss="modal">Cancel</button>
+                  <button type="submit" class="btn btn-primary rounded-1 px-4">Submit</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- add unit -->
+
+    <!-- view units -->
+    <div class="modal fade text-standard" id="view-units" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-md custom-modal-two">
+        <div class="modal-content rounded-0">
+          <div class="modal-header border-bottom border-dark py-3 rounded-0 custom-modal-header">
+            <h6 class="modal-title fw-bold">Detail Balance Account</h6>
+            <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+
+          <div class="modal-body px-4 py-3 custom-modal-body">
+            <div class="row mb-3 mt-2">
+              <div class="col-5 text-secondary">Customer</div>
+              <div class="col-7 text-dark">Siti Aminah</div>
+            </div>
+            <div class="row mb-3">
+              <div class="col-5 text-secondary">Customer ID</div>
+              <div class="col-7 text-dark">ID000002</div>
+            </div>
+            <div class="row mb-3">
+              <div class="col-5 text-secondary">Email</div>
+              <div class="col-7 text-dark">siti.aminah@yahoo.co.id</div>
+            </div>
+            <div class="row mb-3">
+              <div class="col-5 text-secondary">Source</div>
+              <div class="col-7 text-dark">Balance Account</div>
+            </div>
+            <div class="row mb-3">
+              <div class="col-5 text-secondary">Total Amount</div>
+              <div class="col-7 text-dark">2.500.000</div>
+            </div>
+
+            <h6 class="fw-bold mt-5 mb-3 text-dark">History Balance</h6>
+            <div class="table-responsive mb-4">
+              <table class="table table-borderless align-middle mb-0">
+                <thead>
+                  <tr class="fw-bold text-dark">
+                    <th class="px-0 pb-2">Date</th>
+                    <th class="pb-2">Description</th>
+                    <th class="pb-2">Amount</th>
+                    <th class="pb-2">Total Balance</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="px-0 pt-3 text-dark">25/12/2026</td>
+                    <td class="pt-3 text-dark">Top Up</td>
+                    <td class="pt-3 text-dark">2.500.000</td>
+                    <td class="pt-3 text-dark">2.500.000</td>
+                  </tr>
+                  <tr>
+                    <td class="px-0 pt-3 text-dark">25/12/2026</td>
+                    <td class="pt-3 text-dark">Sales</td>
+                    <td class="pt-3 text-dark">150.000</td>
+                    <td class="pt-3 text-dark">0</td>
+                  </tr>
+                  <tr>
+                    <td class="px-0 pt-3 text-dark">25/12/2026</td>
+                    <td class="pt-3 text-dark">Sales Return</td>
+                    <td class="pt-3 text-dark">150.000</td>
+                    <td class="pt-3 text-dark">150.000</td>
+                  </tr>
+                  <tr>
+                    <td class="px-0 pt-3 text-dark">25/12/2026</td>
+                    <td class="pt-3 text-dark">Sales</td>
+                    <td class="pt-3 text-dark">275.000</td>
+                    <td class="pt-3 text-dark">0</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="d-flex justify-content-end mt-4">
+              <button type="button" class="btn btn-primary px-5 rounded-1" data-bs-dismiss="modal">Save</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- view units -->
+    <!-- modal -->
+    <!-- jQuery -->
+    <script src="assets/js/jquery-3.7.1.min.js"></script>
+
+    <!-- Feather Icon JS -->
+    <script src="assets/js/feather.min.js"></script>
+
+    <!-- Slimscroll JS -->
+    <script src="assets/js/jquery.slimscroll.min.js"></script>
+
+    <!-- Datatable JS -->
+    <script src="assets/js/jquery.dataTables.min.js"></script>
+    <script src="assets/js/dataTables.bootstrap5.min.js"></script>
+
+    <!-- Bootstrap Core JS -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Datetimepicker JS -->
+    <script src="assets/js/moment.min.js"></script>
+    <script src="assets/js/bootstrap-datetimepicker.min.js"></script>
+
+    <!-- Mobile Input -->
+    <script src="assets/plugins/intltelinput/js/intlTelInput.js"></script>
+
+    <!-- Select2 JS -->
+    <script src="assets/plugins/select2/js/select2.min.js"></script>
+
+    <!-- Sweetalert 2 -->
+    <script src="assets/plugins/sweetalert/sweetalert2.all.min.js"></script>
+    <script src="assets/plugins/sweetalert/sweetalerts.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="assets/js/theme-script.js"></script>
+    <script src="assets/js/script.js"></script>
+  </body>
+</html>

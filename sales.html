@@ -157,12 +157,21 @@
 									data-feather="chevron-up" class="feather-chevron-up"></i></a>
 						</li>
 					</ul>
-					<div class="page-btn">
-						<a href="add-sales.html" class="btn btn-added"><i data-feather="plus-circle" class="me-2"></i>
-							Add Sales</a>
-						<a href="#" data-bs-toggle="modal" data-bs-target="#delete-sales-history" class="btn btn-added btn-danger mt-1"><i data-feather="trash" class="me-2"></i>
-							Delete Sales History</a>
-					</div>
+					<div class="page-btn d-flex flex-wrap align-items-center gap-2">
+    <a href="add-sales.html" class="btn btn-added"><i data-feather="plus-circle" class="me-2"></i>Add Sales</a>
+    
+</div>
+				</div>
+				<div class="row justify-content-end mb-3">
+					<div class="col-6 justify-content-end d-flex gap-2">
+    <a href="#" data-bs-toggle="modal" data-bs-target="#delete-sales-history" class="btn btn-outline-danger btn-sm py-1 px-2">
+        <i data-feather="trash" class="me-1" style="width: 14px; height: 14px;"></i>Delete Sales History
+    </a>
+    
+    <a href="#" data-bs-toggle="modal" data-bs-target="#cancel-transaction-history" class="btn btn-outline-secondary btn-sm py-1 px-2">
+        <i data-feather="x-circle" class="me-1" style="width: 14px; height: 14px;"></i>Cancel Transaction History
+    </a>
+</div>
 				</div>
 				<!-- /product list -->
 				<div class="card table-list-card">
@@ -2188,7 +2197,8 @@
 	</div>
 	<!-- /Main Wrapper -->
 	<!-- modals -->
-	<div class="modal fade modal-default" id="delete-sales-history" tabindex="-1" aria-labelledby="deleteSalesHistoryLabel"
+	<!-- delet history -->
+	 <div class="modal fade modal-default" id="delete-sales-history" tabindex="-1" aria-labelledby="deleteSalesHistoryLabel"
 		aria-hidden="true">
 		<div class="modal-dialog modal-dialog-centered">
 			<div class="modal-content">
@@ -2331,6 +2341,111 @@
 			</div>
 		</div>
 	</div>
+	<!-- delet history -->
+
+	<!-- cancel transaction History -->
+	<div class="modal fade modal-default" id="cancel-transaction-history" tabindex="-1" aria-labelledby="cancelSalesHistoryLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="cancelSalesHistoryLabel">Canceled Transaction</h5>
+                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row align-items-center mb-3">
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-2">
+                        <div class="pemilihrentang-container">
+                            <input type="text" id="canceledSalesDateFilter"
+                                class="pemilihrentang-input form-control" readonly placeholder="Date"
+                                aria-label="Filter date canceled sales">
+                            <div id="canceledSalesDatePanel" class="pemilihrentang-panel">
+                                <div class="pemilihrentang-isi">
+                                    <div class="opsi-cepat">
+                                        <div data-range="kemarin">Kemarin</div>
+                                        <div data-range="7hari">7 Hari Terakhir</div>
+                                        <div data-range="bulanIni">Bulan Ini</div>
+                                        <div data-range="bulanLalu">Bulan Lalu</div>
+                                        <div data-range="tahunLalu">Tahun Lalu</div>
+                                        <div data-range="kustom">Rentang Kustom</div>
+                                    </div>
+                                    <div class="kalender" id="canceledSalesCalendarView" style="display:none;">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-2">
+                        <input type="search" class="form-control" id="canceledSalesSearch" placeholder="Searching"
+                            aria-label="Search canceled sales">
+                    </div>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>No Sales</th>
+                                <th>Customer</th>
+                                <th>Date Cancel</th>
+                                <th class="text-end">Total Refund</th>
+                                <th>Created</th>
+                            </tr>
+                        </thead>
+                        <tbody id="canceledSalesHistoryBody">
+                            <tr data-cancel-month="2025-08" data-search="2508000011 pt dirgantara 28/08/2025 3174700 amin">
+                                <td class="str-value">2508000011</td>
+                                <td>PT Dirgantara</td>
+                                <td>28/08/2025</td>
+                                <td class="text-end" data-amount="3174700">3.174.700</td>
+                                <td>Amin</td>
+                            </tr>
+                            <tr data-cancel-month="2025-08" data-search="2508000012 bapak joko 25/08/2025 666000 amin">
+                                <td class="str-value">2508000012</td>
+                                <td>Bapak Joko</td>
+                                <td>25/08/2025</td>
+                                <td class="text-end" data-amount="666000">666.000</td>
+                                <td>Amin</td>
+                            </tr>
+                            <tr data-cancel-month="2025-08" data-search="2508000013 toko perlengkapan 20/08/2025 5416800 amin">
+                                <td class="str-value">2508000013</td>
+                                <td>Toko Perlengkapan</td>
+                                <td>20/08/2025</td>
+                                <td class="text-end" data-amount="5416800">5.416.800</td>
+                                <td>Amin</td>
+                            </tr>
+                            <tr data-cancel-month="2025-07" data-search="2507000014 pt angkasa raya 15/07/2025 1998000 amin">
+                                <td class="str-value">2507000014</td>
+                                <td>PT Angkasa Raya</td>
+                                <td>15/07/2025</td>
+                                <td class="text-end" data-amount="1998000">1.998.000</td>
+                                <td>Amin</td>
+                            </tr>
+                            <tr class="history-empty-row d-none">
+                                <td colspan="5" class="text-center text-muted">Data tidak ditemukan</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="2"></td>
+                                <td class="text-end">Total</td>
+                                <td class="text-end" id="canceledSalesHistoryTotal">0</td>
+                                <td></td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+
+            </div>
+            <div class="modal-footer justify-content-end">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+	<!-- cancel transaction History -->
 
 	<!-- Add Unit -->
 	<div class="modal fade" id="add-sels">
@@ -3508,262 +3623,303 @@
 		});
 	</script>
 	<script>
-		document.addEventListener("DOMContentLoaded", function () {
-			const historyModal = document.getElementById("delete-sales-history");
-			if (!historyModal) return;
+    document.addEventListener("DOMContentLoaded", function () {
+        // Konfigurasi ID Selector untuk kedua fitur (Delete dan Cancel)
+        const modules = [
+            {
+                modalId: "delete-sales-history",
+                filterId: "#deletedSalesDateFilter",
+                panelId: "#deletedSalesDatePanel",
+                calendarId: "#deletedSalesCalendarView",
+                searchId: "#deletedSalesSearch",
+                totalId: "#deletedSalesHistoryTotal",
+                bodyId: "#deletedSalesHistoryBody"
+            },
+            {
+                modalId: "cancel-transaction-history",
+                filterId: "#canceledSalesDateFilter",
+                panelId: "#canceledSalesDatePanel",
+                calendarId: "#canceledSalesCalendarView",
+                searchId: "#canceledSalesSearch",
+                totalId: "#canceledSalesHistoryTotal",
+                bodyId: "#canceledSalesHistoryBody"
+            }
+        ];
 
-			const dateFilter = historyModal.querySelector("#deletedSalesDateFilter");
-			const datePanel = historyModal.querySelector("#deletedSalesDatePanel");
-			const quickOptions = datePanel.querySelector(".opsi-cepat");
-			const calendarView = historyModal.querySelector("#deletedSalesCalendarView");
-			const searchInput = historyModal.querySelector("#deletedSalesSearch");
-			const totalDisplay = historyModal.querySelector("#deletedSalesHistoryTotal");
-			const emptyRow = historyModal.querySelector(".history-empty-row");
-			const rows = Array.from(historyModal.querySelectorAll("#deletedSalesHistoryBody tr:not(.history-empty-row)"));
-			let startDate = null;
-			let endDate = null;
-			const today = new Date();
-			let firstCalendarMonth = new Date(today.getFullYear(), today.getMonth(), 1);
-			const monthNames = [
-				"Januari", "Februari", "Maret", "April", "Mei", "Juni",
-				"Juli", "Agustus", "September", "Oktober", "November", "Desember"
-			];
+        const monthNames = [
+            "Januari", "Februari", "Maret", "April", "Mei", "Juni",
+            "Juli", "Agustus", "September", "Oktober", "November", "Desember"
+        ];
 
-			function formatIDR(value) {
-				return String(value).replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-			}
+        function formatIDR(value) {
+            return String(value).replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+        }
 
-			function pad2(value) {
-				return String(value).padStart(2, "0");
-			}
+        function pad2(value) {
+            return String(value).padStart(2, "0");
+        }
 
-			function formatDate(date) {
-				return `${pad2(date.getDate())}/${pad2(date.getMonth() + 1)}/${date.getFullYear()}`;
-			}
+        function formatDate(date) {
+            return `${pad2(date.getDate())}/${pad2(date.getMonth() + 1)}/${date.getFullYear()}`;
+        }
 
-			function parseDate(value) {
-				const parts = value.split("/");
-				if (parts.length !== 3) return null;
-				return new Date(parseInt(parts[2], 10), parseInt(parts[1], 10) - 1, parseInt(parts[0], 10));
-			}
+        function parseDate(value) {
+            const parts = value.split("/");
+            if (parts.length !== 3) return null;
+            return new Date(parseInt(parts[2], 10), parseInt(parts[1], 10) - 1, parseInt(parts[0], 10));
+        }
 
-			function rowDate(row) {
-				return parseDate(row.children[2].textContent.trim());
-			}
+        function sameDate(a, b) {
+            return a.getFullYear() === b.getFullYear() && a.getMonth() === b.getMonth() && a.getDate() === b.getDate();
+        }
 
-			function sameDate(a, b) {
-				return a.getFullYear() === b.getFullYear() && a.getMonth() === b.getMonth() && a.getDate() === b.getDate();
-			}
+        // Loop untuk menginisialisasi setiap modal secara independen
+        modules.forEach(function (mod) {
+            const historyModal = document.getElementById(mod.modalId);
+            if (!historyModal) return;
 
-			function highlightCalendar() {
-				calendarView.querySelectorAll("td").forEach(function (td) {
-					td.classList.remove("terpilih", "dalam-rentang");
-					if (!td.dataset.date) return;
+            const dateFilter = historyModal.querySelector(mod.filterId);
+            const datePanel = historyModal.querySelector(mod.panelId);
+            const quickOptions = datePanel.querySelector(".opsi-cepat");
+            const calendarView = historyModal.querySelector(mod.calendarId);
+            const searchInput = historyModal.querySelector(mod.searchId);
+            const totalDisplay = historyModal.querySelector(mod.totalId);
+            const emptyRow = historyModal.querySelector(".history-empty-row");
+            const rows = Array.from(historyModal.querySelectorAll(`${mod.bodyId} tr:not(.history-empty-row)`));
+            
+            let startDate = null;
+            let endDate = null;
+            const today = new Date();
+            let firstCalendarMonth = new Date(today.getFullYear(), today.getMonth(), 1);
 
-					const currentDate = new Date(td.dataset.date);
-					if (startDate && sameDate(currentDate, startDate)) td.classList.add("terpilih");
-					if (endDate && sameDate(currentDate, endDate)) td.classList.add("terpilih");
-					if (startDate && endDate && currentDate >= startDate && currentDate <= endDate) {
-						td.classList.add("dalam-rentang");
-					}
-				});
-			}
+            function rowDate(row) {
+                return parseDate(row.children[2].textContent.trim());
+            }
 
-			function generateCalendar() {
-				calendarView.innerHTML = "";
-				const isMobile = window.innerWidth <= 768;
-				const monthCount = isMobile ? 1 : 2;
+            function highlightCalendar() {
+                calendarView.querySelectorAll("td").forEach(function (td) {
+                    td.classList.remove("terpilih", "dalam-rentang");
+                    if (!td.dataset.date) return;
 
-				for (let i = 0; i < monthCount; i++) {
-					const month = new Date(firstCalendarMonth.getFullYear(), firstCalendarMonth.getMonth() + i, 1);
-					const monthDiv = document.createElement("div");
-					monthDiv.className = "bulan-kalender";
-					const header = document.createElement("div");
-					header.className = "bulan-header";
-					let monthSelect = '<select class="select-bulan">';
-					monthNames.forEach(function (monthName, index) {
-						monthSelect += `<option value="${index}" ${index === month.getMonth() ? "selected" : ""}>${monthName}</option>`;
-					});
-					monthSelect += "</select>";
-					let yearSelect = '<select class="select-tahun">';
-					for (let year = 1970; year <= 2100; year++) {
-						yearSelect += `<option value="${year}" ${year === month.getFullYear() ? "selected" : ""}>${year}</option>`;
-					}
-					yearSelect += "</select>";
+                    const currentDate = new Date(td.dataset.date);
+                    if (startDate && sameDate(currentDate, startDate)) td.classList.add("terpilih");
+                    if (endDate && sameDate(currentDate, endDate)) td.classList.add("terpilih");
+                    if (startDate && endDate && currentDate >= startDate && currentDate <= endDate) {
+                        td.classList.add("dalam-rentang");
+                    }
+                });
+            }
 
-					if (isMobile) {
-						header.innerHTML = `<button class="nav-prev">&lt;</button><div class="bulan-tahun">${monthSelect} ${yearSelect}</div><button class="nav-next">&gt;</button>`;
-					} else if (i === 0) {
-						header.innerHTML = `<button class="nav-prev">&lt;</button><div class="bulan-tahun">${monthSelect} ${yearSelect}</div>`;
-					} else {
-						header.innerHTML = `<div class="bulan-tahun">${monthSelect} ${yearSelect}</div><button class="nav-next">&gt;</button>`;
-					}
-					monthDiv.appendChild(header);
+            function generateCalendar() {
+                calendarView.innerHTML = "";
+                const isMobile = window.innerWidth <= 768;
+                const monthCount = isMobile ? 1 : 2;
 
-					const table = document.createElement("table");
-					let calendarRows = "<thead><tr><th>Mg</th><th>Sn</th><th>Sl</th><th>Rb</th><th>Km</th><th>Jm</th><th>Sb</th></tr></thead><tbody><tr>";
-					const firstDayIndex = new Date(month.getFullYear(), month.getMonth(), 1).getDay();
-					const lastDate = new Date(month.getFullYear(), month.getMonth() + 1, 0).getDate();
+                for (let i = 0; i < monthCount; i++) {
+                    const month = new Date(firstCalendarMonth.getFullYear(), firstCalendarMonth.getMonth() + i, 1);
+                    const monthDiv = document.createElement("div");
+                    monthDiv.className = "bulan-kalender";
+                    const header = document.createElement("div");
+                    header.className = "bulan-header";
+                    
+                    let monthSelect = '<select class="select-bulan">';
+                    monthNames.forEach(function (monthName, index) {
+                        monthSelect += `<option value="${index}" ${index === month.getMonth() ? "selected" : ""}>${monthName}</option>`;
+                    });
+                    monthSelect += "</select>";
+                    
+                    let yearSelect = '<select class="select-tahun">';
+                    for (let year = 1970; year <= 2100; year++) {
+                        yearSelect += `<option value="${year}" ${year === month.getFullYear() ? "selected" : ""}>${year}</option>`;
+                    }
+                    yearSelect += "</select>";
 
-					for (let day = 0; day < firstDayIndex; day++) calendarRows += "<td></td>";
-					for (let day = 1; day <= lastDate; day++) {
-						const cellDate = new Date(month.getFullYear(), month.getMonth(), day);
-						calendarRows += `<td data-date="${cellDate}">${day}</td>`;
-						if ((firstDayIndex + day) % 7 === 0) calendarRows += "</tr><tr>";
-					}
-					calendarRows += "</tr></tbody>";
-					table.innerHTML = calendarRows;
-					monthDiv.appendChild(table);
-					calendarView.appendChild(monthDiv);
-				}
+                    if (isMobile) {
+                        header.innerHTML = `<button class="nav-prev">&lt;</button><div class="bulan-tahun">${monthSelect} ${yearSelect}</div><button class="nav-next">&gt;</button>`;
+                    } else if (i === 0) {
+                        header.innerHTML = `<button class="nav-prev">&lt;</button><div class="bulan-tahun">${monthSelect} ${yearSelect}</div>`;
+                    } else {
+                        header.innerHTML = `<div class="bulan-tahun">${monthSelect} ${yearSelect}</div><button class="nav-next">&gt;</button>`;
+                    }
+                    monthDiv.appendChild(header);
 
-				const actions = document.createElement("div");
-				actions.className = "kalender-aksi";
-				actions.innerHTML = '<button class="batal">Batal</button><button class="terapkan">Terapkan</button>';
-				calendarView.appendChild(actions);
+                    const table = document.createElement("table");
+                    let calendarRows = "<thead><tr><th>Mg</th><th>Sn</th><th>Sl</th><th>Rb</th><th>Km</th><th>Jm</th><th>Sb</th></tr></thead><tbody><tr>";
+                    const firstDayIndex = new Date(month.getFullYear(), month.getMonth(), 1).getDay();
+                    const lastDate = new Date(month.getFullYear(), month.getMonth() + 1, 0).getDate();
 
-				const prevBtn = calendarView.querySelector(".nav-prev");
-				const nextBtn = calendarView.querySelector(".nav-next");
-				if (prevBtn) {
-					prevBtn.onclick = function (event) {
-						event.stopPropagation();
-						firstCalendarMonth.setMonth(firstCalendarMonth.getMonth() - 1);
-						generateCalendar();
-					};
-				}
-				if (nextBtn) {
-					nextBtn.onclick = function (event) {
-						event.stopPropagation();
-						firstCalendarMonth.setMonth(firstCalendarMonth.getMonth() + 1);
-						generateCalendar();
-					};
-				}
+                    for (let day = 0; day < firstDayIndex; day++) calendarRows += "<td></td>";
+                    for (let day = 1; day <= lastDate; day++) {
+                        const cellDate = new Date(month.getFullYear(), month.getMonth(), day);
+                        calendarRows += `<td data-date="${cellDate}">${day}</td>`;
+                        if ((firstDayIndex + day) % 7 === 0) calendarRows += "</tr><tr>";
+                    }
+                    calendarRows += "</tr></tbody>";
+                    table.innerHTML = calendarRows;
+                    monthDiv.appendChild(table);
+                    calendarView.appendChild(monthDiv);
+                }
 
-				calendarView.querySelectorAll(".select-bulan").forEach(function (select) {
-					select.addEventListener("change", function (event) {
-						firstCalendarMonth.setMonth(parseInt(event.target.value, 10));
-						generateCalendar();
-					});
-				});
-				calendarView.querySelectorAll(".select-tahun").forEach(function (select) {
-					select.addEventListener("change", function (event) {
-						firstCalendarMonth.setFullYear(parseInt(event.target.value, 10));
-						generateCalendar();
-					});
-				});
-				calendarView.querySelectorAll("td[data-date]").forEach(function (td) {
-					td.addEventListener("click", function (event) {
-						event.stopPropagation();
-						const clickedDate = new Date(td.dataset.date);
-						if (!startDate || (startDate && endDate)) {
-							startDate = clickedDate;
-							endDate = null;
-						} else {
-							endDate = clickedDate;
-							if (endDate < startDate) [startDate, endDate] = [endDate, startDate];
-						}
-						highlightCalendar();
-					});
-				});
-				actions.querySelector(".batal").onclick = function (event) {
-					event.stopPropagation();
-					calendarView.style.display = "none";
-					quickOptions.style.display = "block";
-				};
-				actions.querySelector(".terapkan").onclick = function (event) {
-					event.stopPropagation();
-					if (startDate && endDate) {
-						dateFilter.value = `${formatDate(startDate)} - ${formatDate(endDate)}`;
-						datePanel.style.display = "none";
-						filterDeletedSalesHistory();
-					}
-				};
+                const actions = document.createElement("div");
+                actions.className = "kalender-aksi";
+                actions.innerHTML = '<button class="batal">Batal</button><button class="terapkan">Terapkan</button>';
+                calendarView.appendChild(actions);
 
-				highlightCalendar();
-			}
+                const prevBtn = calendarView.querySelector(".nav-prev");
+                const nextBtn = calendarView.querySelector(".nav-next");
+                if (prevBtn) {
+                    prevBtn.onclick = function (event) {
+                        event.stopPropagation();
+                        firstCalendarMonth.setMonth(firstCalendarMonth.getMonth() - 1);
+                        generateCalendar();
+                    };
+                }
+                if (nextBtn) {
+                    nextBtn.onclick = function (event) {
+                        event.stopPropagation();
+                        firstCalendarMonth.setMonth(firstCalendarMonth.getMonth() + 1);
+                        generateCalendar();
+                    };
+                }
 
-			function filterDeletedSalesHistory() {
-				const keyword = searchInput.value.trim().toLowerCase();
-				let total = 0;
-				let visibleRows = 0;
+                calendarView.querySelectorAll(".select-bulan").forEach(function (select) {
+                    select.addEventListener("change", function (event) {
+                        firstCalendarMonth.setMonth(parseInt(event.target.value, 10));
+                        generateCalendar();
+                    });
+                });
+                calendarView.querySelectorAll(".select-tahun").forEach(function (select) {
+                    select.addEventListener("change", function (event) {
+                        firstCalendarMonth.setFullYear(parseInt(event.target.value, 10));
+                        generateCalendar();
+                    });
+                });
+                calendarView.querySelectorAll("td[data-date]").forEach(function (td) {
+                    td.addEventListener("click", function (event) {
+                        event.stopPropagation();
+                        const clickedDate = new Date(td.dataset.date);
+                        if (!startDate || (startDate && endDate)) {
+                            startDate = clickedDate;
+                            endDate = null;
+                        } else {
+                            endDate = clickedDate;
+                            if (endDate < startDate) [startDate, endDate] = [endDate, startDate];
+                        }
+                        highlightCalendar();
+                    });
+                });
+                actions.querySelector(".batal").onclick = function (event) {
+                    event.stopPropagation();
+                    calendarView.style.display = "none";
+                    quickOptions.style.display = "block";
+                    datePanel.style.display = "none";
+                };
+                actions.querySelector(".terapkan").onclick = function (event) {
+                    event.stopPropagation();
+                    if (startDate && endDate) {
+                        dateFilter.value = `${formatDate(startDate)} - ${formatDate(endDate)}`;
+                        datePanel.style.display = "none";
+                        filterHistory();
+                    }
+                };
 
-				rows.forEach(function (row) {
-					const deletedAt = rowDate(row);
-					const matchDate = !startDate || !endDate || (deletedAt >= startDate && deletedAt <= endDate);
-					const matchSearch = !keyword || row.dataset.search.includes(keyword);
-					const shouldShow = matchDate && matchSearch;
+                highlightCalendar();
+            }
 
-					row.style.display = shouldShow ? "" : "none";
+            function filterHistory() {
+                const keyword = searchInput.value.trim().toLowerCase();
+                let total = 0;
+                let visibleRows = 0;
 
-					if (shouldShow) {
-						visibleRows += 1;
-						total += parseInt(row.querySelector("[data-amount]").dataset.amount, 10) || 0;
-					}
-				});
+                rows.forEach(function (row) {
+                    const actionAt = rowDate(row);
+                    const matchDate = !startDate || !endDate || (actionAt >= startDate && actionAt <= endDate);
+                    const matchSearch = !keyword || row.dataset.search.includes(keyword);
+                    const shouldShow = matchDate && matchSearch;
 
-				emptyRow.classList.toggle("d-none", visibleRows > 0);
-				totalDisplay.textContent = formatIDR(total);
-			}
+                    row.style.display = shouldShow ? "" : "none";
 
-			dateFilter.addEventListener("click", function (event) {
-				event.stopPropagation();
-				datePanel.style.display = datePanel.style.display === "block" ? "none" : "block";
-				quickOptions.style.display = "block";
-				calendarView.style.display = "none";
-			});
-			document.addEventListener("click", function (event) {
-				if (!datePanel.contains(event.target) && event.target !== dateFilter) {
-					datePanel.style.display = "none";
-				}
-			});
-			quickOptions.querySelectorAll("div").forEach(function (item) {
-				item.addEventListener("click", function (event) {
-					event.preventDefault();
-					event.stopImmediatePropagation();
-					const now = new Date();
-					calendarView.style.display = "none";
+                    if (shouldShow) {
+                        visibleRows += 1;
+                        total += parseInt(row.querySelector("[data-amount]").dataset.amount, 10) || 0;
+                    }
+                });
 
-					switch (item.dataset.range) {
-						case "kemarin":
-							startDate = new Date(now);
-							startDate.setDate(startDate.getDate() - 1);
-							endDate = new Date(startDate);
-							break;
-						case "7hari":
-							endDate = new Date(now);
-							startDate = new Date(now);
-							startDate.setDate(startDate.getDate() - 6);
-							break;
-						case "bulanIni":
-							startDate = new Date(now.getFullYear(), now.getMonth(), 1);
-							endDate = new Date(now.getFullYear(), now.getMonth() + 1, 0);
-							break;
-						case "bulanLalu":
-							startDate = new Date(now.getFullYear(), now.getMonth() - 1, 1);
-							endDate = new Date(now.getFullYear(), now.getMonth(), 0);
-							break;
-						case "tahunLalu":
-							startDate = new Date(now.getFullYear() - 1, 0, 1);
-							endDate = new Date(now.getFullYear() - 1, 11, 31);
-							break;
-						case "kustom":
-							quickOptions.style.display = "none";
-							calendarView.style.display = "grid";
-							firstCalendarMonth = new Date(today.getFullYear(), today.getMonth(), 1);
-							generateCalendar();
-							return;
-					}
+                if (emptyRow) {
+                    emptyRow.classList.toggle("d-none", visibleRows > 0);
+                }
+                totalDisplay.textContent = formatIDR(total);
+            }
 
-					dateFilter.value = `${formatDate(startDate)} - ${formatDate(endDate)}`;
-					datePanel.style.display = "none";
-					filterDeletedSalesHistory();
-				}, true);
-			});
-			searchInput.addEventListener("input", filterDeletedSalesHistory);
-			historyModal.addEventListener("shown.bs.modal", filterDeletedSalesHistory);
-			filterDeletedSalesHistory();
-		});
-	</script>
+            dateFilter.addEventListener("click", function (event) {
+                event.stopPropagation();
+                datePanel.style.display = datePanel.style.display === "block" ? "none" : "block";
+                quickOptions.style.display = "block";
+                calendarView.style.display = "none";
+            });
+
+            document.addEventListener("click", function (event) {
+                if (!datePanel.contains(event.target) && event.target !== dateFilter) {
+                    datePanel.style.display = "none";
+                }
+            });
+
+            quickOptions.querySelectorAll("div").forEach(function (item) {
+                item.addEventListener("click", function (event) {
+                    event.preventDefault();
+                    event.stopImmediatePropagation();
+                    const now = new Date();
+                    calendarView.style.display = "none";
+
+                    switch (item.dataset.range) {
+                        case "kemarin":
+                            startDate = new Date(now);
+                            startDate.setDate(startDate.getDate() - 1);
+                            endDate = new Date(startDate);
+                            dateFilter.value = "Kemarin";
+                            break;
+                        case "7hari":
+                            endDate = new Date(now);
+                            startDate = new Date(now);
+                            startDate.setDate(startDate.getDate() - 6);
+                            dateFilter.value = "7 Hari Terakhir";
+                            break;
+                        case "bulanIni":
+                            startDate = new Date(now.getFullYear(), now.getMonth(), 1);
+                            endDate = new Date(now.getFullYear(), now.getMonth() + 1, 0);
+                            dateFilter.value = "Bulan Ini";
+                            break;
+                        case "bulanLalu":
+                            startDate = new Date(now.getFullYear(), now.getMonth() - 1, 1);
+                            endDate = new Date(now.getFullYear(), now.getMonth(), 0);
+                            dateFilter.value = "Bulan Lalu";
+                            break;
+                        case "tahunLalu":
+                            startDate = new Date(now.getFullYear() - 1, 0, 1);
+                            endDate = new Date(now.getFullYear() - 1, 11, 31);
+                            dateFilter.value = "Tahun Lalu";
+                            break;
+                        case "kustom":
+                            quickOptions.style.display = "none";
+                            calendarView.style.display = "grid";
+                            firstCalendarMonth = new Date(today.getFullYear(), today.getMonth(), 1);
+                            generateCalendar();
+                            return;
+                    }
+
+                    datePanel.style.display = "none";
+                    filterHistory();
+                }, true);
+            });
+
+            searchInput.addEventListener("input", filterHistory);
+            historyModal.addEventListener("shown.bs.modal", filterHistory);
+            
+            // Evaluasi total baris pertama kali dijalankan
+            filterHistory();
+        });
+    });
+</script>
 	<!-- add new blank baru -->
 	<script>
 		function applyVoucher(e, btn) {

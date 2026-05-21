@@ -1,0 +1,431 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0" />
+    <meta name="description" content="POS - Bootstrap Admin Template" />
+    <meta
+      name="keywords"
+      content="admin, estimates, bootstrap, business, corporate, creative, invoice, html5, responsive, Projects"
+    />
+    <meta name="author" content="Dreamguys - Bootstrap Admin Template" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Kacetak System</title>
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/kacetak.jpeg" />
+
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/bootstrap-datetimepicker.min.css" />
+    <link rel="stylesheet" href="assets/css/animate.css" />
+    <link rel="stylesheet" href="assets/plugins/select2/css/select2.min.css" />
+    <link rel="stylesheet" href="assets/css/dataTables.bootstrap5.min.css" />
+    <link rel="stylesheet" href="assets/plugins/daterangepicker/daterangepicker.css" />
+    <link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css" />
+    <link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+
+  <body>
+    <div id="global-loader">
+      <div class="loader"></div>
+    </div>
+
+    <div class="main-wrapper">
+      <div id="header-placeholder"></div>
+      <div id="sidebar-placeholder"></div>
+
+      <div class="page-wrapper mt-3">
+        <div class="content">
+          <div class="page-header">
+            <div class="page-title">
+              <h4>Payments</h4>
+              <h6>Manage payment in and payment out</h6>
+            </div>
+            <ul class="table-top-head">
+              <li>
+                <a data-bs-toggle="tooltip" data-bs-placement="top" title="Pdf">
+                  <img src="assets/img/icons/pdf.svg" alt="img" />
+                </a>
+              </li>
+              <li>
+                <a data-bs-toggle="tooltip" data-bs-placement="top" title="Print">
+                  <i data-feather="printer" class="feather-rotate-ccw"></i>
+                </a>
+              </li>
+              <li>
+                <a data-bs-toggle="tooltip" data-bs-placement="top" title="Refresh">
+                  <i data-feather="rotate-ccw" class="feather-rotate-ccw"></i>
+                </a>
+              </li>
+              <li>
+                <a data-bs-toggle="tooltip" data-bs-placement="top" title="Collapse" id="collapse-header">
+                  <i data-feather="chevron-up" class="feather-chevron-up"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="card table-list-card">
+            <div class="card-body">
+              <div class="table-top d-flex flex-wrap align-items-center justify-content-between gap-2">
+                <div class="search-set d-block d-md-flex align-items-center gap-2">
+                  <div class="search-input">
+                    <a href="" class="btn btn-searchset">
+                      <i data-feather="search" class="feather-search"></i>
+                    </a>
+                  </div>
+                  <div class="my-2">
+                    <div class="pemilihrentang-container">
+                      <input
+                        type="text"
+                        id="payment-date-search"
+                        class="pemilihrentang-input form-control"
+                        placeholder="Date Payment"
+                        style="height: fit-content !important; width: 100% !important"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="filters d-flex flex-wrap justify-content-end gap-2">
+                  <div class="dropdown">
+                    <button
+                      class="btn btn-outline-primary dropdown-toggle"
+                      type="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                      id="paymentTypeLabel"
+                    >
+                      Filter Type
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item payment-type-filter" href="#" data-value="">All Type</a></li>
+                      <li>
+                        <a class="dropdown-item payment-type-filter" href="#" data-value="Payment-In">Payment-In</a>
+                      </li>
+                      <li>
+                        <a class="dropdown-item payment-type-filter" href="#" data-value="Payment-Out">Payment-Out</a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="dropdown">
+                    <button
+                      class="btn btn-outline-primary dropdown-toggle"
+                      type="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                      id="paymentMethodLabel"
+                    >
+                      Payment Methode
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item payment-method-filter" href="#" data-value="">All Method</a></li>
+                      <li><a class="dropdown-item payment-method-filter" href="#" data-value="Cash">Cash</a></li>
+                      <li>
+                        <a class="dropdown-item payment-method-filter" href="#" data-value="Transfer">Transfer</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="table-responsive">
+                <table class="table datanew" id="paymentsTable">
+                  <thead>
+                    <tr>
+                      <th>Date Payment</th>
+                      <th>Ref No</th>
+                      <th>Name</th>
+                      <th>Type</th>
+                      <th>Payment Method</th>
+                      <th>Amount (IDR)</th>
+                      <th>Status</th>
+                      <th>Create</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr data-date="01/02/2026" data-type="Payment-In" data-method="Transfer">
+                      <td>01/02/2026</td>
+                      <td>PAY-001</td>
+                      <td>Seluruh Staff</td>
+                      <td>Payment-In</td>
+                      <td>Transfer</td>
+                      <td>4.500.000</td>
+                      <td>Paid</td>
+                      <td>Admin</td>
+                    </tr>
+                    <tr data-date="02/02/2026" data-type="Payment-In" data-method="Cash">
+                      <td>02/02/2026</td>
+                      <td>ADV-010</td>
+                      <td>Ahmad (Admin)</td>
+                      <td>Payment-In</td>
+                      <td>Cash</td>
+                      <td>500.000</td>
+                      <td>Paid</td>
+                      <td>Admin</td>
+                    </tr>
+                    <tr data-date="03/02/2026" data-type="Payment-In" data-method="Transfer">
+                      <td>03/02/2026</td>
+                      <td>PUR-201</td>
+                      <td>PT. Maju Jaya</td>
+                      <td>Payment-In</td>
+                      <td>Transfer</td>
+                      <td>12.500.000</td>
+                      <td>Paid</td>
+                      <td>Admin</td>
+                    </tr>
+                    <tr data-date="04/02/2026" data-type="Payment-Out" data-method="Transfer">
+                      <td>04/02/2026</td>
+                      <td>EXP-101</td>
+                      <td>PLN Persero</td>
+                      <td>Payment-Out</td>
+                      <td>Transfer</td>
+                      <td>1.450.000</td>
+                      <td>Paid</td>
+                      <td>Admin</td>
+                    </tr>
+                    <tr data-date="05/02/2026" data-type="Payment-In" data-method="Cash">
+                      <td>05/02/2026</td>
+                      <td>SR-012</td>
+                      <td>Toko Berkah</td>
+                      <td>Payment-In</td>
+                      <td>Cash</td>
+                      <td>250.000</td>
+                      <td>Paid</td>
+                      <td>Admin</td>
+                    </tr>
+                    <tr data-date="06/02/2026" data-type="Payment-Out" data-method="Cash">
+                      <td>06/02/2026</td>
+                      <td>ADV-011</td>
+                      <td>Rian (Kurir)</td>
+                      <td>Payment-Out</td>
+                      <td>Cash</td>
+                      <td>300.000</td>
+                      <td>Paid</td>
+                      <td>Admin</td>
+                    </tr>
+                    <tr data-date="07/02/2026" data-type="Payment-In" data-method="Transfer">
+                      <td>07/02/2026</td>
+                      <td>PAY-002</td>
+                      <td>Andi</td>
+                      <td>Payment-In</td>
+                      <td>Transfer</td>
+                      <td>1.500.000</td>
+                      <td>Paid</td>
+                      <td>Admin</td>
+                    </tr>
+                    <tr data-date="08/02/2026" data-type="Payment-In" data-method="Cash">
+                      <td>08/02/2026</td>
+                      <td>PUR-203</td>
+                      <td>Distributor ABC</td>
+                      <td>Payment-In</td>
+                      <td>Cash</td>
+                      <td>850.000</td>
+                      <td>Paid</td>
+                      <td>Admin</td>
+                    </tr>
+                    <tr data-date="09/02/2026" data-type="Payment-In" data-method="Transfer">
+                      <td>09/02/2026</td>
+                      <td>EXP-104</td>
+                      <td>Pemilik Ruko</td>
+                      <td>Payment-In</td>
+                      <td>Transfer</td>
+                      <td>5.000.000</td>
+                      <td>Paid</td>
+                      <td>Admin</td>
+                    </tr>
+                    <tr data-date="10/02/2026" data-type="Payment-In" data-method="Transfer">
+                      <td>10/02/2026</td>
+                      <td>ADV-012</td>
+                      <td>Siska (Marketing)</td>
+                      <td>Payment-In</td>
+                      <td>Transfer</td>
+                      <td>2.500.000</td>
+                      <td>Paid</td>
+                      <td>Admin</td>
+                    </tr>
+                    <tr data-date="11/02/2026" data-type="Payment-In" data-method="Cash">
+                      <td>11/02/2026</td>
+                      <td>EXP-105</td>
+                      <td>Toko ATK Jaya</td>
+                      <td>Payment-In</td>
+                      <td>Cash</td>
+                      <td>430.000</td>
+                      <td>Paid</td>
+                      <td>Admin</td>
+                    </tr>
+                    <tr data-date="12/02/2026" data-type="Payment-In" data-method="Transfer">
+                      <td>12/02/2026</td>
+                      <td>SR-018</td>
+                      <td>Toko Laris</td>
+                      <td>Payment-In</td>
+                      <td>Transfer</td>
+                      <td>600.000</td>
+                      <td>Paid</td>
+                      <td>Admin</td>
+                    </tr>
+                    <tr data-date="13/02/2026" data-type="Payment-In" data-method="Transfer">
+                      <td>13/02/2026</td>
+                      <td>PUR-202</td>
+                      <td>CV. Utama</td>
+                      <td>Payment-In</td>
+                      <td>Transfer</td>
+                      <td>7.500.000</td>
+                      <td>Paid</td>
+                      <td>Admin</td>
+                    </tr>
+                    <tr data-date="14/02/2026" data-type="Payment-Out" data-method="Transfer">
+                      <td>14/02/2026</td>
+                      <td>PAY-003</td>
+                      <td>Seluruh Staff</td>
+                      <td>Payment-Out</td>
+                      <td>Transfer</td>
+                      <td>3.200.000</td>
+                      <td>Paid</td>
+                      <td>Admin</td>
+                    </tr>
+                    <tr data-date="15/02/2026" data-type="Payment-Out" data-method="Transfer">
+                      <td>15/02/2026</td>
+                      <td>PUR-205</td>
+                      <td>Supplier Kayu</td>
+                      <td>Payment-Out</td>
+                      <td>Transfer</td>
+                      <td>4.200.000</td>
+                      <td>Partial</td>
+                      <td>Admin</td>
+                    </tr>
+                    <tr data-date="16/02/2026" data-type="Payment-Out" data-method="Cash">
+                      <td>16/02/2026</td>
+                      <td>ADV-013</td>
+                      <td>Ahmad (Admin)</td>
+                      <td>Payment-Out</td>
+                      <td>Cash</td>
+                      <td>200.000</td>
+                      <td>Paid</td>
+                      <td>Admin</td>
+                    </tr>
+                    <tr data-date="17/02/2026" data-type="Payment-In" data-method="Cash">
+                      <td>17/02/2026</td>
+                      <td>EXP-107</td>
+                      <td>Pertamina</td>
+                      <td>Payment-In</td>
+                      <td>Cash</td>
+                      <td>120.000</td>
+                      <td>Paid</td>
+                      <td>Admin</td>
+                    </tr>
+                    <tr data-date="18/02/2026" data-type="Payment-In" data-method="Cash">
+                      <td>18/02/2026</td>
+                      <td>PAY-004</td>
+                      <td>Budi (Gudang)</td>
+                      <td>Payment-In</td>
+                      <td>Cash</td>
+                      <td>450.000</td>
+                      <td>Paid</td>
+                      <td>Admin</td>
+                    </tr>
+                    <tr data-date="18/02/2026" data-type="Payment-In" data-method="Transfer">
+                      <td>18/02/2026</td>
+                      <td>PUR-206</td>
+                      <td>PT. Sumber Rejeki</td>
+                      <td>Payment-In</td>
+                      <td>Transfer</td>
+                      <td>3.500.000</td>
+                      <td>Partial</td>
+                      <td>Admin</td>
+                    </tr>
+                    <tr data-date="18/02/2026" data-type="Payment-In" data-method="Cash">
+                      <td>18/02/2026</td>
+                      <td>EXP-109</td>
+                      <td>Laundry Bersih</td>
+                      <td>Payment-In</td>
+                      <td>Cash</td>
+                      <td>150.000</td>
+                      <td>Paid</td>
+                      <td>Admin</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="assets/js/jquery-3.7.1.min.js"></script>
+    <script src="assets/js/feather.min.js"></script>
+    <script src="assets/js/jquery.slimscroll.min.js"></script>
+    <script src="assets/js/jquery.dataTables.min.js"></script>
+    <script src="assets/js/dataTables.bootstrap5.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/moment.min.js"></script>
+    <script src="assets/js/bootstrap-datetimepicker.min.js"></script>
+    <script src="assets/plugins/daterangepicker/daterangepicker.js"></script>
+    <script src="assets/plugins/select2/js/select2.min.js"></script>
+    <script src="assets/plugins/sweetalert/sweetalert2.all.min.js"></script>
+    <script src="assets/plugins/sweetalert/sweetalerts.min.js"></script>
+    <script src="assets/js/theme-script.js"></script>
+    <script src="assets/js/script.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var filters = {
+          date: "",
+          type: "",
+          method: "",
+        };
+
+        var dateInput = document.getElementById("payment-date-search");
+        var typeLabel = document.getElementById("paymentTypeLabel");
+        var methodLabel = document.getElementById("paymentMethodLabel");
+        var rows = Array.from(document.querySelectorAll("#paymentsTable tbody tr"));
+
+        function escapeRegex(value) {
+          return String(value).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+        }
+
+        function applyFilters() {
+          if (window.jQuery && $.fn.dataTable && $.fn.dataTable.isDataTable("#paymentsTable")) {
+            var dataTable = $("#paymentsTable").DataTable();
+            dataTable.column(0).search(filters.date);
+            dataTable.column(3).search(filters.type ? "^" + escapeRegex(filters.type) + "$" : "", true, false);
+            dataTable.column(4).search(filters.method ? "^" + escapeRegex(filters.method) + "$" : "", true, false);
+            dataTable.draw();
+            return;
+          }
+
+          rows.forEach(function (row) {
+            var isDateMatch = !filters.date || row.dataset.date.indexOf(filters.date) !== -1;
+            var isTypeMatch = !filters.type || row.dataset.type === filters.type;
+            var isMethodMatch = !filters.method || row.dataset.method === filters.method;
+            row.style.display = isDateMatch && isTypeMatch && isMethodMatch ? "" : "none";
+          });
+        }
+
+        if (dateInput) {
+          dateInput.addEventListener("input", function () {
+            filters.date = dateInput.value.trim();
+            applyFilters();
+          });
+        }
+
+        document.querySelectorAll(".payment-type-filter").forEach(function (item) {
+          item.addEventListener("click", function (event) {
+            event.preventDefault();
+            filters.type = item.dataset.value;
+            typeLabel.textContent = filters.type || "Filter Type";
+            applyFilters();
+          });
+        });
+
+        document.querySelectorAll(".payment-method-filter").forEach(function (item) {
+          item.addEventListener("click", function (event) {
+            event.preventDefault();
+            filters.method = item.dataset.value;
+            methodLabel.textContent = filters.method || "Payment Methode";
+            applyFilters();
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

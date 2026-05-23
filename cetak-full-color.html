@@ -10,11 +10,7 @@
 	<meta name="author" content="Dreamguys - Bootstrap Admin Template">
 	<meta name="robots" content="noindex, nofollow">
 	<title>Kacetak System</title>
-    <link rel="shortcut icon" type="image/x-icon" href="assets/img/kacetak.jpeg" />
-	<!-- Summernote CSS -->
-	<link rel="stylesheet" href="assets/plugins/summernote/summernote-bs4.min.css">
-
-
+	<link rel="shortcut icon" type="image/x-icon" href="assets/img/kacetak.jpeg" />
 	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
 
@@ -36,7 +32,7 @@
 	<!-- Main CSS -->
 	<link rel="stylesheet" href="assets/css/style.css">
 
-	
+
 </head>
 
 <body>
@@ -55,1569 +51,1622 @@
 			<div class="content">
 				<!-- tables -->
 				<div class="row">
-					<div class="col-12 bg-white">
-						<div class="my-3">
-							<h4>Special Product</h4>
-							<p class="small">Manage your Product</p>
+					<div class="col-12">
+						<div class="page-header mb-4 border-bottom pb-3">
+							<div class="page-title">
+								<h4 class="fw-bold">Cetak Full Color</h4>
+								<h6 class="text-muted">Manage your Product</h6>
+							</div>
 						</div>
-						<div class="my-2 d-flex justify-content-between align-items-center border-bottom pb-2">
-							<h4>Cetak Full Color</h4>
-							<div class="d-flex align-items-center gap-3">
-								<label>Display: </label>
-								<div class="form-check">
-									<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-									<label class="form-check-label" for="flexCheckDefault">
-										POS
-									</label>
-								</div>
-								<div class="form-check">
-									<input class="form-check-input" type="checkbox" value="" id="flexCheckChecked"
-										checked>
-									<label class="form-check-label" for="flexCheckChecked">
-										Website
-									</label>
+						<div class="card border-0 shadow-sm mb-3">
+							<div class="card-body d-flex flex-wrap justify-content-between align-items-center gap-2">
+								<h4 class="fw-bold mb-0">Setting and Optional</h4>
+								<div class="d-flex align-items-center gap-3">
+									<label class="mb-0">Display: </label>
+									<div class="form-check">
+										<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+										<label class="form-check-label" for="flexCheckDefault">
+											POS
+										</label>
+									</div>
+									<div class="form-check">
+										<input class="form-check-input" type="checkbox" value="" id="flexCheckChecked"
+											checked>
+										<label class="form-check-label" for="flexCheckChecked">
+											Website
+										</label>
+									</div>
 								</div>
 							</div>
 						</div>
-						<div class="row px-3">
-							<ul class="nav nav-tabs custom-nav-tabs mt-3 mb-0 col-md-3" id="mainTab" role="tablist">
-								<li class="nav-item" role="presentation">
-									<button class="nav-link active" id="product-category" data-bs-toggle="tab"
-										data-bs-target="#categoryTabContent" type="button" role="tab"
-										aria-controls="categoryTabContent" aria-selected="true">Product
-										Category</button>
-								</li>
-								<li class="nav-item" role="presentation">
-									<button class="nav-link " id="product" data-bs-toggle="tab"
-										data-bs-target="#productTabContent" type="button" role="tab"
-										aria-controls="productTabContent" aria-selected="false">Product</button>
-								</li>
-								<li class="nav-item" role="presentation">
-									<button class="nav-link" id="product-size" data-bs-toggle="tab"
-										data-bs-target="#sizeTabContent" type="button" role="tab"
-										aria-controls="sizeTabContent" aria-selected="false">Product Size</button>
-								</li>
-								<li class="nav-item" role="presentation">
-									<button class="nav-link" id="paper-type" data-bs-toggle="tab"
-										data-bs-target="#paperTypeTabContent" type="button" role="tab"
-										aria-controls="paperTypeTabContent" aria-selected="false">Paper Type</button>
-								</li>
-								<li class="nav-item" role="presentation">
-									<button class="nav-link" id="offset-machine" data-bs-toggle="tab"
-										data-bs-target="#offsetMachineTabContent" type="button" role="tab"
-										aria-controls="offsetMachineTabContent" aria-selected="false">Offset
-										Machine</button>
-								</li>
-								<li class="nav-item" role="presentation">
-									<button class="nav-link" id="laminate" data-bs-toggle="tab"
-										data-bs-target="#laminateTabContent" type="button" role="tab"
-										aria-controls="laminateTabContent" aria-selected="false">Laminate</button>
-								</li>
-								<li class="nav-item" role="presentation">
-									<button class="nav-link" id="components" data-bs-toggle="tab"
-										data-bs-target="#componentsTabContent" type="button" role="tab"
-										aria-controls="componentsTabContent" aria-selected="false">Components</button>
-								</li>
-								<li class="nav-item" role="presentation">
-									<button class="nav-link" id="process-arrange" data-bs-toggle="tab"
-										data-bs-target="#processArrangeTabContent" type="button" role="tab"
-										aria-controls="processArrangeTabContent" aria-selected="false">Work Flow</button>
-								</li>
-							</ul>
-							<div class="tab-content py-4 px-2 col-md-9" id=" mainTabContent">
-								<div class="tab-pane fade show active" id="categoryTabContent" role="tabpanel"
-									aria-labelledby="product-category">
-									<div class="justify-content-between d-flex align-items-center mb-2">
-										<h4 class="flex-grow-1">Product Category</h4>
-										<button class="btn btn-warning btn-sm" id="btnTambahKategori"
-											data-bs-toggle="modal" data-bs-target="#modalAddCategory">
-											Add Category
-										</button>
-									</div>
-									<div>
-										<div class="table-responsive">
-											<table class="table text-nowrap align-middle">
-												<thead>
-													<tr>
-														<th>No.</th>
-														<th>Product Category</th>
-														<th>Description</th>
-														<th>Image</th>
-														<th>Status</th>
-														<th>Aksi</th>
-													</tr>
-												</thead>
-												<tbody>
-													<tr>
-														<td>1</td>
-														<td>Brosur</td>
-														<td>Kategori untuk kebutuhan brosur promosi dan informasi.</td>
-														<td>1 image</td>
-														<td><span class="badge bg-soft-success">Publish</span></td>
-														<td>
-															<div class="hstack gap-2 fs-15">
-																<a href="javascript:void(0);"
-																	class="btn btn-icon btn-sm btn-light"
-																	data-bs-toggle="modal"
-																	data-bs-target="#modalAddCategory"><i
-																		class="feather-edit"></i></a>
-																<a href="javascript:void(0);"
-																	class="btn btn-icon btn-sm btn-light"><i
-																		class="feather-trash"></i></a>
-															</div>
-														</td>
-													</tr>
-													<tr>
-														<td>2</td>
-														<td>Kartu Nama</td>
-														<td>Kategori cetak kartu nama premium dan reguler.</td>
-														<td>2 images</td>
-														<td><span class="badge bg-soft-success">Publish</span></td>
-														<td>
-															<div class="hstack gap-2 fs-15">
-																<a href="javascript:void(0);"
-																	class="btn btn-icon btn-sm btn-light"
-																	data-bs-toggle="modal"
-																	data-bs-target="#modalAddCategory"><i
-																		class="feather-edit"></i></a>
-																<a href="javascript:void(0);"
-																	class="btn btn-icon btn-sm btn-light"><i
-																		class="feather-trash"></i></a>
-															</div>
-														</td>
-													</tr>
-													<tr>
-														<td>3</td>
-														<td>Poster</td>
-														<td>Kategori poster promosi ukuran besar dengan cetak full color.
-														</td>
-														<td>1 image</td>
-														<td><span class="badge bg-soft-danger">Draft</span></td>
-														<td>
-															<div class="hstack gap-2 fs-15">
-																<a href="javascript:void(0);"
-																	class="btn btn-icon btn-sm btn-light"
-																	data-bs-toggle="modal"
-																	data-bs-target="#modalAddCategory"><i
-																		class="feather-edit"></i></a>
-																<a href="javascript:void(0);"
-																	class="btn btn-icon btn-sm btn-light"><i
-																		class="feather-trash"></i></a>
-															</div>
-														</td>
-													</tr>
-												</tbody>
-											</table>
+						<div class="row g-3">
+							<div class="col-xl-3 col-lg-4">
+								<div class="card workflow-panel border-0 shadow-sm">
+									<div class="card-body p-3">
+										<div class="d-flex align-items-center justify-content-between mb-3">
+											<h5 class="fw-bold mb-0">Setting Menu</h5>
+											<span class="workflow-total-pill">7</span>
 										</div>
+										<ul class="nav nav-tabs cetak-workflow-tabs workflow-list mb-0" id="mainTab"
+											role="tablist">
+											<li class="nav-item" role="presentation">
+												<button class="nav-link workflow-item active" id="product"
+													data-bs-toggle="tab" data-bs-target="#productTabContent"
+													type="button" role="tab" aria-controls="productTabContent"
+													aria-selected="true">
+													<span class="workflow-item-left">
+														<span class="workflow-item-icon"><i
+																data-feather="box"></i></span>
+														<span class="workflow-item-text">Product</span>
+													</span>
+												</button>
+											</li>
+											<li class="nav-item" role="presentation">
+												<button class="nav-link workflow-item" id="product-size"
+													data-bs-toggle="tab" data-bs-target="#sizeTabContent" type="button"
+													role="tab" aria-controls="sizeTabContent" aria-selected="false">
+													<span class="workflow-item-left">
+														<span class="workflow-item-icon"><i
+																data-feather="maximize"></i></span>
+														<span class="workflow-item-text">Product Size</span>
+													</span>
+												</button>
+											</li>
+											<li class="nav-item" role="presentation">
+												<button class="nav-link workflow-item" id="paper-type"
+													data-bs-toggle="tab" data-bs-target="#paperTypeTabContent"
+													type="button" role="tab" aria-controls="paperTypeTabContent"
+													aria-selected="false">
+													<span class="workflow-item-left">
+														<span class="workflow-item-icon"><i
+																data-feather="file-text"></i></span>
+														<span class="workflow-item-text">Paper Type</span>
+													</span>
+												</button>
+											</li>
+											<li class="nav-item" role="presentation">
+												<button class="nav-link workflow-item" id="offset-machine"
+													data-bs-toggle="tab" data-bs-target="#offsetMachineTabContent"
+													type="button" role="tab" aria-controls="offsetMachineTabContent"
+													aria-selected="false">
+													<span class="workflow-item-left">
+														<span class="workflow-item-icon"><i
+																data-feather="printer"></i></span>
+														<span class="workflow-item-text">Offset Machine</span>
+													</span>
+												</button>
+											</li>
+											<li class="nav-item" role="presentation">
+												<button class="nav-link workflow-item" id="laminate"
+													data-bs-toggle="tab" data-bs-target="#laminateTabContent"
+													type="button" role="tab" aria-controls="laminateTabContent"
+													aria-selected="false">
+													<span class="workflow-item-left">
+														<span class="workflow-item-icon"><i
+																data-feather="layers"></i></span>
+														<span class="workflow-item-text">Laminate</span>
+													</span>
+												</button>
+											</li>
+											<li class="nav-item" role="presentation">
+												<button class="nav-link workflow-item" id="components"
+													data-bs-toggle="tab" data-bs-target="#componentsTabContent"
+													type="button" role="tab" aria-controls="componentsTabContent"
+													aria-selected="false">
+													<span class="workflow-item-left">
+														<span class="workflow-item-icon"><i
+																data-feather="grid"></i></span>
+														<span class="workflow-item-text">Components</span>
+													</span>
+												</button>
+											</li>
+											<li class="nav-item" role="presentation">
+												<button class="nav-link workflow-item" id="process-arrange"
+													data-bs-toggle="tab" data-bs-target="#processArrangeTabContent"
+													type="button" role="tab" aria-controls="processArrangeTabContent"
+													aria-selected="false">
+													<span class="workflow-item-left">
+														<span class="workflow-item-icon"><i
+																data-feather="git-branch"></i></span>
+														<span class="workflow-item-text">Work Flow</span>
+													</span>
+												</button>
+											</li>
+										</ul>
 									</div>
 								</div>
-								<div class="tab-pane fade show " id="productTabContent" role="tabpanel"
-									aria-labelledby="product">
-									<div class="justify-content-between d-flex align-items-center mb-2">
-										<h4 class="flex-grow-1">Product Name</h4>
-										<button class="btn btn-warning btn-sm" id="btnTambahRow">
-											Add Product
-										</button>
-									</div>
-									<div>
-										<div class="table-responsive">
-											<table class="table text-nowrap" id="tableUkuran">
-												<thead>
-													<tr>
-														<th>No.</th>
-														<th>Product</th>
-														<th>Description</th>
-														<th>Material</th>
-														<th>Size</th>
-														<th>Laminate</th>
-														<th>Printing Side</th>
-														<th>Fold</th>
-														<th>Default Qty</th>
-														<th>Status</th>
-														<th>Aksi</th>
-													</tr>
-												</thead>
-												<tbody>
-													<tr>
-														<td>1</td>
-														<td>Brosur A4 Standar</td>
-														<td>Brosur promosi ukuran A4 yang ideal untuk flyer acara
-															atau pengumuman.</td>
-														<td>Art Paper 150 gsm</td>
-														<td>A4 (21x29.7cm)</td>
-														<td>Laminasi Doff</td>
-														<td>Cetak 2 Sisi</td>
-														<td>2 Lipatan</td>
-														<td>25</td>
-														<td><span class="badge bg-soft-success">Publish</span></td>
-														<td>
-															<div class="hstack gap-2 fs-15">
-																<a href="javascript:void(0);"
-																	class="btn btn-icon btn-sm btn-light btn-delete"><i
-																		class="feather-trash"></i></a>
-																<a href="javascript:void(0);"
-																	class="btn btn-icon btn-sm btn-light btn-edit"><i
-																		class="feather-edit"></i></a>
-															</div>
-														</td>
-													</tr>
-													<tr>
-														<td>2</td>
-														<td>Kartu Nama Premium</td>
-														<td>Kartu nama eksklusif dengan sentuhan mewah, cocok untuk
-															professional</td>
-														<td>Art Carton 310 gsm</td>
-														<td>Custom (9x5.5cm)</td>
-														<td>Spot UV</td>
-														<td>Cetak 1 Sisi</td>
-														<td>Tanpa Lipatan</td>
-														<td>30</td>
-														<td><span class="badge bg-soft-success">Publish</span></td>
-														<td>
-															<div class="hstack gap-2 fs-15">
-																<a href="javascript:void(0);"
-																	class="btn btn-icon btn-sm btn-light btn-delete"><i
-																		class="feather-trash"></i></a>
-																<a href="javascript:void(0);"
-																	class="btn btn-icon btn-sm btn-light btn-edit"><i
-																		class="feather-edit"></i></a>
-															</div>
-														</td>
-													</tr>
-													<tr>
-														<td>3</td>
-														<td>Pamflet A5 Ekonomi</td>
-														<td>Pamflet hemat biaya ukuran A5, umum digunakan untuk
-															distribusi cepat</td>
-														<td>HVS 100 gsm</td>
-														<td>A5 (15x21.2cm)</td>
-														<td>Tanpa Laminasi</td>
-														<td>Cetak 1 Sisi</td>
-														<td>Tanpa Lipatan</td>
-														<td>40</td>
-														<td><span class="badge bg-soft-success">Archived</span></td>
-														<td>
-															<div class="hstack gap-2 fs-15">
-																<a href="javascript:void(0);"
-																	class="btn btn-icon btn-sm btn-light btn-delete"><i
-																		class="feather-trash"></i></a>
-																<a href="javascript:void(0);"
-																	class="btn btn-icon btn-sm btn-light btn-edit"><i
-																		class="feather-edit"></i></a>
-															</div>
-														</td>
-													</tr>
-													<tr>
-														<td>4</td>
-														<td>Poster A3 Glossy</td>
-														<td>Poster berukuran A3 dengan hasil cetak yang mengilap,
-															menarik perhatian</td>
-														<td>Art Paper 120 gsm</td>
-														<td>A3 (30x42cm)</td>
-														<td>Laminasi Glossy</td>
-														<td>Cetak 1 Sisi</td>
-														<td>Tanpa Lipatan</td>
-														<td>15</td>
-														<td><span class="badge bg-soft-success">Publish</span></td>
-														<td>
-															<div class="hstack gap-2 fs-15">
-																<a href="javascript:void(0);"
-																	class="btn btn-icon btn-sm btn-light btn-delete"><i
-																		class="feather-trash"></i></a>
-																<a href="javascript:void(0);"
-																	class="btn btn-icon btn-sm btn-light btn-edit"><i
-																		class="feather-edit"></i></a>
-															</div>
-														</td>
-													</tr>
-													<tr>
-														<td>5</td>
-														<td>Katalog Produk Segar</td>
-														<td>Katalog produk berbentuk segar, informatif dan
-															profesional</td>
-														<td>Art Carton 260 gsm</td>
-														<td>Custom (21x21cm)</td>
-														<td>Laminasi Doff</td>
-														<td>Cetak 2 Sisi</td>
-														<td>2 Lipatan</td>
-														<td>12</td>
-														<td><span class="badge bg-soft-success">Publish</span></td>
-														<td>
-															<div class="hstack gap-2 fs-15">
-																<a href="javascript:void(0);"
-																	class="btn btn-icon btn-sm btn-light btn-delete"><i
-																		class="feather-trash"></i></a>
-																<a href="javascript:void(0);"
-																	class="btn btn-icon btn-sm btn-light btn-edit"><i
-																		class="feather-edit"></i></a>
-															</div>
-														</td>
-													</tr>
-													<tr>
-														<td>6</td>
-														<td>Hang Tag Pakaian</td>
-														<td>Label gantung untuk produk pakaian dengan desain full
-															Color</td>
-														<td>Art Carton 310 gsm</td>
-														<td>Custom (6x10cm)</td>
-														<td>Tanpa Laminasi</td>
-														<td>Cetak 1 Sisi</td>
-														<td>Tanpa Lipatan</td>
-														<td>28</td>
-														<td><span class="badge bg-soft-success">Archived</span></td>
-														<td>
-															<div class="hstack gap-2 fs-15">
-																<a href="javascript:void(0);"
-																	class="btn btn-icon btn-sm btn-light btn-delete"><i
-																		class="feather-trash"></i></a>
-																<a href="javascript:void(0);"
-																	class="btn btn-icon btn-sm btn-light btn-edit"><i
-																		class="feather-edit"></i></a>
-															</div>
-														</td>
-													</tr>
-													<tr>
-														<td>7</td>
-														<td>Kartu Ucapan Lipat</td>
-														<td>Kartu ucapan selamat atau terima kasih yang bisa dilipat
-															dua</td>
-														<td>BC TIK 220 gsm</td>
-														<td>A5 (15x21cm)</td>
-														<td>Laminasi Glossy</td>
-														<td>Cetak 2 Sisi</td>
-														<td>2 Lipatan</td>
-														<td>21</td>
-														<td><span class="badge bg-soft-success">Publish</span></td>
-														<td>
-															<div class="hstack gap-2 fs-15">
-																<a href="javascript:void(0);"
-																	class="btn btn-icon btn-sm btn-light btn-delete"><i
-																		class="feather-trash"></i></a>
-																<a href="javascript:void(0);"
-																	class="btn btn-icon btn-sm btn-light btn-edit"><i
-																		class="feather-edit"></i></a>
-															</div>
-														</td>
-													</tr>
-													<tr>
-														<td>8</td>
-														<td>Map Dokumen Doff</td>
-														<td>Map folder untuk menyimpan dokumen penting, memberikan
-															kesan formal</td>
-														<td>Art Carton 310 gsm</td>
-														<td>A4 (21x30cm)</td>
-														<td>Laminasi Glossy</td>
-														<td>Cetak 2 Sisi</td>
-														<td>2 Lipatan</td>
-														<td>21</td>
-														<td><span class="badge bg-soft-success">Publish</span></td>
-														<td>
-															<div class="hstack gap-2 fs-15">
-																<a href="javascript:void(0);"
-																	class="btn btn-icon btn-sm btn-light btn-delete"><i
-																		class="feather-trash"></i></a>
-																<a href="javascript:void(0);"
-																	class="btn btn-icon btn-sm btn-light btn-edit"><i
-																		class="feather-edit"></i></a>
-															</div>
-														</td>
-													</tr>
-													<tr>
-														<td>9</td>
-														<td>Stiker Kertas A5</td>
-														<td>Stiker full color ukuran A5, cocok untuk label stiker
-															atau promosi</td>
-														<td>Kertas Stiker RVS</td>
-														<td>A5 (15x21cm)</td>
-														<td>Tanpa Laminasi</td>
-														<td>Cetak 1 Sisi</td>
-														<td>Tanpa Lipatan</td>
-														<td>14</td>
-														<td><span class="badge bg-soft-success">Archived</span></td>
-														<td>
-															<div class="hstack gap-2 fs-15">
-																<a href="javascript:void(0);"
-																	class="btn btn-icon btn-sm btn-light btn-delete"><i
-																		class="feather-trash"></i></a>
-																<a href="javascript:void(0);"
-																	class="btn btn-icon btn-sm btn-light btn-edit"><i
-																		class="feather-edit"></i></a>
-															</div>
-														</td>
-													</tr>
-													<tr>
-														<td>10</td>
-														<td>Brosur DL Elegan</td>
-														<td>Brosur ukuran DL (sepeting A4) dengan lipatan, ideal
-															untuk pricelist</td>
-														<td>Art Paper 150 gsm</td>
-														<td>Custom (10x21cm)</td>
-														<td>Laminasi Glossy</td>
-														<td>Cetak 2 Sisi</td>
-														<td>2 Lipatan</td>
-														<td>27</td>
-														<td><span class="badge bg-soft-success">Publish</span></td>
-														<td>
-															<div class="hstack gap-2 fs-15">
-																<a href="javascript:void(0);"
-																	class="btn btn-icon btn-sm btn-light btn-delete"><i
-																		class="feather-trash"></i></a>
-																<a href="javascript:void(0);"
-																	class="btn btn-icon btn-sm btn-light btn-edit"><i
-																		class="feather-edit"></i></a>
-															</div>
-														</td>
-													</tr>
-													<tr>
-														<td>11</td>
-														<td>Kupon Diskon Kertas</td>
-														<td>Kupon voucher dengan bahan tebal, tahan lama dan
-															eksklusif</td>
-														<td>Art Carton 260 gsm</td>
-														<td>Custom (10x20cm)</td>
-														<td>Cetak 2 Sisi</td>
-														<td>Cetak 2 Sisi</td>
-														<td>Tanpa Lipatan</td>
-														<td>14</td>
-														<td><span class="badge bg-soft-success">Publish</span></td>
-														<td>
-															<div class="hstack gap-2 fs-15">
-																<a href="javascript:void(0);"
-																	class="btn btn-icon btn-sm btn-light btn-delete"><i
-																		class="feather-trash"></i></a>
-																<a href="javascript:void(0);"
-																	class="btn btn-icon btn-sm btn-light btn-edit"><i
-																		class="feather-edit"></i></a>
-															</div>
-														</td>
-													</tr>
-													<tr>
-														<td>12</td>
-														<td>Leaflet Informasi A5</td>
-														<td>Leaflet satu sisi ukuran A5, sering digunakan untuk
-															handout singkat</td>
-														<td>HVS 80 gsm</td>
-														<td>A5 (15x21cm)</td>
-														<td>Tanpa Laminasi</td>
-														<td>Cetak 1 Sisi</td>
-														<td>Tanpa Lipatan</td>
-														<td>10</td>
-														<td><span class="badge bg-soft-success">Archived</span></td>
-														<td>
-															<div class="hstack gap-2 fs-15">
-																<a href="javascript:void(0);"
-																	class="btn btn-icon btn-sm btn-light btn-delete"><i
-																		class="feather-trash"></i></a>
-																<a href="javascript:void(0);"
-																	class="btn btn-icon btn-sm btn-light btn-edit"><i
-																		class="feather-edit"></i></a>
-															</div>
-														</td>
-													</tr>
-													<tr>
-														<td>13</td>
-														<td>Jadwal Acara A4</td>
-														<td>Jadwal atau rundown acara full color ukuran A4</td>
-														<td>Art Paper 120 gsm</td>
-														<td>A4 (21x29.7cm)</td>
-														<td>Laminasi Doff</td>
-														<td>Cetak 1 Sisi</td>
-														<td>Tanpa Lipatan</td>
-														<td>16</td>
-														<td><span class="badge bg-soft-success">Publish</span></td>
-														<td>
-															<div class="hstack gap-2 fs-15">
-																<a href="javascript:void(0);"
-																	class="btn btn-icon btn-sm btn-light btn-delete"><i
-																		class="feather-trash"></i></a>
-																<a href="javascript:void(0);"
-																	class="btn btn-icon btn-sm btn-light btn-edit"><i
-																		class="feather-edit"></i></a>
-															</div>
-														</td>
-													</tr>
-													<tr>
-														<td>14</td>
-														<td>Cover Buku Tebal</td>
-														<td>Sampul buku atau majalah dengan bahan tebal dan cetak
-															berkawan</td>
-														<td>Art Carton 310 gsm</td>
-														<td>A3 (30x42cm)</td>
-														<td>Laminasi Glossy</td>
-														<td>Cetak 1 Sisi</td>
-														<td>Tanpa Lipatan</td>
-														<td>19</td>
-														<td><span class="badge bg-soft-success">Publish</span></td>
-														<td>
-															<div class="hstack gap-2 fs-15">
-																<a href="javascript:void(0);"
-																	class="btn btn-icon btn-sm btn-light btn-delete"><i
-																		class="feather-trash"></i></a>
-																<a href="javascript:void(0);"
-																	class="btn btn-icon btn-sm btn-light btn-edit"><i
-																		class="feather-edit"></i></a>
-															</div>
-														</td>
-													</tr>
-													<tr>
-														<td>15</td>
-														<td>Flyer Lipat Dua A4</td>
-														<td>Flyer ukuran A4 yang dapat terlipat, memaksimalkan ruang
-															promosi</td>
-														<td>Art Paper 100 gsm</td>
-														<td>A4 (21x30cm)</td>
-														<td>Tanpa Laminasi</td>
-														<td>Cetak 2 Sisi</td>
-														<td>2 Lipatan</td>
-														<td>21</td>
-														<td><span class="badge bg-soft-success">Archived</span></td>
-														<td>
-															<div class="hstack gap-2 fs-15">
-																<a href="javascript:void(0);"
-																	class="btn btn-icon btn-sm btn-light btn-delete"><i
-																		class="feather-trash"></i></a>
-																<a href="javascript:void(0);"
-																	class="btn btn-icon btn-sm btn-light btn-edit"><i
-																		class="feather-edit"></i></a>
-															</div>
-														</td>
-													</tr>
-													<tr>
-														<td>16</td>
-														<td>Label Produk Kecil</td>
-														<td>Label kecil untuk informasi produk pada kemasan</td>
-														<td>Kertas Stiker Art Paper</td>
-														<td>Custom (5x8cm)</td>
-														<td>Laminasi Glossy</td>
-														<td>Cetak 1 Sisi</td>
-														<td>Tanpa Lipatan</td>
-														<td>25</td>
-														<td><span class="badge bg-soft-success">Publish</span></td>
-														<td>
-															<div class="hstack gap-2 fs-15">
-																<a href="javascript:void(0);"
-																	class="btn btn-icon btn-sm btn-light btn-delete"><i
-																		class="feather-trash"></i></a>
-																<a href="javascript:void(0);"
-																	class="btn btn-icon btn-sm btn-light btn-edit"><i
-																		class="feather-edit"></i></a>
-															</div>
-														</td>
-													</tr>
-													<tr>
-														<td>17</td>
-														<td>Sertifikat Penghargaan</td>
-														<td>Sertifikat full color untuk acara atau pemberian,
-															berkesan formal</td>
-														<td>Paper Tiger 250 gsm</td>
-														<td>A4 (21x30cm)</td>
-														<td>Laminasi Laminasi</td>
-														<td>Cetak 1 Sisi</td>
-														<td>Tanpa Lipatan</td>
-														<td>17</td>
-														<td><span class="badge bg-soft-success">Publish</span></td>
-														<td>
-															<div class="hstack gap-2 fs-15">
-																<a href="javascript:void(0);"
-																	class="btn btn-icon btn-sm btn-light btn-delete"><i
-																		class="feather-trash"></i></a>
-																<a href="javascript:void(0);"
-																	class="btn btn-icon btn-sm btn-light btn-edit"><i
-																		class="feather-edit"></i></a>
-															</div>
-														</td>
-													</tr>
-													<tr>
-														<td>20</td>
-														<td>Katalog Mini Lipat</td>
-														<td>Katalog kecil yang didesain untuk bisa berdiri di meja
-															(model 3 lipatan)</td>
-														<td>Art Carton 260 gsm</td>
-														<td>A5 (15x21cm)</td>
-														<td>Laminasi Doff</td>
-														<td>Cetak 2 Sisi</td>
-														<td>3 Lipatan</td>
-														<td>26</td>
-														<td><span class="badge bg-soft-success">Publish</span></td>
-														<td>
-															<div class="hstack gap-2 fs-15">
-																<a href="javascript:void(0);"
-																	class="btn btn-icon btn-sm btn-light btn-delete"><i
-																		class="feather-trash"></i></a>
-																<a href="javascript:void(0);"
-																	class="btn btn-icon btn-sm btn-light btn-edit"><i
-																		class="feather-edit"></i></a>
-															</div>
-														</td>
-													</tr>
-												</tbody>
-											</table>
-										</div>
-									</div>
-								</div>
-								<div class="tab-pane fade" id="sizeTabContent" role="tabpanel"
-									aria-labelledby="product-size">
-									<div class="justify-content-between d-flex align-items-center mb-2">
-										<div>
-											<h4>Size Options for Product</h4>
-											<p class="text-muted small">The following are the datas for options and
-												calculations</p>
-										</div>
-										<a class="btn btn-outline-warning btn-sm" href="kertas-ukuran-self.html">
-											Add New Size
-										</a>
-									</div>
-									<div>
-										<div class="table-responsive mb-4">
-											<table class="table">
-												<thead>
-													<tr>
-														<th>Size Name</th>
-														<th>size</th>
-														<th>Status</th>
-														<th>Action</th>
-													</tr>
-												</thead>
-												<tbody>
-													<tr>
-														<td>A5</td>
-														<td>21x15cm</td>
-														<td>
-															<select class="form-select form-select-sm">
-																<option>Show</option>
-																<option>Hide</option>
-															</select>
-														</td>
-														<td>
-															<a href="#" class="text-danger">Remove</a>
-														</td>
-													</tr>
-													<tr>
-														<td>A4</td>
-														<td>21x30cm</td>
-														<td>
-															<select class="form-select form-select-sm">
-																<option>Show</option>
-																<option>Hide</option>
-															</select>
-														</td>
-														<td>
-															<a href="#" class="text-danger">Remove</a>
-														</td>
-													</tr>
-													<tr>
-														<td>A3</td>
-														<td>30x42cm</td>
-														<td>
-															<select class="form-select form-select-sm">
-																<option>Hide</option>
-																<option>Show</option>
-															</select>
-														</td>
-														<td>
-															<a href="#" class="text-danger">Remove</a>
-														</td>
-													</tr>
-													<tr>
-														<td>Folio</td>
-														<td>21x33cm</td>
-														<td>
-															<select class="form-select form-select-sm">
-																<option>Show</option>
-																<option>Hide</option>
-															</select>
-														</td>
-														<td>
-															<a href="#" class="text-danger">Remove</a>
-														</td>
-													</tr>
-												</tbody>
-											</table>
-										</div>
-										<button class="btn btn-warning btn-sm mb-4" data-bs-toggle="modal"
-											data-bs-target="#modalSize">Add
-											Size</button>
+							</div>
+							<div class="col-xl-9 col-lg-8">
+								<div class="card shadow-sm">
+									<div class="card-body">
+										<div class="tab-content" id="mainTabContent">
+											<div class="tab-pane fade show active" id="productTabContent"
+												role="tabpanel" aria-labelledby="product">
+												<div class="justify-content-between d-flex align-items-center mb-2">
+													<h4 class="flex-grow-1">Product Name</h4>
+													<button class="btn btn-warning btn-sm" id="btnTambahRow">
+														Add Product
+													</button>
+												</div>
+												<div>
+													<div class="table-responsive">
+														<table class="table text-nowrap" id="tableUkuran">
+															<thead>
+																<tr>
+																	<th>No.</th>
+																	<th>Product</th>
+																	<th>Description</th>
+																	<th>Material</th>
+																	<th>Size</th>
+																	<th>Laminate</th>
+																	<th>Printing Side</th>
+																	<th>Fold</th>
+																	<th>Default Qty</th>
+																	<th>Status</th>
+																	<th>Aksi</th>
+																</tr>
+															</thead>
+															<tbody>
+																<tr>
+																	<td>1</td>
+																	<td>Brosur A4 Standar</td>
+																	<td>Brosur promosi ukuran A4 yang ideal untuk flyer
+																		acara
+																		atau pengumuman.</td>
+																	<td>Art Paper 150 gsm</td>
+																	<td>A4 (21x29.7cm)</td>
+																	<td>Laminasi Doff</td>
+																	<td>Cetak 2 Sisi</td>
+																	<td>2 Lipatan</td>
+																	<td>25</td>
+																	<td><span
+																			class="badge bg-soft-success">Publish</span>
+																	</td>
+																	<td>
+																		<div class="hstack gap-2 fs-15">
+																			<a href="javascript:void(0);"
+																				class="btn btn-icon btn-sm btn-light btn-delete"><i
+																					class="feather-trash"></i></a>
+																			<a href="javascript:void(0);"
+																				class="btn btn-icon btn-sm btn-light btn-edit"><i
+																					class="feather-edit"></i></a>
+																		</div>
+																	</td>
+																</tr>
+																<tr>
+																	<td>2</td>
+																	<td>Kartu Nama Premium</td>
+																	<td>Kartu nama eksklusif dengan sentuhan mewah,
+																		cocok untuk
+																		professional</td>
+																	<td>Art Carton 310 gsm</td>
+																	<td>Custom (9x5.5cm)</td>
+																	<td>Spot UV</td>
+																	<td>Cetak 1 Sisi</td>
+																	<td>Tanpa Lipatan</td>
+																	<td>30</td>
+																	<td><span
+																			class="badge bg-soft-success">Publish</span>
+																	</td>
+																	<td>
+																		<div class="hstack gap-2 fs-15">
+																			<a href="javascript:void(0);"
+																				class="btn btn-icon btn-sm btn-light btn-delete"><i
+																					class="feather-trash"></i></a>
+																			<a href="javascript:void(0);"
+																				class="btn btn-icon btn-sm btn-light btn-edit"><i
+																					class="feather-edit"></i></a>
+																		</div>
+																	</td>
+																</tr>
+																<tr>
+																	<td>3</td>
+																	<td>Pamflet A5 Ekonomi</td>
+																	<td>Pamflet hemat biaya ukuran A5, umum digunakan
+																		untuk
+																		distribusi cepat</td>
+																	<td>HVS 100 gsm</td>
+																	<td>A5 (15x21.2cm)</td>
+																	<td>Tanpa Laminasi</td>
+																	<td>Cetak 1 Sisi</td>
+																	<td>Tanpa Lipatan</td>
+																	<td>40</td>
+																	<td><span
+																			class="badge bg-soft-success">Archived</span>
+																	</td>
+																	<td>
+																		<div class="hstack gap-2 fs-15">
+																			<a href="javascript:void(0);"
+																				class="btn btn-icon btn-sm btn-light btn-delete"><i
+																					class="feather-trash"></i></a>
+																			<a href="javascript:void(0);"
+																				class="btn btn-icon btn-sm btn-light btn-edit"><i
+																					class="feather-edit"></i></a>
+																		</div>
+																	</td>
+																</tr>
+																<tr>
+																	<td>4</td>
+																	<td>Poster A3 Glossy</td>
+																	<td>Poster berukuran A3 dengan hasil cetak yang
+																		mengilap,
+																		menarik perhatian</td>
+																	<td>Art Paper 120 gsm</td>
+																	<td>A3 (30x42cm)</td>
+																	<td>Laminasi Glossy</td>
+																	<td>Cetak 1 Sisi</td>
+																	<td>Tanpa Lipatan</td>
+																	<td>15</td>
+																	<td><span
+																			class="badge bg-soft-success">Publish</span>
+																	</td>
+																	<td>
+																		<div class="hstack gap-2 fs-15">
+																			<a href="javascript:void(0);"
+																				class="btn btn-icon btn-sm btn-light btn-delete"><i
+																					class="feather-trash"></i></a>
+																			<a href="javascript:void(0);"
+																				class="btn btn-icon btn-sm btn-light btn-edit"><i
+																					class="feather-edit"></i></a>
+																		</div>
+																	</td>
+																</tr>
+																<tr>
+																	<td>5</td>
+																	<td>Katalog Produk Segar</td>
+																	<td>Katalog produk berbentuk segar, informatif dan
+																		profesional</td>
+																	<td>Art Carton 260 gsm</td>
+																	<td>Custom (21x21cm)</td>
+																	<td>Laminasi Doff</td>
+																	<td>Cetak 2 Sisi</td>
+																	<td>2 Lipatan</td>
+																	<td>12</td>
+																	<td><span
+																			class="badge bg-soft-success">Publish</span>
+																	</td>
+																	<td>
+																		<div class="hstack gap-2 fs-15">
+																			<a href="javascript:void(0);"
+																				class="btn btn-icon btn-sm btn-light btn-delete"><i
+																					class="feather-trash"></i></a>
+																			<a href="javascript:void(0);"
+																				class="btn btn-icon btn-sm btn-light btn-edit"><i
+																					class="feather-edit"></i></a>
+																		</div>
+																	</td>
+																</tr>
+																<tr>
+																	<td>6</td>
+																	<td>Hang Tag Pakaian</td>
+																	<td>Label gantung untuk produk pakaian dengan desain
+																		full
+																		Color</td>
+																	<td>Art Carton 310 gsm</td>
+																	<td>Custom (6x10cm)</td>
+																	<td>Tanpa Laminasi</td>
+																	<td>Cetak 1 Sisi</td>
+																	<td>Tanpa Lipatan</td>
+																	<td>28</td>
+																	<td><span
+																			class="badge bg-soft-success">Archived</span>
+																	</td>
+																	<td>
+																		<div class="hstack gap-2 fs-15">
+																			<a href="javascript:void(0);"
+																				class="btn btn-icon btn-sm btn-light btn-delete"><i
+																					class="feather-trash"></i></a>
+																			<a href="javascript:void(0);"
+																				class="btn btn-icon btn-sm btn-light btn-edit"><i
+																					class="feather-edit"></i></a>
+																		</div>
+																	</td>
+																</tr>
+																<tr>
+																	<td>7</td>
+																	<td>Kartu Ucapan Lipat</td>
+																	<td>Kartu ucapan selamat atau terima kasih yang bisa
+																		dilipat
+																		dua</td>
+																	<td>BC TIK 220 gsm</td>
+																	<td>A5 (15x21cm)</td>
+																	<td>Laminasi Glossy</td>
+																	<td>Cetak 2 Sisi</td>
+																	<td>2 Lipatan</td>
+																	<td>21</td>
+																	<td><span
+																			class="badge bg-soft-success">Publish</span>
+																	</td>
+																	<td>
+																		<div class="hstack gap-2 fs-15">
+																			<a href="javascript:void(0);"
+																				class="btn btn-icon btn-sm btn-light btn-delete"><i
+																					class="feather-trash"></i></a>
+																			<a href="javascript:void(0);"
+																				class="btn btn-icon btn-sm btn-light btn-edit"><i
+																					class="feather-edit"></i></a>
+																		</div>
+																	</td>
+																</tr>
+																<tr>
+																	<td>8</td>
+																	<td>Map Dokumen Doff</td>
+																	<td>Map folder untuk menyimpan dokumen penting,
+																		memberikan
+																		kesan formal</td>
+																	<td>Art Carton 310 gsm</td>
+																	<td>A4 (21x30cm)</td>
+																	<td>Laminasi Glossy</td>
+																	<td>Cetak 2 Sisi</td>
+																	<td>2 Lipatan</td>
+																	<td>21</td>
+																	<td><span
+																			class="badge bg-soft-success">Publish</span>
+																	</td>
+																	<td>
+																		<div class="hstack gap-2 fs-15">
+																			<a href="javascript:void(0);"
+																				class="btn btn-icon btn-sm btn-light btn-delete"><i
+																					class="feather-trash"></i></a>
+																			<a href="javascript:void(0);"
+																				class="btn btn-icon btn-sm btn-light btn-edit"><i
+																					class="feather-edit"></i></a>
+																		</div>
+																	</td>
+																</tr>
+																<tr>
+																	<td>9</td>
+																	<td>Stiker Kertas A5</td>
+																	<td>Stiker full color ukuran A5, cocok untuk label
+																		stiker
+																		atau promosi</td>
+																	<td>Kertas Stiker RVS</td>
+																	<td>A5 (15x21cm)</td>
+																	<td>Tanpa Laminasi</td>
+																	<td>Cetak 1 Sisi</td>
+																	<td>Tanpa Lipatan</td>
+																	<td>14</td>
+																	<td><span
+																			class="badge bg-soft-success">Archived</span>
+																	</td>
+																	<td>
+																		<div class="hstack gap-2 fs-15">
+																			<a href="javascript:void(0);"
+																				class="btn btn-icon btn-sm btn-light btn-delete"><i
+																					class="feather-trash"></i></a>
+																			<a href="javascript:void(0);"
+																				class="btn btn-icon btn-sm btn-light btn-edit"><i
+																					class="feather-edit"></i></a>
+																		</div>
+																	</td>
+																</tr>
+																<tr>
+																	<td>10</td>
+																	<td>Brosur DL Elegan</td>
+																	<td>Brosur ukuran DL (sepeting A4) dengan lipatan,
+																		ideal
+																		untuk pricelist</td>
+																	<td>Art Paper 150 gsm</td>
+																	<td>Custom (10x21cm)</td>
+																	<td>Laminasi Glossy</td>
+																	<td>Cetak 2 Sisi</td>
+																	<td>2 Lipatan</td>
+																	<td>27</td>
+																	<td><span
+																			class="badge bg-soft-success">Publish</span>
+																	</td>
+																	<td>
+																		<div class="hstack gap-2 fs-15">
+																			<a href="javascript:void(0);"
+																				class="btn btn-icon btn-sm btn-light btn-delete"><i
+																					class="feather-trash"></i></a>
+																			<a href="javascript:void(0);"
+																				class="btn btn-icon btn-sm btn-light btn-edit"><i
+																					class="feather-edit"></i></a>
+																		</div>
+																	</td>
+																</tr>
+																<tr>
+																	<td>11</td>
+																	<td>Kupon Diskon Kertas</td>
+																	<td>Kupon voucher dengan bahan tebal, tahan lama dan
+																		eksklusif</td>
+																	<td>Art Carton 260 gsm</td>
+																	<td>Custom (10x20cm)</td>
+																	<td>Cetak 2 Sisi</td>
+																	<td>Cetak 2 Sisi</td>
+																	<td>Tanpa Lipatan</td>
+																	<td>14</td>
+																	<td><span
+																			class="badge bg-soft-success">Publish</span>
+																	</td>
+																	<td>
+																		<div class="hstack gap-2 fs-15">
+																			<a href="javascript:void(0);"
+																				class="btn btn-icon btn-sm btn-light btn-delete"><i
+																					class="feather-trash"></i></a>
+																			<a href="javascript:void(0);"
+																				class="btn btn-icon btn-sm btn-light btn-edit"><i
+																					class="feather-edit"></i></a>
+																		</div>
+																	</td>
+																</tr>
+																<tr>
+																	<td>12</td>
+																	<td>Leaflet Informasi A5</td>
+																	<td>Leaflet satu sisi ukuran A5, sering digunakan
+																		untuk
+																		handout singkat</td>
+																	<td>HVS 80 gsm</td>
+																	<td>A5 (15x21cm)</td>
+																	<td>Tanpa Laminasi</td>
+																	<td>Cetak 1 Sisi</td>
+																	<td>Tanpa Lipatan</td>
+																	<td>10</td>
+																	<td><span
+																			class="badge bg-soft-success">Archived</span>
+																	</td>
+																	<td>
+																		<div class="hstack gap-2 fs-15">
+																			<a href="javascript:void(0);"
+																				class="btn btn-icon btn-sm btn-light btn-delete"><i
+																					class="feather-trash"></i></a>
+																			<a href="javascript:void(0);"
+																				class="btn btn-icon btn-sm btn-light btn-edit"><i
+																					class="feather-edit"></i></a>
+																		</div>
+																	</td>
+																</tr>
+																<tr>
+																	<td>13</td>
+																	<td>Jadwal Acara A4</td>
+																	<td>Jadwal atau rundown acara full color ukuran A4
+																	</td>
+																	<td>Art Paper 120 gsm</td>
+																	<td>A4 (21x29.7cm)</td>
+																	<td>Laminasi Doff</td>
+																	<td>Cetak 1 Sisi</td>
+																	<td>Tanpa Lipatan</td>
+																	<td>16</td>
+																	<td><span
+																			class="badge bg-soft-success">Publish</span>
+																	</td>
+																	<td>
+																		<div class="hstack gap-2 fs-15">
+																			<a href="javascript:void(0);"
+																				class="btn btn-icon btn-sm btn-light btn-delete"><i
+																					class="feather-trash"></i></a>
+																			<a href="javascript:void(0);"
+																				class="btn btn-icon btn-sm btn-light btn-edit"><i
+																					class="feather-edit"></i></a>
+																		</div>
+																	</td>
+																</tr>
+																<tr>
+																	<td>14</td>
+																	<td>Cover Buku Tebal</td>
+																	<td>Sampul buku atau majalah dengan bahan tebal dan
+																		cetak
+																		berkawan</td>
+																	<td>Art Carton 310 gsm</td>
+																	<td>A3 (30x42cm)</td>
+																	<td>Laminasi Glossy</td>
+																	<td>Cetak 1 Sisi</td>
+																	<td>Tanpa Lipatan</td>
+																	<td>19</td>
+																	<td><span
+																			class="badge bg-soft-success">Publish</span>
+																	</td>
+																	<td>
+																		<div class="hstack gap-2 fs-15">
+																			<a href="javascript:void(0);"
+																				class="btn btn-icon btn-sm btn-light btn-delete"><i
+																					class="feather-trash"></i></a>
+																			<a href="javascript:void(0);"
+																				class="btn btn-icon btn-sm btn-light btn-edit"><i
+																					class="feather-edit"></i></a>
+																		</div>
+																	</td>
+																</tr>
+																<tr>
+																	<td>15</td>
+																	<td>Flyer Lipat Dua A4</td>
+																	<td>Flyer ukuran A4 yang dapat terlipat,
+																		memaksimalkan ruang
+																		promosi</td>
+																	<td>Art Paper 100 gsm</td>
+																	<td>A4 (21x30cm)</td>
+																	<td>Tanpa Laminasi</td>
+																	<td>Cetak 2 Sisi</td>
+																	<td>2 Lipatan</td>
+																	<td>21</td>
+																	<td><span
+																			class="badge bg-soft-success">Archived</span>
+																	</td>
+																	<td>
+																		<div class="hstack gap-2 fs-15">
+																			<a href="javascript:void(0);"
+																				class="btn btn-icon btn-sm btn-light btn-delete"><i
+																					class="feather-trash"></i></a>
+																			<a href="javascript:void(0);"
+																				class="btn btn-icon btn-sm btn-light btn-edit"><i
+																					class="feather-edit"></i></a>
+																		</div>
+																	</td>
+																</tr>
+																<tr>
+																	<td>16</td>
+																	<td>Label Produk Kecil</td>
+																	<td>Label kecil untuk informasi produk pada kemasan
+																	</td>
+																	<td>Kertas Stiker Art Paper</td>
+																	<td>Custom (5x8cm)</td>
+																	<td>Laminasi Glossy</td>
+																	<td>Cetak 1 Sisi</td>
+																	<td>Tanpa Lipatan</td>
+																	<td>25</td>
+																	<td><span
+																			class="badge bg-soft-success">Publish</span>
+																	</td>
+																	<td>
+																		<div class="hstack gap-2 fs-15">
+																			<a href="javascript:void(0);"
+																				class="btn btn-icon btn-sm btn-light btn-delete"><i
+																					class="feather-trash"></i></a>
+																			<a href="javascript:void(0);"
+																				class="btn btn-icon btn-sm btn-light btn-edit"><i
+																					class="feather-edit"></i></a>
+																		</div>
+																	</td>
+																</tr>
+																<tr>
+																	<td>17</td>
+																	<td>Sertifikat Penghargaan</td>
+																	<td>Sertifikat full color untuk acara atau
+																		pemberian,
+																		berkesan formal</td>
+																	<td>Paper Tiger 250 gsm</td>
+																	<td>A4 (21x30cm)</td>
+																	<td>Laminasi Laminasi</td>
+																	<td>Cetak 1 Sisi</td>
+																	<td>Tanpa Lipatan</td>
+																	<td>17</td>
+																	<td><span
+																			class="badge bg-soft-success">Publish</span>
+																	</td>
+																	<td>
+																		<div class="hstack gap-2 fs-15">
+																			<a href="javascript:void(0);"
+																				class="btn btn-icon btn-sm btn-light btn-delete"><i
+																					class="feather-trash"></i></a>
+																			<a href="javascript:void(0);"
+																				class="btn btn-icon btn-sm btn-light btn-edit"><i
+																					class="feather-edit"></i></a>
+																		</div>
+																	</td>
+																</tr>
+																<tr>
+																	<td>20</td>
+																	<td>Katalog Mini Lipat</td>
+																	<td>Katalog kecil yang didesain untuk bisa berdiri
+																		di meja
+																		(model 3 lipatan)</td>
+																	<td>Art Carton 260 gsm</td>
+																	<td>A5 (15x21cm)</td>
+																	<td>Laminasi Doff</td>
+																	<td>Cetak 2 Sisi</td>
+																	<td>3 Lipatan</td>
+																	<td>26</td>
+																	<td><span
+																			class="badge bg-soft-success">Publish</span>
+																	</td>
+																	<td>
+																		<div class="hstack gap-2 fs-15">
+																			<a href="javascript:void(0);"
+																				class="btn btn-icon btn-sm btn-light btn-delete"><i
+																					class="feather-trash"></i></a>
+																			<a href="javascript:void(0);"
+																				class="btn btn-icon btn-sm btn-light btn-edit"><i
+																					class="feather-edit"></i></a>
+																		</div>
+																	</td>
+																</tr>
+															</tbody>
+														</table>
+													</div>
+												</div>
+											</div>
+											<div class="tab-pane fade" id="sizeTabContent" role="tabpanel"
+												aria-labelledby="product-size">
+												<div class="justify-content-between d-flex align-items-center mb-2">
+													<div>
+														<h4>Size Options for Product</h4>
+														<p class="text-muted small">The following are the datas for
+															options and
+															calculations</p>
+													</div>
+													<a class="btn btn-outline-warning btn-sm"
+														href="kertas-ukuran-self.html">
+														Add New Size
+													</a>
+												</div>
+												<div>
+													<div class="table-responsive mb-4">
+														<table class="table">
+															<thead>
+																<tr>
+																	<th>Size Name</th>
+																	<th>size</th>
+																	<th>Status</th>
+																	<th>Action</th>
+																</tr>
+															</thead>
+															<tbody>
+																<tr>
+																	<td>A5</td>
+																	<td>21x15cm</td>
+																	<td>
+																		<select class="form-select form-select-sm">
+																			<option>Show</option>
+																			<option>Hide</option>
+																		</select>
+																	</td>
+																	<td>
+																		<a href="#" class="text-danger">Remove</a>
+																	</td>
+																</tr>
+																<tr>
+																	<td>A4</td>
+																	<td>21x30cm</td>
+																	<td>
+																		<select class="form-select form-select-sm">
+																			<option>Show</option>
+																			<option>Hide</option>
+																		</select>
+																	</td>
+																	<td>
+																		<a href="#" class="text-danger">Remove</a>
+																	</td>
+																</tr>
+																<tr>
+																	<td>A3</td>
+																	<td>30x42cm</td>
+																	<td>
+																		<select class="form-select form-select-sm">
+																			<option>Hide</option>
+																			<option>Show</option>
+																		</select>
+																	</td>
+																	<td>
+																		<a href="#" class="text-danger">Remove</a>
+																	</td>
+																</tr>
+																<tr>
+																	<td>Folio</td>
+																	<td>21x33cm</td>
+																	<td>
+																		<select class="form-select form-select-sm">
+																			<option>Show</option>
+																			<option>Hide</option>
+																		</select>
+																	</td>
+																	<td>
+																		<a href="#" class="text-danger">Remove</a>
+																	</td>
+																</tr>
+															</tbody>
+														</table>
+													</div>
+													<button class="btn btn-warning btn-sm mb-4" data-bs-toggle="modal"
+														data-bs-target="#modalSize">Add
+														Size</button>
 
-										<div>
-											<h6 class="mb-3">Custom size for Product</h6>
-											<div class="d-flex align-items-center gap-3">
-												<label>Enable Product for Custom Size ?</label>
-												<div class="btn-group" role="group">
-													<input type="radio" class="btn-check" name="customSize"
-														id="customYes">
-													<label class="btn btn-outline-primary" for="customYes">Yes</label>
+													<div>
+														<h6 class="mb-3">Custom size for Product</h6>
+														<div class="d-flex align-items-center gap-3">
+															<label>Enable Product for Custom Size ?</label>
+															<div class="btn-group" role="group">
+																<input type="radio" class="btn-check" name="customSize"
+																	id="customYes">
+																<label class="btn btn-outline-primary"
+																	for="customYes">Yes</label>
 
-													<input type="radio" class="btn-check" name="customSize"
-														id="customNo">
-													<label class="btn btn-outline-primary" for="customNo">No</label>
+																<input type="radio" class="btn-check" name="customSize"
+																	id="customNo">
+																<label class="btn btn-outline-primary"
+																	for="customNo">No</label>
+															</div>
+														</div>
+													</div>
+												</div>
+
+											</div>
+											<div class="tab-pane fade" id="paperTypeTabContent" role="tabpanel"
+												aria-labelledby="paper-type">
+												<!-- Setting for Paper Type Section -->
+												<div>
+													<div class="justify-content-between d-flex align-items-center mb-2">
+														<div>
+															<h4>Setting for option paper type</h4>
+															<p class="text-muted small">The following are the datas for
+																options and
+																calculations</p>
+														</div>
+														<a class="btn btn-outline-warning btn-sm"
+															href="kertas-jenis-self.html">
+															Add New Paper Type
+														</a>
+													</div>
+													<div>
+														<div class="table-responsive mb-4">
+															<table class="table">
+																<thead>
+																	<tr>
+																		<th>Paper Group</th>
+																		<th>Mark</th>
+																		<th>Gramature</th>
+																		<th>Status</th>
+																		<th>Action</th>
+																	</tr>
+																</thead>
+																<tbody>
+																	<tr>
+																		<td>Art Paper</td>
+																		<td>Pindo</td>
+																		<td>120 gsm</td>
+																		<td>
+																			<select class="form-select form-select-sm">
+																				<option>Show</option>
+																				<option>Hide</option>
+																			</select>
+																		</td>
+																		<td>
+																			<a href="#" class="text-danger">Remove</a>
+																		</td>
+																	</tr>
+																	<tr>
+																		<td>Art Paper</td>
+																		<td>Pindo</td>
+																		<td>150 gsm</td>
+																		<td>
+																			<select class="form-select form-select-sm">
+																				<option>Show</option>
+																				<option>Hide</option>
+																			</select>
+																		</td>
+																		<td>
+																			<a href="#" class="text-danger">Remove</a>
+																		</td>
+																	</tr>
+																	<tr>
+																		<td>Art Paper</td>
+																		<td>Pindo</td>
+																		<td>190 gsm</td>
+																		<td>
+																			<select class="form-select form-select-sm">
+																				<option>Show</option>
+																				<option>Hide</option>
+																			</select>
+																		</td>
+																		<td>
+																			<a href="#" class="text-danger">Remove</a>
+																		</td>
+																	</tr>
+																	<tr>
+																		<td>Art Carton</td>
+																		<td>Pindo</td>
+																		<td>210 gsm</td>
+																		<td>
+																			<select class="form-select form-select-sm">
+																				<option>Show</option>
+																				<option>Hide</option>
+																			</select>
+																		</td>
+																		<td>
+																			<a href="#" class="text-danger">Remove</a>
+																		</td>
+																	</tr>
+																	<tr>
+																		<td>Art Carton</td>
+																		<td>Pindo</td>
+																		<td>230 gsm</td>
+																		<td>
+																			<select class="form-select form-select-sm">
+																				<option>Show</option>
+																				<option>Hide</option>
+																			</select>
+																		</td>
+																		<td>
+																			<a href="#" class="text-danger">Remove</a>
+																		</td>
+																	</tr>
+																	<tr>
+																		<td>Art Carton</td>
+																		<td>Pindo</td>
+																		<td>260 gsm</td>
+																		<td>
+																			<select class="form-select form-select-sm">
+																				<option>Show</option>
+																				<option>Hide</option>
+																			</select>
+																		</td>
+																		<td>
+																			<a href="#" class="text-danger">Remove</a>
+																		</td>
+																	</tr>
+																	<tr>
+																		<td>Art Carton</td>
+																		<td>Pindo</td>
+																		<td>310 gsm</td>
+																		<td>
+																			<select class="form-select form-select-sm">
+																				<option>Hide</option>
+																				<option>Show</option>
+																			</select>
+																		</td>
+																		<td>
+																			<a href="#" class="text-danger">Remove</a>
+																		</td>
+																	</tr>
+																</tbody>
+															</table>
+														</div>
+														<button class="btn btn-warning btn-sm" data-bs-toggle="modal"
+															data-bs-target="#modalPaperType">Add Paper Type</button>
+													</div>
+												</div>
+
+												<!-- List of Process Section -->
+												<div class="mt-5">
+													<div class="justify-content-between d-flex align-items-center mb-2">
+														<div>
+															<h4>List of Process</h4>
+															<p class="text-muted small">The following are the datas for
+																Process
+																Arrange</p>
+														</div>
+														<a class="btn btn-outline-warning btn-sm"
+															href="job-proses.html">
+															Add New Process
+														</a>
+													</div>
+													<div>
+														<div class="table-responsive mb-4">
+															<table class="table">
+																<thead>
+																	<tr>
+																		<th>Process Category</th>
+																		<th>Process</th>
+																		<th>Incentive</th>
+																		<th>Action</th>
+																	</tr>
+																</thead>
+																<tbody>
+																	<tr>
+																		<td>Pracetak</td>
+																		<td>Pesan Kertas ke Toko</td>
+																		<td>5.000 per Job</td>
+																		<td>
+																			<a href="#" class="text-danger">Remove</a>
+																		</td>
+																	</tr>
+																</tbody>
+															</table>
+														</div>
+														<button class="btn btn-warning btn-sm" data-bs-toggle="modal"
+															data-bs-target="#modalProcess">Add Process</button>
+													</div>
+
+												</div>
+
+											</div>
+											<div class="tab-pane fade" id="offsetMachineTabContent" role="tabpanel"
+												aria-labelledby="offset-machine">
+												<div>
+													<div class="justify-content-between d-flex align-items-center mb-2">
+														<div>
+															<h4>Setting for option Offset Machine</h4>
+															<p class="text-muted small">The following are the datas for
+																options and
+																calculations</p>
+														</div>
+														<a class="btn btn-outline-warning btn-sm"
+															href="mesin-cetak-self.html">
+															Add New offset machine
+														</a>
+													</div>
+													<div>
+														<div class="table-responsive mb-4">
+															<table class="table">
+																<thead>
+																	<tr>
+																		<th>Name</th>
+																		<th>Unit Color</th>
+																		<th>Paper Area</th>
+																		<th>Status</th>
+																		<th>Action</th>
+																	</tr>
+																</thead>
+																<tbody>
+																	<tr>
+																		<td>heidlberg sm52</td>
+																		<td>4 Color</td>
+																		<td>120 gsm</td>
+																		<td>
+																			<select class="form-select form-select-sm">
+																				<option>Show</option>
+																				<option>Hide</option>
+																			</select>
+																		</td>
+																		<td>
+																			<a href="#" class="text-danger">Remove</a>
+																		</td>
+																	</tr>
+																	<tr>
+																		<td>heidlberg sm74</td>
+																		<td>4 Color</td>
+																		<td>150 gsm</td>
+																		<td>
+																			<select class="form-select form-select-sm">
+																				<option>Show</option>
+																				<option>Hide</option>
+																			</select>
+																		</td>
+																		<td>
+																			<a href="#" class="text-danger">Remove</a>
+																		</td>
+																	</tr>
+																	<tr>
+																		<td>heidlberg sm104</td>
+																		<td>4 Color</td>
+																		<td>190 gsm</td>
+																		<td>
+																			<select class="form-select form-select-sm">
+																				<option>Show</option>
+																				<option>Hide</option>
+																			</select>
+																		</td>
+																		<td>
+																			<a href="#" class="text-danger">Remove</a>
+																		</td>
+																	</tr>
+																	<tr>
+																		<td>Mitsubishi 73</td>
+																		<td>4 Color</td>
+																		<td>210 gsm</td>
+																		<td>
+																			<select class="form-select form-select-sm">
+																				<option>Show</option>
+																				<option>Hide</option>
+																			</select>
+																		</td>
+																		<td>
+																			<a href="#" class="text-danger">Remove</a>
+																		</td>
+																	</tr>
+																</tbody>
+															</table>
+														</div>
+														<button class="btn btn-warning btn-sm" data-bs-toggle="modal"
+															data-bs-target="#modalAddOfsett">Add Offset Machine</button>
+													</div>
+												</div>
+
+												<!-- List of Process Section -->
+												<div class="mt-5">
+													<div class="justify-content-between d-flex align-items-center mb-2">
+														<div>
+															<h4>List of Process</h4>
+															<p class="text-muted small">The following are the datas for
+																Process
+																Arrange</p>
+														</div>
+														<a class="btn btn-outline-warning btn-sm"
+															href="job-proses.html">
+															Add New Process
+														</a>
+													</div>
+													<div>
+														<div class="table-responsive mb-4">
+															<table class="table">
+																<thead>
+																	<tr>
+																		<th>Process Category</th>
+																		<th>Process</th>
+																		<th>Incentive</th>
+																		<th>Action</th>
+																	</tr>
+																</thead>
+																<tbody>
+																	<tr>
+																		<td>Pracetak</td>
+																		<td>Cetak Offset 4 Warna</td>
+																		<td>5.000 per Job</td>
+																		<td>
+																			<a href="#" class="text-danger">Remove</a>
+																		</td>
+																	</tr>
+																	<tr>
+																		<td>Cetak</td>
+																		<td>Cetak Offset 4 Warna</td>
+																		<td>5.000 per Job</td>
+																		<td>
+																			<a href="#" class="text-danger">Remove</a>
+																		</td>
+																	</tr>
+																</tbody>
+															</table>
+														</div>
+														<button class="btn btn-warning btn-sm" data-bs-toggle="modal"
+															data-bs-target="#modalProcessOffsetMachine">Add
+															Process</button>
+													</div>
+
+												</div>
+
+											</div>
+											<div class="modal fade" id="modalTambahGambar" tabindex="-1"
+												aria-hidden="true">
+												<div class="modal-dialog">
+													<div class="modal-content">
+														<div class="modal-header">
+															<h5 class="modal-title">Tambah Gambar Brosur</h5>
+															<button type="button" class="btn-close"
+																data-bs-dismiss="modal"></button>
+														</div>
+														<div class="modal-body">
+															<label class="form-label">Pilih File Gambar</label>
+															<input type="file" class="form-control" id="inputFileGambar"
+																accept="image/*">
+														</div>
+														<div class="modal-footer">
+															<button type="button" class="btn btn-secondary"
+																data-bs-dismiss="modal">Batal</button>
+															<button type="button" class="btn btn-warning btn-sm"
+																onclick="tambahGambar()">Tambah</button>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="tab-pane fade" id="laminateTabContent" role="tabpanel"
+												aria-labelledby="laminate">
+												<div>
+													<div class="justify-content-between d-flex align-items-center mb-2">
+														<div>
+															<h4>Setting for option Laminate Type</h4>
+															<p class="text-muted small">The following are the datas for
+																options and
+																calculations</p>
+														</div>
+														<a class="btn btn-outline-warning btn-sm"
+															href="mesin-laminasi-self.html">
+															Add New Laminate Type
+														</a>
+													</div>
+													<div>
+														<div class="table-responsive mb-4">
+															<table class="table">
+																<thead>
+																	<tr>
+																		<th>Name</th>
+																		<th>Status</th>
+																		<th>Action</th>
+																	</tr>
+																</thead>
+																<tbody>
+																	<tr>
+																		<td>Laminasi Doff</td>
+																		<td>
+																			<select class="form-select form-select-sm">
+																				<option>Show</option>
+																				<option>Hide</option>
+																			</select>
+																		</td>
+																		<td>
+																			<a href="#" class="text-danger">Remove</a>
+																		</td>
+																	</tr>
+																	<tr>
+																		<td>Laminasi Glossy</td>
+																		<td>
+																			<select class="form-select form-select-sm">
+																				<option>Show</option>
+																				<option>Hide</option>
+																			</select>
+																		</td>
+																		<td>
+																			<a href="#" class="text-danger">Remove</a>
+																		</td>
+																	</tr>
+																	<tr>
+																		<td>Spot UV</td>
+																		<td>
+																			<select class="form-select form-select-sm">
+																				<option>Show</option>
+																				<option>Hide</option>
+																			</select>
+																		</td>
+																		<td>
+																			<a href="#" class="text-danger">Remove</a>
+																		</td>
+																	</tr>
+																</tbody>
+															</table>
+														</div>
+														<button class="btn btn-warning btn-sm" data-bs-toggle="modal"
+															data-bs-target="#modalAddLaminateType">Add Laminate
+															Type</button>
+													</div>
+												</div>
+
+												<!-- List of Process Section -->
+												<div class="mt-5">
+													<div class="justify-content-between d-flex align-items-center mb-2">
+														<div>
+															<h4>List of Process</h4>
+															<p class="text-muted small">The following are the datas for
+																Process
+																Arrange</p>
+														</div>
+														<a class="btn btn-outline-warning btn-sm"
+															href="job-proses.html">
+															Add New Process
+														</a>
+													</div>
+													<div>
+														<div class="table-responsive mb-4">
+															<table class="table">
+																<thead>
+																	<tr>
+																		<th>Process Category</th>
+																		<th>Process</th>
+																		<th>Incentive</th>
+																		<th>Action</th>
+																	</tr>
+																</thead>
+																<tbody>
+																	<tr>
+																		<td>Pracetak</td>
+																		<td>Cetak Offset 4 Warna</td>
+																		<td>5.000 per Job</td>
+																		<td>
+																			<a href="#" class="text-danger">Remove</a>
+																		</td>
+																	</tr>
+																	<tr>
+																		<td>Cetak</td>
+																		<td>Cetak Offset 4 Warna</td>
+																		<td>5.000 per Job</td>
+																		<td>
+																			<a href="#" class="text-danger">Remove</a>
+																		</td>
+																	</tr>
+																</tbody>
+															</table>
+														</div>
+														<button class="btn btn-warning btn-sm" data-bs-toggle="modal"
+															data-bs-target="#modalAddProsesLaminasi">Add
+															Process</button>
+													</div>
+
+												</div>
+											</div>
+											<div class="tab-pane fade" id="processArrangeTabContent" role="tabpanel"
+												aria-labelledby="process-arrange">
+												<div>
+													<h4>Work Flow for the product</h4>
+													<p class="text-muted small">
+														The following are the datas for <a href="#"
+															class="text-decoration-none">Job
+															Task</a>
+													</p>
+													<p>Please setting up or down to arrange the process</p>
+
+													<div class="table-responsive mb-4">
+														<table class="table align-middle">
+															<thead>
+																<tr>
+																	<th style="width: 60px;">No</th>
+																	<th style="width: 90px;"></th>
+																	<th>From</th>
+																	<th>Process Category</th>
+																	<th>Process</th>
+																</tr>
+															</thead>
+															<tbody>
+																<tr data-row="1">
+																	<td>1</td>
+																	<td>
+																		<div class="btn-group-horizontal">
+																			<button
+																				class="btn btn-outline-secondary btn-sm move-up">
+																				<!-- CLASS DITAMBAHKAN -->
+																				<i data-feather="arrow-up"></i>
+																			</button>
+																			<button
+																				class="ms-3 btn btn-outline-secondary btn-sm move-down">
+																				<!-- CLASS DITAMBAHKAN -->
+																				<i data-feather="arrow-down"></i>
+																			</button>
+																		</div>
+																		<!-- ===== PERBAIKAN HTML SELESAI ===== -->
+																	</td>
+																	<td>Paper Type</td>
+																	<td>Pracetak</td>
+																	<td>Pesen Kertas ke Toko</td>
+																</tr>
+																<tr data-row="2">
+																	<td>2</td>
+																	<td>
+																		<!-- ===== PERBAIKAN HTML DIMULAI ===== -->
+																		<div class="btn-group-horizontal">
+																			<button
+																				class="btn btn-outline-secondary btn-sm move-up">
+																				<!-- CLASS DITAMBAHKAN -->
+																				<i data-feather="arrow-up"></i>
+																			</button>
+																			<button
+																				class="ms-3 btn btn-outline-secondary btn-sm move-down">
+																				<!-- CLASS DITAMBAHKAN -->
+																				<i data-feather="arrow-down"></i>
+																			</button>
+																		</div>
+																		<!-- ===== PERBAIKAN HTML SELESAI ===== -->
+																	</td>
+																	<td>Offset Machine</td>
+																	<td>Cetak</td>
+																	<td>Cetak Offset 4 Warna</td>
+																</tr>
+																<tr data-row="3">
+																	<td>3</td>
+																	<td>
+																		<!-- ===== PERBAIKAN HTML DIMULAI ===== -->
+																		<div class="btn-group-horizontal">
+																			<button
+																				class="btn btn-outline-secondary btn-sm move-up">
+																				<!-- CLASS DITAMBAHKAN -->
+																				<i data-feather="arrow-up"></i>
+																			</button>
+																			<button
+																				class="ms-3 btn btn-outline-secondary btn-sm move-down">
+																				<!-- CLASS DITAMBAHKAN -->
+																				<i data-feather="arrow-down"></i>
+																			</button>
+																		</div>
+																		<!-- ===== PERBAIKAN HTML SELESAI ===== -->
+																	</td>
+																	<td>Offset Machine</td>
+																	<td>Pracetak</td>
+																	<td>Buat Plat CTP</td>
+																</tr>
+																<tr data-row="4">
+																	<td>4</td>
+																	<td>
+																		<!-- ===== PERBAIKAN HTML DIMULAI ===== -->
+																		<div class="btn-group-horizontal">
+																			<button
+																				class="btn btn-outline-secondary btn-sm move-up">
+																				<!-- CLASS DITAMBAHKAN -->
+																				<i data-feather="arrow-up"></i>
+																			</button>
+																			<button
+																				class="ms-3 btn btn-outline-secondary btn-sm move-down">
+																				<!-- CLASS DITAMBAHKAN -->
+																				<i data-feather="arrow-down"></i>
+																			</button>
+																		</div>
+																		<!-- ===== PERBAIKAN HTML SELESAI ===== -->
+																	</td>
+																	<td>Laminate</td>
+																	<td>Finishing</td>
+																	<td>Laminasi doff dari Cetak Offset</td>
+																</tr>
+																<tr data-row="5">
+																	<td>5</td>
+																	<td>
+																		<!-- ===== PERBAIKAN HTML DIMULAI ===== -->
+																		<div class="btn-group-horizontal">
+																			<button
+																				class="btn btn-outline-secondary btn-sm move-up">
+																				<!-- CLASS DITAMBAHKAN -->
+																				<i data-feather="arrow-up"></i>
+																			</button>
+																			<button
+																				class="ms-3 btn btn-outline-secondary btn-sm move-down">
+																				<!-- CLASS DITAMBAHKAN -->
+																				<i data-feather="arrow-down"></i>
+																			</button>
+																		</div>
+																		<!-- ===== PERBAIKAN HTML SELESAI ===== -->
+																	</td>
+																	<td>Components</td>
+																	<td>Finishing</td>
+																	<td>Proses Lipat ke mesin</td>
+																</tr>
+															</tbody>
+														</table>
+													</div>
+												</div>
+
+
+											</div>
+											<div class="tab-pane fade" id="componentsTabContent" role="tabpanel"
+												aria-labelledby="components">
+												<div class="justify-content-between d-flex align-items-center mb-2">
+													<div>
+														<h4>Setting for option Fold Type</h4>
+														<p class="text-muted small">The following are the datas for
+															options and
+															calculations</p>
+													</div>
+													<!-- <a class="btn btn-outline-warning btn-sm" href="mesin-laminasi-self.html">
+											Add New Fold Type
+										</a> -->
+												</div>
+												<div>
+													<div class="table-responsive mb-4">
+														<table class="table">
+															<thead>
+																<tr>
+																	<th>Fold Name</th>
+																	<th>Fold Value</th>
+																	<th>Status</th>
+																</tr>
+															</thead>
+															<tbody>
+																<tr>
+																	<td>Tanpa Lipatan</td>
+																	<td>0</td>
+																	<td>
+																		<select class="form-select form-select-sm">
+																			<option>Show</option>
+																			<option>Hide</option>
+																		</select>
+																	</td>
+
+																</tr>
+																<tr>
+																	<td>1 Lipatan</td>
+																	<td>2</td>
+																	<td>
+																		<select class="form-select form-select-sm">
+																			<option>Show</option>
+																			<option>Hide</option>
+																		</select>
+																	</td>
+
+																</tr>
+																<tr>
+																	<td>2 Tanpa Lipatan</td>
+																	<td>3</td>
+																	<td>
+																		<select class="form-select form-select-sm">
+																			<option>Show</option>
+																			<option>Hide</option>
+																		</select>
+																	</td>
+
+																</tr>
+
+															</tbody>
+														</table>
+													</div>
+													<!-- <button class="btn btn-warning btn-sm" data-bs-toggle="modal"
+											data-bs-target="#modalAddLaminateType">Add Laminate Type</button> -->
+												</div>
+												<div>
+													<div class="justify-content-between d-flex align-items-center mb-2">
+														<div>
+															<h4>Component List Added</h4>
+															<p class="text-muted small">Price For Other Service</p>
+														</div>
+														<!-- <a class="btn btn-outline-warning btn-sm" href="mesin-laminasi-self.html">
+												Add New Laminate Type
+											</a> -->
+													</div>
+													<div class="mb-3">
+														<div class="table-responsive mb-4">
+															<table class="table">
+																<thead>
+																	<tr>
+																		<th>Service Name</th>
+																		<th>Price</th>
+																		<th>Minimum Price</th>
+																		<th>Unit</th>
+																		<th>Action</th>
+																	</tr>
+																</thead>
+																<tbody>
+																	<tr>
+																		<td>1 Lipatan</td>
+																		<td>10</td>
+																		<td>150000</td>
+																		<td>Pcs</td>
+																		<td>
+																			<a href="#" class="text-danger">Remove</a>
+																		</td>
+																	</tr>
+																	<tr>
+																		<td>2 Lipatan</td>
+																		<td>15</td>
+																		<td>250000</td>
+																		<td>Pcs</td>
+																		<td>
+																			<a href="#" class="text-danger">Remove</a>
+																		</td>
+																	</tr>
+																	<tr>
+																		<td>Mobilisasi</td>
+																		<td>2500</td>
+																		<td>250000</td>
+																		<td>Kg</td>
+																		<td>
+																			<a href="#" class="text-danger">Remove</a>
+																		</td>
+																	</tr>
+
+																</tbody>
+															</table>
+														</div>
+														<button class="btn btn-warning btn-sm" data-bs-toggle="modal"
+															data-bs-target="#modalAddComponentList">Add Price For Other
+															Service</button>
+													</div>
+												</div>
+												<div>
+													<div class="justify-content-between d-flex align-items-center mb-2">
+														<div>
+															<h4>Other Components</h4>
+														</div>
+														<!-- <a class="btn btn-outline-warning btn-sm" href="mesin-laminasi-self.html">
+												Add New Laminate Type
+											</a> -->
+													</div>
+													<div class="mb-3">
+														<div class="table-responsive mb-4">
+															<table class="table">
+																<thead>
+																	<tr>
+																		<th>Service Name</th>
+																		<th>QTY</th>
+																		<th>Unit</th>
+																	</tr>
+																</thead>
+																<tbody>
+																	<tr>
+																		<td>Jam Kerja</td>
+																		<td>12</td>
+																		<td>Jam</td>
+																	</tr>
+																	<tr>
+																		<td>Kapasitas Beli Kertas per jam</td>
+																		<td>1500</td>
+																		<td>Lbr</td>
+																	</tr>
+																	<tr>
+																		<td>Kapasitas Laminasi per jam</td>
+																		<td>2000</td>
+																		<td>Lbr</td>
+																	</tr>
+																	<tr>
+																		<td>Kapasitas Lipat Per jam</td>
+																		<td>8000</td>
+																		<td>Lbr</td>
+																	</tr>
+																	<tr>
+																		<td>Kapasitas Mesin Cetak Per jam</td>
+																		<td>5000</td>
+																		<td>Lbr</td>
+																	</tr>
+																	<tr>
+																		<td>1 Lipatan</td>
+																		<td>10</td>
+																		<td>Pcs</td>
+																	</tr>
+
+
+																</tbody>
+															</table>
+														</div>
+
+													</div>
+												</div>
+												<div class="justify-content-between d-flex align-items-center mb-2">
+													<div>
+														<h4>List Of Process</h4>
+														<p class="text-muted small">
+															The following are the datas for Work Flow
+														</p>
+													</div>
+													<a class="btn btn-outline-warning btn-sm" href="job-proses.html">
+														Add New Fold Type
+													</a>
+												</div>
+
+												<div>
+													<div class="table-responsive mb-4">
+														<table class="table align-middle">
+															<thead>
+																<tr>
+																	<th style="width: 40px;">No</th>
+																	<th>Process Category</th>
+																	<th>Process</th>
+																	<th>Incentive</th>
+																	<th>Action</th>
+																</tr>
+															</thead>
+															<tbody>
+																<tr>
+																	<td>1</td>
+																	<td>Finishing</td>
+																	<td>Proses Lipat Ke Mesin</td>
+																	<td>10000 per job</td>
+																	<td>
+																		<div class="btn-group">
+																			<button
+																				class="btn btn-outline-secondary btn-sm move-up">
+																				<i data-feather="arrow-up"></i>
+																			</button>
+																			<button
+																				class="btn btn-outline-secondary btn-sm move-down">
+																				<i data-feather="arrow-down"></i>
+																			</button>
+																			<a href="#"
+																				class="text-danger ms-2 small">Remove</a>
+																		</div>
+																	</td>
+																</tr>
+																<tr>
+																	<td>2</td>
+																	<td>Pracetak</td>
+																	<td>Pesen Kertas ke Toko</td>
+																	<td>8000 per job</td>
+																	<td>
+																		<div class="btn-group">
+																			<button
+																				class="btn btn-outline-secondary btn-sm move-up">
+																				<i data-feather="arrow-up"></i>
+																			</button>
+																			<button
+																				class="btn btn-outline-secondary btn-sm move-down">
+																				<i data-feather="arrow-down"></i>
+																			</button>
+																			<a href="#"
+																				class="text-danger ms-2 small">Remove</a>
+																		</div>
+																	</td>
+																</tr>
+																<tr>
+																	<td>3</td>
+																	<td>Cetak</td>
+																	<td>Cetak Offset 4 Warna</td>
+																	<td>15000 per job</td>
+																	<td>
+																		<div class="btn-group">
+																			<button
+																				class="btn btn-outline-secondary btn-sm move-up">
+																				<i data-feather="arrow-up"></i>
+																			</button>
+																			<button
+																				class="btn btn-outline-secondary btn-sm move-down">
+																				<i data-feather="arrow-down"></i>
+																			</button>
+																			<a href="#"
+																				class="text-danger ms-2 small">Remove</a>
+																		</div>
+																	</td>
+																</tr>
+															</tbody>
+														</table>
+													</div>
+													<button class="btn btn-warning btn-sm" data-bs-toggle="modal"
+														data-bs-target="#modalAddProsesKomponen">
+														Add Laminate Type
+													</button>
 												</div>
 											</div>
 										</div>
 									</div>
-
-								</div>
-								<div class="tab-pane fade" id="paperTypeTabContent" role="tabpanel"
-									aria-labelledby="paper-type">
-									<!-- Setting for Paper Type Section -->
-									<div>
-										<div class="justify-content-between d-flex align-items-center mb-2">
-											<div>
-												<h4>Setting for option paper type</h4>
-												<p class="text-muted small">The following are the datas for options and
-													calculations</p>
-											</div>
-											<a class="btn btn-outline-warning btn-sm" href="kertas-jenis-self.html">
-												Add New Paper Type
-											</a>
-										</div>
-										<div>
-											<div class="table-responsive mb-4">
-												<table class="table">
-													<thead>
-														<tr>
-															<th>Paper Group</th>
-															<th>Mark</th>
-															<th>Gramature</th>
-															<th>Status</th>
-															<th>Action</th>
-														</tr>
-													</thead>
-													<tbody>
-														<tr>
-															<td>Art Paper</td>
-															<td>Pindo</td>
-															<td>120 gsm</td>
-															<td>
-																<select class="form-select form-select-sm">
-																	<option>Show</option>
-																	<option>Hide</option>
-																</select>
-															</td>
-															<td>
-																<a href="#" class="text-danger">Remove</a>
-															</td>
-														</tr>
-														<tr>
-															<td>Art Paper</td>
-															<td>Pindo</td>
-															<td>150 gsm</td>
-															<td>
-																<select class="form-select form-select-sm">
-																	<option>Show</option>
-																	<option>Hide</option>
-																</select>
-															</td>
-															<td>
-																<a href="#" class="text-danger">Remove</a>
-															</td>
-														</tr>
-														<tr>
-															<td>Art Paper</td>
-															<td>Pindo</td>
-															<td>190 gsm</td>
-															<td>
-																<select class="form-select form-select-sm">
-																	<option>Show</option>
-																	<option>Hide</option>
-																</select>
-															</td>
-															<td>
-																<a href="#" class="text-danger">Remove</a>
-															</td>
-														</tr>
-														<tr>
-															<td>Art Carton</td>
-															<td>Pindo</td>
-															<td>210 gsm</td>
-															<td>
-																<select class="form-select form-select-sm">
-																	<option>Show</option>
-																	<option>Hide</option>
-																</select>
-															</td>
-															<td>
-																<a href="#" class="text-danger">Remove</a>
-															</td>
-														</tr>
-														<tr>
-															<td>Art Carton</td>
-															<td>Pindo</td>
-															<td>230 gsm</td>
-															<td>
-																<select class="form-select form-select-sm">
-																	<option>Show</option>
-																	<option>Hide</option>
-																</select>
-															</td>
-															<td>
-																<a href="#" class="text-danger">Remove</a>
-															</td>
-														</tr>
-														<tr>
-															<td>Art Carton</td>
-															<td>Pindo</td>
-															<td>260 gsm</td>
-															<td>
-																<select class="form-select form-select-sm">
-																	<option>Show</option>
-																	<option>Hide</option>
-																</select>
-															</td>
-															<td>
-																<a href="#" class="text-danger">Remove</a>
-															</td>
-														</tr>
-														<tr>
-															<td>Art Carton</td>
-															<td>Pindo</td>
-															<td>310 gsm</td>
-															<td>
-																<select class="form-select form-select-sm">
-																	<option>Hide</option>
-																	<option>Show</option>
-																</select>
-															</td>
-															<td>
-																<a href="#" class="text-danger">Remove</a>
-															</td>
-														</tr>
-													</tbody>
-												</table>
-											</div>
-											<button class="btn btn-warning btn-sm" data-bs-toggle="modal"
-												data-bs-target="#modalPaperType">Add Paper Type</button>
-										</div>
-									</div>
-
-									<!-- List of Process Section -->
-									<div class="mt-5">
-										<div class="justify-content-between d-flex align-items-center mb-2">
-											<div>
-												<h4>List of Process</h4>
-												<p class="text-muted small">The following are the datas for Process
-													Arrange</p>
-											</div>
-											<a class="btn btn-outline-warning btn-sm" href="job-proses.html">
-												Add New Process
-											</a>
-										</div>
-										<div>
-											<div class="table-responsive mb-4">
-												<table class="table">
-													<thead>
-														<tr>
-															<th>Process Category</th>
-															<th>Process</th>
-															<th>Incentive</th>
-															<th>Action</th>
-														</tr>
-													</thead>
-													<tbody>
-														<tr>
-															<td>Pracetak</td>
-															<td>Pesan Kertas ke Toko</td>
-															<td>5.000 per Job</td>
-															<td>
-																<a href="#" class="text-danger">Remove</a>
-															</td>
-														</tr>
-													</tbody>
-												</table>
-											</div>
-											<button class="btn btn-warning btn-sm" data-bs-toggle="modal"
-												data-bs-target="#modalProcess">Add Process</button>
-										</div>
-
-									</div>
-
-								</div>
-								<div class="tab-pane fade" id="offsetMachineTabContent" role="tabpanel"
-									aria-labelledby="offset-machine">
-									<div>
-										<div class="justify-content-between d-flex align-items-center mb-2">
-											<div>
-												<h4>Setting for option Offset Machine</h4>
-												<p class="text-muted small">The following are the datas for options and
-													calculations</p>
-											</div>
-											<a class="btn btn-outline-warning btn-sm" href="mesin-cetak-self.html">
-												Add New offset machine
-											</a>
-										</div>
-										<div>
-											<div class="table-responsive mb-4">
-												<table class="table">
-													<thead>
-														<tr>
-															<th>Name</th>
-															<th>Unit Color</th>
-															<th>Paper Area</th>
-															<th>Status</th>
-															<th>Action</th>
-														</tr>
-													</thead>
-													<tbody>
-														<tr>
-															<td>heidlberg sm52</td>
-															<td>4 Color</td>
-															<td>120 gsm</td>
-															<td>
-																<select class="form-select form-select-sm">
-																	<option>Show</option>
-																	<option>Hide</option>
-																</select>
-															</td>
-															<td>
-																<a href="#" class="text-danger">Remove</a>
-															</td>
-														</tr>
-														<tr>
-															<td>heidlberg sm74</td>
-															<td>4 Color</td>
-															<td>150 gsm</td>
-															<td>
-																<select class="form-select form-select-sm">
-																	<option>Show</option>
-																	<option>Hide</option>
-																</select>
-															</td>
-															<td>
-																<a href="#" class="text-danger">Remove</a>
-															</td>
-														</tr>
-														<tr>
-															<td>heidlberg sm104</td>
-															<td>4 Color</td>
-															<td>190 gsm</td>
-															<td>
-																<select class="form-select form-select-sm">
-																	<option>Show</option>
-																	<option>Hide</option>
-																</select>
-															</td>
-															<td>
-																<a href="#" class="text-danger">Remove</a>
-															</td>
-														</tr>
-														<tr>
-															<td>Mitsubishi 73</td>
-															<td>4 Color</td>
-															<td>210 gsm</td>
-															<td>
-																<select class="form-select form-select-sm">
-																	<option>Show</option>
-																	<option>Hide</option>
-																</select>
-															</td>
-															<td>
-																<a href="#" class="text-danger">Remove</a>
-															</td>
-														</tr>
-													</tbody>
-												</table>
-											</div>
-											<button class="btn btn-warning btn-sm" data-bs-toggle="modal"
-												data-bs-target="#modalAddOfsett">Add Offset Machine</button>
-										</div>
-									</div>
-
-									<!-- List of Process Section -->
-									<div class="mt-5">
-										<div class="justify-content-between d-flex align-items-center mb-2">
-											<div>
-												<h4>List of Process</h4>
-												<p class="text-muted small">The following are the datas for Process
-													Arrange</p>
-											</div>
-											<a class="btn btn-outline-warning btn-sm" href="job-proses.html">
-												Add New Process
-											</a>
-										</div>
-										<div>
-											<div class="table-responsive mb-4">
-												<table class="table">
-													<thead>
-														<tr>
-															<th>Process Category</th>
-															<th>Process</th>
-															<th>Incentive</th>
-															<th>Action</th>
-														</tr>
-													</thead>
-													<tbody>
-														<tr>
-															<td>Pracetak</td>
-															<td>Cetak Offset 4 Warna</td>
-															<td>5.000 per Job</td>
-															<td>
-																<a href="#" class="text-danger">Remove</a>
-															</td>
-														</tr>
-														<tr>
-															<td>Cetak</td>
-															<td>Cetak Offset 4 Warna</td>
-															<td>5.000 per Job</td>
-															<td>
-																<a href="#" class="text-danger">Remove</a>
-															</td>
-														</tr>
-													</tbody>
-												</table>
-											</div>
-											<button class="btn btn-warning btn-sm" data-bs-toggle="modal"
-												data-bs-target="#modalProcessOffsetMachine">Add Process</button>
-										</div>
-
-									</div>
-
-								</div>
-								<div class="modal fade" id="modalTambahGambar" tabindex="-1" aria-hidden="true">
-									<div class="modal-dialog">
-										<div class="modal-content">
-											<div class="modal-header">
-												<h5 class="modal-title">Tambah Gambar Brosur</h5>
-												<button type="button" class="btn-close"
-													data-bs-dismiss="modal"></button>
-											</div>
-											<div class="modal-body">
-												<label class="form-label">Pilih File Gambar</label>
-												<input type="file" class="form-control" id="inputFileGambar"
-													accept="image/*">
-											</div>
-											<div class="modal-footer">
-												<button type="button" class="btn btn-secondary"
-													data-bs-dismiss="modal">Batal</button>
-												<button type="button" class="btn btn-warning btn-sm"
-													onclick="tambahGambar()">Tambah</button>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="tab-pane fade" id="laminateTabContent" role="tabpanel"
-									aria-labelledby="laminate">
-									<div>
-										<div class="justify-content-between d-flex align-items-center mb-2">
-											<div>
-												<h4>Setting for option Laminate Type</h4>
-												<p class="text-muted small">The following are the datas for options and
-													calculations</p>
-											</div>
-											<a class="btn btn-outline-warning btn-sm" href="mesin-laminasi-self.html">
-												Add New Laminate Type
-											</a>
-										</div>
-										<div>
-											<div class="table-responsive mb-4">
-												<table class="table">
-													<thead>
-														<tr>
-															<th>Name</th>
-															<th>Status</th>
-															<th>Action</th>
-														</tr>
-													</thead>
-													<tbody>
-														<tr>
-															<td>Laminasi Doff</td>
-															<td>
-																<select class="form-select form-select-sm">
-																	<option>Show</option>
-																	<option>Hide</option>
-																</select>
-															</td>
-															<td>
-																<a href="#" class="text-danger">Remove</a>
-															</td>
-														</tr>
-														<tr>
-															<td>Laminasi Glossy</td>
-															<td>
-																<select class="form-select form-select-sm">
-																	<option>Show</option>
-																	<option>Hide</option>
-																</select>
-															</td>
-															<td>
-																<a href="#" class="text-danger">Remove</a>
-															</td>
-														</tr>
-														<tr>
-															<td>Spot UV</td>
-															<td>
-																<select class="form-select form-select-sm">
-																	<option>Show</option>
-																	<option>Hide</option>
-																</select>
-															</td>
-															<td>
-																<a href="#" class="text-danger">Remove</a>
-															</td>
-														</tr>
-													</tbody>
-												</table>
-											</div>
-											<button class="btn btn-warning btn-sm" data-bs-toggle="modal"
-												data-bs-target="#modalAddLaminateType">Add Laminate Type</button>
-										</div>
-									</div>
-
-									<!-- List of Process Section -->
-									<div class="mt-5">
-										<div class="justify-content-between d-flex align-items-center mb-2">
-											<div>
-												<h4>List of Process</h4>
-												<p class="text-muted small">The following are the datas for Process
-													Arrange</p>
-											</div>
-											<a class="btn btn-outline-warning btn-sm" href="job-proses.html">
-												Add New Process
-											</a>
-										</div>
-										<div>
-											<div class="table-responsive mb-4">
-												<table class="table">
-													<thead>
-														<tr>
-															<th>Process Category</th>
-															<th>Process</th>
-															<th>Incentive</th>
-															<th>Action</th>
-														</tr>
-													</thead>
-													<tbody>
-														<tr>
-															<td>Pracetak</td>
-															<td>Cetak Offset 4 Warna</td>
-															<td>5.000 per Job</td>
-															<td>
-																<a href="#" class="text-danger">Remove</a>
-															</td>
-														</tr>
-														<tr>
-															<td>Cetak</td>
-															<td>Cetak Offset 4 Warna</td>
-															<td>5.000 per Job</td>
-															<td>
-																<a href="#" class="text-danger">Remove</a>
-															</td>
-														</tr>
-													</tbody>
-												</table>
-											</div>
-											<button class="btn btn-warning btn-sm" data-bs-toggle="modal"
-												data-bs-target="#modalAddProsesLaminasi">Add Process</button>
-										</div>
-
-									</div>
-								</div>
-								<div class="tab-pane fade" id="processArrangeTabContent" role="tabpanel"
-									aria-labelledby="process-arrange">
-									<div>
-										<h4>Work Flow for the product</h4>
-										<p class="text-muted small">
-											The following are the datas for <a href="#" class="text-decoration-none">Job
-												Task</a>
-										</p>
-										<p>Please setting up or down to arrange the process</p>
-
-										<div class="table-responsive mb-4">
-											<table class="table align-middle">
-												<thead>
-													<tr>
-														<th style="width: 60px;">No</th>
-														<th style="width: 90px;"></th>
-														<th>From</th>
-														<th>Process Category</th>
-														<th>Process</th>
-													</tr>
-												</thead>
-												<tbody>
-													<tr data-row="1">
-														<td>1</td>
-														<td>
-															<div class="btn-group-horizontal">
-																<button
-																	class="btn btn-outline-secondary btn-sm move-up">
-																	<!-- CLASS DITAMBAHKAN -->
-																	<i data-feather="arrow-up"></i>
-																</button>
-																<button
-																	class="ms-3 btn btn-outline-secondary btn-sm move-down">
-																	<!-- CLASS DITAMBAHKAN -->
-																	<i data-feather="arrow-down"></i>
-																</button>
-															</div>
-															<!-- ===== PERBAIKAN HTML SELESAI ===== -->
-														</td>
-														<td>Paper Type</td>
-														<td>Pracetak</td>
-														<td>Pesen Kertas ke Toko</td>
-													</tr>
-													<tr data-row="2">
-														<td>2</td>
-														<td>
-															<!-- ===== PERBAIKAN HTML DIMULAI ===== -->
-															<div class="btn-group-horizontal">
-																<button
-																	class="btn btn-outline-secondary btn-sm move-up">
-																	<!-- CLASS DITAMBAHKAN -->
-																	<i data-feather="arrow-up"></i>
-																</button>
-																<button
-																	class="ms-3 btn btn-outline-secondary btn-sm move-down">
-																	<!-- CLASS DITAMBAHKAN -->
-																	<i data-feather="arrow-down"></i>
-																</button>
-															</div>
-															<!-- ===== PERBAIKAN HTML SELESAI ===== -->
-														</td>
-														<td>Offset Machine</td>
-														<td>Cetak</td>
-														<td>Cetak Offset 4 Warna</td>
-													</tr>
-													<tr data-row="3">
-														<td>3</td>
-														<td>
-															<!-- ===== PERBAIKAN HTML DIMULAI ===== -->
-															<div class="btn-group-horizontal">
-																<button
-																	class="btn btn-outline-secondary btn-sm move-up">
-																	<!-- CLASS DITAMBAHKAN -->
-																	<i data-feather="arrow-up"></i>
-																</button>
-																<button
-																	class="ms-3 btn btn-outline-secondary btn-sm move-down">
-																	<!-- CLASS DITAMBAHKAN -->
-																	<i data-feather="arrow-down"></i>
-																</button>
-															</div>
-															<!-- ===== PERBAIKAN HTML SELESAI ===== -->
-														</td>
-														<td>Offset Machine</td>
-														<td>Pracetak</td>
-														<td>Buat Plat CTP</td>
-													</tr>
-													<tr data-row="4">
-														<td>4</td>
-														<td>
-															<!-- ===== PERBAIKAN HTML DIMULAI ===== -->
-															<div class="btn-group-horizontal">
-																<button
-																	class="btn btn-outline-secondary btn-sm move-up">
-																	<!-- CLASS DITAMBAHKAN -->
-																	<i data-feather="arrow-up"></i>
-																</button>
-																<button
-																	class="ms-3 btn btn-outline-secondary btn-sm move-down">
-																	<!-- CLASS DITAMBAHKAN -->
-																	<i data-feather="arrow-down"></i>
-																</button>
-															</div>
-															<!-- ===== PERBAIKAN HTML SELESAI ===== -->
-														</td>
-														<td>Laminate</td>
-														<td>Finishing</td>
-														<td>Laminasi doff dari Cetak Offset</td>
-													</tr>
-													<tr data-row="5">
-														<td>5</td>
-														<td>
-															<!-- ===== PERBAIKAN HTML DIMULAI ===== -->
-															<div class="btn-group-horizontal">
-																<button
-																	class="btn btn-outline-secondary btn-sm move-up">
-																	<!-- CLASS DITAMBAHKAN -->
-																	<i data-feather="arrow-up"></i>
-																</button>
-																<button
-																	class="ms-3 btn btn-outline-secondary btn-sm move-down">
-																	<!-- CLASS DITAMBAHKAN -->
-																	<i data-feather="arrow-down"></i>
-																</button>
-															</div>
-															<!-- ===== PERBAIKAN HTML SELESAI ===== -->
-														</td>
-														<td>Components</td>
-														<td>Finishing</td>
-														<td>Proses Lipat ke mesin</td>
-													</tr>
-												</tbody>
-											</table>
-										</div>
-									</div>
-
-
-								</div>
-								<div class="tab-pane fade" id="componentsTabContent" role="tabpanel"
-									aria-labelledby="components">
-									<div class="justify-content-between d-flex align-items-center mb-2">
-										<div>
-											<h4>Setting for option Fold Type</h4>
-											<p class="text-muted small">The following are the datas for options and
-												calculations</p>
-										</div>
-										<!-- <a class="btn btn-outline-warning btn-sm" href="mesin-laminasi-self.html">
-											Add New Fold Type
-										</a> -->
-									</div>
-									<div>
-										<div class="table-responsive mb-4">
-											<table class="table">
-												<thead>
-													<tr>
-														<th>Fold Name</th>
-														<th>Fold Value</th>
-														<th>Status</th>
-													</tr>
-												</thead>
-												<tbody>
-													<tr>
-														<td>Tanpa Lipatan</td>
-														<td>0</td>
-														<td>
-															<select class="form-select form-select-sm">
-																<option>Show</option>
-																<option>Hide</option>
-															</select>
-														</td>
-
-													</tr>
-													<tr>
-														<td>1 Lipatan</td>
-														<td>2</td>
-														<td>
-															<select class="form-select form-select-sm">
-																<option>Show</option>
-																<option>Hide</option>
-															</select>
-														</td>
-
-													</tr>
-													<tr>
-														<td>2 Tanpa Lipatan</td>
-														<td>3</td>
-														<td>
-															<select class="form-select form-select-sm">
-																<option>Show</option>
-																<option>Hide</option>
-															</select>
-														</td>
-
-													</tr>
-
-												</tbody>
-											</table>
-										</div>
-										<!-- <button class="btn btn-warning btn-sm" data-bs-toggle="modal"
-											data-bs-target="#modalAddLaminateType">Add Laminate Type</button> -->
-									</div>
-									<div>
-										<div class="justify-content-between d-flex align-items-center mb-2">
-											<div>
-												<h4>Component List Added</h4>
-												<p class="text-muted small">Price For Other Service</p>
-											</div>
-											<!-- <a class="btn btn-outline-warning btn-sm" href="mesin-laminasi-self.html">
-												Add New Laminate Type
-											</a> -->
-										</div>
-										<div class="mb-3">
-											<div class="table-responsive mb-4">
-												<table class="table">
-													<thead>
-														<tr>
-															<th>Service Name</th>
-															<th>Price</th>
-															<th>Minimum Price</th>
-															<th>Unit</th>
-															<th>Action</th>
-														</tr>
-													</thead>
-													<tbody>
-														<tr>
-															<td>1 Lipatan</td>
-															<td>10</td>
-															<td>150000</td>
-															<td>Pcs</td>
-															<td>
-																<a href="#" class="text-danger">Remove</a>
-															</td>
-														</tr>
-														<tr>
-															<td>2 Lipatan</td>
-															<td>15</td>
-															<td>250000</td>
-															<td>Pcs</td>
-															<td>
-																<a href="#" class="text-danger">Remove</a>
-															</td>
-														</tr>
-														<tr>
-															<td>Mobilisasi</td>
-															<td>2500</td>
-															<td>250000</td>
-															<td>Kg</td>
-															<td>
-																<a href="#" class="text-danger">Remove</a>
-															</td>
-														</tr>
-
-													</tbody>
-												</table>
-											</div>
-											<button class="btn btn-warning btn-sm" data-bs-toggle="modal"
-												data-bs-target="#modalAddComponentList">Add Price For Other
-												Service</button>
-										</div>
-									</div>
-									<div>
-										<div class="justify-content-between d-flex align-items-center mb-2">
-											<div>
-												<h4>Other Components</h4>
-											</div>
-											<!-- <a class="btn btn-outline-warning btn-sm" href="mesin-laminasi-self.html">
-												Add New Laminate Type
-											</a> -->
-										</div>
-										<div class="mb-3">
-											<div class="table-responsive mb-4">
-												<table class="table">
-													<thead>
-														<tr>
-															<th>Service Name</th>
-															<th>QTY</th>
-															<th>Unit</th>
-														</tr>
-													</thead>
-													<tbody>
-														<tr>
-															<td>Jam Kerja</td>
-															<td>12</td>
-															<td>Jam</td>
-														</tr>
-														<tr>
-															<td>Kapasitas Beli Kertas per jam</td>
-															<td>1500</td>
-															<td>Lbr</td>
-														</tr>
-														<tr>
-															<td>Kapasitas Laminasi per jam</td>
-															<td>2000</td>
-															<td>Lbr</td>
-														</tr>
-														<tr>
-															<td>Kapasitas Lipat Per jam</td>
-															<td>8000</td>
-															<td>Lbr</td>
-														</tr>
-														<tr>
-															<td>Kapasitas Mesin Cetak Per jam</td>
-															<td>5000</td>
-															<td>Lbr</td>
-														</tr>
-														<tr>
-															<td>1 Lipatan</td>
-															<td>10</td>
-															<td>Pcs</td>
-														</tr>
-
-
-													</tbody>
-												</table>
-											</div>
-
-										</div>
-									</div>
-									<div class="justify-content-between d-flex align-items-center mb-2">
-										<div>
-											<h4>List Of Process</h4>
-											<p class="text-muted small">
-												The following are the datas for Work Flow
-											</p>
-										</div>
-										<a class="btn btn-outline-warning btn-sm" href="job-proses.html">
-											Add New Fold Type
-										</a>
-									</div>
-
-									<div>
-										<div class="table-responsive mb-4">
-											<table class="table align-middle">
-												<thead>
-													<tr>
-														<th style="width: 40px;">No</th>
-														<th>Process Category</th>
-														<th>Process</th>
-														<th>Incentive</th>
-														<th>Action</th>
-													</tr>
-												</thead>
-												<tbody>
-													<tr>
-														<td>1</td>
-														<td>Finishing</td>
-														<td>Proses Lipat Ke Mesin</td>
-														<td>10000 per job</td>
-														<td>
-															<div class="btn-group">
-																<button
-																	class="btn btn-outline-secondary btn-sm move-up">
-																	<i data-feather="arrow-up"></i>
-																</button>
-																<button
-																	class="btn btn-outline-secondary btn-sm move-down">
-																	<i data-feather="arrow-down"></i>
-																</button>
-																<a href="#" class="text-danger ms-2 small">Remove</a>
-															</div>
-														</td>
-													</tr>
-													<tr>
-														<td>2</td>
-														<td>Pracetak</td>
-														<td>Pesen Kertas ke Toko</td>
-														<td>8000 per job</td>
-														<td>
-															<div class="btn-group">
-																<button
-																	class="btn btn-outline-secondary btn-sm move-up">
-																	<i data-feather="arrow-up"></i>
-																</button>
-																<button
-																	class="btn btn-outline-secondary btn-sm move-down">
-																	<i data-feather="arrow-down"></i>
-																</button>
-																<a href="#" class="text-danger ms-2 small">Remove</a>
-															</div>
-														</td>
-													</tr>
-													<tr>
-														<td>3</td>
-														<td>Cetak</td>
-														<td>Cetak Offset 4 Warna</td>
-														<td>15000 per job</td>
-														<td>
-															<div class="btn-group">
-																<button
-																	class="btn btn-outline-secondary btn-sm move-up">
-																	<i data-feather="arrow-up"></i>
-																</button>
-																<button
-																	class="btn btn-outline-secondary btn-sm move-down">
-																	<i data-feather="arrow-down"></i>
-																</button>
-																<a href="#" class="text-danger ms-2 small">Remove</a>
-															</div>
-														</td>
-													</tr>
-												</tbody>
-											</table>
-										</div>
-										<button class="btn btn-warning btn-sm" data-bs-toggle="modal"
-											data-bs-target="#modalAddProsesKomponen">
-											Add Laminate Type
-										</button>
-									</div>
 								</div>
 							</div>
 
@@ -1631,63 +1680,6 @@
 
 				</div>
 			</div>
-			<!-- Modal ukuran -->
-			<!-- Modal Tambah/Edit Ukuran Kertas -->
-			<div class="modal fade" id="modalAddCategory" tabindex="-1" aria-labelledby="modalAddCategoryLabel"
-				aria-hidden="true">
-				<div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
-					<div class="modal-content">
-						<div class="modal-header">
-							<h5 class="modal-title" id="modalAddCategoryLabel">Add Category</h5>
-							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-						</div>
-						<div class="modal-body">
-							<div class="row my-3 align-items-start">
-								<div class="col-md-2">Product Category</div>
-								<div class="col-md-10">
-									<input type="text" class="form-control" placeholder="Category">
-								</div>
-							</div>
-							<div class="row my-3 align-items-start">
-								<div class="col-md-2">Description</div>
-								<div class="col-md-10">
-									<div id="summernoteCategory"></div>
-								</div>
-							</div>
-							<div class="row my-3 align-items-start">
-								<div class="col-md-2">
-									<p>Image</p>
-									<button class="btn btn-warning btn-sm" id="btnTambahGambarCategory" type="button">
-										<i class="fa fa-plus"></i> Tambah
-									</button>
-								</div>
-								<div class="col-md-10">
-									<div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 g-3" id="gridGambarBrosur">
-										<div class="col">
-											<div class="brosur-item position-relative border rounded overflow-hidden">
-												<img src="assets/img/placeholder.png" class="img-brosur" alt="">
-												<input type="checkbox"
-													class="form-check-input position-absolute top-0 end-0 m-1" checked>
-											</div>
-										</div>
-									</div>
-									<div class="mt-3 d-flex gap-2">
-										<button class="btn btn-warning btn-sm" id="btnHapusGambar"
-											type="button">Hapus</button>
-										<button class="btn btn-warning btn-sm" id="btnGambarUtama" type="button">Gambar
-											Utama</button>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="modal-footer">
-							<button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancel</button>
-							<button type="button" class="btn btn-warning">Save Category</button>
-						</div>
-					</div>
-				</div>
-			</div>
-
 			<div class="modal fade" id="modaladdukuran" tabindex="-1" aria-labelledby="modalFormLabel"
 				aria-hidden="true">
 				<div class="modal-dialog modal-dialog-centered">
@@ -2241,39 +2233,6 @@
 		<!-- Sweetalert 2 -->
 		<script src="assets/plugins/sweetalert/sweetalert2.all.min.js"></script>
 		<script src="assets/plugins/sweetalert/sweetalerts.min.js"></script>
-
-		<!-- Summernote JS -->
-		<script src="assets/plugins/summernote/summernote-bs4.min.js"></script>
-		<script>
-			$(function () {
-				$('#summernoteCategory').summernote({
-					height: 180,
-					placeholder: 'Description'
-				});
-
-				const imageModalElement = document.getElementById('modalTambahGambar');
-				const categoryModalElement = document.getElementById('modalAddCategory');
-				const imageModal = imageModalElement ? new bootstrap.Modal(imageModalElement) : null;
-
-				$('#btnTambahGambarCategory').on('click', function () {
-					if (imageModal) {
-						imageModal.show();
-					}
-				});
-
-				if (categoryModalElement) {
-					categoryModalElement.addEventListener('show.bs.modal', function (event) {
-						const trigger = event.relatedTarget;
-						const title = categoryModalElement.querySelector('.modal-title');
-						const isEdit = trigger && trigger.querySelector('.feather-edit');
-
-						if (title) {
-							title.textContent = isEdit ? 'Edit Category' : 'Add Category';
-						}
-					});
-				}
-			});
-		</script>
 
 		<!-- Custom JS -->
 		<script src="assets/js/theme-script.js"></script>

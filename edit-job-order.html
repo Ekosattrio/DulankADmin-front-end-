@@ -237,18 +237,42 @@
                             <div class="tab-pane fade workflow-pane" id="flow-design" role="tabpanel">
                               <h6 class="mb-4">Add Information Detail</h6>
                               <div class="row align-items-center mb-3">
-                                <div class="col-lg-4">Flow Type</div>
+                                <div class="col-lg-4 form-label">Flow Type</div>
                                 <div class="col-lg-8">
-                                  <div class="d-flex flex-wrap gap-5">
+                                  <div class="d-flex flex-wrap gap-2">
                                     <div class="form-check mb-0">
-                                      <input class="form-check-input" type="radio" name="flow-design-type" checked />
+                                      <input class="form-check-input flow-type-radio" type="radio" name="flow-design-type"
+                                        value="in-house" checked />
                                       <label class="form-check-label">In-House</label>
                                     </div>
                                     <div class="form-check mb-0">
-                                      <input class="form-check-input" type="radio" name="flow-design-type" />
+                                      <input class="form-check-input flow-type-radio" type="radio" name="flow-design-type"
+                                        value="branch-store" />
+                                      <label class="form-check-label">Branch Store</label>
+                                    </div>
+                                    <div class="form-check mb-0">
+                                      <input class="form-check-input flow-type-radio" type="radio" name="flow-design-type"
+                                        value="outsource" />
                                       <label class="form-check-label">Outsource</label>
                                     </div>
                                   </div>
+                                </div>
+                              </div>
+                              <div class="row align-items-center mb-3 flow-branch-store-row d-none">
+                                <div class="col-lg-4"></div>
+                                <div class="col-lg-7 col-md-10">
+                                  <select class="form-select select">
+                                    <option selected value="">Select Branch Store</option>
+                                    <option>Branch Store Jakarta</option>
+                                    <option>Branch Store Bandung</option>
+                                    <option>Branch Store Surabaya</option>
+                                  </select>
+                                </div>
+                              </div>
+                              <div class="row align-items-center mb-3 flow-expense-name-row d-none">
+                                <div class="col-lg-4"></div>
+                                <div class="col-lg-7 col-md-10">
+                                  <input type="text" class="form-control" placeholder="Search Expense Name" />
                                 </div>
                               </div>
                               <div class="flow-fields">
@@ -320,18 +344,42 @@
                             <div class="tab-pane fade show active workflow-pane" id="flow-plat" role="tabpanel">
                               <h6 class="mb-4">Add Information Detail</h6>
                               <div class="row align-items-center mb-3">
-                                <div class="col-lg-4">Flow Type</div>
+                                <div class="col-lg-4 form-label">Flow Type</div>
                                 <div class="col-lg-8">
-                                  <div class="d-flex flex-wrap gap-5">
+                                  <div class="d-flex flex-wrap gap-2">
                                     <div class="form-check mb-0">
-                                      <input class="form-check-input" type="radio" name="flow-plat-type" checked />
+                                      <input class="form-check-input flow-type-radio" type="radio" name="flow-plat-type"
+                                        value="in-house" checked />
                                       <label class="form-check-label">In-House</label>
                                     </div>
                                     <div class="form-check mb-0">
-                                      <input class="form-check-input" type="radio" name="flow-plat-type" />
+                                      <input class="form-check-input flow-type-radio" type="radio" name="flow-plat-type"
+                                        value="branch-store" />
+                                      <label class="form-check-label">Branch Store</label>
+                                    </div>
+                                    <div class="form-check mb-0">
+                                      <input class="form-check-input flow-type-radio" type="radio" name="flow-plat-type"
+                                        value="outsource" />
                                       <label class="form-check-label">Outsource</label>
                                     </div>
                                   </div>
+                                </div>
+                              </div>
+                              <div class="row align-items-center mb-3 flow-branch-store-row d-none">
+                                <div class="col-lg-4"></div>
+                                <div class="col-lg-7 col-md-10">
+                                  <select class="form-select select">
+                                    <option selected value="">Select Branch Store</option>
+                                    <option>Branch Store Jakarta</option>
+                                    <option>Branch Store Bandung</option>
+                                    <option>Branch Store Surabaya</option>
+                                  </select>
+                                </div>
+                              </div>
+                              <div class="row align-items-center mb-3 flow-expense-name-row d-none">
+                                <div class="col-lg-4"></div>
+                                <div class="col-lg-7 col-md-10">
+                                  <input type="text" class="form-control" placeholder="Search Expense Name" />
                                 </div>
                               </div>
                               <div class="flow-fields">
@@ -434,19 +482,42 @@
                             <div class="tab-pane fade workflow-pane" id="flow-heidelberg" role="tabpanel">
                               <h6 class="mb-4">Add Information Detail</h6>
                               <div class="row align-items-center mb-3">
-                                <div class="col-lg-4">Flow Type</div>
+                                <div class="col-lg-4 form-label">Flow Type</div>
                                 <div class="col-lg-8">
-                                  <div class="d-flex flex-wrap gap-5">
+                                  <div class="d-flex flex-wrap gap-2">
                                     <div class="form-check mb-0">
-                                      <input class="form-check-input" type="radio" name="flow-heidelberg-type"
-                                        checked />
+                                      <input class="form-check-input flow-type-radio" type="radio"
+                                        name="flow-heidelberg-type" value="in-house" checked />
                                       <label class="form-check-label">In-House</label>
                                     </div>
                                     <div class="form-check mb-0">
-                                      <input class="form-check-input" type="radio" name="flow-heidelberg-type" />
+                                      <input class="form-check-input flow-type-radio" type="radio"
+                                        name="flow-heidelberg-type" value="branch-store" />
+                                      <label class="form-check-label">Branch Store</label>
+                                    </div>
+                                    <div class="form-check mb-0">
+                                      <input class="form-check-input flow-type-radio" type="radio"
+                                        name="flow-heidelberg-type" value="outsource" />
                                       <label class="form-check-label">Outsource</label>
                                     </div>
                                   </div>
+                                </div>
+                              </div>
+                              <div class="row align-items-center mb-3 flow-branch-store-row d-none">
+                                <div class="col-lg-4"></div>
+                                <div class="col-lg-7 col-md-10">
+                                  <select class="form-select select">
+                                    <option selected value="">Select Branch Store</option>
+                                    <option>Branch Store Jakarta</option>
+                                    <option>Branch Store Bandung</option>
+                                    <option>Branch Store Surabaya</option>
+                                  </select>
+                                </div>
+                              </div>
+                              <div class="row align-items-center mb-3 flow-expense-name-row d-none">
+                                <div class="col-lg-4"></div>
+                                <div class="col-lg-7 col-md-10">
+                                  <input type="text" class="form-control" placeholder="Search Expense Name" />
                                 </div>
                               </div>
                               <div class="flow-fields">
@@ -530,18 +601,42 @@
                             <div class="tab-pane fade workflow-pane" id="flow-potong" role="tabpanel">
                               <h6 class="mb-4">Add Information Detail</h6>
                               <div class="row align-items-center mb-3">
-                                <div class="col-lg-4">Flow Type</div>
+                                <div class="col-lg-4 form-label">Flow Type</div>
                                 <div class="col-lg-8">
-                                  <div class="d-flex flex-wrap gap-5">
+                                  <div class="d-flex flex-wrap gap-2">
                                     <div class="form-check mb-0">
-                                      <input class="form-check-input" type="radio" name="flow-potong-type" checked />
+                                      <input class="form-check-input flow-type-radio" type="radio" name="flow-potong-type"
+                                        value="in-house" checked />
                                       <label class="form-check-label">In-House</label>
                                     </div>
                                     <div class="form-check mb-0">
-                                      <input class="form-check-input" type="radio" name="flow-potong-type" />
+                                      <input class="form-check-input flow-type-radio" type="radio" name="flow-potong-type"
+                                        value="branch-store" />
+                                      <label class="form-check-label">Branch Store</label>
+                                    </div>
+                                    <div class="form-check mb-0">
+                                      <input class="form-check-input flow-type-radio" type="radio" name="flow-potong-type"
+                                        value="outsource" />
                                       <label class="form-check-label">Outsource</label>
                                     </div>
                                   </div>
+                                </div>
+                              </div>
+                              <div class="row align-items-center mb-3 flow-branch-store-row d-none">
+                                <div class="col-lg-4"></div>
+                                <div class="col-lg-7 col-md-10">
+                                  <select class="form-select select">
+                                    <option selected value="">Select Branch Store</option>
+                                    <option>Branch Store Jakarta</option>
+                                    <option>Branch Store Bandung</option>
+                                    <option>Branch Store Surabaya</option>
+                                  </select>
+                                </div>
+                              </div>
+                              <div class="row align-items-center mb-3 flow-expense-name-row d-none">
+                                <div class="col-lg-4"></div>
+                                <div class="col-lg-7 col-md-10">
+                                  <input type="text" class="form-control" placeholder="Search Expense Name" />
                                 </div>
                               </div>
                               <div class="flow-fields">
@@ -616,7 +711,7 @@
                         </div>
 
                         <div class="col-12 row p-0 m-0 mb-2">
-                          <div class="col-lg-4">Design</div>
+                          <div class="col-lg-4 form-label">Design</div>
                           <div class="col-lg-3">In-House</div>
                           <div class="col-lg-5">
                             <select class="select2 form-control assigne-multiple-select" multiple="multiple"
@@ -625,7 +720,7 @@
                         </div>
 
                         <div class="col-12 row p-0 m-0 mb-2">
-                          <div class="col-lg-4">SPK PLAT CTP</div>
+                          <div class="col-lg-4 form-label">SPK PLAT CTP</div>
                           <div class="col-lg-3">Outsource</div>
                           <div class="col-lg-5">
                             <select class="select2 form-control assigne-multiple-select" multiple="multiple"
@@ -634,7 +729,7 @@
                         </div>
 
                         <div class="col-12 row p-0 m-0 mb-2">
-                          <div class="col-lg-4">SPK Heidelberg SM52 4 Warna</div>
+                          <div class="col-lg-4 form-label">SPK Heidelberg SM52 4 Warna</div>
                           <div class="col-lg-3">Outsource</div>
                           <div class="col-lg-5">
                             <select class="select2 form-control assigne-multiple-select" multiple="multiple"
@@ -643,7 +738,7 @@
                         </div>
 
                         <div class="col-12 row p-0 m-0 mb-2">
-                          <div class="col-lg-4">Potong Sisir</div>
+                          <div class="col-lg-4 form-label">Potong Sisir</div>
                           <div class="col-lg-3">In-House</div>
                           <div class="col-lg-5">
                             <select class="select2 form-control assigne-multiple-select" multiple="multiple"
@@ -671,7 +766,7 @@
                     </div>
                     <div class="row align-items-center mb-3">
                       <div class="col-lg-4">
-                        <h5 class="mb-0 fw-normal">Design</h5>
+                        <span class="mb-0 form-label">Design</span>
                       </div>
                       <div class="col-lg-3"><input type="text" class="form-control" value="1500" /></div>
                       <div class="col-lg-3">
@@ -685,7 +780,7 @@
                     </div>
                     <div class="row align-items-center mb-3">
                       <div class="col-lg-4">
-                        <h5 class="mb-0 fw-normal">SPK PLAT CTP</h5>
+                        <span class="mb-0 form-label">SPK PLAT CTP</span>
                       </div>
                       <div class="col-lg-3"><input type="text" class="form-control" value="1500" /></div>
                       <div class="col-lg-3">
@@ -699,7 +794,7 @@
                     </div>
                     <div class="row align-items-center mb-3">
                       <div class="col-lg-4">
-                        <h5 class="mb-0 fw-normal">SPK Heidelberg SM52 4 Warna</h5>
+                        <span class="mb-0 form-label">SPK Heidelberg SM52 4 Warna</span>
                       </div>
                       <div class="col-lg-3"><input type="text" class="form-control" value="5000" /></div>
                       <div class="col-lg-3">
@@ -713,7 +808,7 @@
                     </div>
                     <div class="row align-items-center mb-4">
                       <div class="col-lg-4">
-                        <h5 class="mb-0 fw-normal">Potong Sisir</h5>
+                        <span class="mb-0 form-label">Potong Sisir</span>
                       </div>
                       <div class="col-lg-3"><input type="text" class="form-control" value="1000" /></div>
                       <div class="col-lg-3">
@@ -725,7 +820,6 @@
                       <div class="col-lg-2 mt-2 mt-lg-0"><a href="javascript:void(0);" class="text-primary">Remove</a>
                       </div>
                     </div>
-                    <a href="javascript:void(0);" class="text-primary">Add Assignee</a>
                   </div>
                 </div>
               </div>
@@ -905,18 +999,39 @@
       pane.innerHTML = `
           <h6 class="mb-4">Add Information Detail</h6>
           <div class="row align-items-center mb-3">
-            <div class="col-lg-4">Flow Type</div>
+            <div class="col-lg-4 form-label">Flow Type</div>
             <div class="col-lg-8">
-              <div class="d-flex flex-wrap gap-5">
+              <div class="d-flex flex-wrap gap-2">
                 <div class="form-check mb-0">
-                  <input class="form-check-input" type="radio" name="${paneId}-type" checked />
+                  <input class="form-check-input flow-type-radio" type="radio" name="${paneId}-type" value="in-house" checked />
                   <label class="form-check-label">In-House</label>
                 </div>
                 <div class="form-check mb-0">
-                  <input class="form-check-input" type="radio" name="${paneId}-type" />
+                  <input class="form-check-input flow-type-radio" type="radio" name="${paneId}-type" value="branch-store" />
+                  <label class="form-check-label">Branch Store</label>
+                </div>
+                <div class="form-check mb-0">
+                  <input class="form-check-input flow-type-radio" type="radio" name="${paneId}-type" value="outsource" />
                   <label class="form-check-label">Outsource</label>
                 </div>
               </div>
+            </div>
+          </div>
+          <div class="row align-items-center mb-3 flow-branch-store-row d-none">
+            <div class="col-lg-4"></div>
+            <div class="col-lg-7 col-md-10">
+              <select class="form-select select">
+                <option selected value="">Select Branch Store</option>
+                <option>Branch Store Jakarta</option>
+                <option>Branch Store Bandung</option>
+                <option>Branch Store Surabaya</option>
+              </select>
+            </div>
+          </div>
+          <div class="row align-items-center mb-3 flow-expense-name-row d-none">
+            <div class="col-lg-4"></div>
+            <div class="col-lg-7 col-md-10">
+              <input type="text" class="form-control" placeholder="Search Expense Name" />
             </div>
           </div>
           <div class="flow-fields">
@@ -944,6 +1059,37 @@
       return pane;
     }
 
+    function syncFlowTypeTarget(pane) {
+      const selectedType = pane.querySelector(".flow-type-radio:checked")?.value;
+      const branchRow = pane.querySelector(".flow-branch-store-row");
+      const expenseRow = pane.querySelector(".flow-expense-name-row");
+
+      if (branchRow) {
+        branchRow.classList.toggle("d-none", selectedType !== "branch-store");
+      }
+
+      if (expenseRow) {
+        expenseRow.classList.toggle("d-none", selectedType !== "outsource");
+      }
+    }
+
+    function syncSelectControls(scope) {
+      if (!window.jQuery || !window.jQuery.fn.select2) {
+        return;
+      }
+
+      window.jQuery(scope).find("select.select").each(function () {
+        const select = window.jQuery(this);
+
+        if (!select.data("select2")) {
+          select.select2({
+            minimumResultsForSearch: -1,
+            width: "100%"
+          });
+        }
+      });
+    }
+
     function addFlow(flowName) {
       const paneBaseId = `flow-${slugifyFlowName(flowName)}`;
       let paneId = paneBaseId;
@@ -968,6 +1114,9 @@
       if (window.FlowDataSelect) {
         window.FlowDataSelect.sync(pane);
       }
+
+      syncSelectControls(pane);
+      syncFlowTypeTarget(pane);
     }
 
     function moveFlowItem(item, direction) {
@@ -1159,9 +1308,19 @@
       }
     });
 
+    document.addEventListener("change", (event) => {
+      const flowTypeRadio = event.target.closest(".flow-type-radio");
+
+      if (flowTypeRadio) {
+        syncFlowTypeTarget(flowTypeRadio.closest(".workflow-pane"));
+      }
+    });
+
     document.addEventListener("DOMContentLoaded", () => {
       refreshFlowSelectOptions();
       refreshArrangeButtons();
+
+      document.querySelectorAll(".workflow-pane").forEach(syncFlowTypeTarget);
 
       if (window.AssigneeSelect) {
         window.AssigneeSelect.initAll(document.getElementById("assignee"));

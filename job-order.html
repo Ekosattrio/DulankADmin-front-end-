@@ -224,14 +224,23 @@
                         <a href="" class="btn btn-searchset"><i data-feather="search" class="feather-search"></i></a>
                       </div>
                     </div>
-                    <div class="">
-                      <select class="select form-select form-select-sm p-2">
-                        <option value="">Flow Type</option>
-                        <option value="design">Design</option>
-                        <option value="pracetak">Pracetak</option>
-                        <option value="cetak">Cetak</option>
-                        <option value="finishing">Finishing</option>
-                      </select>
+                    <div class="filters d-flex justify-content-end">
+                      <div class="dropdown w-100">
+                        <button
+                          class="btn btn-outline-primary dropdown-toggle"
+                          type="button"
+                          data-bs-toggle="dropdown"
+                          aria-expanded="false"
+                        >
+                          Flow Type
+                        </button>
+                        <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" href="#">Design</a></li>
+                          <li><a class="dropdown-item" href="#">Pracetak</a></li>
+                          <li><a class="dropdown-item" href="#">Cetak</a></li>
+                          <li><a class="dropdown-item" href="#">Finishing</a></li>
+                        </ul>
+                      </div>
                     </div>
                   </div>
 

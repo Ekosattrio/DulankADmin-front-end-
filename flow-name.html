@@ -593,39 +593,6 @@
                     <input type="text" class="form-control" id="name" />
                   </div>
                 </div>
-
-                <div class="row mb-3">
-                  <div class="col-5">
-                    <div class="d-flex align-items-center justify-content-between">
-                      <label for="incentive" class="form-label mb-0">Incentive Amount</label>
-                      <div class="form-check">
-                        <input class="form-check-input toggle-optional-field" type="checkbox" id="showIncentiveAmountAdd" data-target=".incentive-amount-row" checked />
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-7 incentive-amount-row">
-                    <input type="text" class="form-control number-separator" inputmode="numeric" pattern="[0-9]*" />
-                    <input type="hidden" class="result-input" id="incentive" />
-                  </div>
-                </div>
-                <div class="row mb-3">
-                  <div class="col-5">
-                    <div class="d-flex align-items-center justify-content-between">
-                      <label class="form-label mb-0">Unit Incentive</label>
-                      <div class="form-check">
-                        <input class="form-check-input toggle-optional-field" type="checkbox" id="showUnitIncentiveAdd" data-target=".unit-incentive-row" checked />
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-7 unit-incentive-row">
-                    <select class="select">
-                      <option>Per Job</option>
-                      <option>Per Meter</option>
-                      <option>Per Pieces</option>
-                      <option>Per Ream</option>
-                    </select>
-                  </div>
-                </div>
                 <div class="row mb-3">
                   <div class="col-5">
                     <label class="form-label mt-2">Assignee</label>
@@ -691,9 +658,54 @@
                         <label class="form-check-label" for="inhouseAdd"> In-House </label>
                       </div>
                       <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="flow_type_add" id="branchStoreAdd" value="Branch Store" />
+                        <label class="form-check-label" for="branchStoreAdd"> Branch Store </label>
+                      </div>
+                      <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio" name="flow_type_add" id="outsourceAdd" value="OutSource" />
                         <label class="form-check-label" for="outsourceAdd"> OutSource </label>
                       </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="border p-3 mb-4">
+                  <button
+                    type="button"
+                    class="btn p-0 border-0 bg-transparent d-flex align-items-center justify-content-between w-100 mb-3"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#addIncentiveCollapse"
+                    aria-expanded="true"
+                    aria-controls="addIncentiveCollapse"
+                  >
+                    <span class="h5 mb-0">Add Incentive</span>
+                    <i data-feather="chevron-down"></i>
+                  </button>
+                  <div class="collapse show" id="addIncentiveCollapse">
+                    <div class="row mb-3">
+                      <div class="col-5">
+                        <label for="incentive" class="form-label">Incentive Amount</label>
+                      </div>
+                      <div class="col-7">
+                        <input type="text" class="form-control number-separator incentive-amount-input" inputmode="numeric" pattern="[0-9]*" />
+                        <input type="hidden" class="result-input" id="incentive" />
+                      </div>
+                    </div>
+                    <div class="row mb-3">
+                      <div class="col-5">
+                        <label class="form-label">Unit Incentive</label>
+                      </div>
+                      <div class="col-7">
+                        <select class="select unit-incentive-select">
+                          <option value=""></option>
+                          <option selected>Per Job</option>
+                          <option>Per Meter</option>
+                          <option>Per Pieces</option>
+                          <option>Per Ream</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="text-end">
+                      <button type="button" class="btn btn-link text-primary p-0 clear-incentive">Clear X</button>
                     </div>
                   </div>
                 </div>
@@ -731,39 +743,6 @@
                   </div>
                   <div class="col-7">
                     <input type="text" class="form-control" id="name" value="Printing" />
-                  </div>
-                </div>
-
-                <div class="row mb-3">
-                  <div class="col-5">
-                    <div class="d-flex align-items-center justify-content-between">
-                      <label for="incentive" class="form-label mb-0">Incentive Amount</label>
-                      <div class="form-check">
-                        <input class="form-check-input toggle-optional-field" type="checkbox" id="showIncentiveAmountEdit" data-target=".incentive-amount-row" checked />
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-7 incentive-amount-row">
-                    <input type="text" class="form-control number-separator" inputmode="numeric" pattern="[0-9]*" value="10000" />
-                    <input type="hidden" class="result-input" id="incentive" value="10000" />
-                  </div>
-                </div>
-                <div class="row mb-3">
-                  <div class="col-5">
-                    <div class="d-flex align-items-center justify-content-between">
-                      <label class="form-label mb-0">Unit Incentive</label>
-                      <div class="form-check">
-                        <input class="form-check-input toggle-optional-field" type="checkbox" id="showUnitIncentiveEdit" data-target=".unit-incentive-row" checked />
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-7 unit-incentive-row">
-                    <select class="select">
-                      <option>Per Job</option>
-                      <option>Per Meter</option>
-                      <option>Per Pieces</option>
-                      <option>Per Ream</option>
-                    </select>
                   </div>
                 </div>
                 <div class="row mb-3">
@@ -831,9 +810,54 @@
                         <label class="form-check-label" for="inhouseEdit"> In-House </label>
                       </div>
                       <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="flow_type_edit" id="branchStoreEdit" value="Branch Store" />
+                        <label class="form-check-label" for="branchStoreEdit"> Branch Store </label>
+                      </div>
+                      <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio" name="flow_type_edit" id="outsourceEdit" value="OutSource" />
                         <label class="form-check-label" for="outsourceEdit"> OutSource </label>
                       </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="border p-3 mb-4">
+                  <button
+                    type="button"
+                    class="btn p-0 border-0 bg-transparent d-flex align-items-center justify-content-between w-100 mb-3"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#editIncentiveCollapse"
+                    aria-expanded="true"
+                    aria-controls="editIncentiveCollapse"
+                  >
+                    <span class="h5 mb-0">Add Incentive</span>
+                    <i data-feather="chevron-down"></i>
+                  </button>
+                  <div class="collapse show" id="editIncentiveCollapse">
+                    <div class="row mb-3">
+                      <div class="col-5">
+                        <label for="incentive" class="form-label">Incentive Amount</label>
+                      </div>
+                      <div class="col-7">
+                        <input type="text" class="form-control number-separator incentive-amount-input" inputmode="numeric" pattern="[0-9]*" value="10000" />
+                        <input type="hidden" class="result-input" id="incentive" value="10000" />
+                      </div>
+                    </div>
+                    <div class="row mb-3">
+                      <div class="col-5">
+                        <label class="form-label">Unit Incentive</label>
+                      </div>
+                      <div class="col-7">
+                        <select class="select unit-incentive-select">
+                          <option value=""></option>
+                          <option selected>Per Job</option>
+                          <option>Per Meter</option>
+                          <option>Per Pieces</option>
+                          <option>Per Ream</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="text-end">
+                      <button type="button" class="btn btn-link text-primary p-0 clear-incentive">Clear X</button>
                     </div>
                   </div>
                 </div>
@@ -903,12 +927,6 @@
           window.AssigneeSelect.setValues($select, values);
         }
 
-        function toggleOptionalField($checkbox) {
-          const $modal = $checkbox.closest(".flow-name-modal");
-          const targetSelector = $checkbox.data("target");
-          $modal.find(targetSelector).toggleClass("d-none", !$checkbox.is(":checked"));
-        }
-
         function syncAssigneeMode($modal) {
           const isDepartment = $modal.find(".assignee-type-radio[value='department']").is(":checked");
           const $departmentWrapper = $modal.find(".department-select-wrapper");
@@ -947,15 +965,7 @@
             setSelectValues($assigneeSelect, ["Adul", "Nurdin"]);
           }
 
-          $modal.find(".toggle-optional-field").each(function () {
-            toggleOptionalField($(this));
-          });
-
           syncAssigneeMode($modal);
-        });
-
-        $(document).on("change", ".toggle-optional-field", function () {
-          toggleOptionalField($(this));
         });
 
         $(document).on("change", ".flow-name-modal .assignee-type-radio", function () {
@@ -964,6 +974,14 @@
 
         $(document).on("change", ".assigne-department-select", function () {
           syncAssigneeMode($(this).closest(".flow-name-modal"));
+        });
+
+        $(document).on("click", ".flow-name-modal .clear-incentive", function () {
+          const $incentiveSection = $(this).closest(".border");
+          const $unitSelect = $incentiveSection.find(".unit-incentive-select");
+
+          $incentiveSection.find(".incentive-amount-input, .result-input").val("").trigger("input").trigger("change");
+          $unitSelect.val("").trigger("change");
         });
       });
     </script>

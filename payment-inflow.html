@@ -793,7 +793,7 @@
             <div class="content">
               <div class="modal-header border-0 custom-modal-header">
                 <div class="page-title">
-                  <h4>Add Payment Outflow</h4>
+                  <h4>Add Payment Inflow</h4>
                 </div>
 
                 <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
@@ -823,6 +823,19 @@
                           <div class="input-groupicon">
                             <input type="text" class="datetimepicker" placeholder="Choose Date" />
                           </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="split-payment-section mb-3" data-split-payment>
+                      <div class="text-end mb-3">
+                        <button type="button" class="btn text-warning split-payment-toggle p-0">Add Split Payment</button>
+                      </div>
+                      <div class="split-payment-box border rounded p-4 d-none">
+                        <div class="split-payment-list"></div>
+                        <div class="d-flex align-items-center justify-content-between gap-3">
+                          <button type="button" class="btn text-warning split-payment-cancel p-0">Cancel</button>
+                          <button type="button" class="btn text-warning split-payment-add p-0">Add Payment</button>
                         </div>
                       </div>
                     </div>
@@ -1157,6 +1170,19 @@
                       </div>
                     </div>
 
+                    <div class="split-payment-section mb-3" data-split-payment>
+                      <div class="text-end mb-3">
+                        <button type="button" class="btn text-warning split-payment-toggle p-0">Add Split Payment</button>
+                      </div>
+                      <div class="split-payment-box border rounded p-4 d-none">
+                        <div class="split-payment-list"></div>
+                        <div class="d-flex align-items-center justify-content-between gap-3">
+                          <button type="button" class="btn text-warning split-payment-cancel p-0">Cancel</button>
+                          <button type="button" class="btn text-warning split-payment-add p-0">Add Payment</button>
+                        </div>
+                      </div>
+                    </div>
+
                     <div class="payment-wrapper">
                       <div class="mb-3 row">
                         <div class="col-md-4">
@@ -1344,6 +1370,88 @@
     <!-- Custom JS -->
     <script src="assets/js/theme-script.js"></script>
     <script src="assets/js/script.js"></script>
+    <script>
+      document.querySelectorAll("[data-split-payment]").forEach(function (section, sectionIndex) {
+        var toggleButton = section.querySelector(".split-payment-toggle");
+        var box = section.querySelector(".split-payment-box");
+        var list = section.querySelector(".split-payment-list");
+        var addButton = section.querySelector(".split-payment-add");
+        var cancelButton = section.querySelector(".split-payment-cancel");
+
+        if (!toggleButton || !box || !list || !addButton || !cancelButton) {
+          return;
+        }
+
+        function formatAmountInput(input) {
+          var numericValue = input.value.replace(/[^\d]/g, "");
+          input.value = numericValue ? Number(numericValue).toLocaleString("id-ID") : "";
+        }
+
+        function addPaymentItem() {
+          var paymentNumber = list.querySelectorAll(".split-payment-item").length + 1;
+          var paymentItem = document.createElement("div");
+          paymentItem.className = "split-payment-item mb-4";
+          paymentItem.innerHTML =
+            '<h5 class="mb-3">Payment ' +
+            paymentNumber +
+            '</h5>' +
+            '<div class="mb-3 row align-items-center">' +
+            '<div class="col-md-4"><label class="form-label">Payment Method</label></div>' +
+            '<div class="col-md-8">' +
+            '<select class="form-select select" name="splitPaymentMethod' +
+            sectionIndex +
+            '[]">' +
+            '<option>Cash</option>' +
+            '<option>Balance</option>' +
+            '<option>Transfer</option>' +
+            '</select>' +
+            '</div>' +
+            '</div>' +
+            '<div class="mb-3 row align-items-center">' +
+            '<div class="col-md-4"><label class="form-label">Amount</label></div>' +
+            '<div class="col-md-8">' +
+            '<input type="text" class="form-control number-separator split-payment-amount" name="splitPaymentAmount' +
+            sectionIndex +
+            '[]" inputmode="numeric" pattern="[0-9]*" />' +
+            '</div>' +
+            '</div>';
+
+          list.appendChild(paymentItem);
+
+          var amountInput = paymentItem.querySelector(".split-payment-amount");
+          if (amountInput) {
+            amountInput.addEventListener("input", function () {
+              formatAmountInput(amountInput);
+            });
+          }
+        }
+
+        function showSplitPayment() {
+          if (!list.children.length) {
+            addPaymentItem();
+            addPaymentItem();
+          }
+
+          box.classList.remove("d-none");
+          toggleButton.classList.add("d-none");
+        }
+
+        function cancelSplitPayment() {
+          list.innerHTML = "";
+          box.classList.add("d-none");
+          toggleButton.classList.remove("d-none");
+        }
+
+        toggleButton.addEventListener("click", showSplitPayment);
+        addButton.addEventListener("click", addPaymentItem);
+        cancelButton.addEventListener("click", cancelSplitPayment);
+
+        var modal = section.closest(".modal");
+        if (modal) {
+          modal.addEventListener("hidden.bs.modal", cancelSplitPayment);
+        }
+      });
+    </script>
     <script>
       document.querySelectorAll(".payment-wrapper").forEach((wrapper) => {
         const radios = wrapper.querySelectorAll(".payment-radio");

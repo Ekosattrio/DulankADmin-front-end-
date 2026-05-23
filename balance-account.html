@@ -359,7 +359,23 @@
                       <label class="form-label mb-0 text-secondary">Customer</label>
                     </div>
                     <div class="col-8">
-                      <input type="text" class="form-control rounded-0" />
+                      <div class="search-container">
+                        <input
+                          type="text"
+                          class="form-control rounded-0 customer-input"
+                          placeholder="Search Customer"
+                          value="Desman Dwi"
+                          autocomplete="off"
+                          data-target="data-customer"
+                        />
+                        <div class="search-results" id="customer-add"></div>
+                      </div>
+                      <div class="d-none" id="data-customer">
+                        <strong class="name">Siti Aminah</strong><br />
+                        <small class="email">siti.aminah@gmail.com</small><br />
+                        <small class="phone"></small><br />
+                        <small class="address"></small>
+                      </div>
                     </div>
                   </div>
 
@@ -368,7 +384,13 @@
                       <label class="form-label mb-0 text-secondary">Customer ID</label>
                     </div>
                     <div class="col-8">
-                      <input type="text" class="form-control rounded-0 bg-light" value="ID00002" disabled />
+                      <input
+                        type="text"
+                        class="form-control rounded-0 bg-light"
+                        id="balance-customer-id"
+                        value="ID00002"
+                        disabled
+                      />
                     </div>
                   </div>
 
@@ -377,16 +399,31 @@
                       <label class="form-label mb-0 text-secondary">Email</label>
                     </div>
                     <div class="col-8">
-                      <input type="email" class="form-control rounded-0 bg-light" value="siti.aminah@gmail.com" disabled />
+                      <input
+                        type="email"
+                        class="form-control rounded-0 bg-light"
+                        id="balance-customer-email"
+                        value="siti.aminah@gmail.com"
+                        disabled
+                      />
                     </div>
                   </div>
 
-                  <div class="row align-items-center mb-4">
+                  <div class="row align-items-center mb-3">
                     <div class="col-4">
                       <label class="form-label mb-0 text-secondary">Source</label>
                     </div>
                     <div class="col-8">
                       <input type="text" class="form-control rounded-0 bg-light" value="Balance Account" disabled />
+                    </div>
+                  </div>
+
+                  <div class="row align-items-center mb-4">
+                    <div class="col-4">
+                      <label class="form-label mb-0 text-secondary">Amount</label>
+                    </div>
+                    <div class="col-8">
+                      <input type="text" class="form-control rounded-0 text-end number-separator price-input" placeholder="0" />
                     </div>
                   </div>
                 </div>
@@ -515,8 +552,32 @@
     <script src="assets/plugins/sweetalert/sweetalert2.all.min.js"></script>
     <script src="assets/plugins/sweetalert/sweetalerts.min.js"></script>
 
+    <!-- Separator -->
+    <script src="assets/js/easy-number-separator.js"></script>
+
+    <!-- Live Search -->
+    <script src="assets/js/liveSearch.js"></script>
+
     <!-- Custom JS -->
     <script src="assets/js/theme-script.js"></script>
     <script src="assets/js/script.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const customerData = document.getElementById("data-customer");
+        const customerEmailInput = document.getElementById("balance-customer-email");
+        if (!customerData || !customerEmailInput) return;
+
+        const syncCustomerEmail = () => {
+          const email = customerData.querySelector(".email")?.textContent.trim();
+          if (email) customerEmailInput.value = email;
+        };
+
+        new MutationObserver(syncCustomerEmail).observe(customerData, {
+          childList: true,
+          characterData: true,
+          subtree: true,
+        });
+      });
+    </script>
   </body>
 </html>

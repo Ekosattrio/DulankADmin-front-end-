@@ -38,6 +38,22 @@
 
     <!-- Main CSS -->
     <link rel="stylesheet" href="assets/css/style.css" />
+
+    <style>
+      #tabEditUnit {
+        border-bottom: 1px solid #dee2e6;
+      }
+
+      #tabIndicator {
+        position: absolute;
+        bottom: 0;
+        height: 3px;
+        background-color: #f59e0b; /* bootstrap warning-ish */
+        transition: all 0.3s ease;
+        left: 0;
+        width: 0;
+      }
+    </style>
   </head>
 
   <body>
@@ -84,8 +100,8 @@
               </li>
             </ul>
             <div class="page-btn">
-              <a href="#" class="btn btn-added" data-bs-toggle="modal" data-bs-target="#addNewMachineModal"
-                ><i data-feather="plus-circle" class="me-2"></i>Add New Mesin Cetak</a
+              <a href="#" class="btn btn-added" data-bs-toggle="modal" data-bs-target="#add-unit"
+                ><i data-feather="plus-circle" class="me-2"></i>Add New Printing Machine</a
               >
             </div>
           </div>
@@ -218,7 +234,7 @@
                           <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#detailModal" role="button"
                             ><i data-feather="eye"></i
                           ></a>
-                          <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#addNewMachineModal"
+                          <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#edit-unit"
                             ><i data-feather="edit"></i
                           ></a>
                           <a class="confirm-text p-2" href="javascript:void(0);"><i data-feather="trash-2"></i></a>
@@ -237,7 +253,7 @@
                           <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#detailModal" role="button"
                             ><i data-feather="eye"></i
                           ></a>
-                          <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#addNewMachineModal"
+                          <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#edit-unit"
                             ><i data-feather="edit"></i
                           ></a>
                           <a class="confirm-text p-2" href="javascript:void(0);"><i data-feather="trash-2"></i></a>
@@ -256,7 +272,7 @@
                           <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#detailModal" role="button"
                             ><i data-feather="eye"></i
                           ></a>
-                          <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#addNewMachineModal"
+                          <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#edit-unit"
                             ><i data-feather="edit"></i
                           ></a>
                           <a class="confirm-text p-2" href="javascript:void(0);"><i data-feather="trash-2"></i></a>
@@ -275,7 +291,7 @@
                           <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#detailModal" role="button"
                             ><i data-feather="eye"></i
                           ></a>
-                          <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#addNewMachineModal"
+                          <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="edit-unit"
                             ><i data-feather="edit"></i
                           ></a>
                           <a class="confirm-text p-2" href="javascript:void(0);"><i data-feather="trash-2"></i></a>
@@ -294,7 +310,7 @@
                           <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#detailModal" role="button"
                             ><i data-feather="eye"></i
                           ></a>
-                          <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#addNewMachineModal"
+                          <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="edit-unit"
                             ><i data-feather="edit"></i
                           ></a>
                           <a class="confirm-text p-2" href="javascript:void(0);"><i data-feather="trash-2"></i></a>
@@ -312,242 +328,581 @@
       </div>
     </div>
 
-    <!-- Modal for add new machine -->
-    <div
-      class="modal fade text-standard"
-      id="addNewMachineModal"
-      tabindex="-1"
-      aria-labelledby="addNewMachineModalLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-          <div class="modal-header py-2">
-            <h5 class="modal-title" id="addNewMachineModalLabel">Add New Machine Profile</h5>
-            <div class="d-flex align-items-center">
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
+    <div class="modal fade" id="add-unit" tabindex="-1" aria-labelledby="add-unitLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-md">
+        <div class="modal-content rounded-3 shadow">
+          <div class="modal-header border-0 pb-0">
+            <h5 class="modal-title fw-bold" id="add-unitLabel" style="font-size: 1.15rem">Add New Printing Machine</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
-          <div class="modal-body">
-            <div>
-              <form>
-                <div class="row mb-3">
-                  <div class="col-5">
-                    <label for="pilihSatuan" class="form-label">Pilih Satuan Ukuran</label>
+
+          <div class="modal-body pt-2">
+            <form id="form-add-machine">
+              <div class="row align-items-center mb-3">
+                <div class="col-4" style="font-size: 0.9rem">Machine Name</div>
+                <div class="col-8">
+                  <input
+                    type="text"
+                    class="form-control border-secondary-subtle"
+                    id="add-machine-name"
+                    placeholder="ex : Heidelberg SM52, Komori 66"
+                    style="border-radius: 4px"
+                  />
+                </div>
+              </div>
+
+              <div class="row mb-4">
+                <div class="col-4" style="font-size: 0.9rem">Printing Type</div>
+                <div class="col-8">
+                  <div class="d-flex flex-wrap gap-4 mb-2" style="font-size: 0.9rem">
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="add-printing-type"
+                        id="add-type-offset"
+                        value="offset"
+                        checked
+                      />
+                      <label class="form-check-label text-dark fw-semibold" for="add-type-offset">Offset</label>
+                    </div>
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="add-printing-type"
+                        id="add-type-digital"
+                        value="digital"
+                      />
+                      <label class="form-check-label text-dark fw-semibold" for="add-type-digital">Digital Print</label>
+                    </div>
                   </div>
-                  <div class="col-7">
-                    <div class="col-md-10 col-12 d-flex gap-3" bis_skin_checked="1">
-                      <input type="radio" class="btn-check" name="customUkuran" id="cm" checked="" />
-                      <label class="btn btn-outline-primary rounded-pill px-4" for="cm">Centimeter</label>
-                      <input type="radio" class="btn-check" name="customUkuran" id="mm" />
-                      <label class="btn btn-outline-primary rounded-pill px-4" for="mm">Milimeter</label>
+                  <div class="form-check" style="font-size: 0.9rem">
+                    <input class="form-check-input" type="radio" name="add-printing-type" id="add-type-large" value="large" />
+                    <label class="form-check-label text-dark fw-semibold" for="add-type-large">Large Format</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="border border-secondary-subtle rounded p-4 mb-4 bg-white" id="add-detail-offset-box">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                  <h5 class="fw-bold mb-0" style="font-size: 1rem">Add Detail Offset</h5>
+                  <span
+                    class="text-warning small fst-italic btn-clear-box"
+                    data-target="offset"
+                    style="cursor: pointer; font-size: 0.85rem"
+                    >Clear x</span
+                  >
+                </div>
+
+                <div class="row mb-3 align-items-center">
+                  <div class="col-4" style="font-size: 0.9rem">Max Size Paper Area</div>
+                  <div class="col-8">
+                    <div class="d-flex gap-3">
+                      <div class="input-group input-group-sm">
+                        <span class="input-group-text bg-white border-secondary-subtle text-muted">H</span>
+                        <input type="number" class="form-control border-secondary-subtle border-start-0" id="offset-h" />
+                      </div>
+                      <div class="input-group input-group-sm">
+                        <span class="input-group-text bg-white border-secondary-subtle text-muted">W</span>
+                        <input type="number" class="form-control border-secondary-subtle border-start-0" id="offset-w" />
+                      </div>
                     </div>
                   </div>
                 </div>
 
-                <div class="row mb-3">
-                  <div class="col-5">
-                    <label for="name" class="form-label">Nama Mesin</label>
-                  </div>
-                  <div class="col-7">
-                    <input type="text" class="form-control" id="name" />
+                <div class="row mb-3 align-items-center">
+                  <div class="col-4" style="font-size: 0.9rem">Size Unit</div>
+                  <div class="col-8">
+                    <div class="d-flex gap-2 unit-toggle-group">
+                      <button
+                        type="button"
+                        class="btn btn-warning text-white rounded-pill flex-grow-1 py-1 text-nowrap unit-btn active"
+                        data-value="cm"
+                        style="font-size: 0.85rem"
+                      >
+                        Centimeter
+                      </button>
+                      <button
+                        type="button"
+                        class="btn btn-outline-secondary rounded-pill flex-grow-1 py-1 text-nowrap unit-btn"
+                        data-value="mm"
+                        style="font-size: 0.85rem"
+                      >
+                        Milimeter
+                      </button>
+                      <input type="hidden" name="offset-unit" id="offset-unit-value" value="cm" />
+                    </div>
                   </div>
                 </div>
 
-                <div class="row mb-3">
-                  <div class="col-5">
-                    <label for="warna-unit" class="form-label">Warna Unit</label>
-                  </div>
-                  <div class="col-7">
-                    <input type="text" class="form-control number-separator" />
-                    <input type="hidden" class="result-input" id="warna-unit" />
+                <div class="row mb-3 align-items-center">
+                  <div class="col-4" style="font-size: 0.9rem">Qty Minimum</div>
+                  <div class="col-8">
+                    <input type="text" class="form-control border-secondary-subtle" id="offset-qty" style="border-radius: 4px" />
                   </div>
                 </div>
 
-                <div class="row mb-3">
-                  <div class="col-5">
-                    <label class="form-label">Area Kertas</label>
+                <div class="row mb-3 align-items-center">
+                  <div class="col-4" style="font-size: 0.9rem">Price</div>
+                  <div class="col-8">
+                    <input
+                      type="text"
+                      class="form-control border-secondary-subtle"
+                      id="offset-price"
+                      style="border-radius: 4px"
+                    />
                   </div>
-                  <div class="col-7">
-                    <div class="row">
-                      <div class="col-6">
-                        <div class="input-group input-group-sm">
-                          <span class="input-group-text">P</span>
-                          <input type="text" class="form-control number-separator" inputmode="numeric" pattern="[0-9]*" />
-                          <input type="hidden" class="result-input" id="width-add" />
-                        </div>
+                </div>
+
+                <div class="row mb-0 align-items-start">
+                  <div class="col-4" style="font-size: 0.9rem; line-height: 1.2">
+                    <span class="d-block">Druck Price</span>
+                    <small class="text-muted" style="font-size: 0.72rem; display: block; margin-top: 2px"
+                      >price exceeds minimum qty</small
+                    >
+                  </div>
+                  <div class="col-8">
+                    <input
+                      type="text"
+                      class="form-control border-secondary-subtle"
+                      id="offset-druck"
+                      style="border-radius: 4px"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="border border-secondary-subtle rounded p-4 mb-4 bg-white d-none" id="add-detail-digital-box">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                  <h5 class="fw-bold mb-0" style="font-size: 1rem">Add Detail Digital Printing</h5>
+                  <span
+                    class="text-warning small fst-italic btn-clear-box"
+                    data-target="digital"
+                    style="cursor: pointer; font-size: 0.85rem"
+                    >Clear x</span
+                  >
+                </div>
+
+                <div class="row mb-3 align-items-center">
+                  <div class="col-4" style="font-size: 0.9rem">Price</div>
+                  <div class="col-8">
+                    <input
+                      type="text"
+                      class="form-control border-secondary-subtle"
+                      id="digital-price"
+                      style="border-radius: 4px"
+                    />
+                  </div>
+                </div>
+
+                <div class="row mb-3 align-items-center">
+                  <div class="col-4" style="font-size: 0.9rem">Unit Price</div>
+                  <div class="col-8">
+                    <select class="form-select border-secondary-subtle" id="digital-unit-price" style="border-radius: 4px">
+                      <option value="pcs">Pcs</option>
+                      <option value="box">Box</option>
+                      <option value="lembar">A3+ Sheet</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="row mb-3 align-items-center">
+                  <div class="col-4" style="font-size: 0.9rem">Max Size Paper Area</div>
+                  <div class="col-8">
+                    <div class="d-flex gap-3">
+                      <div class="input-group input-group-sm">
+                        <span class="input-group-text bg-white border-secondary-subtle text-muted">H</span>
+                        <input type="number" class="form-control border-secondary-subtle border-start-0" id="digital-h" />
                       </div>
-                      <div class="col-6">
-                        <div class="input-group input-group-sm">
-                          <span class="input-group-text">L</span>
-                          <input type="text" class="form-control number-separator" inputmode="numeric" pattern="[0-9]*" />
-                          <input type="hidden" class="result-input" id="height-add" />
-                        </div>
+                      <div class="input-group input-group-sm">
+                        <span class="input-group-text bg-white border-secondary-subtle text-muted">W</span>
+                        <input type="number" class="form-control border-secondary-subtle border-start-0" id="digital-w" />
                       </div>
                     </div>
                   </div>
                 </div>
 
-                <div class="row mb-3">
-                  <div class="col-5">
-                    <label for="width-jepitan" class="form-label">Lebar Jepitan</label>
+                <div class="row mb-0 align-items-center">
+                  <div class="col-4" style="font-size: 0.9rem">Size Unit</div>
+                  <div class="col-8">
+                    <div class="d-flex gap-2 unit-toggle-group">
+                      <button
+                        type="button"
+                        class="btn btn-warning text-white rounded-pill flex-grow-1 py-1 text-nowrap unit-btn active"
+                        data-value="cm"
+                        style="font-size: 0.85rem"
+                      >
+                        Centimeter
+                      </button>
+                      <button
+                        type="button"
+                        class="btn btn-outline-secondary rounded-pill flex-grow-1 py-1 text-nowrap unit-btn"
+                        data-value="mm"
+                        style="font-size: 0.85rem"
+                      >
+                        Milimeter
+                      </button>
+                      <input type="hidden" name="digital-unit" id="digital-unit-value" value="cm" />
+                    </div>
                   </div>
-                  <div class="col-7">
-                    <input type="text" class="form-control number-separator" inputmode="numeric" pattern="[0-9]*" />
-                    <input type="hidden" id="width-jepitan" class="result-input" />
+                </div>
+              </div>
+
+              <div class="border border-secondary-subtle rounded p-4 mb-4 bg-white d-none" id="add-detail-large-box">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                  <h5 class="fw-bold mb-0" style="font-size: 1rem">Add Detail Large Format</h5>
+                  <span
+                    class="text-warning small fst-italic btn-clear-box"
+                    data-target="large"
+                    style="cursor: pointer; font-size: 0.85rem"
+                    >Clear x</span
+                  >
+                </div>
+
+                <div class="row mb-3 align-items-center">
+                  <div class="col-4" style="font-size: 0.9rem">Price</div>
+                  <div class="col-8">
+                    <input type="text" class="form-control border-secondary-subtle" id="large-price" style="border-radius: 4px" />
                   </div>
                 </div>
 
-                <div class="row mb-3">
-                  <div class="col-5">
-                    <label for="max-gms" class="form-label">Maksimal GSM</label>
-                  </div>
-                  <div class="col-7">
-                    <input type="text" class="form-control number-separator" inputmode="numeric" pattern="[0-9]*" />
-                    <input type="hidden" class="result-input" id="max-gms" />
+                <div class="row mb-0 align-items-center">
+                  <div class="col-4" style="font-size: 0.9rem">Unit Price</div>
+                  <div class="col-8">
+                    <div class="d-flex gap-2 unit-toggle-group">
+                      <button
+                        type="button"
+                        class="btn btn-warning text-white rounded-pill flex-grow-1 py-1 text-nowrap unit-btn active"
+                        data-value="cm"
+                        style="font-size: 0.85rem"
+                      >
+                        Square Centimeter
+                      </button>
+                      <button
+                        type="button"
+                        class="btn btn-outline-secondary rounded-pill flex-grow-1 py-1 text-nowrap unit-btn"
+                        data-value="m"
+                        style="font-size: 0.85rem"
+                      >
+                        Square Meter
+                      </button>
+                      <input type="hidden" name="large-unit" id="large-unit-value" value="cm" />
+                    </div>
                   </div>
                 </div>
+              </div>
 
-                <div class="row mb-3">
-                  <div class="col-5">
-                    <label for="price-plat" class="form-label">Harga Plat</label>
-                  </div>
-                  <div class="col-7">
-                    <input type="text" class="form-control number-separator price-input" inputmode="numeric" pattern="[0-9]*" />
-                    <input type="hidden" class="result-input" id="price-plat" />
-                  </div>
-                </div>
-
-                <div class="row mb-3">
-                  <div class="col-5">
-                    <label for="endurance-plat" class="form-label">Ketahanan Plat (Lbr)</label>
-                  </div>
-                  <div class="col-7">
-                    <input type="text" class="form-control number-separator" inputmode="numeric" pattern="[0-9]*" />
-                    <input type="hidden" class="result-input" id="endurance-plat" />
-                  </div>
-                </div>
-
-                <div class="row mb-3">
-                  <div class="col-5">
-                    <label for="insit" class="form-label">Insit Setelan</label>
-                  </div>
-                  <div class="col-7">
-                    <input type="text" class="form-control number-separator" inputmode="numeric" pattern="[0-9]*" />
-                    <input type="hidden" class="result-input" id="insit" />
-                  </div>
-                </div>
-
-                <div class="row mb-3">
-                  <div class="col-5">
-                    <label for="min-qty" class="form-label">Minimum Qty</label>
-                  </div>
-                  <div class="col-7">
-                    <input type="text" class="form-control number-separator" inputmode="numeric" pattern="[0-9]*" />
-                    <input type="hidden" class="result-input" id="min-qty" />
-                  </div>
-                </div>
-
-                <div class="row mb-3">
-                  <div class="col-5">
-                    <label for="min-price" class="form-label">Harga Minimum</label>
-                  </div>
-                  <div class="col-7">
-                    <input type="text" class="form-control number-separator price-input" inputmode="numeric" pattern="[0-9]*" />
-                    <input type="hidden" class="result-input" id="min-price" />
-                  </div>
-                </div>
-
-                <div class="row mb-3">
-                  <div class="col-5">
-                    <label for="price-duck" class="form-label">Harga Druck</label>
-                  </div>
-                  <div class="col-7">
-                    <input type="text" class="form-control number-separator price-input" inputmode="numeric" pattern="[0-9]*" />
-                    <input type="hidden" class="result-input" id="price-duck" />
-                  </div>
-                </div>
-
-                <div class="mb-3 status-toggle modal-status d-flex justify-content-between align-items-center">
-                  <span class="status-label">Status</span>
-                  <input type="checkbox" id="user2" class="check" checked="" />
-                  <label for="user2" class="checktoggle"></label>
-                </div>
-
-                <small class="d-none text-standard text-danger" id="info-selected-all"
-                  ><i class="fa-solid fa-circle-info"></i> please input your specification<br
-                /></small>
-                <div class="row mb-3 justify-content-end">
-                  <div class="col-7">
-                    <button class="btn btn-primary w-100" id="save-btn">Simpan</button>
-                  </div>
-                </div>
-              </form>
-            </div>
+              <div class="d-flex justify-content-end gap-3 mt-4 mb-2">
+                <button
+                  type="button"
+                  class="btn btn-secondary px-5 py-2"
+                  data-bs-dismiss="modal"
+                  style="background-color: #bfaea7; color: white; border-radius: 6px; font-size: 0.9rem; font-weight: 500"
+                >
+                  Cancel
+                </button>
+                <button
+                  type="submit"
+                  class="btn btn-primary px-5 py-2"
+                  id="add-save-btn"
+                  style="background-color: #f28100; border-radius: 6px; font-size: 0.9rem; font-weight: 500"
+                >
+                  Save
+                </button>
+              </div>
+            </form>
           </div>
         </div>
       </div>
     </div>
+    <!-- modal add -->
 
+    <!-- modal edit -->
+    <div class="modal fade" id="edit-unit" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered modal-md">
+        <div class="modal-content">
+          <!-- HEADER -->
+          <div class="modal-header border-bottom">
+            <h5 class="modal-title fw-bold">Edit Printing Machine</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+
+          <div class="modal-body">
+            <div class="mb-3">
+              <span class="fw-semibold">Printing Type :</span>
+              <span class="text-muted">Offset</span>
+            </div>
+
+            <!-- TAB (lebih clean & mirip) -->
+            <ul class="nav nav-tabs mb-4 position-relative" id="tabEditUnit">
+              <li class="nav-item">
+                <button class="nav-link active fw-semibold" data-bs-toggle="tab" data-bs-target="#detailTab">Detail</button>
+              </li>
+              <li class="nav-item">
+                <button class="nav-link fw-semibold text-secondary" data-bs-toggle="tab" data-bs-target="#advanceTab">
+                  Advance Setting
+                </button>
+              </li>
+
+              <!-- INDICATOR -->
+              <span id="tabIndicator"></span>
+            </ul>
+
+            <form>
+              <div class="tab-content">
+                <!-- ================= DETAIL ================= -->
+                <div class="tab-pane fade show active" id="detailTab">
+                  <!-- Machine Name -->
+                  <div class="row align-items-center mb-3">
+                    <div class="col-4">
+                      <label class="form-label mb-0">Machine Name</label>
+                    </div>
+                    <div class="col-8">
+                      <input type="text" class="form-control" value="Heidelberg SM52" />
+                    </div>
+                  </div>
+
+                  <!-- Max Size (PAKAI TEMPLATE LU) -->
+                  <div class="row align-items-center mb-3">
+                    <div class="col-4">
+                      <label class="form-label">Max Size Paper Area</label>
+                    </div>
+                    <div class="col-8">
+                      <div class="row">
+                        <div class="col-6">
+                          <div class="input-group input-group-sm">
+                            <span class="input-group-text">W</span>
+                            <input type="text" class="form-control number-separator" inputmode="numeric" pattern="[0-9]*" />
+                            <input type="hidden" class="result-input" id="width-add" />
+                          </div>
+                        </div>
+                        <div class="col-6">
+                          <div class="input-group input-group-sm">
+                            <span class="input-group-text">H</span>
+                            <input type="text" class="form-control number-separator" inputmode="numeric" pattern="[0-9]*" />
+                            <input type="hidden" class="result-input" id="height-add" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Size Unit -->
+                  <div class="row align-items-center mb-3">
+                    <div class="col-4">Size Unit</div>
+                    <div class="col-8">
+                      <div class="btn-group w-100">
+                        <input type="radio" class="btn-check" name="unit" id="cm" checked />
+                        <label class="btn btn-warning text-white rounded-pill me-2" for="cm">Centimeter</label>
+
+                        <input type="radio" class="btn-check" name="unit" id="mm" />
+                        <label class="btn btn-outline-secondary rounded-pill" for="mm">Milimeter</label>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Qty -->
+                  <div class="row align-items-center mb-3">
+                    <div class="col-4">Qty Minimum</div>
+                    <div class="col-8">
+                      <input type="text" class="form-control" value="1.000" />
+                    </div>
+                  </div>
+
+                  <!-- Price -->
+                  <div class="row align-items-center mb-3">
+                    <div class="col-4">Price</div>
+                    <div class="col-8">
+                      <input type="text" class="form-control" value="200.000" />
+                    </div>
+                  </div>
+
+                  <!-- Druck -->
+                  <div class="row align-items-start mb-3">
+                    <div class="col-4">
+                      Druck Price
+                      <div class="small text-muted">price exceeds minimum qty</div>
+                    </div>
+                    <div class="col-8">
+                      <input type="text" class="form-control" value="60" />
+                    </div>
+                  </div>
+                </div>
+
+                <!-- ================= ADVANCE ================= -->
+                <div class="tab-pane fade" id="advanceTab">
+                  <!-- Machine Setting -->
+                  <div class="border rounded p-3 mb-3" data-section="machine-setting">
+                    <div class="d-flex justify-content-between mb-3">
+                      <strong>Machine Setting</strong>
+                      <span class="text-warning small clear-btn" data-target="machine-setting">Clear x</span>
+                    </div>
+
+                    <div class="row mb-2">
+                      <div class="col-4 small">Unit Color</div>
+                      <div class="col-8"><input class="form-control form-control-sm" /></div>
+                    </div>
+
+                    <div class="row mb-2">
+                      <div class="col-4 small">Max Paper Weight</div>
+                      <div class="col-8"><input class="form-control form-control-sm" /></div>
+                    </div>
+
+                    <div class="row mb-2">
+                      <div class="col-4 small">Min Paper Weight</div>
+                      <div class="col-8"><input class="form-control form-control-sm" /></div>
+                    </div>
+
+                    <div class="row mb-2">
+                      <div class="col-4 small">Makeready Sheet</div>
+                      <div class="col-8"><input class="form-control form-control-sm" /></div>
+                    </div>
+
+                    <div class="row mb-2">
+                      <div class="col-4 small">Min Size</div>
+                      <div class="col-8 d-flex gap-2">
+                        <div class="input-group input-group-sm">
+                          <span class="input-group-text">W</span>
+                          <input type="number" class="form-control" />
+                        </div>
+                        <div class="input-group input-group-sm">
+                          <span class="input-group-text">H</span>
+                          <input type="number" class="form-control" />
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row mb-2">
+                      <div class="col-4 small">Griper Margin</div>
+                      <div class="col-8"><input class="form-control form-control-sm" /></div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-4 small">Size Unit</div>
+                      <div class="col-8">
+                        <div class="btn-group w-100">
+                          <input type="radio" class="btn-check" name="adv-unit" id="adv-cm" checked />
+                          <label class="btn btn-warning btn-sm text-white rounded-pill me-2" for="adv-cm">Centimeter</label>
+
+                          <input type="radio" class="btn-check" name="adv-unit" id="adv-mm" />
+                          <label class="btn btn-outline-secondary btn-sm rounded-pill" for="adv-mm">Milimeter</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Plate -->
+                  <div class="border rounded p-3 mb-3" data-section="plate-setting">
+                    <div class="d-flex justify-content-between mb-3">
+                      <strong>Plate Setting</strong>
+                      <span class="text-warning small clear-btn" data-target="plate-setting">Clear x</span>
+                    </div>
+
+                    <div class="row mb-2">
+                      <div class="col-4 small">Plate Lifetime</div>
+                      <div class="col-8"><input class="form-control form-control-sm" /></div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-4 small">Plate Price</div>
+                      <div class="col-8"><input class="form-control form-control-sm" /></div>
+                    </div>
+                  </div>
+
+                  <!-- Work Time -->
+                  <div class="border rounded p-3 mb-3" data-section="day-setting">
+                    <div class="d-flex justify-content-between mb-3">
+                      <strong>Days Work Time Setting</strong>
+                      <span class="text-warning small clear-btn" data-target="day-setting">Clear x</span>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-4 small">Work Time</div>
+                      <div class="col-8"><input class="form-control form-control-sm" /></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- FOOTER -->
+              <div class="d-flex justify-content-end gap-3 mt-4">
+                <button type="button" class="btn btn-secondary px-4" data-bs-dismiss="modal">Cancel</button>
+                <button type="submit" class="btn btn-warning text-white px-4">Save</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- modal edit -->
     <!-- modal -->
-    <div class="modal modal fade" id="detailModal" tabindex="-1" aria-labelledby="detailModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content rounded-4 pb-1">
-          <div class="modal-header">
-            <h5 class="modal-title" id="detailModalLabel">Detail</h5>
+    <div class="modal fade text-standard" id="detailModal" tabindex="-1" aria-labelledby="detailModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-md">
+        <div class="modal-content rounded-3 shadow">
+          <div class="modal-header border-0 pb-0">
+            <h5 class="modal-title fw-bold" id="detailModalLabel" style="font-size: 1.15rem">View Printing Machine</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
-          <div class="modal-body" style="max-height: 80vh; overflow-y: auto">
-            <div>
-              <div class="mb-4">
-                <span class="text-standard fw-semibold">Sumber : Percetakan Warna Grafika</span><br />
-                <span class="text-secondary text-standard">Jakarta Pusat, Jakarta</span><br />
-                <span class="text-secondary text-standard">Update : 20 Januari 2024</span>
+
+          <div class="modal-body pt-3" style="max-height: 80vh; overflow-y: auto">
+            <div class="pe-1">
+              <div class="mb-3 d-flex justify-content-between align-items-center" style="font-size: 0.95rem">
+                <span class="text-dark">Printing Type</span>
+                <span class="text-dark fw-bold text-end">Large Format</span>
               </div>
-              <div class="mb-2 d-flex justify-content-between">
-                <span class="text-standard">Nama Mesin</span>
-                <span class="text-standard fw-semibold text-end">Heidelberg GTO52</span>
+
+              <div class="mb-3 d-flex justify-content-between align-items-center" style="font-size: 0.95rem">
+                <span class="text-dark">Machine Name</span>
+                <span class="text-dark text-end">Outdoor Ryker KM512</span>
               </div>
-              <div class="mb-2 d-flex justify-content-between">
-                <span class="text-standard">Warna Unit</span>
-                <span class="text-standard fw-semibold text-end">4 Warna</span>
+
+              <div class="mb-3 d-flex justify-content-between align-items-center" style="font-size: 0.95rem">
+                <span class="text-dark">Price</span>
+                <span class="text-dark text-end">15.000 per Square Meter</span>
               </div>
-              <div class="mb-2 d-flex justify-content-between">
-                <span class="text-standard">Area Kertas</span>
-                <span class="text-standard fw-semibold text-end">520 x 430 Milimeter</span>
+
+              <div class="mb-3 d-flex justify-content-between align-items-center" style="font-size: 0.95rem">
+                <span class="text-dark">Pricing Minimum Option</span>
+                <span class="text-dark text-end">Yes (Minimum Qty)</span>
               </div>
-              <div class="mb-2 d-flex justify-content-between">
-                <span class="text-standard">Lebar Jepitan</span>
-                <span class="text-standard fw-semibold text-end">15 Milimeter</span>
+
+              <div class="mb-2" style="font-size: 0.95rem">
+                <span class="text-dark">Rounding Up Size</span>
               </div>
-              <div class="mb-2 d-flex justify-content-between">
-                <span class="text-standard">Maksimal GSM</span>
-                <span class="text-standard fw-semibold text-end">310 gsm</span>
+
+              <div class="mb-2 d-flex justify-content-between align-items-center" style="font-size: 0.95rem; padding-left: 2rem">
+                <span class="text-dark">Min Size / Width</span>
+                <span class="text-dark text-end">0</span>
               </div>
-              <div class="mb-2 d-flex justify-content-between">
-                <span class="text-standard">Harga Plat</span>
-                <span class="text-standard fw-semibold text-end">Rp60.000</span>
+
+              <div class="mb-3 d-flex justify-content-between align-items-center" style="font-size: 0.95rem; padding-left: 2rem">
+                <span class="text-dark">Max Size / Height</span>
+                <span class="text-dark text-end">0</span>
               </div>
-              <div class="mb-2 d-flex justify-content-between">
-                <span class="text-standard">Ketahanan Plat</span>
-                <span class="text-standard fw-semibold text-end">20.000 Lembar</span>
+
+              <div class="mb-3 d-flex justify-content-between align-items-center" style="font-size: 0.95rem">
+                <span class="text-dark">Work Time (Hours)</span>
+                <span class="text-dark text-end">8</span>
               </div>
-              <div class="mb-2 d-flex justify-content-between">
-                <span class="text-standard">Insit Setelan</span>
-                <span class="text-standard fw-semibold text-end">100 Lembar</span>
-              </div>
-              <div class="mb-2 d-flex justify-content-between">
-                <span class="text-standard">Minimum QTY</span>
-                <span class="text-standard fw-semibold text-end">1.000 Lembar</span>
-              </div>
-              <div class="mb-2 d-flex justify-content-between">
-                <span class="text-standard">Harga Minimum</span>
-                <span class="text-standard fw-semibold text-end">Rp240.000</span>
-              </div>
-              <div class="mb-2 d-flex justify-content-between">
-                <span class="text-standard">Harga Druck</span>
-                <span class="text-standard fw-semibold text-end">Rp60</span>
-              </div>
+            </div>
+
+            <div class="d-flex justify-content-end mt-4 mb-1">
+              <button
+                type="button"
+                class="btn btn-secondary px-5 py-2"
+                data-bs-dismiss="modal"
+                style="
+                  background-color: #bfaea7;
+                  color: white;
+                  border: none;
+                  border-radius: 6px;
+                  font-size: 0.9rem;
+                  font-weight: 500;
+                "
+              >
+                Cancel
+              </button>
             </div>
           </div>
         </div>
@@ -590,5 +945,196 @@
     <!-- Custom JS -->
     <script src="assets/js/theme-script.js"></script>
     <script src="assets/js/script.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // ==========================================
+        // 1. INISIALISASI SELEKTOR GLOBAL (SAFETY GUARD)
+        // ==========================================
+        const tabWrapper = document.getElementById("tabEditUnit");
+        const indicator = document.getElementById("tabIndicator");
+        const modalEditUnit = document.getElementById("edit-unit");
+
+        const radioTypes = document.querySelectorAll('input[name="add-printing-type"]');
+        const boxOffset = document.getElementById("add-detail-offset-box");
+        const boxDigital = document.getElementById("add-detail-digital-box");
+        const boxLarge = document.getElementById("add-detail-large-box");
+
+        // ==========================================
+        // 2. LOGIKA TAB INDICATOR (MODAL EDIT)
+        // ==========================================
+        if (tabWrapper && indicator && modalEditUnit) {
+          const tabs = tabWrapper.querySelectorAll(".nav-link");
+
+          const moveIndicator = (el) => {
+            const rect = el.getBoundingClientRect();
+            const parentRect = tabWrapper.getBoundingClientRect();
+            indicator.style.width = rect.width + "px";
+            indicator.style.left = rect.left - parentRect.left + "px";
+          };
+
+          const setActiveIndicator = () => {
+            const active = tabWrapper.querySelector(".nav-link.active");
+            if (active) moveIndicator(active);
+          };
+
+          // Sinkronisasi posisi pas modal kebuka pertama kali
+          modalEditUnit.addEventListener("shown.bs.modal", () => {
+            setActiveIndicator();
+          });
+
+          // Pindah tab & set warna teks utility
+          tabs.forEach((tab) => {
+            tab.addEventListener("shown.bs.tab", function () {
+              tabs.forEach((t) => t.classList.add("text-secondary"));
+              this.classList.remove("text-secondary");
+              moveIndicator(this);
+            });
+          });
+
+          // Handle re-posisi pas layar di-resize
+          window.addEventListener("resize", () => {
+            setActiveIndicator();
+          });
+        }
+
+        // ==========================================
+        // 3. LOGIKA TOGGLE BOX PRINTING TYPE (MODAL ADD)
+        // ==========================================
+        if (radioTypes.length > 0 && boxOffset && boxDigital && boxLarge) {
+          const togglePrintingDetailBoxes = (selectedType) => {
+            boxOffset.classList.add("d-none");
+            boxDigital.classList.add("d-none");
+            boxLarge.classList.add("d-none");
+
+            if (selectedType === "offset") {
+              boxOffset.classList.remove("d-none");
+            } else if (selectedType === "digital") {
+              boxDigital.classList.remove("d-none");
+            } else if (selectedType === "large") {
+              boxLarge.classList.remove("d-none");
+            }
+          };
+
+          radioTypes.forEach((radio) => {
+            radio.addEventListener("change", (e) => {
+              togglePrintingDetailBoxes(e.target.value);
+            });
+          });
+
+          // Init check status saat modal load awal
+          const currentChecked = document.querySelector('input[name="add-printing-type"]:checked');
+          if (currentChecked) {
+            togglePrintingDetailBoxes(currentChecked.value);
+          }
+        }
+
+        // ==========================================
+        // 4. LOGIKA TOGGLE PILL BUTTON SATUAN (SIZE UNIT)
+        // ==========================================
+        const toggleGroups = document.querySelectorAll(".unit-toggle-group");
+
+        function setUnitButtonActive(group, activeButton) {
+          const buttons = group.querySelectorAll(".unit-btn");
+          const hiddenInput = group.querySelector('input[type="hidden"]');
+
+          if (!hiddenInput) return;
+
+          buttons.forEach((btn) => {
+            btn.className = "btn btn-outline-secondary rounded-pill flex-grow-1 py-1 text-nowrap unit-btn";
+          });
+
+          activeButton.className = "btn btn-warning text-white rounded-pill flex-grow-1 py-1 text-nowrap unit-btn active";
+          hiddenInput.value = activeButton.getAttribute("data-value");
+        }
+
+        toggleGroups.forEach((group) => {
+          const buttons = group.querySelectorAll(".unit-btn");
+          buttons.forEach((button) => {
+            button.addEventListener("click", function () {
+              setUnitButtonActive(group, this);
+            });
+          });
+        });
+
+        // ==========================================
+        // 5. LOGIKA GLOBAL BUTTON `.clear-btn`
+        // ==========================================
+        document.querySelectorAll(".clear-btn").forEach((btn) => {
+          btn.addEventListener("click", function () {
+            const sectionName = this.dataset.target;
+            const section = document.querySelector(`[data-section="${sectionName}"]`);
+
+            if (!section) return;
+
+            section.querySelectorAll("input").forEach((input) => {
+              if (input.type === "radio" || input.type === "checkbox") {
+                input.checked = false;
+              } else {
+                input.value = "";
+              }
+            });
+
+            const defaultRadio = section.querySelector('input[type="radio"][checked]');
+            if (defaultRadio) defaultRadio.checked = true;
+          });
+        });
+
+        // ==========================================
+        // 6. LOGIKA TOMBOL SPESIFIK CLEAR X BOX DETAIL
+        // ==========================================
+        const clearButtons = document.querySelectorAll(".btn-clear-box");
+
+        clearButtons.forEach((btn) => {
+          btn.addEventListener("click", function () {
+            const targetBox = this.getAttribute("data-target");
+
+            if (targetBox === "offset" && boxOffset) {
+              const elH = document.getElementById("offset-h");
+              const elW = document.getElementById("offset-w");
+              const elQty = document.getElementById("offset-qty");
+              const elPrice = document.getElementById("offset-price");
+              const elDruck = document.getElementById("offset-druck");
+
+              if (elH) elH.value = "";
+              if (elW) elW.value = "";
+              if (elQty) elQty.value = "";
+              if (elPrice) elPrice.value = "";
+              if (elDruck) elDruck.value = "";
+
+              const group = boxOffset.querySelector(".unit-toggle-group");
+              if (group) {
+                const defaultBtn = group.querySelectorAll(".unit-btn")[0];
+                if (defaultBtn) setUnitButtonActive(group, defaultBtn);
+              }
+            } else if (targetBox === "digital" && boxDigital) {
+              const elPrice = document.getElementById("digital-price");
+              const elH = document.getElementById("digital-h");
+              const elW = document.getElementById("digital-w");
+              const elSelect = document.getElementById("digital-unit-price");
+
+              if (elPrice) elPrice.value = "";
+              if (elH) elH.value = "";
+              if (elW) elW.value = "";
+              if (elSelect) elSelect.selectedIndex = 0;
+
+              const group = boxDigital.querySelector(".unit-toggle-group");
+              if (group) {
+                const defaultBtn = group.querySelectorAll(".unit-btn")[0];
+                if (defaultBtn) setUnitButtonActive(group, defaultBtn);
+              }
+            } else if (targetBox === "large" && boxLarge) {
+              const elPrice = document.getElementById("large-price");
+              if (elPrice) elPrice.value = "";
+
+              const group = boxLarge.querySelector(".unit-toggle-group");
+              if (group) {
+                const defaultBtn = group.querySelectorAll(".unit-btn")[0];
+                if (defaultBtn) setUnitButtonActive(group, defaultBtn);
+              }
+            }
+          });
+        });
+      });
+    </script>
   </body>
 </html>

@@ -214,8 +214,9 @@
                 <table class="table datanew">
                   <thead>
                     <tr>
-                      <th>Nama</th>
-                      <th>Harga</th>
+                      <th>Type</th>
+                      <th>Machine Name</th>
+                      <th>Price</th>
                       <th>Update</th>
                       <th>Status</th>
                       <th class="no-sort">Action</th>
@@ -223,15 +224,16 @@
                   </thead>
                   <tbody>
                     <tr>
-                      <td>Heidelberg GTO52<br />4 Warna</td>
-                      <td>minim: Rp240.000<br />druck: Rp60</td>
-                      <td>20/12/12 23:12</td>
+                      <td>Offset</td>
+                      <td>Heidelberg SM52</td>
+                      <td>240000</td>
+                      <td>25/12/2025, 15:35 Admin</td>
                       <td>
                         <span class="badge bg-info">Active</span>
                       </td>
                       <td class="action-table-data">
                         <div class="edit-delete-action">
-                          <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#detailModal" role="button"
+                          <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#view-offset" role="button"
                             ><i data-feather="eye"></i
                           ></a>
                           <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#edit-unit"
@@ -242,18 +244,19 @@
                       </td>
                     </tr>
                     <tr>
-                      <td>Heidelberg GTO52<br />4 Warna</td>
-                      <td>minim: Rp240.000<br />druck: Rp60</td>
-                      <td>20/12/12 23:12</td>
+                      <td>Digital Printing</td>
+                      <td>Xerox C70 A3+</td>
+                      <td>1500</td>
+                      <td>25/12/2025, 15:35 Admin</td>
                       <td>
                         <span class="badge bg-info">Active</span>
                       </td>
                       <td class="action-table-data">
                         <div class="edit-delete-action">
-                          <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#detailModal" role="button"
+                          <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#view-digital" role="button"
                             ><i data-feather="eye"></i
                           ></a>
-                          <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#edit-unit"
+                          <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#edit-digital"
                             ><i data-feather="edit"></i
                           ></a>
                           <a class="confirm-text p-2" href="javascript:void(0);"><i data-feather="trash-2"></i></a>
@@ -261,9 +264,10 @@
                       </td>
                     </tr>
                     <tr>
-                      <td>Heidelberg GTO52<br />4 Warna</td>
-                      <td>minim: Rp240.000<br />druck: Rp60</td>
-                      <td>20/12/12 23:12</td>
+                      <td>Large Format</td>
+                      <td>Outdoor Ryker KM512</td>
+                      <td>15000</td>
+                      <td>25/12/2025, 15:35 Admin</td>
                       <td>
                         <span class="badge bg-info">Active</span>
                       </td>
@@ -272,45 +276,7 @@
                           <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#detailModal" role="button"
                             ><i data-feather="eye"></i
                           ></a>
-                          <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#edit-unit"
-                            ><i data-feather="edit"></i
-                          ></a>
-                          <a class="confirm-text p-2" href="javascript:void(0);"><i data-feather="trash-2"></i></a>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Heidelberg GTO52<br />4 Warna</td>
-                      <td>minim: Rp240.000<br />druck: Rp60</td>
-                      <td>20/12/12 23:12</td>
-                      <td>
-                        <span class="badge bg-info">Active</span>
-                      </td>
-                      <td class="action-table-data">
-                        <div class="edit-delete-action">
-                          <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#detailModal" role="button"
-                            ><i data-feather="eye"></i
-                          ></a>
-                          <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="edit-unit"
-                            ><i data-feather="edit"></i
-                          ></a>
-                          <a class="confirm-text p-2" href="javascript:void(0);"><i data-feather="trash-2"></i></a>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Heidelberg GTO52<br />4 Warna</td>
-                      <td>minim: Rp240.000<br />druck: Rp60</td>
-                      <td>20/12/12 23:12</td>
-                      <td>
-                        <span class="badge bg-info">Active</span>
-                      </td>
-                      <td class="action-table-data">
-                        <div class="edit-delete-action">
-                          <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#detailModal" role="button"
-                            ><i data-feather="eye"></i
-                          ></a>
-                          <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="edit-unit"
+                          <a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#edit-large"
                             ><i data-feather="edit"></i
                           ></a>
                           <a class="confirm-text p-2" href="javascript:void(0);"><i data-feather="trash-2"></i></a>
@@ -836,6 +802,485 @@
       </div>
     </div>
     <!-- modal edit -->
+    <div class="modal fade" id="edit-digital" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header border-bottom">
+            <h5 class="modal-title fw-bold">Edit Printing Machine</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+
+          <div class="modal-body">
+            <div class="mb-3">
+              <span class="fw-semibold">Printing Type :</span>
+              <span class="text-muted">Digital Printing</span>
+            </div>
+
+            <ul class="nav nav-tabs mb-4">
+              <li class="nav-item">
+                <button class="nav-link active fw-semibold" data-bs-toggle="tab" data-bs-target="#digital-detail-tab">
+                  Detail
+                </button>
+              </li>
+              <li class="nav-item">
+                <button class="nav-link fw-semibold text-secondary" data-bs-toggle="tab" data-bs-target="#digital-advance-tab">
+                  Advance Setting
+                </button>
+              </li>
+            </ul>
+
+            <form>
+              <div class="tab-content">
+                <div class="tab-pane fade show active" id="digital-detail-tab">
+                  <div class="row align-items-center mb-3">
+                    <div class="col-4">Machine Name</div>
+                    <div class="col-8"><input type="text" class="form-control" value="Xerox C70 A3+" /></div>
+                  </div>
+
+                  <div class="row align-items-center mb-3">
+                    <div class="col-4">Price</div>
+                    <div class="col-8"><input type="text" class="form-control" value="1.500" /></div>
+                  </div>
+
+                  <div class="row align-items-center mb-3">
+                    <div class="col-4">Unit Price</div>
+                    <div class="col-8">
+                      <select class="form-select">
+                        <option selected>Pcs</option>
+                        <option>Box</option>
+                        <option>A3+ Sheet</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="row align-items-center mb-3">
+                    <div class="col-4">Max Size Paper Area</div>
+                    <div class="col-8">
+                      <div class="row">
+                        <div class="col-6">
+                          <div class="input-group input-group-sm">
+                            <span class="input-group-text">H</span>
+                            <input type="text" class="form-control" value="325" />
+                          </div>
+                        </div>
+                        <div class="col-6">
+                          <div class="input-group input-group-sm">
+                            <span class="input-group-text">W</span>
+                            <input type="text" class="form-control" value="485" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row align-items-center mb-3">
+                    <div class="col-4">Size Unit</div>
+                    <div class="col-8">
+                      <div class="btn-group w-100">
+                        <input type="radio" class="btn-check" name="digital-edit-unit" id="digital-edit-cm" />
+                        <label class="btn btn-outline-secondary rounded-pill me-2" for="digital-edit-cm">Centimeter</label>
+
+                        <input type="radio" class="btn-check" name="digital-edit-unit" id="digital-edit-mm" checked />
+                        <label class="btn btn-warning text-white rounded-pill" for="digital-edit-mm">Milimeter</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="tab-pane fade" id="digital-advance-tab">
+                  <div class="border rounded p-3 mb-3" data-section="digital-machine-setting">
+                    <div class="d-flex justify-content-between mb-3">
+                      <strong>Machine Setting</strong>
+                      <span class="text-warning small clear-btn" data-target="digital-machine-setting">Clear x</span>
+                    </div>
+
+                    <div class="row mb-2">
+                      <div class="col-4 small">Max Paper Weight (gsm)</div>
+                      <div class="col-8"><input class="form-control form-control-sm" /></div>
+                    </div>
+
+                    <div class="row mb-2">
+                      <div class="col-4 small">Min Paper Weight (gsm)</div>
+                      <div class="col-8"><input class="form-control form-control-sm" /></div>
+                    </div>
+
+                    <div class="row mb-2">
+                      <div class="col-4 small">Non-printable Area/Margin</div>
+                      <div class="col-8"><input class="form-control form-control-sm" /></div>
+                    </div>
+
+                    <div class="row mb-2">
+                      <div class="col-4 small">Min Size Paper Area</div>
+                      <div class="col-8 d-flex gap-2">
+                        <div class="input-group input-group-sm">
+                          <span class="input-group-text">H</span>
+                          <input type="number" class="form-control" />
+                        </div>
+                        <div class="input-group input-group-sm">
+                          <span class="input-group-text">W</span>
+                          <input type="number" class="form-control" />
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-4 small">Size Unit</div>
+                      <div class="col-8">
+                        <div class="btn-group w-100">
+                          <input type="radio" class="btn-check" name="digital-adv-unit" id="digital-adv-cm" checked />
+                          <label class="btn btn-warning btn-sm text-white rounded-pill me-2" for="digital-adv-cm">Centimeter</label>
+
+                          <input type="radio" class="btn-check" name="digital-adv-unit" id="digital-adv-mm" />
+                          <label class="btn btn-outline-secondary btn-sm rounded-pill" for="digital-adv-mm">Milimeter</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="border rounded p-3 mb-3" data-section="digital-pricing-setting">
+                    <div class="d-flex justify-content-between mb-3">
+                      <strong>Pricing Minimum Option</strong>
+                      <span class="text-warning small clear-btn" data-target="digital-pricing-setting">Clear x</span>
+                    </div>
+
+                    <div class="row mb-2 align-items-center">
+                      <div class="col-4 small">
+                        <input class="form-check-input me-2" type="radio" name="digital-minimum" />
+                        Minimum Transaction
+                      </div>
+                      <div class="col-8"><input class="form-control form-control-sm" /></div>
+                    </div>
+
+                    <div class="row align-items-center">
+                      <div class="col-4 small">
+                        <input class="form-check-input me-2" type="radio" name="digital-minimum" />
+                        Minimum Qty
+                      </div>
+                      <div class="col-8"><input class="form-control form-control-sm" /></div>
+                    </div>
+                  </div>
+
+                  <div class="border rounded p-3 mb-3" data-section="digital-day-setting">
+                    <div class="d-flex justify-content-between mb-3">
+                      <strong>Days Work Time Setting</strong>
+                      <span class="text-warning small clear-btn" data-target="digital-day-setting">Clear x</span>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-4 small">Work Time (Hours)</div>
+                      <div class="col-8"><input class="form-control form-control-sm" /></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="d-flex justify-content-end gap-3 mt-4">
+                <button type="button" class="btn btn-secondary px-4" data-bs-dismiss="modal">Cancel</button>
+                <button type="submit" class="btn btn-warning text-white px-4">Save</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="edit-large" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header border-bottom">
+            <h5 class="modal-title fw-bold">Edit Printing Machine</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+
+          <div class="modal-body">
+            <div class="mb-3">
+              <span class="fw-semibold">Printing Type :</span>
+              <span class="text-muted">Large Format</span>
+            </div>
+
+            <ul class="nav nav-tabs mb-4">
+              <li class="nav-item">
+                <button class="nav-link active fw-semibold" data-bs-toggle="tab" data-bs-target="#large-detail-tab">Detail</button>
+              </li>
+              <li class="nav-item">
+                <button class="nav-link fw-semibold text-secondary" data-bs-toggle="tab" data-bs-target="#large-advance-tab">
+                  Advance Setting
+                </button>
+              </li>
+            </ul>
+
+            <form>
+              <div class="tab-content">
+                <div class="tab-pane fade show active" id="large-detail-tab">
+                  <div class="row align-items-center mb-3">
+                    <div class="col-4">Machine Name</div>
+                    <div class="col-8"><input type="text" class="form-control" value="Outdoor Ryker KM512" /></div>
+                  </div>
+
+                  <div class="row align-items-center mb-3">
+                    <div class="col-4">Price</div>
+                    <div class="col-8"><input type="text" class="form-control" value="15.000" /></div>
+                  </div>
+
+                  <div class="row align-items-center mb-3">
+                    <div class="col-4">Unit Price</div>
+                    <div class="col-8">
+                      <div class="btn-group w-100">
+                        <input type="radio" class="btn-check" name="large-edit-unit" id="large-edit-cm" />
+                        <label class="btn btn-outline-secondary rounded-pill me-2" for="large-edit-cm">Square Centimeter</label>
+
+                        <input type="radio" class="btn-check" name="large-edit-unit" id="large-edit-meter" checked />
+                        <label class="btn btn-warning text-white rounded-pill" for="large-edit-meter">Square Meter</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="tab-pane fade" id="large-advance-tab">
+                  <div class="border rounded p-3 mb-3" data-section="large-pricing-setting">
+                    <div class="d-flex justify-content-between mb-3">
+                      <strong>Pricing Minimum Option</strong>
+                      <span class="text-warning small clear-btn" data-target="large-pricing-setting">Clear x</span>
+                    </div>
+
+                    <div class="row mb-2 align-items-center">
+                      <div class="col-4 small">
+                        <input class="form-check-input me-2" type="radio" name="large-minimum" />
+                        Minimum Order
+                      </div>
+                      <div class="col-8"><input class="form-control form-control-sm" /></div>
+                    </div>
+
+                    <div class="row mb-2 align-items-center">
+                      <div class="col-4 small">
+                        <input class="form-check-input me-2" type="radio" name="large-minimum" />
+                        Minimum Transaction
+                      </div>
+                      <div class="col-8"><input class="form-control form-control-sm" /></div>
+                    </div>
+
+                    <div class="row align-items-center">
+                      <div class="col-4 small">
+                        <input class="form-check-input me-2" type="radio" name="large-minimum" />
+                        Minimum Qty
+                      </div>
+                      <div class="col-8"><input class="form-control form-control-sm" /></div>
+                    </div>
+                  </div>
+
+                  <div class="border rounded p-3 mb-3" data-section="large-sizing-setting">
+                    <div class="d-flex justify-content-between mb-3">
+                      <strong>Sizing Setting</strong>
+                      <span class="text-warning small clear-btn" data-target="large-sizing-setting">Clear x</span>
+                    </div>
+
+                    <div class="row align-items-center mb-3">
+                      <div class="col-4 small">Size Unit</div>
+                      <div class="col-8">
+                        <div class="btn-group w-100">
+                          <input type="radio" class="btn-check" name="large-sizing-unit" id="large-sizing-cm" checked />
+                          <label class="btn btn-warning btn-sm text-white rounded-pill me-2" for="large-sizing-cm">Centimeter</label>
+
+                          <input type="radio" class="btn-check" name="large-sizing-unit" id="large-sizing-mm" />
+                          <label class="btn btn-outline-secondary btn-sm rounded-pill" for="large-sizing-mm">Milimeter</label>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row mb-2 align-items-center">
+                      <div class="col-4 small">Rounding Up Size</div>
+                      <div class="col-8">
+                        <div class="input-group input-group-sm mb-2">
+                          <span class="input-group-text">Min Size / Width</span>
+                          <input type="number" class="form-control" />
+                        </div>
+                        <div class="input-group input-group-sm">
+                          <span class="input-group-text">Max Size / Height</span>
+                          <input type="number" class="form-control" />
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row align-items-center">
+                      <div class="col-4 small">Max Lenght</div>
+                      <div class="col-8"><input class="form-control form-control-sm" /></div>
+                    </div>
+                  </div>
+
+                  <div class="border rounded p-3 mb-3" data-section="large-day-setting">
+                    <div class="d-flex justify-content-between mb-3">
+                      <strong>Days Work Time Setting</strong>
+                      <span class="text-warning small clear-btn" data-target="large-day-setting">Clear x</span>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-4 small">Work Time (Hours)</div>
+                      <div class="col-8"><input class="form-control form-control-sm" /></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="d-flex justify-content-end gap-3 mt-4">
+                <button type="button" class="btn btn-secondary px-4" data-bs-dismiss="modal">Cancel</button>
+                <button type="submit" class="btn btn-warning text-white px-4">Save</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade text-standard" id="view-offset" tabindex="-1" aria-labelledby="viewOffsetLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-md">
+        <div class="modal-content rounded-3 shadow">
+          <div class="modal-header border-0 pb-0">
+            <h5 class="modal-title fw-bold" id="viewOffsetLabel" style="font-size: 1.15rem">View Printing Machine</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+
+          <div class="modal-body pt-3" style="max-height: 80vh; overflow-y: auto">
+            <div class="pe-1">
+              <div class="mb-3 d-flex justify-content-between align-items-center" style="font-size: 0.95rem">
+                <span class="text-dark fw-bold">Printing Type</span>
+                <span class="text-dark fw-bold text-end">Offset</span>
+              </div>
+              <div class="mb-3 d-flex justify-content-between align-items-center" style="font-size: 0.95rem">
+                <span class="text-dark">Machine Name</span>
+                <span class="text-dark text-end">Heidelberg SM52</span>
+              </div>
+              <div class="mb-3 d-flex justify-content-between align-items-center" style="font-size: 0.95rem">
+                <span class="text-dark">Max Size Paper Area</span>
+                <span class="text-dark text-end">52 x 37 Centimeter</span>
+              </div>
+              <div class="mb-3 d-flex justify-content-between align-items-center" style="font-size: 0.95rem">
+                <span class="text-dark">Qty Minimum</span>
+                <span class="text-dark text-end">1.000</span>
+              </div>
+              <div class="mb-3 d-flex justify-content-between align-items-center" style="font-size: 0.95rem">
+                <span class="text-dark">Price</span>
+                <span class="text-dark text-end">200.000</span>
+              </div>
+              <div class="mb-3 d-flex justify-content-between align-items-center" style="font-size: 0.95rem">
+                <span class="text-dark">Druck Price</span>
+                <span class="text-dark text-end">60</span>
+              </div>
+              <div class="mb-3 d-flex justify-content-between align-items-center" style="font-size: 0.95rem">
+                <span class="text-dark">Unit Color</span>
+                <span class="text-dark text-end">4</span>
+              </div>
+              <div class="mb-3 d-flex justify-content-between align-items-center" style="font-size: 0.95rem">
+                <span class="text-dark">Max Paper Weight (gsm)</span>
+                <span class="text-dark text-end">310</span>
+              </div>
+              <div class="mb-3 d-flex justify-content-between align-items-center" style="font-size: 0.95rem">
+                <span class="text-dark">Min Paper Weight (gsm)</span>
+                <span class="text-dark text-end">55</span>
+              </div>
+              <div class="mb-3 d-flex justify-content-between align-items-center" style="font-size: 0.95rem">
+                <span class="text-dark">Makeready Sheet</span>
+                <span class="text-dark text-end">100</span>
+              </div>
+              <div class="mb-3 d-flex justify-content-between align-items-center" style="font-size: 0.95rem">
+                <span class="text-dark">Min Size Paper Area</span>
+                <span class="text-dark text-end">12 x 25 centimeter</span>
+              </div>
+              <div class="mb-3 d-flex justify-content-between align-items-center" style="font-size: 0.95rem">
+                <span class="text-dark">Griper Margin (widht)</span>
+                <span class="text-dark text-end">1.2 Centimeter</span>
+              </div>
+              <div class="mb-3 d-flex justify-content-between align-items-center" style="font-size: 0.95rem">
+                <span class="text-dark">Plate Lifetime (Sheet)</span>
+                <span class="text-dark text-end">20.000</span>
+              </div>
+              <div class="mb-3 d-flex justify-content-between align-items-center" style="font-size: 0.95rem">
+                <span class="text-dark">Plate Price (set)</span>
+                <span class="text-dark text-end">240.000</span>
+              </div>
+              <div class="mb-3 d-flex justify-content-between align-items-center" style="font-size: 0.95rem">
+                <span class="text-dark">Work Time (Hours)</span>
+                <span class="text-dark text-end">8</span>
+              </div>
+            </div>
+
+            <div class="d-flex justify-content-end mt-4 mb-1">
+              <button
+                type="button"
+                class="btn btn-secondary px-5 py-2"
+                data-bs-dismiss="modal"
+                style="background-color: #bfaea7; color: white; border: none; border-radius: 6px; font-size: 0.9rem; font-weight: 500"
+              >
+                Cancel
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade text-standard" id="view-digital" tabindex="-1" aria-labelledby="viewDigitalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-md">
+        <div class="modal-content rounded-3 shadow">
+          <div class="modal-header border-0 pb-0">
+            <h5 class="modal-title fw-bold" id="viewDigitalLabel" style="font-size: 1.15rem">View Printing Machine</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+
+          <div class="modal-body pt-3" style="max-height: 80vh; overflow-y: auto">
+            <div class="pe-1">
+              <div class="mb-3 d-flex justify-content-between align-items-center" style="font-size: 0.95rem">
+                <span class="text-dark fw-bold">Printing Type</span>
+                <span class="text-dark fw-bold text-end">Digital Printing</span>
+              </div>
+              <div class="mb-3 d-flex justify-content-between align-items-center" style="font-size: 0.95rem">
+                <span class="text-dark">Machine Name</span>
+                <span class="text-dark text-end">Xerox C70 A3+</span>
+              </div>
+              <div class="mb-3 d-flex justify-content-between align-items-center" style="font-size: 0.95rem">
+                <span class="text-dark">Price</span>
+                <span class="text-dark text-end">1.500 per Pcs</span>
+              </div>
+              <div class="mb-3 d-flex justify-content-between align-items-center" style="font-size: 0.95rem">
+                <span class="text-dark">Max Paper Weight (gsm)</span>
+                <span class="text-dark text-end">260</span>
+              </div>
+              <div class="mb-3 d-flex justify-content-between align-items-center" style="font-size: 0.95rem">
+                <span class="text-dark">Min Paper Weight (gsm)</span>
+                <span class="text-dark text-end">55</span>
+              </div>
+              <div class="mb-3 d-flex justify-content-between align-items-center" style="font-size: 0.95rem">
+                <span class="text-dark">Non-printable Area/Margin</span>
+                <span class="text-dark text-end">5 Millimeter</span>
+              </div>
+              <div class="mb-3 d-flex justify-content-between align-items-center" style="font-size: 0.95rem">
+                <span class="text-dark">Min Size Paper Area</span>
+                <span class="text-dark text-end">150 x 210 Milimeter</span>
+              </div>
+              <div class="mb-3 d-flex justify-content-between align-items-center" style="font-size: 0.95rem">
+                <span class="text-dark">Pricing Minimum Option</span>
+                <span class="text-dark text-end">Yes (Minimum Transaction)</span>
+              </div>
+              <div class="mb-3 d-flex justify-content-between align-items-center" style="font-size: 0.95rem">
+                <span class="text-dark">Work Time (Hours)</span>
+                <span class="text-dark text-end">8</span>
+              </div>
+            </div>
+
+            <div class="d-flex justify-content-end mt-4 mb-1">
+              <button
+                type="button"
+                class="btn btn-secondary px-5 py-2"
+                data-bs-dismiss="modal"
+                style="background-color: #bfaea7; color: white; border: none; border-radius: 6px; font-size: 0.9rem; font-weight: 500"
+              >
+                Cancel
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- modal -->
     <div class="modal fade text-standard" id="detailModal" tabindex="-1" aria-labelledby="detailModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered modal-md">

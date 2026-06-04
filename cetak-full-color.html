@@ -235,7 +235,7 @@
 									<div class="card-body p-3">
 										<div class="d-flex align-items-center justify-content-between mb-3">
 											<h5 class="fw-bold mb-0">Setting Menu</h5>
-											<span class="workflow-total-pill">9</span>
+											<span class="workflow-total-pill">10</span>
 										</div>
 										<ul class="nav nav-tabs cetak-workflow-tabs workflow-list mb-0" id="mainTab"
 											role="tablist">
@@ -343,6 +343,18 @@
 														<span class="workflow-item-icon"><i
 																data-feather="git-branch"></i></span>
 														<span class="workflow-item-text">Work Flow</span>
+													</span>
+												</button>
+											</li>
+											<li class="nav-item" role="presentation">
+												<button class="nav-link workflow-item" id="profit-setting"
+													data-bs-toggle="tab" data-bs-target="#profitSettingTabContent"
+													type="button" role="tab" aria-controls="profitSettingTabContent"
+													aria-selected="false">
+													<span class="workflow-item-left">
+														<span class="workflow-item-icon"><i
+																data-feather="percent"></i></span>
+														<span class="workflow-item-text">Profit Setting</span>
 													</span>
 												</button>
 											</li>
@@ -2063,6 +2075,273 @@
 												
 												
 											</div>
+											<div class="tab-pane fade" id="profitSettingTabContent" role="tabpanel"
+												aria-labelledby="profit-setting">
+												<div class="d-md-flex justify-content-between align-items-start mb-3">
+													<h4 class="mb-2">Profile Pengaturan Keuntungan / Profit</h4>
+													<div class="fst-italic text-muted">Update : 19:30 - 20 Januari 2024</div>
+												</div>
+												<hr>
+												<p>Pilihan Penambahan Harga Keuntungan :</p>
+
+												<div class="persentase-form mb-3">
+													<button class="btn btn-warning btn-sm btn-spec selected" type="button" id="select-1">Berdasarkan Persentase</button>
+													<div class="ms-md-5 input-select">
+														<div class="row align-items-center">
+															<div class="col-md-4 col-6 my-3">
+																<label class="form-label mb-0">Penambahan Profit dari total biaya produksi</label>
+															</div>
+															<div class="col-md-3 col-6 my-3">
+																<div class="input-group input-group-sm">
+																	<input type="text" class="form-control number-separator" inputmode="numeric" pattern="[0-9]*">
+																	<input type="hidden" class="result-input">
+																	<span class="input-group-text">%</span>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+
+												<div class="produksi-form mb-3">
+													<button class="btn btn-outline-warning btn-sm btn-spec" type="button" id="select-2">Berdasarkan Proses Produksi</button>
+													<div class="ms-md-5 input-select d-none">
+														<div class="row align-items-center">
+															<div class="col-md-4 col-6 mt-2">
+																<label class="form-label mb-0">Penambahan Profit dari Biaya Cetak</label>
+															</div>
+															<div class="col-md-3 col-6 mt-2">
+																<div class="input-group input-group-sm">
+																	<input type="text" class="form-control number-separator" inputmode="numeric" pattern="[0-9]*">
+																	<input type="hidden" class="result-input">
+																	<span class="input-group-text">%</span>
+																</div>
+															</div>
+														</div>
+														<div class="row align-items-center">
+															<div class="col-md-4 col-6 mt-2">
+																<label class="form-label mb-0">Penambahan Profit dari Belanja Kertas</label>
+															</div>
+															<div class="col-md-3 col-6 mt-2">
+																<div class="input-group input-group-sm">
+																	<input type="text" class="form-control number-separator" inputmode="numeric" pattern="[0-9]*">
+																	<input type="hidden" class="result-input">
+																	<span class="input-group-text">%</span>
+																</div>
+															</div>
+														</div>
+														<div class="row align-items-center">
+															<div class="col-md-4 col-6 mt-2">
+																<label class="form-label mb-0">Penambahan Profit dari Biaya Laminasi</label>
+															</div>
+															<div class="col-md-3 col-6 mt-2">
+																<div class="input-group input-group-sm">
+																	<input type="text" class="form-control number-separator" inputmode="numeric" pattern="[0-9]*">
+																	<input type="hidden" class="result-input">
+																	<span class="input-group-text">%</span>
+																</div>
+															</div>
+														</div>
+														<div class="row align-items-center">
+															<div class="col-md-4 col-6 mt-2">
+																<label class="form-label mb-0">Penambahan Profit dari Biaya Pond</label>
+															</div>
+															<div class="col-md-3 col-6 mt-2">
+																<div class="input-group input-group-sm">
+																	<input type="text" class="form-control number-separator" inputmode="numeric" pattern="[0-9]*">
+																	<input type="hidden" class="result-input">
+																	<span class="input-group-text">%</span>
+																</div>
+															</div>
+														</div>
+														<div class="row align-items-center">
+															<div class="col-md-4 col-6 mt-2">
+																<label class="form-label mb-0">Penambahan Profit dari Biaya Poli</label>
+															</div>
+															<div class="col-md-3 col-6 mt-2">
+																<div class="input-group input-group-sm">
+																	<input type="text" class="form-control number-separator" inputmode="numeric" pattern="[0-9]*">
+																	<input type="hidden" class="result-input">
+																	<span class="input-group-text">%</span>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+
+												<div class="range-form mb-4">
+													<button class="btn btn-outline-warning btn-sm btn-spec" type="button" id="select-3">Berdasarkan Range Total Biaya Produksi</button>
+													<div class="ms-md-5 input-select d-none">
+														<div class="row mt-3 first">
+															<div class="col-4 col-md-3 d-flex align-items-center">
+																<label class="form-label me-2 mb-0">Dari</label>
+																<input type="text" class="form-control form-control-sm number-separator input-dari" inputmode="numeric" pattern="[0-9]*">
+																<input type="hidden" class="result-input">
+															</div>
+															<div class="col-4 col-md-3 d-flex align-items-center">
+																<label class="form-label me-2 mb-0">Ke</label>
+																<input type="text" class="form-control form-control-sm number-separator input-ke" inputmode="numeric" pattern="[0-9]*">
+																<input type="hidden" class="result-input">
+															</div>
+															<div class="col-md-2 col-4 d-flex align-items-center">
+																<label class="form-label me-2 mb-0">Profit</label>
+																<div class="input-group input-group-sm">
+																	<input type="text" class="form-control number-separator" inputmode="numeric" pattern="[0-9]*">
+																	<input type="hidden" class="result-input">
+																	<span class="input-group-text">%</span>
+																</div>
+															</div>
+															<div class="col-12 col-md-4 d-flex gap-2 mt-2 mt-md-0">
+																<button class="btn btn-warning btn-sm add-range me-2">+Tambahkan Range</button>
+																<button class="btn btn-outline-danger btn-sm delete-range d-none">Hapus</button>
+															</div>
+														</div>
+														<div class="row mt-3">
+															<div class="col-4 col-md-3 d-flex align-items-center">
+																<label class="form-label me-2 mb-0">Dari</label>
+																<input type="text" class="form-control form-control-sm number-separator input-dari" inputmode="numeric" pattern="[0-9]*">
+																<input type="hidden" class="result-input">
+															</div>
+															<div class="col-4 col-md-3 d-flex align-items-center">
+																<label class="form-label me-2 mb-0">Ke</label>
+																<input type="text" class="form-control form-control-sm number-separator input-ke" inputmode="numeric" pattern="[0-9]*">
+																<input type="hidden" class="result-input">
+															</div>
+															<div class="col-md-2 col-4 d-flex align-items-center">
+																<label class="form-label me-2 mb-0">Profit</label>
+																<div class="input-group input-group-sm">
+																	<input type="text" class="form-control number-separator" inputmode="numeric" pattern="[0-9]*">
+																	<input type="hidden" class="result-input">
+																	<span class="input-group-text">%</span>
+																</div>
+															</div>
+															<div class="col-12 col-md-4 d-flex gap-2 mt-2 mt-md-0">
+																<button class="btn btn-warning btn-sm add-range me-2">+Tambahkan Range</button>
+																<button class="btn btn-outline-danger btn-sm delete-range">Hapus</button>
+															</div>
+														</div>
+														<div class="row mt-3">
+															<div class="col-4 col-md-3 d-flex align-items-center">
+																<label class="form-label me-2 mb-0">Dari</label>
+																<input type="text" class="form-control form-control-sm number-separator input-dari" inputmode="numeric" pattern="[0-9]*">
+																<input type="hidden" class="result-input">
+															</div>
+															<div class="col-4 col-md-3 d-flex align-items-center">
+																<label class="form-label me-2 mb-0">Ke</label>
+																<input type="text" class="form-control form-control-sm number-separator input-ke" inputmode="numeric" pattern="[0-9]*">
+																<input type="hidden" class="result-input">
+															</div>
+															<div class="col-md-2 col-4 d-flex align-items-center">
+																<label class="form-label me-2 mb-0">Profit</label>
+																<div class="input-group input-group-sm">
+																	<input type="text" class="form-control number-separator" inputmode="numeric" pattern="[0-9]*">
+																	<input type="hidden" class="result-input">
+																	<span class="input-group-text">%</span>
+																</div>
+															</div>
+															<div class="col-12 col-md-4 d-flex gap-2 mt-2 mt-md-0">
+																<button class="btn btn-warning btn-sm add-range me-2">+Tambahkan Range</button>
+																<button class="btn btn-outline-danger btn-sm delete-range">Hapus</button>
+															</div>
+														</div>
+														<div class="row mt-3">
+															<div class="col-4 col-md-3 d-flex align-items-center">
+																<label class="form-label me-2 mb-0">Dari</label>
+																<input type="text" class="form-control form-control-sm number-separator input-dari" inputmode="numeric" pattern="[0-9]*">
+																<input type="hidden" class="result-input">
+															</div>
+															<div class="col-4 col-md-3 d-flex align-items-center">
+																<label class="form-label me-2 mb-0">Ke</label>
+																<input type="text" class="form-control form-control-sm number-separator" value="Dan seterusnya" readonly>
+																<input type="hidden" class="result-input">
+															</div>
+															<div class="col-md-2 col-4 d-flex align-items-center">
+																<label class="form-label me-2 mb-0">Profit</label>
+																<div class="input-group input-group-sm">
+																	<input type="text" class="form-control number-separator" inputmode="numeric" pattern="[0-9]*">
+																	<input type="hidden" class="result-input">
+																	<span class="input-group-text">%</span>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<hr>
+
+												<div class="tambahan-form">
+													<div class="d-md-flex justify-content-between align-items-center">
+														<p class="mt-3 mb-0">Biaya Tambahan</p>
+														<button class="btn btn-warning btn-sm" id="addOther" type="button">+Tambahkan Biaya Lainnya</button>
+													</div>
+													<div class="row align-items-center">
+														<div class="col-md-3 mt-3">
+															<label class="form-label mb-0 label-biaya">Biaya Transport</label>
+														</div>
+														<div class="d-flex col-md-5 align-items-center mt-3">
+															<input type="text" class="form-control me-2 w-50 number-separator price-input" inputmode="numeric" pattern="[0-9]*">
+															<input type="hidden" class="result-input">
+															<span>Per Pekerjaan/Job</span>
+														</div>
+														<div class="d-flex mt-3 col-md-3">
+															<button class="btn btn-link text-decoration-none btn-edit" type="button">Ubah</button>
+															<button class="btn btn-link text-danger text-decoration-none btn-hapus" type="button">Hapus</button>
+														</div>
+													</div>
+													<div class="row align-items-center">
+														<div class="col-md-3 mt-3">
+															<label class="form-label mb-0 label-biaya">Biaya Packing</label>
+														</div>
+														<div class="d-flex col-md-5 align-items-center mt-3">
+															<input type="text" class="form-control me-2 w-50 number-separator price-input" inputmode="numeric" pattern="[0-9]*">
+															<input type="hidden" class="result-input">
+															<span>Per Lembar</span>
+														</div>
+														<div class="d-flex mt-3 col-md-3">
+															<button class="btn btn-link text-decoration-none btn-edit" type="button">Ubah</button>
+															<button class="btn btn-link text-danger text-decoration-none btn-hapus" type="button">Hapus</button>
+														</div>
+													</div>
+												</div>
+												<hr>
+
+												<div class="pajak-form">
+													<div class="d-md-flex justify-content-between align-items-center">
+														<p class="mt-3 mb-0">Pajak</p>
+														<button class="btn btn-warning btn-sm" id="addTax" type="button">+Tambahkan Pajak Baru</button>
+													</div>
+													<div class="row align-items-center mt-3">
+														<div class="col-3">
+															<label class="form-label mb-0 label-pajak">Ppn</label>
+														</div>
+														<div class="col-5 input-group input-group-sm w-25 me-3">
+															<input type="text" class="form-control number-separator" inputmode="numeric" pattern="[0-9]*">
+															<input type="hidden" class="result-input">
+															<span class="input-group-text">%</span>
+														</div>
+														<div class="d-flex col-3">
+															<button class="btn btn-link text-decoration-none btn-edit" type="button">Ubah</button>
+															<button class="btn btn-link text-danger text-decoration-none btn-hapus" type="button">Hapus</button>
+														</div>
+													</div>
+													<div class="row align-items-center mt-3">
+														<div class="col-3">
+															<label class="form-label mb-0 label-pajak">Pph</label>
+														</div>
+														<div class="col-5 input-group input-group-sm w-25 me-3">
+															<input type="text" class="form-control number-separator" inputmode="numeric" pattern="[0-9]*">
+															<input type="hidden" class="result-input">
+															<span class="input-group-text">%</span>
+														</div>
+														<div class="d-flex col-3">
+															<button class="btn btn-link text-decoration-none btn-edit" type="button">Ubah</button>
+															<button class="btn btn-link text-danger text-decoration-none btn-hapus" type="button">Hapus</button>
+														</div>
+													</div>
+												</div>
+												<small class="d-none text-danger" id="info-selected-all"><i class="fa-solid fa-circle-info"></i> please input your specification<br></small>
+												<div class="d-flex justify-content-end">
+													<button class="btn btn-primary mt-4 col-md-3 col-6" id="update-btn" type="button">Update Profile</button>
+												</div>
+											</div>
 										</div>
 									</div>
 								</div>
@@ -2657,7 +2936,9 @@
         <!-- <script src="assets/plugins/select2/js/custom-select.js"></script> -->
 		<!-- Bootstrap Core JS -->
 		<script src="assets/js/bootstrap.bundle.min.js"></script>
+		<script src="assets/js/easy-number-separator.js"></script>
 		<script src="assets/js/product.js"></script>
+		<script src="assets/js/profit-setting.js"></script>
 		
 		<!-- Chart JS -->
 		<script src="assets/plugins/apexchart/apexcharts.min.js"></script>

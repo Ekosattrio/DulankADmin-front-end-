@@ -229,7 +229,7 @@
 								<div class="card workflow-panel border-0 shadow-sm">
 									<div class="card-body p-3">
 										<div class="d-flex align-items-center justify-content-between mb-3">
-											<h5 class="fw-bold mb-0">Setting Menu</h5>
+											<h5 class="fw-bold mb-0">Setting And Optional</h5>
 											<span class="workflow-total-pill">10</span>
 										</div>
 										<ul class="nav nav-tabs cetak-workflow-tabs workflow-list mb-0" id="mainTab"
@@ -242,7 +242,7 @@
 													<span class="workflow-item-left">
 														<span class="workflow-item-icon"><i
 																data-feather="box"></i></span>
-														<span class="workflow-item-text">Product</span>
+														<span class="workflow-item-text">Product Custom Default</span>
 													</span>
 												</button>
 											</li>
@@ -364,7 +364,7 @@
 											<div class="tab-pane fade show active" id="productTabContent"
 												role="tabpanel" aria-labelledby="product">
 												<div class="justify-content-between d-flex align-items-center mb-2">
-													<h4 class="flex-grow-1">Product</h4>
+													<h4 class="flex-grow-1">All Product Custom</h4>
 													<button class="btn btn-warning btn-sm" id="btnTambahRow" type="button">
 														Add Product
 													</button>
@@ -866,530 +866,448 @@
 </table>
 												</div>
 											</div>
-											<div class="tab-pane fade" id="sizeTabContent" role="tabpanel"
-												aria-labelledby="product-size">
-												<div class="justify-content-between d-flex align-items-center mb-2">
-													<div>
-														<h4>Option List Size</h4>
-														<p class="text-muted small">The following are the datas for
-															options and
-															calculations</p>
-													</div>
-													<a class="btn btn-outline-warning btn-sm"
-														href="kertas-ukuran-self.html">
-														Add New Size
-													</a>
-												</div>
-												<div>
-													<div class="table-responsive ">
-														<table class="table table-sm">
-															<thead>
-																<tr>
-																	<th>Size Name</th>
-																	<th>size</th>
-																	<th>Status</th>
-																	<th>Action</th>
-																</tr>
-															</thead>
-															<tbody>
-																<tr>
-																	<td>A5</td>
-																	<td>21x15cm</td>
-																	<td>
-																		<select class="form-select form-select-sm">
-																			<option>Show</option>
-																			<option>Hide</option>
-																		</select>
-																	</td>
-																	<td>
-																		<a href="#" class="text-danger">Remove</a>
-																	</td>
-																</tr>
-																<tr>
-																	<td>A4</td>
-																	<td>21x30cm</td>
-																	<td>
-																		<select class="form-select form-select-sm">
-																			<option>Show</option>
-																			<option>Hide</option>
-																		</select>
-																	</td>
-																	<td>
-																		<a href="#" class="text-danger">Remove</a>
-																	</td>
-																</tr>
-																<tr>
-																	<td>A3</td>
-																	<td>30x42cm</td>
-																	<td>
-																		<select class="form-select form-select-sm">
-																			<option>Hide</option>
-																			<option>Show</option>
-																		</select>
-																	</td>
-																	<td>
-																		<a href="#" class="text-danger">Remove</a>
-																	</td>
-																</tr>
-																<tr>
-																	<td>Folio</td>
-																	<td>21x33cm</td>
-																	<td>
-																		<select class="form-select form-select-sm">
-																			<option>Show</option>
-																			<option>Hide</option>
-																		</select>
-																	</td>
-																	<td>
-																		<a href="#" class="text-danger">Remove</a>
-																	</td>
-																</tr>
-															</tbody>
-														</table>
-													</div>
-													<button class="btn btn-warning btn-sm mb-4" data-bs-toggle="modal"
-														data-bs-target="#modalSize">Add
-														Size</button>
+											<div class="tab-pane fade" id="sizeTabContent" role="tabpanel" aria-labelledby="product-size">
+    <div class="justify-content-between d-flex align-items-center mb-2">
+        <div>
+            <h4>Product Size Option</h4>
+        </div>
+    </div>
+    
+    <div>
+        <div class="table-responsive">
+            <table class="table table-sm">
+                <thead>
+                    <tr>
+                        <th>Size Name</th>
+                        <th>size</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="sizeTableBody">
+                    <tr>
+                        <td>A5</td>
+                        <td>21x15cm</td>
+                        <td>
+                            <select class="form-select form-select-sm">
+                                <option>Show</option>
+                                <option>Hide</option>
+                            </select>
+                        </td>
+                        <td>
+                            <a href="#" class="text-danger" onclick="this.closest('tr').remove(); return false;">Remove</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>A4</td>
+                        <td>21x30cm</td>
+                        <td>
+                            <select class="form-select form-select-sm">
+                                <option>Show</option>
+                                <option>Hide</option>
+                            </select>
+                        </td>
+                        <td>
+                            <a href="#" class="text-danger" onclick="this.closest('tr').remove(); return false;">Remove</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>A3</td>
+                        <td>30x42cm</td>
+                        <td>
+                            <select class="form-select form-select-sm">
+                                <option>Hide</option>
+                                <option>Show</option>
+                            </select>
+                        </td>
+                        <td>
+                            <a href="#" class="text-danger" onclick="this.closest('tr').remove(); return false;">Remove</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Folio</td>
+                        <td>21x33cm</td>
+                        <td>
+                            <select class="form-select form-select-sm">
+                                <option>Show</option>
+                                <option>Hide</option>
+                            </select>
+                        </td>
+                        <td>
+                            <a href="#" class="text-danger" onclick="this.closest('tr').remove(); return false;">Remove</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <button type="button" class="btn btn-warning btn-sm mb-4" id="addSizeBtn">Add Size</button>
 
-													<div>
-														<h6 class="mb-3">Custom size for Product</h6>
-														<div class="d-flex align-items-center gap-3">
-															<label>Enable Product for Custom Size ?</label>
-															<div class="btn-group" role="group">
-																<input type="radio" class="btn-check" name="customSize"
-																	id="customYes" checked>
-																<label class="btn btn-outline-primary"
-																	for="customYes">Yes</label>
+        <div>
+            <h6 class="mb-3">Custom size for Product</h6>
+            <div class="d-flex align-items-center gap-3">
+                <label>Enable Product for Custom Size ?</label>
+                <div class="btn-group" role="group">
+                    <input type="radio" class="btn-check" name="customSize" id="customYes" checked>
+                    <label class="btn btn-outline-primary" for="customYes">Yes</label>
 
-																<input type="radio" class="btn-check" name="customSize"
-																	id="customNo">
-																<label class="btn btn-outline-primary"
-																	for="customNo">No</label>
-															</div>
-														</div>
-													</div>
-												</div>
+                    <input type="radio" class="btn-check" name="customSize" id="customNo">
+                    <label class="btn btn-outline-primary" for="customNo">No</label>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+											<div class="tab-pane fade" id="paperTypeTabContent" role="tabpanel" aria-labelledby="paper-type">
+    
+    <div class="card mb-4">
+        <div class="card-body">
+            <div class="justify-content-between d-flex align-items-center mb-2">
+                <div>
+                    <h4>Paper Type Option</h4>
+                </div>
+            </div>
+            
+            <div>
+                <div class="table-responsive mb-4">
+                    <table class="table table-sm" id="paperTypeTable">
+                        <thead>
+                            <tr>
+                                <th>Paper Group</th>
+                                <th>Gramature</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Art Paper</td>
+                                <td class="mt-2 d-flex">
+                                    <div class="me-3">
+                                        <input class="form-check-input cb-item" type="checkbox" value="" id="flexCheckDefault">
+                                        <label class="form-check-label" for="flexCheckDefault">100 gr</label>
+                                    </div>
+                                    <div class="me-3">
+                                        <input class="form-check-input cb-item" type="checkbox" value="" id="flexCheckDefault">
+                                        <label class="form-check-label" for="flexCheckDefault">120 gr</label>
+                                    </div>
+                                    <div class="me-3">
+                                        <input class="form-check-input cb-item" type="checkbox" value="" id="flexCheckDefault">
+                                        <label class="form-check-label" for="flexCheckDefault">150 gr</label>
+                                    </div>
+                                    <div class="me-3">
+                                        <input class="form-check-input cb-select-all" type="checkbox" value="" id="flexCheckDefault">
+                                        <label class="form-check-label" for="flexCheckDefault">Select All</label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Art Carton</td>
+                                <td class="mt-2 d-flex">
+                                    <div class="me-3">
+                                        <input class="form-check-input cb-item" type="checkbox" value="" id="flexCheckDefault">
+                                        <label class="form-check-label" for="flexCheckDefault">210 gr</label>
+                                    </div>
+                                    <div class="me-3">
+                                        <input class="form-check-input cb-item" type="checkbox" value="" id="flexCheckDefault">
+                                        <label class="form-check-label" for="flexCheckDefault">230 gr</label>
+                                    </div>
+                                    <div class="me-3">
+                                        <input class="form-check-input cb-item" type="checkbox" value="" id="flexCheckDefault">
+                                        <label class="form-check-label" for="flexCheckDefault">260 gr</label>
+                                    </div>
+                                    <div class="me-3">
+                                        <input class="form-check-input cb-item" type="checkbox" value="" id="flexCheckDefault">
+                                        <label class="form-check-label" for="flexCheckDefault">290 gr</label>
+                                    </div>
+                                    <div class="me-3">
+                                        <input class="form-check-input cb-select-all" type="checkbox" value="" id="flexCheckDefault">
+                                        <label class="form-check-label" for="flexCheckDefault">Select All</label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>HVS</td>
+                                <td class="mt-2 d-flex">
+                                    <div class="me-3">
+                                        <input class="form-check-input cb-item" type="checkbox" value="" id="flexCheckDefault">
+                                        <label class="form-check-label" for="flexCheckDefault">60 gr</label>
+                                    </div>
+                                    <div class="me-3">
+                                        <input class="form-check-input cb-item" type="checkbox" value="" id="flexCheckDefault">
+                                        <label class="form-check-label" for="flexCheckDefault">70 gr</label>
+                                    </div>
+                                    <div class="me-3">
+                                        <input class="form-check-input cb-item" type="checkbox" value="" id="flexCheckDefault">
+                                        <label class="form-check-label" for="flexCheckDefault">80 gr</label>
+                                    </div>
+                                    <div class="me-3">
+                                        <input class="form-check-input cb-item" type="checkbox" value="" id="flexCheckDefault">
+                                        <label class="form-check-label" for="flexCheckDefault">100 gr</label>
+                                    </div>
+                                    <div class="me-3">
+                                        <input class="form-check-input cb-select-all" type="checkbox" value="" id="flexCheckDefault">
+                                        <label class="form-check-label" for="flexCheckDefault">Select All</label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Carton BC</td>
+                                <td class="mt-2 d-flex">
+                                    <div class="me-3">
+                                        <input class="form-check-input cb-item" type="checkbox" value="" id="flexCheckDefault">
+                                        <label class="form-check-label" for="flexCheckDefault">180 gr</label>
+                                    </div>
+                                    <div class="me-3">
+                                        <input class="form-check-input cb-select-all" type="checkbox" value="" id="flexCheckDefault">
+                                        <label class="form-check-label" for="flexCheckDefault">Select All</label>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <button type="button" class="btn btn-warning btn-sm js-inline-add-trigger" data-add-kind="paper">Add Paper Name</button>
+            </div>
+            <div class="row d-flex justify-content-end mt-2">
+                <div class="col-12 justify-content-end d-flex gap-2">
+                    <button class="btn btn-secondary btn-sm">Cancel</button>
+                    <button class="btn btn-primary btn-sm">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
-											</div>
-											<div class="tab-pane fade" id="paperTypeTabContent" role="tabpanel"
-												aria-labelledby="paper-type">
-												<!-- Setting for Paper Type Section -->
-												<div>
-													<div class="justify-content-between d-flex align-items-center mb-2">
-														<div>
-															<h4>Setting for option paper type</h4>
-															<p class="text-muted small">The following are the datas for
-																options and
-																calculations</p>
-														</div>
-														<a class="btn btn-outline-warning btn-sm"
-															href="kertas-jenis-self.html">
-															Add New Paper Type
-														</a>
-													</div>
-													<div>
-														<div class="table-responsive mb-4">
-															<table class="table table-sm">
-																<thead>
-																	<tr>
-																		<th>Paper Group</th>
-																		<th>Gramature</th>
-																	</tr>
-																</thead>
-																<tbody>
-																	<tr>
-																		<td>Art Paper</td>
-																		<td class="mt-2 d-flex">
-																			<div class="me-3">
-																			<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-																			<label class="form-check-label" for="flexCheckDefault">
-																				100 gr
-																			</label>
-																			</div>
-																			<div class="me-3">
-																			<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-																			<label class="form-check-label" for="flexCheckDefault">
-																				120 gr
-																			</label>
-																			</div>
-																			<div class="me-3">
-																			<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-																			<label class="form-check-label" for="flexCheckDefault">
-																				150 gr
-																			</label>
-																			</div>
-																			<div class="me-3">
-																			<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-																			<label class="form-check-label" for="flexCheckDefault">
-																				Select All
-																			</label>
-																			</div>
-																		</td>
-																	</tr>
-																	<tr>
-																		<td>Art Carton</td>
-																		<td class="mt-2 d-flex">
-																			<div class="me-3">
-																			<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-																			<label class="form-check-label" for="flexCheckDefault">
-																				210 gr
-																			</label>
-																			</div>
-																			<div class="me-3">
-																			<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-																			<label class="form-check-label" for="flexCheckDefault">
-																				230 gr
-																			</label>
-																			</div>
-																			<div class="me-3">
-																			<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-																			<label class="form-check-label" for="flexCheckDefault">
-																				260 gr
-																			</label>
-																			</div>
-																			<div class="me-3">
-																			<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-																			<label class="form-check-label" for="flexCheckDefault">
-																				290 gr
-																			</label>
-																			</div>
-																			<div class="me-3">
-																			<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-																			<label class="form-check-label" for="flexCheckDefault">
-																				Select All
-																			</label>
-																			</div>
-																		</td>
-																	</tr>
-																	<tr>
-																		<td>HVS</td>
-																		<td class="mt-2 d-flex">
-																			<div class="me-3">
-																			<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-																			<label class="form-check-label" for="flexCheckDefault">
-																				60 gr
-																			</label>
-																			</div>
-																			<div class="me-3">
-																			<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-																			<label class="form-check-label" for="flexCheckDefault">
-																				70 gr
-																			</label>
-																			</div>
-																			<div class="me-3">
-																			<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-																			<label class="form-check-label" for="flexCheckDefault">
-																				80 gr
-																			</label>
-																			</div>
-																			<div class="me-3">
-																			<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-																			<label class="form-check-label" for="flexCheckDefault">
-																				100 gr
-																			</label>
-																			</div>
-																			<div class="me-3">
-																			<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-																			<label class="form-check-label" for="flexCheckDefault">
-																				Select All
-																			</label>
-																			</div>
-																		</td>
-																	</tr>
-																	<tr>
-																		<td>Carton BC</td>
-																		<td class="mt-2 d-flex">
-																			<div class="me-3">
-																			<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-																			<label class="form-check-label" for="flexCheckDefault">
-																				180 gr
-																			</label>
-																			</div>
-																			<div class="me-3">
-																			<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-																			<label class="form-check-label" for="flexCheckDefault">
-																				Select All
-																			</label>
-																			</div>
-																		</td>
-																	</tr>
-																	
-																</tbody>
-															</table>
-														</div>
-														<button type="button" class="btn btn-warning btn-sm js-inline-add-trigger" data-add-kind="paper">Add Paper Name</button>
-													</div>
-													<div class="row d-flex justify-content-end mt-2">
-														<div class="col-12 justify-content-end d-flex gap-2">
-															
-														<button class="btn btn-secondary btn-sm" 
-															>Cancel</button>
-															
-														<button class="btn btn-primary btn-sm" 
-															>Save</button>
-														</div>
-													</div>
-												</div>
+    <div class="card mt-4">
+        <div class="card-body">
+            <div class="justify-content-between d-flex align-items-center mb-2">
+                <div>
+                    <h4>Work Flow Setting</h4>
+                </div>
+            </div>
+            
+            <div>
+                <div class="table-responsive mb-4">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Flow Category</th>
+                                <th>Flow Name</th>
+                                <th>Assigne</th>
+                                <th>Incentive</th>
+                                <th>Effective Paper Group</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Pracetak</td>
+                                <td>Pesan Kertas ke Toko</td>
+                                <td>Nurdin</td>
+                                <td>5.000 per Job</td>
+                                <td>
+                                    <select class="select2" multiple="multiple">
+                                        <option value="m-1" selected>Art Paper</option>
+                                        <option value="m-2">Art Carton</option>
+                                        <option value="m-3">HVS</option>
+                                        <option value="m-4">Carton BC</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <a href="#" class="text-danger">Remove</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <button type="button" class="btn btn-warning btn-sm js-inline-add-trigger" data-add-kind="process">Add Flow Name</button>
+            </div>
+            <div class="row d-flex justify-content-end mt-2">
+                <div class="col-12 justify-content-end d-flex gap-2">
+                    <button class="btn btn-secondary btn-sm">Cancel</button>
+                    <button class="btn btn-primary btn-sm">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
-												<!-- List of Process Section -->
-												<div class="mt-5">
-													<div class="justify-content-between d-flex align-items-center mb-2">
-														<div>
-															<h4>List of Process</h4>
-															<p class="text-muted small">The following are the datas for
-																Process
-																Arrange</p>
-														</div>
-														<a class="btn btn-outline-warning btn-sm"
-															href="job-proses.html">
-															Add New Process
-														</a>
-													</div>
-													<div>
-														<div class="table-responsive mb-4">
-															<table class="table">
-																<thead>
-																	<tr>
-																		<th>Flow  Category</th>
-																		<th>Flow Name </th>
-																		<th>Assigne</th>
-																		<th>Incentive</th>
-																		<th>Effective Papper name</th>
-																		<th>Action</th>
-																	</tr>
-																</thead>
-																<tbody>
-																	<tr>
-																		<td>Pracetak</td>
-																		<td>Pesan Kertas ke Toko</td>
-																		<td>Nurdin</td>
-																		<td>5.000 per Job</td>
-																		<td>
-																			<select class="select2" multiple="multiple">
-																			<option value="m-1" selected>Art Paper</option>
-																			<option value="m-2">Art Carton</option>
-																			<option value="m-3">HVS</option>
-																			<option value="m-4">Carton BC</option>
-																		</select>
-																		</td>
-																		<td>
-																			<a href="#" class="text-danger">Remove</a>
-																		</td>
-																	</tr>
-																</tbody>
-															</table>
-														</div>
-														<button type="button" class="btn btn-warning btn-sm js-inline-add-trigger" data-add-kind="process">Add Process</button>
-													</div>
-	<div class="row d-flex justify-content-end mt-2">
-													<div class="col-12 justify-content-end d-flex gap-2">
-														
-													<button class="btn btn-secondary btn-sm" 
-														>Cancel</button>
-														
-													<button class="btn btn-primary btn-sm" 
-														>Save</button>
-													</div>
-												</div>
-												</div>
+</div>
+										<div class="tab-pane fade" id="offsetMachineTabContent" role="tabpanel" aria-labelledby="offset-machine">
+    
+    <div class="card mb-4">
+        <div class="card-body">
+            <div class="justify-content-between d-flex align-items-center mb-3">
+                <div>
+                    <h4>Machine Type Option</h4>
+                </div>
+            </div>
+            <div>
+                <div class="table-responsive mb-4">
+                    <table class="table table-sm">
+                        <thead>
+                            <tr>
+                                <th>Printing Type</th>
+                                <th>Printing Name</th>
+                                <th>Unit Color</th>
+                                <th>Paper Area</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>OffSet</td>
+                                <td>heidlberg sm52</td>
+                                <td>4 Color</td>
+                                <td>104x72 cm</td>
+                                <td>
+                                    <select class="form-select form-select-sm">
+                                        <option>Show</option>
+                                        <option>Hide</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <a href="#" class="text-danger">Remove</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>OffSet</td>
+                                <td>heidlberg sm74</td>
+                                <td>4 Color</td>
+                                <td>75 x 52 cm</td>
+                                <td>
+                                    <select class="form-select form-select-sm">
+                                        <option>Show</option>
+                                        <option>Hide</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <a href="#" class="text-danger">Remove</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>OffSet</td>
+                                <td>heidlberg sm104</td>
+                                <td>4 Color</td>
+                                <td>52 x 36 cm</td>
+                                <td>
+                                    <select class="form-select form-select-sm">
+                                        <option>Show</option>
+                                        <option>Hide</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <a href="#" class="text-danger">Remove</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>A3</td>
+                                <td>Xerox C 60</td>
+                                <td>Digital</td>
+                                <td>32 x 48 cm</td>
+                                <td>
+                                    <select class="form-select form-select-sm">
+                                        <option>Show</option>
+                                        <option>Hide</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <a href="#" class="text-danger">Remove</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <button type="button" class="btn btn-warning btn-sm js-inline-add-trigger" data-add-kind="machine">Add Offset Machine</button>
+            </div>
+            <div class="row d-flex justify-content-end mt-2">
+                <div class="col-12 justify-content-end d-flex gap-2">
+                    <button class="btn btn-secondary btn-sm">Cancel</button>
+                    <button class="btn btn-primary btn-sm">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
-											</div>
-											<div class="tab-pane fade" id="offsetMachineTabContent" role="tabpanel"
-												aria-labelledby="offset-machine">
-												<div>
-													<div class="justify-content-between d-flex align-items-center mb-2">
-														<div>
-															<h4>Setting for option List Printing Machine</h4>
-														</div>
-														<a class="btn btn-outline-warning btn-sm"
-															href="mesin-cetak-self.html">
-															Add New offset machine
-														</a>
-													</div>
-													<div>
-														<div class="table-responsive mb-4">
-															<table class="table table-sm">
-																<thead>
-																	<tr>
-																		<th>Printing Type</th>
-																		<th>Printing Name</th>
-																		<th>Unit Color</th>
-																		<th>Paper Area</th>
-																		<th>Status</th>
-																		<th>Action</th>
-																	</tr>
-																</thead>
-																<tbody>
-																	<tr>
-																		<td>OffSet</td>
-																		<td>heidlberg sm52</td>
-																		<td>4 Color</td>
-																		<td>104x72 cm</td>
-																		<td>
-																			<select class="form-select form-select-sm">
-																				<option>Show</option>
-																				<option>Hide</option>
-																			</select>
-																		</td>
-																		<td>
-																			<a href="#" class="text-danger">Remove</a>
-																		</td>
-																	</tr>
-																	<tr>
-																		<td>OffSet</td>
-																		<td>heidlberg sm74</td>
-																		<td>4 Color</td>
-																		<td>75 x 52 cm</td>
-																		<td>
-																			<select class="form-select form-select-sm">
-																				<option>Show</option>
-																				<option>Hide</option>
-																			</select>
-																		</td>
-																		<td>
-																			<a href="#" class="text-danger">Remove</a>
-																		</td>
-																	</tr>
-																	<tr>
-																		<td>OffSet</td>
-																		<td>heidlberg sm104</td>
-																		<td>4 Color</td>
-																		<td>52 x 36 cm</td>
-																		<td>
-																			<select class="form-select form-select-sm">
-																				<option>Show</option>
-																				<option>Hide</option>
-																			</select>
-																		</td>
-																		<td>
-																			<a href="#" class="text-danger">Remove</a>
-																		</td>
-																	</tr>
-																	<tr>
-																		<td>A3</td>
-																		<td>Xerox C 60</td>
-																		<td>Digital</td>
-																		<td>32 x 48 cm</td>
-																		<td>
-																			<select class="form-select form-select-sm">
-																				<option>Show</option>
-																				<option>Hide</option>
-																			</select>
-																		</td>
-																		<td>
-																			<a href="#" class="text-danger">Remove</a>
-																		</td>
-																	</tr>
-																</tbody>
-															</table>
-														</div>
-														<button type="button" class="btn btn-warning btn-sm js-inline-add-trigger" data-add-kind="machine">Add Offset Machine</button>
-													</div>
-													<div class="row d-flex justify-content-end mt-2">
-														<div class="col-12 justify-content-end d-flex gap-2">
-															
-														<button class="btn btn-secondary btn-sm" 
-															>Cancel</button>
-															
-														<button class="btn btn-primary btn-sm" 
-															>Save</button>
-														</div>
-													</div>
-												</div>
+    <div class="card">
+        <div class="card-body">
+            <div class="justify-content-between d-flex align-items-center mb-3">
+                <div>
+                    <h4>Work Flow Setting</h4>
+                </div>
+            </div>
+            <div>
+                <div class="table-responsive mb-4">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Flow Category</th>
+                                <th>Flow Name</th>
+                                <th>Assignee</th>
+                                <th>Incentive</th>
+                                <th>Effective Printing Type</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Pracetak</td>
+                                <td>Plat CTP</td>
+                                <td>Nurdin</td>
+                                <td>5.000 per Job</td>
+                                <td>
+                                    <select class="select2" multiple="multiple">
+                                        <option value="m-1" selected>Ofsett</option>
+                                        <option value="m-2">Digital A3</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <a href="#" class="text-danger">Remove</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Cetak</td>
+                                <td>Print A3</td>
+                                <td>Nurdin,Raffi</td>
+                                <td>5.000 per Job</td>
+                                <td>
+                                    <select class="select2" multiple="multiple">
+                                        <option value="m-1">Ofsett</option>
+                                        <option value="m-2" selected>Digital A3</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <a href="#" class="text-danger">Remove</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Cetak</td>
+                                <td>Spk Cetak Offset</td>
+                                <td>Arif,Galih</td>
+                                <td>5.000 per Job</td>
+                                <td>
+                                    <select class="select2" multiple="multiple">
+                                        <option value="m-1" selected>Ofsett</option>
+                                        <option value="m-2">Digital A3</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <a href="#" class="text-danger">Remove</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <button type="button" class="btn btn-warning btn-sm js-inline-add-trigger" data-add-kind="process">Add Flow Name</button>
+            </div>
+            <div class="row d-flex justify-content-end mt-2">
+                <div class="col-12 justify-content-end d-flex gap-2">
+                    <button class="btn btn-secondary btn-sm">Cancel</button>
+                    <button class="btn btn-primary btn-sm">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
-												<!-- List of Process Section -->
-												<div class="mt-5">
-													<div class="justify-content-between d-flex align-items-center mb-2">
-														<div>
-															<h4>List of Process</h4>
-															<p class="text-muted small">The following are the datas for
-																Process
-																Arrange</p>
-														</div>
-														<a class="btn btn-outline-warning btn-sm"
-															href="job-proses.html">
-															Add New Process
-														</a>
-													</div>
-													<div>
-														<div class="table-responsive mb-4">
-															<table class="table">
-																<thead>
-																	<tr>
-																		<th>Flow Category</th>
-																		<th>Flow Name</th>
-																		<th>Assignee</th>
-																		<th>Incentive</th>
-																		<th>Effective Fold Type</th>
-																		<th>Action</th>
-																	</tr>
-																</thead>
-																<tbody>
-																	<tr>
-																		<td>Pracetak</td>
-																		<td>Plat CTP</td>
-																		<td>Nurdin</td>
-																		<td>5.000 per Job</td>
-																		<td>
-																		<select class="select2" multiple="multiple">
-																			<option value="m-1" selected>Ofsett</option>
-																			<option value="m-2">Digital A3</option>
-																		</select>
-																		</td>
-																		<td>
-																			<a href="#" class="text-danger">Remove</a>
-																		</td>
-																	</tr>
-																	<tr>
-																		<td>Cetak</td>
-																		<td>Print A3</td>
-																		<td>Nurdin,Raffi</td>
-																		<td>5.000 per Job</td>
-																		<td>
-																		<select class="select2" multiple="multiple">
-																			<option value="m-1" >Ofsett</option>
-																			<option value="m-2" selected >Digital A3</option>
-																		</select>
-																		</td>
-																		<td>
-																			<a href="#" class="text-danger">Remove</a>
-																		</td>
-																	</tr>
-																	<tr>
-																		<td>Cetak</td>
-																		<td>Spk Cetak Offset</td>
-																		<td>Arif,Galih</td>
-																		<td>5.000 per Job</td>
-																		<td>
-																		<select class="select2" multiple="multiple">
-																			<option value="m-1" selected>Ofsett</option>
-																			<option value="m-2">Digital A3</option>
-																		</select>
-																		</td>
-																		<td>
-																			<a href="#" class="text-danger">Remove</a>
-																		</td>
-																	</tr>
-																	
-																</tbody>
-															</table>
-														</div>
-														<button type="button" class="btn btn-warning btn-sm js-inline-add-trigger" data-add-kind="process">Add
-															Process</button>
-													</div>
-													<div class="row d-flex justify-content-end mt-2">
-														<div class="col-12 justify-content-end d-flex gap-2">
-															
-														<button class="btn btn-secondary btn-sm" 
-															>Cancel</button>
-															
-														<button class="btn btn-primary btn-sm" 
-															>Save</button>
-														</div>
-													</div>
-												</div>
-
-											</div>
+</div>
 											<div class="modal fade" id="modalTambahGambar" tabindex="-1"
 												aria-hidden="true">
 												<div class="modal-dialog">
@@ -1418,10 +1336,8 @@
 												<div>
 													<div class="justify-content-between d-flex align-items-center mb-2">
 														<div>
-															<h4>Setting for option Laminate Type</h4>
-															<p class="text-muted small">The following are the datas for
-																options and
-																calculations</p>
+															<h4>Laminate Option</h4>
+															
 														</div>
 														<a class="btn btn-outline-warning btn-sm"
 															href="mesin-laminasi-self.html">
@@ -1497,10 +1413,8 @@
 												<div class="mt-5">
 													<div class="justify-content-between d-flex align-items-center mb-2">
 														<div>
-															<h4>List of Process</h4>
-															<p class="text-muted small">The following are the datas for
-																Process
-																Arrange</p>
+															<h4>Work Flow Setting</h4>
+															
 														</div>
 														<a class="btn btn-outline-warning btn-sm"
 															href="job-proses.html">
@@ -1558,157 +1472,106 @@
 
 												</div>
 											</div>
-											<div class="tab-pane fade" id="foldTabContent" role="tabpanel"
-												aria-labelledby="laminate">
-												<div>
-													<div class="justify-content-between d-flex align-items-center mb-2">
-														<div>
-															<h4>Setting for option Fold List</h4>
-															
-														</div>
-														<a class="btn btn-outline-warning btn-sm"
-															href="mesin-laminasi-self.html">
-															Add New Fold Type
-														</a>
-													</div>
-													<div>
-														<div class="table-responsive mb-4">
-															<table class="table table-sm">
-																<thead>
-																	<tr>
-																		<th>Fold Type</th>
-																		<th>Status</th>
-																		<th>Action</th>
-																	</tr>
-																</thead>
-																<tbody>
-																	<tr>
-																		<td>Tanpa Lipatan</td>
-																		<td>
-																			<select class="form-select form-select-sm">
-																				<option>Show</option>
-																				<option>Hide</option>
-																			</select>
-																		</td>
-																		<td>
-																			<a href="#" class="text-danger">Remove</a>
-																		</td>
-																	</tr>
-																	<tr>
-																		<td>1 Lipatan</td>
-																		<td>
-																			<select class="form-select form-select-sm">
-																				<option>Show</option>
-																				<option>Hide</option>
-																			</select>
-																		</td>
-																		<td>
-																			<a href="#" class="text-danger">Remove</a>
-																		</td>
-																	</tr>
-																	<tr>
-																		<td>2 Lipatan</td>
-																		<td>
-																			<select class="form-select form-select-sm">
-																				<option>Show</option>
-																				<option>Hide</option>
-																			</select>
-																		</td>
-																		<td>
-																			<a href="#" class="text-danger">Remove</a>
-																		</td>
-																	</tr>
-																</tbody>
-															</table>
-														</div>
-														<button type="button" class="btn btn-warning btn-sm js-inline-add-trigger" data-add-kind="fold" >Add Fold
-															Type</button>
+											<div class="tab-pane fade" id="foldTabContent" role="tabpanel" aria-labelledby="laminate">
+    
+    <div class="card mb-4">
+        <div class="card-body">
+            <h4 class="mb-3">Fold Option</h4>
+            <div class="table-responsive mb-4">
+                <table class="table table-sm">
+                    <thead>
+                        <tr>
+                            <th>Fold Type</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Tanpa Lipatan</td>
+                            <td>
+                                <select class="form-select form-select-sm">
+                                    <option>Show</option>
+                                    <option>Hide</option>
+                                </select>
+                            </td>
+                            <td><a href="#" class="text-danger">Remove</a></td>
+                        </tr>
+                        <tr>
+                            <td>1 Lipatan</td>
+                            <td>
+                                <select class="form-select form-select-sm">
+                                    <option>Show</option>
+                                    <option>Hide</option>
+                                </select>
+                            </td>
+                            <td><a href="#" class="text-danger">Remove</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <button type="button" class="btn btn-warning btn-sm js-inline-add-trigger" data-add-kind="fold">Add Fold Type</button>
+            
+            <div class="row d-flex justify-content-end mt-4">
+                <div class="col-12 justify-content-end d-flex gap-2">
+                    <button class="btn btn-secondary btn-sm">Cancel</button>
+                    <button class="btn btn-primary btn-sm">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <div class="card">
+        <div class="card-body">
+            <h4 class="mb-3">Work Flow Setting</h4>
+            <div class="table-responsive mb-4">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Flow Category</th>
+                            <th>Flow Name</th>
+                            <th>Assignee</th>
+                            <th>Incentive</th>
+                            <th>Effective Fold Type</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Finising</td>
+                            <td>Cari Jasa Lipat</td>
+                            <td>Nurdin</td>
+                            <td>5.000 per Job</td>
+                            <td>
+                                <select class="select2" multiple="multiple">
+                                    <option value="m-1" selected>1 lipatan</option>
+                                    <option value="m-2">2 lipatan</option>
+                                </select>
+                            </td>
+                            <td><a href="#" class="text-danger">Remove</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <button type="button" class="btn btn-warning btn-sm js-inline-add-trigger" data-add-kind="process">Add Flow Name</button>
+            
+            <div class="row d-flex justify-content-end mt-4">
+                <div class="col-12 justify-content-end d-flex gap-2">
+                    <button class="btn btn-secondary btn-sm">Cancel</button>
+                    <button class="btn btn-primary btn-sm">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
-
-													</div>
-													<div class="row d-flex justify-content-end mt-2">
-														<div class="col-12 justify-content-end d-flex gap-2">
-															
-														<button class="btn btn-secondary btn-sm" 
-															>Cancel</button>
-															
-														<button class="btn btn-primary btn-sm" 
-															>Save</button>
-														</div>
-													</div>
-												</div>
-
-												<!-- List of Process Section -->
-												<div class="mt-5">
-													<div class="justify-content-between d-flex align-items-center mb-2">
-														<div>
-															<h4>Work Flow</h4>
-															
-														</div>
-														<a class="btn btn-outline-warning btn-sm"
-															href="job-proses.html">
-															Add New Process
-														</a>
-													</div>
-													<div>
-														<div class="table-responsive mb-4">
-															<table class="table">
-																<thead>
-																	<tr>
-																		<th>Flow Category</th>
-																		<th>Flow Name</th>
-																		<th>Assignee</th>
-																		<th>Incentive</th>
-																		<th>Effective Fold Type</th>
-																		<th>Action</th>
-																	</tr>
-																</thead>
-																<tbody>
-																	<tr>
-																		<td>Finising</td>
-																		<td>Cari Jasa Lipat</td>
-																		<td>Nurdin</td>
-																		<td>5.000 per Job</td>
-																		<td>
-																		<select class="select2" multiple="multiple">
-																			<option value="m-1" selected>1 lipatan</option>
-																			<option value="m-2">2 lipatan</option>
-																			<option value="m-3">3 lipatan</option>
-																			<option value="m-4">4 lipatan</option>
-																			<option value="m-5">5 lipatan</option>
-																		</select>
-																		</td>
-																		<td>
-																			<a href="#" class="text-danger">Remove</a>
-																		</td>
-																	</tr>
-																	
-																</tbody>
-															</table>
-														</div>
-														<button type="button" class="btn btn-warning btn-sm js-inline-add-trigger" data-add-kind="process">Add
-															Process</button>
-													</div>
-													<div class="row d-flex justify-content-end mt-2">
-														<div class="col-12 justify-content-end d-flex gap-2">
-															
-														<button class="btn btn-secondary btn-sm" 
-															>Cancel</button>
-															
-														<button class="btn btn-primary btn-sm" 
-															>Save</button>
-														</div>
-													</div>
-												</div>
-											</div>
+</div>
 											<div class="tab-pane fade" id="printSideTabContent" role="tabpanel"
 												aria-labelledby="print-side">
 												<div class="card border rounded-2 mb-4">
 													<div class="card-body p-4">
 														<div class="justify-content-between d-flex align-items-center mb-4">
 															<div>
-																<h4>Option List Print Side</h4>
+																<h4>Print Side Option</h4>
 															</div>
 														</div>
 														<div>
@@ -1815,7 +1678,7 @@
 											<div class="tab-pane fade" id="processArrangeTabContent" role="tabpanel"
 												aria-labelledby="process-arrange">
 												<div>
-													<h4>Work Flow for the product</h4>
+													<h4>Work Flow Setting</h4>
 													<p class="text-muted small">
 														The following are the datas for <a href="#"
 															class="text-decoration-none">Job
@@ -1951,125 +1814,89 @@
 
 
 											</div>
-											<div class="tab-pane fade" id="componentsTabContent" role="tabpanel"
-												aria-labelledby="components">
-												<div class="justify-content-between d-flex align-items-center mb-2">
-													<div>
-														<h4>Setting for option Components</h4>
-														<p class="text-muted small">The following are the datas for
-															options and
-															calculations</p>
-													</div>
-														<a class="btn btn-outline-warning btn-sm" href="mesin-laminasi-self.html">
-																	Add New Component Type
-																</a>
-												</div>
-												<div>
-													<div class="table-responsive mb-4">
-														<table class="table table-sm">
-															<thead>
-																<tr>
-																	<th>Component</th>
-																	<th>Value</th>
-																	<th>Unit Value</th>
-																</tr>
-															</thead>
-															<tbody>
-																<tr>
-																	<td>Jam Kerja</td>
-																	<td>8</td>
-																	<td>
-																		Jam
-																	</td>
+											<div class="tab-pane fade" id="componentsTabContent" role="tabpanel" aria-labelledby="components">
+    
+    <div class="card mb-4">
+        <div class="card-body">
+            <h4 class="mb-3">Component Option</h4>
+            <div class="table-responsive mb-4">
+                <table class="table table-sm">
+                    <thead>
+                        <tr>
+                            <th>Component</th>
+                            <th class="text-end">Value</th>
+                            <th>Unit Value</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Jam Kerja</td>
+                            <td class="text-end">8</td>
+                            <td>Jam</td>
+                        </tr>
+                        <tr>
+                            <td>Kapasitas Packing Brosur Per Hari</td>
+                            <td class="text-end">2</td>
+                            <td>Jam</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <button type="button" class="btn btn-warning btn-sm js-inline-add-trigger" data-add-kind="component">Add Component Type</button>
+            
+            <div class="row d-flex justify-content-end mt-4">
+                <div class="col-12 justify-content-end d-flex gap-2">
+                    <button class="btn btn-secondary btn-sm">Cancel</button>
+                    <button class="btn btn-primary btn-sm">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
-																</tr>
-																<tr>
-																	<td>Kapasitas Packing Brosur Per Hari</td>
-																	<td>2</td>
-																	<td>
-																			Jam
-																	</td>
+    <div class="card">
+        <div class="card-body">
+            <h4 class="mb-3">Work Flow Setting</h4>
+            <div class="table-responsive mb-4">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Flow Category</th>
+                            <th>Flow Name</th>
+                            <th>Assignee</th>
+                            <th>Incentive</th>
+                            <th>Effective Component</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Finising</td>
+                            <td>Cari Jasa Lipat</td>
+                            <td>Nurdin</td>
+                            <td>5.000 per Job</td>
+                            <td>
+                                <select class="select2" multiple="multiple">
+                                    <option value="m-1" selected>1 lipatan</option>
+                                    <option value="m-2">2 lipatan</option>
+                                </select>
+                            </td>
+                            <td><a href="#" class="text-danger">Remove</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <button type="button" class="btn btn-warning btn-sm js-inline-add-trigger" data-add-kind="process">Add Flow Name</button>
+            
+            <div class="row d-flex justify-content-end mt-4">
+                <div class="col-12 justify-content-end d-flex gap-2">
+                    <button class="btn btn-secondary btn-sm">Cancel</button>
+                    <button class="btn btn-primary btn-sm">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
-																</tr>
-																
-															</tbody>
-														</table>
-													</div>
-													<button type="button" class="btn btn-warning btn-sm js-inline-add-trigger" data-add-kind="component">Add Component Type</button>
-												</div>
-												<div class="row d-flex justify-content-end mt-2">
-														<div class="col-12 justify-content-end d-flex gap-2">
-															
-														<button class="btn btn-secondary btn-sm" 
-															>Cancel</button>
-															
-														<button class="btn btn-primary btn-sm" 
-															>Save</button>
-														</div>
-													</div>
-												<div>
-													<div class="justify-content-between d-flex align-items-center mt-4 mb-2">
-														<div>
-															<h4>Component List Added</h4>
-															<p class="text-muted small">Price For Other Service</p>
-														</div>
-																		
-														</div>
-													<div>
-														<div class="table-responsive mb-4">
-															<table class="table">
-																<thead>
-																	<tr>
-																		<th>Flow Category</th>
-																		<th>Flow Name</th>
-																		<th>Assignee</th>
-																		<th>Incentive</th>
-																		<th>Effective Fold Type</th>
-																		<th>Action</th>
-																	</tr>
-																</thead>
-																<tbody>
-																	<tr>
-																		<td>Finising</td>
-																		<td>Cari Jasa Lipat</td>
-																		<td>Nurdin</td>
-																		<td>5.000 per Job</td>
-																		<td>
-																		<select class="select2" multiple="multiple">
-																			<option value="m-1" selected>1 lipatan</option>
-																			<option value="m-2">2 lipatan</option>
-																			<option value="m-3">3 lipatan</option>
-																			<option value="m-4">4 lipatan</option>
-																			<option value="m-5">5 lipatan</option>
-																		</select>
-																		</td>
-																		<td>
-																			<a href="#" class="text-danger">Remove</a>
-																		</td>
-																	</tr>
-																	
-																</tbody>
-															</table>
-														</div>
-														<button type="button" class="btn btn-warning btn-sm js-inline-add-trigger" data-add-kind="process">Add
-															Process</button>
-													</div>
-													<div class="row d-flex justify-content-end mt-2">
-														<div class="col-12 justify-content-end d-flex gap-2">
-															
-														<button class="btn btn-secondary btn-sm" 
-															>Cancel</button>
-															
-														<button class="btn btn-primary btn-sm" 
-															>Save</button>
-														</div>
-													</div>
-												</div>
-												
-
-												
-												
-											</div>
+</div>
 											<div class="tab-pane fade" id="profitSettingTabContent" role="tabpanel"
 												aria-labelledby="profit-setting">
 												<div class="d-md-flex justify-content-between align-items-start mb-3">
@@ -3028,7 +2855,133 @@
 		<script src="assets/js/theme-script.js"></script>
 		<script src="assets/js/script.js"></script>
 
+<script>
+	// Kalau pakai jQuery & Select2, tinggal masukin ini di file JS lu
+$(document).ready(function() {
+    // Inisialisasi Select2 untuk multiple select
+    $('.select2').select2({
+        width: '100%',
+        placeholder: "Select printing type"
+    });
 
+    // Handle button Add Flow / Add Machine (kalau ada logic tambah baris)
+    $('.js-inline-add-trigger').on('click', function(e) {
+        e.preventDefault();
+        let addKind = $(this).data('add-kind');
+        
+        if(addKind === 'machine') {
+            console.log('Add Offset Machine dipencet');
+            // Logika tambah baris machine di sini
+        } else if (addKind === 'process') {
+            console.log('Add Flow Name dipencet');
+            // Logika tambah baris proses di sini
+        }
+    });
+});
+</script>
+
+<script>
+    document.getElementById('addSizeBtn').addEventListener('click', function() {
+        const tbody = document.getElementById('sizeTableBody');
+        const newRow = document.createElement('tr');
+        
+        // Template baris baru saat mode EDIT / INPUT
+        newRow.innerHTML = `
+            <td>
+                <select class="form-select form-select-sm size-name-select">
+                    <option selected disabled value="">Select Available Size</option>
+                    <option value="A5">A5</option>
+                    <option value="A4">A4</option>
+                    <option value="A3">A3</option>
+                    <option value="Folio">Folio</option>
+                </select>
+            </td>
+            <td>
+                <textarea class="form-control form-control-sm size-val-input" rows="1" placeholder="Isi ukuran..."></textarea>
+            </td>
+            <td>
+                <select class="form-select form-select-sm size-status-select">
+                    <option>Show</option>
+                    <option>Hide</option>
+                </select>
+            </td>
+            <td>
+                <a href="#" class="text-success me-2 save-btn">Save</a>
+                <a href="#" class="text-danger" onclick="this.closest('tr').remove(); return false;">Remove</a>
+            </td>
+        `;
+        
+        // Pasang event listener khusus untuk tombol SAVE di baris baru ini
+        newRow.querySelector('.save-btn').addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Ambil elemen inputan di dalam baris ini
+            const nameSelect = newRow.querySelector('.size-name-select');
+            const valInput = newRow.querySelector('.size-val-input');
+            const statusSelect = newRow.querySelector('.size-status-select');
+            
+            const nameValue = nameSelect.value;
+            const sizeValue = valInput.value.trim();
+            const statusValue = statusSelect.value;
+            
+            // Validasi dasar biar data gak kosong pas di-save
+            if (!nameValue || !sizeValue) {
+                alert('Pilih Size Name dan isi ukurannya dahulu!');
+                return;
+            }
+            
+            // Ubah isi kolom menjadi teks statis (Membekukan inputan jadi baris tabel biasa)
+            newRow.cells[0].textContent = nameValue;
+            newRow.cells[1].textContent = sizeValue;
+            
+            // Kolom Status tetep select box biasa bawaan awal dengan nilai yang dipilih sebelumnya
+            newRow.cells[2].innerHTML = `
+                <select class="form-select form-select-sm">
+                    <option ${statusValue === 'Show' ? 'selected' : ''}>Show</option>
+                    <option ${statusValue === 'Hide' ? 'selected' : ''}>Hide</option>
+                </select>
+            `;
+            
+            // Kolom Action hapus tombol Save, sisain Remove aja
+            newRow.cells[3].innerHTML = `
+                <a href="#" class="text-danger" onclick="this.closest('tr').remove(); return false;">Remove</a>
+            `;
+        });
+        
+        tbody.appendChild(newRow);
+    });
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Cari semua baris (row) di dalam tabel Paper Type
+    const rows = document.querySelectorAll('#paperTypeTable tbody tr');
+
+    rows.forEach(row => {
+        // Ambil checkbox Select All dan checkbox item gramature di baris ini
+        const selectAllCb = row.querySelector('.cb-select-all');
+        const itemCbs = row.querySelectorAll('.cb-item');
+
+        if (selectAllCb && itemCbs.length > 0) {
+            // Event jika 'Select All' diklik
+            selectAllCb.addEventListener('change', function() {
+                itemCbs.forEach(cb => {
+                    cb.checked = selectAllCb.checked;
+                });
+            });
+
+            // Event jika masing-masing 'Gramature' diklik
+            itemCbs.forEach(cb => {
+                cb.addEventListener('change', function() {
+                    // Cek apakah semua item gramature dalam baris ini terceklis
+                    const allChecked = Array.from(itemCbs).every(iCb => iCb.checked);
+                    selectAllCb.checked = allChecked;
+                });
+            });
+        }
+    });
+});
+</script>
 
 </body>
 

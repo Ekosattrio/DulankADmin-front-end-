@@ -109,12 +109,13 @@
 	}
 
 	.product-spec-row {
-		display: grid;
-		grid-template-columns: 92px 1fr;
-		gap: 18px;
 		margin-bottom: 14px;
 		font-size: 12px;
 		line-height: 1.25;
+	}
+
+	.product-spec-row .fw-medium {
+		margin-bottom: 4px;
 	}
 
 	.product-card-actions .btn-link,
@@ -149,12 +150,6 @@
 
 	.product-switch.active::after {
 		left: 27px;
-	}
-
-	.product-checkbox {
-		width: 34px;
-		height: 34px;
-		display: inline-block;
 	}
 
 	.product-image-preview {
@@ -2381,17 +2376,19 @@
 									<span class="product-switch active"></span>
 									<span>Enable</span>
 								</div>
-								<div class="row g-3">
+								<div class="row g-3 product-option-group">
 									<label class="col-md-4 d-flex align-items-center gap-2 mb-2">
-										<span class="product-checkbox border"></span>
+										<input class="product-checkbox form-check-input" type="checkbox" name="product_size" value="A4 (297x210mm)" checked>
 										<span>A4 (297x210mm)</span>
-										<span class="product-switch active"></span>
+										<input class="product-default-radio d-none" type="radio" name="product_size_default" checked>
+										<i class="product-default-star fas fa-star text-warning"></i>
 										<span class="text-muted">Default</span>
 									</label>
 									<label class="col-md-4 d-flex align-items-center gap-2 mb-2">
-										<span class="product-checkbox border"></span>
+										<input class="product-checkbox form-check-input" type="checkbox" name="product_size" value="A5 (210x149mm)">
 										<span>A5 (210x149mm)</span>
-										<span class="product-switch"></span>
+										<input class="product-default-radio d-none" type="radio" name="product_size_default" disabled>
+										<i class="product-default-star far fa-star text-muted"></i>
 										<span class="text-muted">Default</span>
 									</label>
 								</div>
@@ -2403,29 +2400,33 @@
 									<span class="product-switch active"></span>
 									<span>Enable</span>
 								</div>
-								<div class="row g-3">
+								<div class="row g-3 product-option-group">
 									<label class="col-md-4 d-flex align-items-center gap-2 mb-2">
-										<span class="product-checkbox border"></span>
+										<input class="product-checkbox form-check-input" type="checkbox" name="paper_type" value="Art Paper" checked>
 										<span>Art Paper</span>
-										<span class="product-switch"></span>
+										<input class="product-default-radio d-none" type="radio" name="paper_type_default" checked>
+										<i class="product-default-star fas fa-star text-warning"></i>
 										<span class="text-muted">Default</span>
 									</label>
 									<label class="col-md-4 d-flex align-items-center gap-2 mb-2">
-										<span class="product-checkbox border"></span>
+										<input class="product-checkbox form-check-input" type="checkbox" name="paper_type" value="Art Carton">
 										<span>Art Carton</span>
-										<span class="product-switch"></span>
+										<input class="product-default-radio d-none" type="radio" name="paper_type_default" disabled>
+										<i class="product-default-star far fa-star text-muted"></i>
 										<span class="text-muted">Default</span>
 									</label>
 									<label class="col-md-4 d-flex align-items-center gap-2 mb-2">
-										<span class="product-checkbox border"></span>
+										<input class="product-checkbox form-check-input" type="checkbox" name="paper_type" value="HVS">
 										<span>HVS</span>
-										<span class="product-switch"></span>
+										<input class="product-default-radio d-none" type="radio" name="paper_type_default" disabled>
+										<i class="product-default-star far fa-star text-muted"></i>
 										<span class="text-muted">Default</span>
 									</label>
 									<label class="col-md-4 d-flex align-items-center gap-2 mb-2">
-										<span class="product-checkbox border"></span>
+										<input class="product-checkbox form-check-input" type="checkbox" name="paper_type" value="Carton BC">
 										<span>Carton BC</span>
-										<span class="product-switch"></span>
+										<input class="product-default-radio d-none" type="radio" name="paper_type_default" disabled>
+										<i class="product-default-star far fa-star text-muted"></i>
 										<span class="text-muted">Default</span>
 									</label>
 								</div>
@@ -2437,29 +2438,33 @@
 									<span class="product-switch active"></span>
 									<span>Enable</span>
 								</div>
-								<div class="row g-3">
+								<div class="row g-3 product-option-group">
 									<label class="col-md-4 d-flex align-items-center gap-2 mb-2">
-										<span class="product-checkbox border"></span>
+										<input class="product-checkbox form-check-input" type="checkbox" name="laminate" value="Glossy" checked>
 										<span>Glossy</span>
-										<span class="product-switch"></span>
+										<input class="product-default-radio d-none" type="radio" name="laminate_default" checked>
+										<i class="product-default-star fas fa-star text-warning"></i>
 										<span class="text-muted">Default</span>
 									</label>
 									<label class="col-md-4 d-flex align-items-center gap-2 mb-2">
-										<span class="product-checkbox border"></span>
+										<input class="product-checkbox form-check-input" type="checkbox" name="laminate" value="Doff">
 										<span>Doff</span>
-										<span class="product-switch"></span>
+										<input class="product-default-radio d-none" type="radio" name="laminate_default" disabled>
+										<i class="product-default-star far fa-star text-muted"></i>
 										<span class="text-muted">Default</span>
 									</label>
 									<label class="col-md-4 d-flex align-items-center gap-2 mb-2">
-										<span class="product-checkbox border"></span>
+										<input class="product-checkbox form-check-input" type="checkbox" name="laminate" value="UV Vernish">
 										<span>UV Vernish</span>
-										<span class="product-switch"></span>
+										<input class="product-default-radio d-none" type="radio" name="laminate_default" disabled>
+										<i class="product-default-star far fa-star text-muted"></i>
 										<span class="text-muted">Default</span>
 									</label>
 									<label class="col-md-4 d-flex align-items-center gap-2 mb-2">
-										<span class="product-checkbox border"></span>
+										<input class="product-checkbox form-check-input" type="checkbox" name="laminate" value="Spot UV">
 										<span>Spot UV</span>
-										<span class="product-switch"></span>
+										<input class="product-default-radio d-none" type="radio" name="laminate_default" disabled>
+										<i class="product-default-star far fa-star text-muted"></i>
 										<span class="text-muted">Default</span>
 									</label>
 								</div>
@@ -2471,17 +2476,19 @@
 									<span class="product-switch active"></span>
 									<span>Enable</span>
 								</div>
-								<div class="row g-3">
+								<div class="row g-3 product-option-group">
 									<label class="col-md-4 d-flex align-items-center gap-2 mb-2">
-										<span class="product-checkbox border"></span>
+										<input class="product-checkbox form-check-input" type="checkbox" name="print_side" value="Cetak 1 Sisi" checked>
 										<span>Cetak 1 Sisi</span>
-										<span class="product-switch"></span>
+										<input class="product-default-radio d-none" type="radio" name="print_side_default" checked>
+										<i class="product-default-star fas fa-star text-warning"></i>
 										<span class="text-muted">Default</span>
 									</label>
 									<label class="col-md-4 d-flex align-items-center gap-2 mb-2">
-										<span class="product-checkbox border"></span>
+										<input class="product-checkbox form-check-input" type="checkbox" name="print_side" value="Cetak Bolak Balik">
 										<span>Cetak Bolak Balik</span>
-										<span class="product-switch"></span>
+										<input class="product-default-radio d-none" type="radio" name="print_side_default" disabled>
+										<i class="product-default-star far fa-star text-muted"></i>
 										<span class="text-muted">Default</span>
 									</label>
 								</div>
@@ -2493,23 +2500,26 @@
 									<span class="product-switch active"></span>
 									<span>Enable</span>
 								</div>
-								<div class="row g-3">
+								<div class="row g-3 product-option-group">
 									<label class="col-md-4 d-flex align-items-center gap-2 mb-2">
-										<span class="product-checkbox border"></span>
+										<input class="product-checkbox form-check-input" type="checkbox" name="fold" value="Tanpa Lipatan" checked>
 										<span>Tanpa Lipatan</span>
-										<span class="product-switch active"></span>
+										<input class="product-default-radio d-none" type="radio" name="fold_default" checked>
+										<i class="product-default-star fas fa-star text-warning"></i>
 										<span class="text-muted">Default</span>
 									</label>
 									<label class="col-md-4 d-flex align-items-center gap-2 mb-2">
-										<span class="product-checkbox border"></span>
+										<input class="product-checkbox form-check-input" type="checkbox" name="fold" value="1 Lipatan">
 										<span>1 Lipatan</span>
-										<span class="product-switch"></span>
+										<input class="product-default-radio d-none" type="radio" name="fold_default" disabled>
+										<i class="product-default-star far fa-star text-muted"></i>
 										<span class="text-muted">Default</span>
 									</label>
 									<label class="col-md-4 d-flex align-items-center gap-2 mb-2">
-										<span class="product-checkbox border"></span>
+										<input class="product-checkbox form-check-input" type="checkbox" name="fold" value="2 Lipatan">
 										<span>2 Lipatan</span>
-										<span class="product-switch"></span>
+										<input class="product-default-radio d-none" type="radio" name="fold_default" disabled>
+										<i class="product-default-star far fa-star text-muted"></i>
 										<span class="text-muted">Default</span>
 									</label>
 								</div>
@@ -2644,6 +2654,69 @@
 			});
 		}
 		// ===============================================
+
+		document.querySelectorAll('.product-option-group').forEach(group => {
+			function updateDefaultStars() {
+				group.querySelectorAll('label').forEach(label => {
+					const optionCheckbox = label.querySelector('.product-checkbox');
+					const defaultRadio = label.querySelector('.product-default-radio');
+					const defaultStar = label.querySelector('.product-default-star');
+					if (!optionCheckbox || !defaultRadio || !defaultStar) return;
+
+					defaultRadio.disabled = !optionCheckbox.checked;
+					if (!optionCheckbox.checked) defaultRadio.checked = false;
+
+					defaultStar.classList.toggle('fas', defaultRadio.checked);
+					defaultStar.classList.toggle('far', !defaultRadio.checked);
+					defaultStar.classList.toggle('text-warning', defaultRadio.checked);
+					defaultStar.classList.toggle('text-muted', !defaultRadio.checked);
+				});
+			}
+
+			group.addEventListener('click', event => {
+				const defaultStar = event.target.closest('.product-default-star');
+				if (!defaultStar) return;
+
+				event.preventDefault();
+				event.stopPropagation();
+
+				const optionLabel = defaultStar.closest('label');
+				const optionCheckbox = optionLabel?.querySelector('.product-checkbox');
+				const defaultRadio = optionLabel?.querySelector('.product-default-radio');
+				if (!optionCheckbox?.checked || !defaultRadio) return;
+
+				defaultRadio.checked = !defaultRadio.checked;
+				updateDefaultStars();
+			});
+
+			group.addEventListener('change', event => {
+				const checkedOption = event.target.closest('.product-checkbox');
+				const defaultRadioChange = event.target.closest('.product-default-radio');
+				if (!checkedOption && !defaultRadioChange) return;
+
+				if (defaultRadioChange) {
+					updateDefaultStars();
+					return;
+				}
+
+				if (!checkedOption.checked) {
+					const hasCheckedOption = group.querySelector('.product-checkbox:checked');
+					if (!hasCheckedOption) checkedOption.checked = true;
+					return;
+				}
+
+				group.querySelectorAll('.product-checkbox').forEach(option => {
+					if (option !== checkedOption) option.checked = false;
+				});
+
+				const optionLabel = checkedOption.closest('label');
+				const defaultRadio = optionLabel?.querySelector('.product-default-radio');
+				if (defaultRadio) defaultRadio.checked = true;
+				updateDefaultStars();
+			});
+
+			updateDefaultStars();
+		});
 
 		const addOptions = {
 			paper: [

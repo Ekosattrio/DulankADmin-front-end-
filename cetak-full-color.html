@@ -66,6 +66,36 @@
 		overflow-x: auto;
 	}
 
+	.profit-input-scroll {
+		max-width: 100%;
+		overflow-x: auto;
+		overflow-y: hidden;
+		padding-bottom: 8px;
+		-webkit-overflow-scrolling: touch;
+	}
+
+	.profit-input-scroll > .row {
+		min-width: 1120px;
+	}
+
+	.profit-input-scroll .input-group {
+		min-width: 260px;
+	}
+
+	.profit-input-scroll .range-bound-input {
+		min-width: 150px;
+	}
+
+	.profit-input-scroll .range-bound-col {
+		gap: 12px;
+		padding-right: 18px;
+	}
+
+	.profit-input-scroll .add-range,
+	.profit-input-scroll .delete-range {
+		min-width: 112px;
+	}
+
 	.product-display-card {
 		min-width: 270px;
 	}
@@ -203,34 +233,13 @@
 								<h6 class="text-muted">Manage your Product</h6>
 							</div>
 						</div>
-						<div class="card border-0 shadow-sm mb-3">
-							<div class="card-body d-flex flex-wrap justify-content-between align-items-center gap-2">
-								<h4 class="fw-bold mb-0">Setting and Optional</h4>
-								<div class="d-flex align-items-center gap-3">
-									<label class="mb-0">Display: </label>
-									<div class="form-check">
-										<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-										<label class="form-check-label" for="flexCheckDefault">
-											POS
-										</label>
-									</div>
-									<div class="form-check">
-										<input class="form-check-input" type="checkbox" value="" id="flexCheckChecked"
-											checked>
-										<label class="form-check-label" for="flexCheckChecked">
-											Website
-										</label>
-									</div>
-								</div>
-							</div>
-						</div>
 						<div class="row g-3">
 							<div class="col-xl-3 col-lg-4">
 								<div class="card workflow-panel border-0 shadow-sm">
 									<div class="card-body p-3">
 										<div class="d-flex align-items-center justify-content-between mb-3">
 											<h5 class="fw-bold mb-0">Setting And Optional</h5>
-											<span class="workflow-total-pill">10</span>
+											<span class="workflow-total-pill">11</span>
 										</div>
 										<ul class="nav nav-tabs cetak-workflow-tabs workflow-list mb-0" id="mainTab"
 											role="tablist">
@@ -350,6 +359,18 @@
 														<span class="workflow-item-icon"><i
 																data-feather="percent"></i></span>
 														<span class="workflow-item-text">Profit Setting</span>
+													</span>
+												</button>
+											</li>
+											<li class="nav-item" role="presentation">
+												<button class="nav-link workflow-item" id="log-transaction"
+													data-bs-toggle="tab" data-bs-target="#logTransactionTabContent"
+													type="button" role="tab" aria-controls="logTransactionTabContent"
+													aria-selected="false">
+													<span class="workflow-item-left">
+														<span class="workflow-item-icon"><i
+																data-feather="clipboard"></i></span>
+														<span class="workflow-item-text">Log Transaction</span>
 													</span>
 												</button>
 											</li>
@@ -1900,90 +1921,129 @@
 											<div class="tab-pane fade" id="profitSettingTabContent" role="tabpanel"
 												aria-labelledby="profit-setting">
 												<div class="d-md-flex justify-content-between align-items-start mb-3">
-													<h4 class="mb-2">Profile Pengaturan Keuntungan / Profit</h4>
+													<h4 class="mb-2">Profit Setting</h4>
 													<div class="fst-italic text-muted">Update : 19:30 - 20 Januari 2024</div>
 												</div>
 												<hr>
-												<p>Pilihan Penambahan Harga Keuntungan :</p>
+												<p>Profit Markup Options :</p>
 
 												<div class="persentase-form mb-3">
-													<button class="btn btn-warning btn-sm btn-spec selected" type="button" id="select-1">Berdasarkan Persentase</button>
-													<div class="ms-md-5 input-select">
+													<div class="form-check">
+														<input class="form-check-input btn-spec" type="radio" name="profitMarkupOption" id="select-1" checked>
+														<label class="form-check-label" for="select-1">Profit Markup on Production Cost</label>
+													</div>
+													<div class="ms-md-5 input-select mt-3 profit-input-scroll">
 														<div class="row align-items-center">
-															<div class="col-md-4 col-6 my-3">
-																<label class="form-label mb-0">Penambahan Profit dari total biaya produksi</label>
+															<div class="col-md-3 col-12 my-3">
+																<label class="form-label mb-0">Profit percentage based on the total production cost</label>
 															</div>
 															<div class="col-md-3 col-6 my-3">
 																<div class="input-group input-group-sm">
+																	<span class="input-group-text">Set POS Profit %</span>
 																	<input type="text" class="form-control number-separator" inputmode="numeric" pattern="[0-9]*">
 																	<input type="hidden" class="result-input">
-																	<span class="input-group-text">%</span>
 																</div>
 															</div>
-														</div>
-													</div>
-												</div>
-
-												<div class="produksi-form mb-3">
-													<button class="btn btn-outline-warning btn-sm btn-spec" type="button" id="select-2">Berdasarkan Proses Produksi</button>
-													<div class="ms-md-5 input-select d-none">
-														<div class="row align-items-center">
-															<div class="col-md-4 col-6 mt-2">
-																<label class="form-label mb-0">Penambahan Profit dari Biaya Cetak</label>
-															</div>
-															<div class="col-md-3 col-6 mt-2">
+															<div class="col-md-3 col-6 my-3">
 																<div class="input-group input-group-sm">
+																	<span class="input-group-text">Set Webstore Profit %</span>
 																	<input type="text" class="form-control number-separator" inputmode="numeric" pattern="[0-9]*">
 																	<input type="hidden" class="result-input">
-																	<span class="input-group-text">%</span>
 																</div>
 															</div>
 														</div>
 														<div class="row align-items-center">
-															<div class="col-md-4 col-6 mt-2">
-																<label class="form-label mb-0">Penambahan Profit dari Belanja Kertas</label>
+															<div class="col-md-3 col-12 mt-2">
+																<label class="form-label mb-0">Profit markup on printing cost</label>
 															</div>
 															<div class="col-md-3 col-6 mt-2">
 																<div class="input-group input-group-sm">
+																	<span class="input-group-text">Set POS Profit %</span>
 																	<input type="text" class="form-control number-separator" inputmode="numeric" pattern="[0-9]*">
 																	<input type="hidden" class="result-input">
-																	<span class="input-group-text">%</span>
+																</div>
+															</div>
+															<div class="col-md-3 col-6 mt-2">
+																<div class="input-group input-group-sm">
+																	<span class="input-group-text">Set Webstore Profit %</span>
+																	<input type="text" class="form-control number-separator" inputmode="numeric" pattern="[0-9]*">
+																	<input type="hidden" class="result-input">
 																</div>
 															</div>
 														</div>
 														<div class="row align-items-center">
-															<div class="col-md-4 col-6 mt-2">
-																<label class="form-label mb-0">Penambahan Profit dari Biaya Laminasi</label>
+															<div class="col-md-3 col-12 mt-2">
+																<label class="form-label mb-0">Profit markup on paper purchase cost</label>
 															</div>
 															<div class="col-md-3 col-6 mt-2">
 																<div class="input-group input-group-sm">
+																	<span class="input-group-text">Set POS Profit %</span>
 																	<input type="text" class="form-control number-separator" inputmode="numeric" pattern="[0-9]*">
 																	<input type="hidden" class="result-input">
-																	<span class="input-group-text">%</span>
+																</div>
+															</div>
+															<div class="col-md-3 col-6 mt-2">
+																<div class="input-group input-group-sm">
+																	<span class="input-group-text">Set Webstore Profit %</span>
+																	<input type="text" class="form-control number-separator" inputmode="numeric" pattern="[0-9]*">
+																	<input type="hidden" class="result-input">
 																</div>
 															</div>
 														</div>
 														<div class="row align-items-center">
-															<div class="col-md-4 col-6 mt-2">
-																<label class="form-label mb-0">Penambahan Profit dari Biaya Pond</label>
+															<div class="col-md-3 col-12 mt-2">
+																<label class="form-label mb-0">Profit markup on lamination cost</label>
 															</div>
 															<div class="col-md-3 col-6 mt-2">
 																<div class="input-group input-group-sm">
+																	<span class="input-group-text">Set POS Profit %</span>
 																	<input type="text" class="form-control number-separator" inputmode="numeric" pattern="[0-9]*">
 																	<input type="hidden" class="result-input">
-																	<span class="input-group-text">%</span>
+																</div>
+															</div>
+															<div class="col-md-3 col-6 mt-2">
+																<div class="input-group input-group-sm">
+																	<span class="input-group-text">Set Webstore Profit %</span>
+																	<input type="text" class="form-control number-separator" inputmode="numeric" pattern="[0-9]*">
+																	<input type="hidden" class="result-input">
 																</div>
 															</div>
 														</div>
 														<div class="row align-items-center">
-															<div class="col-md-4 col-6 mt-2">
-																<label class="form-label mb-0">Penambahan Profit dari Biaya Poli</label>
+															<div class="col-md-3 col-12 mt-2">
+																<label class="form-label mb-0">Profit markup on die-cutting cost</label>
 															</div>
 															<div class="col-md-3 col-6 mt-2">
 																<div class="input-group input-group-sm">
+																	<span class="input-group-text">Set POS Profit %</span>
 																	<input type="text" class="form-control number-separator" inputmode="numeric" pattern="[0-9]*">
 																	<input type="hidden" class="result-input">
-																	<span class="input-group-text">%</span>
+																</div>
+															</div>
+															<div class="col-md-3 col-6 mt-2">
+																<div class="input-group input-group-sm">
+																	<span class="input-group-text">Set Webstore Profit %</span>
+																	<input type="text" class="form-control number-separator" inputmode="numeric" pattern="[0-9]*">
+																	<input type="hidden" class="result-input">
+																</div>
+															</div>
+														</div>
+														<div class="row align-items-center">
+															<div class="col-md-3 col-12 mt-2">
+																<label class="form-label mb-0">Profit markup on foil stamping cost</label>
+															</div>
+															<div class="col-md-3 col-6 mt-2">
+																<div class="input-group input-group-sm">
+																	<span class="input-group-text">Set POS Profit %</span>
+																	<input type="text" class="form-control number-separator" inputmode="numeric" pattern="[0-9]*">
+																	<input type="hidden" class="result-input">
+																</div>
+															</div>
+															<div class="col-md-3 col-6 mt-2">
+																<div class="input-group input-group-sm">
+																	<span class="input-group-text">Set Webstore Profit %</span>
+																	<input type="text" class="form-control number-separator" inputmode="numeric" pattern="[0-9]*">
+																	<input type="hidden" class="result-input">
 																</div>
 															</div>
 														</div>
@@ -1991,97 +2051,124 @@
 												</div>
 
 												<div class="range-form mb-4">
-													<button class="btn btn-outline-warning btn-sm btn-spec" type="button" id="select-3">Berdasarkan Range Total Biaya Produksi</button>
-													<div class="ms-md-5 input-select d-none">
+													<div class="form-check">
+														<input class="form-check-input btn-spec" type="radio" name="profitMarkupOption" id="select-3">
+														<label class="form-check-label" for="select-3">Profit markup based on the total production cost range</label>
+													</div>
+													<div class="ms-md-5 input-select d-none profit-input-scroll">
 														<div class="row mt-3 first">
-															<div class="col-4 col-md-3 d-flex align-items-center">
-																<label class="form-label me-2 mb-0">Dari</label>
+															<div class="col-6 col-md-2 d-flex align-items-center">
+																<label class="form-label me-2 mb-0">From</label>
 																<input type="text" class="form-control form-control-sm number-separator input-dari" inputmode="numeric" pattern="[0-9]*">
 																<input type="hidden" class="result-input">
 															</div>
-															<div class="col-4 col-md-3 d-flex align-items-center">
-																<label class="form-label me-2 mb-0">Ke</label>
+															<div class="col-6 col-md-2 d-flex align-items-center">
+																<label class="form-label me-2 mb-0">To</label>
 																<input type="text" class="form-control form-control-sm number-separator input-ke" inputmode="numeric" pattern="[0-9]*">
 																<input type="hidden" class="result-input">
 															</div>
-															<div class="col-md-2 col-4 d-flex align-items-center">
-																<label class="form-label me-2 mb-0">Profit</label>
+															<div class="col-md-3 col-6 mt-2 mt-md-0">
 																<div class="input-group input-group-sm">
+																	<span class="input-group-text">Set POS Profit %</span>
 																	<input type="text" class="form-control number-separator" inputmode="numeric" pattern="[0-9]*">
 																	<input type="hidden" class="result-input">
-																	<span class="input-group-text">%</span>
 																</div>
 															</div>
-															<div class="col-12 col-md-4 d-flex gap-2 mt-2 mt-md-0">
-																<button class="btn btn-warning btn-sm add-range me-2">+Tambahkan Range</button>
-																<button class="btn btn-outline-danger btn-sm delete-range d-none">Hapus</button>
+															<div class="col-md-3 col-6 mt-2 mt-md-0">
+																<div class="input-group input-group-sm">
+																	<span class="input-group-text">Set Webstore Profit %</span>
+																	<input type="text" class="form-control number-separator" inputmode="numeric" pattern="[0-9]*">
+																	<input type="hidden" class="result-input">
+																</div>
+															</div>
+															<div class="col-12 col-md-2 d-flex gap-2 mt-2 mt-md-0">
+																<button class="btn btn-warning btn-sm add-range me-2">Add Cost Range</button>
+																<button class="btn btn-outline-danger btn-sm delete-range d-none">Delete</button>
 															</div>
 														</div>
 														<div class="row mt-3">
-															<div class="col-4 col-md-3 d-flex align-items-center">
-																<label class="form-label me-2 mb-0">Dari</label>
+															<div class="col-6 col-md-2 d-flex align-items-center">
+																<label class="form-label me-2 mb-0">From</label>
 																<input type="text" class="form-control form-control-sm number-separator input-dari" inputmode="numeric" pattern="[0-9]*">
 																<input type="hidden" class="result-input">
 															</div>
-															<div class="col-4 col-md-3 d-flex align-items-center">
-																<label class="form-label me-2 mb-0">Ke</label>
+															<div class="col-6 col-md-2 d-flex align-items-center">
+																<label class="form-label me-2 mb-0">To</label>
 																<input type="text" class="form-control form-control-sm number-separator input-ke" inputmode="numeric" pattern="[0-9]*">
 																<input type="hidden" class="result-input">
 															</div>
-															<div class="col-md-2 col-4 d-flex align-items-center">
-																<label class="form-label me-2 mb-0">Profit</label>
+															<div class="col-md-3 col-6 mt-2 mt-md-0">
 																<div class="input-group input-group-sm">
+																	<span class="input-group-text">Set POS Profit %</span>
 																	<input type="text" class="form-control number-separator" inputmode="numeric" pattern="[0-9]*">
 																	<input type="hidden" class="result-input">
-																	<span class="input-group-text">%</span>
 																</div>
 															</div>
-															<div class="col-12 col-md-4 d-flex gap-2 mt-2 mt-md-0">
-																<button class="btn btn-warning btn-sm add-range me-2">+Tambahkan Range</button>
-																<button class="btn btn-outline-danger btn-sm delete-range">Hapus</button>
+															<div class="col-md-3 col-6 mt-2 mt-md-0">
+																<div class="input-group input-group-sm">
+																	<span class="input-group-text">Set Webstore Profit %</span>
+																	<input type="text" class="form-control number-separator" inputmode="numeric" pattern="[0-9]*">
+																	<input type="hidden" class="result-input">
+																</div>
+															</div>
+															<div class="col-12 col-md-2 d-flex gap-2 mt-2 mt-md-0">
+																<button class="btn btn-warning btn-sm add-range me-2">Add Cost Range</button>
+																<button class="btn btn-outline-danger btn-sm delete-range">Delete</button>
 															</div>
 														</div>
 														<div class="row mt-3">
-															<div class="col-4 col-md-3 d-flex align-items-center">
-																<label class="form-label me-2 mb-0">Dari</label>
+															<div class="col-6 col-md-2 d-flex align-items-center">
+																<label class="form-label me-2 mb-0">From</label>
 																<input type="text" class="form-control form-control-sm number-separator input-dari" inputmode="numeric" pattern="[0-9]*">
 																<input type="hidden" class="result-input">
 															</div>
-															<div class="col-4 col-md-3 d-flex align-items-center">
-																<label class="form-label me-2 mb-0">Ke</label>
+															<div class="col-6 col-md-2 d-flex align-items-center">
+																<label class="form-label me-2 mb-0">To</label>
 																<input type="text" class="form-control form-control-sm number-separator input-ke" inputmode="numeric" pattern="[0-9]*">
 																<input type="hidden" class="result-input">
 															</div>
-															<div class="col-md-2 col-4 d-flex align-items-center">
-																<label class="form-label me-2 mb-0">Profit</label>
+															<div class="col-md-3 col-6 mt-2 mt-md-0">
 																<div class="input-group input-group-sm">
+																	<span class="input-group-text">Set POS Profit %</span>
 																	<input type="text" class="form-control number-separator" inputmode="numeric" pattern="[0-9]*">
 																	<input type="hidden" class="result-input">
-																	<span class="input-group-text">%</span>
 																</div>
 															</div>
-															<div class="col-12 col-md-4 d-flex gap-2 mt-2 mt-md-0">
-																<button class="btn btn-warning btn-sm add-range me-2">+Tambahkan Range</button>
-																<button class="btn btn-outline-danger btn-sm delete-range">Hapus</button>
+															<div class="col-md-3 col-6 mt-2 mt-md-0">
+																<div class="input-group input-group-sm">
+																	<span class="input-group-text">Set Webstore Profit %</span>
+																	<input type="text" class="form-control number-separator" inputmode="numeric" pattern="[0-9]*">
+																	<input type="hidden" class="result-input">
+																</div>
+															</div>
+															<div class="col-12 col-md-2 d-flex gap-2 mt-2 mt-md-0">
+																<button class="btn btn-warning btn-sm add-range me-2">Add Cost Range</button>
+																<button class="btn btn-outline-danger btn-sm delete-range">Delete</button>
 															</div>
 														</div>
 														<div class="row mt-3">
-															<div class="col-4 col-md-3 d-flex align-items-center">
-																<label class="form-label me-2 mb-0">Dari</label>
+															<div class="col-6 col-md-2 d-flex align-items-center">
+																<label class="form-label me-2 mb-0">From</label>
 																<input type="text" class="form-control form-control-sm number-separator input-dari" inputmode="numeric" pattern="[0-9]*">
 																<input type="hidden" class="result-input">
 															</div>
-															<div class="col-4 col-md-3 d-flex align-items-center">
-																<label class="form-label me-2 mb-0">Ke</label>
-																<input type="text" class="form-control form-control-sm number-separator" value="Dan seterusnya" readonly>
+															<div class="col-6 col-md-2 d-flex align-items-center">
+																<label class="form-label me-2 mb-0">To</label>
+																<span class="form-control form-control-sm">And so on</span>
 																<input type="hidden" class="result-input">
 															</div>
-															<div class="col-md-2 col-4 d-flex align-items-center">
-																<label class="form-label me-2 mb-0">Profit</label>
+															<div class="col-md-3 col-6 mt-2 mt-md-0">
 																<div class="input-group input-group-sm">
+																	<span class="input-group-text">Set POS Profit %</span>
 																	<input type="text" class="form-control number-separator" inputmode="numeric" pattern="[0-9]*">
 																	<input type="hidden" class="result-input">
-																	<span class="input-group-text">%</span>
+																</div>
+															</div>
+															<div class="col-md-3 col-6 mt-2 mt-md-0">
+																<div class="input-group input-group-sm">
+																	<span class="input-group-text">Set Webstore Profit %</span>
+																	<input type="text" class="form-control number-separator" inputmode="numeric" pattern="[0-9]*">
+																	<input type="hidden" class="result-input">
 																</div>
 															</div>
 														</div>
@@ -2091,8 +2178,8 @@
 
 												<div class="tambahan-form">
 													<div class="d-md-flex justify-content-between align-items-center">
-														<p class="mt-3 mb-0">Biaya Tambahan</p>
-														<button class="btn btn-warning btn-sm" id="addOther" type="button">+Tambahkan Biaya Lainnya</button>
+														<p class="mt-3 mb-0">Additional Fees</p>
+														<button class="btn btn-warning btn-sm" id="addOther" type="button">Add New Additional Fees</button>
 													</div>
 													<div class="row align-items-center">
 														<div class="col-md-3 mt-3">
@@ -2127,8 +2214,8 @@
 
 												<div class="pajak-form">
 													<div class="d-md-flex justify-content-between align-items-center">
-														<p class="mt-3 mb-0">Pajak</p>
-														<button class="btn btn-warning btn-sm" id="addTax" type="button">+Tambahkan Pajak Baru</button>
+														<p class="mt-3 mb-0">Additional TAX Charge</p>
+														<button class="btn btn-warning btn-sm" id="addTax" type="button">Add New Additional TAX Charge</button>
 													</div>
 													<div class="row align-items-center mt-3">
 														<div class="col-3">
@@ -2160,9 +2247,195 @@
 													</div>
 												</div>
 												<small class="d-none text-danger" id="info-selected-all"><i class="fa-solid fa-circle-info"></i> please input your specification<br></small>
-												<div class="d-flex justify-content-end">
-													<button class="btn btn-primary mt-4 col-md-3 col-6" id="update-btn" type="button">Update Profile</button>
+												<div class="d-flex justify-content-end gap-2 mt-4">
+													<button class="btn btn-secondary btn-sm" type="button">Cancel</button>
+													<button class="btn btn-primary btn-sm" type="button">Save</button>
 												</div>
+											</div>
+										</div>
+										<div class="tab-pane fade" id="logTransactionTabContent" role="tabpanel"
+											aria-labelledby="log-transaction">
+											<div class="d-md-flex justify-content-between align-items-start mb-3">
+												<h4 class="mb-2">Log Transaction</h4>
+												<div class="fst-italic text-muted">Update : 19:30 - 20 Januari 2024</div>
+											</div>
+											<hr>
+											<div class="table-responsive">
+												<table class="table datanew">
+													<thead>
+														<tr>
+															<th>No Sales</th>
+															<th>Customers</th>
+															<th>Date</th>
+															<th>Chanel</th>
+															<th>Product Name</th>
+															<th class="text-end">Price</th>
+															<th>Action</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td class="str-value">2511000001</td>
+															<td>PT Makmur Abadi</td>
+															<td>01/10/2025</td>
+															<td>Webstore</td>
+															<td>Brosur</td>
+															<td class="text-end">1.200.000</td>
+															<td class="action-table-data">
+																<div class="edit-delete-action">
+																	<a class="me-2 edit-icon p-2" href="javascript:void(0);"
+																		data-bs-toggle="modal" data-bs-target="#calculationDetailModal">
+																		<i data-feather="eye" class="action-eye"></i>
+																	</a>
+																</div>
+															</td>
+														</tr>
+														<tr>
+															<td class="str-value">2511000002</td>
+															<td>Toko Buku Cerdas</td>
+															<td>03/10/2025</td>
+															<td>POS</td>
+															<td>Flyer</td>
+															<td class="text-end">850.000</td>
+															<td class="action-table-data">
+																<div class="edit-delete-action">
+																	<a class="me-2 edit-icon p-2" href="javascript:void(0);"
+																		data-bs-toggle="modal" data-bs-target="#calculationDetailModal">
+																		<i data-feather="eye" class="action-eye"></i>
+																	</a>
+																</div>
+															</td>
+														</tr>
+														<tr>
+															<td class="str-value">2511000003</td>
+															<td>CV Jaya Sentosa</td>
+															<td>05/10/2025</td>
+															<td>POS</td>
+															<td>Tiket Karcis</td>
+															<td class="text-end">500.000</td>
+															<td class="action-table-data">
+																<div class="edit-delete-action">
+																	<a class="me-2 edit-icon p-2" href="javascript:void(0);"
+																		data-bs-toggle="modal" data-bs-target="#calculationDetailModal">
+																		<i data-feather="eye" class="action-eye"></i>
+																	</a>
+																</div>
+															</td>
+														</tr>
+														<tr>
+															<td class="str-value">2511000004</td>
+															<td>PT Global Solusi</td>
+															<td>08/10/2025</td>
+															<td>Webstore</td>
+															<td>Produk Label</td>
+															<td class="text-end">257.000</td>
+															<td class="action-table-data">
+																<div class="edit-delete-action">
+																	<a class="me-2 edit-icon p-2" href="javascript:void(0);"
+																		data-bs-toggle="modal" data-bs-target="#calculationDetailModal">
+																		<i data-feather="eye" class="action-eye"></i>
+																	</a>
+																</div>
+															</td>
+														</tr>
+														<tr>
+															<td class="str-value">2511000005</td>
+															<td>Klinik Sehat</td>
+															<td>10/11/2025</td>
+															<td>POS</td>
+															<td>Brosur</td>
+															<td class="text-end">450.000</td>
+															<td class="action-table-data">
+																<div class="edit-delete-action">
+																	<a class="me-2 edit-icon p-2" href="javascript:void(0);"
+																		data-bs-toggle="modal" data-bs-target="#calculationDetailModal">
+																		<i data-feather="eye" class="action-eye"></i>
+																	</a>
+																</div>
+															</td>
+														</tr>
+														<tr>
+															<td class="str-value">2511000006</td>
+															<td>Yayasan Lentera</td>
+															<td>14/10/2025</td>
+															<td>POS</td>
+															<td>Flyer</td>
+															<td class="text-end">785.000</td>
+															<td class="action-table-data">
+																<div class="edit-delete-action">
+																	<a class="me-2 edit-icon p-2" href="javascript:void(0);"
+																		data-bs-toggle="modal" data-bs-target="#calculationDetailModal">
+																		<i data-feather="eye" class="action-eye"></i>
+																	</a>
+																</div>
+															</td>
+														</tr>
+														<tr>
+															<td class="str-value">2511000007</td>
+															<td>PT Dirgantara</td>
+															<td>17/10/2025</td>
+															<td>Webstore</td>
+															<td>Tiket Karcis</td>
+															<td class="text-end">225.000</td>
+															<td class="action-table-data">
+																<div class="edit-delete-action">
+																	<a class="me-2 edit-icon p-2" href="javascript:void(0);"
+																		data-bs-toggle="modal" data-bs-target="#calculationDetailModal">
+																		<i data-feather="eye" class="action-eye"></i>
+																	</a>
+																</div>
+															</td>
+														</tr>
+														<tr>
+															<td class="str-value">2511000008</td>
+															<td>Toko Perlengkapan</td>
+															<td>20/10/2025</td>
+															<td>POS</td>
+															<td>Produk Label</td>
+															<td class="text-end">478.000</td>
+															<td class="action-table-data">
+																<div class="edit-delete-action">
+																	<a class="me-2 edit-icon p-2" href="javascript:void(0);"
+																		data-bs-toggle="modal" data-bs-target="#calculationDetailModal">
+																		<i data-feather="eye" class="action-eye"></i>
+																	</a>
+																</div>
+															</td>
+														</tr>
+														<tr>
+															<td class="str-value">2511000009</td>
+															<td>PT Angkasa Raya</td>
+															<td>23/10/2025</td>
+															<td>Webstore</td>
+															<td>Brosur</td>
+															<td class="text-end">900.000</td>
+															<td class="action-table-data">
+																<div class="edit-delete-action">
+																	<a class="me-2 edit-icon p-2" href="javascript:void(0);"
+																		data-bs-toggle="modal" data-bs-target="#calculationDetailModal">
+																		<i data-feather="eye" class="action-eye"></i>
+																	</a>
+																</div>
+															</td>
+														</tr>
+														<tr>
+															<td class="str-value">2511000010</td>
+															<td>Universitas Bintang</td>
+															<td>26/10/2025</td>
+															<td>POS</td>
+															<td>Flyer</td>
+															<td class="text-end">1.450.000</td>
+															<td class="action-table-data">
+																<div class="edit-delete-action">
+																	<a class="me-2 edit-icon p-2" href="javascript:void(0);"
+																		data-bs-toggle="modal" data-bs-target="#calculationDetailModal">
+																		<i data-feather="eye" class="action-eye"></i>
+																	</a>
+																</div>
+															</td>
+														</tr>
+													</tbody>
+												</table>
 											</div>
 										</div>
 									</div>
@@ -2179,6 +2452,445 @@
 
 				</div>
 			</div>
+			<div class="modal fade" id="calculationDetailModal" tabindex="-1" aria-labelledby="calculationDetailModalLabel"
+				aria-hidden="true">
+				<div class="modal-dialog modal-dialog-centered">
+					<div class="modal-content p-4">
+						<div class="modal-header border-0">
+							<h5 class="modal-title fw-bold" id="calculationDetailModalLabel">Calculation Detail</h5>
+							<button type="button" class="btn text-danger fw-bold" data-bs-dismiss="modal"
+								aria-label="Close">X</button>
+						</div>
+						<div class="modal-body">
+							<ul class="nav nav-tabs justify-content-around mb-4" id="calculationDetailTab" role="tablist">
+								<li class="nav-item flex-fill text-center" role="presentation">
+									<button class="nav-link active w-100 fw-bold" id="order-detail-tab"
+										data-bs-toggle="tab" data-bs-target="#orderDetailTabPane" type="button"
+										role="tab" aria-controls="orderDetailTabPane" aria-selected="true">Order Detail</button>
+								</li>
+								<li class="nav-item flex-fill text-center" role="presentation">
+									<button class="nav-link w-100 fw-bold" id="detail-cost-tab" data-bs-toggle="tab"
+										data-bs-target="#detailCostTabPane" type="button" role="tab"
+										aria-controls="detailCostTabPane" aria-selected="false">Detail Cost</button>
+								</li>
+							</ul>
+							<div class="tab-content" id="calculationDetailTabContent">
+								<div class="tab-pane fade show active" id="orderDetailTabPane" role="tabpanel"
+									aria-labelledby="order-detail-tab">
+									<h4 class="mb-3">Order Spesification</h4>
+									<div class="table-responsive mb-5">
+										<table class="table table-bordered mb-0">
+																						<colgroup>
+																							<col class="w-50">
+																							<col class="w-50">
+																						</colgroup>
+											<tbody>
+												<tr>
+													<td>Product Name</td>
+													<td>Brosur</td>
+												</tr>
+												<tr>
+													<td>Size</td>
+													<td>A4 (297x210mm)</td>
+												</tr>
+												<tr>
+													<td>Paper Type</td>
+													<td>Art Paper 150 Gsm</td>
+												</tr>
+												<tr>
+													<td>Laminate</td>
+													<td>Glossy</td>
+												</tr>
+												<tr>
+													<td>Print Side</td>
+													<td>1 Sisi</td>
+												</tr>
+												<tr>
+													<td>Fold</td>
+													<td>2 Lipatan</td>
+												</tr>
+												<tr>
+													<td>Qty Order</td>
+													<td>15 Ream&nbsp; (7.500 Pcs)</td>
+												</tr>
+												<tr>
+													<td>Chanel</td>
+													<td>Webstore</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+									<h4 class="mb-3">Calculation System Suggestion</h4>
+									<div class="table-responsive">
+										<table class="table table-bordered mb-0">
+																						<colgroup>
+																							<col class="w-50">
+																							<col class="w-50">
+																						</colgroup>
+											<tbody>
+												<tr>
+													<td>Parent Sheet</td>
+													<td>92x61 cm</td>
+												</tr>
+												<tr>
+													<td>Parent Sheet Qty</td>
+													<td>940</td>
+												</tr>
+												<tr>
+													<td>Cut Down Size</td>
+													<td>30x46cm</td>
+												</tr>
+												<tr>
+													<td>Cut Down Qty</td>
+													<td>3.760</td>
+												</tr>
+												<tr>
+													<td>Printing Machine</td>
+													<td>Heidelberg SM52</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+								<div class="tab-pane fade" id="detailCostTabPane" role="tabpanel"
+									aria-labelledby="detail-cost-tab">
+									<div class="mb-4">
+										<button class="btn btn-link text-dark text-decoration-none w-100 d-flex justify-content-between px-0"
+											type="button" data-bs-toggle="collapse" data-bs-target="#paperCostDetail"
+											aria-expanded="true" aria-controls="paperCostDetail">
+											<span>Paper Cost</span>
+											<span>v</span>
+										</button>
+										<div class="collapse show" id="paperCostDetail">
+											<div class="table-responsive">
+												<table class="table table-bordered mb-0">
+																						<colgroup>
+																							<col class="w-50">
+																							<col class="w-50">
+																						</colgroup>
+													<tbody>
+														<tr>
+															<td>Paper Type</td>
+															<td>Art Paper 150 Gsm</td>
+														</tr>
+														<tr>
+															<td>Parent Sheet</td>
+															<td>92x61 cm</td>
+														</tr>
+														<tr>
+															<td>Qty</td>
+															<td>940</td>
+														</tr>
+														<tr>
+															<td>Price</td>
+															<td>4.500</td>
+														</tr>
+														<tr>
+															<td>Unit Price</td>
+															<td>Sheet</td>
+														</tr>
+														<tr>
+															<td>Cut Down Size</td>
+															<td>30x46cm</td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+										</div>
+										<div class="table-responsive">
+											<table class="table table-bordered mb-0">
+																						<colgroup>
+																							<col class="w-50">
+																							<col class="w-50">
+																						</colgroup>
+												<tbody>
+													<tr>
+														<td>Cost Amount</td>
+														<td>4.230.000</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+									<div class="mb-4">
+										<button class="btn btn-link text-dark text-decoration-none w-100 d-flex justify-content-between px-0"
+											type="button" data-bs-toggle="collapse" data-bs-target="#printingMachineCostDetail"
+											aria-expanded="true" aria-controls="printingMachineCostDetail">
+											<span>Printing Machine Cost</span>
+											<span>v</span>
+										</button>
+										<div class="collapse show" id="printingMachineCostDetail">
+											<div class="table-responsive">
+												<table class="table table-bordered mb-0">
+																						<colgroup>
+																							<col class="w-50">
+																							<col class="w-50">
+																						</colgroup>
+													<tbody>
+														<tr>
+															<td>Printing Machine</td>
+															<td>Heidelberg SM52</td>
+														</tr>
+														<tr>
+															<td>Max Size Paper Area</td>
+															<td>37x52 Cm</td>
+														</tr>
+														<tr>
+															<td>Cut Down Size</td>
+															<td>30x46cm</td>
+														</tr>
+														<tr>
+															<td>Qty Sheet</td>
+															<td>3.660</td>
+														</tr>
+														<tr>
+															<td>Print Side</td>
+															<td>1 Sisi</td>
+														</tr>
+														<tr>
+															<td>Makeready Sheet</td>
+															<td>100</td>
+														</tr>
+														<tr>
+															<td>Total Sheet</td>
+															<td>3.760</td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+										</div>
+										<div class="table-responsive">
+											<table class="table table-bordered mb-0">
+																						<colgroup>
+																							<col class="w-50">
+																							<col class="w-50">
+																						</colgroup>
+												<tbody>
+													<tr>
+														<td>Cost Amount</td>
+														<td>875.000</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+									<div class="mb-4">
+										<button class="btn btn-link text-dark text-decoration-none w-100 d-flex justify-content-between px-0"
+											type="button" data-bs-toggle="collapse" data-bs-target="#laminateCostDetail"
+											aria-expanded="true" aria-controls="laminateCostDetail">
+											<span>Laminate Cost</span>
+											<span>v</span>
+										</button>
+										<div class="collapse show" id="laminateCostDetail">
+											<div class="table-responsive">
+												<table class="table table-bordered mb-0">
+																						<colgroup>
+																							<col class="w-50">
+																							<col class="w-50">
+																						</colgroup>
+													<tbody>
+														<tr>
+															<td>Laminate Name</td>
+															<td>Laminasi Doff</td>
+														</tr>
+														<tr>
+															<td>Cut Down Size</td>
+															<td>30x46cm</td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+										</div>
+										<div class="table-responsive">
+											<table class="table table-bordered mb-0">
+																						<colgroup>
+																							<col class="w-50">
+																							<col class="w-50">
+																						</colgroup>
+												<tbody>
+													<tr>
+														<td>Cost Amount</td>
+														<td>370.000</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+									<div class="mb-4">
+										<button class="btn btn-link text-dark text-decoration-none w-100 d-flex justify-content-between px-0"
+											type="button" data-bs-toggle="collapse" data-bs-target="#foldCostDetail"
+											aria-expanded="true" aria-controls="foldCostDetail">
+											<span>Fold Cost</span>
+											<span>v</span>
+										</button>
+										<div class="collapse show" id="foldCostDetail">
+											<div class="table-responsive">
+												<table class="table table-bordered mb-0">
+																						<colgroup>
+																							<col class="w-50">
+																							<col class="w-50">
+																						</colgroup>
+													<tbody>
+														<tr>
+															<td>Fold</td>
+															<td>2 Lipatan</td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+										</div>
+										<div class="table-responsive">
+											<table class="table table-bordered mb-0">
+																						<colgroup>
+																							<col class="w-50">
+																							<col class="w-50">
+																						</colgroup>
+												<tbody>
+													<tr>
+														<td>Cost Amount</td>
+														<td>370.000</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+									<div class="mb-4">
+										<button class="btn btn-link text-dark text-decoration-none w-100 d-flex justify-content-between px-0"
+											type="button" data-bs-toggle="collapse" data-bs-target="#additionalCostDetail"
+											aria-expanded="true" aria-controls="additionalCostDetail">
+											<span>Additional Cost</span>
+											<span>v</span>
+										</button>
+										<div class="collapse show" id="additionalCostDetail">
+											<div class="table-responsive">
+												<table class="table table-bordered mb-0">
+																						<colgroup>
+																							<col class="w-50">
+																							<col class="w-50">
+																						</colgroup>
+													<tbody>
+														<tr>
+															<td>Biaya Transport</td>
+															<td>250.000</td>
+														</tr>
+														<tr>
+															<td>Akomodasi</td>
+															<td>150.000</td>
+														</tr>
+														<tr>
+															<td>Pajak Pph Final 23</td>
+															<td>400.000</td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+										</div>
+										<div class="table-responsive">
+											<table class="table table-bordered mb-0">
+																						<colgroup>
+																							<col class="w-50">
+																							<col class="w-50">
+																						</colgroup>
+												<tbody>
+													<tr>
+														<td>Cost Amount</td>
+														<td>800.000</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+									<div class="mb-4">
+										<button class="btn btn-link text-dark text-decoration-none w-100 d-flex justify-content-between px-0"
+											type="button" data-bs-toggle="collapse" data-bs-target="#takeProfitDetail"
+											aria-expanded="true" aria-controls="takeProfitDetail">
+											<span>Take Profit</span>
+											<span>v</span>
+										</button>
+										<div class="collapse show" id="takeProfitDetail">
+											<div class="table-responsive">
+												<table class="table table-bordered mb-0">
+																						<colgroup>
+																							<col class="w-50">
+																							<col class="w-50">
+																						</colgroup>
+													<tbody>
+														<tr>
+															<td>Sub Total Cost</td>
+															<td>6.250.000</td>
+														</tr>
+														<tr>
+															<td>Webstore Profit %</td>
+															<td>35 %</td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+										</div>
+										<div class="table-responsive">
+											<table class="table table-bordered mb-0">
+																						<colgroup>
+																							<col class="w-50">
+																							<col class="w-50">
+																						</colgroup>
+												<tbody>
+													<tr>
+														<td>Profit Amount</td>
+														<td>2.187.500</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+									<div class="mb-0">
+										<button class="btn btn-link text-dark text-decoration-none w-100 d-flex justify-content-between px-0"
+											type="button" data-bs-toggle="collapse" data-bs-target="#suggestionPriceDetail"
+											aria-expanded="true" aria-controls="suggestionPriceDetail">
+											<span>Suggestion System Price</span>
+											<span>v</span>
+										</button>
+										<div class="collapse show" id="suggestionPriceDetail">
+											<div class="table-responsive">
+												<table class="table table-bordered mb-0">
+																						<colgroup>
+																							<col class="w-50">
+																							<col class="w-50">
+																						</colgroup>
+													<tbody>
+														<tr>
+															<td>Price</td>
+															<td>562.383</td>
+														</tr>
+														<tr>
+															<td>RoundUp</td>
+															<td>617</td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+										</div>
+										<div class="table-responsive">
+											<table class="table table-bordered mb-0">
+																						<colgroup>
+																							<col class="w-50">
+																							<col class="w-50">
+																						</colgroup>
+												<tbody>
+													<tr>
+														<td>Unit Price</td>
+														<td>563.000</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
 			<div class="modal fade product-modal" id="modaladdukuran" tabindex="-1" aria-labelledby="modalFormLabel"
 				aria-hidden="true">
 				<div class="modal-dialog modal-dialog-centered modal-xl">
@@ -2369,6 +3081,19 @@
 									<div class="product-image-preview d-flex align-items-center justify-content-center">
 										<button type="button" class="remove-preview">x</button>
 										<img class="product-image-img" src="https://percetakan-dulank.netlify.app/images/brosur.jpg" alt="Brosur">
+									</div>
+								</div>
+							</div>
+							<div class="row align-items-center mb-4">
+								<label class="col-md-3 col-form-label fw-semibold">Display</label>
+								<div class="col-md-9 d-flex align-items-center gap-4">
+									<div class="form-check">
+										<input class="form-check-input" type="checkbox" value="" id="productDisplayPos">
+										<label class="form-check-label" for="productDisplayPos">POS</label>
+									</div>
+									<div class="form-check">
+										<input class="form-check-input" type="checkbox" value="" id="productDisplayWebsite" checked>
+										<label class="form-check-label" for="productDisplayWebsite">Website</label>
 									</div>
 								</div>
 							</div>

@@ -14,6 +14,13 @@ document.addEventListener('DOMContentLoaded', () => {
 		container.querySelectorAll('.number-separator').forEach(input => {
 			if (input.dataset.separatorReady) return;
 			input.dataset.separatorReady = 'true';
+			input.setAttribute('inputmode', 'numeric');
+			input.setAttribute('pattern', '[0-9]*');
+
+			input.addEventListener('input', () => {
+				const numericValue = input.value.replace(/\D/g, '');
+				if (input.value !== numericValue) input.value = numericValue;
+			});
 
 			if (typeof easyNumberSeparator === 'function') {
 				easyNumberSeparator({
@@ -39,8 +46,12 @@ document.addEventListener('DOMContentLoaded', () => {
 			.filter(input => !input.disabled && input.type !== 'hidden' && !input.readOnly);
 	}
 
+	function getOptionBlock(selectId) {
+		return scope.querySelector(`#${selectId}`)?.closest('.persentase-form, .range-form');
+	}
+
 	function checkValue() {
-		const selectedForm = scope.querySelector(`#${selected}`)?.parentElement;
+		const selectedForm = getOptionBlock(selected);
 		const forms = [
 			selectedForm,
 			scope.querySelector('.tambahan-form'),
@@ -51,35 +62,33 @@ document.addEventListener('DOMContentLoaded', () => {
 	}
 
 	function disabledInput(selectId) {
-		const parent = scope.querySelector(`#${selectId}`)?.parentElement;
+		const parent = getOptionBlock(selectId);
 		if (!parent) return;
 
-		parent.querySelectorAll('input').forEach(input => {
+		parent.querySelector('.input-select')?.querySelectorAll('input, select, textarea').forEach(input => {
 			input.disabled = true;
 		});
 		parent.querySelector('.input-select')?.classList.add('d-none');
 	}
 
 	function display(selectId) {
-		['select-1', 'select-2', 'select-3'].forEach(disabledInput);
+		['select-1', 'select-3'].forEach(disabledInput);
 
-		const parent = scope.querySelector(`#${selectId}`)?.parentElement;
+		const parent = getOptionBlock(selectId);
 		if (!parent) return;
 
-		parent.querySelectorAll('input').forEach(input => {
+		parent.querySelector('.input-select')?.querySelectorAll('input, select, textarea').forEach(input => {
 			input.disabled = false;
 		});
 		parent.querySelector('.input-select')?.classList.remove('d-none');
 	}
 
-	function updateSelectedButton(button) {
+	function updateSelectedOption(option) {
 		scope.querySelectorAll('.btn-spec').forEach(item => {
-			item.classList.remove('selected', 'btn-warning');
-			item.classList.add('btn-outline-warning');
+			item.checked = false;
 		});
 
-		button.classList.add('selected', 'btn-warning');
-		button.classList.remove('btn-outline-warning');
+		option.checked = true;
 	}
 
 	function showValidationIfNeeded() {
@@ -261,7 +270,6 @@ document.addEventListener('DOMContentLoaded', () => {
 		});
 	}
 
-	disabledInput('select-2');
 	disabledInput('select-3');
 	initNumberSeparator();
 
@@ -277,10 +285,10 @@ document.addEventListener('DOMContentLoaded', () => {
 		}
 	});
 
-	scope.querySelectorAll('.btn-spec').forEach(button => {
-		button.addEventListener('click', () => {
-			selected = button.id;
-			updateSelectedButton(button);
+	scope.querySelectorAll('.btn-spec').forEach(option => {
+		option.addEventListener('change', () => {
+			selected = option.id;
+			updateSelectedOption(option);
 			display(selected);
 			infoSelectedAll?.classList.add('d-none');
 			updateButton?.classList.remove('disabled');

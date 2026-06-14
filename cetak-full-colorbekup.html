@@ -1,0 +1,3764 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+	<meta name="description" content="POS - Bootstrap Admin Template">
+	<meta name="keywords"
+		content="admin, estimates, bootstrap, business, corporate, creative, invoice, html5, responsive, Projects">
+	<meta name="author" content="Dreamguys - Bootstrap Admin Template">
+	<meta name="robots" content="noindex, nofollow">
+	<title>Kacetak System</title>
+	<link rel="shortcut icon" type="image/x-icon" href="assets/img/kacetak.jpeg" />
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+
+	<!-- Datetimepicker CSS -->
+	<link rel="stylesheet" href="assets/css/bootstrap-datetimepicker.min.css">
+
+	<!-- animation CSS -->
+	<link rel="stylesheet" href="assets/css/animate.css">
+	<!-- Feathericon CSS -->
+	<link rel="stylesheet" href="assets/css/feather.css">
+<!-- Datatable CSS -->
+	<link rel="stylesheet" href="assets/css/dataTables.bootstrap5.min.css">
+	<!-- select2 -->
+<link rel="stylesheet" href="assets/plugins/select2/css/select2.min.css">
+
+	<!-- Fontawesome CSS -->
+	<link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css">
+	<link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css">
+
+	<!-- Main CSS -->
+	<link rel="stylesheet" href="assets/css/style.css">
+
+<style>
+    /* Hanya menyembunyikan search bar di halaman ini */
+.dataTables_filter {
+        display: none !important;
+    }
+
+	.inline-add-row {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: 12px;
+		margin: -8px 0 16px;
+	}
+
+	.inline-add-row .form-select {
+		width: 230px;
+		max-width: 100%;
+	}
+
+	.inline-add-row .btn-link {
+		color: #b87817;
+		padding-left: 4px;
+		padding-right: 4px;
+		text-decoration: none;
+	}
+
+	.product-card-grid {
+		display: grid;
+		grid-template-columns: repeat(4, minmax(270px, 1fr));
+		gap: 24px;
+		overflow-x: auto;
+	}
+
+	.profit-input-scroll {
+		max-width: 100%;
+		overflow-x: auto;
+		overflow-y: hidden;
+		padding-bottom: 8px;
+		-webkit-overflow-scrolling: touch;
+	}
+
+	.profit-input-scroll > .row {
+		min-width: 1120px;
+	}
+
+	.profit-input-scroll .input-group {
+		min-width: 260px;
+	}
+
+	.profit-input-scroll .range-bound-input {
+		min-width: 150px;
+	}
+
+	.profit-input-scroll .range-bound-col {
+		gap: 12px;
+		padding-right: 18px;
+	}
+
+	.profit-input-scroll .add-range,
+	.profit-input-scroll .delete-range {
+		min-width: 112px;
+	}
+
+	.product-display-card {
+		min-width: 270px;
+	}
+
+	.product-image-frame {
+		position: relative;
+		aspect-ratio: 1.28 / 1;
+		margin: 6px;
+	}
+
+	.product-placeholder-icon {
+		font-size: 86px;
+		color: #4d5350;
+	}
+
+	.product-image-img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		display: block;
+	}
+
+	.product-slide-btn {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		width: 22px;
+		height: 22px;
+		border: 1px solid #6f7471;
+		border-radius: 50%;
+		background: #fff;
+		font-size: 12px;
+	}
+
+	.product-slide-btn.prev {
+		left: 10px;
+	}
+
+	.product-slide-btn.next {
+		right: 10px;
+	}
+
+	.product-spec-row {
+		margin-bottom: 14px;
+		font-size: 12px;
+		line-height: 1.25;
+	}
+
+	.product-spec-row .fw-medium {
+		margin-bottom: 4px;
+	}
+
+	.product-card-actions .btn-link,
+	.product-add-image {
+		color: #c98520;
+		text-decoration: none;
+	}
+
+	.product-switch {
+		width: 44px;
+		height: 20px;
+		border-radius: 999px;
+		background: #c9c4c1;
+		position: relative;
+		display: inline-block;
+	}
+
+	.product-switch::after {
+		content: "";
+		position: absolute;
+		top: 4px;
+		left: 5px;
+		width: 12px;
+		height: 12px;
+		border-radius: 50%;
+		background: #fff;
+	}
+
+	.product-switch.active {
+		background: #0ca25a;
+	}
+
+	.product-switch.active::after {
+		left: 27px;
+	}
+
+	.product-image-preview {
+		width: 185px;
+		aspect-ratio: 1.15 / 1;
+		position: relative;
+	}
+
+	.remove-preview {
+		position: absolute;
+		top: 4px;
+		right: 6px;
+		border: 0;
+		background: transparent;
+	}
+
+	@media (max-width: 991.98px) {
+		.product-card-grid {
+			grid-template-columns: repeat(2, minmax(260px, 1fr));
+		}
+	}
+
+	@media (max-width: 575.98px) {
+		.product-card-grid {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>
+</head>
+
+<body>
+	<div id="global-loader">
+		<div class="loader"> </div>
+	</div>
+	<!-- Main Wrapper -->
+	<div class="main-wrapper">
+
+		<!-- header -->
+		<div id="header-placeholder"></div>
+		<!-- sidebar -->
+		<div id="sidebar-placeholder"></div>
+
+		<div class="page-wrapper">
+			<div class="content">
+				<!-- tables -->
+				<div class="row">
+					<div class="col-12">
+						<div class="page-header mt-5 mb-4 ">
+							<div class="page-title">
+								<h4 class="fw-bold">Cetak Full Color</h4>
+								<h6 class="text-muted">Manage your Product</h6>
+							</div>
+						</div>
+						<div class="row g-3">
+							<div class="col-xl-3 col-lg-4">
+								<div class="card workflow-panel border-0 shadow-sm">
+									<div class="card-body p-3">
+										<div class="d-flex align-items-center justify-content-between mb-3">
+											<h5 class="fw-bold mb-0">Setting And Optional</h5>
+											<span class="workflow-total-pill">11</span>
+										</div>
+										<ul class="nav nav-tabs cetak-workflow-tabs workflow-list mb-0" id="mainTab"
+											role="tablist">
+											<li class="nav-item" role="presentation">
+												<button class="nav-link workflow-item active" id="product"
+													data-bs-toggle="tab" data-bs-target="#productTabContent"
+													type="button" role="tab" aria-controls="productTabContent"
+													aria-selected="true">
+													<span class="workflow-item-left">
+														<span class="workflow-item-icon"><i
+																data-feather="box"></i></span>
+														<span class="workflow-item-text">Product Custom Default</span>
+													</span>
+												</button>
+											</li>
+											<li class="nav-item" role="presentation">
+												<button class="nav-link workflow-item" id="product-size"
+													data-bs-toggle="tab" data-bs-target="#sizeTabContent" type="button"
+													role="tab" aria-controls="sizeTabContent" aria-selected="false">
+													<span class="workflow-item-left">
+														<span class="workflow-item-icon"><i
+																data-feather="maximize"></i></span>
+														<span class="workflow-item-text">Product Size</span>
+													</span>
+												</button>
+											</li>
+											<li class="nav-item" role="presentation">
+												<button class="nav-link workflow-item" id="paper-type"
+													data-bs-toggle="tab" data-bs-target="#paperTypeTabContent"
+													type="button" role="tab" aria-controls="paperTypeTabContent"
+													aria-selected="false">
+													<span class="workflow-item-left">
+														<span class="workflow-item-icon"><i
+																data-feather="file-text"></i></span>
+														<span class="workflow-item-text">Paper Type</span>
+													</span>
+												</button>
+											</li>
+											<li class="nav-item" role="presentation">
+												<button class="nav-link workflow-item" id="offset-machine"
+													data-bs-toggle="tab" data-bs-target="#offsetMachineTabContent"
+													type="button" role="tab" aria-controls="offsetMachineTabContent"
+													aria-selected="false">
+													<span class="workflow-item-left">
+														<span class="workflow-item-icon"><i
+																data-feather="printer"></i></span>
+														<span class="workflow-item-text">Machine Type</span>
+													</span>
+												</button>
+											</li>
+											<li class="nav-item" role="presentation">
+												<button class="nav-link workflow-item" id="laminate"
+													data-bs-toggle="tab" data-bs-target="#laminateTabContent"
+													type="button" role="tab" aria-controls="laminateTabContent"
+													aria-selected="false">
+													<span class="workflow-item-left">
+														<span class="workflow-item-icon"><i
+																data-feather="layers"></i></span>
+														<span class="workflow-item-text">Laminate</span>
+													</span>
+												</button>
+											</li>
+											<li class="nav-item" role="presentation">
+												<button class="nav-link workflow-item" id="fold"
+													data-bs-toggle="tab" data-bs-target="#foldTabContent"
+													type="button" role="tab" aria-controls="foldTabContent"
+													aria-selected="false">
+													<span class="workflow-item-left">
+														<span class="workflow-item-icon"><i
+																data-feather="layers"></i></span>
+														<span class="workflow-item-text">Fold</span>
+													</span>
+												</button>
+											</li>
+											<li class="nav-item" role="presentation">
+												<button class="nav-link workflow-item" id="print-side"
+													data-bs-toggle="tab" data-bs-target="#printSideTabContent"
+													type="button" role="tab" aria-controls="printSideTabContent"
+													aria-selected="false">
+													<span class="workflow-item-left">
+														<span class="workflow-item-icon"><i
+																data-feather="copy"></i></span>
+														<span class="workflow-item-text">Print Side</span>
+													</span>
+												</button>
+											</li>
+											<li class="nav-item" role="presentation">
+												<button class="nav-link workflow-item" id="components"
+													data-bs-toggle="tab" data-bs-target="#componentsTabContent"
+													type="button" role="tab" aria-controls="componentsTabContent"
+													aria-selected="false">
+													<span class="workflow-item-left">
+														<span class="workflow-item-icon"><i
+																data-feather="grid"></i></span>
+														<span class="workflow-item-text">Components</span>
+													</span>
+												</button>
+											</li>
+											<li class="nav-item" role="presentation">
+												<button class="nav-link workflow-item" id="process-arrange"
+													data-bs-toggle="tab" data-bs-target="#processArrangeTabContent"
+													type="button" role="tab" aria-controls="processArrangeTabContent"
+													aria-selected="false">
+													<span class="workflow-item-left">
+														<span class="workflow-item-icon"><i
+																data-feather="git-branch"></i></span>
+														<span class="workflow-item-text">Work Flow</span>
+													</span>
+												</button>
+											</li>
+											<li class="nav-item" role="presentation">
+												<button class="nav-link workflow-item" id="profit-setting"
+													data-bs-toggle="tab" data-bs-target="#profitSettingTabContent"
+													type="button" role="tab" aria-controls="profitSettingTabContent"
+													aria-selected="false">
+													<span class="workflow-item-left">
+														<span class="workflow-item-icon"><i
+																data-feather="percent"></i></span>
+														<span class="workflow-item-text">Profit Setting</span>
+													</span>
+												</button>
+											</li>
+											<li class="nav-item" role="presentation">
+												<button class="nav-link workflow-item" id="log-transaction"
+													data-bs-toggle="tab" data-bs-target="#logTransactionTabContent"
+													type="button" role="tab" aria-controls="logTransactionTabContent"
+													aria-selected="false">
+													<span class="workflow-item-left">
+														<span class="workflow-item-icon"><i
+																data-feather="clipboard"></i></span>
+														<span class="workflow-item-text">Log Transaction</span>
+													</span>
+												</button>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="col-xl-9 col-lg-8">
+								<div class="card shadow-sm">
+									<div class="card-body">
+										<div class="tab-content" id="mainTabContent">
+											<div class="tab-pane fade show active" id="productTabContent"
+												role="tabpanel" aria-labelledby="product">
+												<div class="justify-content-between d-flex align-items-center mb-2">
+													<h4 class="flex-grow-1">All Product Custom</h4>
+													<button class="btn btn-warning btn-sm" id="btnTambahRow" type="button">
+														Add Product
+													</button>
+												</div>
+												<div class="product-card-grid" id="productCardGrid">
+													<div class="product-display-card border rounded-2 bg-white">
+														<div class="product-image-frame d-flex align-items-center justify-content-center bg-white">
+															<button type="button" class="product-slide-btn prev">&lt;</button>
+															<img class="product-image-img" src="https://percetakan-dulank.netlify.app/images/brosur.jpg" alt="Brosur">
+															<button type="button" class="product-slide-btn next">&gt;</button>
+														</div>
+														<div class="p-4">
+															<div class="product-spec-row">
+																<div class="fw-medium">Product Name</div>
+																<div>Brosur</div>
+															</div>
+															<div class="product-spec-row">
+																<div class="fw-medium">Ukuran Brosur</div>
+																<div>A4 (297x210mm) (Default), A5 (210x149mm)</div>
+															</div>
+															<div class="product-spec-row">
+																<div class="fw-medium">Jenis Kertas</div>
+																<div>Art Paper (default), Art Carton, HVS, Carton BC</div>
+															</div>
+															<div class="product-spec-row">
+																<div class="fw-medium">Laminasi</div>
+																<div>Tanpa Laminasi (Default), Glossy, Doff, UV Vernish, Spot UV</div>
+															</div>
+															<div class="product-spec-row">
+																<div class="fw-medium">Sisi Cetak</div>
+																<div>Cetak 1 Sisi (default), Cetak Bolak Balik</div>
+															</div>
+															<div class="product-spec-row">
+																<div class="fw-medium">Lipatan</div>
+																<div>Tanpa Lipatan (default), 1 Lipatan, 2 Lipatan</div>
+															</div>
+															<div class="product-spec-row">
+																<div class="fw-medium">Content Article</div>
+																<div>Ini text brosur amet consectetur adipisicing elit. Quod, harum repudiandae nihil sint obcaecati consequuntur veniam dignissimos saepe nobis ipsa velit eum.</div>
+															</div>
+															<div class="product-spec-row d-flex justify-content-between align-items-center">
+															<div class="fw-medium">Display</div>
+															
+															<div class="d-flex align-items-center gap-4">
+																	<div class="form-check m-0 d-flex align-items-center">
+																		<input class="form-check-input mt-0" type="checkbox" id="productDisplayPos">
+																		<label class="form-check-label ms-2" for="productDisplayPos">POS</label>
+																	</div>
+																	<div class="form-check m-0 d-flex align-items-center">
+																		<input class="form-check-input mt-0" type="checkbox" id="productDisplayWebsite" checked>
+																		<label class="form-check-label ms-2" for="productDisplayWebsite">Website</label>
+																	</div>
+																</div>
+															</div>
+															
+															<div class="product-card-actions d-flex justify-content-between pt-2">
+																<button type="button" class="btn btn-link js-product-edit">Edit</button>
+																<button type="button" class="btn btn-link js-product-delete">Hapus</button>
+															</div>
+														</div>
+													</div>
+													<div class="product-display-card border rounded-2 bg-white">
+														<div class="product-image-frame d-flex align-items-center justify-content-center bg-white">
+															<button type="button" class="product-slide-btn prev">&lt;</button>
+															<img class="product-image-img" src="https://percetakan-dulank.netlify.app/images/brosur.jpg" alt="Brosur">
+															<button type="button" class="product-slide-btn next">&gt;</button>
+														</div>
+														<div class="p-4">
+															<div class="product-spec-row">
+																<div class="fw-medium">Product Name</div>
+																<div>Produk Label</div>
+															</div>
+															<div class="product-spec-row">
+																<div class="fw-medium">Ukuran Brosur</div>
+																<div>A4 (297x210mm) (Default), A5 (210x149mm)</div>
+															</div>
+															<div class="product-spec-row">
+																<div class="fw-medium">Jenis Kertas</div>
+																<div>Art Paper (default), Art Carton, HVS, Carton BC</div>
+															</div>
+															<div class="product-spec-row">
+																<div class="fw-medium">Laminasi</div>
+																<div>Tanpa Laminasi (Default), Glossy, Doff, UV Vernish, Spot UV</div>
+															</div>
+															<div class="product-spec-row">
+																<div class="fw-medium">Sisi Cetak</div>
+																<div>Cetak 1 Sisi (default), Cetak Bolak Balik</div>
+															</div>
+															<div class="product-spec-row">
+																<div class="fw-medium">Lipatan</div>
+																<div>Tanpa Lipatan (default), 1 Lipatan, 2 Lipatan</div>
+															</div>
+															<div class="product-spec-row">
+																<div class="fw-medium">Content Article</div>
+																<div>Ini text brosur amet consectetur adipisicing elit. Quod, harum repudiandae nihil sint obcaecati consequuntur veniam dignissimos saepe nobis ipsa velit eum.</div>
+															</div><div class="d-flex align-items-center gap-4">
+															<div class="fw-medium">Display</div>
+
+																	<div class="form-check m-0 d-flex align-items-center">
+																		<input class="form-check-input mt-0" type="checkbox" id="productDisplayPos">
+																		<label class="form-check-label ms-2" for="productDisplayPos">POS</label>
+																	</div>
+																	<div class="form-check m-0 d-flex align-items-center">
+																		<input class="form-check-input mt-0" type="checkbox" id="productDisplayWebsite" checked>
+																		<label class="form-check-label ms-2" for="productDisplayWebsite">Website</label>
+																	</div>
+																</div>
+															<div class="product-card-actions d-flex justify-content-between pt-2">
+																<button type="button" class="btn btn-link js-product-edit">Edit</button>
+																<button type="button" class="btn btn-link js-product-delete">Delete</button>
+															</div>
+														</div>
+													</div>
+													<div class="product-display-card border rounded-2 bg-white">
+														<div class="product-image-frame d-flex align-items-center justify-content-center bg-white">
+															<button type="button" class="product-slide-btn prev">&lt;</button>
+															<img class="product-image-img" src="https://percetakan-dulank.netlify.app/images/brosur.jpg" alt="Brosur">
+															<button type="button" class="product-slide-btn next">&gt;</button>
+														</div>
+														<div class="p-4">
+															<div class="product-spec-row">
+																<div class="fw-medium">Product Name</div>
+																<div>Tiket Karcis</div>
+															</div>
+															<div class="product-spec-row">
+																<div class="fw-medium">Ukuran Brosur</div>
+																<div>A4 (297x210mm) (Default), A5 (210x149mm)</div>
+															</div>
+															<div class="product-spec-row">
+																<div class="fw-medium">Jenis Kertas</div>
+																<div>Art Paper (default), Art Carton, HVS, Carton BC</div>
+															</div>
+															<div class="product-spec-row">
+																<div class="fw-medium">Sisi Cetak</div>
+																<div>Cetak 1 Sisi (default)</div>
+															</div>
+															<div class="product-spec-row">
+																<div class="fw-medium">Content Article</div>
+																<div>Ini text brosur amet consectetur adipisicing elit. Quod, harum repudiandae nihil sint obcaecati consequuntur veniam dignissimos saepe nobis ipsa velit eum.</div>
+															</div><div class="d-flex align-items-center gap-4">
+															<div class="fw-medium">Display</div>
+																
+																	<div class="form-check m-0 d-flex align-items-center">
+																		<input class="form-check-input mt-0" type="checkbox" id="productDisplayPos">
+																		<label class="form-check-label ms-2" for="productDisplayPos">POS</label>
+																	</div>
+																	<div class="form-check m-0 d-flex align-items-center">
+																		<input class="form-check-input mt-0" type="checkbox" id="productDisplayWebsite" checked>
+																		<label class="form-check-label ms-2" for="productDisplayWebsite">Website</label>
+																	</div>
+																</div>
+															
+															<div class="product-card-actions d-flex justify-content-between pt-2">
+																<button type="button" class="btn btn-link js-product-edit">Edit</button>
+																<button type="button" class="btn btn-link js-product-delete">Delete</button>
+															</div>
+														</div>
+													</div>
+													<div class="product-display-card border rounded-2 bg-white">
+														<div class="product-image-frame d-flex align-items-center justify-content-center bg-white">
+															<button type="button" class="product-slide-btn prev">&lt;</button>
+															<img class="product-image-img" src="https://percetakan-dulank.netlify.app/images/brosur.jpg" alt="Brosur">
+															<button type="button" class="product-slide-btn next">&gt;</button>
+														</div>
+														<div class="p-4">
+															<div class="product-spec-row">
+																<div class="fw-medium">Product Name</div>
+																<div>Flyer</div>
+															</div>
+															<div class="product-spec-row">
+																<div class="fw-medium">Ukuran Brosur</div>
+																<div>A4 (297x210mm) (Default), A5 (210x149mm)</div>
+															</div>
+															<div class="product-spec-row">
+																<div class="fw-medium">Jenis Kertas</div>
+																<div>Art Paper (default), Art Carton, HVS, Carton BC</div>
+															</div>
+															<div class="product-spec-row">
+																<div class="fw-medium">Sisi Cetak</div>
+																<div>Cetak 1 Sisi (default), Cetak Bolak Balik</div>
+															</div>
+															<div class="product-spec-row">
+																<div class="fw-medium">Content Article</div>
+																<div>Ini text brosur amet consectetur adipisicing elit. Quod, harum repudiandae nihil sint obcaecati consequuntur veniam dignissimos saepe nobis ipsa velit eum.</div>
+															</div>
+                                                                <div class="d-flex align-items-center gap-4">
+															<div class="fw-medium">Display</div>
+
+																	<div class="form-check m-0 d-flex align-items-center">
+																		<input class="form-check-input mt-0" type="checkbox" id="productDisplayPos">
+																		<label class="form-check-label ms-2" for="productDisplayPos">POS</label>
+																	</div>
+																	<div class="form-check m-0 d-flex align-items-center">
+																		<input class="form-check-input mt-0" type="checkbox" id="productDisplayWebsite" checked>
+																		<label class="form-check-label ms-2" for="productDisplayWebsite">Website</label>
+																	</div>
+																</div>
+															<div class="product-card-actions d-flex justify-content-between pt-2">
+																<button type="button" class="btn btn-link js-product-edit">Edit</button>
+																<button type="button" class="btn btn-link js-product-delete">Delete</button>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div>
+													
+													<table class="table d-none">
+    <thead>
+        <tr>
+            <th>No.</th>
+            <th>Product</th>
+            <th>Content</th>
+            <th>Material</th>
+            <th>Size</th>
+            <th>Laminate</th>
+            <th>Printing Side</th>
+            <th>Fold</th>
+            <th>Default Qty</th>
+            <th>Status</th>
+            <th>Aksi</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td>Brosur A4 Standar</td>
+            <td>Brosur promosi ukuran A4 yang ideal untuk flyer acara atau pengumuman.</td>
+            <td>Art Paper 150 gsm</td>
+            <td>A4 (21x29.7cm)</td>
+            <td>Laminasi Doff</td>
+            <td>Cetak 2 Sisi</td>
+            <td>2 Lipatan</td>
+            <td>25</td>
+            <td><span class="badge bg-soft-success">Publish</span></td>
+            <td>
+                <div class="hstack gap-2 fs-15">
+                    <a href="javascript:void(0);" class="btn btn-icon btn-sm btn-light btn-delete"><i class="feather-trash"></i></a>
+                    <a href="javascript:void(0);" class="btn btn-icon btn-sm btn-light btn-edit"><i class="feather-edit"></i></a>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Kartu Nama Premium</td>
+            <td>Kartu nama eksklusif dengan sentuhan mewah, cocok untuk professional</td>
+            <td>Art Carton 310 gsm</td>
+            <td>Custom (9x5.5cm)</td>
+            <td>Spot UV</td>
+            <td>Cetak 1 Sisi</td>
+            <td>Tanpa Lipatan</td>
+            <td>30</td>
+            <td><span class="badge bg-soft-success">Publish</span></td>
+            <td>
+                <div class="hstack gap-2 fs-15">
+                    <a href="javascript:void(0);" class="btn btn-icon btn-sm btn-light btn-delete"><i class="feather-trash"></i></a>
+                    <a href="javascript:void(0);" class="btn btn-icon btn-sm btn-light btn-edit"><i class="feather-edit"></i></a>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Pamflet A5 Ekonomi</td>
+            <td>Pamflet hemat biaya ukuran A5, umum digunakan untuk distribusi cepat</td>
+            <td>HVS 100 gsm</td>
+            <td>A5 (15x21.2cm)</td>
+            <td>Tanpa Laminasi</td>
+            <td>Cetak 1 Sisi</td>
+            <td>Tanpa Lipatan</td>
+            <td>40</td>
+            <td><span class="badge bg-soft-success">Archived</span></td>
+            <td>
+                <div class="hstack gap-2 fs-15">
+                    <a href="javascript:void(0);" class="btn btn-icon btn-sm btn-light btn-delete"><i class="feather-trash"></i></a>
+                    <a href="javascript:void(0);" class="btn btn-icon btn-sm btn-light btn-edit"><i class="feather-edit"></i></a>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>Poster A3 Glossy</td>
+            <td>Poster berukuran A3 dengan hasil cetak yang mengilap, menarik perhatian</td>
+            <td>Art Paper 120 gsm</td>
+            <td>A3 (30x42cm)</td>
+            <td>Laminasi Glossy</td>
+            <td>Cetak 1 Sisi</td>
+            <td>Tanpa Lipatan</td>
+            <td>15</td>
+            <td><span class="badge bg-soft-success">Publish</span></td>
+            <td>
+                <div class="hstack gap-2 fs-15">
+                    <a href="javascript:void(0);" class="btn btn-icon btn-sm btn-light btn-delete"><i class="feather-trash"></i></a>
+                    <a href="javascript:void(0);" class="btn btn-icon btn-sm btn-light btn-edit"><i class="feather-edit"></i></a>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>Katalog Produk Segar</td>
+            <td>Katalog produk berbentuk segar, informatif dan profesional</td>
+            <td>Art Carton 260 gsm</td>
+            <td>Custom (21x21cm)</td>
+            <td>Laminasi Doff</td>
+            <td>Cetak 2 Sisi</td>
+            <td>2 Lipatan</td>
+            <td>12</td>
+            <td><span class="badge bg-soft-success">Publish</span></td>
+            <td>
+                <div class="hstack gap-2 fs-15">
+                    <a href="javascript:void(0);" class="btn btn-icon btn-sm btn-light btn-delete"><i class="feather-trash"></i></a>
+                    <a href="javascript:void(0);" class="btn btn-icon btn-sm btn-light btn-edit"><i class="feather-edit"></i></a>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>Hang Tag Pakaian</td>
+            <td>Label gantung untuk produk pakaian dengan desain full Color</td>
+            <td>Art Carton 310 gsm</td>
+            <td>Custom (6x10cm)</td>
+            <td>Tanpa Laminasi</td>
+            <td>Cetak 1 Sisi</td>
+            <td>Tanpa Lipatan</td>
+            <td>28</td>
+            <td><span class="badge bg-soft-success">Archived</span></td>
+            <td>
+                <div class="hstack gap-2 fs-15">
+                    <a href="javascript:void(0);" class="btn btn-icon btn-sm btn-light btn-delete"><i class="feather-trash"></i></a>
+                    <a href="javascript:void(0);" class="btn btn-icon btn-sm btn-light btn-edit"><i class="feather-edit"></i></a>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>Kartu Ucapan Lipat</td>
+            <td>Kartu ucapan selamat atau terima kasih yang bisa dilipat dua</td>
+            <td>BC TIK 220 gsm</td>
+            <td>A5 (15x21cm)</td>
+            <td>Laminasi Glossy</td>
+            <td>Cetak 2 Sisi</td>
+            <td>2 Lipatan</td>
+            <td>21</td>
+            <td><span class="badge bg-soft-success">Publish</span></td>
+            <td>
+                <div class="hstack gap-2 fs-15">
+                    <a href="javascript:void(0);" class="btn btn-icon btn-sm btn-light btn-delete"><i class="feather-trash"></i></a>
+                    <a href="javascript:void(0);" class="btn btn-icon btn-sm btn-light btn-edit"><i class="feather-edit"></i></a>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>8</td>
+            <td>Map Dokumen Doff</td>
+            <td>Map folder untuk menyimpan dokumen penting, memberikan kesan formal</td>
+            <td>Art Carton 310 gsm</td>
+            <td>A4 (21x30cm)</td>
+            <td>Laminasi Glossy</td>
+            <td>Cetak 2 Sisi</td>
+            <td>2 Lipatan</td>
+            <td>21</td>
+            <td><span class="badge bg-soft-success">Publish</span></td>
+            <td>
+                <div class="hstack gap-2 fs-15">
+                    <a href="javascript:void(0);" class="btn btn-icon btn-sm btn-light btn-delete"><i class="feather-trash"></i></a>
+                    <a href="javascript:void(0);" class="btn btn-icon btn-sm btn-light btn-edit"><i class="feather-edit"></i></a>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>9</td>
+            <td>Stiker Kertas A5</td>
+            <td>Stiker full color ukuran A5, cocok untuk label stiker atau promosi</td>
+            <td>Kertas Stiker RVS</td>
+            <td>A5 (15x21cm)</td>
+            <td>Tanpa Laminasi</td>
+            <td>Cetak 1 Sisi</td>
+            <td>Tanpa Lipatan</td>
+            <td>14</td>
+            <td><span class="badge bg-soft-success">Archived</span></td>
+            <td>
+                <div class="hstack gap-2 fs-15">
+                    <a href="javascript:void(0);" class="btn btn-icon btn-sm btn-light btn-delete"><i class="feather-trash"></i></a>
+                    <a href="javascript:void(0);" class="btn btn-icon btn-sm btn-light btn-edit"><i class="feather-edit"></i></a>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>10</td>
+            <td>Brosur DL Elegan</td>
+            <td>Brosur ukuran DL (sepeting A4) dengan lipatan, ideal untuk pricelist</td>
+            <td>Art Paper 150 gsm</td>
+            <td>Custom (10x21cm)</td>
+            <td>Laminasi Glossy</td>
+            <td>Cetak 2 Sisi</td>
+            <td>2 Lipatan</td>
+            <td>27</td>
+            <td><span class="badge bg-soft-success">Publish</span></td>
+            <td>
+                <div class="hstack gap-2 fs-15">
+                    <a href="javascript:void(0);" class="btn btn-icon btn-sm btn-light btn-delete"><i class="feather-trash"></i></a>
+                    <a href="javascript:void(0);" class="btn btn-icon btn-sm btn-light btn-edit"><i class="feather-edit"></i></a>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>11</td>
+            <td>Kupon Diskon Kertas</td>
+            <td>Kupon voucher dengan bahan tebal, tahan lama dan eksklusif</td>
+            <td>Art Carton 260 gsm</td>
+            <td>Custom (10x20cm)</td>
+            <td>Cetak 2 Sisi</td>
+            <td>Cetak 2 Sisi</td>
+            <td>Tanpa Lipatan</td>
+            <td>14</td>
+            <td><span class="badge bg-soft-success">Publish</span></td>
+            <td>
+                <div class="hstack gap-2 fs-15">
+                    <a href="javascript:void(0);" class="btn btn-icon btn-sm btn-light btn-delete"><i class="feather-trash"></i></a>
+                    <a href="javascript:void(0);" class="btn btn-icon btn-sm btn-light btn-edit"><i class="feather-edit"></i></a>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>12</td>
+            <td>Leaflet Informasi A5</td>
+            <td>Leaflet satu sisi ukuran A5, sering digunakan untuk handout singkat</td>
+            <td>HVS 80 gsm</td>
+            <td>A5 (15x21cm)</td>
+            <td>Tanpa Laminasi</td>
+            <td>Cetak 1 Sisi</td>
+            <td>Tanpa Lipatan</td>
+            <td>10</td>
+            <td><span class="badge bg-soft-success">Archived</span></td>
+            <td>
+                <div class="hstack gap-2 fs-15">
+                    <a href="javascript:void(0);" class="btn btn-icon btn-sm btn-light btn-delete"><i class="feather-trash"></i></a>
+                    <a href="javascript:void(0);" class="btn btn-icon btn-sm btn-light btn-edit"><i class="feather-edit"></i></a>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>13</td>
+            <td>Jadwal Acara A4</td>
+            <td>Jadwal atau rundown acara full color ukuran A4</td>
+            <td>Art Paper 120 gsm</td>
+            <td>A4 (21x29.7cm)</td>
+            <td>Laminasi Doff</td>
+            <td>Cetak 1 Sisi</td>
+            <td>Tanpa Lipatan</td>
+            <td>16</td>
+            <td><span class="badge bg-soft-success">Publish</span></td>
+            <td>
+                <div class="hstack gap-2 fs-15">
+                    <a href="javascript:void(0);" class="btn btn-icon btn-sm btn-light btn-delete"><i class="feather-trash"></i></a>
+                    <a href="javascript:void(0);" class="btn btn-icon btn-sm btn-light btn-edit"><i class="feather-edit"></i></a>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>14</td>
+            <td>Cover Buku Tebal</td>
+            <td>Sampul buku atau majalah dengan bahan tebal dan cetak berkawan</td>
+            <td>Art Carton 310 gsm</td>
+            <td>A3 (30x42cm)</td>
+            <td>Laminasi Glossy</td>
+            <td>Cetak 1 Sisi</td>
+            <td>Tanpa Lipatan</td>
+            <td>19</td>
+            <td><span class="badge bg-soft-success">Publish</span></td>
+            <td>
+                <div class="hstack gap-2 fs-15">
+                    <a href="javascript:void(0);" class="btn btn-icon btn-sm btn-light btn-delete"><i class="feather-trash"></i></a>
+                    <a href="javascript:void(0);" class="btn btn-icon btn-sm btn-light btn-edit"><i class="feather-edit"></i></a>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>15</td>
+            <td>Flyer Lipat Dua A4</td>
+            <td>Flyer ukuran A4 yang dapat terlipat, memaksimalkan ruang promosi</td>
+            <td>Art Paper 100 gsm</td>
+            <td>A4 (21x30cm)</td>
+            <td>Tanpa Laminasi</td>
+            <td>Cetak 2 Sisi</td>
+            <td>2 Lipatan</td>
+            <td>21</td>
+            <td><span class="badge bg-soft-success">Archived</span></td>
+            <td>
+                <div class="hstack gap-2 fs-15">
+                    <a href="javascript:void(0);" class="btn btn-icon btn-sm btn-light btn-delete"><i class="feather-trash"></i></a>
+                    <a href="javascript:void(0);" class="btn btn-icon btn-sm btn-light btn-edit"><i class="feather-edit"></i></a>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>16</td>
+            <td>Label Produk Kecil</td>
+            <td>Label kecil untuk informasi produk pada kemasan</td>
+            <td>Kertas Stiker Art Paper</td>
+            <td>Custom (5x8cm)</td>
+            <td>Laminasi Glossy</td>
+            <td>Cetak 1 Sisi</td>
+            <td>Tanpa Lipatan</td>
+            <td>25</td>
+            <td><span class="badge bg-soft-success">Publish</span></td>
+            <td>
+                <div class="hstack gap-2 fs-15">
+                    <a href="javascript:void(0);" class="btn btn-icon btn-sm btn-light btn-delete"><i class="feather-trash"></i></a>
+                    <a href="javascript:void(0);" class="btn btn-icon btn-sm btn-light btn-edit"><i class="feather-edit"></i></a>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>17</td>
+            <td>Sertifikat Penghargaan</td>
+            <td>Sertifikat full color untuk acara atau pemberian, berkesan formal</td>
+            <td>Paper Tiger 250 gsm</td>
+            <td>A4 (21x30cm)</td>
+            <td>Laminasi Laminasi</td>
+            <td>Cetak 1 Sisi</td>
+            <td>Tanpa Lipatan</td>
+            <td>17</td>
+            <td><span class="badge bg-soft-success">Publish</span></td>
+            <td>
+                <div class="hstack gap-2 fs-15">
+                    <a href="javascript:void(0);" class="btn btn-icon btn-sm btn-light btn-delete"><i class="feather-trash"></i></a>
+                    <a href="javascript:void(0);" class="btn btn-icon btn-sm btn-light btn-edit"><i class="feather-edit"></i></a>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>20</td>
+            <td>Katalog Mini Lipat</td>
+            <td>Katalog kecil yang didesain untuk bisa berdiri di meja (model 3 lipatan)</td>
+            <td>Art Carton 260 gsm</td>
+            <td>A5 (15x21cm)</td>
+            <td>Laminasi Doff</td>
+            <td>Cetak 2 Sisi</td>
+            <td>3 Lipatan</td>
+            <td>26</td>
+            <td><span class="badge bg-soft-success">Publish</span></td>
+            <td>
+                <div class="hstack gap-2 fs-15">
+                    <a href="javascript:void(0);" class="btn btn-icon btn-sm btn-light btn-delete"><i class="feather-trash"></i></a>
+                    <a href="javascript:void(0);" class="btn btn-icon btn-sm btn-light btn-edit"><i class="feather-edit"></i></a>
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>
+												</div>
+											</div>
+											<div class="tab-pane fade" id="sizeTabContent" role="tabpanel" aria-labelledby="product-size">
+    <div class="justify-content-between d-flex align-items-center mb-2">
+        <div>
+            <h4>Product Size Option</h4>
+        </div>
+    </div>
+    
+    <div>
+        <div class="table-responsive">
+            <table class="table table-sm">
+                <thead>
+                    <tr>
+                        <th>Size Name</th>
+                        <th>size</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="sizeTableBody">
+                    <tr>
+                        <td>A5</td>
+                        <td>21x15cm</td>
+                        <td>
+                            <select class="form-select form-select-sm">
+                                <option>Show</option>
+                                <option>Hide</option>
+                            </select>
+                        </td>
+                        <td>
+                            <a href="#" class="text-danger" onclick="this.closest('tr').remove(); return false;">Remove</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>A4</td>
+                        <td>21x30cm</td>
+                        <td>
+                            <select class="form-select form-select-sm">
+                                <option>Show</option>
+                                <option>Hide</option>
+                            </select>
+                        </td>
+                        <td>
+                            <a href="#" class="text-danger" onclick="this.closest('tr').remove(); return false;">Remove</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>A3</td>
+                        <td>30x42cm</td>
+                        <td>
+                            <select class="form-select form-select-sm">
+                                <option>Hide</option>
+                                <option>Show</option>
+                            </select>
+                        </td>
+                        <td>
+                            <a href="#" class="text-danger" onclick="this.closest('tr').remove(); return false;">Remove</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Folio</td>
+                        <td>21x33cm</td>
+                        <td>
+                            <select class="form-select form-select-sm">
+                                <option>Show</option>
+                                <option>Hide</option>
+                            </select>
+                        </td>
+                        <td>
+                            <a href="#" class="text-danger" onclick="this.closest('tr').remove(); return false;">Remove</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <button type="button" class="btn btn-warning btn-sm mb-4" id="addSizeBtn">Add Size</button>
+
+        <div>
+            <h6 class="mb-3">Custom size for Product</h6>
+            <div class="d-flex align-items-center gap-3">
+                <label>Enable Product for Custom Size ?</label>
+                <div class="btn-group" role="group">
+                    <input type="radio" class="btn-check" name="customSize" id="customYes" checked>
+                    <label class="btn btn-outline-primary" for="customYes">Yes</label>
+
+                    <input type="radio" class="btn-check" name="customSize" id="customNo">
+                    <label class="btn btn-outline-primary" for="customNo">No</label>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+											<div class="tab-pane fade" id="paperTypeTabContent" role="tabpanel" aria-labelledby="paper-type">
+    
+    <div class="card mb-4">
+        <div class="card-body">
+            <div class="justify-content-between d-flex align-items-center mb-2">
+                <div>
+                    <h4>Paper Type Option</h4>
+                </div>
+            </div>
+            
+            <div>
+                <div class="table-responsive mb-4">
+                    <table class="table table-sm" id="paperTypeTable">
+                        <thead>
+                            <tr>
+                                <th>Paper Group</th>
+                                <th>Gramature</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Art Paper</td>
+                                <td class="mt-2 d-flex">
+                                    <div class="me-3">
+                                        <input class="form-check-input cb-item" type="checkbox" value="" id="flexCheckDefault">
+                                        <label class="form-check-label" for="flexCheckDefault">100 gr</label>
+                                    </div>
+                                    <div class="me-3">
+                                        <input class="form-check-input cb-item" type="checkbox" value="" id="flexCheckDefault">
+                                        <label class="form-check-label" for="flexCheckDefault">120 gr</label>
+                                    </div>
+                                    <div class="me-3">
+                                        <input class="form-check-input cb-item" type="checkbox" value="" id="flexCheckDefault">
+                                        <label class="form-check-label" for="flexCheckDefault">150 gr</label>
+                                    </div>
+                                    <div class="me-3">
+                                        <input class="form-check-input cb-select-all" type="checkbox" value="" id="flexCheckDefault">
+                                        <label class="form-check-label" for="flexCheckDefault">Select All</label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Art Carton</td>
+                                <td class="mt-2 d-flex">
+                                    <div class="me-3">
+                                        <input class="form-check-input cb-item" type="checkbox" value="" id="flexCheckDefault">
+                                        <label class="form-check-label" for="flexCheckDefault">210 gr</label>
+                                    </div>
+                                    <div class="me-3">
+                                        <input class="form-check-input cb-item" type="checkbox" value="" id="flexCheckDefault">
+                                        <label class="form-check-label" for="flexCheckDefault">230 gr</label>
+                                    </div>
+                                    <div class="me-3">
+                                        <input class="form-check-input cb-item" type="checkbox" value="" id="flexCheckDefault">
+                                        <label class="form-check-label" for="flexCheckDefault">260 gr</label>
+                                    </div>
+                                    <div class="me-3">
+                                        <input class="form-check-input cb-item" type="checkbox" value="" id="flexCheckDefault">
+                                        <label class="form-check-label" for="flexCheckDefault">290 gr</label>
+                                    </div>
+                                    <div class="me-3">
+                                        <input class="form-check-input cb-select-all" type="checkbox" value="" id="flexCheckDefault">
+                                        <label class="form-check-label" for="flexCheckDefault">Select All</label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>HVS</td>
+                                <td class="mt-2 d-flex">
+                                    <div class="me-3">
+                                        <input class="form-check-input cb-item" type="checkbox" value="" id="flexCheckDefault">
+                                        <label class="form-check-label" for="flexCheckDefault">60 gr</label>
+                                    </div>
+                                    <div class="me-3">
+                                        <input class="form-check-input cb-item" type="checkbox" value="" id="flexCheckDefault">
+                                        <label class="form-check-label" for="flexCheckDefault">70 gr</label>
+                                    </div>
+                                    <div class="me-3">
+                                        <input class="form-check-input cb-item" type="checkbox" value="" id="flexCheckDefault">
+                                        <label class="form-check-label" for="flexCheckDefault">80 gr</label>
+                                    </div>
+                                    <div class="me-3">
+                                        <input class="form-check-input cb-item" type="checkbox" value="" id="flexCheckDefault">
+                                        <label class="form-check-label" for="flexCheckDefault">100 gr</label>
+                                    </div>
+                                    <div class="me-3">
+                                        <input class="form-check-input cb-select-all" type="checkbox" value="" id="flexCheckDefault">
+                                        <label class="form-check-label" for="flexCheckDefault">Select All</label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Carton BC</td>
+                                <td class="mt-2 d-flex">
+                                    <div class="me-3">
+                                        <input class="form-check-input cb-item" type="checkbox" value="" id="flexCheckDefault">
+                                        <label class="form-check-label" for="flexCheckDefault">180 gr</label>
+                                    </div>
+                                    <div class="me-3">
+                                        <input class="form-check-input cb-select-all" type="checkbox" value="" id="flexCheckDefault">
+                                        <label class="form-check-label" for="flexCheckDefault">Select All</label>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <button type="button" class="btn btn-warning btn-sm js-inline-add-trigger" data-add-kind="paper">Add Paper Name</button>
+            </div>
+            <div class="row d-flex justify-content-end mt-2">
+                <div class="col-12 justify-content-end d-flex gap-2">
+                    <button class="btn btn-secondary btn-sm">Cancel</button>
+                    <button class="btn btn-primary btn-sm">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card mt-4">
+        <div class="card-body">
+            <div class="justify-content-between d-flex align-items-center mb-2">
+                <div>
+                    <h4>Work Flow Setting</h4>
+                </div>
+            </div>
+            
+            <div>
+                <div class="table-responsive mb-4">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Flow Category</th>
+                                <th>Flow Name</th>
+                                <th>Assigne</th>
+                                <th>Incentive</th>
+                                <th>Effective Paper Group</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Pracetak</td>
+                                <td>Pesan Kertas ke Toko</td>
+                                <td>Nurdin</td>
+                                <td>5.000 per Job</td>
+                                <td>
+                                    <select class="select2" multiple="multiple">
+                                        <option value="m-1" selected>Art Paper</option>
+                                        <option value="m-2">Art Carton</option>
+                                        <option value="m-3">HVS</option>
+                                        <option value="m-4">Carton BC</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <a href="#" class="text-danger">Remove</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <button type="button" class="btn btn-warning btn-sm js-inline-add-trigger" data-add-kind="process">Add Flow Name</button>
+            </div>
+            <div class="row d-flex justify-content-end mt-2">
+                <div class="col-12 justify-content-end d-flex gap-2">
+                    <button class="btn btn-secondary btn-sm">Cancel</button>
+                    <button class="btn btn-primary btn-sm">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+										<div class="tab-pane fade" id="offsetMachineTabContent" role="tabpanel" aria-labelledby="offset-machine">
+    
+    <div class="card mb-4">
+        <div class="card-body">
+            <div class="justify-content-between d-flex align-items-center mb-3">
+                <div>
+                    <h4>Machine Type Option</h4>
+                </div>
+            </div>
+            <div>
+                <div class="table-responsive mb-4">
+                    <table class="table table-sm">
+                        <thead>
+                            <tr>
+                                <th>Printing Type</th>
+                                <th>Printing Name</th>
+                                <th>Unit Color</th>
+                                <th>Paper Area</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>OffSet</td>
+                                <td>heidlberg sm52</td>
+                                <td>4 Color</td>
+                                <td>104x72 cm</td>
+                                <td>
+                                    <select class="form-select form-select-sm">
+                                        <option>Show</option>
+                                        <option>Hide</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <a href="#" class="text-danger">Remove</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>OffSet</td>
+                                <td>heidlberg sm74</td>
+                                <td>4 Color</td>
+                                <td>75 x 52 cm</td>
+                                <td>
+                                    <select class="form-select form-select-sm">
+                                        <option>Show</option>
+                                        <option>Hide</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <a href="#" class="text-danger">Remove</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>OffSet</td>
+                                <td>heidlberg sm104</td>
+                                <td>4 Color</td>
+                                <td>52 x 36 cm</td>
+                                <td>
+                                    <select class="form-select form-select-sm">
+                                        <option>Show</option>
+                                        <option>Hide</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <a href="#" class="text-danger">Remove</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>A3</td>
+                                <td>Xerox C 60</td>
+                                <td>Digital</td>
+                                <td>32 x 48 cm</td>
+                                <td>
+                                    <select class="form-select form-select-sm">
+                                        <option>Show</option>
+                                        <option>Hide</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <a href="#" class="text-danger">Remove</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <button type="button" class="btn btn-warning btn-sm js-inline-add-trigger" data-add-kind="machine">Add Offset Machine</button>
+            </div>
+            <div class="row d-flex justify-content-end mt-2">
+                <div class="col-12 justify-content-end d-flex gap-2">
+                    <button class="btn btn-secondary btn-sm">Cancel</button>
+                    <button class="btn btn-primary btn-sm">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-body">
+            <div class="justify-content-between d-flex align-items-center mb-3">
+                <div>
+                    <h4>Work Flow Setting</h4>
+                </div>
+            </div>
+            <div>
+                <div class="table-responsive mb-4">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Flow Category</th>
+                                <th>Flow Name</th>
+                                <th>Assignee</th>
+                                <th>Incentive</th>
+                                <th>Effective Printing Type</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Pracetak</td>
+                                <td>Plat CTP</td>
+                                <td>Nurdin</td>
+                                <td>5.000 per Job</td>
+                                <td>
+                                    <select class="select2" multiple="multiple">
+                                        <option value="m-1" selected>Ofsett</option>
+                                        <option value="m-2">Digital A3</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <a href="#" class="text-danger">Remove</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Cetak</td>
+                                <td>Print A3</td>
+                                <td>Nurdin,Raffi</td>
+                                <td>5.000 per Job</td>
+                                <td>
+                                    <select class="select2" multiple="multiple">
+                                        <option value="m-1">Ofsett</option>
+                                        <option value="m-2" selected>Digital A3</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <a href="#" class="text-danger">Remove</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Cetak</td>
+                                <td>Spk Cetak Offset</td>
+                                <td>Arif,Galih</td>
+                                <td>5.000 per Job</td>
+                                <td>
+                                    <select class="select2" multiple="multiple">
+                                        <option value="m-1" selected>Ofsett</option>
+                                        <option value="m-2">Digital A3</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <a href="#" class="text-danger">Remove</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <button type="button" class="btn btn-warning btn-sm js-inline-add-trigger" data-add-kind="process">Add Flow Name</button>
+            </div>
+            <div class="row d-flex justify-content-end mt-2">
+                <div class="col-12 justify-content-end d-flex gap-2">
+                    <button class="btn btn-secondary btn-sm">Cancel</button>
+                    <button class="btn btn-primary btn-sm">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+											<div class="modal fade" id="modalTambahGambar" tabindex="-1"
+												aria-hidden="true">
+												<div class="modal-dialog">
+													<div class="modal-content">
+														<div class="modal-header">
+															<h5 class="modal-title">Tambah Gambar Brosur</h5>
+															<button type="button" class="btn-close"
+																data-bs-dismiss="modal"></button>
+														</div>
+														<div class="modal-body">
+															<label class="form-label">Pilih File Gambar</label>
+															<input type="file" class="form-control" id="inputFileGambar"
+																accept="image/*">
+														</div>
+														<div class="modal-footer">
+															<button type="button" class="btn btn-secondary"
+																data-bs-dismiss="modal">Batal</button>
+															<button type="button" class="btn btn-warning btn-sm"
+																onclick="tambahGambar()">Tambah</button>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="tab-pane fade" id="laminateTabContent" role="tabpanel"
+												aria-labelledby="laminate">
+												<div>
+													<div class="justify-content-between d-flex align-items-center mb-2">
+														<div>
+															<h4>Laminate Option</h4>
+															
+														</div>
+														<a class="btn btn-outline-warning btn-sm"
+															href="mesin-laminasi-self.html">
+															Add New Laminate Type
+														</a>
+													</div>
+													<div>
+														<div class="table-responsive mb-4">
+															<table class="table table-sm">
+																<thead>
+																	<tr>
+																		<th>Name</th>
+																		<th>Status</th>
+																		<th>Action</th>
+																	</tr>
+																</thead>
+																<tbody>
+																	<tr>
+																		<td>Laminasi Doff</td>
+																		<td>
+																			<select class="form-select form-select-sm">
+																				<option>Show</option>
+																				<option>Hide</option>
+																			</select>
+																		</td>
+																		<td>
+																			<a href="#" class="text-danger">Remove</a>
+																		</td>
+																	</tr>
+																	<tr>
+																		<td>Laminasi Glossy</td>
+																		<td>
+																			<select class="form-select form-select-sm">
+																				<option>Show</option>
+																				<option>Hide</option>
+																			</select>
+																		</td>
+																		<td>
+																			<a href="#" class="text-danger">Remove</a>
+																		</td>
+																	</tr>
+																	<tr>
+																		<td>Spot UV</td>
+																		<td>
+																			<select class="form-select form-select-sm">
+																				<option>Show</option>
+																				<option>Hide</option>
+																			</select>
+																		</td>
+																		<td>
+																			<a href="#" class="text-danger">Remove</a>
+																		</td>
+																	</tr>
+																</tbody>
+															</table>
+														</div>
+														<button type="button" class="btn btn-warning btn-sm js-inline-add-trigger" data-add-kind="laminate">Add Laminate
+															Type</button>
+													</div>
+														<div class="row d-flex justify-content-end mt-2">
+													<div class="col-12 justify-content-end d-flex gap-2">
+														
+													<button class="btn btn-secondary btn-sm" 
+														>Cancel</button>
+														
+													<button class="btn btn-primary btn-sm" 
+														>Save</button>
+													</div>
+												</div>
+												</div>
+
+												<!-- List of Process Section -->
+												<div class="mt-5">
+													<div class="justify-content-between d-flex align-items-center mb-2">
+														<div>
+															<h4>Work Flow Setting</h4>
+															
+														</div>
+														<a class="btn btn-outline-warning btn-sm"
+															href="job-proses.html">
+															Add New Process
+														</a>
+													</div>
+													<div>
+													<div>
+														<div class="table-responsive mb-4">
+															<table class="table">
+																<thead>
+																	<tr>
+																		<th>Flow  Category</th>
+																		<th>Flow Name </th>
+																		<th>Assigne</th>
+																		<th>Incentive</th>
+																		<th>Effective Papper name</th>
+																		<th>Action</th>
+																	</tr>
+																</thead>
+																<tbody>
+																	<tr>
+																		<td>Finishing</td>
+																		<td>Laminasi</td>
+																		<td>Galih</td>
+																		<td>5.000 per Job</td>
+																		<td>
+																			<select class="select2" multiple="multiple">
+																			<option value="m-1" selected>Art Paper</option>
+																			<option value="m-2">Art Carton</option>
+																			<option value="m-3">HVS</option>
+																			<option value="m-4">Carton BC</option>
+																		</select>
+																		</td>
+																		<td>
+																			<a href="#" class="text-danger">Remove</a>
+																		</td>
+																	</tr>
+																</tbody>
+															</table>
+														</div>
+														<button type="button" class="btn btn-warning btn-sm js-inline-add-trigger" data-add-kind="process">Add Process</button>
+													</div>
+												</div>
+												<div class="row d-flex justify-content-end mt-2">
+													<div class="col-12 justify-content-end d-flex gap-2">
+														
+													<button class="btn btn-secondary btn-sm" 
+														>Cancel</button>
+														
+													<button class="btn btn-primary btn-sm" 
+														>Save</button>
+													</div>
+												</div>
+
+												</div>
+											</div>
+											<div class="tab-pane fade" id="foldTabContent" role="tabpanel" aria-labelledby="laminate">
+    
+    <div class="card mb-4">
+        <div class="card-body">
+            <h4 class="mb-3">Fold Option</h4>
+            <div class="table-responsive mb-4">
+                <table class="table table-sm">
+                    <thead>
+                        <tr>
+                            <th>Fold Type</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Tanpa Lipatan</td>
+                            <td>
+                                <select class="form-select form-select-sm">
+                                    <option>Show</option>
+                                    <option>Hide</option>
+                                </select>
+                            </td>
+                            <td><a href="#" class="text-danger">Remove</a></td>
+                        </tr>
+                        <tr>
+                            <td>1 Lipatan</td>
+                            <td>
+                                <select class="form-select form-select-sm">
+                                    <option>Show</option>
+                                    <option>Hide</option>
+                                </select>
+                            </td>
+                            <td><a href="#" class="text-danger">Remove</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <button type="button" class="btn btn-warning btn-sm js-inline-add-trigger" data-add-kind="fold">Add Fold Type</button>
+            
+            <div class="row d-flex justify-content-end mt-4">
+                <div class="col-12 justify-content-end d-flex gap-2">
+                    <button class="btn btn-secondary btn-sm">Cancel</button>
+                    <button class="btn btn-primary btn-sm">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-body">
+            <h4 class="mb-3">Work Flow Setting</h4>
+            <div class="table-responsive mb-4">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Flow Category</th>
+                            <th>Flow Name</th>
+                            <th>Assignee</th>
+                            <th>Incentive</th>
+                            <th>Effective Fold Type</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Finising</td>
+                            <td>Cari Jasa Lipat</td>
+                            <td>Nurdin</td>
+                            <td>5.000 per Job</td>
+                            <td>
+                                <select class="select2" multiple="multiple">
+                                    <option value="m-1" selected>1 lipatan</option>
+                                    <option value="m-2">2 lipatan</option>
+                                </select>
+                            </td>
+                            <td><a href="#" class="text-danger">Remove</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <button type="button" class="btn btn-warning btn-sm js-inline-add-trigger" data-add-kind="process">Add Flow Name</button>
+            
+            <div class="row d-flex justify-content-end mt-4">
+                <div class="col-12 justify-content-end d-flex gap-2">
+                    <button class="btn btn-secondary btn-sm">Cancel</button>
+                    <button class="btn btn-primary btn-sm">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+											<div class="tab-pane fade" id="printSideTabContent" role="tabpanel"
+												aria-labelledby="print-side">
+												<div class="card border rounded-2 mb-4">
+													<div class="card-body p-4">
+														<div class="justify-content-between d-flex align-items-center mb-4">
+															<div>
+																<h4>Print Side Option</h4>
+															</div>
+														</div>
+														<div>
+															<div class="table-responsive mb-4">
+																<table class="table table-sm">
+																	<thead>
+																		<tr>
+																			<th>Print Side</th>
+																			<th>Status</th>
+																			<th>Action</th>
+																		</tr>
+																	</thead>
+																	<tbody>
+																		<tr>
+																			<td>Cetak 1 Sisi</td>
+																			<td>
+																				<select class="form-select form-select-sm">
+																					<option>Show</option>
+																					<option>Hide</option>
+																				</select>
+																			</td>
+																			<td>
+																				<a href="#" class="text-danger">Remove</a>
+																			</td>
+																		</tr>
+																		<tr>
+																			<td>Cetak Bolak Balik</td>
+																			<td>
+																				<select class="form-select form-select-sm">
+																					<option>Show</option>
+																					<option>Hide</option>
+																				</select>
+																			</td>
+																			<td>
+																				<a href="#" class="text-danger">Remove</a>
+																			</td>
+																		</tr>
+																	</tbody>
+																</table>
+															</div>
+															<button type="button" class="btn btn-warning btn-sm js-inline-add-trigger"
+																data-add-kind="printSide">Add Print Side</button>
+														</div>
+														<div class="row d-flex justify-content-end mt-2">
+															<div class="col-12 justify-content-end d-flex gap-2">
+																<button class="btn btn-secondary btn-sm">Cancel</button>
+																<button class="btn btn-primary btn-sm">Save</button>
+															</div>
+														</div>
+													</div>
+												</div>
+
+												<div class="card border rounded-2">
+													<div class="card-body p-4">
+														<div class="justify-content-between d-flex align-items-center mb-4">
+															<div>
+																<h4>Work Flow</h4>
+															</div>
+														</div>
+														<div>
+															<div class="table-responsive mb-4">
+																<table class="table">
+																	<thead>
+																		<tr>
+																			<th>Flow Category</th>
+																			<th>Flow Name</th>
+																			<th>Assignee</th>
+																			<th>Incentive</th>
+																			<th>Effective Print Side</th>
+																			<th>Action</th>
+																		</tr>
+																	</thead>
+																	<tbody>
+																		<tr>
+																			<td>Finishing</td>
+																			<td>Proses Lipat</td>
+																			<td>Nurdin</td>
+																			<td>5.000 Per Job</td>
+																			<td>
+																				<select class="select2" multiple="multiple">
+																					<option value="ps-1" selected>Cetak 1 Sisi</option>
+																					<option value="ps-2" selected>Cetak Bolak-Balik</option>
+																				</select>
+																			</td>
+																			<td>
+																				<a href="#" class="text-danger">Remove</a>
+																			</td>
+																		</tr>
+																	</tbody>
+																</table>
+															</div>
+															<button type="button" class="btn btn-warning btn-sm js-inline-add-trigger"
+																data-add-kind="printSideProcess">Add Flow</button>
+														</div>
+														<div class="row d-flex justify-content-end mt-2">
+															<div class="col-12 justify-content-end d-flex gap-2">
+																<button class="btn btn-secondary btn-sm">Cancel</button>
+																<button class="btn btn-primary btn-sm">Save</button>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="tab-pane fade" id="processArrangeTabContent" role="tabpanel"
+												aria-labelledby="process-arrange">
+												<div>
+													<h4>Work Flow Setting</h4>
+													<p class="text-muted small">
+														The following are the datas for <a href="#"
+															class="text-decoration-none">Job
+															Task</a>
+													</p>
+													<p>Please setting up or down to arrange the process</p>
+
+													<div class="table-responsive mb-4">
+														<table class="table align-middle">
+															<thead>
+																<tr>
+																	<th style="width: 60px;">No</th>
+																	<th style="width: 90px;"></th>
+																	<th>From</th>
+																	<th>Process Category</th>
+																	<th>Process</th>
+																</tr>
+															</thead>
+															<tbody>
+																<tr data-row="1">
+																	<td>1</td>
+																	<td>
+																		<div class="btn-group-horizontal">
+																			<button
+																				class="btn btn-outline-secondary btn-sm move-up">
+																				<!-- CLASS DITAMBAHKAN -->
+																				<i data-feather="arrow-up"></i>
+																			</button>
+																			<button
+																				class="ms-3 btn btn-outline-secondary btn-sm move-down">
+																				<!-- CLASS DITAMBAHKAN -->
+																				<i data-feather="arrow-down"></i>
+																			</button>
+																		</div>
+																		<!-- ===== PERBAIKAN HTML SELESAI ===== -->
+																	</td>
+																	<td>Paper Type</td>
+																	<td>Pracetak</td>
+																	<td>Pesen Kertas ke Toko</td>
+																</tr>
+																<tr data-row="2">
+																	<td>2</td>
+																	<td>
+																		<!-- ===== PERBAIKAN HTML DIMULAI ===== -->
+																		<div class="btn-group-horizontal">
+																			<button
+																				class="btn btn-outline-secondary btn-sm move-up">
+																				<!-- CLASS DITAMBAHKAN -->
+																				<i data-feather="arrow-up"></i>
+																			</button>
+																			<button
+																				class="ms-3 btn btn-outline-secondary btn-sm move-down">
+																				<!-- CLASS DITAMBAHKAN -->
+																				<i data-feather="arrow-down"></i>
+																			</button>
+																		</div>
+																		<!-- ===== PERBAIKAN HTML SELESAI ===== -->
+																	</td>
+																	<td>Offset Machine</td>
+																	<td>Cetak</td>
+																	<td>Cetak Offset 4 Warna</td>
+																</tr>
+																<tr data-row="3">
+																	<td>3</td>
+																	<td>
+																		<!-- ===== PERBAIKAN HTML DIMULAI ===== -->
+																		<div class="btn-group-horizontal">
+																			<button
+																				class="btn btn-outline-secondary btn-sm move-up">
+																				<!-- CLASS DITAMBAHKAN -->
+																				<i data-feather="arrow-up"></i>
+																			</button>
+																			<button
+																				class="ms-3 btn btn-outline-secondary btn-sm move-down">
+																				<!-- CLASS DITAMBAHKAN -->
+																				<i data-feather="arrow-down"></i>
+																			</button>
+																		</div>
+																		<!-- ===== PERBAIKAN HTML SELESAI ===== -->
+																	</td>
+																	<td>Offset Machine</td>
+																	<td>Pracetak</td>
+																	<td>Buat Plat CTP</td>
+																</tr>
+																<tr data-row="4">
+																	<td>4</td>
+																	<td>
+																		<!-- ===== PERBAIKAN HTML DIMULAI ===== -->
+																		<div class="btn-group-horizontal">
+																			<button
+																				class="btn btn-outline-secondary btn-sm move-up">
+																				<!-- CLASS DITAMBAHKAN -->
+																				<i data-feather="arrow-up"></i>
+																			</button>
+																			<button
+																				class="ms-3 btn btn-outline-secondary btn-sm move-down">
+																				<!-- CLASS DITAMBAHKAN -->
+																				<i data-feather="arrow-down"></i>
+																			</button>
+																		</div>
+																		<!-- ===== PERBAIKAN HTML SELESAI ===== -->
+																	</td>
+																	<td>Laminate</td>
+																	<td>Finishing</td>
+																	<td>Laminasi doff dari Cetak Offset</td>
+																</tr>
+																<tr data-row="5">
+																	<td>5</td>
+																	<td>
+																		<!-- ===== PERBAIKAN HTML DIMULAI ===== -->
+																		<div class="btn-group-horizontal">
+																			<button
+																				class="btn btn-outline-secondary btn-sm move-up">
+																				<!-- CLASS DITAMBAHKAN -->
+																				<i data-feather="arrow-up"></i>
+																			</button>
+																			<button
+																				class="ms-3 btn btn-outline-secondary btn-sm move-down">
+																				<!-- CLASS DITAMBAHKAN -->
+																				<i data-feather="arrow-down"></i>
+																			</button>
+																		</div>
+																		<!-- ===== PERBAIKAN HTML SELESAI ===== -->
+																	</td>
+																	<td>Components</td>
+																	<td>Finishing</td>
+																	<td>Proses Lipat ke mesin</td>
+																</tr>
+															</tbody>
+														</table>
+													</div>
+												</div>
+
+
+											</div>
+											<div class="tab-pane fade" id="componentsTabContent" role="tabpanel" aria-labelledby="components">
+    
+    <div class="card mb-4">
+        <div class="card-body">
+            <h4 class="mb-3">Component Option</h4>
+            <div class="table-responsive mb-4">
+                <table class="table table-sm">
+                    <thead>
+                        <tr>
+                            <th>Component</th>
+                            <th class="text-end">Value</th>
+                            <th>Unit Value</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Jam Kerja</td>
+                            <td class="text-end">8</td>
+                            <td>Jam</td>
+                        </tr>
+                        <tr>
+                            <td>Kapasitas Packing Brosur Per Hari</td>
+                            <td class="text-end">2</td>
+                            <td>Jam</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <button type="button" class="btn btn-warning btn-sm js-inline-add-trigger" data-add-kind="component">Add Component Type</button>
+            
+            <div class="row d-flex justify-content-end mt-4">
+                <div class="col-12 justify-content-end d-flex gap-2">
+                    <button class="btn btn-secondary btn-sm">Cancel</button>
+                    <button class="btn btn-primary btn-sm">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-body">
+            <h4 class="mb-3">Work Flow Setting</h4>
+            <div class="table-responsive mb-4">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Flow Category</th>
+                            <th>Flow Name</th>
+                            <th>Assignee</th>
+                            <th>Incentive</th>
+                            <th>Effective Component</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Finising</td>
+                            <td>Cari Jasa Lipat</td>
+                            <td>Nurdin</td>
+                            <td>5.000 per Job</td>
+                            <td>
+                                <select class="select2" multiple="multiple">
+                                    <option value="m-1" selected>1 lipatan</option>
+                                    <option value="m-2">2 lipatan</option>
+                                </select>
+                            </td>
+                            <td><a href="#" class="text-danger">Remove</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <button type="button" class="btn btn-warning btn-sm js-inline-add-trigger" data-add-kind="process">Add Flow Name</button>
+            
+            <div class="row d-flex justify-content-end mt-4">
+                <div class="col-12 justify-content-end d-flex gap-2">
+                    <button class="btn btn-secondary btn-sm">Cancel</button>
+                    <button class="btn btn-primary btn-sm">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+											<div class="tab-pane fade" id="profitSettingTabContent" role="tabpanel"
+												aria-labelledby="profit-setting">
+												<div class="d-md-flex justify-content-between align-items-start mb-3">
+													<h4 class="mb-2">Profit Setting</h4>
+													<div class="fst-italic text-muted">Update : 19:30 - 20 Januari 2024</div>
+												</div>
+												<hr>
+												<p>Profit Markup Options :</p>
+
+												<div class="persentase-form mb-3">
+													<div class="form-check">
+														<input class="form-check-input btn-spec" type="radio" name="profitMarkupOption" id="select-1" checked>
+														<label class="form-check-label" for="select-1">Profit Markup on Production Cost</label>
+													</div>
+													<div class="ms-md-5 input-select mt-3 profit-input-scroll">
+														<div class="row align-items-center">
+															<div class="col-md-3 col-12 my-3">
+																<label class="form-label mb-0">Profit percentage based on the total production cost</label>
+															</div>
+															<div class="col-md-3 col-6 my-3">
+																<div class="input-group input-group-sm">
+																	<span class="input-group-text">Set POS Profit %</span>
+																	<input type="text" class="form-control number-separator" inputmode="numeric" pattern="[0-9]*">
+																	<input type="hidden" class="result-input">
+																</div>
+															</div>
+															<div class="col-md-3 col-6 my-3">
+																<div class="input-group input-group-sm">
+																	<span class="input-group-text">Set Webstore Profit %</span>
+																	<input type="text" class="form-control number-separator" inputmode="numeric" pattern="[0-9]*">
+																	<input type="hidden" class="result-input">
+																</div>
+															</div>
+														</div>
+														<div class="row align-items-center">
+															<div class="col-md-3 col-12 mt-2">
+																<label class="form-label mb-0">Profit markup on printing cost</label>
+															</div>
+															<div class="col-md-3 col-6 mt-2">
+																<div class="input-group input-group-sm">
+																	<span class="input-group-text">Set POS Profit %</span>
+																	<input type="text" class="form-control number-separator" inputmode="numeric" pattern="[0-9]*">
+																	<input type="hidden" class="result-input">
+																</div>
+															</div>
+															<div class="col-md-3 col-6 mt-2">
+																<div class="input-group input-group-sm">
+																	<span class="input-group-text">Set Webstore Profit %</span>
+																	<input type="text" class="form-control number-separator" inputmode="numeric" pattern="[0-9]*">
+																	<input type="hidden" class="result-input">
+																</div>
+															</div>
+														</div>
+														<div class="row align-items-center">
+															<div class="col-md-3 col-12 mt-2">
+																<label class="form-label mb-0">Profit markup on paper purchase cost</label>
+															</div>
+															<div class="col-md-3 col-6 mt-2">
+																<div class="input-group input-group-sm">
+																	<span class="input-group-text">Set POS Profit %</span>
+																	<input type="text" class="form-control number-separator" inputmode="numeric" pattern="[0-9]*">
+																	<input type="hidden" class="result-input">
+																</div>
+															</div>
+															<div class="col-md-3 col-6 mt-2">
+																<div class="input-group input-group-sm">
+																	<span class="input-group-text">Set Webstore Profit %</span>
+																	<input type="text" class="form-control number-separator" inputmode="numeric" pattern="[0-9]*">
+																	<input type="hidden" class="result-input">
+																</div>
+															</div>
+														</div>
+														<div class="row align-items-center">
+															<div class="col-md-3 col-12 mt-2">
+																<label class="form-label mb-0">Profit markup on lamination cost</label>
+															</div>
+															<div class="col-md-3 col-6 mt-2">
+																<div class="input-group input-group-sm">
+																	<span class="input-group-text">Set POS Profit %</span>
+																	<input type="text" class="form-control number-separator" inputmode="numeric" pattern="[0-9]*">
+																	<input type="hidden" class="result-input">
+																</div>
+															</div>
+															<div class="col-md-3 col-6 mt-2">
+																<div class="input-group input-group-sm">
+																	<span class="input-group-text">Set Webstore Profit %</span>
+																	<input type="text" class="form-control number-separator" inputmode="numeric" pattern="[0-9]*">
+																	<input type="hidden" class="result-input">
+																</div>
+															</div>
+														</div>
+														<div class="row align-items-center">
+															<div class="col-md-3 col-12 mt-2">
+																<label class="form-label mb-0">Profit markup on die-cutting cost</label>
+															</div>
+															<div class="col-md-3 col-6 mt-2">
+																<div class="input-group input-group-sm">
+																	<span class="input-group-text">Set POS Profit %</span>
+																	<input type="text" class="form-control number-separator" inputmode="numeric" pattern="[0-9]*">
+																	<input type="hidden" class="result-input">
+																</div>
+															</div>
+															<div class="col-md-3 col-6 mt-2">
+																<div class="input-group input-group-sm">
+																	<span class="input-group-text">Set Webstore Profit %</span>
+																	<input type="text" class="form-control number-separator" inputmode="numeric" pattern="[0-9]*">
+																	<input type="hidden" class="result-input">
+																</div>
+															</div>
+														</div>
+														<div class="row align-items-center">
+															<div class="col-md-3 col-12 mt-2">
+																<label class="form-label mb-0">Profit markup on foil stamping cost</label>
+															</div>
+															<div class="col-md-3 col-6 mt-2">
+																<div class="input-group input-group-sm">
+																	<span class="input-group-text">Set POS Profit %</span>
+																	<input type="text" class="form-control number-separator" inputmode="numeric" pattern="[0-9]*">
+																	<input type="hidden" class="result-input">
+																</div>
+															</div>
+															<div class="col-md-3 col-6 mt-2">
+																<div class="input-group input-group-sm">
+																	<span class="input-group-text">Set Webstore Profit %</span>
+																	<input type="text" class="form-control number-separator" inputmode="numeric" pattern="[0-9]*">
+																	<input type="hidden" class="result-input">
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+
+												<div class="range-form mb-4">
+													<div class="form-check">
+														<input class="form-check-input btn-spec" type="radio" name="profitMarkupOption" id="select-3">
+														<label class="form-check-label" for="select-3">Profit markup based on the total production cost range</label>
+													</div>
+													<div class="ms-md-5 input-select d-none profit-input-scroll">
+														<div class="row mt-3 first">
+															<div class="col-6 col-md-2 d-flex align-items-center">
+																<label class="form-label me-2 mb-0">From</label>
+																<input type="text" class="form-control form-control-sm number-separator input-dari" inputmode="numeric" pattern="[0-9]*">
+																<input type="hidden" class="result-input">
+															</div>
+															<div class="col-6 col-md-2 d-flex align-items-center">
+																<label class="form-label me-2 mb-0">To</label>
+																<input type="text" class="form-control form-control-sm number-separator input-ke" inputmode="numeric" pattern="[0-9]*">
+																<input type="hidden" class="result-input">
+															</div>
+															<div class="col-md-3 col-6 mt-2 mt-md-0">
+																<div class="input-group input-group-sm">
+																	<span class="input-group-text">Set POS Profit %</span>
+																	<input type="text" class="form-control number-separator" inputmode="numeric" pattern="[0-9]*">
+																	<input type="hidden" class="result-input">
+																</div>
+															</div>
+															<div class="col-md-3 col-6 mt-2 mt-md-0">
+																<div class="input-group input-group-sm">
+																	<span class="input-group-text">Set Webstore Profit %</span>
+																	<input type="text" class="form-control number-separator" inputmode="numeric" pattern="[0-9]*">
+																	<input type="hidden" class="result-input">
+																</div>
+															</div>
+															<div class="col-12 col-md-2 d-flex gap-2 mt-2 mt-md-0">
+																<button class="btn btn-warning btn-sm add-range me-2">Add Cost Range</button>
+																<button class="btn btn-outline-danger btn-sm delete-range d-none">Delete</button>
+															</div>
+														</div>
+														<div class="row mt-3">
+															<div class="col-6 col-md-2 d-flex align-items-center">
+																<label class="form-label me-2 mb-0">From</label>
+																<input type="text" class="form-control form-control-sm number-separator input-dari" inputmode="numeric" pattern="[0-9]*">
+																<input type="hidden" class="result-input">
+															</div>
+															<div class="col-6 col-md-2 d-flex align-items-center">
+																<label class="form-label me-2 mb-0">To</label>
+																<input type="text" class="form-control form-control-sm number-separator input-ke" inputmode="numeric" pattern="[0-9]*">
+																<input type="hidden" class="result-input">
+															</div>
+															<div class="col-md-3 col-6 mt-2 mt-md-0">
+																<div class="input-group input-group-sm">
+																	<span class="input-group-text">Set POS Profit %</span>
+																	<input type="text" class="form-control number-separator" inputmode="numeric" pattern="[0-9]*">
+																	<input type="hidden" class="result-input">
+																</div>
+															</div>
+															<div class="col-md-3 col-6 mt-2 mt-md-0">
+																<div class="input-group input-group-sm">
+																	<span class="input-group-text">Set Webstore Profit %</span>
+																	<input type="text" class="form-control number-separator" inputmode="numeric" pattern="[0-9]*">
+																	<input type="hidden" class="result-input">
+																</div>
+															</div>
+															<div class="col-12 col-md-2 d-flex gap-2 mt-2 mt-md-0">
+																<button class="btn btn-warning btn-sm add-range me-2">Add Cost Range</button>
+																<button class="btn btn-outline-danger btn-sm delete-range">Delete</button>
+															</div>
+														</div>
+														<div class="row mt-3">
+															<div class="col-6 col-md-2 d-flex align-items-center">
+																<label class="form-label me-2 mb-0">From</label>
+																<input type="text" class="form-control form-control-sm number-separator input-dari" inputmode="numeric" pattern="[0-9]*">
+																<input type="hidden" class="result-input">
+															</div>
+															<div class="col-6 col-md-2 d-flex align-items-center">
+																<label class="form-label me-2 mb-0">To</label>
+																<input type="text" class="form-control form-control-sm number-separator input-ke" inputmode="numeric" pattern="[0-9]*">
+																<input type="hidden" class="result-input">
+															</div>
+															<div class="col-md-3 col-6 mt-2 mt-md-0">
+																<div class="input-group input-group-sm">
+																	<span class="input-group-text">Set POS Profit %</span>
+																	<input type="text" class="form-control number-separator" inputmode="numeric" pattern="[0-9]*">
+																	<input type="hidden" class="result-input">
+																</div>
+															</div>
+															<div class="col-md-3 col-6 mt-2 mt-md-0">
+																<div class="input-group input-group-sm">
+																	<span class="input-group-text">Set Webstore Profit %</span>
+																	<input type="text" class="form-control number-separator" inputmode="numeric" pattern="[0-9]*">
+																	<input type="hidden" class="result-input">
+																</div>
+															</div>
+															<div class="col-12 col-md-2 d-flex gap-2 mt-2 mt-md-0">
+																<button class="btn btn-warning btn-sm add-range me-2">Add Cost Range</button>
+																<button class="btn btn-outline-danger btn-sm delete-range">Delete</button>
+															</div>
+														</div>
+														<div class="row mt-3">
+															<div class="col-6 col-md-2 d-flex align-items-center">
+																<label class="form-label me-2 mb-0">From</label>
+																<input type="text" class="form-control form-control-sm number-separator input-dari" inputmode="numeric" pattern="[0-9]*">
+																<input type="hidden" class="result-input">
+															</div>
+															<div class="col-6 col-md-2 d-flex align-items-center">
+																<label class="form-label me-2 mb-0">To</label>
+																<span class="form-control form-control-sm">And so on</span>
+																<input type="hidden" class="result-input">
+															</div>
+															<div class="col-md-3 col-6 mt-2 mt-md-0">
+																<div class="input-group input-group-sm">
+																	<span class="input-group-text">Set POS Profit %</span>
+																	<input type="text" class="form-control number-separator" inputmode="numeric" pattern="[0-9]*">
+																	<input type="hidden" class="result-input">
+																</div>
+															</div>
+															<div class="col-md-3 col-6 mt-2 mt-md-0">
+																<div class="input-group input-group-sm">
+																	<span class="input-group-text">Set Webstore Profit %</span>
+																	<input type="text" class="form-control number-separator" inputmode="numeric" pattern="[0-9]*">
+																	<input type="hidden" class="result-input">
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<hr>
+
+												<div class="tambahan-form">
+													<div class="d-md-flex justify-content-between align-items-center">
+														<p class="mt-3 mb-0">Additional Fees</p>
+														<button class="btn btn-warning btn-sm" id="addOther" type="button">Add New Additional Fees</button>
+													</div>
+													<div class="row align-items-center">
+														<div class="col-md-3 mt-3">
+															<label class="form-label mb-0 label-biaya">Biaya Transport</label>
+														</div>
+														<div class="d-flex col-md-5 align-items-center mt-3">
+															<input type="text" class="form-control me-2 w-50 number-separator price-input" inputmode="numeric" pattern="[0-9]*">
+															<input type="hidden" class="result-input">
+															<span>Per Pekerjaan/Job</span>
+														</div>
+														<div class="d-flex mt-3 col-md-3">
+															<button class="btn btn-link text-decoration-none btn-edit" type="button">Ubah</button>
+															<button class="btn btn-link text-danger text-decoration-none btn-hapus" type="button">Hapus</button>
+														</div>
+													</div>
+													<div class="row align-items-center">
+														<div class="col-md-3 mt-3">
+															<label class="form-label mb-0 label-biaya">Biaya Packing</label>
+														</div>
+														<div class="d-flex col-md-5 align-items-center mt-3">
+															<input type="text" class="form-control me-2 w-50 number-separator price-input" inputmode="numeric" pattern="[0-9]*">
+															<input type="hidden" class="result-input">
+															<span>Per Lembar</span>
+														</div>
+														<div class="d-flex mt-3 col-md-3">
+															<button class="btn btn-link text-decoration-none btn-edit" type="button">Ubah</button>
+															<button class="btn btn-link text-danger text-decoration-none btn-hapus" type="button">Hapus</button>
+														</div>
+													</div>
+												</div>
+												<hr>
+
+												<div class="pajak-form">
+													<div class="d-md-flex justify-content-between align-items-center">
+														<p class="mt-3 mb-0">Additional TAX Charge</p>
+														<button class="btn btn-warning btn-sm" id="addTax" type="button">Add New Additional TAX Charge</button>
+													</div>
+													<div class="row align-items-center mt-3">
+														<div class="col-3">
+															<label class="form-label mb-0 label-pajak">Ppn</label>
+														</div>
+														<div class="col-5 input-group input-group-sm w-25 me-3">
+															<input type="text" class="form-control number-separator" inputmode="numeric" pattern="[0-9]*">
+															<input type="hidden" class="result-input">
+															<span class="input-group-text">%</span>
+														</div>
+														<div class="d-flex col-3">
+															<button class="btn btn-link text-decoration-none btn-edit" type="button">Ubah</button>
+															<button class="btn btn-link text-danger text-decoration-none btn-hapus" type="button">Hapus</button>
+														</div>
+													</div>
+													<div class="row align-items-center mt-3">
+														<div class="col-3">
+															<label class="form-label mb-0 label-pajak">Pph</label>
+														</div>
+														<div class="col-5 input-group input-group-sm w-25 me-3">
+															<input type="text" class="form-control number-separator" inputmode="numeric" pattern="[0-9]*">
+															<input type="hidden" class="result-input">
+															<span class="input-group-text">%</span>
+														</div>
+														<div class="d-flex col-3">
+															<button class="btn btn-link text-decoration-none btn-edit" type="button">Ubah</button>
+															<button class="btn btn-link text-danger text-decoration-none btn-hapus" type="button">Hapus</button>
+														</div>
+													</div>
+												</div>
+												<small class="d-none text-danger" id="info-selected-all"><i class="fa-solid fa-circle-info"></i> please input your specification<br></small>
+												<div class="d-flex justify-content-end gap-2 mt-4">
+													<button class="btn btn-secondary btn-sm" type="button">Cancel</button>
+													<button class="btn btn-primary btn-sm" type="button">Save</button>
+												</div>
+											</div>
+										</div>
+										<div class="tab-pane fade" id="logTransactionTabContent" role="tabpanel"
+											aria-labelledby="log-transaction">
+											<div class="d-md-flex justify-content-between align-items-start mb-3">
+												<h4 class="mb-2">Log Transaction</h4>
+												<div class="fst-italic text-muted">Update : 19:30 - 20 Januari 2024</div>
+											</div>
+											<hr>
+											<div class="table-responsive">
+												<table class="table datanew">
+													<thead>
+														<tr>
+															<th>No Sales</th>
+															<th>Customers</th>
+															<th>Date</th>
+															<th>Chanel</th>
+															<th>Product Name</th>
+															<th class="text-end">Price</th>
+															<th>Action</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td class="str-value">2511000001</td>
+															<td>PT Makmur Abadi</td>
+															<td>01/10/2025</td>
+															<td>Webstore</td>
+															<td>Brosur</td>
+															<td class="text-end">1.200.000</td>
+															<td class="action-table-data">
+																<div class="edit-delete-action">
+																	<a class="me-2 edit-icon p-2" href="javascript:void(0);"
+																		data-bs-toggle="modal" data-bs-target="#calculationDetailModal">
+																		<i data-feather="eye" class="action-eye"></i>
+																	</a>
+																</div>
+															</td>
+														</tr>
+														<tr>
+															<td class="str-value">2511000002</td>
+															<td>Toko Buku Cerdas</td>
+															<td>03/10/2025</td>
+															<td>POS</td>
+															<td>Flyer</td>
+															<td class="text-end">850.000</td>
+															<td class="action-table-data">
+																<div class="edit-delete-action">
+																	<a class="me-2 edit-icon p-2" href="javascript:void(0);"
+																		data-bs-toggle="modal" data-bs-target="#calculationDetailModal">
+																		<i data-feather="eye" class="action-eye"></i>
+																	</a>
+																</div>
+															</td>
+														</tr>
+														<tr>
+															<td class="str-value">2511000003</td>
+															<td>CV Jaya Sentosa</td>
+															<td>05/10/2025</td>
+															<td>POS</td>
+															<td>Tiket Karcis</td>
+															<td class="text-end">500.000</td>
+															<td class="action-table-data">
+																<div class="edit-delete-action">
+																	<a class="me-2 edit-icon p-2" href="javascript:void(0);"
+																		data-bs-toggle="modal" data-bs-target="#calculationDetailModal">
+																		<i data-feather="eye" class="action-eye"></i>
+																	</a>
+																</div>
+															</td>
+														</tr>
+														<tr>
+															<td class="str-value">2511000004</td>
+															<td>PT Global Solusi</td>
+															<td>08/10/2025</td>
+															<td>Webstore</td>
+															<td>Produk Label</td>
+															<td class="text-end">257.000</td>
+															<td class="action-table-data">
+																<div class="edit-delete-action">
+																	<a class="me-2 edit-icon p-2" href="javascript:void(0);"
+																		data-bs-toggle="modal" data-bs-target="#calculationDetailModal">
+																		<i data-feather="eye" class="action-eye"></i>
+																	</a>
+																</div>
+															</td>
+														</tr>
+														<tr>
+															<td class="str-value">2511000005</td>
+															<td>Klinik Sehat</td>
+															<td>10/11/2025</td>
+															<td>POS</td>
+															<td>Brosur</td>
+															<td class="text-end">450.000</td>
+															<td class="action-table-data">
+																<div class="edit-delete-action">
+																	<a class="me-2 edit-icon p-2" href="javascript:void(0);"
+																		data-bs-toggle="modal" data-bs-target="#calculationDetailModal">
+																		<i data-feather="eye" class="action-eye"></i>
+																	</a>
+																</div>
+															</td>
+														</tr>
+														<tr>
+															<td class="str-value">2511000006</td>
+															<td>Yayasan Lentera</td>
+															<td>14/10/2025</td>
+															<td>POS</td>
+															<td>Flyer</td>
+															<td class="text-end">785.000</td>
+															<td class="action-table-data">
+																<div class="edit-delete-action">
+																	<a class="me-2 edit-icon p-2" href="javascript:void(0);"
+																		data-bs-toggle="modal" data-bs-target="#calculationDetailModal">
+																		<i data-feather="eye" class="action-eye"></i>
+																	</a>
+																</div>
+															</td>
+														</tr>
+														<tr>
+															<td class="str-value">2511000007</td>
+															<td>PT Dirgantara</td>
+															<td>17/10/2025</td>
+															<td>Webstore</td>
+															<td>Tiket Karcis</td>
+															<td class="text-end">225.000</td>
+															<td class="action-table-data">
+																<div class="edit-delete-action">
+																	<a class="me-2 edit-icon p-2" href="javascript:void(0);"
+																		data-bs-toggle="modal" data-bs-target="#calculationDetailModal">
+																		<i data-feather="eye" class="action-eye"></i>
+																	</a>
+																</div>
+															</td>
+														</tr>
+														<tr>
+															<td class="str-value">2511000008</td>
+															<td>Toko Perlengkapan</td>
+															<td>20/10/2025</td>
+															<td>POS</td>
+															<td>Produk Label</td>
+															<td class="text-end">478.000</td>
+															<td class="action-table-data">
+																<div class="edit-delete-action">
+																	<a class="me-2 edit-icon p-2" href="javascript:void(0);"
+																		data-bs-toggle="modal" data-bs-target="#calculationDetailModal">
+																		<i data-feather="eye" class="action-eye"></i>
+																	</a>
+																</div>
+															</td>
+														</tr>
+														<tr>
+															<td class="str-value">2511000009</td>
+															<td>PT Angkasa Raya</td>
+															<td>23/10/2025</td>
+															<td>Webstore</td>
+															<td>Brosur</td>
+															<td class="text-end">900.000</td>
+															<td class="action-table-data">
+																<div class="edit-delete-action">
+																	<a class="me-2 edit-icon p-2" href="javascript:void(0);"
+																		data-bs-toggle="modal" data-bs-target="#calculationDetailModal">
+																		<i data-feather="eye" class="action-eye"></i>
+																	</a>
+																</div>
+															</td>
+														</tr>
+														<tr>
+															<td class="str-value">2511000010</td>
+															<td>Universitas Bintang</td>
+															<td>26/10/2025</td>
+															<td>POS</td>
+															<td>Flyer</td>
+															<td class="text-end">1.450.000</td>
+															<td class="action-table-data">
+																<div class="edit-delete-action">
+																	<a class="me-2 edit-icon p-2" href="javascript:void(0);"
+																		data-bs-toggle="modal" data-bs-target="#calculationDetailModal">
+																		<i data-feather="eye" class="action-eye"></i>
+																	</a>
+																</div>
+															</td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+
+
+
+
+						</div>
+					</div>
+
+
+				</div>
+			</div>
+			<div class="modal fade" id="calculationDetailModal" tabindex="-1" aria-labelledby="calculationDetailModalLabel"
+				aria-hidden="true">
+				<div class="modal-dialog modal-dialog-centered">
+					<div class="modal-content p-4">
+						<div class="modal-header border-0">
+							<h5 class="modal-title fw-bold" id="calculationDetailModalLabel">Calculation Detail</h5>
+							<button type="button" class="btn text-danger fw-bold" data-bs-dismiss="modal"
+								aria-label="Close">X</button>
+						</div>
+						<div class="modal-body">
+							<ul class="nav nav-tabs justify-content-around mb-4" id="calculationDetailTab" role="tablist">
+								<li class="nav-item flex-fill text-center" role="presentation">
+									<button class="nav-link active w-100 fw-bold" id="order-detail-tab"
+										data-bs-toggle="tab" data-bs-target="#orderDetailTabPane" type="button"
+										role="tab" aria-controls="orderDetailTabPane" aria-selected="true">Order Detail</button>
+								</li>
+								<li class="nav-item flex-fill text-center" role="presentation">
+									<button class="nav-link w-100 fw-bold" id="detail-cost-tab" data-bs-toggle="tab"
+										data-bs-target="#detailCostTabPane" type="button" role="tab"
+										aria-controls="detailCostTabPane" aria-selected="false">Detail Cost</button>
+								</li>
+							</ul>
+							<div class="tab-content" id="calculationDetailTabContent">
+								<div class="tab-pane fade show active" id="orderDetailTabPane" role="tabpanel"
+									aria-labelledby="order-detail-tab">
+									<h4 class="mb-3">Order Spesification</h4>
+									<div class="table-responsive mb-5">
+										<table class="table table-bordered mb-0">
+																						<colgroup>
+																							<col class="w-50">
+																							<col class="w-50">
+																						</colgroup>
+											<tbody>
+												<tr>
+													<td>Product Name</td>
+													<td>Brosur</td>
+												</tr>
+												<tr>
+													<td>Size</td>
+													<td>A4 (297x210mm)</td>
+												</tr>
+												<tr>
+													<td>Paper Type</td>
+													<td>Art Paper 150 Gsm</td>
+												</tr>
+												<tr>
+													<td>Laminate</td>
+													<td>Glossy</td>
+												</tr>
+												<tr>
+													<td>Print Side</td>
+													<td>1 Sisi</td>
+												</tr>
+												<tr>
+													<td>Fold</td>
+													<td>2 Lipatan</td>
+												</tr>
+												<tr>
+													<td>Qty Order</td>
+													<td>15 Ream&nbsp; (7.500 Pcs)</td>
+												</tr>
+												<tr>
+													<td>Chanel</td>
+													<td>Webstore</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+									<h4 class="mb-3">Calculation System Suggestion</h4>
+									<div class="table-responsive">
+										<table class="table table-bordered mb-0">
+																						<colgroup>
+																							<col class="w-50">
+																							<col class="w-50">
+																						</colgroup>
+											<tbody>
+												<tr>
+													<td>Parent Sheet</td>
+													<td>92x61 cm</td>
+												</tr>
+												<tr>
+													<td>Parent Sheet Qty</td>
+													<td>940</td>
+												</tr>
+												<tr>
+													<td>Cut Down Size</td>
+													<td>30x46cm</td>
+												</tr>
+												<tr>
+													<td>Cut Down Qty</td>
+													<td>3.760</td>
+												</tr>
+												<tr>
+													<td>Printing Machine</td>
+													<td>Heidelberg SM52</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+								<div class="tab-pane fade" id="detailCostTabPane" role="tabpanel"
+									aria-labelledby="detail-cost-tab">
+									<div class="mb-4">
+										<button class="btn btn-link text-dark text-decoration-none w-100 d-flex justify-content-between px-0"
+											type="button" data-bs-toggle="collapse" data-bs-target="#paperCostDetail"
+											aria-expanded="true" aria-controls="paperCostDetail">
+											<span>Paper Cost</span>
+											<span>v</span>
+										</button>
+										<div class="collapse show" id="paperCostDetail">
+											<div class="table-responsive">
+												<table class="table table-bordered mb-0">
+																						<colgroup>
+																							<col class="w-50">
+																							<col class="w-50">
+																						</colgroup>
+													<tbody>
+														<tr>
+															<td>Paper Type</td>
+															<td>Art Paper 150 Gsm</td>
+														</tr>
+														<tr>
+															<td>Parent Sheet</td>
+															<td>92x61 cm</td>
+														</tr>
+														<tr>
+															<td>Qty</td>
+															<td>940</td>
+														</tr>
+														<tr>
+															<td>Price</td>
+															<td>4.500</td>
+														</tr>
+														<tr>
+															<td>Unit Price</td>
+															<td>Sheet</td>
+														</tr>
+														<tr>
+															<td>Cut Down Size</td>
+															<td>30x46cm</td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+										</div>
+										<div class="table-responsive">
+											<table class="table table-bordered mb-0">
+																						<colgroup>
+																							<col class="w-50">
+																							<col class="w-50">
+																						</colgroup>
+												<tbody>
+													<tr>
+														<td>Cost Amount</td>
+														<td>4.230.000</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+									<div class="mb-4">
+										<button class="btn btn-link text-dark text-decoration-none w-100 d-flex justify-content-between px-0"
+											type="button" data-bs-toggle="collapse" data-bs-target="#printingMachineCostDetail"
+											aria-expanded="true" aria-controls="printingMachineCostDetail">
+											<span>Printing Machine Cost</span>
+											<span>v</span>
+										</button>
+										<div class="collapse show" id="printingMachineCostDetail">
+											<div class="table-responsive">
+												<table class="table table-bordered mb-0">
+																						<colgroup>
+																							<col class="w-50">
+																							<col class="w-50">
+																						</colgroup>
+													<tbody>
+														<tr>
+															<td>Printing Machine</td>
+															<td>Heidelberg SM52</td>
+														</tr>
+														<tr>
+															<td>Max Size Paper Area</td>
+															<td>37x52 Cm</td>
+														</tr>
+														<tr>
+															<td>Cut Down Size</td>
+															<td>30x46cm</td>
+														</tr>
+														<tr>
+															<td>Qty Sheet</td>
+															<td>3.660</td>
+														</tr>
+														<tr>
+															<td>Print Side</td>
+															<td>1 Sisi</td>
+														</tr>
+														<tr>
+															<td>Makeready Sheet</td>
+															<td>100</td>
+														</tr>
+														<tr>
+															<td>Total Sheet</td>
+															<td>3.760</td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+										</div>
+										<div class="table-responsive">
+											<table class="table table-bordered mb-0">
+																						<colgroup>
+																							<col class="w-50">
+																							<col class="w-50">
+																						</colgroup>
+												<tbody>
+													<tr>
+														<td>Cost Amount</td>
+														<td>875.000</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+									<div class="mb-4">
+										<button class="btn btn-link text-dark text-decoration-none w-100 d-flex justify-content-between px-0"
+											type="button" data-bs-toggle="collapse" data-bs-target="#laminateCostDetail"
+											aria-expanded="true" aria-controls="laminateCostDetail">
+											<span>Laminate Cost</span>
+											<span>v</span>
+										</button>
+										<div class="collapse show" id="laminateCostDetail">
+											<div class="table-responsive">
+												<table class="table table-bordered mb-0">
+																						<colgroup>
+																							<col class="w-50">
+																							<col class="w-50">
+																						</colgroup>
+													<tbody>
+														<tr>
+															<td>Laminate Name</td>
+															<td>Laminasi Doff</td>
+														</tr>
+														<tr>
+															<td>Cut Down Size</td>
+															<td>30x46cm</td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+										</div>
+										<div class="table-responsive">
+											<table class="table table-bordered mb-0">
+																						<colgroup>
+																							<col class="w-50">
+																							<col class="w-50">
+																						</colgroup>
+												<tbody>
+													<tr>
+														<td>Cost Amount</td>
+														<td>370.000</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+									<div class="mb-4">
+										<button class="btn btn-link text-dark text-decoration-none w-100 d-flex justify-content-between px-0"
+											type="button" data-bs-toggle="collapse" data-bs-target="#foldCostDetail"
+											aria-expanded="true" aria-controls="foldCostDetail">
+											<span>Fold Cost</span>
+											<span>v</span>
+										</button>
+										<div class="collapse show" id="foldCostDetail">
+											<div class="table-responsive">
+												<table class="table table-bordered mb-0">
+																						<colgroup>
+																							<col class="w-50">
+																							<col class="w-50">
+																						</colgroup>
+													<tbody>
+														<tr>
+															<td>Fold</td>
+															<td>2 Lipatan</td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+										</div>
+										<div class="table-responsive">
+											<table class="table table-bordered mb-0">
+																						<colgroup>
+																							<col class="w-50">
+																							<col class="w-50">
+																						</colgroup>
+												<tbody>
+													<tr>
+														<td>Cost Amount</td>
+														<td>370.000</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+									<div class="mb-4">
+										<button class="btn btn-link text-dark text-decoration-none w-100 d-flex justify-content-between px-0"
+											type="button" data-bs-toggle="collapse" data-bs-target="#additionalCostDetail"
+											aria-expanded="true" aria-controls="additionalCostDetail">
+											<span>Additional Cost</span>
+											<span>v</span>
+										</button>
+										<div class="collapse show" id="additionalCostDetail">
+											<div class="table-responsive">
+												<table class="table table-bordered mb-0">
+																						<colgroup>
+																							<col class="w-50">
+																							<col class="w-50">
+																						</colgroup>
+													<tbody>
+														<tr>
+															<td>Biaya Transport</td>
+															<td>250.000</td>
+														</tr>
+														<tr>
+															<td>Akomodasi</td>
+															<td>150.000</td>
+														</tr>
+														<tr>
+															<td>Pajak Pph Final 23</td>
+															<td>400.000</td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+										</div>
+										<div class="table-responsive">
+											<table class="table table-bordered mb-0">
+																						<colgroup>
+																							<col class="w-50">
+																							<col class="w-50">
+																						</colgroup>
+												<tbody>
+													<tr>
+														<td>Cost Amount</td>
+														<td>800.000</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+									<div class="mb-4">
+										<button class="btn btn-link text-dark text-decoration-none w-100 d-flex justify-content-between px-0"
+											type="button" data-bs-toggle="collapse" data-bs-target="#takeProfitDetail"
+											aria-expanded="true" aria-controls="takeProfitDetail">
+											<span>Take Profit</span>
+											<span>v</span>
+										</button>
+										<div class="collapse show" id="takeProfitDetail">
+											<div class="table-responsive">
+												<table class="table table-bordered mb-0">
+																						<colgroup>
+																							<col class="w-50">
+																							<col class="w-50">
+																						</colgroup>
+													<tbody>
+														<tr>
+															<td>Sub Total Cost</td>
+															<td>6.250.000</td>
+														</tr>
+														<tr>
+															<td>Webstore Profit %</td>
+															<td>35 %</td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+										</div>
+										<div class="table-responsive">
+											<table class="table table-bordered mb-0">
+																						<colgroup>
+																							<col class="w-50">
+																							<col class="w-50">
+																						</colgroup>
+												<tbody>
+													<tr>
+														<td>Profit Amount</td>
+														<td>2.187.500</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+									<div class="mb-0">
+										<button class="btn btn-link text-dark text-decoration-none w-100 d-flex justify-content-between px-0"
+											type="button" data-bs-toggle="collapse" data-bs-target="#suggestionPriceDetail"
+											aria-expanded="true" aria-controls="suggestionPriceDetail">
+											<span>Suggestion System Price</span>
+											<span>v</span>
+										</button>
+										<div class="collapse show" id="suggestionPriceDetail">
+											<div class="table-responsive">
+												<table class="table table-bordered mb-0">
+																						<colgroup>
+																							<col class="w-50">
+																							<col class="w-50">
+																						</colgroup>
+													<tbody>
+														<tr>
+															<td>Price</td>
+															<td>562.383</td>
+														</tr>
+														<tr>
+															<td>RoundUp</td>
+															<td>617</td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+										</div>
+										<div class="table-responsive">
+											<table class="table table-bordered mb-0">
+																						<colgroup>
+																							<col class="w-50">
+																							<col class="w-50">
+																						</colgroup>
+												<tbody>
+													<tr>
+														<td>Unit Price</td>
+														<td>563.000</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="modal fade product-modal" id="modaladdukuran" tabindex="-1" aria-labelledby="modalFormLabel"
+				aria-hidden="true">
+				<div class="modal-dialog modal-dialog-centered modal-xl">
+					<form class="modal-content p-4 p-md-5" id="formRow">
+						<div class="modal-header">
+							<h5 class="modal-title fw-bold" id="modalFormLabel">Add New Product</h5>
+							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+						</div>
+						<div class="modal-body px-0">
+							<div class="row align-items-start mb-4">
+								<label class="col-md-3 col-form-label fw-semibold" for="inputProduct">Product Name</label>
+								<div class="col-md-9">
+									<input type="text" class="form-control" id="inputProduct" required>
+								</div>
+							</div>
+
+							<div class="fw-bold fst-italic mb-4">Option Spesification</div>
+
+							<div class="mb-4">
+								<div class="d-flex align-items-center gap-2 mb-3">
+									<span>Ukuran Brosur</span>
+									<span class="product-switch active"></span>
+									<span>Enable</span>
+								</div>
+								<div class="row g-3 product-option-group">
+									<label class="col-md-4 d-flex align-items-center gap-2 mb-2">
+										<input class="product-checkbox form-check-input" type="checkbox" name="product_size" value="A4 (297x210mm)" checked>
+										<span class="text-primary">A4 (297x210mm)</span>
+										<input class="product-default-radio d-none" type="radio" name="product_size_default" checked>
+										<i class="product-default-star fas fa-star text-warning"></i>
+										<span class="text-muted">Default</span>
+									</label>
+									<label class="col-md-4 d-flex align-items-center gap-2 mb-2">
+										<input class="product-checkbox form-check-input" type="checkbox" name="product_size" value="A5 (210x149mm)">
+										<span class="text-primary">A5 (210x149mm)</span>
+										<input class="product-default-radio d-none" type="radio" name="product_size_default" disabled>
+										<i class="product-default-star far fa-star text-muted"></i>
+										<span class="text-muted">Default</span>
+									</label>
+								</div>
+							</div>
+
+							<div class="mb-4">
+								<div class="d-flex align-items-center gap-2 mb-3">
+									<span>Jenis Kertas</span>
+									<span class="product-switch active"></span>
+									<span>Enable</span>
+								</div>
+								<div class="row g-3 product-option-group">
+									<label class="col-md-4 d-flex align-items-center gap-2 mb-2">
+										<input class="product-checkbox form-check-input" type="checkbox" name="paper_type" value="Art Paper" checked>
+										<span class="text-primary">Art Paper</span>
+										<input class="product-default-radio d-none" type="radio" name="paper_type_default" checked>
+										<i class="product-default-star fas fa-star text-warning"></i>
+										<span class="text-muted">Default</span>
+									</label>
+									<label class="col-md-4 d-flex align-items-center gap-2 mb-2">
+										<input class="product-checkbox form-check-input" type="checkbox" name="paper_type" value="Art Carton">
+										<span class="text-primary">Art Carton</span>
+										<input class="product-default-radio d-none" type="radio" name="paper_type_default" disabled>
+										<i class="product-default-star far fa-star text-muted"></i>
+										<span class="text-muted">Default</span>
+									</label>
+									<label class="col-md-4 d-flex align-items-center gap-2 mb-2">
+										<input class="product-checkbox form-check-input" type="checkbox" name="paper_type" value="HVS">
+										<span class="text-primary">HVS</span>
+										<input class="product-default-radio d-none" type="radio" name="paper_type_default" disabled>
+										<i class="product-default-star far fa-star text-muted"></i>
+										<span class="text-muted">Default</span>
+									</label>
+									<label class="col-md-4 d-flex align-items-center gap-2 mb-2">
+										<input class="product-checkbox form-check-input" type="checkbox" name="paper_type" value="Carton BC">
+										<span class="text-primary">Carton BC</span>
+										<input class="product-default-radio d-none" type="radio" name="paper_type_default" disabled>
+										<i class="product-default-star far fa-star text-muted"></i>
+										<span class="text-muted">Default</span>
+									</label>
+								</div>
+							</div>
+
+							<div class="mb-4">
+								<div class="d-flex align-items-center gap-2 mb-3">
+									<span>Laminasi</span>
+									<span class="product-switch active"></span>
+									<span>Enable</span>
+								</div>
+								<div class="row g-3 product-option-group">
+									<label class="col-md-4 d-flex align-items-center gap-2 mb-2">
+										<input class="product-checkbox form-check-input" type="checkbox" name="laminate" value="Glossy" checked>
+										<span class="text-primary">Glossy</span>
+										<input class="product-default-radio d-none" type="radio" name="laminate_default" checked>
+										<i class="product-default-star fas fa-star text-warning"></i>
+										<span class="text-muted">Default</span>
+									</label>
+									<label class="col-md-4 d-flex align-items-center gap-2 mb-2">
+										<input class="product-checkbox form-check-input" type="checkbox" name="laminate" value="Doff">
+										<span class="text-primary">Doff</span>
+										<input class="product-default-radio d-none" type="radio" name="laminate_default" disabled>
+										<i class="product-default-star far fa-star text-muted"></i>
+										<span class="text-muted">Default</span>
+									</label>
+									<label class="col-md-4 d-flex align-items-center gap-2 mb-2">
+										<input class="product-checkbox form-check-input" type="checkbox" name="laminate" value="UV Vernish">
+										<span class="text-primary">UV Vernish</span>
+										<input class="product-default-radio d-none" type="radio" name="laminate_default" disabled>
+										<i class="product-default-star far fa-star text-muted"></i>
+										<span class="text-muted">Default</span>
+									</label>
+									<label class="col-md-4 d-flex align-items-center gap-2 mb-2">
+										<input class="product-checkbox form-check-input" type="checkbox" name="laminate" value="Spot UV">
+										<span class="text-primary">Spot UV</span>
+										<input class="product-default-radio d-none" type="radio" name="laminate_default" disabled>
+										<i class="product-default-star far fa-star text-muted"></i>
+										<span class="text-muted">Default</span>
+									</label>
+								</div>
+							</div>
+
+							<div class="mb-4">
+								<div class="d-flex align-items-center gap-2 mb-3">
+									<span>Sisi Cetak</span>
+									<span class="product-switch active"></span>
+									<span>Enable</span>
+								</div>
+								<div class="row g-3 product-option-group">
+									<label class="col-md-4 d-flex align-items-center gap-2 mb-2">
+										<input class="product-checkbox form-check-input" type="checkbox" name="print_side" value="Cetak 1 Sisi" checked>
+										<span class="text-primary">Cetak 1 Sisi</span>
+										<input class="product-default-radio d-none" type="radio" name="print_side_default" checked>
+										<i class="product-default-star fas fa-star text-warning"></i>
+										<span class="text-muted">Default</span>
+									</label>
+									<label class="col-md-4 d-flex align-items-center gap-2 mb-2">
+										<input class="product-checkbox form-check-input" type="checkbox" name="print_side" value="Cetak Bolak Balik">
+										<span class="text-primary">Cetak Bolak Balik</span>
+										<input class="product-default-radio d-none" type="radio" name="print_side_default" disabled>
+										<i class="product-default-star far fa-star text-muted"></i>
+										<span class="text-muted">Default</span>
+									</label>
+								</div>
+							</div>
+
+							<div class="mb-4">
+								<div class="d-flex align-items-center gap-2 mb-3">
+									<span>Lipatan</span>
+									<span class="product-switch active"></span>
+									<span>Enable</span>
+								</div>
+								<div class="row g-3 product-option-group">
+									<label class="col-md-4 d-flex align-items-center gap-2 mb-2">
+										<input class="product-checkbox form-check-input" type="checkbox" name="fold" value="Tanpa Lipatan" checked>
+										<span class="text-primary">Tanpa Lipatan</span>
+										<input class="product-default-radio d-none" type="radio" name="fold_default" checked>
+										<i class="product-default-star fas fa-star text-warning"></i>
+										<span class="text-muted">Default</span>
+									</label>
+									<label class="col-md-4 d-flex align-items-center gap-2 mb-2">
+										<input class="product-checkbox form-check-input" type="checkbox" name="fold" value="1 Lipatan">
+										<span class="text-primary">1 Lipatan</span>
+										<input class="product-default-radio d-none" type="radio" name="fold_default" disabled>
+										<i class="product-default-star far fa-star text-muted"></i>
+										<span class="text-muted">Default</span>
+									</label>
+									<label class="col-md-4 d-flex align-items-center gap-2 mb-2">
+										<input class="product-checkbox form-check-input" type="checkbox" name="fold" value="2 Lipatan">
+										<span class="text-primary">2 Lipatan</span>
+										<input class="product-default-radio d-none" type="radio" name="fold_default" disabled>
+										<i class="product-default-star far fa-star text-muted"></i>
+										<span class="text-muted">Default</span>
+									</label>
+								</div>
+							</div>
+
+							<div class="row align-items-start mb-4">
+								<label class="col-md-3 col-form-label fw-semibold" for="inputDescription">Content Article</label>
+								<div class="col-md-9">
+									<textarea class="form-control" id="inputDescription" rows="10" style="min-height: 170px;" required></textarea>
+								</div>
+							</div>
+							<div class="row align-items-start mb-4">
+								<a href="javascript:void(0);" class="product-add-image col-md-3" id="productAddImage"><i class="fas fa-paperclip"></i> Add Image</a>
+								<input class="d-none" type="file" id="productImageInput" accept="image/*" multiple>
+								<div class="col-md-9 d-flex flex-wrap gap-4" id="productImageList">
+									<div class="product-image-preview d-flex align-items-center justify-content-center">
+										<button type="button" class="remove-preview">x</button>
+										<img class="product-image-img" src="https://percetakan-dulank.netlify.app/images/brosur.jpg" alt="Brosur">
+									</div>
+									<div class="product-image-preview d-flex align-items-center justify-content-center">
+										<button type="button" class="remove-preview">x</button>
+										<img class="product-image-img" src="https://percetakan-dulank.netlify.app/images/brosur.jpg" alt="Brosur">
+									</div>
+								</div>
+							</div>
+							<div class="row align-items-center mb-4">
+								<label class="col-md-3 col-form-label fw-semibold">Display</label>
+								<div class="col-md-9 d-flex align-items-center gap-4">
+									<div class="form-check">
+										<input class="form-check-input" type="checkbox" value="" id="productDisplayPos">
+										<label class="form-check-label" for="productDisplayPos">POS</label>
+									</div>
+									<div class="form-check">
+										<input class="form-check-input" type="checkbox" value="" id="productDisplayWebsite" checked>
+										<label class="form-check-label" for="productDisplayWebsite">Website</label>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-secondary px-5" data-bs-dismiss="modal">Cancel</button>
+							<button type="submit" class="btn btn-warning px-5">Save</button>
+						</div>
+					</form>
+				</div>
+			</div>
+
+			<!-- end modal ukuran -->
+
+			<!-- Modal Tambah/Edit Sorting Tag -->
+			<div class="modal fade" id="modalSize" tabindex="-1" aria-labelledby="modalSizeLabel" aria-hidden="true">
+				<div class="modal-dialog modal-dialog-centered">
+					<form class="modal-content" id="formSorting">
+						<div class="modal-header">
+							<h5 class="modal-title" id="modalSizeLabel">Add Size</h5>
+							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+						</div>
+						<div class="modal-body row g-2">
+							<input type="hidden" id="editSortingIndex">
+							<div class="row">
+								<div class="col-md-3">
+									<label class="form-label">Available Size</label>
+								</div>
+								<div class="col-md-9">
+									<select class="form-select" id="inputSortingStatus">
+										<option value="Default" class="text-primary">Folio (21x33cm)</option>
+										<option value="Publish" class="text-primary">HVS</option>
+									</select>
+								</div>
+							</div>
+						</div>
+						<div class="modal-footer">
+							<button type="submit" class="btn btn-outline-warning">Cancel</button>
+							<button type="submit" class="btn btn-warning">Simpan</button>
+						</div>
+					</form>
+				</div>
+			</div>
+			<!-- end modal sorting -->
+
+		</div>
+		<!-- /Main Wrapper -->
+		<script>
+			document.addEventListener('DOMContentLoaded', () => {
+
+				try { feather.replace(); } catch (e) { }
+
+				const allTbodies = document.querySelectorAll('.table tbody');
+
+				allTbodies.forEach(tbody => {
+
+					tbody.addEventListener('click', function (event) {
+						const target = event.target;
+						const upButton = target.closest('.move-up');
+						const downButton = target.closest('.move-down');
+						const currentRow = target.closest('tr');
+
+						if (!currentRow || (!upButton && !downButton)) return;
+
+						function swapContent(rowA, rowB) {
+							const cellsA = rowA.querySelectorAll('td:not(:first-child)');
+							const cellsB = rowB.querySelectorAll('td:not(:first-child)');
+
+							cellsA.forEach((cellA, i) => {
+								const temp = cellA.innerHTML;
+								cellA.innerHTML = cellsB[i].innerHTML;
+								cellsB[i].innerHTML = temp;
+							});
+						}
+
+						if (upButton) {
+							const prevRow = currentRow.previousElementSibling;
+							if (prevRow) swapContent(currentRow, prevRow);
+						}
+
+						if (downButton) {
+							const nextRow = currentRow.nextElementSibling;
+							if (nextRow) swapContent(currentRow, nextRow);
+						}
+
+					});
+				});
+			});
+		</script>
+
+
+<script>
+	document.addEventListener('DOMContentLoaded', () => {
+
+		try { feather.replace(); } catch (e) { }
+
+		// === TAMBAHKAN INITIALIZATION SELECT2 DI SINI ===
+		if (typeof $ !== 'undefined' && $.fn.select2) {
+			// Inisialisasi secara global untuk class .select2
+			$('.select2').select2({
+				width: '100%',
+				placeholder: "Pilih opsi..."
+			});
+
+			// Fix khusus untuk Bootstrap Tabs: re-initialize ketika tab diklik
+			$('button[data-bs-toggle="tab"]').on('shown.bs.tab', function (e) {
+				$('.select2').select2({
+					width: '100%'
+				});
+			});
+		}
+		// ===============================================
+
+		document.querySelectorAll('.product-option-group').forEach(group => {
+			function updateDefaultStars() {
+				group.querySelectorAll('label').forEach(label => {
+					const optionCheckbox = label.querySelector('.product-checkbox');
+					const defaultRadio = label.querySelector('.product-default-radio');
+					const defaultStar = label.querySelector('.product-default-star');
+					if (!optionCheckbox || !defaultRadio || !defaultStar) return;
+
+					defaultRadio.disabled = !optionCheckbox.checked;
+					if (!optionCheckbox.checked) defaultRadio.checked = false;
+
+					defaultStar.classList.toggle('fas', defaultRadio.checked);
+					defaultStar.classList.toggle('far', !defaultRadio.checked);
+					defaultStar.classList.toggle('text-warning', defaultRadio.checked);
+					defaultStar.classList.toggle('text-muted', !defaultRadio.checked);
+				});
+			}
+
+			group.addEventListener('click', event => {
+				const defaultStar = event.target.closest('.product-default-star');
+				if (!defaultStar) return;
+
+				event.preventDefault();
+				event.stopPropagation();
+
+				const optionLabel = defaultStar.closest('label');
+				const optionCheckbox = optionLabel?.querySelector('.product-checkbox');
+				const defaultRadio = optionLabel?.querySelector('.product-default-radio');
+				if (!optionCheckbox?.checked || !defaultRadio) return;
+
+				defaultRadio.checked = !defaultRadio.checked;
+				updateDefaultStars();
+			});
+
+			group.addEventListener('change', event => {
+				const checkedOption = event.target.closest('.product-checkbox');
+				const defaultRadioChange = event.target.closest('.product-default-radio');
+				if (!checkedOption && !defaultRadioChange) return;
+
+				if (defaultRadioChange) {
+					updateDefaultStars();
+					return;
+				}
+
+				if (!checkedOption.checked) {
+					const hasCheckedOption = group.querySelector('.product-checkbox:checked');
+					if (!hasCheckedOption) checkedOption.checked = true;
+					return;
+				}
+
+				group.querySelectorAll('.product-checkbox').forEach(option => {
+					if (option !== checkedOption) option.checked = false;
+				});
+
+				const optionLabel = checkedOption.closest('label');
+				const defaultRadio = optionLabel?.querySelector('.product-default-radio');
+				if (defaultRadio) defaultRadio.checked = true;
+				updateDefaultStars();
+			});
+
+			updateDefaultStars();
+		});
+
+		const addOptions = {
+			paper: [
+				'Art Paper 150 gr',
+				'Art Carton 310 gr',
+				'HVS 80 gr',
+				'Carton BC 180 gr'
+			],
+			laminate: [
+				'Tanpa Laminasi',
+				'Laminasi Doff',
+				'Laminasi Glossy',
+				'Spot UV'
+			],
+			fold: [
+				'Tanpa Lipatan',
+				'1 Lipatan',
+				'2 Lipatan',
+				'3 Lipatan'
+			],
+			printSide: [
+				'Cetak 1 Sisi',
+				'Cetak Bolak Balik'
+			],
+			component: [
+				'Jam Kerja',
+				'Kapasitas Packing Brosur Per Hari',
+				'Biaya Packing',
+				'Quality Control'
+			]
+		};
+
+		const dualAddOptions = {
+			machine: [
+				{ label: 'Select Printing Type', options: ['Offset', 'Digital A3'] },
+				{ label: 'Select Printing Name', options: ['Heidelberg SM104', 'Heidelberg SM74', 'Heidelberg SM52', 'Xerox C60'] }
+			],
+			process: [
+				{ label: 'Select Flow Category', options: ['Pracetak', 'Cetak', 'Finishing'] },
+				{ label: 'Select Flow Name', options: ['Pesan Kertas ke Toko', 'Print A3', 'SPK Cetak Offset', 'Laminasi', 'Cari Jasa Lipat'] }
+			],
+			printSideProcess: [
+				{ label: 'Select Flow Category', options: ['Pracetak', 'Cetak', 'Finishing'] },
+				{ label: 'Select Flow Name', options: ['Proses Lipat', 'Print A3', 'SPK Cetak Offset', 'Quality Control'] }
+			]
+		};
+
+		const selectLabels = {
+			paper: 'Select Paper List',
+			machine: 'Select Printing Type',
+			laminate: 'Select Laminate Name',
+			fold: 'Select Fold Type',
+			printSide: 'Select Print Side',
+			component: 'Select Component',
+			process: 'Select Flow',
+			printSideProcess: 'Select Flow'
+		};
+
+		function createInlineSelect(label, options) {
+			return `
+				<select class="form-select form-select-sm">
+					<option value="">${label}</option>
+					${options.map(option => `<option value="${option}">${option}</option>`).join('')}
+				</select>
+			`;
+		}
+
+		function createInlineControls(kind) {
+			if (dualAddOptions[kind]) {
+				return dualAddOptions[kind].map(item => createInlineSelect(item.label, item.options)).join('');
+			}
+
+			return createInlineSelect(selectLabels[kind] || 'Select Option', addOptions[kind] || []);
+		}
+
+		function statusSelect() {
+			return '<select class="form-select form-select-sm"><option>Show</option><option>Hide</option></select>';
+		}
+
+		function effectiveSelect(values) {
+			const options = values.map((value, index) => `<option value="${index}" selected>${value}</option>`).join('');
+			return `<select class="select2" multiple="multiple">${options}</select>`;
+		}
+
+		function splitChoice(value) {
+			const parts = value.split(' - ');
+			return {
+				first: parts[0] || value,
+				second: parts[1] || value
+			};
+		}
+
+		function createCells(kind, selectedValue) {
+			const choice = splitChoice(selectedValue);
+
+			if (kind === 'paper') {
+				const paperName = selectedValue.replace(/\s\d+\s?gr$/i, '');
+				const gramature = (selectedValue.match(/\d+\s?gr/i) || ['150 gr'])[0];
+				return [
+					paperName,
+					`<div class="mt-2 d-flex flex-wrap gap-3">
+						<div><input class="form-check-input" type="checkbox" checked> <label class="form-check-label">${gramature}</label></div>
+						<div><input class="form-check-input" type="checkbox"> <label class="form-check-label">Select All</label></div>
+					</div>`
+				];
+			}
+
+			if (kind === 'machine') {
+				const unitColor = choice.first === 'Digital A3' ? 'Digital' : '4 Color';
+				const paperArea = choice.second.includes('SM104') ? '104x72 cm' : choice.second.includes('SM74') ? '75 x 52 cm' : choice.second.includes('SM52') ? '52 x 36 cm' : '32 x 48 cm';
+				return [
+					choice.first,
+					choice.second,
+					unitColor,
+					paperArea,
+					statusSelect(),
+					'<a href="#" class="text-danger js-remove-row">Remove</a>'
+				];
+			}
+
+			if (kind === 'laminate') {
+				return [
+					selectedValue,
+					statusSelect(),
+					'<a href="#" class="text-danger js-remove-row">Remove</a>'
+				];
+			}
+
+			if (kind === 'fold') {
+				return [
+					selectedValue,
+					statusSelect(),
+					'<a href="#" class="text-danger js-remove-row">Remove</a>'
+				];
+			}
+
+			if (kind === 'printSide') {
+				return [
+					selectedValue,
+					statusSelect(),
+					'<a href="#" class="text-danger js-remove-row">Remove</a>'
+				];
+			}
+
+			if (kind === 'component') {
+				return [
+					selectedValue,
+					'8',
+					'Jam'
+				];
+			}
+
+			if (kind === 'printSideProcess') {
+				return [
+					choice.first,
+					choice.second,
+					'Nurdin',
+					'5.000 Per Job',
+					effectiveSelect(['Cetak 1 Sisi', 'Cetak Bolak-Balik']),
+					'<a href="#" class="text-danger js-remove-row">Remove</a>'
+				];
+			}
+
+			return [
+				choice.first,
+				choice.second,
+				'Nurdin',
+				'5.000 per Job',
+				effectiveSelect(['Dummy Effective']),
+				'<a href="#" class="text-danger js-remove-row">Remove</a>'
+			];
+		}
+
+		function findTargetTable(trigger) {
+			const section = trigger.closest('div');
+			return section ? section.querySelector('table') : null;
+		}
+
+		function refreshSelect2(scope) {
+			if (typeof $ !== 'undefined' && $.fn.select2) {
+				$(scope).find('.select2').select2({ width: '100%' });
+			}
+		}
+
+		document.addEventListener('click', function (event) {
+			const trigger = event.target.closest('.js-inline-add-trigger');
+			const removeButton = event.target.closest('.js-remove-row, a.text-danger');
+
+			if (removeButton && ['remove', 'delete'].includes(removeButton.textContent.trim().toLowerCase())) {
+				event.preventDefault();
+				removeButton.closest('tr')?.remove();
+				return;
+			}
+
+			if (!trigger) return;
+
+			const kind = trigger.dataset.addKind;
+			const existingForm = trigger.parentElement.querySelector('.inline-add-row');
+
+			if (existingForm) {
+				existingForm.remove();
+				return;
+			}
+
+			document.querySelectorAll('.inline-add-row').forEach(form => form.remove());
+
+			const form = document.createElement('div');
+			form.className = 'inline-add-row';
+			form.innerHTML = `
+				${createInlineControls(kind)}
+				<button type="button" class="btn btn-link btn-sm js-inline-confirm">Add</button>
+				<button type="button" class="btn btn-link btn-sm js-inline-cancel">Cancel</button>
+			`;
+
+			trigger.parentElement.insertBefore(form, trigger);
+
+			form.querySelector('.js-inline-cancel').addEventListener('click', () => form.remove());
+			form.querySelector('.js-inline-confirm').addEventListener('click', () => {
+				const selects = Array.from(form.querySelectorAll('select'));
+				const values = selects.map(select => select.value);
+				if (values.some(value => !value)) return;
+
+				const table = findTargetTable(trigger);
+				const tbody = table?.querySelector('tbody');
+				if (!tbody) return;
+
+				const selectedValue = values.join(' - ');
+				const row = document.createElement('tr');
+				row.innerHTML = createCells(kind, selectedValue).map(cell => `<td>${cell}</td>`).join('');
+				tbody.appendChild(row);
+				refreshSelect2(row);
+				form.remove();
+			});
+		});
+
+		const allTbodies = document.querySelectorAll('.table tbody');
+		allTbodies.forEach(tbody => {
+			tbody.addEventListener('click', function (event) {
+				const target = event.target;
+				const upButton = target.closest('.move-up');
+				const downButton = target.closest('.move-down');
+				const currentRow = target.closest('tr');
+
+				if (!currentRow || (!upButton && !downButton)) return;
+
+				function swapContent(rowA, rowB) {
+					const cellsA = rowA.querySelectorAll('td:not(:first-child)');
+					const cellsB = rowB.querySelectorAll('td:not(:first-child)');
+
+					cellsA.forEach((cellA, i) => {
+						const temp = cellA.innerHTML;
+						cellA.innerHTML = cellsB[i].innerHTML;
+						cellsB[i].innerHTML = temp;
+					});
+				}
+
+				if (upButton) {
+					const prevRow = currentRow.previousElementSibling;
+					if (prevRow) swapContent(currentRow, prevRow);
+				}
+
+				if (downButton) {
+					const nextRow = currentRow.nextElementSibling;
+					if (nextRow) swapContent(currentRow, nextRow);
+				}
+			});
+		});
+	});
+</script>
+
+
+		<!-- jQuery -->
+		<script src="assets/js/jquery-3.7.1.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.loadtemplate/1.5.10/jquery.loadTemplate.min.js"
+			integrity="sha512-T1zx+UG2gXu9mr29wvzaKkNUmAOAie40T32ZPIvcRPJgO5br53+Ocqj8gzguUuix7FK+Z3ncRCJMaZcumnPZzg=="
+			crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+		<!-- Feather Icon JS -->
+		<script src="assets/js/feather.min.js"></script>
+
+		<!-- custom JS -->
+		<script src="assets/js/tableukuran.js"></script>
+
+		<!-- Datatable JS -->
+		<script src="assets/js/jquery.dataTables.min.js"></script>
+		<script src="assets/js/dataTables.bootstrap5.min.js"></script>
+
+		<!-- Slimscroll JS -->
+		<script src="assets/js/jquery.slimscroll.min.js"></script>
+        <!-- <script src="assets/plugins/select2/js/custom-select.js"></script> -->
+		<!-- Bootstrap Core JS -->
+		<script src="assets/js/bootstrap.bundle.min.js"></script>
+		<script src="assets/js/easy-number-separator.js"></script>
+		<script src="assets/js/product.js"></script>
+		<script src="assets/js/profit-setting.js"></script>
+		
+		<!-- Chart JS -->
+		<script src="assets/plugins/apexchart/apexcharts.min.js"></script>
+		<script src="assets/plugins/apexchart/chart-data.js"></script>
+		
+		<!-- Select2 JS -->
+			   <script src="assets/plugins/select2/js/select2.min.js"></script>
+			   <script src="assets/plugins/select2/js/select2.min.js"></script>
+		<!-- Sweetalert 2 -->
+		<script src="assets/plugins/sweetalert/sweetalert2.all.min.js"></script>
+		<script src="assets/plugins/sweetalert/sweetalerts.min.js"></script>
+
+		<!-- Custom JS -->
+		<script src="assets/js/theme-script.js"></script>
+		<script src="assets/js/script.js"></script>
+
+<script>
+	// Kalau pakai jQuery & Select2, tinggal masukin ini di file JS lu
+$(document).ready(function() {
+    // Inisialisasi Select2 untuk multiple select
+    $('.select2').select2({
+        width: '100%',
+        placeholder: "Select printing type"
+    });
+
+    // Handle button Add Flow / Add Machine (kalau ada logic tambah baris)
+    $('.js-inline-add-trigger').on('click', function(e) {
+        e.preventDefault();
+        let addKind = $(this).data('add-kind');
+        
+        if(addKind === 'machine') {
+            console.log('Add Offset Machine dipencet');
+            // Logika tambah baris machine di sini
+        } else if (addKind === 'process') {
+            console.log('Add Flow Name dipencet');
+            // Logika tambah baris proses di sini
+        }
+    });
+});
+</script>
+
+<script>
+    document.getElementById('addSizeBtn').addEventListener('click', function() {
+        const tbody = document.getElementById('sizeTableBody');
+        const newRow = document.createElement('tr');
+        
+        // Template baris baru saat mode EDIT / INPUT
+        newRow.innerHTML = `
+            <td>
+                <select class="form-select form-select-sm size-name-select">
+                    <option selected disabled value="">Select Available Size</option>
+                    <option value="A5">A5</option>
+                    <option value="A4">A4</option>
+                    <option value="A3">A3</option>
+                    <option value="Folio">Folio</option>
+                </select>
+            </td>
+            <td>
+                <textarea class="form-control form-control-sm size-val-input" rows="1" placeholder="Isi ukuran..."></textarea>
+            </td>
+            <td>
+                <select class="form-select form-select-sm size-status-select">
+                    <option>Show</option>
+                    <option>Hide</option>
+                </select>
+            </td>
+            <td>
+                <a href="#" class="text-success me-2 save-btn">Save</a>
+                <a href="#" class="text-danger" onclick="this.closest('tr').remove(); return false;">Remove</a>
+            </td>
+        `;
+        
+        // Pasang event listener khusus untuk tombol SAVE di baris baru ini
+        newRow.querySelector('.save-btn').addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Ambil elemen inputan di dalam baris ini
+            const nameSelect = newRow.querySelector('.size-name-select');
+            const valInput = newRow.querySelector('.size-val-input');
+            const statusSelect = newRow.querySelector('.size-status-select');
+            
+            const nameValue = nameSelect.value;
+            const sizeValue = valInput.value.trim();
+            const statusValue = statusSelect.value;
+            
+            // Validasi dasar biar data gak kosong pas di-save
+            if (!nameValue || !sizeValue) {
+                alert('Pilih Size Name dan isi ukurannya dahulu!');
+                return;
+            }
+            
+            // Ubah isi kolom menjadi teks statis (Membekukan inputan jadi baris tabel biasa)
+            newRow.cells[0].textContent = nameValue;
+            newRow.cells[1].textContent = sizeValue;
+            
+            // Kolom Status tetep select box biasa bawaan awal dengan nilai yang dipilih sebelumnya
+            newRow.cells[2].innerHTML = `
+                <select class="form-select form-select-sm">
+                    <option ${statusValue === 'Show' ? 'selected' : ''}>Show</option>
+                    <option ${statusValue === 'Hide' ? 'selected' : ''}>Hide</option>
+                </select>
+            `;
+            
+            // Kolom Action hapus tombol Save, sisain Remove aja
+            newRow.cells[3].innerHTML = `
+                <a href="#" class="text-danger" onclick="this.closest('tr').remove(); return false;">Remove</a>
+            `;
+        });
+        
+        tbody.appendChild(newRow);
+    });
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Cari semua baris (row) di dalam tabel Paper Type
+    const rows = document.querySelectorAll('#paperTypeTable tbody tr');
+
+    rows.forEach(row => {
+        // Ambil checkbox Select All dan checkbox item gramature di baris ini
+        const selectAllCb = row.querySelector('.cb-select-all');
+        const itemCbs = row.querySelectorAll('.cb-item');
+
+        if (selectAllCb && itemCbs.length > 0) {
+            // Event jika 'Select All' diklik
+            selectAllCb.addEventListener('change', function() {
+                itemCbs.forEach(cb => {
+                    cb.checked = selectAllCb.checked;
+                });
+            });
+
+            // Event jika masing-masing 'Gramature' diklik
+            itemCbs.forEach(cb => {
+                cb.addEventListener('change', function() {
+                    // Cek apakah semua item gramature dalam baris ini terceklis
+                    const allChecked = Array.from(itemCbs).every(iCb => iCb.checked);
+                    selectAllCb.checked = allChecked;
+                });
+            });
+        }
+    });
+});
+</script>
+
+
+</body>
+
+</html>

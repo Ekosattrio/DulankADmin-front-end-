@@ -278,7 +278,7 @@
                         <li class="nav-item" role="presentation">
                           <button
                             class="nav-link workflow-item"
-                            id="product-size"
+                            id="number-of-sheet-option"
                             data-bs-toggle="tab"
                             data-bs-target="#sizeTabContent"
                             type="button"
@@ -1106,130 +1106,181 @@
                             </table>
                           </div>
                         </div>
-                        <div class="tab-pane fade" id="sizeTabContent" role="tabpanel" aria-labelledby="product-size">
-                          <div class="justify-content-between d-flex align-items-center mb-2">
-                            <div>
-                              <h4>Product Size Option</h4>
-                            </div>
-                          </div>
+                        <div class="tab-pane fade" id="sizeTabContent" role="tabpanel" aria-labelledby="number-of-sheet-option">
+  <div class="card border">
+    <div class="card-body p-5">
+      <h6 class="fw-bold mb-5">Number of Sheet Option</h6>
 
-                          <div>
-                            <div class="table-responsive">
-                              <table class="table table-sm">
-                                <thead>
-                                  <tr>
-                                    <th>Size Name</th>
-                                    <th>size</th>
-                                    <th>Status</th>
-                                    <th>Action</th>
-                                  </tr>
-                                </thead>
-                                <tbody id="sizeTableBody">
-                                  <tr>
-                                    <td>A5</td>
-                                    <td>21x15cm</td>
-                                    <td>
-                                      <select class="form-select form-select-sm">
-                                        <option>Show</option>
-                                        <option>Hide</option>
-                                      </select>
-                                    </td>
-                                    <td>
-                                      <a
-                                        href="#"
-                                        class="text-danger"
-                                        onclick="
-                                          this.closest('tr').remove();
-                                          return false;
-                                        "
-                                        >Remove</a
-                                      >
-                                    </td>
-                                  </tr>
-                                  <tr>
-                                    <td>A4</td>
-                                    <td>21x30cm</td>
-                                    <td>
-                                      <select class="form-select form-select-sm">
-                                        <option>Show</option>
-                                        <option>Hide</option>
-                                      </select>
-                                    </td>
-                                    <td>
-                                      <a
-                                        href="#"
-                                        class="text-danger"
-                                        onclick="
-                                          this.closest('tr').remove();
-                                          return false;
-                                        "
-                                        >Remove</a
-                                      >
-                                    </td>
-                                  </tr>
-                                  <tr>
-                                    <td>A3</td>
-                                    <td>30x42cm</td>
-                                    <td>
-                                      <select class="form-select form-select-sm">
-                                        <option>Hide</option>
-                                        <option>Show</option>
-                                      </select>
-                                    </td>
-                                    <td>
-                                      <a
-                                        href="#"
-                                        class="text-danger"
-                                        onclick="
-                                          this.closest('tr').remove();
-                                          return false;
-                                        "
-                                        >Remove</a
-                                      >
-                                    </td>
-                                  </tr>
-                                  <tr>
-                                    <td>Folio</td>
-                                    <td>21x33cm</td>
-                                    <td>
-                                      <select class="form-select form-select-sm">
-                                        <option>Show</option>
-                                        <option>Hide</option>
-                                      </select>
-                                    </td>
-                                    <td>
-                                      <a
-                                        href="#"
-                                        class="text-danger"
-                                        onclick="
-                                          this.closest('tr').remove();
-                                          return false;
-                                        "
-                                        >Remove</a
-                                      >
-                                    </td>
-                                  </tr>
-                                </tbody>
-                              </table>
-                            </div>
+      <div class="table-responsive">
+        <table class="table table-sm table-borderless align-middle w-auto mb-4">
+          <thead>
+            <tr>
+              <th class="fw-normal px-5">Sheet Option</th>
+              <th class="fw-normal px-5">Status</th>
+              <th class="fw-normal px-5">Action</th>
+            </tr>
+          </thead>
+          <tbody id="numberSheetTableBody">
+            <tr>
+              <td class="px-5">1 Lembar</td>
+              <td class="px-5">
+                <div class="dropdown">
+                  <button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                    Show
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item py-2" href="#" onclick="this.closest('.dropdown').querySelector('button').textContent=this.textContent.trim(); return false;">Show</a></li>
+                    <li><a class="dropdown-item py-2" href="#" onclick="this.closest('.dropdown').querySelector('button').textContent=this.textContent.trim(); return false;">Hide</a></li>
+                  </ul>
+                </div>
+              </td>
+              <td class="px-5">
+                <a href="#" class="text-danger" onclick="this.closest('tr').remove(); return false;">Remove</a>
+              </td>
+            </tr>
+            <tr>
+              <td class="px-5">2 Lembar</td>
+              <td class="px-5">
+                <div class="dropdown">
+                  <button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                    Show
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item py-2" href="#" onclick="this.closest('.dropdown').querySelector('button').textContent=this.textContent.trim(); return false;">Show</a></li>
+                    <li><a class="dropdown-item py-2" href="#" onclick="this.closest('.dropdown').querySelector('button').textContent=this.textContent.trim(); return false;">Hide</a></li>
+                  </ul>
+                </div>
+              </td>
+              <td class="px-5">
+                <a href="#" class="text-danger" onclick="this.closest('tr').remove(); return false;">Remove</a>
+              </td>
+            </tr>
+            <tr>
+              <td class="px-5">3 Lembar</td>
+              <td class="px-5">
+                <div class="dropdown">
+                  <button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                    Show
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item py-2" href="#" onclick="this.closest('.dropdown').querySelector('button').textContent=this.textContent.trim(); return false;">Show</a></li>
+                    <li><a class="dropdown-item py-2" href="#" onclick="this.closest('.dropdown').querySelector('button').textContent=this.textContent.trim(); return false;">Hide</a></li>
+                  </ul>
+                </div>
+              </td>
+              <td class="px-5">
+                <a href="#" class="text-danger" onclick="this.closest('tr').remove(); return false;">Remove</a>
+              </td>
+            </tr>
+            <tr>
+              <td class="px-5">4 Lembar</td>
+              <td class="px-5">
+                <div class="dropdown">
+                  <button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                    Show
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item py-2" href="#" onclick="this.closest('.dropdown').querySelector('button').textContent=this.textContent.trim(); return false;">Show</a></li>
+                    <li><a class="dropdown-item py-2" href="#" onclick="this.closest('.dropdown').querySelector('button').textContent=this.textContent.trim(); return false;">Hide</a></li>
+                  </ul>
+                </div>
+              </td>
+              <td class="px-5">
+                <a href="#" class="text-danger" onclick="this.closest('tr').remove(); return false;">Remove</a>
+              </td>
+            </tr>
+            <tr>
+              <td class="px-5">6 Lembar</td>
+              <td class="px-5">
+                <div class="dropdown">
+                  <button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                    Show
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item py-2" href="#" onclick="this.closest('.dropdown').querySelector('button').textContent=this.textContent.trim(); return false;">Show</a></li>
+                    <li><a class="dropdown-item py-2" href="#" onclick="this.closest('.dropdown').querySelector('button').textContent=this.textContent.trim(); return false;">Hide</a></li>
+                  </ul>
+                </div>
+              </td>
+              <td class="px-5">
+                <a href="#" class="text-danger" onclick="this.closest('tr').remove(); return false;">Remove</a>
+              </td>
+            </tr>
+            <tr>
+              <td class="px-5">7 Lembar</td>
+              <td class="px-5">
+                <div class="dropdown">
+                  <button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                    Show
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item py-2" href="#" onclick="this.closest('.dropdown').querySelector('button').textContent=this.textContent.trim(); return false;">Show</a></li>
+                    <li><a class="dropdown-item py-2" href="#" onclick="this.closest('.dropdown').querySelector('button').textContent=this.textContent.trim(); return false;">Hide</a></li>
+                  </ul>
+                </div>
+              </td>
+              <td class="px-5">
+                <a href="#" class="text-danger" onclick="this.closest('tr').remove(); return false;">Remove</a>
+              </td>
+            </tr>
+            <tr>
+              <td class="px-5">12 Lembar</td>
+              <td class="px-5">
+                <div class="dropdown">
+                  <button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                    Show
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item py-2" href="#" onclick="this.closest('.dropdown').querySelector('button').textContent=this.textContent.trim(); return false;">Show</a></li>
+                    <li><a class="dropdown-item py-2" href="#" onclick="this.closest('.dropdown').querySelector('button').textContent=this.textContent.trim(); return false;">Hide</a></li>
+                  </ul>
+                </div>
+              </td>
+              <td class="px-5">
+                <a href="#" class="text-danger" onclick="this.closest('tr').remove(); return false;">Remove</a>
+              </td>
+            </tr>
+            <tr>
+              <td class="px-5">13 Lembar</td>
+              <td class="px-5">
+                <div class="dropdown">
+                  <button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                    Show
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item py-2" href="#" onclick="this.closest('.dropdown').querySelector('button').textContent=this.textContent.trim(); return false;">Show</a></li>
+                    <li><a class="dropdown-item py-2" href="#" onclick="this.closest('.dropdown').querySelector('button').textContent=this.textContent.trim(); return false;">Hide</a></li>
+                  </ul>
+                </div>
+              </td>
+              <td class="px-5">
+                <a href="#" class="text-danger" onclick="this.closest('tr').remove(); return false;">Remove</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
 
-                            <button type="button" class="btn btn-warning btn-sm mb-4" id="addSizeBtn">Add Size</button>
+      <button type="button" class="btn btn-warning btn-sm text-white mb-5" id="addNumberSheetBtn">
+        Add Number Sheet
+      </button>
 
-                            <div>
-                              <h6 class="mb-3">Custom size for Product</h6>
-                              <div class="d-flex align-items-center gap-3">
-                                <label>Enable Product for Custom Size ?</label>
-                                <div class="btn-group" role="group">
-                                  <input type="radio" class="btn-check" name="customSize" id="customYes" checked />
-                                  <label class="btn btn-outline-primary" for="customYes">Yes</label>
+      <div class="ms-4">
+        <h6 class="fw-bold mb-3">Custom for Number of Sheet</h6>
+        <div class="d-flex align-items-center gap-3">
+          <label>Enable Custom for Number of Sheet?</label>
+          <div class="btn-group" role="group">
+            <input type="radio" class="btn-check" name="customNumberSheet" id="customNumberSheetNo" />
+            <label class="btn btn-outline-warning" for="customNumberSheetNo">No</label>
 
-                                  <input type="radio" class="btn-check" name="customSize" id="customNo" />
-                                  <label class="btn btn-outline-primary" for="customNo">No</label>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
+            <input type="radio" class="btn-check" name="customNumberSheet" id="customNumberSheetYes" checked />
+            <label class="btn btn-outline-warning" for="customNumberSheetYes">Yes</label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
                         <div class="tab-pane fade" id="paperTypeTabContent" role="tabpanel" aria-labelledby="paper-type">
                           <div class="card mb-4">
                             <div class="card-body">
@@ -4031,64 +4082,72 @@
     </script>
 
     <script>
-      document.getElementById("addSizeBtn").addEventListener("click", function () {
-        const tbody = document.getElementById("sizeTableBody");
-        const newRow = document.createElement("tr");
-        newRow.innerHTML = `
-            <td>
-                <select class="form-select form-select-sm size-name-select">
-                    <option selected disabled value="">Select Available Size</option>
-                    <option value="A5">A5</option>
-                    <option value="A4">A4</option>
-                    <option value="A3">A3</option>
-                    <option value="Folio">Folio</option>
-                </select>
-            </td>
-            <td>
-                <textarea class="form-control form-control-sm size-val-input" rows="1" placeholder="Isi ukuran..."></textarea>
-            </td>
-            <td>
-                <select class="form-select form-select-sm size-status-select">
-                    <option>Show</option>
-                    <option>Hide</option>
-                </select>
-            </td>
-            <td>
-                <a href="#" class="text-success me-2 save-btn">Save</a>
-                <a href="#" class="text-danger" onclick="this.closest('tr').remove(); return false;">Remove</a>
-            </td>
-        `;
+     document.getElementById("addNumberSheetBtn").addEventListener("click", function () {
+  const tbody = document.getElementById("numberSheetTableBody");
+  const newRow = document.createElement("tr");
+  newRow.innerHTML = `
+      <td class="px-5">
+          <select class="form-select form-select-sm sheet-option-select">
+              <option selected disabled value="">Select Sheet Option</option>
+              <option value="1 Lembar">1 Lembar</option>
+              <option value="2 Lembar">2 Lembar</option>
+              <option value="3 Lembar">3 Lembar</option>
+              <option value="4 Lembar">4 Lembar</option>
+              <option value="6 Lembar">6 Lembar</option>
+              <option value="7 Lembar">7 Lembar</option>
+              <option value="12 Lembar">12 Lembar</option>
+              <option value="13 Lembar">13 Lembar</option>
+          </select>
+      </td>
+      <td class="px-5">
+          <div class="dropdown">
+              <button class="btn btn-outline-secondary btn-sm dropdown-toggle sheet-status-btn" type="button" data-bs-toggle="dropdown">
+                  Show
+              </button>
+              <ul class="dropdown-menu">
+                  <li><a class="dropdown-item py-2" href="#" onclick="this.closest('.dropdown').querySelector('button').textContent=this.textContent.trim(); return false;">Show</a></li>
+                  <li><a class="dropdown-item py-2" href="#" onclick="this.closest('.dropdown').querySelector('button').textContent=this.textContent.trim(); return false;">Hide</a></li>
+              </ul>
+          </div>
+      </td>
+      <td class="px-5">
+          <a href="#" class="text-success me-2 save-btn">Save</a>
+          <a href="#" class="text-danger" onclick="this.closest('tr').remove(); return false;">Remove</a>
+      </td>
+  `;
 
-        newRow.querySelector(".save-btn").addEventListener("click", function (e) {
-          e.preventDefault();
+  newRow.querySelector(".save-btn").addEventListener("click", function (e) {
+    e.preventDefault();
 
-          const nameSelect = newRow.querySelector(".size-name-select");
-          const valInput = newRow.querySelector(".size-val-input");
-          const statusSelect = newRow.querySelector(".size-status-select");
+    const sheetSelect = newRow.querySelector(".sheet-option-select");
+    const statusBtn = newRow.querySelector(".sheet-status-btn");
 
-          const nameValue = nameSelect.value;
-          const sizeValue = valInput.value.trim();
-          const statusValue = statusSelect.value;
-          if (!nameValue || !sizeValue) {
-            alert("Pilih Size Name dan isi ukurannya dahulu!");
-            return;
-          }
-          newRow.cells[0].textContent = nameValue;
-          newRow.cells[1].textContent = sizeValue;
-          newRow.cells[2].innerHTML = `
-                <select class="form-select form-select-sm">
-                    <option ${statusValue === "Show" ? "selected" : ""}>Show</option>
-                    <option ${statusValue === "Hide" ? "selected" : ""}>Hide</option>
-                </select>
-            `;
+    const sheetValue = sheetSelect.value;
+    const statusValue = statusBtn.textContent.trim();
+    if (!sheetValue) {
+      alert("Pilih Sheet Option dahulu!");
+      return;
+    }
+    newRow.cells[0].textContent = sheetValue;
+    newRow.cells[1].innerHTML = `
+          <div class="dropdown">
+              <button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                  ${statusValue}
+              </button>
+              <ul class="dropdown-menu">
+                  <li><a class="dropdown-item py-2" href="#" onclick="this.closest('.dropdown').querySelector('button').textContent=this.textContent.trim(); return false;">Show</a></li>
+                  <li><a class="dropdown-item py-2" href="#" onclick="this.closest('.dropdown').querySelector('button').textContent=this.textContent.trim(); return false;">Hide</a></li>
+              </ul>
+          </div>
+      `;
 
-          newRow.cells[3].innerHTML = `
-                <a href="#" class="text-danger" onclick="this.closest('tr').remove(); return false;">Remove</a>
-            `;
-        });
+    newRow.cells[2].innerHTML = `
+          <a href="#" class="text-danger" onclick="this.closest('tr').remove(); return false;">Remove</a>
+      `;
+  });
 
-        tbody.appendChild(newRow);
-      });
+  tbody.appendChild(newRow);
+});
     </script>
 
     <script>

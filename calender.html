@@ -1869,43 +1869,53 @@
 	                      <div class="tab-pane fade" id="foldTabContent" role="tabpanel" aria-labelledby="laminate">
                         <div class="card mb-4">
                           <div class="card-body">
-                            <h4 class="mb-3">Fold Option</h4>
+                            <h4 class="mb-3">Print Type Option</h4>
                             <div class="table-responsive mb-4">
                               <table class="table table-sm">
                                 <thead>
                                   <tr>
-                                    <th>Fold Type</th>
+                                    <th>Print Type</th>
                                     <th>Status</th>
-                                    <th>Action</th>
+                                    <!-- <th>Action</th> -->
                                   </tr>
                                 </thead>
                                 <tbody>
                                   <tr>
-                                    <td>Tanpa Lipatan</td>
+                                    <td>1 Warna</td>
                                     <td>
                                       <select class="form-select form-select-sm">
                                         <option>Show</option>
                                         <option>Hide</option>
                                       </select>
                                     </td>
-                                    <td><a href="#" class="text-danger">Remove</a></td>
+                                    <!-- <td><a href="#" class="text-danger">Remove</a></td> -->
                                   </tr>
                                   <tr>
-                                    <td>1 Lipatan</td>
+                                    <td>2 Warna</td>
                                     <td>
                                       <select class="form-select form-select-sm">
                                         <option>Show</option>
                                         <option>Hide</option>
                                       </select>
                                     </td>
-                                    <td><a href="#" class="text-danger">Remove</a></td>
+                                    <!-- <td><a href="#" class="text-danger">Remove</a></td> -->
+                                  </tr>
+                                  <tr>
+                                    <td>3 Warna</td>
+                                    <td>
+                                      <select class="form-select form-select-sm">
+                                        <option>Show</option>
+                                        <option>Hide</option>
+                                      </select>
+                                    </td>
+                                    <!-- <td><a href="#" class="text-danger">Remove</a></td> -->
                                   </tr>
                                 </tbody>
                               </table>
                             </div>
-                            <button type="button" class="btn btn-warning btn-sm js-inline-add-trigger" data-add-kind="fold">
+                            <!-- <button type="button" class="btn btn-warning btn-sm js-inline-add-trigger" data-add-kind="fold">
                               Add Fold Type
-                            </button>
+                            </button> -->
 
                             <div class="row d-flex justify-content-end mt-4">
                               <div class="col-12 justify-content-end d-flex gap-2">
@@ -1916,46 +1926,48 @@
                           </div>
                         </div>
 
-                        <div class="card">
-                          <div class="card-body">
-                            <h4 class="mb-3">Work Flow Setting</h4>
-                            <div class="table-responsive mb-4">
-                              <table class="table">
+                        <div class="card border rounded-4">
+                          <div class="card-body p-4">
+                            <h5 class="fw-bold mb-4">Work Flow</h5>
+                            <div class="table-responsive mb-3">
+                              <table class="table table-borderless align-middle w-auto mb-0">
                                 <thead>
                                   <tr>
-                                    <th>Flow Category</th>
-                                    <th>Flow Name</th>
-                                    <th>Assignee</th>
-                                    <th>Incentive</th>
-                                    <th>Effective Fold Type</th>
-                                    <th>Action</th>
+                                    <th class="px-4">Flow Category</th>
+                                    <th class="px-4">Flow Name</th>
+                                    <th class="px-4">Assignee</th>
+                                    <th class="px-4">Incentive</th>
+                                    <th class="px-4">Effective Print Type</th>
+                                    <th class="px-4">Action</th>
                                   </tr>
                                 </thead>
                                 <tbody>
                                   <tr>
-                                    <td>Finising</td>
-                                    <td>Cari Jasa Lipat</td>
-                                    <td>Nurdin</td>
-                                    <td>5.000 per Job</td>
-                                    <td>
+                                    <td class="px-4">Pra Cetak</td>
+                                    <td class="px-4">Plat CTP</td>
+                                    <td class="px-4">Nurdin</td>
+                                    <td class="px-4">5000 Per Job</td>
+                                    <td class="px-4">
                                       <select class="select2" multiple="multiple">
-                                        <option value="m-1" selected>1 lipatan</option>
-                                        <option value="m-2">2 lipatan</option>
+                                        <option value="pt-1" selected>Full Color</option>
+                                        <option value="pt-2">1 Warna</option>
+                                        <option value="pt-3">2 Warna</option>
+                                        <option value="pt-4">3 Warna</option>
                                       </select>
                                     </td>
-                                    <td><a href="#" class="text-danger">Remove</a></td>
+                                    <td class="px-4"><a href="#" class="text-danger">Remove</a></td>
                                   </tr>
                                 </tbody>
                               </table>
                             </div>
-                            <button type="button" class="btn btn-warning btn-sm js-inline-add-trigger" data-add-kind="process">
-                              Add Flow Name
+                            <button type="button" class="btn btn-link btn-sm text-warning js-inline-add-trigger" data-add-kind="printTypeProcess">
+                              Add Flow
                             </button>
 
                             <div class="row d-flex justify-content-end mt-4">
-                              <div class="col-12 justify-content-end d-flex gap-2">
-                                <button class="btn btn-secondary btn-sm">Cancel</button>
-                                <button class="btn btn-primary btn-sm">Save</button>
+                              <div class="col-12 justify-content-end d-flex gap-4">
+                                <button class="btn btn-secondary btn-sm px-5">Cancel</button>
+                                <button class="btn btn-warning btn-sm text-white px-5">Save</button>
                               </div>
                             </div>
                           </div>
@@ -3783,6 +3795,10 @@
             { label: "Select Flow Category", options: ["Pracetak", "Cetak", "Finishing"] },
             { label: "Select Flow Name", options: ["Proses Lipat", "Print A3", "SPK Cetak Offset", "Quality Control"] },
           ],
+          printTypeProcess: [
+            { label: "Select Flow Category", options: ["Pra Cetak", "Cetak", "Finishing"] },
+            { label: "Select Flow Name", options: ["Plat CTP", "Print A3", "SPK Cetak Offset", "Quality Control"] },
+          ],
         };
 
         const selectLabels = {
@@ -3794,11 +3810,12 @@
           component: "Select Component",
           process: "Select Flow",
           printSideProcess: "Select Flow",
+          printTypeProcess: "Select Flow",
         };
 
-        function createInlineSelect(label, options) {
+        function createInlineSelect(label, options, extraClasses = "") {
           return `
-				<select class="form-select form-select-sm">
+				<select class="form-select form-select-sm ${extraClasses}">
 					<option value="">${label}</option>
 					${options.map((option) => `<option value="${option}">${option}</option>`).join("")}
 				</select>
@@ -3891,6 +3908,17 @@
             ];
           }
 
+          if (kind === "printTypeProcess") {
+            return [
+              choice.first,
+              choice.second,
+              "Nurdin",
+              "5000 Per Job",
+              effectiveSelect(["Full Color"]),
+              '<a href="#" class="text-danger js-remove-row">Remove</a>',
+            ];
+          }
+
           return [
             choice.first,
             choice.second,
@@ -3912,6 +3940,24 @@
           }
         }
 
+        function createInlineTableRow(kind) {
+          const row = document.createElement("tr");
+          row.className = "js-inline-table-row";
+          const controls = (dualAddOptions[kind] || [])
+            .map((item) => `<td class="px-4">${createInlineSelect(item.label, item.options, "w-auto pe-5")}</td>`)
+            .join("");
+
+          row.innerHTML = `
+            ${controls}
+            <td class="px-4"><button type="button" class="btn btn-link btn-sm text-warning js-inline-table-confirm">Add</button></td>
+            <td class="px-4"><button type="button" class="btn btn-link btn-sm text-warning js-inline-table-cancel">Cancel</button></td>
+            <td></td>
+            <td></td>
+          `;
+
+          return row;
+        }
+
         document.addEventListener("click", function (event) {
           const trigger = event.target.closest(".js-inline-add-trigger");
           const removeButton = event.target.closest(".js-remove-row, a.text-danger");
@@ -3925,6 +3971,34 @@
           if (!trigger) return;
 
           const kind = trigger.dataset.addKind;
+          if (kind === "printTypeProcess") {
+            const table = findTargetTable(trigger);
+            const tbody = table?.querySelector("tbody");
+            if (!tbody) return;
+
+            const existingRow = tbody.querySelector(".js-inline-table-row");
+            if (existingRow) {
+              existingRow.remove();
+              return;
+            }
+
+            const row = createInlineTableRow(kind);
+            tbody.appendChild(row);
+
+            row.querySelector(".js-inline-table-cancel").addEventListener("click", () => row.remove());
+            row.querySelector(".js-inline-table-confirm").addEventListener("click", () => {
+              const selects = Array.from(row.querySelectorAll("select"));
+              const values = selects.map((select) => select.value);
+              if (values.some((value) => !value)) return;
+
+              row.innerHTML = createCells(kind, values.join(" - "))
+                .map((cell) => `<td class="px-4">${cell}</td>`)
+                .join("");
+              refreshSelect2(row);
+            });
+            return;
+          }
+
           const existingForm = trigger.parentElement.querySelector(".inline-add-row");
 
           if (existingForm) {

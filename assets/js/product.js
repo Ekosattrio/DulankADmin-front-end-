@@ -94,6 +94,35 @@ document.addEventListener('DOMContentLoaded', () => {
 		modalImages.forEach(src => imageList.appendChild(createPreview(src)));
 	}
 
+	function resetProductOptionSwitches() {
+		productForm.querySelectorAll('.product-switch').forEach(toggle => {
+			toggle.classList.add('active');
+			toggle.setAttribute('aria-pressed', 'true');
+			const label = toggle.parentElement?.querySelector('.product-switch-label');
+			if (label) label.textContent = 'Enable';
+		});
+
+		productForm.querySelectorAll('.product-option-group').forEach(group => {
+			group.classList.remove('is-disabled');
+			group.querySelectorAll('.product-checkbox').forEach(input => {
+				input.disabled = false;
+			});
+			group.querySelectorAll('.product-default-radio').forEach(input => {
+				input.disabled = !input.closest('label')?.querySelector('.product-checkbox')?.checked;
+			});
+			group.querySelectorAll('label').forEach(label => {
+				const defaultRadio = label.querySelector('.product-default-radio');
+				const defaultStar = label.querySelector('.product-default-star');
+				if (!defaultRadio || !defaultStar) return;
+
+				defaultStar.classList.toggle('fas', defaultRadio.checked);
+				defaultStar.classList.toggle('far', !defaultRadio.checked);
+				defaultStar.classList.toggle('text-warning', defaultRadio.checked);
+				defaultStar.classList.toggle('text-muted', !defaultRadio.checked);
+			});
+		});
+	}
+
 	function readImageFile(file) {
 		return new Promise((resolve, reject) => {
 			const reader = new FileReader();
@@ -109,6 +138,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		activeProductCard = mode === 'edit' ? card : null;
 		productModalTitle.textContent = mode === 'edit' ? 'Edit Product' : 'Add New Product';
 		productForm.dataset.mode = mode;
+		productForm.reset();
 
 		if (mode === 'edit' && card) {
 			productNameInput.value = getProductContent(card, 'Product Name');
@@ -120,6 +150,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			modalImages = [];
 		}
 
+		resetProductOptionSwitches();
 		renderImagePreviews();
 		bootstrap.Modal.getOrCreateInstance(productModalElement).show();
 	}
@@ -242,9 +273,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		const toggle = event.target.closest('.product-switch');
 		const removePreviewButton = event.target.closest('.remove-preview');
 
-		if (toggle) {
-			toggle.classList.toggle('active');
-		}
+		if (toggle) return;
 
 		if (removePreviewButton) {
 			const preview = removePreviewButton.closest('.product-image-preview');

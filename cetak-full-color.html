@@ -40,6 +40,18 @@
         display: none !important;
       }
 
+      :root {
+        --cetak-tab-content-max-height: 620px;
+        --cetak-tab-content-scroll-padding: 8px;
+      }
+
+      #mainTabContent > .tab-pane:not(#logTransactionTabContent).active {
+        max-height: var(--cetak-tab-content-max-height);
+        overflow-y: auto;
+        overflow-x: hidden;
+        padding-right: var(--cetak-tab-content-scroll-padding);
+      }
+
       .inline-add-row {
         display: flex;
         flex-wrap: wrap;
@@ -158,10 +170,13 @@
       .product-switch {
         width: 44px;
         height: 20px;
+        border: 0;
+        padding: 0;
         border-radius: 999px;
         background: #c9c4c1;
         position: relative;
         display: inline-block;
+        cursor: pointer;
       }
 
       .product-switch::after {
@@ -181,6 +196,16 @@
 
       .product-switch.active::after {
         left: 27px;
+      }
+
+      .product-option-group.is-disabled label {
+        color: #adb5bd;
+      }
+
+      .product-option-group.is-disabled .text-primary,
+      .product-option-group.is-disabled .text-muted,
+      .product-option-group.is-disabled .product-default-star {
+        color: #adb5bd !important;
       }
 
       .product-image-preview {
@@ -2545,7 +2570,6 @@
                           <button class="btn btn-primary btn-sm" type="button">Save</button>
                         </div>
                       </div>
-                    </div>
                     <div class="tab-pane fade" id="logTransactionTabContent" role="tabpanel" aria-labelledby="log-transaction">
                       <div class="d-md-flex justify-content-between align-items-start mb-3">
                         <h4 class="mb-2">Log Transaction</h4>
@@ -2770,6 +2794,7 @@
                         </table>
                       </div>
                     </div>
+                  </div>
                   </div>
                 </div>
               </div>
@@ -3312,8 +3337,8 @@
               <div class="mb-4">
                 <div class="d-flex align-items-center gap-2 mb-3">
                   <span>Ukuran Brosur</span>
-                  <span class="product-switch active"></span>
-                  <span>Enable</span>
+                  <button class="product-switch active" type="button" aria-pressed="true"></button>
+                  <span class="product-switch-label">Enable</span>
                 </div>
                 <div class="row g-3 product-option-group">
                   <label class="col-md-4 d-flex align-items-center gap-2 mb-2">
@@ -3342,8 +3367,8 @@
               <div class="mb-4">
                 <div class="d-flex align-items-center gap-2 mb-3">
                   <span>Jenis Kertas</span>
-                  <span class="product-switch active"></span>
-                  <span>Enable</span>
+                  <button class="product-switch active" type="button" aria-pressed="true"></button>
+                  <span class="product-switch-label">Enable</span>
                 </div>
                 <div class="row g-3 product-option-group">
                   <label class="col-md-4 d-flex align-items-center gap-2 mb-2">
@@ -3386,8 +3411,8 @@
               <div class="mb-4">
                 <div class="d-flex align-items-center gap-2 mb-3">
                   <span>Laminasi</span>
-                  <span class="product-switch active"></span>
-                  <span>Enable</span>
+                  <button class="product-switch active" type="button" aria-pressed="true"></button>
+                  <span class="product-switch-label">Enable</span>
                 </div>
                 <div class="row g-3 product-option-group">
                   <label class="col-md-4 d-flex align-items-center gap-2 mb-2">
@@ -3424,8 +3449,8 @@
               <div class="mb-4">
                 <div class="d-flex align-items-center gap-2 mb-3">
                   <span>Sisi Cetak</span>
-                  <span class="product-switch active"></span>
-                  <span>Enable</span>
+                  <button class="product-switch active" type="button" aria-pressed="true"></button>
+                  <span class="product-switch-label">Enable</span>
                 </div>
                 <div class="row g-3 product-option-group">
                   <label class="col-md-4 d-flex align-items-center gap-2 mb-2">
@@ -3459,8 +3484,8 @@
               <div class="mb-4">
                 <div class="d-flex align-items-center gap-2 mb-3">
                   <span>Lipatan</span>
-                  <span class="product-switch active"></span>
-                  <span>Enable</span>
+                  <button class="product-switch active" type="button" aria-pressed="true"></button>
+                  <span class="product-switch-label">Enable</span>
                 </div>
                 <div class="row g-3 product-option-group">
                   <label class="col-md-4 d-flex align-items-center gap-2 mb-2">
@@ -3646,24 +3671,58 @@
         }
 
         document.querySelectorAll(".product-option-group").forEach((group) => {
+          const optionBlock = group.closest(".mb-4");
+          const switchButton = optionBlock?.querySelector(".product-switch");
+          const switchLabel = optionBlock?.querySelector(".product-switch-label");
+
+          function isGroupEnabled() {
+            return !switchButton || switchButton.classList.contains("active");
+          }
+
           function updateDefaultStars() {
+            const groupEnabled = isGroupEnabled();
+
             group.querySelectorAll("label").forEach((label) => {
               const optionCheckbox = label.querySelector(".product-checkbox");
               const defaultRadio = label.querySelector(".product-default-radio");
               const defaultStar = label.querySelector(".product-default-star");
               if (!optionCheckbox || !defaultRadio || !defaultStar) return;
 
-              defaultRadio.disabled = !optionCheckbox.checked;
-              if (!optionCheckbox.checked) defaultRadio.checked = false;
+              optionCheckbox.disabled = !groupEnabled;
+              defaultRadio.disabled = !groupEnabled || !optionCheckbox.checked;
+              if (!groupEnabled || !optionCheckbox.checked) defaultRadio.checked = false;
 
               defaultStar.classList.toggle("fas", defaultRadio.checked);
               defaultStar.classList.toggle("far", !defaultRadio.checked);
-              defaultStar.classList.toggle("text-warning", defaultRadio.checked);
-              defaultStar.classList.toggle("text-muted", !defaultRadio.checked);
+              defaultStar.classList.toggle("text-warning", groupEnabled && defaultRadio.checked);
+              defaultStar.classList.toggle("text-muted", !groupEnabled || !defaultRadio.checked);
             });
+
+            group.classList.toggle("is-disabled", !groupEnabled);
           }
 
+          function setGroupEnabled(enabled) {
+            switchButton?.classList.toggle("active", enabled);
+            switchButton?.setAttribute("aria-pressed", String(enabled));
+            if (switchLabel) switchLabel.textContent = enabled ? "Enable" : "Disable";
+
+            if (!enabled) {
+              group.querySelectorAll(".product-checkbox, .product-default-radio").forEach((input) => {
+                input.checked = false;
+              });
+            }
+
+            updateDefaultStars();
+          }
+
+          switchButton?.addEventListener("click", (event) => {
+            event.stopPropagation();
+            setGroupEnabled(!isGroupEnabled());
+          });
+
           group.addEventListener("click", (event) => {
+            if (!isGroupEnabled()) return;
+
             const defaultStar = event.target.closest(".product-default-star");
             if (!defaultStar) return;
 
@@ -3680,6 +3739,12 @@
           });
 
           group.addEventListener("change", (event) => {
+            if (!isGroupEnabled()) {
+              event.target.checked = false;
+              updateDefaultStars();
+              return;
+            }
+
             const checkedOption = event.target.closest(".product-checkbox");
             const defaultRadioChange = event.target.closest(".product-default-radio");
             if (!checkedOption && !defaultRadioChange) return;
@@ -3691,7 +3756,10 @@
 
             if (!checkedOption.checked) {
               const hasCheckedOption = group.querySelector(".product-checkbox:checked");
-              if (!hasCheckedOption) checkedOption.checked = true;
+              if (!hasCheckedOption) {
+                updateDefaultStars();
+                return;
+              }
               return;
             }
 
@@ -3705,7 +3773,7 @@
             updateDefaultStars();
           });
 
-          updateDefaultStars();
+          setGroupEnabled(isGroupEnabled());
         });
 
         const addOptions = {

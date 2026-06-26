@@ -1382,6 +1382,14 @@
         var list = section.querySelector(".split-payment-list");
         var addButton = section.querySelector(".split-payment-add");
         var cancelButton = section.querySelector(".split-payment-cancel");
+        var modal = section.closest(".modal");
+        var paymentWrapper =
+          modal &&
+          modal.id === "add-units" &&
+          section.nextElementSibling &&
+          section.nextElementSibling.classList.contains("payment-wrapper")
+            ? section.nextElementSibling
+            : null;
 
         if (!toggleButton || !box || !list || !addButton || !cancelButton) {
           return;
@@ -1431,18 +1439,35 @@
           }
         }
 
+        function setPaymentWrapperHidden(isHidden) {
+          if (!paymentWrapper) {
+            return;
+          }
+
+          paymentWrapper.classList.toggle("d-none", isHidden);
+          if (isHidden) {
+            paymentWrapper.setAttribute("hidden", "hidden");
+          } else {
+            paymentWrapper.removeAttribute("hidden");
+          }
+
+          paymentWrapper.style.removeProperty("display");
+        }
+
         function showSplitPayment() {
           if (!list.children.length) {
             addPaymentItem();
             addPaymentItem();
           }
 
+          setPaymentWrapperHidden(true);
           box.classList.remove("d-none");
           toggleButton.classList.add("d-none");
         }
 
         function cancelSplitPayment() {
           list.innerHTML = "";
+          setPaymentWrapperHidden(false);
           box.classList.add("d-none");
           toggleButton.classList.remove("d-none");
         }
@@ -1451,7 +1476,6 @@
         addButton.addEventListener("click", addPaymentItem);
         cancelButton.addEventListener("click", cancelSplitPayment);
 
-        var modal = section.closest(".modal");
         if (modal) {
           modal.addEventListener("hidden.bs.modal", cancelSplitPayment);
         }

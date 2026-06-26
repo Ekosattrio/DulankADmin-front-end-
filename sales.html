@@ -32,9 +32,8 @@
 	<!-- Bootstrap Tagsinput CSS -->
 	<link rel="stylesheet" href="assets/plugins/bootstrap-tagsinput/bootstrap-tagsinput.css">
 
-	<!-- Fontawesome CSS -->
-	<link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css">
-	<link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css">
+	<!-- Feathericon CSS -->
+	<link rel="stylesheet" href="assets/css/feather.css" />
 
 	<!-- Main CSS -->
 	<link rel="stylesheet" href="assets/css/style.css">
@@ -159,7 +158,7 @@
 					</ul>
 					<div class="page-btn d-flex flex-wrap align-items-center gap-2">
     <a href="add-sales.html" class="btn btn-added"><i data-feather="plus-circle" class="me-2"></i>Add Sales</a>
-    
+
 </div>
 				</div>
 				<div class="row justify-content-end mb-3">
@@ -167,7 +166,7 @@
     <a href="#" data-bs-toggle="modal" data-bs-target="#delete-sales-history" class="btn btn-outline-danger btn-sm py-1 px-2">
         <i data-feather="trash" class="me-1" style="width: 14px; height: 14px;"></i>Delete Sales History
     </a>
-    
+
     <a href="#" data-bs-toggle="modal" data-bs-target="#cancel-transaction-history" class="btn btn-outline-secondary btn-sm py-1 px-2">
         <i data-feather="x-circle" class="me-1" style="width: 14px; height: 14px;"></i>Cancel Transaction History
     </a>
@@ -2335,8 +2334,9 @@
 					</div>
 
 				</div>
-				<div class="modal-footer justify-content-end">
-					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+								<div class="modal-footer modal-action-footer justify-content-end">
+				  <button type="button" class="btn btn-dark modal-action-cancel" data-bs-dismiss="modal">Cancel</button>
+				  <button type="submit" class="btn btn-warning modal-action-submit">Submit</button>
 				</div>
 			</div>
 		</div>
@@ -2439,8 +2439,9 @@
                 </div>
 
             </div>
-            <div class="modal-footer justify-content-end">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                        <div class="modal-footer modal-action-footer justify-content-end">
+              <button type="button" class="btn btn-dark modal-action-cancel" data-bs-dismiss="modal">Cancel</button>
+              <button type="submit" class="btn btn-warning modal-action-submit">Submit</button>
             </div>
         </div>
     </div>
@@ -2675,10 +2676,9 @@
 						</div>
 
 						<!-- Footer Buttons -->
-						<div class="modal-footer border-0 justify-content-end pe-3 pt-3">
-							<button type="button" class="btn btn-secondary add-cancel me-3"
-								data-bs-dismiss="modal">Cancel</button>
-							<button type="submit" class="btn btn-primary add-sale">Save Changes</button>
+												<div class="modal-footer modal-action-footer justify-content-end">
+						  <button type="button" class="btn btn-dark modal-action-cancel add-cancel" data-bs-dismiss="modal">Cancel</button>
+						  <button type="submit" class="btn btn-warning modal-action-submit add-sale">Submit</button>
 						</div>
 
 					</div>
@@ -2897,10 +2897,9 @@
 									</div>
 								</div>
 							</div>
-							<div class="modal-footer justify-content-end">
-								<button type="button" class="btn btn-secondary add-cancel me-3"
-									data-bs-dismiss="modal">Cancel</button>
-								<button type="submit" class="btn btn-primary add-sale">Save Changes</button>
+														<div class="modal-footer modal-action-footer justify-content-end">
+							  <button type="button" class="btn btn-dark modal-action-cancel add-cancel" data-bs-dismiss="modal">Cancel</button>
+							  <button type="submit" class="btn btn-warning modal-action-submit add-sale">Submit</button>
 							</div>
 						</form>
 					</div>
@@ -2967,6 +2966,10 @@
 						</div>
 					</div>
 				</div>
+						<div class="modal-footer modal-action-footer justify-content-end">
+			  <button type="button" class="btn btn-dark modal-action-cancel" data-bs-dismiss="modal">Cancel</button>
+			  <button type="submit" class="btn btn-warning modal-action-submit">Submit</button>
+			</div>
 			</div>
 		</div>
 	</div>
@@ -2999,7 +3002,7 @@
 									<label class="form-label">Paying Amount <span class="text-danger">*</span></label>
 									<div class="input-icon-start position-relative">
 										<span class="input-icon-addon text-gray-9">
-											<i class="ti ti-currency-dollar"></i>
+											<i data-feather="dollar-sign"></i>
 										</span>
 										<input type="text" class="form-control number-separator" inputmode="numeric"
 											pattern="[0-9]*" value="1800">
@@ -3016,7 +3019,7 @@
 									<label class="form-label">Total<span class="text-danger">*</span></label>
 									<div class="input-icon-start position-relative">
 										<span class="input-icon-addon text-gray-9">
-											<i class="ti ti-currency-dollar"></i>
+											<i data-feather="dollar-sign"></i>
 										</span>
 										<input type="text" class="form-control number-separator no-border bg-light"
 											inputmode="numeric" pattern="[0-9]*" value="1800" disabled>
@@ -3030,7 +3033,7 @@
 									<label class="form-label">Change</label>
 									<div class="input-icon-start position-relative">
 										<span class="input-icon-addon text-gray-9">
-											<i class="ti ti-currency-dollar"></i>
+											<i data-feather="dollar-sign"></i>
 										</span>
 										<input type="text" class="form-control number-separator no-border bg-light"
 											inputmode="numeric" pattern="[0-9]*" value="0" disabled>
@@ -3058,10 +3061,9 @@
 						</div>
 
 					</div>
-					<div class="modal-footer d-flex justify-content-end flex-wrap gap-2">
-						<button type="button" class="btn btn-md btn-secondary" data-bs-dismiss="modal">Cancel</button>
-						<button type="submit" class="btn btn-md btn-primary" data-bs-toggle="modal"
-							data-bs-target="#payment-completed">Submit</button>
+										<div class="modal-footer modal-action-footer justify-content-end">
+					  <button type="button" class="btn btn-dark modal-action-cancel" data-bs-dismiss="modal">Cancel</button>
+					  <button type="submit" class="btn btn-warning modal-action-submit" data-bs-toggle="modal" data-bs-target="#payment-completed">Submit</button>
 					</div>
 				</form>
 			</div>
@@ -3097,7 +3099,7 @@
 									<label class="form-label">Paying Amount <span class="text-danger">*</span></label>
 									<div class="input-icon-start position-relative">
 										<span class="input-icon-addon text-gray-9">
-											<i class="ti ti-currency-dollar"></i>
+											<i data-feather="dollar-sign"></i>
 										</span>
 										<input type="text" class="form-control number-separator" inputmode="numeric"
 											pattern="[0-9]*" value="1800">
@@ -3114,7 +3116,7 @@
 									<label class="form-label">Total<span class="text-danger">*</span></label>
 									<div class="input-icon-start position-relative">
 										<span class="input-icon-addon text-gray-9">
-											<i class="ti ti-currency-dollar"></i>
+											<i data-feather="dollar-sign"></i>
 										</span>
 										<input type="text" class="form-control number-separator no-border bg-light"
 											inputmode="numeric" pattern="[0-9]*" value="1800" disabled>
@@ -3128,7 +3130,7 @@
 									<label class="form-label">Change</label>
 									<div class="input-icon-start position-relative">
 										<span class="input-icon-addon text-gray-9">
-											<i class="ti ti-currency-dollar"></i>
+											<i data-feather="dollar-sign"></i>
 										</span>
 										<input type="text" class="form-control number-separator no-border bg-light"
 											inputmode="numeric" pattern="[0-9]*" value="0" disabled>
@@ -3156,10 +3158,9 @@
 						</div>
 
 					</div>
-					<div class="modal-footer d-flex justify-content-end flex-wrap gap-2">
-						<button type="button" class="btn btn-md btn-secondary" data-bs-dismiss="modal">Cancel</button>
-						<button type="submit" class="btn btn-md btn-primary" data-bs-toggle="modal"
-							data-bs-target="#payment-completed">Submit</button>
+										<div class="modal-footer modal-action-footer justify-content-end">
+					  <button type="button" class="btn btn-dark modal-action-cancel" data-bs-dismiss="modal">Cancel</button>
+					  <button type="submit" class="btn btn-warning modal-action-submit" data-bs-toggle="modal" data-bs-target="#payment-completed">Submit</button>
 					</div>
 				</form>
 			</div>
@@ -3316,6 +3317,10 @@
 
 					</div>
 				</div>
+						<div class="modal-footer modal-action-footer justify-content-end">
+			  <button type="button" class="btn btn-dark modal-action-cancel" data-bs-dismiss="modal">Cancel</button>
+			  <button type="submit" class="btn btn-warning modal-action-submit">Submit</button>
+			</div>
 			</div>
 		</div>
 	</div>
@@ -3549,10 +3554,9 @@
 							</div>
 
 							<!-- Footer Buttons -->
-							<div class="modal-footer border-0 justify-content-end pe-3 pt-3">
-								<button type="button" class="btn btn-secondary add-cancel me-3"
-									data-bs-dismiss="modal">Cancel</button>
-								<button type="submit" class="btn btn-primary add-sale">Save Changes</button>
+														<div class="modal-footer modal-action-footer justify-content-end">
+							  <button type="button" class="btn btn-dark modal-action-cancel add-cancel" data-bs-dismiss="modal">Cancel</button>
+							  <button type="submit" class="btn btn-warning modal-action-submit add-sale">Submit</button>
 							</div>
 
 						</div>
@@ -3570,6 +3574,7 @@
 	<!-- Feather Icon JS -->
 	<script src="assets/js/feather.min.js"></script>
 
+	<script src="assets/js/ui-foundation.js"></script>
 	<!-- Slimscroll JS -->
 	<script src="assets/js/jquery.slimscroll.min.js"></script>
 
@@ -3686,7 +3691,7 @@
             const totalDisplay = historyModal.querySelector(mod.totalId);
             const emptyRow = historyModal.querySelector(".history-empty-row");
             const rows = Array.from(historyModal.querySelectorAll(`${mod.bodyId} tr:not(.history-empty-row)`));
-            
+
             let startDate = null;
             let endDate = null;
             const today = new Date();
@@ -3721,13 +3726,13 @@
                     monthDiv.className = "bulan-kalender";
                     const header = document.createElement("div");
                     header.className = "bulan-header";
-                    
+
                     let monthSelect = '<select class="select-bulan">';
                     monthNames.forEach(function (monthName, index) {
                         monthSelect += `<option value="${index}" ${index === month.getMonth() ? "selected" : ""}>${monthName}</option>`;
                     });
                     monthSelect += "</select>";
-                    
+
                     let yearSelect = '<select class="select-tahun">';
                     for (let year = 1970; year <= 2100; year++) {
                         yearSelect += `<option value="${year}" ${year === month.getFullYear() ? "selected" : ""}>${year}</option>`;
@@ -3914,7 +3919,7 @@
 
             searchInput.addEventListener("input", filterHistory);
             historyModal.addEventListener("shown.bs.modal", filterHistory);
-            
+
             // Evaluasi total baris pertama kali dijalankan
             filterHistory();
         });
@@ -4058,11 +4063,11 @@
                     <label class="form-label">Amount (IDR)</label>
                     <input type="text" class="form-control text-end amount-input" disabled>
                 </div>
-                <div class="justify-content-end d-flex mb-3"> 
-                    <a href="javascript:void(0);" class="delete-section-btn text-primary mt-3 d-inline-block"> 
+                <div class="justify-content-end d-flex mb-3">
+                    <a href="javascript:void(0);" class="delete-section-btn text-primary mt-3 d-inline-block">
                         <i data-feather="minus-circle" style="width: 15px; margin-right: 10px;"></i>
-                        <span>Delete Product</span> 
-                    </a> 
+                        <span>Delete Product</span>
+                    </a>
                 </div>
             </div>
         </div>`;
@@ -4241,11 +4246,11 @@
                     <label class="form-label">Amount (IDR)</label>
                     <input type="text" class="form-control text-end amount-input" disabled>
                 </div>
-                <div class="justify-content-end d-flex mb-3"> 
-                    <a href="javascript:void(0);" class="delete-section-btn text-primary mt-3 d-inline-block"> 
+                <div class="justify-content-end d-flex mb-3">
+                    <a href="javascript:void(0);" class="delete-section-btn text-primary mt-3 d-inline-block">
                         <i data-feather="minus-circle" style="width: 15px; margin-right: 10px;"></i>
-                        <span>Delete Product</span> 
-                    </a> 
+                        <span>Delete Product</span>
+                    </a>
                 </div>
             </div>
         </div>`;
@@ -4493,13 +4498,13 @@
                     <input type="text" id="amountInput${index}" class="form-control text-end amount-input" disabled>
                 </div>
 
-			<div class="justify-content-end d-flex mb-3"> 
+			<div class="justify-content-end d-flex mb-3">
 										<a href="javascript:void(0);"
-											class="delete-section-btn text-primary mt-3 d-inline-block"> 
+											class="delete-section-btn text-primary mt-3 d-inline-block">
 											<i data-feather="minus-circle"
 												class="minus-down-add" style="width: 15px; align-items:center; margin-right: 10px;"></i>
-											<span>Delete Product</span> 
-										</a> 
+											<span>Delete Product</span>
+										</a>
 									</div>
         </div>
     </div>

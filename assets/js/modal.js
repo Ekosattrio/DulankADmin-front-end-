@@ -2,6 +2,7 @@
     "use strict";
 
     var exampleModal = document.getElementById('formmodal')
+    if (exampleModal) {
     exampleModal.addEventListener('show.bs.modal', function (event) {
         var button = event.relatedTarget
         var recipient = button.getAttribute('data-bs-whatever')
@@ -10,8 +11,9 @@
         modalTitle.textContent = 'New message to ' + recipient
         modalBodyInput.value = recipient
     })
+    }
 
-    // Animated modals 
+    // Animated modals
         /* showing modal effects */
         document.querySelectorAll(".modal-effect").forEach(e => {
             e.addEventListener('click', function (e) {
@@ -21,11 +23,15 @@
             });
         })
         /* hide modal effects */
-        document.getElementById("modaldemo8").addEventListener('hidden.bs.modal', function (e) {
+        var animatedModal = document.getElementById("modaldemo8");
+        if (animatedModal) {
+        animatedModal.addEventListener('hidden.bs.modal', function (e) {
             let removeClass = this.classList.value.match(/(^|\s)effect-\S+/g);
-            removeClass = removeClass[0].trim();
-            this.classList.remove(removeClass);
+            if (removeClass && removeClass[0]) {
+                this.classList.remove(removeClass[0].trim());
+            }
         });
-    // Animated modals 
-    
+        }
+    // Animated modals
+
 })();

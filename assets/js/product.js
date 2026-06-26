@@ -114,9 +114,6 @@ document.addEventListener('DOMContentLoaded', () => {
 				const defaultRadio = label.querySelector('.product-default-radio');
 				const defaultStar = label.querySelector('.product-default-star');
 				if (!defaultRadio || !defaultStar) return;
-
-				defaultStar.classList.toggle('fas', defaultRadio.checked);
-				defaultStar.classList.toggle('far', !defaultRadio.checked);
 				defaultStar.classList.toggle('text-warning', defaultRadio.checked);
 				defaultStar.classList.toggle('text-muted', !defaultRadio.checked);
 			});

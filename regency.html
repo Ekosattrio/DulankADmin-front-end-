@@ -22,9 +22,8 @@
     <!-- Datatable CSS -->
     <link rel="stylesheet" href="assets/css/dataTables.bootstrap5.min.css" />
 
-    <!-- Fontawesome CSS -->
-    <link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css" />
-    <link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css" />
+    <!-- Feathericon CSS -->
+    <link rel="stylesheet" href="assets/css/feather.css" />
 
     <!-- Main CSS -->
     <link rel="stylesheet" href="assets/css/style.css" />
@@ -166,7 +165,7 @@
 
                         <div class="col-lg-2 col-sm-6 col-12">
                           <div class="input-blocks">
-                            <i class="fas fa-money-bill info-img"></i>
+                            <i data-feather="dollar-sign" class="info-img"></i>
                             <select class="select">
                               <option>Price</option>
                               <option>$12500.00</option>
@@ -867,7 +866,7 @@
                                     </div>
                                     <div class="col-sm-2">
                                       <div class="form-group">
-                                        <a href="javascript:void(0);" class="remove-color"><i class="far fa-trash-alt"></i></a>
+                                        <a href="javascript:void(0);" class="remove-color"><i data-feather="trash-2"></i></a>
                                       </div>
                                     </div>
                                   </div>
@@ -1168,9 +1167,9 @@
                     </ul>
                   </div>
                   <div class="col-lg-6">
-                    <div class="modal-footer-btn popup">
-                      <a href="javascript:void(0);" class="btn btn-cancel me-2">Cancel</a>
-                      <a href="javascript:void(0);" class="btn btn-submit">Create Adjustment</a>
+                                        <div class="modal-footer modal-action-footer justify-content-end">
+                      <button type="button" class="btn btn-dark modal-action-cancel" data-bs-dismiss="modal">Cancel</button>
+                      <button type="submit" class="btn btn-warning modal-action-submit">Submit</button>
                     </div>
                   </div>
                 </div>
@@ -1201,9 +1200,9 @@
                   <label class="form-label">Name</label>
                   <input type="text" class="form-control" />
                 </div>
-                <div class="modal-footer-btn">
-                  <a href="javascript:void(0);" class="btn btn-cancel me-2" data-bs-dismiss="modal">Cancel</a>
-                  <a href="units.html" class="btn btn-submit">Submit</a>
+                                <div class="modal-footer modal-action-footer justify-content-end">
+                  <button type="button" class="btn btn-dark modal-action-cancel" data-bs-dismiss="modal">Cancel</button>
+                  <a href="units.html" class="btn btn-warning modal-action-submit">Submit</a>
                 </div>
               </div>
             </div>
@@ -1232,9 +1231,9 @@
                   <label class="form-label">Unit</label>
                   <input type="text" class="form-control" />
                 </div>
-                <div class="modal-footer-btn">
-                  <a href="javascript:void(0);" class="btn btn-cancel me-2" data-bs-dismiss="modal">Cancel</a>
-                  <a href="units.html" class="btn btn-submit">Submit</a>
+                                <div class="modal-footer modal-action-footer justify-content-end">
+                  <button type="button" class="btn btn-dark modal-action-cancel" data-bs-dismiss="modal">Cancel</button>
+                  <a href="units.html" class="btn btn-warning modal-action-submit">Submit</a>
                 </div>
               </div>
             </div>
@@ -1374,9 +1373,9 @@
                   </div>
                 </div>
 
-                <div class="modal-footer-btn">
-                  <a href="javascript:void(0);" class="btn btn-cancel me-2" data-bs-dismiss="modal">Cancel</a>
-                  <a href="warehouse.html" class="btn btn-submit">Submit</a>
+                                <div class="modal-footer modal-action-footer justify-content-end">
+                  <button type="button" class="btn btn-dark modal-action-cancel" data-bs-dismiss="modal">Cancel</button>
+                  <a href="warehouse.html" class="btn btn-warning modal-action-submit">Submit</a>
                 </div>
               </div>
             </div>
@@ -1391,6 +1390,7 @@
     <!-- Feather Icon JS -->
     <script src="assets/js/feather.min.js"></script>
 
+    <script src="assets/js/ui-foundation.js"></script>
     <!-- Slimscroll JS -->
     <script src="assets/js/jquery.slimscroll.min.js"></script>
 

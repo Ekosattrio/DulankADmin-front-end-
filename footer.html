@@ -19,9 +19,8 @@
     <!-- animation CSS -->
     <link rel="stylesheet" href="assets/plugins/lightbox/glightbox.min.css" />
 
-    <!-- Fontawesome CSS -->
-    <link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css" />
-    <link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css" />
+    <!-- Feathericon CSS -->
+    <link rel="stylesheet" href="assets/css/feather.css" />
 
     <!-- Main CSS -->
     <link rel="stylesheet" href="assets/css/style.css" />
@@ -180,6 +179,7 @@
     <!-- Feather Icon JS -->
     <script src="assets/js/feather.min.js"></script>
 
+    <script src="assets/js/ui-foundation.js"></script>
     <!-- custom JS -->
     <script src="assets/js/tableukuran.js"></script>
     <script>
@@ -206,7 +206,7 @@
           div.innerHTML = `
         <input class="form-control form-control-sm" data-idx="${idx}" data-field="text" value="${escapeHtml(q.text)}">
         <input class="form-control form-control-sm" data-idx="${idx}" data-field="href" value="${escapeHtml(q.href)}">
-        <button class="btn btn-danger btn-sm" data-action="del" data-idx="${idx}"><i class="fa fa-trash"></i></button>
+        <button class="btn btn-danger btn-sm" data-action="del" data-idx="${idx}"><i data-feather="trash-2"></i></button>
       `;
           c.appendChild(div);
         });
@@ -261,7 +261,7 @@
           div.innerHTML = `
                     <input class="form-control form-control-sm" data-idx="${idx}" data-field="text" value="${escapeHtml(q.text)}">
                     <input class="form-control form-control-sm" data-idx="${idx}" data-field="href" value="${escapeHtml(q.href)}">
-                    <button class="btn btn-danger btn-sm" data-action="del" data-idx="${idx}"><i class="fa fa-trash"></i></button>
+                    <button class="btn btn-danger btn-sm" data-action="del" data-idx="${idx}"><i data-feather="trash-2"></i></button>
                 `;
           c.appendChild(div);
         });

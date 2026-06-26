@@ -160,8 +160,8 @@ document.getElementById('formSorting').onsubmit = function (e) {
 									`;
     const aksi = `
 										<div class="hstack gap-2 fs-15">
-											<a href="javascript:void(0);" class="btn btn-icon btn-sm btn-light text-info btn-edit-sorting"><i class="fa fa-edit"></i></a>
-											<a href="javascript:void(0);" class="btn btn-icon btn-sm btn-light text-danger btn-delete-sorting"><i class="fa fa-trash"></i></a>
+											<a href="javascript:void(0);" class="btn btn-icon btn-sm btn-light text-info btn-edit-sorting"><i data-feather="edit"></i></a>
+											<a href="javascript:void(0);" class="btn btn-icon btn-sm btn-light text-danger btn-delete-sorting"><i data-feather="trash-2"></i></a>
 										</div>
 									`;
     if (idx === "") {
@@ -182,6 +182,7 @@ document.getElementById('formSorting').onsubmit = function (e) {
 											<td>${aksi}</td>
 										`;
         tbody.appendChild(tr);
+        if (window.KacetakUI) window.KacetakUI.refreshIcons(tbody);
     } else {
         // Edit
         const tr = rows[idx];
@@ -194,6 +195,7 @@ document.getElementById('formSorting').onsubmit = function (e) {
         tr.children[7].innerText = data[6];
         tr.children[8].innerText = data[7];
         tr.children[9].innerHTML = statusDropdown;
+        if (window.KacetakUI) window.KacetakUI.refreshIcons(tr);
     }
     bootstrap.Modal.getInstance(document.getElementById('modalSorting')).hide();
 };
@@ -223,6 +225,7 @@ function tambahGambar() {
             </div>
         `;
         grid.appendChild(col);
+        if (window.KacetakUI) window.KacetakUI.refreshIcons(grid);
         bootstrap.Modal.getInstance(document.getElementById('modalTambahGambar')).hide();
     };
     reader.readAsDataURL(file);

@@ -27,10 +27,6 @@
     <!-- select2 -->
     <link rel="stylesheet" href="assets/plugins/select2/css/select2.min.css" />
 
-    <!-- Fontawesome CSS -->
-    <link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css" />
-    <link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css" />
-
     <!-- Main CSS -->
     <link rel="stylesheet" href="assets/css/style.css" />
 
@@ -1845,7 +1841,7 @@
                           </div>
 
                           <!-- List of Process Section -->
-                         
+
                             <div class="card mb-4">
 								<div class="card-body">
 									<div class="justify-content-between d-flex align-items-center mb-2">
@@ -1892,7 +1888,7 @@
                                 Add Process
                               </button>
                             </div>
-                          
+
                           <div class="row d-flex justify-content-end mt-2">
                             <div class="col-12 justify-content-end d-flex gap-2">
                               <button class="btn btn-secondary btn-sm">Cancel</button>
@@ -2120,7 +2116,7 @@
                       <div class="tab-pane fade" id="processArrangeTabContent" role="tabpanel" aria-labelledby="process-arrange">
                         <div>
                           <h4>Work Flow Setting</h4>
-                         
+
                           <div class="table-responsive mb-4">
                             <table class="table align-middle">
                               <thead>
@@ -2361,7 +2357,7 @@
                                 </div>
                               </div>
                             </div>
-                            
+
                           </div>
                         </div>
 
@@ -2412,9 +2408,9 @@
 								<button type="button" class="btn btn-link btn-sm p-0 text-decoration-none fw-semibold add-range" style="color: #c98520;">
 									+ Add Cost Range
 								</button>
-								
+
 								<button type="button" class="btn btn-link btn-sm p-0 text-danger delete-range" title="Delete">
-									<i class="fas fa-trash-alt"></i>
+									<i data-feather="trash-2"></i>
 								</button>
 							</div>
                             </div>
@@ -2457,9 +2453,9 @@
 								<button type="button" class="btn btn-link btn-sm p-0 text-decoration-none fw-semibold add-range" style="color: #c98520;">
 									+ Add Cost Range
 								</button>
-								
+
 								<button type="button" class="btn btn-link btn-sm p-0 text-danger delete-range" title="Delete">
-									<i class="fas fa-trash-alt"></i>
+									<i data-feather="trash-2"></i>
 								</button>
 							</div>
                             </div>
@@ -2504,7 +2500,7 @@
                                 </button>
 
                                 <button type="button" class="btn btn-link btn-sm p-0 text-danger delete-range" title="Delete">
-                                    <i class="fas fa-trash-alt"></i>
+                                    <i data-feather="trash-2"></i>
                                 </button>
                               </div>
                             </div>
@@ -2626,7 +2622,7 @@
                           </div>
                         </div>
                         <small class="d-none text-danger" id="info-selected-all"
-                          ><i class="fa-solid fa-circle-info"></i> please input your specification<br
+                          ><i data-feather="info"></i> please input your specification<br
                         /></small>
                         <div class="d-flex justify-content-end gap-2 mt-4">
                           <button class="btn btn-secondary btn-sm" type="button">Cancel</button>
@@ -3376,6 +3372,10 @@
                 </div>
               </div>
             </div>
+                    <div class="modal-footer modal-action-footer justify-content-end">
+            <button type="button" class="btn btn-dark modal-action-cancel" data-bs-dismiss="modal">Cancel</button>
+            <button type="submit" class="btn btn-warning modal-action-submit">Submit</button>
+          </div>
           </div>
         </div>
       </div>
@@ -3414,14 +3414,14 @@
                     />
                     <span class="text-primary">A4 (297x210mm)</span>
                     <input class="product-default-radio d-none" type="radio" name="product_size_default" checked />
-                    <i class="product-default-star fas fa-star text-warning"></i>
+                    <i data-feather="star" class="product-default-star text-warning"></i>
                     <span class="text-muted">Default</span>
                   </label>
                   <label class="col-md-4 d-flex align-items-center gap-2 mb-2">
                     <input class="product-checkbox form-check-input" type="checkbox" name="product_size" value="A5 (210x149mm)" />
                     <span class="text-primary">A5 (210x149mm)</span>
                     <input class="product-default-radio d-none" type="radio" name="product_size_default" disabled />
-                    <i class="product-default-star far fa-star text-muted"></i>
+                    <i data-feather="star" class="product-default-star text-muted"></i>
                     <span class="text-muted">Default</span>
                   </label>
                 </div>
@@ -3444,28 +3444,28 @@
                     />
                     <span class="text-primary">Art Paper</span>
                     <input class="product-default-radio d-none" type="radio" name="paper_type_default" checked />
-                    <i class="product-default-star fas fa-star text-warning"></i>
+                    <i data-feather="star" class="product-default-star text-warning"></i>
                     <span class="text-muted">Default</span>
                   </label>
                   <label class="col-md-4 d-flex align-items-center gap-2 mb-2">
                     <input class="product-checkbox form-check-input" type="checkbox" name="paper_type" value="Art Carton" />
                     <span class="text-primary">Art Carton</span>
                     <input class="product-default-radio d-none" type="radio" name="paper_type_default" disabled />
-                    <i class="product-default-star far fa-star text-muted"></i>
+                    <i data-feather="star" class="product-default-star text-muted"></i>
                     <span class="text-muted">Default</span>
                   </label>
                   <label class="col-md-4 d-flex align-items-center gap-2 mb-2">
                     <input class="product-checkbox form-check-input" type="checkbox" name="paper_type" value="HVS" />
                     <span class="text-primary">HVS</span>
                     <input class="product-default-radio d-none" type="radio" name="paper_type_default" disabled />
-                    <i class="product-default-star far fa-star text-muted"></i>
+                    <i data-feather="star" class="product-default-star text-muted"></i>
                     <span class="text-muted">Default</span>
                   </label>
                   <label class="col-md-4 d-flex align-items-center gap-2 mb-2">
                     <input class="product-checkbox form-check-input" type="checkbox" name="paper_type" value="Carton BC" />
                     <span class="text-primary">Carton BC</span>
                     <input class="product-default-radio d-none" type="radio" name="paper_type_default" disabled />
-                    <i class="product-default-star far fa-star text-muted"></i>
+                    <i data-feather="star" class="product-default-star text-muted"></i>
                     <span class="text-muted">Default</span>
                   </label>
                 </div>
@@ -3482,28 +3482,28 @@
                     <input class="product-checkbox form-check-input" type="checkbox" name="laminate" value="Glossy" checked />
                     <span class="text-primary">Glossy</span>
                     <input class="product-default-radio d-none" type="radio" name="laminate_default" checked />
-                    <i class="product-default-star fas fa-star text-warning"></i>
+                    <i data-feather="star" class="product-default-star text-warning"></i>
                     <span class="text-muted">Default</span>
                   </label>
                   <label class="col-md-4 d-flex align-items-center gap-2 mb-2">
                     <input class="product-checkbox form-check-input" type="checkbox" name="laminate" value="Doff" />
                     <span class="text-primary">Doff</span>
                     <input class="product-default-radio d-none" type="radio" name="laminate_default" disabled />
-                    <i class="product-default-star far fa-star text-muted"></i>
+                    <i data-feather="star" class="product-default-star text-muted"></i>
                     <span class="text-muted">Default</span>
                   </label>
                   <label class="col-md-4 d-flex align-items-center gap-2 mb-2">
                     <input class="product-checkbox form-check-input" type="checkbox" name="laminate" value="UV Vernish" />
                     <span class="text-primary">UV Vernish</span>
                     <input class="product-default-radio d-none" type="radio" name="laminate_default" disabled />
-                    <i class="product-default-star far fa-star text-muted"></i>
+                    <i data-feather="star" class="product-default-star text-muted"></i>
                     <span class="text-muted">Default</span>
                   </label>
                   <label class="col-md-4 d-flex align-items-center gap-2 mb-2">
                     <input class="product-checkbox form-check-input" type="checkbox" name="laminate" value="Spot UV" />
                     <span class="text-primary">Spot UV</span>
                     <input class="product-default-radio d-none" type="radio" name="laminate_default" disabled />
-                    <i class="product-default-star far fa-star text-muted"></i>
+                    <i data-feather="star" class="product-default-star text-muted"></i>
                     <span class="text-muted">Default</span>
                   </label>
                 </div>
@@ -3526,7 +3526,7 @@
                     />
                     <span class="text-primary">Cetak 1 Sisi</span>
                     <input class="product-default-radio d-none" type="radio" name="print_side_default" checked />
-                    <i class="product-default-star fas fa-star text-warning"></i>
+                    <i data-feather="star" class="product-default-star text-warning"></i>
                     <span class="text-muted">Default</span>
                   </label>
                   <label class="col-md-4 d-flex align-items-center gap-2 mb-2">
@@ -3538,7 +3538,7 @@
                     />
                     <span class="text-primary">Cetak Bolak Balik</span>
                     <input class="product-default-radio d-none" type="radio" name="print_side_default" disabled />
-                    <i class="product-default-star far fa-star text-muted"></i>
+                    <i data-feather="star" class="product-default-star text-muted"></i>
                     <span class="text-muted">Default</span>
                   </label>
                 </div>
@@ -3555,21 +3555,21 @@
                     <input class="product-checkbox form-check-input" type="checkbox" name="fold" value="Tanpa Lipatan" checked />
                     <span class="text-primary">Tanpa Lipatan</span>
                     <input class="product-default-radio d-none" type="radio" name="fold_default" checked />
-                    <i class="product-default-star fas fa-star text-warning"></i>
+                    <i data-feather="star" class="product-default-star text-warning"></i>
                     <span class="text-muted">Default</span>
                   </label>
                   <label class="col-md-4 d-flex align-items-center gap-2 mb-2">
                     <input class="product-checkbox form-check-input" type="checkbox" name="fold" value="1 Lipatan" />
                     <span class="text-primary">1 Lipatan</span>
                     <input class="product-default-radio d-none" type="radio" name="fold_default" disabled />
-                    <i class="product-default-star far fa-star text-muted"></i>
+                    <i data-feather="star" class="product-default-star text-muted"></i>
                     <span class="text-muted">Default</span>
                   </label>
                   <label class="col-md-4 d-flex align-items-center gap-2 mb-2">
                     <input class="product-checkbox form-check-input" type="checkbox" name="fold" value="2 Lipatan" />
                     <span class="text-primary">2 Lipatan</span>
                     <input class="product-default-radio d-none" type="radio" name="fold_default" disabled />
-                    <i class="product-default-star far fa-star text-muted"></i>
+                    <i data-feather="star" class="product-default-star text-muted"></i>
                     <span class="text-muted">Default</span>
                   </label>
                 </div>
@@ -3583,7 +3583,7 @@
               </div>
               <div class="row align-items-start mb-4">
                 <a href="javascript:void(0);" class="product-add-image col-md-3" id="productAddImage"
-                  ><i class="fas fa-paperclip"></i> Add Image</a
+                  ><i data-feather="paperclip"></i> Add Image</a
                 >
                 <input class="d-none" type="file" id="productImageInput" accept="image/*" multiple />
                 <div class="col-md-9 d-flex flex-wrap gap-4" id="productImageList">
@@ -3611,9 +3611,9 @@
                 </div>
               </div>
             </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary px-5" data-bs-dismiss="modal">Cancel</button>
-              <button type="submit" class="btn btn-warning px-5">Save</button>
+                        <div class="modal-footer modal-action-footer justify-content-end">
+              <button type="button" class="btn btn-dark modal-action-cancel" data-bs-dismiss="modal">Cancel</button>
+              <button type="submit" class="btn btn-warning modal-action-submit">Submit</button>
             </div>
           </form>
         </div>
@@ -3632,9 +3632,9 @@
               <label class="form-label">Pilih File Gambar</label>
               <input type="file" class="form-control" id="inputFileGambar" accept="image/*" />
             </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-              <button type="button" class="btn btn-warning btn-sm" onclick="tambahGambar()">Tambah</button>
+                        <div class="modal-footer modal-action-footer justify-content-end">
+              <button type="button" class="btn btn-dark modal-action-cancel" data-bs-dismiss="modal">Cancel</button>
+              <button type="button" class="btn btn-warning modal-action-submit" onclick="tambahGambar()">Submit</button>
             </div>
           </div>
         </div>
@@ -3662,9 +3662,9 @@
                 </div>
               </div>
             </div>
-            <div class="modal-footer">
-              <button type="submit" class="btn btn-outline-warning">Cancel</button>
-              <button type="submit" class="btn btn-warning">Simpan</button>
+                        <div class="modal-footer modal-action-footer justify-content-end">
+              <button type="button" class="btn btn-dark modal-action-cancel" data-bs-dismiss="modal">Cancel</button>
+              <button type="submit" class="btn btn-warning modal-action-submit">Submit</button>
             </div>
           </form>
         </div>
@@ -3754,9 +3754,6 @@
               optionCheckbox.disabled = !groupEnabled;
               defaultRadio.disabled = !groupEnabled || !optionCheckbox.checked;
               if (!groupEnabled || !optionCheckbox.checked) defaultRadio.checked = false;
-
-              defaultStar.classList.toggle("fas", defaultRadio.checked);
-              defaultStar.classList.toggle("far", !defaultRadio.checked);
               defaultStar.classList.toggle("text-warning", groupEnabled && defaultRadio.checked);
               defaultStar.classList.toggle("text-muted", !groupEnabled || !defaultRadio.checked);
             });
@@ -4094,7 +4091,7 @@
                 } else {
                     labelSpan.textContent = 'Detail';
                 }
-            }, 50); 
+            }, 50);
         });
     });
 });
@@ -4111,6 +4108,7 @@
     <!-- Feather Icon JS -->
     <script src="assets/js/feather.min.js"></script>
 
+    <script src="assets/js/ui-foundation.js"></script>
     <!-- custom JS -->
     <script src="assets/js/tableukuran.js"></script>
 

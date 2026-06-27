@@ -348,10 +348,14 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   scope.querySelector(".range-form")?.addEventListener("click", (event) => {
-    if (event.target.classList.contains("add-range")) {
+    const addRangeButton = event.target.closest(".add-range");
+    const deleteRangeButton = event.target.closest(".delete-range");
+
+    if (addRangeButton) {
       event.preventDefault();
-      const row = event.target.closest(".row");
+      const row = addRangeButton.closest(".row");
       const newRow = row.cloneNode(true);
+      newRow.classList.remove("first");
       newRow.querySelector(".delete-range")?.classList.remove("d-none");
       newRow.querySelectorAll("input").forEach((input) => {
         delete input.dataset.separatorReady;
@@ -361,11 +365,9 @@ document.addEventListener("DOMContentLoaded", () => {
       initNumberSeparator(newRow);
     }
 
-    if (event.target.classList.contains("delete-range")) {
+    if (deleteRangeButton) {
       event.preventDefault();
-      const row = event.target.closest(".row");
-      const rows = row.parentNode.querySelectorAll(".row");
-      if (rows.length > 1) row.remove();
+      deleteRangeButton.closest(".row")?.remove();
     }
   });
 

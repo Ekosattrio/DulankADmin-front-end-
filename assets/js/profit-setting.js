@@ -12,6 +12,21 @@ document.addEventListener("DOMContentLoaded", () => {
       .replace(/\B(?=(\d{3})+(?!\d))/g, ".");
   }
 
+  function placeCursorAtEnd(input) {
+    if (!input || typeof input.setSelectionRange !== "function") return;
+
+    requestAnimationFrame(() => {
+      const cursorPosition = input.value.length;
+      input.setSelectionRange(cursorPosition, cursorPosition);
+    });
+  }
+
+  function focusInputAtEnd(input) {
+    if (!input) return;
+    input.focus();
+    placeCursorAtEnd(input);
+  }
+
   function initNumberSeparator(container = scope) {
     container.querySelectorAll(".number-separator").forEach((input) => {
       if (input.dataset.separatorReady) return;
@@ -165,7 +180,7 @@ document.addEventListener("DOMContentLoaded", () => {
       row.remove();
       initNumberSeparator(editRow);
       attachCostEditHandlers(editRow);
-      editRow.querySelector('input[placeholder="Label Biaya"]')?.focus();
+      focusInputAtEnd(editRow.querySelector('input[placeholder="Label Biaya"]'));
     });
   }
 
@@ -178,7 +193,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (!label) {
         labelInput.classList.add("is-invalid");
-        labelInput.focus();
+        focusInputAtEnd(labelInput);
         return;
       }
 
@@ -246,7 +261,7 @@ document.addEventListener("DOMContentLoaded", () => {
       row.remove();
       initNumberSeparator(editRow);
       attachTaxEditHandlers(editRow);
-      editRow.querySelector('input[placeholder="Nama Pajak"]')?.focus();
+      focusInputAtEnd(editRow.querySelector('input[placeholder="Nama Pajak"]'));
     });
   }
 
@@ -258,7 +273,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (!label) {
         labelInput.classList.add("is-invalid");
-        labelInput.focus();
+        focusInputAtEnd(labelInput);
         return;
       }
 
@@ -284,7 +299,19 @@ document.addEventListener("DOMContentLoaded", () => {
     showValidationIfNeeded();
   });
 
-  scope.addEventListener("input", () => {
+  scope.addEventListener("focusin", (event) => {
+    if (event.target.matches('input[type="text"]')) placeCursorAtEnd(event.target);
+  });
+
+  scope.addEventListener("mouseup", (event) => {
+    if (!event.target.matches('input[type="text"]')) return;
+    event.preventDefault();
+    placeCursorAtEnd(event.target);
+  });
+
+  scope.addEventListener("input", (event) => {
+    if (event.target.matches('input[type="text"]')) placeCursorAtEnd(event.target);
+
     if (checkValue()) {
       infoSelectedAll?.classList.add("d-none");
       updateButton?.classList.remove("disabled");
@@ -352,7 +379,7 @@ document.addEventListener("DOMContentLoaded", () => {
     button.classList.add("disabled");
     initNumberSeparator(row);
     attachCostEditHandlers(row);
-    row.querySelector('input[placeholder="Label Biaya"]')?.focus();
+    focusInputAtEnd(row.querySelector('input[placeholder="Label Biaya"]'));
   });
 
   scope.querySelectorAll(".tambahan-form .row.align-items-center").forEach(attachCostHandlers);
@@ -367,7 +394,7 @@ document.addEventListener("DOMContentLoaded", () => {
     button.classList.add("disabled");
     initNumberSeparator(row);
     attachTaxEditHandlers(row);
-    row.querySelector('input[placeholder="Nama Pajak"]')?.focus();
+    focusInputAtEnd(row.querySelector('input[placeholder="Nama Pajak"]'));
   });
 
   scope.querySelectorAll(".pajak-form .row.align-items-center").forEach(attachTaxHandlers);

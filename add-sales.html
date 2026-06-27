@@ -32,9 +32,8 @@
 	<!-- Bootstrap Tagsinput CSS -->
 	<link rel="stylesheet" href="assets/plugins/bootstrap-tagsinput/bootstrap-tagsinput.css">
 
-	<!-- Fontawesome CSS -->
-	<link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css">
-	<link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css">
+	<!-- Feathericon CSS -->
+	<link rel="stylesheet" href="assets/css/feather.css" />
 
 	<!-- Main CSS -->
 	<link rel="stylesheet" href="assets/css/style.css">
@@ -513,11 +512,11 @@
 													<span
 														class="clear-address d-none position-absolute bg-secondary text-white rounded-circle d-flex align-items-center"
 														style="width: 18px;height: 18px;font-size: 8px;right: 10px;cursor: pointer;z-index: 100;">
-														<i class="bi bi-x-lg m-auto"></i>
+														<i data-feather="x" class="m-auto"></i>
 													</span>
 													<span class="search-icon position-absolute"
 														style="width: 16px;height: 16px;font-size: 12px;right: 10px;z-index: 99;">
-														<i class="bi bi-search"></i>
+														<i data-feather="search"></i>
 													</span>
 												</div>
 
@@ -585,9 +584,9 @@
 								</div>
 						</div>
 
-						<div class="modal-footer-btn me-3 mb-2">
-							<button type="button" class="btn btn-cancel me-2" data-bs-dismiss="modal">Cancel</button>
-							<button type="submit" class="btn btn-submit">Submit</button>
+												<div class="modal-footer modal-action-footer justify-content-end">
+						  <button type="button" class="btn btn-dark modal-action-cancel" data-bs-dismiss="modal">Cancel</button>
+						  <button type="submit" class="btn btn-warning modal-action-submit">Submit</button>
 						</div>
 						<br>
 						</form>
@@ -604,6 +603,7 @@
 	<!-- Feather Icon JS -->
 	<script src="assets/js/feather.min.js"></script>
 
+	<script src="assets/js/ui-foundation.js"></script>
 	<!-- Slimscroll JS -->
 	<script src="assets/js/jquery.slimscroll.min.js"></script>
 
@@ -806,11 +806,11 @@
                     <label class="form-label">Amount (IDR)</label>
                     <input type="text" class="form-control text-end amount-input" disabled>
                 </div>
-                <div class="justify-content-end d-flex mb-3"> 
-                    <a href="javascript:void(0);" class="delete-section-btn text-primary mt-3 d-inline-block"> 
+                <div class="justify-content-end d-flex mb-3">
+                    <a href="javascript:void(0);" class="delete-section-btn text-primary mt-3 d-inline-block">
                         <i data-feather="minus-circle" style="width: 15px; margin-right: 10px;"></i>
-                        <span>Delete Product</span> 
-                    </a> 
+                        <span>Delete Product</span>
+                    </a>
                 </div>
             </div>
         </div>`;
@@ -989,11 +989,11 @@
                     <label class="form-label">Amount (IDR)</label>
                     <input type="text" class="form-control text-end amount-input" disabled>
                 </div>
-                <div class="justify-content-end d-flex mb-3"> 
-                    <a href="javascript:void(0);" class="delete-section-btn text-primary mt-3 d-inline-block"> 
+                <div class="justify-content-end d-flex mb-3">
+                    <a href="javascript:void(0);" class="delete-section-btn text-primary mt-3 d-inline-block">
                         <i data-feather="minus-circle" style="width: 15px; margin-right: 10px;"></i>
-                        <span>Delete Product</span> 
-                    </a> 
+                        <span>Delete Product</span>
+                    </a>
                 </div>
             </div>
         </div>`;

@@ -29,10 +29,6 @@
 	<!-- Select2 CSS -->
 	<link rel="stylesheet" href="assets/plugins/select2/css/select2.min.css">
 
-	<!-- Fontawesome CSS -->
-	<link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css">
-	<link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css">
-
 	<!-- Main CSS -->
 	<link rel="stylesheet" href="assets/css/style.css">
 	<script src="assets/js/shipping-pickup.js"></script>
@@ -554,6 +550,7 @@
 	<!-- Feather Icon JS -->
 	<script src="assets/js/feather.min.js"></script>
 
+	<script src="assets/js/ui-foundation.js"></script>
 	<!-- custom JS -->
 	<script src="assets/js/tableukuran.js"></script>
 
@@ -597,7 +594,7 @@
 					element.setAttribute('disabled', 'disabled');
 				});
 
-				// Hancurkan Select2 
+				// Hancurkan Select2
 				row.querySelectorAll('.select.select2-hidden-accessible').forEach(select => {
 					$(select).select2('destroy');
 					select.setAttribute('disabled', 'disabled');

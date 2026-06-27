@@ -31,9 +31,8 @@
     <!-- Datatable CSS -->
     <link rel="stylesheet" href="assets/css/dataTables.bootstrap5.min.css" />
 
-    <!-- Fontawesome CSS -->
-    <link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css" />
-    <link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css" />
+    <!-- Feathericon CSS -->
+    <link rel="stylesheet" href="assets/css/feather.css" />
 
     <!-- Main CSS -->
     <link rel="stylesheet" href="assets/css/style.css" />
@@ -975,11 +974,13 @@
                       </div>
                     </div>
                   </div>
-                  <div class="modal-footer-btn">
-                    <a href="javascript:void(0);" class="btn btn-cancel me-2" data-bs-dismiss="modal">Cancel</a>
-                    <a href="income.html" class="btn btn-submit">Submit</a>
-                  </div>
                 </div>
+
+                <div class="modal-footer modal-action-footer justify-content-end">
+                                    <button type="button" class="btn btn-dark modal-action-cancel" data-bs-dismiss="modal">Cancel</button>
+                                    <a href="income.html" class="btn btn-warning modal-action-submit">Submit</a>
+                                  </div>
+
               </div>
             </div>
           </div>
@@ -1107,8 +1108,9 @@
                   </div>
                   <hr />
                 </div>
-                <div class="modal-footer-btn">
-                  <a href="javascript:void(0);" class="btn btn-cancel me-2" data-bs-dismiss="modal">Cancel</a>
+                                <div class="modal-footer modal-action-footer justify-content-end">
+                  <button type="button" class="btn btn-dark modal-action-cancel" data-bs-dismiss="modal">Cancel</button>
+                  <button type="submit" class="btn btn-warning modal-action-submit">Submit</button>
                 </div>
               </div>
             </div>
@@ -1318,11 +1320,13 @@
                       </div>
                     </div>
                   </div>
-                  <div class="modal-footer-btn">
-                    <a href="javascript:void(0);" class="btn btn-cancel me-2" data-bs-dismiss="modal">Cancel</a>
-                    <a href="income.html" class="btn btn-submit">Submit</a>
-                  </div>
                 </div>
+
+                <div class="modal-footer modal-action-footer justify-content-end">
+                                    <button type="button" class="btn btn-dark modal-action-cancel" data-bs-dismiss="modal">Cancel</button>
+                                    <a href="income.html" class="btn btn-warning modal-action-submit">Submit</a>
+                                  </div>
+
               </div>
             </div>
           </div>
@@ -1339,6 +1343,7 @@
     <!-- Feather Icon JS -->
     <script src="assets/js/feather.min.js"></script>
 
+    <script src="assets/js/ui-foundation.js"></script>
     <!-- Slimscroll JS -->
     <script src="assets/js/jquery.slimscroll.min.js"></script>
 
@@ -1377,6 +1382,14 @@
         var list = section.querySelector(".split-payment-list");
         var addButton = section.querySelector(".split-payment-add");
         var cancelButton = section.querySelector(".split-payment-cancel");
+        var modal = section.closest(".modal");
+        var paymentWrapper =
+          modal &&
+          modal.id === "add-units" &&
+          section.nextElementSibling &&
+          section.nextElementSibling.classList.contains("payment-wrapper")
+            ? section.nextElementSibling
+            : null;
 
         if (!toggleButton || !box || !list || !addButton || !cancelButton) {
           return;
@@ -1426,18 +1439,35 @@
           }
         }
 
+        function setPaymentWrapperHidden(isHidden) {
+          if (!paymentWrapper) {
+            return;
+          }
+
+          paymentWrapper.classList.toggle("d-none", isHidden);
+          if (isHidden) {
+            paymentWrapper.setAttribute("hidden", "hidden");
+          } else {
+            paymentWrapper.removeAttribute("hidden");
+          }
+
+          paymentWrapper.style.removeProperty("display");
+        }
+
         function showSplitPayment() {
           if (!list.children.length) {
             addPaymentItem();
             addPaymentItem();
           }
 
+          setPaymentWrapperHidden(true);
           box.classList.remove("d-none");
           toggleButton.classList.add("d-none");
         }
 
         function cancelSplitPayment() {
           list.innerHTML = "";
+          setPaymentWrapperHidden(false);
           box.classList.add("d-none");
           toggleButton.classList.remove("d-none");
         }
@@ -1446,7 +1476,6 @@
         addButton.addEventListener("click", addPaymentItem);
         cancelButton.addEventListener("click", cancelSplitPayment);
 
-        var modal = section.closest(".modal");
         if (modal) {
           modal.addEventListener("hidden.bs.modal", cancelSplitPayment);
         }

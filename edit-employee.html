@@ -29,9 +29,8 @@
     <!-- Datatable CSS -->
     <link rel="stylesheet" href="assets/css/dataTables.bootstrap5.min.css" />
 
-    <!-- Fontawesome CSS -->
-    <link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css" />
-    <link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css" />
+    <!-- Feathericon CSS -->
+    <link rel="stylesheet" href="assets/css/feather.css" />
 
     <!-- Main CSS -->
     <link rel="stylesheet" href="assets/css/style.css" />
@@ -140,7 +139,7 @@
                         <label>Date of Birth</label>
 
                         <div class="input-groupicon calender-input">
-                          <i class="info-img"></i>
+                          <i data-feather="calendar" class="info-img"></i>
                           <input type="text" class="datetimepicker form-control" value="12-02-2026" />
                         </div>
                       </div>
@@ -149,7 +148,7 @@
                       <div class="input-blocks">
                         <label>Joining Date</label>
                         <div class="input-groupicon calender-input">
-                          <i class="info-img"></i>
+                          <i data-feather="calendar" class="info-img"></i>
                           <input type="text" class="datetimepicker form-control" value="12-02-2026" />
                         </div>
                       </div>
@@ -168,13 +167,13 @@
                               class="clear-address d-none position-absolute bg-secondary text-white rounded-circle d-flex align-items-center"
                               style="width: 18px; height: 18px; font-size: 8px; right: 10px; cursor: pointer; z-index: 100"
                             >
-                              <i class="bi bi-x-lg m-auto"></i>
+                              <i data-feather="x" class="m-auto"></i>
                             </span>
                             <span
                               class="search-icon position-absolute"
                               style="width: 16px; height: 16px; font-size: 12px; right: 10px; z-index: 99"
                             >
-                              <i class="bi bi-search"></i>
+                              <i data-feather="search"></i>
                             </span>
                           </div>
 
@@ -285,13 +284,13 @@
                                 class="clear-address d-none position-absolute bg-secondary text-white rounded-circle d-flex align-items-center"
                                 style="width: 18px; height: 18px; font-size: 8px; right: 10px; cursor: pointer; z-index: 100"
                               >
-                                <i class="bi bi-x-lg m-auto"></i>
+                                <i data-feather="x" class="m-auto"></i>
                               </span>
                               <span
                                 class="search-icon position-absolute"
                                 style="width: 16px; height: 16px; font-size: 12px; right: 10px; z-index: 99"
                               >
-                                <i class="bi bi-search"></i>
+                                <i data-feather="search"></i>
                               </span>
                             </div>
 
@@ -361,7 +360,7 @@
                           <label>Password</label>
                           <div class="pass-group">
                             <input type="password" class="pass-input" value="password123" />
-                            <span class="fas toggle-password fa-eye-slash"></span>
+                            <span data-feather="eye-off" class="toggle-password"></span>
                           </div>
                         </div>
                       </div>
@@ -370,7 +369,7 @@
                           <label>Confirm Password</label>
                           <div class="pass-group">
                             <input type="password" class="pass-inputa" value="password123" />
-                            <span class="fas toggle-passworda fa-eye-slash"></span>
+                            <span data-feather="eye-off" class="toggle-passworda"></span>
                           </div>
                         </div>
                       </div>
@@ -407,6 +406,7 @@
     <!-- Feather Icon JS -->
     <script src="assets/js/feather.min.js"></script>
 
+    <script src="assets/js/ui-foundation.js"></script>
     <!-- Slimscroll JS -->
     <script src="assets/js/jquery.slimscroll.min.js"></script>
 

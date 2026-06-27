@@ -27,9 +27,8 @@
     <!-- Datatable CSS -->
     <link rel="stylesheet" href="assets/css/dataTables.bootstrap5.min.css" />
 
-    <!-- Fontawesome CSS -->
-    <link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css" />
-    <link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css" />
+    <!-- Feathericon CSS -->
+    <link rel="stylesheet" href="assets/css/feather.css" />
 
     <!-- Main CSS -->
     <link rel="stylesheet" href="assets/css/style.css" />
@@ -277,7 +276,7 @@
                     <label>Password</label>
                     <div class="pass-group">
                       <input type="password" class="pass-input" />
-                      <span class="fas toggle-password fa-eye-slash"></span>
+                      <span data-feather="eye-off" class="toggle-password"></span>
                     </div>
                   </div>
                   <div class="mb-3">
@@ -300,13 +299,13 @@
                           class="clear-address d-none position-absolute bg-secondary text-white rounded-circle d-flex align-items-center"
                           style="width: 18px; height: 18px; font-size: 8px; right: 10px; cursor: pointer; z-index: 100"
                         >
-                          <i class="bi bi-x-lg m-auto"></i>
+                          <i data-feather="x" class="m-auto"></i>
                         </span>
                         <span
                           class="search-icon position-absolute"
                           style="width: 16px; height: 16px; font-size: 12px; right: 10px; z-index: 99"
                         >
-                          <i class="bi bi-search"></i>
+                          <i data-feather="search"></i>
                         </span>
                       </div>
 
@@ -348,9 +347,9 @@
                       <label for="user2" class="checktoggle"></label>
                     </div>
                   </div>
-                  <div class="modal-footer-btn">
-                    <button type="button" class="btn btn-cancel me-2" data-bs-dismiss="modal">Cancel</button>
-                    <button type="submit" class="btn btn-submit">Create</button>
+                                    <div class="modal-footer modal-action-footer justify-content-end">
+                    <button type="button" class="btn btn-dark modal-action-cancel" data-bs-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-warning modal-action-submit">Submit</button>
                   </div>
                 </form>
               </div>
@@ -389,7 +388,7 @@
                     <label>Password</label>
                     <div class="pass-group">
                       <input type="password" class="pass-input" value="1234" />
-                      <span class="fas toggle-password fa-eye-slash"></span>
+                      <span data-feather="eye-off" class="toggle-password"></span>
                     </div>
                   </div>
                   <div class="mb-3">
@@ -407,9 +406,9 @@
                       <label for="user3" class="checktoggle"></label>
                     </div>
                   </div>
-                  <div class="modal-footer-btn">
-                    <button type="button" class="btn btn-cancel me-2" data-bs-dismiss="modal">Cancel</button>
-                    <button type="submit" class="btn btn-submit">Save Changes</button>
+                                    <div class="modal-footer modal-action-footer justify-content-end">
+                    <button type="button" class="btn btn-dark modal-action-cancel" data-bs-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-warning modal-action-submit">Submit</button>
                   </div>
                 </form>
               </div>
@@ -425,6 +424,7 @@
     <!-- Feather Icon JS -->
     <script src="assets/js/feather.min.js"></script>
 
+    <script src="assets/js/ui-foundation.js"></script>
     <!-- Slimscroll JS -->
     <script src="assets/js/jquery.slimscroll.min.js"></script>
 

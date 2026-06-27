@@ -23,11 +23,51 @@ const loadHTML = (url, elementId) => {
     });
 };
 
+function kcIcon(name, className) {
+  if (window.KacetakUI && window.KacetakUI.icon) {
+    return window.KacetakUI.icon(name, className || "");
+  }
+
+  return '<i data-feather="' + name + '" class="' + (className || "") + '"></i>';
+}
+
+function kcCarouselNav() {
+  return [kcIcon("chevron-left"), kcIcon("chevron-right")];
+}
+
+function kcRefreshUI(root) {
+  if (window.KacetakUI && window.KacetakUI.init) {
+    window.KacetakUI.init(root || document);
+    return;
+  }
+
+  if (window.feather) {
+    window.feather.replace();
+  }
+}
+
+function kcReplaceIcons(selector, name) {
+  $(selector).each(function () {
+    if (window.KacetakUI && window.KacetakUI.replaceIcon) {
+      window.KacetakUI.replaceIcon(this, name);
+    } else {
+      $(this).attr("data-feather", name);
+    }
+  });
+}
+
+const kcDateTimeIcons = {
+  up: "feather-chevron-up",
+  down: "feather-chevron-down",
+  next: "feather-chevron-right",
+  previous: "feather-chevron-left",
+};
+
 $(document).ready(function () {
-  loadHTML("components/header.html", "header-placeholder");
-  loadHTML("components/sidebar.html", "sidebar-placeholder").then(() => {
+  Promise.all([loadHTML("components/header.html", "header-placeholder"), loadHTML("components/sidebar.html", "sidebar-placeholder")]).then(() => {
     start();
     initSidebarActive();
+    kcRefreshUI(document);
   });
 });
 
@@ -35,7 +75,7 @@ function start() {
   // Variables declarations
   var $wrapper = $(".main-wrapper");
   var $pageWrapper = $(".page-wrapper");
-  feather.replace();
+  kcRefreshUI(document);
 
   // Page Content Height Resize
   $(window).resize(function () {
@@ -130,7 +170,7 @@ function start() {
       dots: false,
       nav: true,
       smartSpeed: 2000,
-      navText: ['<i class="fas fa-chevron-left"></i>', '<i class="fas fa-chevron-right"></i>'],
+      navText: kcCarouselNav(),
       responsive: {
         0: {
           items: 1,
@@ -180,13 +220,20 @@ function start() {
         searchPlaceholder: "Search",
         info: "_START_ - _END_ of _TOTAL_ items",
         paginate: {
-          next: ' <i class=" fa fa-angle-right"></i>',
-          previous: '<i class="fa fa-angle-left"></i> ',
+          next: kcIcon("chevron-right"),
+          previous: kcIcon("chevron-left"),
         },
       },
       initComplete: (settings, json) => {
         $(".dataTables_filter").appendTo("#tableSearch");
         $(".dataTables_filter").appendTo(".search-input");
+        kcRefreshUI(document);
+        if (window.formatTdNumbers) window.formatTdNumbers(settings.nTable);
+        if (window.refreshTableColumnAlignment) window.refreshTableColumnAlignment(settings.nTable);
+      },
+      drawCallback: function (settings) {
+        if (window.formatTdNumbers) window.formatTdNumbers(settings.nTable);
+        if (window.refreshTableColumnAlignment) window.refreshTableColumnAlignment(settings.nTable);
       },
     });
   }
@@ -211,6 +258,14 @@ function start() {
   if ($(".datatable").length > 0) {
     $(".datatable").DataTable({
       bFilter: false,
+      initComplete: function (settings) {
+        if (window.formatTdNumbers) window.formatTdNumbers(settings.nTable);
+        if (window.refreshTableColumnAlignment) window.refreshTableColumnAlignment(settings.nTable);
+      },
+      drawCallback: function (settings) {
+        if (window.formatTdNumbers) window.formatTdNumbers(settings.nTable);
+        if (window.refreshTableColumnAlignment) window.refreshTableColumnAlignment(settings.nTable);
+      },
     });
   }
   // Loader
@@ -225,50 +280,11 @@ function start() {
   if ($(".datetimepicker").length > 0) {
     $(".datetimepicker").datetimepicker({
       format: "DD-MM-YYYY",
-      icons: {
-        up: "fas fa-angle-up",
-        down: "fas fa-angle-down",
-        next: "fas fa-angle-right",
-        previous: "fas fa-angle-left",
-      },
+      icons: kcDateTimeIcons,
     });
   }
 
-  // toggle-password
-  if ($(".toggle-password").length > 0) {
-    $(document).on("click", ".toggle-password", function () {
-      $(this).toggleClass("fa-eye fa-eye-slash");
-      var input = $(".pass-input");
-      if (input.attr("type") == "password") {
-        input.attr("type", "text");
-      } else {
-        input.attr("type", "password");
-      }
-    });
-  }
-  if ($(".toggle-passwords").length > 0) {
-    $(document).on("click", ".toggle-passwords", function () {
-      $(this).toggleClass("fa-eye fa-eye-slash");
-      var input = $(".pass-inputs");
-      if (input.attr("type") == "password") {
-        input.attr("type", "text");
-      } else {
-        input.attr("type", "password");
-      }
-    });
-  }
-  if ($(".toggle-passworda").length > 0) {
-    $(document).on("click", ".toggle-passworda", function () {
-      $(this).toggleClass("fa-eye fa-eye-slash");
-      var input = $(".pass-inputa");
-      if (input.attr("type") == "password") {
-        input.attr("type", "text");
-      } else {
-        setTimeout;
-        input.attr("type", "password");
-      }
-    });
-  }
+  // Password toggle is centralized in assets/js/ui-foundation.js.
 
   // Coming Soon
   if ($(".comming-soon-pg").length > 0) {
@@ -705,18 +721,7 @@ function start() {
     });
   }
 
-  // toggle-password
-  if ($(".toggle-password").length > 0) {
-    $(document).on("click", ".toggle-password", function () {
-      $(this).toggleClass("fa-eye fa-eye");
-      var input = $(".pass-input");
-      if (input.attr("type") == "text") {
-        input.attr("type", "text");
-      } else {
-        input.attr("type", "password");
-      }
-    });
-  }
+  // Password toggle is centralized in assets/js/ui-foundation.js.
 
   if ($(".win-maximize").length > 0) {
     $(".win-maximize").on("click", function (e) {
@@ -781,7 +786,8 @@ function start() {
   // Mail important
 
   $(document).on("click", ".mail-important", function () {
-    $(this).find("i.fa").toggleClass("fa-star").toggleClass("fa-star-o");
+    $(this).toggleClass("is-important");
+    kcRefreshUI(this);
   });
 
   var selectAllItems = "#select-all";
@@ -1015,7 +1021,7 @@ function start() {
     '<div class="switch-wrapper">' +
     '<div id="dark-mode-toggle">' +
     '<span class="light-mode active"> <img src="assets/img/icons/sun-icon.svg" class="me-2" alt=""> Light</span>' +
-    '<span class="dark-mode"><i class="far fa-moon me-2"></i> Dark</span>' +
+    '<span class="dark-mode">' + kcIcon("moon", "me-2") + " Dark</span>" +
     "</div>" +
     "</div>" +
     '<div class="row  ">' +
@@ -1389,28 +1395,24 @@ function start() {
     $(".mute-video").on("click", function () {
       if ($(this).hasClass("stop")) {
         $(this).removeClass("stop");
-        $(".mute-video i").removeClass("bx-video-off");
-        $(".mute-video i").addClass("bx-video");
+        kcReplaceIcons(".mute-video [data-feather], .mute-video svg, .mute-video i", "video");
         $(".join-call .join-video").removeClass("video-hide");
         $(".video-avatar").removeClass("active");
         $(this).attr("data-bs-original-title", "Stop Camera");
         $(".meeting .join-video.user-active").removeClass("video-hide");
 
         $(".join-video.user-active .more-icon").removeClass("vid-view");
-        $(".action-info.vid-view li .mute-vid i").removeClass("feather-video-off");
-        $(".action-info.vid-view li .mute-vid i").addClass("feather-video");
+        kcReplaceIcons(".action-info.vid-view li .mute-vid [data-feather], .action-info.vid-view li .mute-vid svg, .action-info.vid-view li .mute-vid i", "video");
       } else {
         $(this).addClass("stop");
-        $(".mute-video i").removeClass("bx-video");
-        $(".mute-video i").addClass("bx-video-off");
+        kcReplaceIcons(".mute-video [data-feather], .mute-video svg, .mute-video i", "video-off");
         $(".join-call .join-video").addClass("video-hide");
         $(".video-avatar").addClass("active");
         $(this).attr("data-bs-original-title", "Start Camera");
         $(".meeting .join-video.user-active").addClass("video-hide");
 
         $(".add-list .user-active .action-info").addClass("vid-view");
-        $(".action-info.vid-view li .mute-vid i").removeClass("feather-video");
-        $(".action-info.vid-view li .mute-vid i").addClass("feather-video-off");
+        kcReplaceIcons(".action-info.vid-view li .mute-vid [data-feather], .action-info.vid-view li .mute-vid svg, .action-info.vid-view li .mute-vid i", "video-off");
       }
     });
   }
@@ -1421,23 +1423,19 @@ function start() {
     $(".mute-bt").on("click", function () {
       if ($(this).hasClass("stop")) {
         $(this).removeClass("stop");
-        $(".mute-bt i").removeClass("bx-microphone-off");
-        $(".mute-bt i").addClass("bx-microphone");
+        kcReplaceIcons(".mute-bt [data-feather], .mute-bt svg, .mute-bt i", "mic");
         $(this).attr("data-bs-original-title", "Mute Audio");
         $(".join-video.user-active .more-icon").removeClass("mic-view");
 
-        $(".action-info.vid-view li .mute-mic i").removeClass("feather-mic-off");
-        $(".action-info.vid-view li .mute-mic i").addClass("feather-mic");
+        kcReplaceIcons(".action-info.vid-view li .mute-mic [data-feather], .action-info.vid-view li .mute-mic svg, .action-info.vid-view li .mute-mic i", "mic");
       } else {
         $(this).addClass("stop");
-        $(".mute-bt i").removeClass("bx-microphone");
-        $(".mute-bt i").addClass("bx-microphone-off");
+        kcReplaceIcons(".mute-bt [data-feather], .mute-bt svg, .mute-bt i", "mic-off");
         $(this).attr("data-bs-original-title", "Unmute Audio");
         $(".join-video.user-active .more-icon").addClass("mic-view");
 
         $(".add-list .user-active .action-info").addClass("vid-view");
-        $(".action-info.vid-view li .mute-mic i").removeClass("feather-mic");
-        $(".action-info.vid-view li .mute-mic i").addClass("feather-mic-off");
+        kcReplaceIcons(".action-info.vid-view li .mute-mic [data-feather], .action-info.vid-view li .mute-mic svg, .action-info.vid-view li .mute-mic i", "mic-off");
       }
     });
   }
@@ -1445,15 +1443,13 @@ function start() {
   // Mute User Audio
 
   if ($(".other-mic-off").length > 0) {
-    $(".other-mic-off i").on("click", function () {
+    $(document).on("click", ".other-mic-off [data-feather], .other-mic-off svg, .other-mic-off i", function () {
       if ($(this).parent().hasClass("stop")) {
         $(this).parent().removeClass("stop");
-        $(this).removeClass("bx-microphone-off");
-        $(this).addClass("bx-microphone");
+        window.KacetakUI && window.KacetakUI.replaceIcon(this, "mic");
       } else {
         $(this).parent().addClass("stop");
-        $(this).removeClass("bx-microphone");
-        $(this).addClass("bx-microphone-off");
+        window.KacetakUI && window.KacetakUI.replaceIcon(this, "mic-off");
       }
     });
   }
@@ -1461,15 +1457,13 @@ function start() {
   // Mute User Video
 
   if ($(".other-video-off").length > 0) {
-    $(".other-video-off i").on("click", function () {
+    $(document).on("click", ".other-video-off [data-feather], .other-video-off svg, .other-video-off i", function () {
       if ($(this).parent().hasClass("stop")) {
         $(this).parent().removeClass("stop");
-        $(this).removeClass("bx-video-off");
-        $(this).addClass("bx-video");
+        window.KacetakUI && window.KacetakUI.replaceIcon(this, "video");
       } else {
         $(this).parent().addClass("stop");
-        $(this).removeClass("bx-video");
-        $(this).addClass("bx-video-off");
+        window.KacetakUI && window.KacetakUI.replaceIcon(this, "video-off");
       }
     });
   }
@@ -1484,10 +1478,7 @@ function start() {
       dots: false,
       autoplay: true,
       smartSpeed: 1000,
-      navText: [
-        '<i class="fa fa-angle-left" data-bs-toggle="tooltip" title="fa fa-angle-left"></i>',
-        '<i class="fa fa-angle-right" data-bs-toggle="tooltip" title="fa fa-angle-right"></i>',
-      ],
+      navText: kcCarouselNav(),
       responsive: {
         0: {
           items: 1,
@@ -1561,6 +1552,8 @@ function start() {
       $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
     });
   });
+
+  kcRefreshUI(document);
 }
 function toggleFullscreen(elem) {
   elem = elem || document.documentElement;
@@ -1643,12 +1636,7 @@ $(document).on("click", ".remove-product", function () {
 if ($(".timepicker").length > 0) {
   $(".timepicker").datetimepicker({
     format: "HH:mm A",
-    icons: {
-      up: "fas fa-angle-up",
-      down: "fas fa-angle-down",
-      next: "fas fa-angle-right",
-      previous: "fas fa-angle-left",
-    },
+    icons: kcDateTimeIcons,
   });
 }
 
@@ -1685,7 +1673,7 @@ $(".add-extra").on("click", function () {
     "</select>" +
     "</div>" +
     '<div class="input-blocks">' +
-    '<a href="#" class="btn btn-danger-outline trash"><i class="far fa-trash-alt"></i></a>' +
+    '<a href="#" class="btn btn-danger-outline trash">' + kcIcon("trash-2") + "</a>" +
     "</div>" +
     "</div>" +
     "</div>";
@@ -1700,6 +1688,7 @@ $(".add-extra").on("click", function () {
     }, 100);
   }, 100);
   $(".addservice-info").append(servicecontent);
+  kcRefreshUI(document);
   return false;
 });
 
@@ -1736,7 +1725,7 @@ $(".add-extra-item-two").on("click", function () {
     "</select>" +
     "</div>" +
     '<div class="input-blocks">' +
-    '<a href="#" class="btn btn-danger-outline trash"><i class="far fa-trash-alt"></i></a>' +
+    '<a href="#" class="btn btn-danger-outline trash">' + kcIcon("trash-2") + "</a>" +
     "</div>" +
     "</div>" +
     "</div>";
@@ -1751,6 +1740,7 @@ $(".add-extra-item-two").on("click", function () {
   }, 100);
 
   $(".add-product-new").append(servicecontent);
+  kcRefreshUI(document);
   return false;
 });
 
@@ -1795,7 +1785,7 @@ $(document).ready(function () {
       dots: false,
       autoplay: false,
       smartSpeed: 1000,
-      navText: ['<i class="fas fa-chevron-left"></i>', '<i class="fas fa-chevron-right"></i>'],
+      navText: kcCarouselNav(),
       responsive: {
         0: {
           items: 2,
@@ -1827,7 +1817,7 @@ $(document).ready(function () {
       nav: true,
       dots: false,
       // stageOuterClass: 'owl-stage-outer overflow-visible',
-      navText: ['<i class="fas fa-chevron-left"></i>', '<i class="fas fa-chevron-right"></i>'],
+      navText: kcCarouselNav(),
       responsive: {
         0: {
           items: 1,
@@ -1852,7 +1842,7 @@ $(document).ready(function () {
       dots: false,
       smartSpeed: 1000,
       // stageOuterClass: 'owl-stage-outer overflow-visible',
-      navText: ['<i class="fas fa-chevron-left"></i>', '<i class="fas fa-chevron-right"></i>'],
+      navText: kcCarouselNav(),
       responsive: {
         0: {
           items: 1,
@@ -1875,7 +1865,7 @@ $(document).ready(function () {
       nav: true,
       dots: false,
       // stageOuterClass: 'owl-stage-outer overflow-visible',
-      navText: ['<i class="fas fa-chevron-left"></i>', '<i class="fas fa-chevron-right"></i>'],
+      navText: kcCarouselNav(),
       responsive: {
         0: {
           items: 1,
@@ -1995,6 +1985,7 @@ $(document).ready(function () {
     });
   });
   /* card with close button */
+  kcRefreshUI(document);
 });
 
 // js date range picker
@@ -2567,6 +2558,39 @@ $(function () {
       return /^[\d\.\,\s\-]+$/.test(s);
     }
 
+    function getCellText($cell) {
+      return $cell
+        .clone()
+        .find("script, style")
+        .remove()
+        .end()
+        .text()
+        .replace(/\u00a0/g, " ")
+        .replace(/\s+/g, " ")
+        .trim();
+    }
+
+    function isEmptyTableValue(text) {
+      text = String(text || "").trim();
+      return text === "" || text === "-" || text === "\u2013" || text === "\u2014";
+    }
+
+    function isTableNumber(text) {
+      if (isEmptyTableValue(text)) return false;
+
+      var cleaned = String(text)
+        .replace(/\u00a0/g, " ")
+        .trim()
+        .replace(/\s+/g, "")
+        .replace(/^\((.*)\)$/, "-$1")
+        .replace(/^(rp\.?|idr|usd|eur|sgd|aud)/i, "")
+        .replace(/(idr|usd|eur|sgd|aud)$/i, "")
+        .replace(/^[\u0024\u20ac\u00a3\u00a5]/, "")
+        .replace(/%$/, "");
+
+      return /^-?(?:\d{1,3}(?:[.,]\d{3})+(?:,\d+)?|\d+(?:[.,]\d+)?)$/.test(cleaned);
+    }
+
     function formatTdCell($td) {
       if (!$td || $td.hasClass("str-value")) return;
       // skip cells with interactive content
@@ -2581,25 +2605,122 @@ $(function () {
       }
       var num = parseNumber(raw);
       var formatted = formatNumber(num);
-      $td.text(formatted);
+      if ($td.text().trim() !== formatted) {
+        $td.text(formatted);
+      }
       $td.data("raw-number", raw);
-      // TAMBAH: berikan class text-end ke cell numeric
-      $td.addClass("text-end");
     }
 
     function formatTdNumbers(root) {
       root = root || document;
-      $(root)
-        .find("td")
+      var $root = $(root);
+      var $cells = $root.is("td") ? $root : $();
+
+      $cells = $cells.add($root.find("td"));
+
+      $cells
         .not(".str-value")
         .each(function () {
           formatTdCell($(this));
         });
     }
 
+    function getTables(root) {
+      var $root = $(root || document);
+      var $tables = $root.is("table") ? $root : $();
+
+      $tables = $tables.add($root.closest("table"));
+      $tables = $tables.add($root.find("table"));
+
+      return $tables.filter(function () {
+        return $(this).find("tbody tr").length > 0;
+      });
+    }
+
+    function getTableRows($table) {
+      if ($.fn.dataTable && $.fn.dataTable.isDataTable($table)) {
+        return $table.DataTable().rows().nodes().toArray();
+      }
+
+      return $table.find("tbody tr").toArray();
+    }
+
+    function getColumnCells(rows, colIndex) {
+      var $cells = $();
+
+      rows.forEach(function (row) {
+        var $cell = $(row).children("td, th").eq(colIndex);
+        if ($cell.length && Number($cell.attr("colspan") || 1) === 1) {
+          $cells = $cells.add($cell);
+        }
+      });
+
+      return $cells;
+    }
+
+    function getHeaderFooterCells($table, colIndex) {
+      var $cells = $();
+
+      $table.find("thead tr, tfoot tr").each(function () {
+        var $cell = $(this).children("th, td").eq(colIndex);
+        if ($cell.length && Number($cell.attr("colspan") || 1) === 1) {
+          $cells = $cells.add($cell);
+        }
+      });
+
+      return $cells;
+    }
+
+    function applyColumnAlignment($table) {
+      var rows = getTableRows($table);
+      var colCount = $table.find("thead tr:last-child").children("th, td").length;
+
+      if (!colCount && rows.length) {
+        colCount = $(rows[0]).children("td, th").length;
+      }
+
+      for (var colIndex = 0; colIndex < colCount; colIndex++) {
+        var numericCount = 0;
+        var textCount = 0;
+
+        rows.forEach(function (row) {
+          var $cell = $(row).children("td, th").eq(colIndex);
+          if (!$cell.length || Number($cell.attr("colspan") || 1) > 1) return;
+
+          var text = getCellText($cell);
+          if (isEmptyTableValue(text)) return;
+
+          if ($cell.hasClass("str-value")) {
+            textCount++;
+          } else if (isTableNumber(text)) {
+            numericCount++;
+          } else {
+            textCount++;
+          }
+        });
+
+        if (!numericCount) continue;
+
+        var $targets = getColumnCells(rows, colIndex).add(getHeaderFooterCells($table, colIndex));
+
+        if (textCount) {
+          $targets.removeClass("text-end").addClass("text-start kc-table-align-mixed");
+        } else {
+          $targets.removeClass("text-start kc-table-align-mixed").addClass("text-end kc-table-align-number");
+        }
+      }
+    }
+
+    function refreshTableColumnAlignment(root) {
+      getTables(root).each(function () {
+        applyColumnAlignment($(this));
+      });
+    }
+
     // initial format
     $(function () {
       formatTdNumbers();
+      refreshTableColumnAlignment();
     });
 
     // format after DataTable redraw
@@ -2607,8 +2728,9 @@ $(function () {
       $("table").each(function () {
         var $t = $(this);
         if ($.fn.dataTable.isDataTable($t)) {
-          $t.DataTable().on("draw.dt", function () {
+          $t.DataTable().on("draw.dt search.dt page.dt order.dt", function () {
             formatTdNumbers($t[0]);
+            refreshTableColumnAlignment($t[0]);
           });
         }
       });
@@ -2622,13 +2744,18 @@ $(function () {
           if (n.nodeType !== 1) return;
           if (n.matches && n.matches("td, tr, tbody, table")) {
             formatTdNumbers(n);
-          } else if (n.querySelector && n.querySelector("td")) formatTdNumbers(n);
+            refreshTableColumnAlignment(n);
+          } else if (n.querySelector && n.querySelector("td")) {
+            formatTdNumbers(n);
+            refreshTableColumnAlignment(n);
+          }
         });
       });
     });
     mo.observe(document.body, { childList: true, subtree: true });
 
     window.formatTdNumbers = formatTdNumbers;
+    window.refreshTableColumnAlignment = refreshTableColumnAlignment;
   })();
 
   // ...existing code...

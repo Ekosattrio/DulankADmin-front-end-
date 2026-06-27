@@ -77,18 +77,29 @@
 
       .profit-input-scroll {
         max-width: 100%;
-        overflow-x: auto;
-        overflow-y: hidden;
-        padding-bottom: 8px;
-        -webkit-overflow-scrolling: touch;
+        overflow-x: visible;
+        overflow-y: visible;
+        padding-bottom: 0;
       }
 
       .profit-input-scroll > .row {
-        min-width: 1120px;
+        min-width: 0;
       }
 
       .profit-input-scroll .input-group {
         min-width: 260px;
+      }
+
+      .profit-input-scroll .profit-pos-group,
+      .profit-input-scroll .profit-webstore-group {
+        min-width: 0;
+        width: max-content;
+      }
+
+      .profit-input-scroll .profit-pos-group .form-control,
+      .profit-input-scroll .profit-webstore-group .form-control {
+        flex: 0 0 64px;
+        max-width: 64px;
       }
 
       .profit-input-scroll .range-bound-input {
@@ -164,8 +175,8 @@
       }
 
       .product-switch {
-        width: 44px;
-        height: 20px;
+        width: 32px;
+        height: 16px;
         border: 0;
         padding: 0;
         border-radius: 999px;
@@ -178,10 +189,10 @@
       .product-switch::after {
         content: "";
         position: absolute;
-        top: 4px;
-        left: 5px;
-        width: 12px;
-        height: 12px;
+        top: 3px;
+        left: 3px;
+        width: 10px;
+        height: 10px;
         border-radius: 50%;
         background: #fff;
       }
@@ -191,7 +202,7 @@
       }
 
       .product-switch.active::after {
-        left: 27px;
+        left: 19px;
       }
 
       .product-option-group.is-disabled label {
@@ -2123,7 +2134,6 @@
                                 <tr>
                                   <th style="width: 60px">No</th>
                                   <th style="width: 90px"></th>
-                                  <th>From</th>
                                   <th>Flow Category</th>
                                   <th>Flow Name</th>
                                 </tr>
@@ -2144,7 +2154,6 @@
                                     </div>
                                     <!-- ===== PERBAIKAN HTML SELESAI ===== -->
                                   </td>
-                                  <td>Paper Type</td>
                                   <td>Pracetak</td>
                                   <td>Pesen Kertas ke Toko</td>
                                 </tr>
@@ -2164,7 +2173,6 @@
                                     </div>
                                     <!-- ===== PERBAIKAN HTML SELESAI ===== -->
                                   </td>
-                                  <td>Offset Machine</td>
                                   <td>Cetak</td>
                                   <td>Cetak Offset 4 Warna</td>
                                 </tr>
@@ -2184,7 +2192,6 @@
                                     </div>
                                     <!-- ===== PERBAIKAN HTML SELESAI ===== -->
                                   </td>
-                                  <td>Offset Machine</td>
                                   <td>Pracetak</td>
                                   <td>Buat Plat CTP</td>
                                 </tr>
@@ -2204,7 +2211,6 @@
                                     </div>
                                     <!-- ===== PERBAIKAN HTML SELESAI ===== -->
                                   </td>
-                                  <td>Laminate</td>
                                   <td>Finishing</td>
                                   <td>Laminasi doff dari Cetak Offset</td>
                                 </tr>
@@ -2224,7 +2230,6 @@
                                     </div>
                                     <!-- ===== PERBAIKAN HTML SELESAI ===== -->
                                   </td>
-                                  <td>Components</td>
                                   <td>Finishing</td>
                                   <td>Proses Lipat ke mesin</td>
                                 </tr>
@@ -2343,14 +2348,14 @@
                                 <label class="form-label mb-0">Profit percentage based on the total production cost</label>
                               </div>
                               <div class="col-md-3 col-6 my-3">
-                                <div class="input-group input-group-sm">
+                                <div class="input-group input-group-sm profit-pos-group">
                                   <span class="input-group-text">Set POS Profit %</span>
                                   <input type="text" class="form-control number-separator" inputmode="numeric" pattern="[0-9]*" />
                                   <input type="hidden" class="result-input" />
                                 </div>
                               </div>
                               <div class="col-md-3 col-6 my-3">
-                                <div class="input-group input-group-sm">
+                                <div class="input-group input-group-sm profit-webstore-group">
                                   <span class="input-group-text">Set Webstore Profit %</span>
                                   <input type="text" class="form-control number-separator" inputmode="numeric" pattern="[0-9]*" />
                                   <input type="hidden" class="result-input" />
@@ -2391,14 +2396,14 @@
                                 <input type="hidden" class="result-input" />
                               </div>
                               <div class="col-md-3 col-6 mt-2 mt-md-0">
-                                <div class="input-group input-group-sm">
+                                <div class="input-group input-group-sm profit-pos-group">
                                   <span class="input-group-text">Set POS Profit %</span>
                                   <input type="text" class="form-control number-separator" inputmode="numeric" pattern="[0-9]*" />
                                   <input type="hidden" class="result-input" />
                                 </div>
                               </div>
                               <div class="col-md-3 col-6 mt-2 mt-md-0">
-                                <div class="input-group input-group-sm">
+                                <div class="input-group input-group-sm profit-webstore-group">
                                   <span class="input-group-text">Set Webstore Profit %</span>
                                   <input type="text" class="form-control number-separator" inputmode="numeric" pattern="[0-9]*" />
                                   <input type="hidden" class="result-input" />
@@ -2436,14 +2441,14 @@
                                 <input type="hidden" class="result-input" />
                               </div>
                               <div class="col-md-3 col-6 mt-2 mt-md-0">
-                                <div class="input-group input-group-sm">
+                                <div class="input-group input-group-sm profit-pos-group">
                                   <span class="input-group-text">Set POS Profit %</span>
                                   <input type="text" class="form-control number-separator" inputmode="numeric" pattern="[0-9]*" />
                                   <input type="hidden" class="result-input" />
                                 </div>
                               </div>
                               <div class="col-md-3 col-6 mt-2 mt-md-0">
-                                <div class="input-group input-group-sm">
+                                <div class="input-group input-group-sm profit-webstore-group">
                                   <span class="input-group-text">Set Webstore Profit %</span>
                                   <input type="text" class="form-control number-separator" inputmode="numeric" pattern="[0-9]*" />
                                   <input type="hidden" class="result-input" />
@@ -2481,14 +2486,14 @@
                                 <input type="hidden" class="result-input" />
                               </div>
                               <div class="col-md-3 col-6 mt-2 mt-md-0">
-                                <div class="input-group input-group-sm">
+                                <div class="input-group input-group-sm profit-pos-group">
                                   <span class="input-group-text">Set POS Profit %</span>
                                   <input type="text" class="form-control number-separator" inputmode="numeric" pattern="[0-9]*" />
                                   <input type="hidden" class="result-input" />
                                 </div>
                               </div>
                               <div class="col-md-3 col-6 mt-2 mt-md-0">
-                                <div class="input-group input-group-sm">
+                                <div class="input-group input-group-sm profit-webstore-group">
                                   <span class="input-group-text">Set Webstore Profit %</span>
                                   <input type="text" class="form-control number-separator" inputmode="numeric" pattern="[0-9]*" />
                                   <input type="hidden" class="result-input" />
@@ -2517,18 +2522,18 @@
                               </div>
                               <div class="col-6 col-md-2 d-flex align-items-center">
                                 <label class="form-label me-2 mb-0">To</label>
-                                <span class="form-control form-control-sm">And so on</span>
+                                <span class="form-control form-control-sm">So on</span>
                                 <input type="hidden" class="result-input" />
                               </div>
                               <div class="col-md-3 col-6 mt-2 mt-md-0">
-                                <div class="input-group input-group-sm">
+                                <div class="input-group input-group-sm profit-pos-group">
                                   <span class="input-group-text">Set POS Profit %</span>
                                   <input type="text" class="form-control number-separator" inputmode="numeric" pattern="[0-9]*" />
                                   <input type="hidden" class="result-input" />
                                 </div>
                               </div>
                               <div class="col-md-3 col-6 mt-2 mt-md-0">
-                                <div class="input-group input-group-sm">
+                                <div class="input-group input-group-sm profit-webstore-group">
                                   <span class="input-group-text">Set Webstore Profit %</span>
                                   <input type="text" class="form-control number-separator" inputmode="numeric" pattern="[0-9]*" />
                                   <input type="hidden" class="result-input" />
@@ -3815,21 +3820,21 @@
             }
 
             if (!checkedOption.checked) {
-              const hasCheckedOption = group.querySelector(".product-checkbox:checked");
-              if (!hasCheckedOption) {
-                updateDefaultStars();
-                return;
+              const optionLabel = checkedOption.closest("label");
+              const defaultRadio = optionLabel?.querySelector(".product-default-radio");
+              if (defaultRadio?.checked) {
+                const nextCheckedOption = group.querySelector(".product-checkbox:checked");
+                const nextDefaultRadio = nextCheckedOption?.closest("label")?.querySelector(".product-default-radio");
+                if (nextDefaultRadio) nextDefaultRadio.checked = true;
               }
+              updateDefaultStars();
               return;
             }
 
-            group.querySelectorAll(".product-checkbox").forEach((option) => {
-              if (option !== checkedOption) option.checked = false;
-            });
-
             const optionLabel = checkedOption.closest("label");
             const defaultRadio = optionLabel?.querySelector(".product-default-radio");
-            if (defaultRadio) defaultRadio.checked = true;
+            const activeDefault = group.querySelector(".product-default-radio:checked");
+            if (defaultRadio && !activeDefault) defaultRadio.checked = true;
             updateDefaultStars();
           });
 

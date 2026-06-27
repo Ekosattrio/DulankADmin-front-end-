@@ -228,6 +228,12 @@ function start() {
         $(".dataTables_filter").appendTo("#tableSearch");
         $(".dataTables_filter").appendTo(".search-input");
         kcRefreshUI(document);
+        if (window.formatTdNumbers) window.formatTdNumbers(settings.nTable);
+        if (window.refreshTableColumnAlignment) window.refreshTableColumnAlignment(settings.nTable);
+      },
+      drawCallback: function (settings) {
+        if (window.formatTdNumbers) window.formatTdNumbers(settings.nTable);
+        if (window.refreshTableColumnAlignment) window.refreshTableColumnAlignment(settings.nTable);
       },
     });
   }
@@ -252,6 +258,14 @@ function start() {
   if ($(".datatable").length > 0) {
     $(".datatable").DataTable({
       bFilter: false,
+      initComplete: function (settings) {
+        if (window.formatTdNumbers) window.formatTdNumbers(settings.nTable);
+        if (window.refreshTableColumnAlignment) window.refreshTableColumnAlignment(settings.nTable);
+      },
+      drawCallback: function (settings) {
+        if (window.formatTdNumbers) window.formatTdNumbers(settings.nTable);
+        if (window.refreshTableColumnAlignment) window.refreshTableColumnAlignment(settings.nTable);
+      },
     });
   }
   // Loader
@@ -2544,6 +2558,39 @@ $(function () {
       return /^[\d\.\,\s\-]+$/.test(s);
     }
 
+    function getCellText($cell) {
+      return $cell
+        .clone()
+        .find("script, style")
+        .remove()
+        .end()
+        .text()
+        .replace(/\u00a0/g, " ")
+        .replace(/\s+/g, " ")
+        .trim();
+    }
+
+    function isEmptyTableValue(text) {
+      text = String(text || "").trim();
+      return text === "" || text === "-" || text === "\u2013" || text === "\u2014";
+    }
+
+    function isTableNumber(text) {
+      if (isEmptyTableValue(text)) return false;
+
+      var cleaned = String(text)
+        .replace(/\u00a0/g, " ")
+        .trim()
+        .replace(/\s+/g, "")
+        .replace(/^\((.*)\)$/, "-$1")
+        .replace(/^(rp\.?|idr|usd|eur|sgd|aud)/i, "")
+        .replace(/(idr|usd|eur|sgd|aud)$/i, "")
+        .replace(/^[\u0024\u20ac\u00a3\u00a5]/, "")
+        .replace(/%$/, "");
+
+      return /^-?(?:\d{1,3}(?:[.,]\d{3})+(?:,\d+)?|\d+(?:[.,]\d+)?)$/.test(cleaned);
+    }
+
     function formatTdCell($td) {
       if (!$td || $td.hasClass("str-value")) return;
       // skip cells with interactive content
@@ -2558,25 +2605,122 @@ $(function () {
       }
       var num = parseNumber(raw);
       var formatted = formatNumber(num);
-      $td.text(formatted);
+      if ($td.text().trim() !== formatted) {
+        $td.text(formatted);
+      }
       $td.data("raw-number", raw);
-      // TAMBAH: berikan class text-end ke cell numeric
-      $td.addClass("text-end");
     }
 
     function formatTdNumbers(root) {
       root = root || document;
-      $(root)
-        .find("td")
+      var $root = $(root);
+      var $cells = $root.is("td") ? $root : $();
+
+      $cells = $cells.add($root.find("td"));
+
+      $cells
         .not(".str-value")
         .each(function () {
           formatTdCell($(this));
         });
     }
 
+    function getTables(root) {
+      var $root = $(root || document);
+      var $tables = $root.is("table") ? $root : $();
+
+      $tables = $tables.add($root.closest("table"));
+      $tables = $tables.add($root.find("table"));
+
+      return $tables.filter(function () {
+        return $(this).find("tbody tr").length > 0;
+      });
+    }
+
+    function getTableRows($table) {
+      if ($.fn.dataTable && $.fn.dataTable.isDataTable($table)) {
+        return $table.DataTable().rows().nodes().toArray();
+      }
+
+      return $table.find("tbody tr").toArray();
+    }
+
+    function getColumnCells(rows, colIndex) {
+      var $cells = $();
+
+      rows.forEach(function (row) {
+        var $cell = $(row).children("td, th").eq(colIndex);
+        if ($cell.length && Number($cell.attr("colspan") || 1) === 1) {
+          $cells = $cells.add($cell);
+        }
+      });
+
+      return $cells;
+    }
+
+    function getHeaderFooterCells($table, colIndex) {
+      var $cells = $();
+
+      $table.find("thead tr, tfoot tr").each(function () {
+        var $cell = $(this).children("th, td").eq(colIndex);
+        if ($cell.length && Number($cell.attr("colspan") || 1) === 1) {
+          $cells = $cells.add($cell);
+        }
+      });
+
+      return $cells;
+    }
+
+    function applyColumnAlignment($table) {
+      var rows = getTableRows($table);
+      var colCount = $table.find("thead tr:last-child").children("th, td").length;
+
+      if (!colCount && rows.length) {
+        colCount = $(rows[0]).children("td, th").length;
+      }
+
+      for (var colIndex = 0; colIndex < colCount; colIndex++) {
+        var numericCount = 0;
+        var textCount = 0;
+
+        rows.forEach(function (row) {
+          var $cell = $(row).children("td, th").eq(colIndex);
+          if (!$cell.length || Number($cell.attr("colspan") || 1) > 1) return;
+
+          var text = getCellText($cell);
+          if (isEmptyTableValue(text)) return;
+
+          if ($cell.hasClass("str-value")) {
+            textCount++;
+          } else if (isTableNumber(text)) {
+            numericCount++;
+          } else {
+            textCount++;
+          }
+        });
+
+        if (!numericCount) continue;
+
+        var $targets = getColumnCells(rows, colIndex).add(getHeaderFooterCells($table, colIndex));
+
+        if (textCount) {
+          $targets.removeClass("text-end").addClass("text-start kc-table-align-mixed");
+        } else {
+          $targets.removeClass("text-start kc-table-align-mixed").addClass("text-end kc-table-align-number");
+        }
+      }
+    }
+
+    function refreshTableColumnAlignment(root) {
+      getTables(root).each(function () {
+        applyColumnAlignment($(this));
+      });
+    }
+
     // initial format
     $(function () {
       formatTdNumbers();
+      refreshTableColumnAlignment();
     });
 
     // format after DataTable redraw
@@ -2584,8 +2728,9 @@ $(function () {
       $("table").each(function () {
         var $t = $(this);
         if ($.fn.dataTable.isDataTable($t)) {
-          $t.DataTable().on("draw.dt", function () {
+          $t.DataTable().on("draw.dt search.dt page.dt order.dt", function () {
             formatTdNumbers($t[0]);
+            refreshTableColumnAlignment($t[0]);
           });
         }
       });
@@ -2599,13 +2744,18 @@ $(function () {
           if (n.nodeType !== 1) return;
           if (n.matches && n.matches("td, tr, tbody, table")) {
             formatTdNumbers(n);
-          } else if (n.querySelector && n.querySelector("td")) formatTdNumbers(n);
+            refreshTableColumnAlignment(n);
+          } else if (n.querySelector && n.querySelector("td")) {
+            formatTdNumbers(n);
+            refreshTableColumnAlignment(n);
+          }
         });
       });
     });
     mo.observe(document.body, { childList: true, subtree: true });
 
     window.formatTdNumbers = formatTdNumbers;
+    window.refreshTableColumnAlignment = refreshTableColumnAlignment;
   })();
 
   // ...existing code...
